@@ -55,7 +55,7 @@ export default {
 				"tr": "#orientation",
 				"dev": "#orientation"
 			},
-			"tests": "(orientation:portrait), (orientation:landscape)"
+			"tests": ["(orientation:portrait)", "(orientation:landscape)"]
 		},
 		"aspect-ratio": {
 			"links": {

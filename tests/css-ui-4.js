@@ -53,7 +53,7 @@ export default {
 				"dev": "#text-overflow"
 			},
 			"tests": [
-				"clip",	"ellipsis", "fade", "fade(10px)", "fade(10%)", "'foo'", "clip clip",
+				"fade", "fade(10px)", "fade(10%)", "'foo'", "clip clip",
 				"ellipsis clip", "fade clip", "fade(10px) clip", "fade(10%) clip",
 				"'foo' clip", "clip ellipsis", "ellipsis ellipsis", "fade ellipsis",
 				"fade(10px) ellipsis", "fade(10%) ellipsis", "'foo' ellipsis", "clip fade",
