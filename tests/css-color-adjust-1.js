@@ -8,7 +8,7 @@ export default {
 		"stability": "stable"
 	},
 	"properties": {
-		"color-adjust": {
+		"print-color-adjust": {
 			"links": {
 				"tr": "#perf",
 				"dev": "#perf"
