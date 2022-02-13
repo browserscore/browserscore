@@ -44,14 +44,20 @@ export default {
 				"tr": "#the-mask-image",
 				"dev": "#the-mask-image"
 			},
-			"tests": ["none", "linear-gradient(black 0%, transparent 100%)", "url(image.png)"]
+			"tests": [
+				"none",
+				"linear-gradient(black 0%, transparent 100%)",
+				"url(image.png)",
+				"url(masks.svg#mask1)",
+				"url(image.png), url(image2.png)"
+			]
 		},
 		"mask-mode": {
 			"links": {
 				"tr": "#the-mask-mode",
 				"dev": "#the-mask-mode"
 			},
-			"tests": ["alpha", "luminance", "match-source"]
+			"tests": ["alpha", "luminance", "match-source", "alpha, match-source"]
 		},
 		"mask-repeat": {
 			"links": {
@@ -63,7 +69,9 @@ export default {
 				"space repeat", "round repeat", "no-repeat repeat", "repeat space", "space space",
 				"round space", "no-repeat space", "repeat round", "space round", "round round",
 				"no-repeat round", "repeat no-repeat", "space no-repeat", "round no-repeat",
-				"no-repeat no-repeat"
+				"no-repeat no-repeat",
+				"repeat-x, repeat-y",
+				"space no-repeat, no-repeat repeat, round"
 			]
 		},
 		"mask-position": {
@@ -71,28 +79,43 @@ export default {
 				"tr": "#the-mask-position",
 				"dev": "#the-mask-position"
 			},
-			"tests": ["center", "left 50%", "bottom 10px right 20px", "bottom 10px right", "top right 10px"]
+			"tests": [
+				"left", "center", "right", "top", "bottom",
+				"left top", "left center", "center center", "right bottom",
+				"left 50%",
+				"bottom 10px right 20px",
+				"left, top",
+				"bottom 10px right 20px, left, center center"]
 		},
 		"mask-clip": {
 			"links": {
 				"tr": "#the-mask-clip",
 				"dev": "#the-mask-clip"
 			},
-			"tests": ["border-box", "padding-box", "content-box", "margin-box", "fill-box", "stroke-box", "view-box", "no-clip"]
+			"tests": [
+				"border-box", "padding-box", "content-box", "margin-box", "fill-box", "stroke-box", "view-box",
+				"no-clip", "padding-box, no-clip"
+			]
 		},
 		"mask-origin": {
 			"links": {
 				"tr": "#the-mask-origin",
 				"dev": "#the-mask-origin"
 			},
-			"tests": ["border-box", "padding-box", "content-box", "margin-box", "fill-box", "stroke-box", "view-box"]
+			"tests": [
+				"border-box", "padding-box", "content-box", "margin-box", "fill-box", "stroke-box", "view-box",
+				"padding-box, content-box"
+			]
 		},
 		"mask-size": {
 			"links": {
 				"tr": "#the-mask-size",
 				"dev": "#the-mask-size"
 			},
-			"tests": ["auto", "10px", "cover", "contain", "10px", "50%", "10px auto", "auto 10%", "50em 50%"]
+			"tests": [
+				"auto", "10px", "cover", "contain", "10px", "50%", "10px auto", "auto 10%", "50em 50%",
+				"6px, auto, contain", "10px auto, auto, contain, 50em 50%"
+			]
 		},
 		"mask-composite": {
 			"links": {
@@ -106,7 +129,13 @@ export default {
 				"tr": "#the-mask",
 				"dev": "#the-mask"
 			},
-			"tests": ["top", "space", "url(image.png)", "url(image.png) luminance", "url(image.png) luminance top space"]
+			"tests": [
+				"top", "space",
+				"url(image.png)",
+				"url(image.png) luminance",
+				"url(image.png) luminance top space",
+				"url(masks.svg#star) left / 16px repeat-y, url(masks.svg#circle) right / 16px repeat-y"
+			]
 		},
 		"mask-border-source": {
 			"links": {
