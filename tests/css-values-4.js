@@ -92,6 +92,134 @@ export default {
 			},
 			"tests": "5rlh"
 		},
+		"svh": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5svh"
+		},
+		"lvh": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5lvh"
+		},
+		"dvh": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5dvh"
+		},
+		"svw": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5svw"
+		},
+		"lvw": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5lvw"
+		},
+		"dvw": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5dvw"
+		},
+		"dvmin": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5dvmin"
+		},
+		"dvmax": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5dvmax"
+		},
+		"vb": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5vb"
+		},
+		"vi": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5vi"
+		},
+		"svb": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5dvb"
+		},
+		"dvi": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5dvi"
+		},
+		"lvd": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5lvb"
+		},
+		"lvi": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5lvi"
+		},
+		"svb": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5svb"
+		},
+		"svi": {
+			"links": {
+				"tr": "#viewport-relative-lengths",
+				"dev": "#viewport-relative-lengths",
+				"mdn": "length"
+			},
+			"tests": "5svi"
+		},
 		"toggle()": {
 			"links": {
 				"tr": "#toggle-notation",
