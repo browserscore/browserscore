@@ -1,41 +1,41 @@
 export default {
-	"title": "WebVTT: The Web Video Text Tracks Format",
-	"links": {
-		"tr": "webvtt1",
-		"dev": "webvtt",
-		"devtype": "github"
+	title: 'WebVTT: The Web Video Text Tracks Format',
+	links: {
+		tr: 'webvtt1',
+		dev: 'webvtt',
+		devtype: 'github',
 	},
-	"status": {
-		"stability": "experimental"
+	status: {
+		stability: 'experimental',
 	},
-	"selectors": {
-		"::cue": {
-			"links": {
-				"tr": "#the-cue-pseudo-element",
-				"dev": "#the-cue-pseudo-element"
+	selectors: {
+		'::cue': {
+			links: {
+				tr: '#the-cue-pseudo-element',
+				dev: '#the-cue-pseudo-element',
 			},
-			"tests": ["::cue"]
+			tests: ['::cue'],
 		},
-		"::cue()": {
-			"links": {
-				"tr": "#the-cue-pseudo-element",
-				"dev": "#the-cue-pseudo-element"
+		'::cue()': {
+			links: {
+				tr: '#the-cue-pseudo-element',
+				dev: '#the-cue-pseudo-element',
 			},
-			"tests": ["::cue(span)"]
+			tests: ['::cue(span)'],
 		},
-		"::cue-region": {
-			"links": {
-				"tr": "#the-cue-region-pseudo-element",
-				"dev": "#the-cue-region-pseudo-element"
+		'::cue-region': {
+			links: {
+				tr: '#the-cue-region-pseudo-element',
+				dev: '#the-cue-region-pseudo-element',
 			},
-			"tests": ["::cue-region"]
+			tests: ['::cue-region'],
 		},
-		"::cue-region()": {
-			"links": {
-				"tr": "#the-cue-region-pseudo-element",
-				"dev": "#the-cue-region-pseudo-element"
+		'::cue-region()': {
+			links: {
+				tr: '#the-cue-region-pseudo-element',
+				dev: '#the-cue-region-pseudo-element',
 			},
-			"tests": ['::cue-region(span)']
-		}
-	}
+			tests: ['::cue-region(span)'],
+		},
+	},
 };

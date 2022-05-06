@@ -1,308 +1,324 @@
 export default {
-	"title": "Selectors Level 4",
-	"links": {
-		"tr": "selectors-4",
-		"dev": "selectors-4"
+	title: 'Selectors Level 4',
+	links: {
+		tr: 'selectors-4',
+		dev: 'selectors-4',
 	},
-	"status": {
-		"stability": "experimental"
+	status: {
+		stability: 'experimental',
 	},
-	"selectors": {
-		":indeterminate": {
-			"links": {
-				"tr": "#indeterminate",
-				"dev": "#indeterminate"
+	selectors: {
+		':indeterminate': {
+			links: {
+				tr: '#indeterminate',
+				dev: '#indeterminate',
 			},
-			"tests": ":indeterminate"
+			tests: ':indeterminate',
 		},
-		":blank": {
-			"links": {
-				"tr": "#blank",
-				"dev": "#blank"
+		':blank': {
+			links: {
+				tr: '#blank',
+				dev: '#blank',
 			},
-			"tests": ":blank"
+			tests: ':blank',
 		},
-		":placeholder-shown": {
-			"links": {
-				"tr": "#placeholder",
-				"dev": "#placeholder"
+		':placeholder-shown': {
+			links: {
+				tr: '#placeholder',
+				dev: '#placeholder',
 			},
-			"tests": ":placeholder-shown"
+			tests: ':placeholder-shown',
 		},
-		":default": {
-			"links": {
-				"tr": "#the-default-pseudo",
-				"dev": "#the-default-pseudo"
+		':default': {
+			links: {
+				tr: '#the-default-pseudo',
+				dev: '#the-default-pseudo',
 			},
-			"tests": ":default"
+			tests: ':default',
 		},
-		":valid": {
-			"links": {
-				"tr": "#validity-pseudos",
-				"dev": "#validity-pseudos"
+		':valid': {
+			links: {
+				tr: '#validity-pseudos',
+				dev: '#validity-pseudos',
 			},
-			"tests": ":valid"
+			tests: ':valid',
 		},
-		":invalid": {
-			"links": {
-				"tr": "#validity-pseudos",
-				"dev": "#validity-pseudos"
+		':invalid': {
+			links: {
+				tr: '#validity-pseudos',
+				dev: '#validity-pseudos',
 			},
-			"tests": ":invalid"
+			tests: ':invalid',
 		},
-		":in-range": {
-			"links": {
-				"tr": "#range-pseudos",
-				"dev": "#range-pseudos"
+		':in-range': {
+			links: {
+				tr: '#range-pseudos',
+				dev: '#range-pseudos',
 			},
-			"tests": ":in-range"
+			tests: ':in-range',
 		},
-		":out-of-range": {
-			"links": {
-				"tr": "#range-pseudos",
-				"dev": "#range-pseudos"
+		':out-of-range': {
+			links: {
+				tr: '#range-pseudos',
+				dev: '#range-pseudos',
 			},
-			"tests": ":out-of-range"
+			tests: ':out-of-range',
 		},
-		":user-invalid": {
-			"links": {
-				"tr": "#user-invalid-pseudo",
-				"dev": "#user-invalid-pseudo"
+		':user-invalid': {
+			links: {
+				tr: '#user-invalid-pseudo',
+				dev: '#user-invalid-pseudo',
 			},
-			"tests": ":user-invalid"
+			tests: ':user-invalid',
 		},
-		":required": {
-			"links": {
-				"tr": "#opt-pseudos",
-				"dev": "#opt-pseudos"
+		':required': {
+			links: {
+				tr: '#opt-pseudos',
+				dev: '#opt-pseudos',
 			},
-			"tests": ":required"
+			tests: ':required',
 		},
-		":optional": {
-			"links": {
-				"tr": "#opt-pseudos",
-				"dev": "#opt-pseudos"
+		':optional': {
+			links: {
+				tr: '#opt-pseudos',
+				dev: '#opt-pseudos',
 			},
-			"tests": ":optional"
+			tests: ':optional',
 		},
-		":read-only": {
-			"links": {
-				"tr": "#rw-pseudos",
-				"dev": "#rw-pseudos"
+		':read-only': {
+			links: {
+				tr: '#rw-pseudos',
+				dev: '#rw-pseudos',
 			},
-			"tests": ":read-only"
+			tests: ':read-only',
 		},
-		":read-write": {
-			"links": {
-				"tr": "#rw-pseudos",
-				"dev": "#rw-pseudos"
+		':read-write': {
+			links: {
+				tr: '#rw-pseudos',
+				dev: '#rw-pseudos',
 			},
-			"tests": ":read-write"
+			tests: ':read-write',
 		},
-		":focus-visible": {
-			"links": {
-				"tr": "#the-focus-visible-pseudo",
-				"dev": "#the-focus-visible-pseudo"
+		':focus-visible': {
+			links: {
+				tr: '#the-focus-visible-pseudo',
+				dev: '#the-focus-visible-pseudo',
 			},
-			"tests": ":focus-visible"
+			tests: ':focus-visible',
 		},
-		":focus-within": {
-			"links": {
-				"tr": "#the-focus-within-pseudo",
-				"dev": "#the-focus-within-pseudo"
+		':focus-within': {
+			links: {
+				tr: '#the-focus-within-pseudo',
+				dev: '#the-focus-within-pseudo',
 			},
-			"tests": ":focus-within"
+			tests: ':focus-within',
 		},
-		":current": {
-			"links": {
-				"tr": "#the-current-pseudo",
-				"dev": "#the-current-pseudo"
+		':current': {
+			links: {
+				tr: '#the-current-pseudo',
+				dev: '#the-current-pseudo',
 			},
-			"tests": ":current"
+			tests: ':current',
 		},
-		":current()": {
-			"links": {
-				"tr": "#the-current-pseudo",
-				"dev": "#the-current-pseudo"
+		':current()': {
+			links: {
+				tr: '#the-current-pseudo',
+				dev: '#the-current-pseudo',
 			},
-			"tests": ":current(p, li, dt, dd)"
+			tests: ':current(p, li, dt, dd)',
 		},
-		":past": {
-			"links": {
-				"tr": "#the-past-pseudo",
-				"dev": "#the-past-pseudo"
+		':past': {
+			links: {
+				tr: '#the-past-pseudo',
+				dev: '#the-past-pseudo',
 			},
-			"tests": ":past"
+			tests: ':past',
 		},
-		":future": {
-			"links": {
-				"tr": "#the-future-pseudo",
-				"dev": "#the-future-pseudo"
+		':future': {
+			links: {
+				tr: '#the-future-pseudo',
+				dev: '#the-future-pseudo',
 			},
-			"tests": ":future"
+			tests: ':future',
 		},
-		":scope": {
-			"links": {
-				"tr": "#the-scope-pseudo",
-				"dev": "#the-scope-pseudo"
+		':scope': {
+			links: {
+				tr: '#the-scope-pseudo',
+				dev: '#the-scope-pseudo',
 			},
-			"tests": ":scope"
+			tests: ':scope',
 		},
-		":any-link": {
-			"links": {
-				"tr": "#the-any-link-pseudo",
-				"dev": "#the-any-link-pseudo"
+		':any-link': {
+			links: {
+				tr: '#the-any-link-pseudo',
+				dev: '#the-any-link-pseudo',
 			},
-			"tests": ":any-link"
+			tests: ':any-link',
 		},
-		":local-link": {
-			"links": {
-				"tr": "#the-local-link-pseudo",
-				"dev": "#the-local-link-pseudo"
+		':local-link': {
+			links: {
+				tr: '#the-local-link-pseudo',
+				dev: '#the-local-link-pseudo',
 			},
-			"tests": ":local-link"
+			tests: ':local-link',
 		},
-		":target-within": {
-			"links": {
-				"tr": "#the-target-within-pseudo",
-				"dev": "#the-target-within-pseudo"
+		':target-within': {
+			links: {
+				tr: '#the-target-within-pseudo',
+				dev: '#the-target-within-pseudo',
 			},
-			"tests": ":target-within"
+			tests: ':target-within',
 		},
-		":lang()": {
-			"links": {
-				"tr": "#the-lang-pseudo",
-				"dev": "#the-lang-pseudo"
+		':lang()': {
+			links: {
+				tr: '#the-lang-pseudo',
+				dev: '#the-lang-pseudo',
 			},
-			"tests": [":lang(zh, \"*-hant\")"]
+			tests: [':lang(zh, "*-hant")'],
 		},
-		":not()": {
-			"links": {
-				"tr": "#negation",
-				"dev": "#negation"
+		':not()': {
+			links: {
+				tr: '#negation',
+				dev: '#negation',
 			},
-			"tests": [":not(em, #foo)"]
+			tests: [':not(em, #foo)'],
 		},
-		":where()": {
-			"links": {
-				"tr": "#zero-matches",
-				"dev": "#zero-matches"
+		':where()': {
+			links: {
+				tr: '#zero-matches',
+				dev: '#zero-matches',
 			},
-			"tests": [":where(em, #foo)", ":where(:not(:hover))"]
+			tests: [':where(em, #foo)', ':where(:not(:hover))'],
 		},
-		":is()": {
-			"links": {
-				"tr": "#matches",
-				"dev": "#matches"
+		':is()': {
+			links: {
+				tr: '#matches',
+				dev: '#matches',
 			},
-			"tests": [":is(em, #foo)", ":is(:not(:hover))"]
+			tests: [':is(em, #foo)', ':is(:not(:hover))'],
 		},
-		":has()": {
-			"links": {
-				"tr": "#relational",
-				"dev": "#relational"
+		':has()': {
+			links: {
+				tr: '#relational',
+				dev: '#relational',
 			},
-			"tests": [
-				"a:has(> img)",
-				"dt:has(+ dt)",
-				"section:not(:has(h1, h2, h3, h4, h5, h6))",
-				"section:has(:not(h1, h2, h3, h4, h5, h6))"
-			]
+			tests: [
+				'a:has(> img)',
+				'dt:has(+ dt)',
+				'section:not(:has(h1, h2, h3, h4, h5, h6))',
+				'section:has(:not(h1, h2, h3, h4, h5, h6))',
+			],
 		},
-		":defined": {
-			"links": {
-				"tr": "#the-defined-pseudo",
-				"dev": "the-defined-pseudo"
+		':defined': {
+			links: {
+				tr: '#the-defined-pseudo',
+				dev: 'the-defined-pseudo',
 			},
-			"tests": [":defined"]
+			tests: [':defined'],
 		},
-		":nth-child()": {
-			"links": {
-				"tr": "#the-nth-child-pseudo",
-				"dev": "#the-nth-child-pseudo"
+		':nth-child()': {
+			links: {
+				tr: '#the-nth-child-pseudo',
+				dev: '#the-nth-child-pseudo',
 			},
-			"tests": [":nth-child(-n+3 of li.important)", ":nth-child(even of :not([hidden])"]
+			tests: [':nth-child(-n+3 of li.important)', ':nth-child(even of :not([hidden])'],
 		},
-		"||": {
-			"links": {
-				"tr": "#the-column-combinator",
-				"dev": "#the-column-combinator"
+		'||': {
+			links: {
+				tr: '#the-column-combinator',
+				dev: '#the-column-combinator',
 			},
-			"tests": "foo || bar"
+			tests: 'foo || bar',
 		},
-		":nth-col()": {
-			"links": {
-				"tr": "#the-nth-col-pseudo",
-				"dev": "#the-nth-col-pseudo"
+		':nth-col()': {
+			links: {
+				tr: '#the-nth-col-pseudo',
+				dev: '#the-nth-col-pseudo',
 			},
-			"tests": [
-				":nth-col(even)", ":nth-col(odd)",
-				":nth-col(n)", ":nth-col(-n)", ":nth-col(0n)",
-				":nth-col(1)", ":nth-col(-1)", ":nth-col(0)",
-				":nth-col(n+1)", ":nth-col(3n+1)", ":nth-col(3n + 1)",
-				":nth-col(-n+1)", ":nth-col(3n-1)"
-			]
+			tests: [
+				':nth-col(even)',
+				':nth-col(odd)',
+				':nth-col(n)',
+				':nth-col(-n)',
+				':nth-col(0n)',
+				':nth-col(1)',
+				':nth-col(-1)',
+				':nth-col(0)',
+				':nth-col(n+1)',
+				':nth-col(3n+1)',
+				':nth-col(3n + 1)',
+				':nth-col(-n+1)',
+				':nth-col(3n-1)',
+			],
 		},
-		":nth-last-col()": {
-			"links": {
-				"tr": "#the-nth-last-col-pseudo",
-				"dev": "#the-nth-last-col-pseudo"
+		':nth-last-col()': {
+			links: {
+				tr: '#the-nth-last-col-pseudo',
+				dev: '#the-nth-last-col-pseudo',
 			},
-			"tests": [
-				":nth-last-col(even)", ":nth-last-col(odd)",
-				":nth-last-col(n)", ":nth-last-col(-n)", ":nth-last-col(0n)",
-				":nth-last-col(1)", ":nth-last-col(-1)", ":nth-last-col(0)",
-				":nth-last-col(n+1)", ":nth-last-col(3n+1)", ":nth-last-col(3n + 1)",
-				":nth-last-col(-n+1)", ":nth-last-col(3n-1)"
-			]
+			tests: [
+				':nth-last-col(even)',
+				':nth-last-col(odd)',
+				':nth-last-col(n)',
+				':nth-last-col(-n)',
+				':nth-last-col(0n)',
+				':nth-last-col(1)',
+				':nth-last-col(-1)',
+				':nth-last-col(0)',
+				':nth-last-col(n+1)',
+				':nth-last-col(3n+1)',
+				':nth-last-col(3n + 1)',
+				':nth-last-col(-n+1)',
+				':nth-last-col(3n-1)',
+			],
 		},
-		"[att^=val i]": {
-			"links": {
-				"tr": "#attribute-case",
-				"dev": "#attribute-case",
-				"mdn": "Attribute_selectors"
+		'[att^=val i]': {
+			links: {
+				tr: '#attribute-case',
+				dev: '#attribute-case',
+				mdn: 'Attribute_selectors',
 			},
-			"tests": ["[att^=val i]", "[att^=\"val\" i]", "[att^=val I]", "[att^=\"val\" I]"]
+			tests: ['[att^=val i]', '[att^="val" i]', '[att^=val I]', '[att^="val" I]'],
 		},
-		"[att*=val i]": {
-			"links": {
-				"tr": "#attribute-case",
-				"dev": "#attribute-case",
-				"mdn": "Attribute_selectors"
+		'[att*=val i]': {
+			links: {
+				tr: '#attribute-case',
+				dev: '#attribute-case',
+				mdn: 'Attribute_selectors',
 			},
-			"tests": ["[att*=val i]", "[att*=\"val\" i]", "[att*=val I]", "[att*=\"val\" I]"]
+			tests: ['[att*=val i]', '[att*="val" i]', '[att*=val I]', '[att*="val" I]'],
 		},
-		"[att$=val i]": {
-			"links": {
-				"tr": "#attribute-case",
-				"dev": "#attribute-case",
-				"mdn": "Attribute_selectors"
+		'[att$=val i]': {
+			links: {
+				tr: '#attribute-case',
+				dev: '#attribute-case',
+				mdn: 'Attribute_selectors',
 			},
-			"tests": ["[att$=val i]", "[att$=\"val\" i]", "[att$=val I]", "[att$=\"val\" I]"]
+			tests: ['[att$=val i]', '[att$="val" i]', '[att$=val I]', '[att$="val" I]'],
 		},
-		"[att^=val s]": {
-			"links": {
-				"tr": "#attribute-case",
-				"dev": "#attribute-case",
-				"mdn": "Attribute_selectors"
+		'[att^=val s]': {
+			links: {
+				tr: '#attribute-case',
+				dev: '#attribute-case',
+				mdn: 'Attribute_selectors',
 			},
-			"tests": ["[att^=val s]", "[att^=\"val\" s]", "[att^=val S]", "[att^=\"val\" S]"]
+			tests: ['[att^=val s]', '[att^="val" s]', '[att^=val S]', '[att^="val" S]'],
 		},
-		"[att*=val s]": {
-			"links": {
-				"tr": "#attribute-case",
-				"dev": "#attribute-case",
-				"mdn": "Attribute_selectors"
+		'[att*=val s]': {
+			links: {
+				tr: '#attribute-case',
+				dev: '#attribute-case',
+				mdn: 'Attribute_selectors',
 			},
-			"tests": ["[att*=val s]", "[att*=\"val\" s]", "[att*=val S]", "[att*=\"val\" S]"]
+			tests: ['[att*=val s]', '[att*="val" s]', '[att*=val S]', '[att*="val" S]'],
 		},
-		"[att$=val s]": {
-			"links": {
-				"tr": "#attribute-case",
-				"dev": "#attribute-case",
-				"mdn": "Attribute_selectors"
+		'[att$=val s]': {
+			links: {
+				tr: '#attribute-case',
+				dev: '#attribute-case',
+				mdn: 'Attribute_selectors',
 			},
-			"tests": ["[att$=val s]", "[att$=\"val\" s]", "[att$=val S]", "[att$=\"val\" S]"]
-		}
-	}
+			tests: ['[att$=val s]', '[att$="val" s]', '[att$=val S]', '[att$="val" S]'],
+		},
+	},
 };

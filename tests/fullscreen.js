@@ -1,24 +1,24 @@
 export default {
-	"title": "Fullscreen API",
-	"links": {
-		"dev": "fullscreen",
-		"devtype": "whatwg"
+	title: 'Fullscreen API',
+	links: {
+		dev: 'fullscreen',
+		devtype: 'whatwg',
 	},
-	"status": {
-		"stability": "experimental"
+	status: {
+		stability: 'experimental',
 	},
-	"selectors": {
-		"::backdrop": {
-			"links": {
-				"dev": "#::backdrop-pseudo-element"
+	selectors: {
+		'::backdrop': {
+			links: {
+				dev: '#::backdrop-pseudo-element',
 			},
-			"tests": "::backdrop"
+			tests: '::backdrop',
 		},
-		":fullscreen": {
-			"links": {
-				"dev": "#:fullscreen-pseudo-class"
+		':fullscreen': {
+			links: {
+				dev: '#:fullscreen-pseudo-class',
 			},
-			"tests": ":fullscreen"
-		}
-	}
+			tests: ':fullscreen',
+		},
+	},
 };

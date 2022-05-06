@@ -1,41 +1,41 @@
 export default {
-	"title": "CSS Scoping Module Level 1",
-	"links": {
-		"tr": "css-scoping-1",
-		"dev": "css-scoping-1"
+	title: 'CSS Scoping Module Level 1',
+	links: {
+		tr: 'css-scoping-1',
+		dev: 'css-scoping-1',
 	},
-	"status": {
-		"stability": "experimental"
+	status: {
+		stability: 'experimental',
 	},
-	"selectors": {
-		":host": {
-			"links": {
-				"tr": "#host-selector",
-				"dev": "#host-selector"
+	selectors: {
+		':host': {
+			links: {
+				tr: '#host-selector',
+				dev: '#host-selector',
 			},
-			"tests": ":host"
+			tests: ':host',
 		},
-		":host()": {
-			"links": {
-				"tr": "#host-selector",
-				"dev": "#host-selector",
-				"mdn": ":host()"
+		':host()': {
+			links: {
+				tr: '#host-selector',
+				dev: '#host-selector',
+				mdn: ':host()',
 			},
-			"tests": [":host(*)", ":host(.foo)"]
+			tests: [':host(*)', ':host(.foo)'],
 		},
-		":host-context()": {
-			"links": {
-				"tr": "#host-selector",
-				"dev": "#host-selector",
-				"mdn": ":host-context()"
+		':host-context()': {
+			links: {
+				tr: '#host-selector',
+				dev: '#host-selector',
+				mdn: ':host-context()',
 			},
-			"tests": [":host-context(*)", ":host-context(.foo)"]
+			tests: [':host-context(*)', ':host-context(.foo)'],
 		},
-		"::slotted()": {
-			"links": {
-				"dev": "#slotted-pseudo"
+		'::slotted()': {
+			links: {
+				dev: '#slotted-pseudo',
 			},
-			"tests": ["::slotted(*)", "::slotted(.foo)"]
-		}
-	}
+			tests: ['::slotted(*)', '::slotted(.foo)'],
+		},
+	},
 };

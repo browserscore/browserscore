@@ -1,47 +1,44 @@
 export default {
-	"title": "CSS Conditional Rules Module Level 5",
-	"links": {
-		"tr": "css-conditional-5",
-		"dev": "css-conditional-5"
+	title: 'CSS Conditional Rules Module Level 5',
+	links: {
+		tr: 'css-conditional-5',
+		dev: 'css-conditional-5',
 	},
-	"status": {
-		"stability": "experimental"
+	status: {
+		stability: 'experimental',
 	},
-	"@rules": {
-		"@supports": {
-			"links": {
-				"tr": "#at-supports-ext",
-				"dev": "#at-supports-ext"
+	'@rules': {
+		'@supports': {
+			links: {
+				tr: '#at-supports-ext',
+				dev: '#at-supports-ext',
 			},
-			"tests": [
-				"@supports font-tech(features-opentype) {}",
-				"@supports font-format(woff2) {}"
-			]
+			tests: ['@supports font-tech(features-opentype) {}', '@supports font-format(woff2) {}'],
 		},
-		"@when": {
-			"links": {
-				"tr": "#when-rule",
-				"dev": "#when-rule"
+		'@when': {
+			links: {
+				tr: '#when-rule',
+				dev: '#when-rule',
 			},
-			"tests": [
-				"@when media(min-width: 200px) {}",
-				"@when media(width >= 200px) {}",
-				"@when media(pointer) {}",
-				"@when supports(display: flex) {}"
-			]
+			tests: [
+				'@when media(min-width: 200px) {}',
+				'@when media(width >= 200px) {}',
+				'@when media(pointer) {}',
+				'@when supports(display: flex) {}',
+			],
 		},
-		"@else": {
-			"links": {
-				"tr": "#else-rule",
-				"dev": "#else-rule"
+		'@else': {
+			links: {
+				tr: '#else-rule',
+				dev: '#else-rule',
 			},
-			"tests": [
-				"@when media(min-width: 200px) {} @else {}",
-				"@when media(min-width: 200px) {} @else media(min-width: 100px) {}",
-				"@when media(min-width: 200px) {} @else media(min-width >= 100px) {}",
-				"@when media(min-width: 200px) {} @else supports(display: flex) {}",
-				"@when media(min-width: 200px) {} @else media(min-width: 100px) {} @else {}"
-			]
-		}
-	}
+			tests: [
+				'@when media(min-width: 200px) {} @else {}',
+				'@when media(min-width: 200px) {} @else media(min-width: 100px) {}',
+				'@when media(min-width: 200px) {} @else media(min-width >= 100px) {}',
+				'@when media(min-width: 200px) {} @else supports(display: flex) {}',
+				'@when media(min-width: 200px) {} @else media(min-width: 100px) {} @else {}',
+			],
+		},
+	},
 };

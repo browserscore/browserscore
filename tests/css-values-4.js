@@ -1,423 +1,420 @@
 export default {
-	"title": "CSS Values and Units Module Level 4",
-	"links": {
-		"tr": "css-values-4",
-		"dev": "css-values-4"
+	title: 'CSS Values and Units Module Level 4',
+	links: {
+		tr: 'css-values-4',
+		dev: 'css-values-4',
 	},
-	"status": {
-		"stability": "experimental"
+	status: {
+		stability: 'experimental',
 	},
-	"values": {
-		"properties": [
-			"width",
-			"padding"
-		],
-		"ex": {
-			"links": {
-				"tr": "#ex",
-				"dev": "#ex",
-				"mdn": "length"
+	values: {
+		properties: ['width', 'padding'],
+		ex: {
+			links: {
+				tr: '#ex',
+				dev: '#ex',
+				mdn: 'length',
 			},
-			"tests": "5ex"
+			tests: '5ex',
 		},
-		"rex": {
-			"links": {
-				"tr": "#rex",
-				"dev": "#rex",
-				"mdn": "length"
+		rex: {
+			links: {
+				tr: '#rex',
+				dev: '#rex',
+				mdn: 'length',
 			},
-			"tests": "5rex"
+			tests: '5rex',
 		},
-		"cap": {
-			"links": {
-				"tr": "#cap",
-				"dev": "#cap",
-				"mdn": "length"
+		cap: {
+			links: {
+				tr: '#cap',
+				dev: '#cap',
+				mdn: 'length',
 			},
-			"tests": "5cap"
+			tests: '5cap',
 		},
-		"rcap": {
-			"links": {
-				"tr": "#rcap",
-				"dev": "#rcap",
-				"mdn": "length"
+		rcap: {
+			links: {
+				tr: '#rcap',
+				dev: '#rcap',
+				mdn: 'length',
 			},
-			"tests": "5rcap"
+			tests: '5rcap',
 		},
-		"rch": {
-			"links": {
-				"tr": "#rch",
-				"dev": "#rcap",
-				"mdn": "length"
+		rch: {
+			links: {
+				tr: '#rch',
+				dev: '#rcap',
+				mdn: 'length',
 			},
-			"tests": "5rch"
+			tests: '5rch',
 		},
-		"rch": {
-			"links": {
-				"tr": "#rch",
-				"dev": "#rcap",
-				"mdn": "length"
+		rch: {
+			links: {
+				tr: '#rch',
+				dev: '#rcap',
+				mdn: 'length',
 			},
-			"tests": "5rch"
+			tests: '5rch',
 		},
-		"ic": {
-			"links": {
-				"tr": "#ic",
-				"dev": "#ic",
-				"mdn": "length"
+		ic: {
+			links: {
+				tr: '#ic',
+				dev: '#ic',
+				mdn: 'length',
 			},
-			"tests": "5ic"
+			tests: '5ic',
 		},
-		"ric": {
-			"links": {
-				"tr": "#ric",
-				"dev": "#ric",
-				"mdn": "length"
+		ric: {
+			links: {
+				tr: '#ric',
+				dev: '#ric',
+				mdn: 'length',
 			},
-			"tests": "5ric"
+			tests: '5ric',
 		},
-		"lh": {
-			"links": {
-				"tr": "#lh",
-				"dev": "#lh",
-				"mdn": "length"
+		lh: {
+			links: {
+				tr: '#lh',
+				dev: '#lh',
+				mdn: 'length',
 			},
-			"tests": "5lh"
+			tests: '5lh',
 		},
-		"rlh": {
-			"links": {
-				"tr": "#rlh",
-				"dev": "#rlh",
-				"mdn": "length"
+		rlh: {
+			links: {
+				tr: '#rlh',
+				dev: '#rlh',
+				mdn: 'length',
 			},
-			"tests": "5rlh"
+			tests: '5rlh',
 		},
-		"svh": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		svh: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5svh"
+			tests: '5svh',
 		},
-		"lvh": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		lvh: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5lvh"
+			tests: '5lvh',
 		},
-		"dvh": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		dvh: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5dvh"
+			tests: '5dvh',
 		},
-		"svw": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		svw: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5svw"
+			tests: '5svw',
 		},
-		"lvw": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		lvw: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5lvw"
+			tests: '5lvw',
 		},
-		"dvw": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		dvw: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5dvw"
+			tests: '5dvw',
 		},
-		"dvmin": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		dvmin: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5dvmin"
+			tests: '5dvmin',
 		},
-		"dvmax": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		dvmax: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5dvmax"
+			tests: '5dvmax',
 		},
-		"vb": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		vb: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5vb"
+			tests: '5vb',
 		},
-		"vi": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		vi: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5vi"
+			tests: '5vi',
 		},
-		"svb": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		svb: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5dvb"
+			tests: '5dvb',
 		},
-		"dvi": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		dvi: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5dvi"
+			tests: '5dvi',
 		},
-		"lvd": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		lvd: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5lvb"
+			tests: '5lvb',
 		},
-		"lvi": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		lvi: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5lvi"
+			tests: '5lvi',
 		},
-		"svb": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		svb: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5svb"
+			tests: '5svb',
 		},
-		"svi": {
-			"links": {
-				"tr": "#viewport-relative-lengths",
-				"dev": "#viewport-relative-lengths",
-				"mdn": "length"
+		svi: {
+			links: {
+				tr: '#viewport-relative-lengths',
+				dev: '#viewport-relative-lengths',
+				mdn: 'length',
 			},
-			"tests": "5svi"
+			tests: '5svi',
 		},
-		"toggle()": {
-			"links": {
-				"tr": "#toggle-notation",
-				"dev": "#toggle-notation"
+		'toggle()': {
+			links: {
+				tr: '#toggle-notation',
+				dev: '#toggle-notation',
 			},
-			"tests": ["toggle(1px, 2px)", "toggle(italic, normal)", "toggle(disc, circle, square, box)"]
+			tests: ['toggle(1px, 2px)', 'toggle(italic, normal)', 'toggle(disc, circle, square, box)'],
 		},
-		"min()": {
-			"links": {
-				"tr": "#calc-notation",
-				"dev": "#comp-func"
+		'min()': {
+			links: {
+				tr: '#calc-notation',
+				dev: '#comp-func',
 			},
-			"tests": ["min(10 * (1vw + 1vh) / 2, 12px)"]
+			tests: ['min(10 * (1vw + 1vh) / 2, 12px)'],
 		},
-		"max()": {
-			"links": {
-				"tr": "#calc-notation",
-				"dev": "#comp-func"
+		'max()': {
+			links: {
+				tr: '#calc-notation',
+				dev: '#comp-func',
 			},
-			"tests": ["max(10 * (1vw + 1vh) / 2, 12px)"]
+			tests: ['max(10 * (1vw + 1vh) / 2, 12px)'],
 		},
-		"clamp()": {
-			"links": {
-				"tr": "#calc-notation",
-				"dev": "#comp-func"
+		'clamp()': {
+			links: {
+				tr: '#calc-notation',
+				dev: '#comp-func',
 			},
-			"tests": ["clamp(12px, 10 * (1vw + 1vh) / 2, 100px)"]
+			tests: ['clamp(12px, 10 * (1vw + 1vh) / 2, 100px)'],
 		},
-		"calc()": {
-			"links": {
-				"tr": "#calc-func",
-				"dev": "#calc-func"
+		'calc()': {
+			links: {
+				tr: '#calc-func',
+				dev: '#calc-func',
 			},
-			"tests": [
-				"calc(1rem * pow(1.5, -1))",
-				"calc(pow(e, pi) - pi)",
-				"calc(-18px - sign(5px)*round(down, -18px*sign(5px), 5px))",
-				"calc(-18px - round(to-zero, -18px, 5px))"
-			]
+			tests: [
+				'calc(1rem * pow(1.5, -1))',
+				'calc(pow(e, pi) - pi)',
+				'calc(-18px - sign(5px)*round(down, -18px*sign(5px), 5px))',
+				'calc(-18px - round(to-zero, -18px, 5px))',
+			],
 		},
-		"round()": {
-			"links": {
-				"tr": "#round-func",
-				"dev": "#round-func"
+		'round()': {
+			links: {
+				tr: '#round-func',
+				dev: '#round-func',
 			},
-			"tests": [
-				"round(down, 5.5px, 5px)",
-				"up(down, 5.5px, 5px)",
-				"down(down, 5.5px, 5px)",
-				"round(to-zero, 5.5px, 5px)"
-			]
+			tests: [
+				'round(down, 5.5px, 5px)',
+				'up(down, 5.5px, 5px)',
+				'down(down, 5.5px, 5px)',
+				'round(to-zero, 5.5px, 5px)',
+			],
 		},
-		"mod()": {
-			"links": {
-				"tr": "#round-func",
-				"dev": "#round-func"
+		'mod()': {
+			links: {
+				tr: '#round-func',
+				dev: '#round-func',
 			},
-			"tests": ["mod(18px, 5px)", "mod(-140deg, -90deg)"]
+			tests: ['mod(18px, 5px)', 'mod(-140deg, -90deg)'],
 		},
-		"rem()": {
-			"links": {
-				"tr": "#round-func",
-				"dev": "#round-func"
+		'rem()': {
+			links: {
+				tr: '#round-func',
+				dev: '#round-func',
 			},
-			"tests": ["rem(140deg, -90deg)"]
+			tests: ['rem(140deg, -90deg)'],
 		},
-		"sin()": {
-			"links": {
-				"tr": "#trig-funcs",
-				"dev": "#trig-funcs"
+		'sin()': {
+			links: {
+				tr: '#trig-funcs',
+				dev: '#trig-funcs',
 			},
-			"tests": ["sin(45deg)", "sin(.125turn)", "sin(3.14159 / 4)"]
+			tests: ['sin(45deg)', 'sin(.125turn)', 'sin(3.14159 / 4)'],
 		},
-		"cos()": {
-			"links": {
-				"tr": "#trig-funcs",
-				"dev": "#trig-funcs"
+		'cos()': {
+			links: {
+				tr: '#trig-funcs',
+				dev: '#trig-funcs',
 			},
-			"tests": ["cos(45deg)", "cos(.125turn)", "cos(3.14159 / 4)"]
+			tests: ['cos(45deg)', 'cos(.125turn)', 'cos(3.14159 / 4)'],
 		},
-		"tan()": {
-			"links": {
-				"tr": "#trig-funcs",
-				"dev": "#trig-funcs"
+		'tan()': {
+			links: {
+				tr: '#trig-funcs',
+				dev: '#trig-funcs',
 			},
-			"tests": ["tan(1)"]
+			tests: ['tan(1)'],
 		},
-		"asin()": {
-			"links": {
-				"tr": "#trig-funcs",
-				"dev": "#trig-funcs"
+		'asin()': {
+			links: {
+				tr: '#trig-funcs',
+				dev: '#trig-funcs',
 			},
-			"tests": ["asin(1)"]
+			tests: ['asin(1)'],
 		},
-		"acos()": {
-			"links": {
-				"tr": "#trig-funcs",
-				"dev": "#trig-funcs"
+		'acos()': {
+			links: {
+				tr: '#trig-funcs',
+				dev: '#trig-funcs',
 			},
-			"tests": ["acos(-1)"]
+			tests: ['acos(-1)'],
 		},
-		"atan()": {
-			"links": {
-				"tr": "#trig-funcs",
-				"dev": "#trig-funcs"
+		'atan()': {
+			links: {
+				tr: '#trig-funcs',
+				dev: '#trig-funcs',
 			},
-			"tests": ["atan(-1)", "atan(tan(90deg))", "tan(atan(infinity))"]
+			tests: ['atan(-1)', 'atan(tan(90deg))', 'tan(atan(infinity))'],
 		},
-		"atan2()": {
-			"links": {
-				"tr": "#trig-funcs",
-				"dev": "#trig-funcs"
+		'atan2()': {
+			links: {
+				tr: '#trig-funcs',
+				dev: '#trig-funcs',
 			},
-			"tests": ["atan2(15deg, 90deg)"]
+			tests: ['atan2(15deg, 90deg)'],
 		},
-		"pow()": {
-			"links": {
-				"tr": "#exponent-funcs",
-				"dev": "#exponent-funcs"
+		'pow()': {
+			links: {
+				tr: '#exponent-funcs',
+				dev: '#exponent-funcs',
 			},
-			"tests": ["pow(1.5, -1)"]
+			tests: ['pow(1.5, -1)'],
 		},
-		"sqrt()": {
-			"links": {
-				"tr": "#exponent-funcs",
-				"dev": "#exponent-funcs"
+		'sqrt()': {
+			links: {
+				tr: '#exponent-funcs',
+				dev: '#exponent-funcs',
 			},
-			"tests": ["sqrt(2)"]
+			tests: ['sqrt(2)'],
 		},
-		"hypot()": {
-			"links": {
-				"tr": "#exponent-funcs",
-				"dev": "#exponent-funcs"
+		'hypot()': {
+			links: {
+				tr: '#exponent-funcs',
+				dev: '#exponent-funcs',
 			},
-			"tests": ["hypot(2)", "hypot(2, 2)"]
+			tests: ['hypot(2)', 'hypot(2, 2)'],
 		},
-		"log()": {
-			"links": {
-				"tr": "#exponent-funcs",
-				"dev": "#exponent-funcs"
+		'log()': {
+			links: {
+				tr: '#exponent-funcs',
+				dev: '#exponent-funcs',
 			},
-			"tests": ["log(2)"]
+			tests: ['log(2)'],
 		},
-		"exp()": {
-			"links": {
-				"tr": "#exponent-funcs",
-				"dev": "#exponent-funcs"
+		'exp()': {
+			links: {
+				tr: '#exponent-funcs',
+				dev: '#exponent-funcs',
 			},
-			"tests": ["exp(2)"]
+			tests: ['exp(2)'],
 		},
-		"abs()": {
-			"links": {
-				"tr": "#sign-funcs",
-				"dev": "#sign-funcs"
+		'abs()': {
+			links: {
+				tr: '#sign-funcs',
+				dev: '#sign-funcs',
 			},
-			"tests": ["abs(-2)"]
+			tests: ['abs(-2)'],
 		},
-		"sign()": {
-			"links": {
-				"tr": "#sign-funcs",
-				"dev": "#sign-funcs"
+		'sign()': {
+			links: {
+				tr: '#sign-funcs',
+				dev: '#sign-funcs',
 			},
-			"tests": ["sign(10%)"]
+			tests: ['sign(10%)'],
 		},
-		"e": {
-			"links": {
-				"tr": "#calc-constants",
-				"dev": "#calc-constants"
+		e: {
+			links: {
+				tr: '#calc-constants',
+				dev: '#calc-constants',
 			},
-			"tests": ["calc(e)"]
+			tests: ['calc(e)'],
 		},
-		"pi": {
-			"links": {
-				"tr": "#calc-constants",
-				"dev": "#calc-constants"
+		pi: {
+			links: {
+				tr: '#calc-constants',
+				dev: '#calc-constants',
 			},
-			"tests": ["calc(pi)"]
+			tests: ['calc(pi)'],
 		},
-		"infinity": {
-			"links": {
-				"tr": "#calc-error-constants",
-				"dev": "#ccalc-error-constants"
+		infinity: {
+			links: {
+				tr: '#calc-error-constants',
+				dev: '#ccalc-error-constants',
 			},
-			"tests": ["calc(infinity)"]
+			tests: ['calc(infinity)'],
 		},
-		"-infinity": {
-			"links": {
-				"tr": "#calc-error-constants",
-				"dev": "#ccalc-error-constants"
+		'-infinity': {
+			links: {
+				tr: '#calc-error-constants',
+				dev: '#ccalc-error-constants',
 			},
-			"tests": ["calc(-infinity)"]
+			tests: ['calc(-infinity)'],
 		},
-		"NaN": {
-			"links": {
-				"tr": "#calc-error-constants",
-				"dev": "#ccalc-error-constants"
+		NaN: {
+			links: {
+				tr: '#calc-error-constants',
+				dev: '#ccalc-error-constants',
 			},
-			"tests": ["calc(NaN)"]
-		}
-	}
+			tests: ['calc(NaN)'],
+		},
+	},
 };

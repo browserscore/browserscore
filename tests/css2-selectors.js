@@ -1,138 +1,141 @@
 export default {
-	"title": "CSS 2 Selectors",
-	"links": {
-		"tr": "CSS22/selector.html",
-		"dev": "css2/"
+	title: 'CSS 2 Selectors',
+	links: {
+		tr: 'CSS22/selector.html',
+		dev: 'css2/',
 	},
-	"status": {
-		"stability": "stable",
-		"first-snapshot": 1998,
-		"last-snapshot": 1998
+	status: {
+		stability: 'stable',
+		'first-snapshot': 1998,
+		'last-snapshot': 1998,
 	},
-	"selectors": {
-		"Universal selector": {
-			"links": {
-				"tr": "#universal-selector",
-				"dev": "#universal-selector"
+	selectors: {
+		'Universal selector': {
+			links: {
+				tr: '#universal-selector',
+				dev: '#universal-selector',
 			},
-			"tests": "*"
+			tests: '*',
 		},
-		"Type selector": {
-			"links": {
-				"tr": "#type-selectors",
-				"dev": "#type-selectors"
+		'Type selector': {
+			links: {
+				tr: '#type-selectors',
+				dev: '#type-selectors',
 			},
-			"tests": "h1"
+			tests: 'h1',
 		},
-		"Descendant selector": {
-			"links": {
-				"tr": "#descendant-selectors",
-				"dev": "#descendant-selectors"
+		'Descendant selector': {
+			links: {
+				tr: '#descendant-selectors',
+				dev: '#descendant-selectors',
 			},
-			"tests": "div p"
+			tests: 'div p',
 		},
-		"Child selector": {
-			"links": {
-				"tr": "#child-selectors",
-				"dev": "#child-selectors"
+		'Child selector': {
+			links: {
+				tr: '#child-selectors',
+				dev: '#child-selectors',
 			},
-			"tests": "div > p"
+			tests: 'div > p',
 		},
-		"Adjacent sibling selector": {
-			"links": {
-				"tr": "#adjacent-selectors",
-				"dev": "#adjacent-selectors"
+		'Adjacent sibling selector': {
+			links: {
+				tr: '#adjacent-selectors',
+				dev: '#adjacent-selectors',
 			},
-			"tests": "div + p"
+			tests: 'div + p',
 		},
-		"Attribute selectors": {
-			"links": {
-				"tr": "#attribute-selectors",
-				"dev": "#attribute-selectors"
+		'Attribute selectors': {
+			links: {
+				tr: '#attribute-selectors',
+				dev: '#attribute-selectors',
 			},
-			"tests": [
-				"[title]", "[title=example]", "[title=\"example\"]", "[rel~=copyright]",
-				"[rel~=\"copyright\"]", "[lang|=en]", "[lang|=\"en\"]"
-			]
+			tests: [
+				'[title]',
+				'[title=example]',
+				'[title="example"]',
+				'[rel~=copyright]',
+				'[rel~="copyright"]',
+				'[lang|=en]',
+				'[lang|="en"]',
+			],
 		},
-		"Class selector": {
-			"links": {
-				"tr": "#class-html",
-				"dev": "#class-html"
+		'Class selector': {
+			links: {
+				tr: '#class-html',
+				dev: '#class-html',
 			},
-			"tests": [
-				".class"
-			]
+			tests: ['.class'],
 		},
-		"ID selector": {
-			"links": {
-				"tr": "#id-selectors",
-				"dev": "#id-selectors"
+		'ID selector': {
+			links: {
+				tr: '#id-selectors',
+				dev: '#id-selectors',
 			},
-			"tests": "#id"
+			tests: '#id',
 		},
-		":first-child": {
-			"links": {
-				"tr": "#first-child",
-				"dev": "#first-child"
+		':first-child': {
+			links: {
+				tr: '#first-child',
+				dev: '#first-child',
 			},
-			"tests": ":first-child"
+			tests: ':first-child',
 		},
-		":link": {
-			"links": {
-				"tr": "#link-pseudo-classes",
-				"dev": "#link-pseudo-classes"
+		':link': {
+			links: {
+				tr: '#link-pseudo-classes',
+				dev: '#link-pseudo-classes',
 			},
-			"tests": ":link"
+			tests: ':link',
 		},
-		":visited": {
-			"links": {
-				"tr": "#link-pseudo-classes",
-				"dev": "#link-pseudo-classes"
+		':visited': {
+			links: {
+				tr: '#link-pseudo-classes',
+				dev: '#link-pseudo-classes',
 			},
-			"tests": ":visited"
+			tests: ':visited',
 		},
-		":hover": {
-			"links": {
-				"tr": "#dynamic-pseudo-classes",
-				"dev": "#dynamic-pseudo-classes"
+		':hover': {
+			links: {
+				tr: '#dynamic-pseudo-classes',
+				dev: '#dynamic-pseudo-classes',
 			},
-			"tests": ":hover"
+			tests: ':hover',
 		},
-		":active": {
-			"links": {
-				"tr": "#dynamic-pseudo-classes",
-				"dev": "#dynamic-pseudo-classes"
+		':active': {
+			links: {
+				tr: '#dynamic-pseudo-classes',
+				dev: '#dynamic-pseudo-classes',
 			},
-			"tests": ":active"
+			tests: ':active',
 		},
-		":focus": {
-			"links": {
-				"tr": "#dynamic-pseudo-classes",
-				"dev": "#dynamic-pseudo-classes"
+		':focus': {
+			links: {
+				tr: '#dynamic-pseudo-classes',
+				dev: '#dynamic-pseudo-classes',
 			},
-			"tests": ":focus"
+			tests: ':focus',
 		},
-		":lang()": {
-			"links": {
-				"tr": "#lang",
-				"dev": "#lang"
+		':lang()': {
+			links: {
+				tr: '#lang',
+				dev: '#lang',
 			},
-			"tests": [":lang(en)", ":lang(en-US)"]
+			tests: [':lang(en)', ':lang(en-US)'],
 		},
-		":first-line": {
-			"links": {
-				"tr": "#first-line-pseudo",
-				"dev": "#first-line-pseudo"
+		':first-line': {
+			links: {
+				tr: '#first-line-pseudo',
+				dev: '#first-line-pseudo',
 			},
-			"tests": ":first-line"
+			tests: ':first-line',
 		},
-		":first-letter": {
-			"links": {
-				"tr": "#first-letter",
-				"dev": "#first-letter"
+		':first-letter': {
+			links: {
+				tr: '#first-letter',
+				dev: '#first-letter',
 			},
-			"tests": ":first-letter"
-		}
-	}
+			tests: ':first-letter',
+		},
+	},
 };

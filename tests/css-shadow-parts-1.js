@@ -1,19 +1,19 @@
 export default {
-	"title": "CSS Shadow Parts",
-	"links": {
-		"tr": "css-shadow-parts-1",
-		"dev": "css-shadow-parts-1"
+	title: 'CSS Shadow Parts',
+	links: {
+		tr: 'css-shadow-parts-1',
+		dev: 'css-shadow-parts-1',
 	},
-	"status": {
-		"stability": "experimental"
+	status: {
+		stability: 'experimental',
 	},
-	"selectors": {
-		"::part()": {
-			"links": {
-				"tr": "#part",
-				"dev": "#part"
+	selectors: {
+		'::part()': {
+			links: {
+				tr: '#part',
+				dev: '#part',
 			},
-			"tests": ["::part(label)"]
-		}
-	}
+			tests: ['::part(label)'],
+		},
+	},
 };

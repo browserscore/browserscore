@@ -1,61 +1,61 @@
 export default {
-	"title": "CSS Pseudo-Elements Module Level 4",
-	"links": {
-		"tr": "css-pseudo-4",
-		"dev": "css-pseudo-4"
+	title: 'CSS Pseudo-Elements Module Level 4',
+	links: {
+		tr: 'css-pseudo-4',
+		dev: 'css-pseudo-4',
 	},
-	"status": {
-		"stability": "experimental"
+	status: {
+		stability: 'experimental',
 	},
-	"selectors": {
-		"::selection": {
-			"links": {
-				"tr": "#selectordef-selection",
-				"dev": "#selectordef-selection"
+	selectors: {
+		'::selection': {
+			links: {
+				tr: '#selectordef-selection',
+				dev: '#selectordef-selection',
 			},
-			"tests": ["::selection"]
+			tests: ['::selection'],
 		},
-		"::target-text": {
-			"links": {
-				"tr": "#selectordef-target-text",
-				"dev": "#selectordef-target-text"
+		'::target-text': {
+			links: {
+				tr: '#selectordef-target-text',
+				dev: '#selectordef-target-text',
 			},
-			"tests": ["::target-text"]
+			tests: ['::target-text'],
 		},
-		"::spelling-error": {
-			"links": {
-				"tr": "#selectordef-spelling-error",
-				"dev": "#selectordef-spelling-error"
+		'::spelling-error': {
+			links: {
+				tr: '#selectordef-spelling-error',
+				dev: '#selectordef-spelling-error',
 			},
-			"tests": ["::spelling-error"]
+			tests: ['::spelling-error'],
 		},
-		"::grammar-error": {
-			"links": {
-				"tr": "#selectordef-grammar-error",
-				"dev": "#selectordef-grammar-error"
+		'::grammar-error': {
+			links: {
+				tr: '#selectordef-grammar-error',
+				dev: '#selectordef-grammar-error',
 			},
-			"tests": ["::grammar-error"]
+			tests: ['::grammar-error'],
 		},
-		"::file-selector-button": {
-			"links": {
-				"tr": "#marker-pseudo",
-				"dev": "#marker-pseudo"
+		'::file-selector-button': {
+			links: {
+				tr: '#marker-pseudo',
+				dev: '#marker-pseudo',
 			},
-			"tests": ["::file-selector-button"]
+			tests: ['::file-selector-button'],
 		},
-		"::marker": {
-			"links": {
-				"tr": "#marker-pseudo",
-				"dev": "#marker-pseudo"
+		'::marker': {
+			links: {
+				tr: '#marker-pseudo',
+				dev: '#marker-pseudo',
 			},
-			"tests": ["::marker"]
+			tests: ['::marker'],
 		},
-		"::placeholder": {
-			"links": {
-				"tr": "#placeholder-pseudo",
-				"dev": "#placeholder-pseudo"
+		'::placeholder': {
+			links: {
+				tr: '#placeholder-pseudo',
+				dev: '#placeholder-pseudo',
 			},
-			"tests": ["::placeholder"]
-		}
-	}
+			tests: ['::placeholder'],
+		},
+	},
 };

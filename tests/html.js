@@ -1,18 +1,18 @@
 export default {
-	"title": "HTML Living Standard",
-	"links": {
-		"dev": "html",
-		"devtype": "whatwg"
+	title: 'HTML Living Standard',
+	links: {
+		dev: 'html',
+		devtype: 'whatwg',
 	},
-	"status": {
-		"stability": "experimental"
+	status: {
+		stability: 'experimental',
 	},
-	"selectors": {
-		":autofill": {
-			"links": {
-				"dev": "#selector-autofill"
+	selectors: {
+		':autofill': {
+			links: {
+				dev: '#selector-autofill',
 			},
-			"tests": ":autofill"
-		}
-	}
+			tests: ':autofill',
+		},
+	},
 };

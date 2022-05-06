@@ -1,46 +1,55 @@
 export default {
-	"title": "CSS Overscroll Behavior Module Level 1",
-	"links": {
-		"tr": "css-overscroll-1",
-		"dev": "css-overscroll-1"
+	title: 'CSS Overscroll Behavior Module Level 1',
+	links: {
+		tr: 'css-overscroll-1',
+		dev: 'css-overscroll-1',
 	},
-	"status": {
-		"stability": "experimental"
+	status: {
+		stability: 'experimental',
 	},
-	"properties": {
-		"overscroll-behavior": {
-			"links": {
-				"dev": "#overscroll-behavior-properties"
+	properties: {
+		'overscroll-behavior': {
+			links: {
+				dev: '#overscroll-behavior-properties',
 			},
-			"tests": [
-				"contain", "none", "auto", "contain contain", "none contain",
-				"auto contain", "contain none", "none none", "auto none",
-				"contain auto", "none auto", "auto auto"
-			]
+			tests: [
+				'contain',
+				'none',
+				'auto',
+				'contain contain',
+				'none contain',
+				'auto contain',
+				'contain none',
+				'none none',
+				'auto none',
+				'contain auto',
+				'none auto',
+				'auto auto',
+			],
 		},
-		"overscroll-behavior-x": {
-			"links": {
-				"dev": "#overscroll-behavior-longhands-physical"
+		'overscroll-behavior-x': {
+			links: {
+				dev: '#overscroll-behavior-longhands-physical',
 			},
-			"tests": ["contain", "none", "auto"]
+			tests: ['contain', 'none', 'auto'],
 		},
-		"overscroll-behavior-y": {
-			"links": {
-				"dev": "#overscroll-behavior-longhands-physical"
+		'overscroll-behavior-y': {
+			links: {
+				dev: '#overscroll-behavior-longhands-physical',
 			},
-			"tests": ["contain", "none", "auto"]
+			tests: ['contain', 'none', 'auto'],
 		},
-		"overscroll-behavior-inline": {
-			"links": {
-				"dev": "#overscroll-behavior-longhands-logical"
+		'overscroll-behavior-inline': {
+			links: {
+				dev: '#overscroll-behavior-longhands-logical',
 			},
-			"tests": ["contain", "none", "auto"]
+			tests: ['contain', 'none', 'auto'],
 		},
-		"overscroll-behavior-block": {
-			"links": {
-				"dev": "#overscroll-behavior-longhands-logical"
+		'overscroll-behavior-block': {
+			links: {
+				dev: '#overscroll-behavior-longhands-logical',
 			},
-			"tests": ["contain", "none", "auto"]
-		}
-	}
+			tests: ['contain', 'none', 'auto'],
+		},
+	},
 };
