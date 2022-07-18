@@ -74,7 +74,7 @@ export default {
 				tr: '#forced-colors',
 				dev: '#prefers-contrast',
 			},
-			tests: ['(forced-colors)', '(forced-colors: none)', '(forced-color: active)'],
+			tests: ['(forced-colors)', '(forced-colors: none)', '(forced-colors: active)'],
 		},
 		'dynamic-range': {
 			links: {
