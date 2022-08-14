@@ -252,7 +252,7 @@ export default {
 			},
 			tests: [
 				'calc(1rem * pow(1.5, -1))',
-				'calc(pow(e, pi) - pi)',
+				'calc(1rem * (pow(e, pi) - pi))',
 				'calc(-18px - sign(5px)*round(down, -18px*sign(5px), 5px))',
 				'calc(-18px - round(to-zero, -18px, 5px))',
 			],
@@ -264,8 +264,8 @@ export default {
 			},
 			tests: [
 				'round(down, 5.5px, 5px)',
-				'up(down, 5.5px, 5px)',
-				'down(down, 5.5px, 5px)',
+				'round(up, 5.5px, 5px)',
+				'round(nearest, 5.5px, 5px)',
 				'round(to-zero, 5.5px, 5px)',
 			],
 		},
@@ -274,147 +274,147 @@ export default {
 				tr: '#round-func',
 				dev: '#round-func',
 			},
-			tests: ['mod(18px, 5px)', 'mod(-140deg, -90deg)'],
+			tests: ['mod(18px, 5px)', 'calc(1px * sin(mod(-140deg, -90deg))'],
 		},
 		'rem()': {
 			links: {
 				tr: '#round-func',
 				dev: '#round-func',
 			},
-			tests: ['rem(140deg, -90deg)'],
+			tests: ['rem(-18px, 5px)'],
 		},
 		'sin()': {
 			links: {
 				tr: '#trig-funcs',
 				dev: '#trig-funcs',
 			},
-			tests: ['sin(45deg)', 'sin(.125turn)', 'sin(3.14159 / 4)'],
+			tests: ['calc(1px * sin(45deg)', 'calc(1px * sin(.125turn))', 'calc(1px * sin(3.14159 / 4))'],
 		},
 		'cos()': {
 			links: {
 				tr: '#trig-funcs',
 				dev: '#trig-funcs',
 			},
-			tests: ['cos(45deg)', 'cos(.125turn)', 'cos(3.14159 / 4)'],
+			tests: ['calc(1px * cos(45deg))', 'calc(1px * cos(.125turn))', 'calc(1px * cos(3.14159 / 4))'],
 		},
 		'tan()': {
 			links: {
 				tr: '#trig-funcs',
 				dev: '#trig-funcs',
 			},
-			tests: ['tan(1)'],
+			tests: ['calc(1px * tan(1))'],
 		},
 		'asin()': {
 			links: {
 				tr: '#trig-funcs',
 				dev: '#trig-funcs',
 			},
-			tests: ['asin(1)'],
+			tests: ['calc(1px * sin(asin(1)))'],
 		},
 		'acos()': {
 			links: {
 				tr: '#trig-funcs',
 				dev: '#trig-funcs',
 			},
-			tests: ['acos(-1)'],
+			tests: ['calc(1px * sin(acos(-1)))'],
 		},
 		'atan()': {
 			links: {
 				tr: '#trig-funcs',
 				dev: '#trig-funcs',
 			},
-			tests: ['atan(-1)', 'atan(tan(90deg))', 'tan(atan(infinity))'],
+			tests: ['calc(1px * sin(atan(-1)))', 'calc(1px * sin(atan(tan(90deg))))'],
 		},
 		'atan2()': {
 			links: {
 				tr: '#trig-funcs',
 				dev: '#trig-funcs',
 			},
-			tests: ['atan2(15deg, 90deg)'],
+			tests: ['calc(1px * sin(atan2(15deg, 90deg)))'],
 		},
 		'pow()': {
 			links: {
 				tr: '#exponent-funcs',
 				dev: '#exponent-funcs',
 			},
-			tests: ['pow(1.5, -1)'],
+			tests: ['calc(1px * pow(1.5, -1))'],
 		},
 		'sqrt()': {
 			links: {
 				tr: '#exponent-funcs',
 				dev: '#exponent-funcs',
 			},
-			tests: ['sqrt(2)'],
+			tests: ['calc(1px * sqrt(2))'],
 		},
 		'hypot()': {
 			links: {
 				tr: '#exponent-funcs',
 				dev: '#exponent-funcs',
 			},
-			tests: ['hypot(2)', 'hypot(2, 2)'],
+			tests: ['calc(1px * hypot(2))', 'calc(1px * hypot(2, 2))'],
 		},
 		'log()': {
 			links: {
 				tr: '#exponent-funcs',
 				dev: '#exponent-funcs',
 			},
-			tests: ['log(2)'],
+			tests: ['calc(1px * log(2))'],
 		},
 		'exp()': {
 			links: {
 				tr: '#exponent-funcs',
 				dev: '#exponent-funcs',
 			},
-			tests: ['exp(2)'],
+			tests: ['calc(1px * exp(2))'],
 		},
 		'abs()': {
 			links: {
 				tr: '#sign-funcs',
 				dev: '#sign-funcs',
 			},
-			tests: ['abs(-2)'],
+			tests: ['calc(1px * abs(-2))'],
 		},
 		'sign()': {
 			links: {
 				tr: '#sign-funcs',
 				dev: '#sign-funcs',
 			},
-			tests: ['sign(10%)'],
+			tests: ['calc(1px * sign(10%))'],
 		},
 		e: {
 			links: {
 				tr: '#calc-constants',
 				dev: '#calc-constants',
 			},
-			tests: ['calc(e)'],
+			tests: ['calc(1px * calc(e))'],
 		},
 		pi: {
 			links: {
 				tr: '#calc-constants',
 				dev: '#calc-constants',
 			},
-			tests: ['calc(pi)'],
+			tests: ['calc(1px * calc(pi))'],
 		},
 		infinity: {
 			links: {
 				tr: '#calc-error-constants',
 				dev: '#ccalc-error-constants',
 			},
-			tests: ['calc(infinity)'],
+			tests: ['calc(1px * sin(tan(atan(infinity))))'],
 		},
 		'-infinity': {
 			links: {
 				tr: '#calc-error-constants',
 				dev: '#ccalc-error-constants',
 			},
-			tests: ['calc(-infinity)'],
+			tests: ['calc(1px * sin(tan(atan(-infinity))))'],
 		},
 		NaN: {
 			links: {
 				tr: '#calc-error-constants',
 				dev: '#ccalc-error-constants',
 			},
-			tests: ['calc(NaN)'],
+			tests: ['calc(1px * sin(tan(atan(NaN))))'],
 		},
 	},
 };
