@@ -71,5 +71,17 @@ export default {
 				'bottom 20px',
 			],
 		},
+		'corner-shape': {
+			links: {
+				dev: '#corner-shaping',
+			},
+			tests: [
+				'round',
+				'angle',
+				'round angle',
+				'round angle round',
+				'round angle round angle',
+			],
+		},
 	},
 };
