@@ -85,6 +85,20 @@ export default {
 			},
 			tests: ':optional',
 		},
+		':user-invalid': {
+			links: {
+				tr: '#user-pseudos',
+				dev: '#user-pseudos',
+			},
+			tests: ':user-invalid',
+		},
+		':user-valid': {
+			links: {
+				tr: '#user-pseudos',
+				dev: '#user-pseudos',
+			},
+			tests: ':user-valid',
+		},
 		':read-only': {
 			links: {
 				tr: '#rw-pseudos',
@@ -98,6 +112,13 @@ export default {
 				dev: '#rw-pseudos',
 			},
 			tests: ':read-write',
+		},
+		':autofill': {
+			links: {
+				tr: '#autofill',
+				dev: '#autofill',
+			},
+			tests: ':autofill',
 		},
 		':focus-visible': {
 			links: {
@@ -140,6 +161,76 @@ export default {
 				dev: '#the-future-pseudo',
 			},
 			tests: ':future',
+		},
+		':playing': {
+			links: {
+				tr: '#selectordef-playing',
+				dev: '#selectordef-playing',
+			},
+			tests: ':playing',
+		},
+		':paused': {
+			links: {
+				tr: '#selectordef-paused',
+				dev: '#selectordef-paused',
+			},
+			tests: ':paused',
+		},
+		':muted': {
+			links: {
+				tr: '#selectordef-muted',
+				dev: '#selectordef-muted',
+			},
+			tests: ':muted',
+		},
+		':volume-locked': {
+			links: {
+				tr: '#selectordef-volume-locked',
+				dev: '#selectordef-volume-locked',
+			},
+			tests: ':volume-locked',
+		},
+		':seeking': {
+			links: {
+				tr: '#selectordef-seeking',
+				dev: '#selectordef-seeking',
+			},
+			tests: ':seeking',
+		},
+		':buffering': {
+			links: {
+				tr: '#selectordef-buffering',
+				dev: '#selectordef-buffering',
+			},
+			tests: ':buffering',
+		},
+		':stalled': {
+			links: {
+				tr: '#selectordef-stalled',
+				dev: '#selectordef-stalled',
+			},
+			tests: ':stalled',
+		},
+		':modal': {
+			links: {
+				tr: '#modal-state',
+				dev: '#modal-state',
+			},
+			tests: ':modal',
+		},
+		':fullscreen': {
+			links: {
+				tr: '#fullscreen-state',
+				dev: '#fullscreen-state',
+			},
+			tests: ':fullscreen',
+		},
+		':picture-in-picture': {
+			links: {
+				tr: '#pip-state',
+				dev: '#pip-state',
+			},
+			tests: ':picture-in-picture',
 		},
 		':scope': {
 			links: {

@@ -14,11 +14,5 @@ export default {
 			},
 			tests: '::backdrop',
 		},
-		':fullscreen': {
-			links: {
-				dev: '#:fullscreen-pseudo-class',
-			},
-			tests: ':fullscreen',
-		},
 	},
 };
