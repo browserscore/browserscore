@@ -85,7 +85,7 @@ export default {
 			links: {
 				tr: '#the-hwb-notation',
 				dev: '#the-hwb-notation',
-				mdn: 'color_value/hwb()',
+				mdn: 'color_value/hwb',
 			},
 			tests: ['hwb(0 0% 0%)', 'hwb(0 0% 0% / .5)'],
 		},
@@ -93,7 +93,7 @@ export default {
 			links: {
 				tr: '#specifying-lab-lch',
 				dev: '#specifying-lab-lch',
-				mdn: 'color_value/lab()',
+				mdn: 'color_value/lab',
 			},
 			tests: ['lab(0% 0 0)', 'lab(0% 0 0 /.5)'],
 		},
@@ -101,7 +101,7 @@ export default {
 			links: {
 				tr: '#specifying-oklab-lch',
 				dev: '#specifying-oklab-lch',
-				mdn: 'color_value/oklab()',
+				mdn: 'color_value/oklab',
 			},
 			tests: ['oklab(0% 0 0)', 'oklab(40.101% 0.1147 0.0453 / .5)'],
 		},
@@ -110,7 +110,7 @@ export default {
 			links: {
 				tr: '#specifying-lch-lch',
 				dev: '#specifying-lch-lch',
-				mdn: 'color_value/lch()',
+				mdn: 'color_value/lch',
 			},
 			tests: ['lch(0% 0 0)', 'lch(none 0% none)', 'lch(0% 0 0 / .5)'],
 		},
@@ -118,7 +118,7 @@ export default {
 			links: {
 				tr: '#specifying-oklch-lch',
 				dev: '#specifying-oklch-lch',
-				mdn: 'color_value/oklch()',
+				mdn: 'color_value/oklch',
 			},
 			tests: ['oklch(0% 0 0)', 'oklch(40.101% 0.12332 21.555 / .5)'],
 		},
@@ -126,7 +126,7 @@ export default {
 			links: {
 				tr: '#color-function',
 				dev: '#color-function',
-				mdn: 'color_value/color()',
+				mdn: 'color_value/color',
 			},
 			tests: [
 				'color(.2 .4 .6)',
@@ -152,7 +152,7 @@ export default {
 			links: {
 				tr: '#cmyk-colors',
 				dev: '#cmyk-colors',
-				mdn: 'color_value/device-cmyk()',
+				mdn: 'color_value/device-cmyk',
 			},
 			tests: ['device-cmyk(.2 .3 .4 .5)', 'device-cmyk(.2 .3 .4 .5 / .5)', 'device-cmyk(.2 .3 .4 .5 / 50%)'],
 		},

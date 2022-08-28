@@ -11,7 +11,7 @@ export default {
 		'color-mix()': {
 			links: {
 				dev: '#color-mix',
-				mdn: 'color_value',
+				mdn: 'color_value/color-mix',
 			},
 			tests: [
 				'color-mix(in srgb, teal 65%, olive)',
@@ -28,7 +28,7 @@ export default {
 		'color-contrast()': {
 			links: {
 				dev: '#colorcontrast',
-				mdn: 'color_value',
+				mdn: 'color_value/color-contrast',
 			},
 			tests: [
 				'color-contrast(wheat vs tan, sienna, #b22222, #d2691e)',
