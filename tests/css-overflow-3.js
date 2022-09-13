@@ -8,6 +8,13 @@ export default {
 		stability: 'experimental',
 	},
 	properties: {
+		'block-ellipsis': {
+			links: {
+				tr: '#block-ellipsis',
+				dev: '#block-ellipsis',
+			},
+			tests: ['none', 'auto', '"… (continued on next page)"'],
+		},
 		'line-clamp': {
 			links: {
 				tr: '#line-clamp',
