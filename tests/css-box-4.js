@@ -13,7 +13,22 @@ export default {
 				tr: '#margin-trim',
 				dev: '#margin-trim',
 			},
-			tests: ['none', 'in-flow', 'all'],
+			tests: [
+				'none',
+				'block',
+				'inline',
+				'block-start',
+				'inline-start',
+				'block-end',
+				'inline-end',
+				'block-start inline-start',
+				'block-end inline-start',
+				'block-end inline-start',
+				'block-end inline-end',
+				'block-start inline-start inline-end',
+				'block-start block-end inline-start inline-end',
+			],
 		},
 	},
 };
+// none | block | inline | [ block-start || inline-start || block-end || inline-end ]
