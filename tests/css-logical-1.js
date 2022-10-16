@@ -36,13 +36,6 @@ export default {
 			},
 			tests: ['start', 'end'],
 		},
-		resize: {
-			links: {
-				tr: '#resize',
-				dev: '#resize',
-			},
-			tests: ['block', 'inline'],
-		},
 		'block-size': {
 			links: {
 				tr: '#dimension-properties',

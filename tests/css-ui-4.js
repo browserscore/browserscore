@@ -44,7 +44,7 @@ export default {
 				tr: '#input-security',
 				dev: '#input-security',
 			},
-			tests: ['auto', 'red'],
+			tests: ['auto', 'none'],
 		},
 		caret: {
 			links: {
@@ -59,6 +59,23 @@ export default {
 				dev: '#caret-shape',
 			},
 			tests: ['auto', 'bar', 'block', 'underscore'],
+		},
+		cursor: {
+			links: {
+				tr: '#cursor',
+				dev: '#cursor',
+			},
+			tests: [
+				'image-set(url("foo.png") 1x, url("foo-2x.png") 2x) 2 2, auto',
+				'image-set(url("foo.png") 96dpi, url("foo-2x.png") 192dpi) 2 2, auto',
+			],
+		},
+		resize: {
+			links: {
+				tr: '#resize',
+				dev: '#resize',
+			},
+			tests: ['block', 'inline'],
 		},
 		'text-overflow': {
 			links: {
@@ -120,28 +137,63 @@ export default {
 				tr: '#nav-dir',
 				dev: '#nav-dir',
 			},
-			tests: ['auto', '#foo', '#foo current', '#foo root'],
+			tests: [
+				'auto',
+				'#foo',
+				'#foo current',
+				'#foo root',
+				'#foo "bar"',
+				"#foo 'bar'",
+			],
 		},
 		'nav-right': {
 			links: {
 				tr: '#nav-dir',
 				dev: '#nav-dir',
 			},
-			tests: ['auto', '#foo', '#foo current', '#foo root'],
+			tests: [
+				'auto',
+				'#foo',
+				'#foo current',
+				'#foo root',
+				'#foo "bar"',
+				"#foo 'bar'",
+			],
 		},
 		'nav-down': {
 			links: {
 				tr: '#nav-dir',
 				dev: '#nav-dir',
 			},
-			tests: ['auto', '#foo', '#foo current', '#foo root'],
+			tests: [
+				'auto',
+				'#foo',
+				'#foo current',
+				'#foo root',
+				'#foo "bar"',
+				"#foo 'bar'",
+			],
 		},
 		'nav-left': {
 			links: {
 				tr: '#nav-dir',
 				dev: '#nav-dir',
 			},
-			tests: ['auto', '#foo', '#foo current', '#foo root'],
+			tests: [
+				'auto',
+				'#foo',
+				'#foo current',
+				'#foo root',
+				'#foo "bar"',
+				"#foo 'bar'",
+			],
+		},
+		'pointer-events': {
+			links: {
+				tr: '#pointer-events-control',
+				dev: '#pointer-events-control',
+			},
+			tests: ['auto', 'none']
 		},
 	},
 };
