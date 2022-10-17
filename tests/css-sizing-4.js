@@ -20,35 +20,47 @@ export default {
 				tr: '#propdef-contain-intrinsic-size',
 				dev: '#propdef-contain-intrinsic-size',
 			},
-			tests: ['none', '10px', '10px 15px'],
+			tests: ['none', '10px', 'auto 10px', '10px 15px', 'auto 10px auto 15px'],
 		},
 		'contain-intrinsic-width': {
 			links: {
 				tr: '#intrinsic-size-override',
 				dev: '#intrinsic-size-override',
 			},
-			tests: ['none', '10px'],
+			tests: ['none', '10px', 'auto 10px'],
 		},
 		'contain-intrinsic-height': {
 			links: {
 				tr: '#intrinsic-size-override',
 				dev: '#intrinsic-size-override',
 			},
-			tests: ['none', '10px'],
+			tests: ['none', '10px', 'auto 10px'],
 		},
 		'contain-intrinsic-block-size': {
 			links: {
 				tr: '#intrinsic-size-override',
 				dev: '#intrinsic-size-override',
 			},
-			tests: ['none', '10px'],
+			tests: ['none', '10px', 'auto 10px'],
 		},
 		'contain-intrinsic-inline-size': {
 			links: {
 				tr: '#intrinsic-size-override',
 				dev: '#intrinsic-size-override',
 			},
-			tests: ['none', '10px'],
+			tests: ['none', '10px', 'auto 10px'],
+		},
+		'min-intrinsic-sizing': {
+			links: {
+				tr: '#intrinsic-contribution-override',
+				dev: '#intrinsic-contribution-override',
+			},
+			tests: [
+				'legacy',
+				'zero-if-scroll',
+				'zero-if-extrinsic',
+				'zero-if-scroll zero-if-extrinsic'
+			],
 		},
 		width: {
 			links: {
