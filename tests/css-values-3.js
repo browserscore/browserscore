@@ -66,13 +66,6 @@ export default {
 			},
 			tests: '5Q',
 		},
-		'attr()': {
-			links: {
-				tr: '#attr-notation',
-				dev: '#attr-notation',
-			},
-			tests: ['attr(data-px)', 'attr(data-px px)', 'attr(data-px px, initial)'],
-		},
 		'calc()': {
 			links: {
 				tr: '#calc-notation',

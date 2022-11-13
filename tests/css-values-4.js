@@ -217,13 +217,6 @@ export default {
 			},
 			tests: '5svi',
 		},
-		'toggle()': {
-			links: {
-				tr: '#toggle-notation',
-				dev: '#toggle-notation',
-			},
-			tests: ['toggle(1px, 2px)', 'toggle(italic, normal)', 'toggle(disc, circle, square, box)'],
-		},
 		'min()': {
 			links: {
 				tr: '#calc-notation',
