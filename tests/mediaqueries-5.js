@@ -8,6 +8,18 @@ export default {
 		stability: 'experimental',
 	},
 	'Media queries': {
+		'display-mode': {
+			links: {
+				tr: '#display-modes',
+				dev: '#display-modes',
+			},
+			tests: [
+				'(display-mode: fullscreen)',
+				'(display-mode: standalone)',
+				'(display-mode: minimal-ui)',
+				'(display-mode: browser)',
+			],
+		},
 		'prefers-reduced-motion': {
 			links: {
 				tr: '#prefers-reduced-motion',
@@ -83,12 +95,33 @@ export default {
 			},
 			tests: ['(dynamic-range)', '(dynamic-range: standard)', '(dynamic-range: high)'],
 		},
+		'horizontal-viewport-segments': {
+			links: {
+				tr: '#mf-horizontal-viewport-segments',
+				dev: '#mf-horizontal-viewport-segments',
+			},
+			tests: ['(horizontal-viewport-segments: 2)'],
+		},
+		'vertical-viewport-segments': {
+			links: {
+				tr: '#mf-vertical-viewport-segments',
+				dev: '#mf-vertical-viewport-segments',
+			},
+			tests: ['(vertical-viewport-segments: 2)'],
+		},
 		'inverted-colors': {
 			links: {
 				tr: '#inverted',
 				dev: '#inverted',
 			},
 			tests: ['(inverted-colors)', '(inverted-colors: none)', '(light-level: inverted)'],
+		},
+		'nav-controls': {
+			links: {
+				tr: '#nav-controls',
+				dev: '#nav-controls',
+			},
+			tests: ['(nav-controls)', '(nav-controls: none)', '(nav-controls: back)'],
 		},
 		'video-color-gamut': {
 			links: {
