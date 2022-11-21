@@ -6,6 +6,7 @@ export default {
 	},
 	status: {
 		stability: 'stable',
+		'first-snapshot': 2022,
 	},
 	values: {
 		properties: ['color', 'background-color', 'border-color', 'text-decoration-color', 'column-rule-color'],
