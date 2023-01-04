@@ -9,7 +9,7 @@ export default {
 		'first-snapshot': 2015,
 	},
 	values: {
-		properties: ['background-image', 'list-style-image', 'border-image', 'cursor', 'content'],
+		properties: ['background-image', 'list-style-image', 'border-image', 'content'],
 		'linear-gradient()': {
 			links: {
 				tr: '#linear-gradients',
