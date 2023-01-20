@@ -314,6 +314,13 @@ export default {
 			},
 			tests: [':nth-child(-n+3 of li.important)', ':nth-child(even of :not([hidden])'],
 		},
+		':nth-last-child()': {
+			links: {
+				tr: '#the-nth-last-child-pseudo',
+				dev: '#the-nth-last-child-pseudo',
+			},
+			tests: [':nth-last-child(-n+3 of li.important)', ':nth-last-child(even of :not([hidden])'],
+		},
 		'||': {
 			links: {
 				tr: '#the-column-combinator',
