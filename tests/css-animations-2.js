@@ -54,8 +54,8 @@ export default {
 		},
 		animation: {
 			links: {
-				tr: '#animation-timeline',
-				dev: '#animation-timeline',
+				tr: '#animation-shorthand',
+				dev: '#animation-shorthand',
 			},
 			tests: ['1s both infinite auto'],
 		},
