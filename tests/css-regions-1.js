@@ -30,4 +30,64 @@ export default {
 			tests: ['auto', 'break'],
 		},
 	},
+	interfaces: {
+		Document: {
+			links: {
+				tr: '#the-namedflow-interface',
+				dev: '#the-namedflow-interface',
+				mdnGroup: 'DOM',
+			},
+			tests: ['namedFlows'],
+			interface: function() {
+				return document;
+			}
+		},
+		Element: {
+			links: {
+				tr: '#the-region-interface',
+				dev: '#the-region-interface',
+				mdnGroup: 'DOM',
+			},
+			tests: ['regionOverset', 'getRegionFlowRanges'],
+			interface: function() {
+				return document.body;
+			}
+		},
+		NamedFlowMap: {
+			links: {
+				dev: '#namedflowmap',
+				mdnGroup: 'DOM',
+			},
+			tests: [
+				'has',
+				'get',
+				'set',
+				'keys',
+				'values',
+				'entries',
+				'forEach',
+			],
+			interface: function() {
+				return document.namedFlows;
+			}
+		},
+		NamedFlow: {
+			links: {
+				dev: '#namedflow',
+				mdnGroup: 'DOM',
+			},
+			tests: [
+				'name',
+				'overset',
+				'getRegions',
+				'firstEmptyRegionIndex',
+				'getContent',
+				'getRegionsByContent',
+			],
+			required: 'div { flow-from: --named-flow; }',
+			interface: function() {
+				return document.namedFlows.get('--named-flow');
+			}
+		},
+	},
 };

@@ -65,4 +65,28 @@ export default {
 			],
 		},
 	},
+	interfaces: {
+		Document: {
+			links: {
+				tr: '#additions-to-document-api',
+				dev: '#additions-to-document-api',
+				mdnGroup: 'DOM',
+			},
+			tests: ['startViewTransition'],
+			interface: function() {
+				return document;
+			},
+		},
+		ViewTransition: {
+			links: {
+				tr: '#the-domtransition-interface',
+				dev: '#the-domtransition-interface',
+				mdnGroup: 'DOM',
+			},
+			tests: ['updateCallbackDone', 'ready', 'finished', 'skipTransition'],
+			interface: function() {
+				return document.startViewTransition();
+			},
+		},
+	},
 };

@@ -58,4 +58,28 @@ export default {
 			tests: ['::placeholder'],
 		},
 	},
+	interfaces: {
+		Element: {
+			links: {
+				tr: '#window-interface',
+				dev: '#window-interface',
+				mdnGroup: 'DOM',
+			},
+			tests: ['pseudo'],
+			interface: function() {
+				return document.body;
+			},
+		},
+		CSSPseudoElement: {
+			links: {
+				tr: '#CSSPseudoElement-interface',
+				dev: '#CSSPseudoElement-interface',
+				mdnGroup: 'DOM',
+			},
+			tests: ['type', 'element', 'parent', 'pseudo'],
+			interface: function() {
+				return document.body.pseudo('::selection');
+			},
+		},
+	},
 };

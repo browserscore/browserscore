@@ -154,4 +154,45 @@ export default {
 			tests: ['auto', 'bullets', 'numbers', 'words', 'spell-out', 'example-counter'],
 		},
 	},
+	interfaces: {
+		CSSRule: {
+			links: {
+				tr: '#extensions-to-cssrule-interface',
+				dev: '#extensions-to-cssrule-interface',
+				mdnGroup: 'DOM',
+			},
+			tests: ['COUNTER_STYLE_RULE'],
+			required: 'div { }',
+			interface: function(style) {
+				return style.sheet.cssRules[0];
+			}
+		},
+		CSSCounterStyleRule: {
+			links: {
+				tr: '#the-csscounterstylerule-interface',
+				dev: '#the-csscounterstylerule-interface',
+				mdnGroup: 'DOM',
+			},
+			tests: [
+				'name',
+				'system',
+				'symbols',
+				'additiveSymbols',
+				'negative',
+				'prefix',
+				'suffix',
+				'range',
+				'pad',
+				'speakAs',
+				'fallback',
+				'cssText',
+				'parentRule',
+				'parentStyleSheet',
+			],
+			required: '@counter-style example { system: alphabetic; symbols: A B C D; additive-symbols: 1000 M, 500 C; }',
+			interface: function(style) {
+				return style.sheet.cssRules[0];
+			}
+		},
+	},
 };

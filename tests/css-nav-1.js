@@ -30,4 +30,36 @@ export default {
 			tests: ['normal', 'grid'],
 		},
 	},
+	interfaces: {
+		Window: {
+			links: {
+				tr: '#high-level-api',
+				dev: '#high-level-api',
+				mdnGroup: 'DOM',
+			},
+			tests: ['navigate'],
+			interface: function() {
+				return window;
+			}
+		},
+		Element: {
+			links: {
+				tr: '#low-level-api',
+				dev: '#low-level-api',
+				mdnGroup: 'DOM',
+			},
+			tests: ['getSpatialNavigationContainer', 'focusableAreas', 'spatialNavigationSearch'],
+			interface: function() {
+				return document.body;
+			}
+		},
+		NavigationEvent: {
+			links: {
+				tr: '#events-navigationevent',
+				dev: '#events-navigationevent',
+				mdnGroup: 'DOM',
+			},
+			tests: ['NavigationEvent'],
+		},
+	},
 };

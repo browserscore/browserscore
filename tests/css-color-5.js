@@ -46,4 +46,14 @@ export default {
 			],
 		},
 	},
+	interfaces: {
+		CSSColorProfileRule: {
+			links: {
+				dev: '#the-csscolorprofilerule-interface',
+				mdnGroup: 'DOM',
+			},
+			tests: ['name', 'src', 'renderingIntent', 'components', 'cssText', 'parentRule', 'parentStyleSheet'],
+			required: '@color-profile { name: "sRGB"; src: url("sRGB.icc"); }',
+		},
+	}
 };

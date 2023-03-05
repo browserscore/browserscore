@@ -217,4 +217,15 @@ export default {
 			tests: "@font-face {\n  font-family: foo;\n  src: local('Arial');\n}",
 		},
 	},
+	interfaces: {
+		CSSFontFaceRule: {
+			links: {
+				tr: '#om-fontface',
+				dev: '#om-fontface',
+				mdnGroup: 'DOM',
+			},
+			tests: ['style', 'cssText', 'parentRule', 'parentStyleSheet'],
+			required: '@font-face { font-family: "Foo"; src: local("Foo") }',
+		},
+	},
 };

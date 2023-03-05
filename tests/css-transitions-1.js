@@ -56,4 +56,25 @@ export default {
 			tests: '1s 2s width linear',
 		},
 	},
+	interfaces: {
+		TransitionEvent: {
+			links: {
+				tr: '#interface-transitionevent',
+				dev: '#interface-transitionevent',
+				mdnGroup: 'DOM',
+			},
+			tests: ['TransitionEvent'],
+		},
+		Element: {
+			links: {
+				tr: '#interface-dom',
+				dev: '#interface-dom',
+				mdnGroup: 'DOM',
+			},
+			tests: ['ontransitionstart', 'ontransitionrun', 'ontransitionend', 'ontransitioncancel'],
+			interface: function() {
+				return document.body;
+			},
+		},
+	},
 };

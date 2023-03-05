@@ -96,4 +96,58 @@ export default {
 			],
 		},
 	},
+	interfaces: {
+		AnimationEvent: {
+			links: {
+				tr: '#interface-animationevent',
+				dev: '#interface-animationevent',
+				mdnGroup: 'DOM',
+			},
+			tests: ['AnimationEvent'],
+		},
+		CSSRule: {
+			links: {
+				tr: '#interface-cssrule',
+				dev: '#interface-cssrule',
+				mdnGroup: 'DOM',
+			},
+			tests: [
+				'KEYFRAMES_RULE',
+				'KEYFRAME_RULE',
+			],
+			required: 'div { }',
+			interface: function(style) {
+				return style.sheet.cssRules[0];
+			}
+		},
+		CSSKeyframesRule: {
+			links: {
+				tr: '#interface-csskeyframesrule',
+				dev: '#interface-csskeyframesrule',
+				mdnGroup: 'DOM',
+			},
+			tests: ['name', 'cssRules', 'length', 'appendRule', 'deleteRule', 'findRule'],
+			required: '@keyframes foo { from {} to {} }',
+		},
+		CSSKeyframeRule: {
+			links: {
+				tr: '#interface-csskeyframerule',
+				dev: '#interface-csskeyframerule',
+				mdnGroup: 'DOM',
+			},
+			tests: ['keyText', 'style'],
+			required: '@keyframes foo { from {} to {} }',
+		},
+		Element: {
+			links: {
+				tr: '#interface-globaleventhandlers',
+				dev: '#interface-globaleventhandlers',
+				mdnGroup: 'DOM',
+			},
+			tests: ['onanimationstart', 'onanimationiteration', 'onanimationend', 'onanimationcancel'],
+			interface: function(style) {
+				return document.body;
+			},
+		}
+	},
 };

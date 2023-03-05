@@ -56,4 +56,42 @@ export default {
 			],
 		},
 	},
+	interfaces: {
+		ScrollTimeline: {
+			links: {
+				tr: '#scrolltimeline',
+				dev: '#scrolltimeline',
+				mdnGroup: 'DOM',
+			},
+			tests: ['source', 'axis'],
+			interface: function() {
+				return new ScrollTimeline({
+					source: document.scrollingElement,
+				});
+			}
+		},
+		ViewTimeline: {
+			links: {
+				tr: '#viewtimeline',
+				dev: '#viewtimeline',
+				mdnGroup: 'DOM',
+			},
+			tests: ['subject', 'startOffset', 'endOffset'],
+			interface: function() {
+				return new ViewTimeline({
+					source: document.scrollingElement,
+				});
+			}
+		},
+		AnimationTimeline: {
+			links: {
+				dev: '#named-range-get-time',
+				mdnGroup: 'DOM',
+			},
+			tests: ['getCurrentTime'],
+			interface: function() {
+				return document.timeline;
+			},
+		},
+	},
 };

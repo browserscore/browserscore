@@ -358,4 +358,84 @@ export default {
 			tests: ['auto', 'block', 'swap', 'fallback', 'optional'],
 		},
 	},
+	interfaces: {
+		CSSRule: {
+			links: {
+				tr: '#om-fontfeaturevalues',
+				dev: '#om-fontfeaturevalues',
+				mdnGroup: 'DOM',
+			},
+			tests: ['FONT_FEATURE_VALUES_RULE'],
+			required: 'div { }',
+			interface: function(style) {
+				return style.sheet.cssRules[0];
+			}
+		},
+		CSSFontFeatureValuesRule: {
+			links: {
+				tr: '#om-fontfeaturevalues',
+				dev: '#om-fontfeaturevalues',
+				mdnGroup: 'DOM',
+			},
+			tests: [
+				'fontFamily',
+				'annotation',
+				'ornaments',
+				'stylistic',
+				'swash',
+				'characterVariant',
+				'styleset',
+				'cssText',
+				'parentRule',
+				'parentStyleSheet',
+			],
+			required: '@font-feature-values Font One { @styleset { nice-style: 12; } }',
+			interface: function(style) {
+				return style.sheet.cssRules[0];
+			}
+		},
+		CSSFontFeatureValuesMap: {
+			links: {
+				tr: '#cssfontfeaturevaluesmap',
+				dev: '#cssfontfeaturevaluesmap',
+				mdnGroup: 'DOM',
+			},
+			tests: [
+				'has',
+				'get',
+				'set',
+				'keys',
+				'values',
+				'entries',
+				'forEach',
+				'clear',
+				'delete',
+				'size',
+			],
+			required: '@font-feature-values Font One { @styleset { nice-style: 12; } }',
+			interface: function(style) {
+				return style.sheet.cssRules[0].styleset;
+			},
+		},
+		CSSFontPaletteValuesRule: {
+			links: {
+				tr: '#om-fontpalettevalues',
+				dev: '#om-fontpalettevalues',
+				mdnGroup: 'DOM',
+			},
+			tests: [
+				'name',
+				'fontFamily',
+				'basePalette',
+				'overrideColors',
+				'cssText',
+				'parentRule',
+				'parentStyleSheet',
+			],
+			required: '@font-palette-values --identifier { font-family: foo; override-colors: 0 #00ffbb, 1 #007744; }',
+			interface: function(style) {
+				return style.sheet.cssRules[0];
+			}
+		},
+	},
 };

@@ -117,4 +117,17 @@ export default {
 			],
 		},
 	},
+	interfaces: {
+		CSS: {
+			links: {
+				tr: '#elementsources',
+				dev: '#elementsources',
+				mdnGroup: 'DOM',
+			},
+			tests: ['elementSources'],
+			interface: function() {
+				return CSS;
+			}
+		},
+	},
 };

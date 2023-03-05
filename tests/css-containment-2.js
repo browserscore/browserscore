@@ -23,4 +23,13 @@ export default {
 			tests: ['visible', 'auto', 'hidden'],
 		},
 	},
+	interfaces: {
+		ContentVisibilityAutoStateChangeEvent: {
+			links: {
+				dev: '#content-visibility-auto-state-change',
+				mdnGroup: 'DOM',
+			},
+			tests: ['ContentVisibilityAutoStateChangeEvent'],
+		},
+	}
 };

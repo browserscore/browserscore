@@ -113,4 +113,18 @@ export default {
 			tests: ['none', 'style', 'x / size', 'x y / size', 'x / size style'],
 		},
 	},
+	interfaces: {
+		CSSContainerRule: {
+			links: {
+				tr: '#the-csscontainerrule-interface',
+				dev: '#the-csscontainerrule-interface',
+				mdnGroup: 'DOM',
+			},
+			tests: ['containerName', 'containerQuery', 'conditionText'],
+			required: '@container (min-width: 500px) { }',
+			interface: function(style) {
+				return style.sheet.cssRules[0];
+			}
+		},
+	},
 };

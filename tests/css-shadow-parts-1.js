@@ -16,4 +16,17 @@ export default {
 			tests: ['::part(label)'],
 		},
 	},
+	interfaces: {
+		Element: {
+			links: {
+				tr: '#idl',
+				dev: '#idl',
+				mdnGroup: 'DOM',
+			},
+			tests: ['part'],
+			interface: function() {
+				return document.body;
+			},
+		},
+	},
 };
