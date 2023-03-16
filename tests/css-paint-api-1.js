@@ -17,10 +17,30 @@ export default {
 			},
 			tests: [
 				'paint(company-logo)',
-				'paint(chat-bubble, blue)',
-				'paint(failing-argument-syntax, 1px, 2px)',
-				'paint(arc, purple, 0.4turn, 0.8turn, 40px, 15px)',
+				'paint(simple, blue)',
 			],
 		},
 	},
+	interfaces: {
+		CSS: {
+			links: {
+				tr: '#paint-worklet',
+				dev: '#paint-worklet',
+			},
+			tests: ['paintWorklet'],
+			interface: function() {
+				return CSS;
+			},
+		},
+		Worklet: {
+			links: {
+				tr: '#paint-worklet',
+				dev: '#paint-worklet',
+			},
+			tests: ['addModule'],
+			interface: function() {
+				return CSS.paintWorklet;
+			},
+		},
+	}
 };

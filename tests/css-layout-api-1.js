@@ -17,4 +17,26 @@ export default {
 			tests: 'layout(foo)',
 		},
 	},
+	interfaces: {
+		CSS: {
+			links: {
+				tr: '#layout-worklet',
+				dev: '#layout-worklet',
+			},
+			tests: ['layoutWorklet'],
+			interface: function() {
+				return CSS;
+			},
+		},
+		Worklet: {
+			links: {
+				tr: '#layout-worklet',
+				dev: '#layout-worklet',
+			},
+			tests: ['addModule'],
+			interface: function() {
+				return CSS.layoutWorklet;
+			},
+		},
+	},
 };
