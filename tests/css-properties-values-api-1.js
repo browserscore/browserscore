@@ -42,7 +42,7 @@ export default {
 			},
 			required: {
 				'*': {
-					descriptor: "syntax: '<color>' inherits: true",
+					descriptor: "syntax: '<color>'; inherits: true",
 				},
 			},
 			tests: ['blue', '#00f', 'rgb(0, 0, 255)'],
