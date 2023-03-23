@@ -73,15 +73,62 @@ export default {
 			},
 			tests: 'ui-rounded',
 		},
-	},
-	properties: {
-		'font-size': {
+		'xxx-large': {
 			links: {
 				tr: '#font-size-prop',
 				dev: '#font-size-prop',
 			},
-			tests: ['xxx-large', 'math'],
+			properties: ['font-size'],
+			tests: ['xxx-large'],
 		},
+		'math in font-size': {
+			links: {
+				tr: '#font-size-prop',
+				dev: '#font-size-prop',
+			},
+			properties: ['font-size'],
+			tests: ['math'],
+		},
+		'arbitrary font weights': {
+			links: {
+				tr: '#font-weight-prop',
+				dev: '#font-weight-prop',
+			},
+			properties: ['font-weight'],
+			tests: ['1', '90', '750', '1000'],
+		},
+		'angle for oblique': {
+			links: {
+				tr: '#font-style-prop',
+				dev: '#font-style-prop',
+			},
+			properties: ['font-style'],
+			tests: ['oblique 15deg', 'oblique -15deg', 'oblique 0deg'],
+		},
+		'font-variant functions and keywords': {
+			links: {
+				tr: '#font-variant-prop',
+				dev: '#font-variant-prop',
+			},
+			properties: ['font-variant'],
+			tests: [
+				'stylistic(salt01)',
+				'historical-forms',
+				'styleset(ss01)',
+				'styleset(stacked-g, geometric-m)',
+				'character-variant(cv02)',
+				'character-variant(beta-3, gamma)',
+				'swash(flowing)',
+				'ornaments(leaves)',
+				'annotation(blocky)',
+				'text',
+				'emoji',
+				'unicode',
+				'discretionary-ligatures character-variant(leo-B, leo-M, leo-N, leo-T, leo-U)',
+			],
+		},
+	},
+	properties: {
 		'font-size-adjust': {
 			links: {
 				tr: '#font-size-adjust-prop',
@@ -158,20 +205,6 @@ export default {
 				dev: '#font-language-override',
 			},
 			tests: ['normal', "'SRB'"],
-		},
-		'font-weight': {
-			links: {
-				tr: '#font-weight-prop',
-				dev: '#font-weight-prop',
-			},
-			tests: ['1', '90', '750', '1000'],
-		},
-		'font-style': {
-			links: {
-				tr: '#font-style-prop',
-				dev: '#font-style-prop',
-			},
-			tests: ['oblique 15deg', 'oblique -15deg', 'oblique 0deg'],
 		},
 		'font-synthesis-weight': {
 			links: {

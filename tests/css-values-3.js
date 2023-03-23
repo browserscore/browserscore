@@ -81,6 +81,14 @@ export default {
 				'calc(calc(100%))',
 			],
 		},
+		'calc() in other functions': {
+			links: {
+				tr: '#calc-notation',
+				dev: '#calc-notation',
+			},
+			properties: ['transform'],
+			tests: ['translateX(calc(1px + 2px))'],
+		}
 	},
 	properties: {
 		transform: ['rotate(calc(15deg + 30deg))'],
