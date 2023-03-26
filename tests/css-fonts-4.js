@@ -129,28 +129,6 @@ export default {
 		},
 	},
 	properties: {
-		'font-size-adjust': {
-			links: {
-				tr: '#font-size-adjust-prop',
-				dev: '#font-size-adjust-prop',
-			},
-			tests: ['none', '0', '1.234'],
-		},
-		'font-variant': {
-			links: {
-				tr: '#font-variant-prop',
-				dev: '#font-variant-prop',
-			},
-			tests: [
-				'none',
-				'all-petite-caps',
-				'historical-forms',
-				'super',
-				'sub lining-nums contextual ruby',
-				'annotation(circled)',
-				'discretionary-ligatures character-variant(leo-B, leo-M, leo-N, leo-T, leo-U)',
-			],
-		},
 		'font-variant-alternates': {
 			links: {
 				tr: '#font-variant-alternates-prop',

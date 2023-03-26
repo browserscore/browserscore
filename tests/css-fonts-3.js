@@ -8,6 +8,52 @@ export default {
 		stability: 'stable',
 		'first-snapshot': 2015,
 	},
+	values: {
+		'font-variant': {
+			links: {
+				tr: '#font-variant-prop',
+				dev: '#font-variant-prop',
+			},
+			properties: ['font-variant'],
+			tests: [
+				'none',
+				'common-ligatures',
+				'no-common-ligatures',
+				'discretionary-ligatures',
+				'no-discretionary-ligatures',
+				'historical-ligatures',
+				'no-historical-ligatures',
+				'contextual',
+				'no-contextual',
+				'all-small-caps',
+				'petite-caps',
+				'all-petite-caps',
+				'unicase',
+				'titling-caps',
+				'lining-nums',
+				'oldstyle-nums',
+				'proportional-nums',
+				'tabular-nums',
+				'diagonal-fractions',
+				'stacked-fractions',
+				'ordinal',
+				'slashed-zero',
+				'jis78',
+				'jis83',
+				'jis90',
+				'jis04',
+				'simplified',
+				'traditional',
+				'full-width',
+				'proportional-width',
+				'ruby',
+				'sub',
+				'super',
+				'common-ligatures discretionary-ligatures',
+				'small-caps lining-nums ordinal ruby sub'
+			],
+		},
+	},
 	properties: {
 		'font-stretch': {
 			links: {
@@ -31,7 +77,7 @@ export default {
 				tr: '#font-size-adjust-prop',
 				dev: '#font-size-adjust-prop',
 			},
-			tests: ['none', '.5'],
+			tests: ['none', '0', '.5', '1.234'],
 		},
 		'font-synthesis': {
 			links: {
@@ -133,7 +179,7 @@ export default {
 				tr: '#font-feature-settings-prop',
 				dev: '#font-feature-settings-prop',
 			},
-			tests: ['normal', "'c2sc'", "'smcp' on", "'liga' off", "'smcp', 'swsh' 2"],
+			tests: ['normal', "'c2sc'", "'smcp' on", "'liga' off", "'swsh' 2", "'smcp', 'liga' off, 'swsh' 2"],
 		},
 	},
 	descriptors: {
