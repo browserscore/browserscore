@@ -106,7 +106,6 @@ export default {
 			},
 			tests: ['oklab(0% 0 0)', 'oklab(40.101% 0.1147 0.0453 / .5)'],
 		},
-
 		'lch()': {
 			links: {
 				tr: '#specifying-lch-lch',
@@ -157,13 +156,12 @@ export default {
 			},
 			tests: ['device-cmyk(.2 .3 .4 .5)', 'device-cmyk(.2 .3 .4 .5 / .5)', 'device-cmyk(.2 .3 .4 .5 / 50%)'],
 		},
-	},
-	properties: {
-		opacity: {
+		'percentages in opacity': {
 			links: {
 				tr: '#transparency',
 				dev: '#transparency',
 			},
+			properties: ['opacity'],
 			tests: ['45%'],
 		},
 	},
