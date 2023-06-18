@@ -20,4 +20,14 @@ export default {
 			],
 		},
 	},
+	values: {
+		properties: ['background-image'],
+		'url()': {
+			links: {
+				tr: '#setting-url',
+				dev: '#setting-url'
+			},
+			tests: 'url("http://example.com/image.svg" param(--color var(--primary-color)))',
+		}
+	}
 };
