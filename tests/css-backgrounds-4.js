@@ -1,5 +1,5 @@
 export default {
-	title: 'CSS Backgrounds and Borders Module Level 4',
+	title: 'CSS Backgrounds Module Level 4',
 	links: {
 		dev: 'css-backgrounds-4',
 	},
