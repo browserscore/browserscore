@@ -1,5 +1,5 @@
 export default {
-	title: 'Scroll-linked Animations',
+	title: 'Scroll-driven Animations',
 	links: {
 		tr: 'scroll-animations-1',
 		dev: 'scroll-animations-1',
