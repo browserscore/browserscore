@@ -165,7 +165,16 @@ export default {
 				dev: '#the-cssstylerule-interface',
 				mdnGroup: 'DOM',
 			},
-			tests: ['selectorText', 'style', 'cssText', 'parentRule', 'parentStyleSheet'],
+			tests: [
+				'selectorText',
+				'style',
+				'cssRules',
+				'insertRule',
+				'deleteRule',
+				'cssText',
+				'parentRule',
+				'parentStyleSheet',
+			],
 			required: 'div { }',
 		},
 		/* Doesn't currently work because style sheet is only available once imported
