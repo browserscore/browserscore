@@ -6,7 +6,27 @@ export default {
 	status: {
 		stability: 'experimental',
 	},
+	'@rules': {
+		'@starting-style': {
+			links: {
+				dev: '#defining-before-change-style-the-starting-style-rule',
+			},
+			tests: "@starting-style {\n  h1 {\n    background-color: red;\n  }\n}",
+		},
+	},
 	interfaces: {
+		CSSStartingStyleRule: {
+			links: {
+				dev: '#the-cssstartingstylerule-interface',
+				mdnGroup: 'DOM',
+			},
+			tests: [
+				'cssRules',
+				'addRule',
+				'deleteRule',
+			],
+			required: '@starting-style { h1 { background-color: red; } }',
+		},
 		CSSTransition: {
 			links: {
 				dev: '#the-CSSTransition-interface',
