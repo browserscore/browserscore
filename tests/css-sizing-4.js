@@ -27,28 +27,28 @@ export default {
 				tr: '#intrinsic-size-override',
 				dev: '#intrinsic-size-override',
 			},
-			tests: ['none', '10px', 'auto 10px'],
+			tests: ['none', '10px', 'auto none', 'auto 10px'],
 		},
 		'contain-intrinsic-height': {
 			links: {
 				tr: '#intrinsic-size-override',
 				dev: '#intrinsic-size-override',
 			},
-			tests: ['none', '10px', 'auto 10px'],
+			tests: ['none', '10px', 'auto none', 'auto 10px'],
 		},
 		'contain-intrinsic-block-size': {
 			links: {
 				tr: '#intrinsic-size-override',
 				dev: '#intrinsic-size-override',
 			},
-			tests: ['none', '10px', 'auto 10px'],
+			tests: ['none', '10px', 'auto none', 'auto 10px'],
 		},
 		'contain-intrinsic-inline-size': {
 			links: {
 				tr: '#intrinsic-size-override',
 				dev: '#intrinsic-size-override',
 			},
-			tests: ['none', '10px', 'auto 10px'],
+			tests: ['none', '10px', 'auto none', 'auto 10px'],
 		},
 		'min-intrinsic-sizing': {
 			links: {
