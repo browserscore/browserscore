@@ -7,63 +7,239 @@ export default {
 	status: {
 		stability: 'experimental',
 	},
-	'@rules': {
-		'@scroll-timeline': {
+	'values': {
+		'properties': ['animation-timeline'],
+		'scroll()': {
 			links: {
-				tr: '#scroll-timeline-at-rule',
-				dev: '#scroll-timeline-at-rule',
+				tr: '#scroll-notation',
+				dev: '#scroll-notation',
 			},
-			tests: ['@scroll-timeline scroller { source: selector(#root); }'],
+			tests: [
+				'scroll()',
+				'scroll(block)',
+				'scroll(inline)',
+				'scroll(x)',
+				'scroll(y)',
+				'scroll(nearest)',
+				'scroll(root)',
+				'scroll(self)',
+				'scroll(inline root)',
+				'scroll(block self)',
+				'scroll(x nearest)',
+				'scroll(root inline)',
+				'scroll(self block)',
+				'scroll(nearest x)',
+			],
+		},
+		'view()': {
+			links: {
+				tr: '#view-notation',
+				dev: '#view-notation',
+			},
+			tests: [
+				'view()',
+				'view(block)',
+				'view(inline)',
+				'view(x)',
+				'view(y)',
+				'view(auto)',
+				'view(100px)',
+				'view(5%)',
+				'view(100px 200px)',
+				'view(5% 10%)',
+				'view(inline 100px)',
+				'view(block 5% 10%)',
+				'view(100px inline)',
+				'view(5% 10% block)',
+			],
 		},
 	},
-	descriptors: {
-		'@scroll-timeline example/source': {
+	properties: {
+		'animation-range': {
 			links: {
-				tr: '#scroll-timeline-descriptors',
-				dev: '#scroll-timeline-descriptors',
+				tr: '#animation-range',
+				dev: '#animation-range',
 			},
-			tests: ['selector(#id)', 'auto', 'none'],
+			tests: [
+				'normal',
+				'500px',
+				'50%',
+				'entry',
+				'exit',
+				'entry-crossing',
+				'exit-crossing',
+				'cover',
+				'contain',
+				'entry 500px',
+				'entry 50%',
+				'500px, exit 50%',
+				'normal 500px',
+				'100px 600px',
+				'50% 80%',
+				'contain 100px cover 500px',
+				'contain 10% exit 50%, entry 100px exit 500px',
+			],
 		},
-		'@scroll-timeline example/orientation': {
+		'animation-range-start': {
 			links: {
-				tr: '#scroll-timeline-descriptors',
-				dev: '#scroll-timeline-descriptors',
+				tr: '#animation-range-start',
+				dev: '#animation-range-start',
 			},
-			required: {
-				'*': { descriptor: 'source: auto' },
-			},
-			tests: ['auto', 'block', 'inline', 'horizontal', 'vertical'],
+			tests: [
+				'normal',
+				'500px',
+				'50%',
+				'entry',
+				'exit',
+				'entry-crossing',
+				'exit-crossing',
+				'cover',
+				'contain',
+				'entry 500px',
+				'entry 50%',
+				'500px, entry 50%',
+			],
 		},
-		'@scroll-timeline example/offsets': {
+		'animation-range-end': {
 			links: {
-				tr: '#scroll-timeline-descriptors',
-				dev: '#scroll-timeline-descriptors',
+				tr: '#animation-range-end',
+				dev: '#animation-range-end',
 			},
-			required: {
-				'*': { descriptor: 'source: auto' },
+			tests: [
+				'normal',
+				'500px',
+				'50%',
+				'entry',
+				'exit',
+				'entry-crossing',
+				'exit-crossing',
+				'cover',
+				'contain',
+				'entry 500px',
+				'entry 50%',
+				'500px, exit 50%',
+			],
+		},
+		'scroll-timeline': {
+			links: {
+				tr: '#scroll-timeline',
+				dev: '#scroll-timeline',
 			},
 			tests: [
 				'none',
+				'--some-timeline-name',
+				'--some-timeline-name, none',
+				'--some-timeline-name, --other-timeline-name',
+				'--some-timeline-name block',
+				'--some-timeline-name inline',
+				'--some-timeline-name x',
+				'--some-timeline-name y',
+				'--some-timeline-name block, none',
+				'--some-timeline-name, --other-timeline-name inline',
+			],
+		},
+		'scroll-timeline-axis': {
+			links: {
+				tr: '#scroll-timeline-axis',
+				dev: '#scroll-timeline-axis',
+			},
+			tests: [
+				'block',
+				'inline',
+				'x',
+				'y',
+				'block, inline',
+			],
+		},
+		'scroll-timeline-name': {
+			links: {
+				tr: '#scroll-timeline-name',
+				dev: '#scroll-timeline-name',
+			},
+			tests: [
+				'none',
+				'--some-timeline-name',
+				'--some-timeline-name, none',
+				'--some-timeline-name, --other-timeline-name',
+			],
+		},
+		'view-timeline': {
+			links: {
+				tr: '#view-timeline',
+				dev: '#view-timeline',
+			},
+			tests: [
+				'none',
+				'--some-timeline-name',
+				'--some-timeline-name, none',
+				'--some-timeline-name, --other-timeline-name',
+				'--some-timeline-name block',
+				'--some-timeline-name inline',
+				'--some-timeline-name x',
+				'--some-timeline-name y',
+				'--some-timeline-name block, none',
+				'--some-timeline-name, --other-timeline-name inline',
+			],
+		},
+		'view-timeline-axis': {
+			links: {
+				tr: '#view-timeline-axis',
+				dev: '#view-timeline-axis',
+			},
+			tests: [
+				'block',
+				'inline',
+				'x',
+				'y',
+				'block, inline',
+			],
+		},
+		'view-timeline-inset': {
+			links: {
+				tr: '#view-timeline-inset',
+				dev: '#view-timeline-inset',
+			},
+			tests: [
 				'auto',
 				'100px',
 				'5%',
-				'selector(#id)',
-				'selector(#id) start',
-				'selector(#id) end',
-				'selector(#id) 0.5',
-				'selector(#id) start 0.5',
-				'selector(#id), 100px, auto',
+				'100px 200px',
+				'5% 10%',
+				'auto, 100px',
 			],
 		},
+		'view-timeline-name': {
+			links: {
+				tr: '#view-timeline-name',
+				dev: '#view-timeline-name',
+			},
+			tests: [
+				'none',
+				'--some-timeline-name',
+				'--some-timeline-name, none',
+				'--some-timeline-name, --other-timeline-name',
+			],
+		},
+		'timeline-scope': {
+			links: {
+				tr: '#timeline-scope',
+				dev: '#timeline-scope',
+			},
+			tests: [
+				'none',
+				'--timeline-scope',
+				'--some-timeline-scope, --other-timeline-scope',
+			],
+		}
 	},
 	interfaces: {
 		ScrollTimeline: {
 			links: {
-				tr: '#scrolltimeline',
-				dev: '#scrolltimeline',
+				tr: '#scrolltimeline-interface',
+				dev: '#scrolltimeline-interface',
 				mdnGroup: 'DOM',
 			},
-			tests: ['source', 'axis'],
+			tests: ['source', 'axis', 'currentTime'],
 			interface: function() {
 				return new ScrollTimeline({
 					source: document.scrollingElement,
@@ -72,26 +248,16 @@ export default {
 		},
 		ViewTimeline: {
 			links: {
-				tr: '#viewtimeline',
-				dev: '#viewtimeline',
+				tr: '#viewtimeline-interface',
+				dev: '#viewtimeline-interface',
 				mdnGroup: 'DOM',
 			},
-			tests: ['subject', 'startOffset', 'endOffset'],
+			tests: ['subject', 'startOffset', 'endOffset', 'currentTime'],
 			interface: function() {
 				return new ViewTimeline({
 					source: document.scrollingElement,
 				});
 			}
-		},
-		AnimationTimeline: {
-			links: {
-				dev: '#named-range-get-time',
-				mdnGroup: 'DOM',
-			},
-			tests: ['getCurrentTime'],
-			interface: function() {
-				return document.timeline;
-			},
 		},
 	},
 };
