@@ -63,7 +63,14 @@ export default {
 				tr: '#overflow-clip-margin',
 				dev: '#overflow-clip-margin',
 			},
-			tests: ['content-box', 'padding-box', 'border-box', '20px'],
+			tests: [
+				'content-box',
+				'padding-box',
+				'border-box',
+				'20px',
+				'content-box 20px',
+				'20px content-box',
+			],
 		},
 		continue: {
 			links: {
