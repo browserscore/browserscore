@@ -8,6 +8,20 @@ export default {
 		stability: 'experimental',
 	},
 	selectors: {
+		'::first-letter::prefix': {
+			links: {
+				tr: '#first-letter-pseudo',
+				dev: '#first-letter-pseudo',
+			},
+			tests: ['::first-letter::prefix'],
+		},
+		'::first-letter::postfix': {
+			links: {
+				tr: '#first-letter-pseudo',
+				dev: '#first-letter-pseudo',
+			},
+			tests: ['::first-letter::postfix'],
+		},
 		'::selection': {
 			links: {
 				tr: '#selectordef-selection',
