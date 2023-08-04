@@ -188,6 +188,13 @@ export default {
 				"#foo 'bar'",
 			],
 		},
+		'outline-color': {
+			links: {
+				tr: '#outline-color',
+				dev: '#outline-color',
+			},
+			tests: ['stripes(red, yellow, green, blue)']
+		},
 		'pointer-events': {
 			links: {
 				tr: '#pointer-events-control',
