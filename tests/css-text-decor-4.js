@@ -43,6 +43,13 @@ export default {
 				'box-decoration',
 			],
 		},
+		'text-decoration-skip-box': {
+			links: {
+				tr: '#text-decoration-skip-box-property',
+				dev: '#text-decoration-skip-box-property',
+			},
+			tests: ['none', 'all'],
+		},
 		'text-decoration-skip-ink': {
 			links: {
 				tr: '#text-decoration-skip-ink-property',
@@ -50,12 +57,65 @@ export default {
 			},
 			tests: ['none', 'auto'],
 		},
+		'text-decoration-skip-self': {
+			links: {
+				tr: '#text-decoration-skip-self-property',
+				dev: '#text-decoration-skip-self-property',
+			},
+			tests: [
+				'auto',
+				'skip-all',
+				'skip-underline',
+				'skip-overline',
+				'skip-line-through',
+				'skip-underline skip-overline',
+				'skip-underline skip-line-through',
+				'skip-underline skip-overline skip-line-through',
+				'no-skip',
+			],
+		},
+		'text-decoration-skip-spaces': {
+			links: {
+				tr: '#text-decoration-skip-spaces-property',
+				dev: '#text-decoration-skip-spaces-property',
+			},
+			tests: [
+				'none',
+				'all',
+				'start',
+				'end',
+				'start end',
+			],
+		},
+		'text-decoration-trim': {
+			links: {
+				tr: '#text-decoration-skip-inset-property',
+				dev: '#text-decoration-skip-inset-property',
+			},
+			tests: [
+				'auto',
+				'10px',
+				'5px 10px',
+			],
+		},
 		'text-underline-offset': {
 			links: {
 				tr: '#underline-offset',
 				dev: '#underline-offset',
 			},
 			tests: ['auto', '3px', '10%'],
+		},
+		'text-underline-position': {
+			links: {
+				tr: '#text-underline-position-property',
+				dev: '#text-underline-position-property',
+			},
+			tests: [
+				'from-font',
+				'from-font left',
+				'from-font right',
+				'right from-font',
+			],
 		},
 		'text-decoration-thickness': {
 			links: {
