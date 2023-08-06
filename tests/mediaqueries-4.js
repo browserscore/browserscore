@@ -8,6 +8,35 @@ export default {
 		stability: 'stable',
 	},
 	'Media queries': {
+		Syntax: {
+			links: {
+				tr: '#mq-syntax',
+				dev: '#mq-syntax',
+			},
+			tests: [
+				'not (width)',
+				'(width) or (height)',
+				'(not (width))',
+				'((width) and (height))',
+				'((width) or (height))',
+				'all and not (width)',
+				'all and (not (width))',
+				'all and ((width) and (height))',
+				'all and ((width) or (height))',
+				'(width = 1280px)',
+				'(width < 1000000px)',
+				'(width <= 1000000px)',
+				'(width > 1px)',
+				'(width >= 1px)',
+				'(1280px = width)',
+				'(1px < width)',
+				'(1px <= width)',
+				'(1000000px > width)',
+				'(1000000px >= width)',
+				'(1px <= width < 1000000px)',
+				'(1000000px > width >= 1px)',
+			],
+		},
 		resolution: {
 			links: {
 				tr: '#resolution',
@@ -56,9 +85,9 @@ export default {
 				dev: '#mf-overflow-block',
 			},
 			tests: [
+				'(overflow-block)',
 				'(overflow-block: none)',
 				'(overflow-block: scroll)',
-				'(overflow-block: optional-paged)',
 				'(overflow-block: paged)',
 			],
 		},
@@ -67,7 +96,7 @@ export default {
 				tr: '#mf-overflow-inline',
 				dev: '#mf-overflow-inline',
 			},
-			tests: ['(overflow-inline: none)', '(overflow-inline: scroll)'],
+			tests: ['(overflow-inline)', '(overflow-inline: none)', '(overflow-inline: scroll)'],
 		},
 		'color-gamut': {
 			links: {

@@ -14,6 +14,7 @@ export default {
 				dev: '#display-modes',
 			},
 			tests: [
+				'(display-mode)',
 				'(display-mode: fullscreen)',
 				'(display-mode: standalone)',
 				'(display-mode: minimal-ui)',
@@ -62,6 +63,13 @@ export default {
 			},
 			tests: ['(prefers-color-scheme)', '(prefers-color-scheme: light)', '(prefers-color-scheme: dark)'],
 		},
+		'prefers-reduced-data': {
+			links: {
+				tr: '#prefers-reduced-data',
+				dev: '#prefers-reduced-data',
+			},
+			tests: ['(prefers-reduced-data)', '(prefers-reduced-data: no-preference)', '(prefers-reduced-data: reduce)'],
+		},
 		scripting: {
 			links: {
 				tr: '#scripting',
@@ -84,7 +92,7 @@ export default {
 		'forced-colors': {
 			links: {
 				tr: '#forced-colors',
-				dev: '#prefers-contrast',
+				dev: '#forced-colors',
 			},
 			tests: ['(forced-colors)', '(forced-colors: none)', '(forced-colors: active)'],
 		},
@@ -100,21 +108,21 @@ export default {
 				tr: '#mf-horizontal-viewport-segments',
 				dev: '#mf-horizontal-viewport-segments',
 			},
-			tests: ['(horizontal-viewport-segments: 2)'],
+			tests: ['(horizontal-viewport-segments)', '(horizontal-viewport-segments: 2)'],
 		},
 		'vertical-viewport-segments': {
 			links: {
 				tr: '#mf-vertical-viewport-segments',
 				dev: '#mf-vertical-viewport-segments',
 			},
-			tests: ['(vertical-viewport-segments: 2)'],
+			tests: ['(vertical-viewport-segments)', '(vertical-viewport-segments: 2)'],
 		},
 		'inverted-colors': {
 			links: {
 				tr: '#inverted',
 				dev: '#inverted',
 			},
-			tests: ['(inverted-colors)', '(inverted-colors: none)', '(light-level: inverted)'],
+			tests: ['(inverted-colors)', '(inverted-colors: none)', '(inverted-colors: inverted)'],
 		},
 		'nav-controls': {
 			links: {
