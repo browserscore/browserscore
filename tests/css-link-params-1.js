@@ -22,12 +22,12 @@ export default {
 	},
 	values: {
 		properties: ['background-image'],
-		'url()': {
+		'url() with param()': {
 			links: {
 				tr: '#setting-url',
 				dev: '#setting-url'
 			},
-			tests: 'url("http://example.com/image.svg" param(--color var(--primary-color)))',
+			tests: 'url("http://example.com/image.svg" param(--bg-color white))',
 		}
 	}
 };
