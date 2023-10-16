@@ -45,6 +45,15 @@ export default {
 				'lch(from peru calc(l * 0.8) c h)',
 			],
 		},
+
+		'light-dark()': {
+			links: {
+				dev: '#light-dark',
+				mdn: 'light-dark',
+			},
+			tests: ['light-dark(green, red)'],
+		},
+
 	},
 	interfaces: {
 		CSSColorProfileRule: {
