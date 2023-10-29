@@ -12,8 +12,10 @@ export default {
 			links: {
 				dev: '#attr-notation',
 			},
+			properties: ['content', 'width', 'padding'],
 			tests: [
 				'attr(data-px)',
+				'attr(data-px, "12px")',
 				'attr(data-px px)',
 				'attr(data-px px, initial)',
 				'attr(data-string string)',
