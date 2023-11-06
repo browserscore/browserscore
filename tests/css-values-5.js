@@ -88,6 +88,22 @@ export default {
 				'random-item(--random-item; linear-gradient(red, yellow); linear-gradient(green, blue))',
 			],
 		},
+		'sibling-count()': {
+			links: {
+				dev: '#tree-counting',
+			},
+			tests: [
+				'calc(sibling-count() * 10px)',
+			],
+		},
+		'sibling-index()': {
+			links: {
+				dev: '#tree-counting',
+			},
+			tests: [
+				'calc(sibling-index() * 10px)',
+			],
+		},
 		'toggle() with lengths': {
 			links: {
 				dev: '#toggle-notation',
