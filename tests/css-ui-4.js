@@ -70,6 +70,13 @@ export default {
 				'image-set(url("foo.png") 96dpi, url("foo-2x.png") 192dpi) 2 2, auto',
 			],
 		},
+		'field-sizing': {
+			links: {
+				tr: '#field-sizing',
+				dev: '#field-sizing',
+			},
+			tests: ['fixed', 'content'],
+		},
 		resize: {
 			links: {
 				tr: '#resize',
