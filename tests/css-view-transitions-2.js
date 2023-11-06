@@ -24,8 +24,10 @@ export default {
 				dev: '#view-transition-rule',
 			},
 			tests: [
-				"@view-transition same-origin {\n  trigger: none;\n}",
-				"@view-transition same-origin {\n  trigger: navigation;\n}",
+				"@view-transition {\n  navigation: auto;\n}",
+				"@view-transition {\n  navigation: none;\n}",
+				"@view-transition {\n  type: --test-view-transition;\n}",
+				"@view-transition {\n  type: --test-view-transition-1 --test-view-transition-2;\n}",
 			],
 		},
 	},
