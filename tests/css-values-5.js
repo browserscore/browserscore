@@ -31,6 +31,39 @@ export default {
 				'attr(data-flex flex)',
 			],
 		},
+		'first-valid()': {
+			links: {
+				dev: '#first-valid',
+			},
+			tests: [
+				'first-valid(10px)',
+				'first-valid(foo)',
+				'first-valid(foo; 10px)',
+			],
+		},
+		'attr()': {
+			links: {
+				dev: '#attr-notation',
+			},
+			properties: ['content', 'width', 'padding'],
+			tests: [
+				'attr(data-px)',
+				'attr(data-px, "12px")',
+				'attr(data-px px)',
+				'attr(data-px px, initial)',
+				'attr(data-string string)',
+				'attr(data-url url)',
+				'attr(data-ident ident)',
+				'attr(data-color color)',
+				'attr(data-number number)',
+				'attr(data-percentage percentage)',
+				'attr(data-length length)',
+				'attr(data-angle angle)',
+				'attr(data-time time)',
+				'attr(data-frequency frequency)',
+				'attr(data-flex flex)',
+			],
+		},
 		'random()': {
 			links: {
 				dev: '#random',
