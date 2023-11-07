@@ -54,6 +54,14 @@ export default {
 			tests: ['light-dark(green, red)'],
 		},
 
+		'device-cmyk()': {
+			links: {
+				tr: '#cmyk-colors',
+				dev: '#cmyk-colors',
+				mdn: 'color_value/device-cmyk',
+			},
+			tests: ['device-cmyk(.2 .3 .4 .5)', 'device-cmyk(.2 .3 .4 .5 / .5)', 'device-cmyk(.2 .3 .4 .5 / 50%)'],
+		},
 	},
 	interfaces: {
 		CSSColorProfileRule: {
