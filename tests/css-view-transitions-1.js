@@ -5,7 +5,7 @@ export default {
 		dev: 'css-view-transitions-1',
 	},
 	status: {
-		stability: 'experimental',
+		stability: 'stable',
 	},
 	properties: {
 		'view-transition-name': {
