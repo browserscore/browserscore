@@ -173,7 +173,7 @@ export default {
 				tr: '#placement-shorthands',
 				dev: '#placement-shorthands',
 			},
-			tests: ['1 / 1', '1 / span 1', 'span / 10 / -1'],
+			tests: ['1 / 1', '1 / span 1', 'span 1 / 10 / -1'],
 		},
 		'grid-column-gap': {
 			links: {
