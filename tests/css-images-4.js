@@ -16,12 +16,51 @@ export default {
 			},
 			tests: ['linear-gradient(45deg, #f06 25%, yellow 25% 50%, #f06 50% 75%, yellow 75%)'],
 		},
+		'linear-gradient() color interpolation': {
+			links: {
+				tr: '#color-interpolation',
+				dev: '#color-interpolation',
+				mdn : 'linear-gradient'
+			},
+			tests: [
+				'linear-gradient(to right in lch, #A37, #595)',
+				'linear-gradient(in lch to right, #A37, #595)',
+				'linear-gradient(in lab to right, #A37, #595)',
+				'linear-gradient(in srgb to right, #A37, #595)',
+				'linear-gradient(in Oklab to right, #A37, #595)',
+				'linear-gradient(in oklch to right, #A37, #595)',
+				'linear-gradient(in srgb-linear to right, #A37, #595)',
+				'linear-gradient(in xyz to right, #A37, #595)',
+				'linear-gradient(in xyz-d50 to right, #A37, #595)',
+				'linear-gradient(in xyz-d65 to right, #A37, #595)',
+				'linear-gradient(in hwb to right, #A37, #595)',
+				'linear-gradient(in hsl to right, #A37, #595)',
+				'linear-gradient(in hsl shorter hue to right, #A37, #595)',
+				'linear-gradient(in hsl longer hue to right, #A37, #595)',
+				'linear-gradient(in hsl increasing hue to right, #A37, #595)',
+				'linear-gradient(in hsl decreasing hue to right, #A37, #595)',
+			],
+		},
 		'radial-gradient()': {
 			links: {
 				tr: '#radial-gradients',
 				dev: '#radial-gradients',
 			},
 			tests: ['radial-gradient(center, red 0% 25%, blue 25% 75%, red 75% 100%)'],
+		},
+		'radial-gradient() color interpolation': {
+			links: {
+				tr: '#radial-color-interpolation',
+				dev: '#radial-color-interpolation',
+				mdn: 'radial-gradient'
+			},
+			tests: [
+				'radial-gradient(farthest-side at left bottom in lab, color(display-p3 0.918 0.2 0.161), #081)',
+				'radial-gradient(in lab farthest-side at left bottom, color(display-p3 0.918 0.2 0.161), #081)',
+				'radial-gradient(in srgb farthest-side at left bottom, color(display-p3 0.918 0.2 0.161), #081)',
+				'radial-gradient(in Oklab farthest-side at left bottom, color(display-p3 0.918 0.2 0.161), #081)',
+				'radial-gradient(in hsl shorter hue at left bottom, color(display-p3 0.918 0.2 0.161), #081)',
+			],
 		},
 		'conic-gradient()': {
 			links: {
@@ -37,6 +76,19 @@ export default {
 				'conic-gradient(white, #f06, black)',
 				'conic-gradient(currentColor, black)',
 				'conic-gradient(black 25%, white 0deg 50%, black 0deg 75%, white 0deg)',
+			],
+		},
+		'conic-gradient() color interpolation': {
+			links: {
+				tr: '#conic-gradients',
+				dev: '#conic-gradients',
+				mdn: 'conic-gradient'
+			},
+			tests: [
+				'conic-gradient(#f06 0deg in lab, gold 1turn)',
+				'conic-gradient(in lab #f06 0deg, gold 1turn);',
+				'conic-gradient(in lab from 45deg, white, black, white))',
+				'conic-gradient(in hsl shorter hue from 45deg, white, black, white))',
 			],
 		},
 		'repeating-conic-gradient()': {
@@ -125,9 +177,9 @@ export default {
 				mdnGroup: 'DOM',
 			},
 			tests: ['elementSources'],
-			interface: function() {
+			interface: function () {
 				return CSS;
-			}
+			},
 		},
 	},
 };
