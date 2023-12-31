@@ -90,12 +90,9 @@ export default {
 				dev: '#container-type',
 			},
 			tests: [
-				'none',
-				'style',
+				'normal',
 				'size',
 				'inline-size',
-				'style size',
-				'style inline-size',
 			],
 		},
 		'container-name': {
@@ -110,7 +107,13 @@ export default {
 				tr: '#container-shorthand',
 				dev: '#container-shorthand',
 			},
-			tests: ['none', 'style', 'x / size', 'x y / size', 'x / size style'],
+			tests: [
+				'none',
+				'x / normal',
+				'x / size',
+				'x / inline-size',
+				'x y / size',
+			],
 		},
 	},
 	interfaces: {
