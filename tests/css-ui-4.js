@@ -200,7 +200,13 @@ export default {
 				tr: '#outline-color',
 				dev: '#outline-color',
 			},
-			tests: ['stripes(red, yellow, green, blue)']
+			tests: [
+				'stripes(red, yellow, green, blue)',
+				'stripes(red 1px, yellow 2px, green 3px, blue 4px)',
+				'stripes(red 10%, yellow 20%, green 30%, blue 40%)',
+				'stripes(red 1fr, yellow 2fr, green 3fr, blue 4fr)',
+				'stripes(red, yellow 2px, green 30%, blue 4fr)',
+			]
 		},
 		'pointer-events': {
 			links: {
