@@ -33,13 +33,27 @@ export default {
 			},
 			tests: 'math',
 		},
-		'fangsong': {
+		'generic(fangsong)': {
 			links: {
 				tr: '#fangsong-def',
-				dev: '#fangsong-def',
+				dev: '#generic(fangsong)-def',
 				mdn: 'font-family',
 			},
-			tests: 'fangsong',
+			tests: 'generic(fangsong)',
+		},
+		'generic(kai)': {
+			links: {
+				dev: '#generic(kai)-def',
+				mdn: 'font-family',
+			},
+			tests: 'generic(kai)',
+		},
+		'generic(nastaliq)': {
+			links: {
+				dev: '#generic(nastaliq)-def',
+				mdn: 'font-family',
+			},
+			tests: 'generic(nastaliq)',
 		},
 		'ui-serif': {
 			links: {
