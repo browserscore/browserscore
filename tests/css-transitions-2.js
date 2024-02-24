@@ -17,8 +17,8 @@ export default {
 	properties: {
 		'transition-behavior': {
 			links: {
-				tr: '#transition-shorthand-property',
-				dev: '#transition-shorthand-property',
+				tr: '#transition-behavior-property',
+				dev: '#transition-behavior-property',
 			},
 			tests: ['normal', 'allow-discrete'],
 		},
