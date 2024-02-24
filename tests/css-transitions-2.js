@@ -14,6 +14,15 @@ export default {
 			tests: "@starting-style {\n  h1 {\n    background-color: red;\n  }\n}",
 		},
 	},
+	properties: {
+		'transition-behavior': {
+			links: {
+				tr: '#transition-shorthand-property',
+				dev: '#transition-shorthand-property',
+			},
+			tests: ['normal', 'allow-discrete'],
+		},
+	},
 	interfaces: {
 		CSSStartingStyleRule: {
 			links: {
