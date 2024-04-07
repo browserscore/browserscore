@@ -3,6 +3,7 @@ export default {
 	links: {
 		tr: 'css-properties-values-api-1',
 		dev: 'css-properties-values-api-1',
+		devtype: 'houdini',
 	},
 	status: {
 		stability: 'experimental',
@@ -14,35 +15,42 @@ export default {
 				dev: '#the-syntax-descriptor',
 			},
 			required: {
-				'*': {
-					descriptor: 'inherits: false',
+				"'x | y'": {
+					descriptor: "inherits: false; initial-value: x",
+				},
+				"'<length>'": {
+					descriptor: "inherits: false; initial-value: 100px",
+				},
+				"'<color>'": {
+					descriptor: "inherits: false; initial-value: red",
 				},
 			},
 			tests: [
 				"'x | y'",
 				"'<length>'",
+				"'<color>'",
 			],
 		},
 		'@property --foo/inherits': {
 			links: {
-				tr: '#the-inherits-descriptor',
-				dev: '#the-inherits-descriptor',
+				tr: '#inherits-descriptor',
+				dev: '#inherits-descriptor',
 			},
 			required: {
 				'*': {
-					descriptor: "syntax: '<color>'",
+					descriptor: "syntax: '<color>'; initial-value: red",
 				},
 			},
 			tests: ['true', 'false'],
 		},
 		'@property --foo/initial-value': {
 			links: {
-				tr: '#the-initial-value-descriptor',
-				dev: '#the-initial-value-descriptor',
+				tr: '#initial-value-descriptor',
+				dev: '#initial-value-descriptor',
 			},
 			required: {
 				'*': {
-					descriptor: "syntax: '<color>'; inherits: true",
+					descriptor: "syntax: '<color>'; inherits: false",
 				},
 			},
 			tests: ['blue', '#00f', 'rgb(0, 0, 255)'],
@@ -54,7 +62,7 @@ export default {
 				tr: '#at-property-rule',
 				dev: '#at-property-rule',
 			},
-			tests: "@property --cool-color {\n  syntax: '<color>';\n  inherits: true;\n}",
+			tests: "@property --cool-color {\n  syntax: '<color>';\n  inherits: true;\n  initial-value: red;\n}",
 		},
 	},
 	interfaces: {
