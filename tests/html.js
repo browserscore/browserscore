@@ -14,5 +14,17 @@ export default {
 			},
 			tests: ':autofill',
 		},
+		':popover-open': {
+			links: {
+				dev: '#selector-popover-open',
+			},
+			tests: ':popover-open',
+		},
+		':state()': {
+			links: {
+				dev: '#selector-custom',
+			},
+			tests: ':state(checked)',
+		},
 	},
 };
