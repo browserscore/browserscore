@@ -29,6 +29,12 @@ export default {
 			tests: [
 				'anchor(inside)',
 				'anchor(outside)',
+				'anchor(inside, 20px)',
+				'anchor(outside, 30%)',
+				'anchor(--anchor inside)',
+				'anchor(--anchor outside)',
+				'anchor(--anchor inside, 20px)',
+				'anchor(--anchor outside, 30%)',
 				'anchor(top)',
 				'anchor(left)',
 				'anchor(right)',
@@ -39,17 +45,15 @@ export default {
 				'anchor(self-end)',
 				'anchor(center)',
 				'anchor(30%)',
-				'anchor(inside, 20px)',
-				'anchor(outside, 30%)',
 				'anchor(top, 20px)',
 				'anchor(start, 30%)',
 				'anchor(30%, 20px)',
 				'anchor(--anchor top)',
 				'anchor(--anchor top, 20px)',
 				'anchor(--anchor top, 5%)',
-				'anchor(implicit top)',
-				'anchor(implicit top, 20px)',
-				'anchor(implicit top, 5%)',
+				'anchor(top)',
+				'anchor(top, 20px)',
+				'anchor(top, 5%)',
 			],
 		},
 		'anchor-center': {
@@ -61,6 +65,8 @@ export default {
 				'align-self',
 				'justify-items',
 				'align-items',
+				'place-self',
+				'place-items',
 			],
 			tests: [
 				'anchor-center',
@@ -78,6 +84,12 @@ export default {
 				'min-height',
 				'max-width',
 				'max-height',
+				'inline-size',
+				'block-size',
+				'min-inline-size',
+				'max-inline-size',
+				'min-block-size',
+				'max-block-size',
 			],
 			tests: [
 				'anchor-size(width)',
@@ -86,23 +98,23 @@ export default {
 				'anchor-size(inline)',
 				'anchor-size(self-block)',
 				'anchor-size(self-inline)',
+				'anchor-size(width, 20px)',
+				'anchor-size(height, 5%)',
 				'anchor-size(--anchor width)',
 				'anchor-size(--anchor width, 20px)',
-				'anchor-size(--anchor width, 5%)',
-				'anchor-size(implicit width)',
-				'anchor-size(implicit width, 20px)',
-				'anchor-size(implicit width, 5%)',
+				'anchor-size(--anchor height, 5%)',
+				'anchor-size(--anchor block)',
+				'anchor-size(--anchor inline)',
+				'anchor-size(--anchor block, 20px)',
+				'anchor-size(--anchor inline, 5%)',
+				'anchor-size(--anchor self-block)',
+				'anchor-size(--anchor self-inline)',
+				'anchor-size(--anchor self-block, 20px)',
+				'anchor-size(--anchor self-inline, 5%)',
 			],
 		},
 	},
 	properties: {
-		'anchor-default': {
-			links: {
-				tr: '#anchor-default',
-				dev: '#anchor-default',
-			},
-			tests: ['--anchor', 'implicit'],
-		},
 		'anchor-name': {
 			links: {
 				tr: '#name',
@@ -190,12 +202,16 @@ export default {
 				'span-self-start span-self-end',
 			],
 		},
+		// The old name is anchor-default
 		'position-anchor': {
 			links: {
 				tr: '#position-anchor',
 				dev: '#position-anchor',
 			},
-			tests: ['implicit', '--fallback'],
+			tests: [
+				'auto', // the old name is implicit, https://github.com/w3c/csswg-drafts/issues/10312#issuecomment-2112984254
+				'--fallback'
+			],
 		},
 		'position-try': {
 			links: {
