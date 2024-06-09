@@ -9,7 +9,6 @@ export default {
 	properties: {
 		'text-size-adjust': {
 			links: {
-				tr: '#adjustment-control',
 				dev: '#adjustment-control',
 			},
 			tests: ['auto', 'none', '110%'],
