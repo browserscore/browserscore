@@ -17,6 +17,7 @@ export default {
 				'none',
 				'block',
 				'inline',
+				'block inline',
 				'block-start',
 				'inline-start',
 				'block-end',
