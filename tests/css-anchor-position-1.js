@@ -298,10 +298,10 @@ export default {
 				'most-inline-size inset-area(block-start), --try-position flip-inline',
 			],
 		},
-		'position-try-options': {
+		'position-try-fallbacks': {
 			links: {
-				tr: '#position-try-options',
-				dev: '#position-try-options',
+				tr: '#position-try-fallbacks',
+				dev: '#position-try-fallbacks',
 			},
 			tests: [
 				'none',
