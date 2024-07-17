@@ -43,14 +43,65 @@ export default {
 				tr: '#flex-property',
 				dev: '#flex-property',
 			},
-			tests: ['none', '5 7 10%'],
+			tests: [
+				// TODO: Add the `contain` keywords defined by css-sizing-4.
+				// https://drafts.csswg.org/css-sizing-4/#sizing-values
+				'none',
+				'auto',
+				'content',
+				'stretch',
+				'min-content',
+				'max-content',
+				'fit-content',
+				'1 fit-content(10%)',
+				'1 fit-content(200px)',
+				'1 fit-content(0)',
+				'1',
+				'0', // 0px
+				'0%',
+				'100%',
+				'300px',
+				'20em',
+				'1 1 0',
+				'1 1 0%',
+				'0 1 300px',
+				'1 1 20em',
+				'5 7 10%',
+				'1 auto',
+				'1 content',
+				'1 min-content',
+				'1 max-content',
+				'1 fit-content',
+				'auto 1 0',
+				'content 0 1',
+			],
 		},
 		'flex-basis': {
 			links: {
 				tr: '#flex-basis-property',
 				dev: '#flex-basis-property',
 			},
-			tests: ['auto', 'content', '1px'],
+			tests: [
+				// TODO: Add the `contain` keywords defined by css-sizing-4.
+				// https://drafts.csswg.org/css-sizing-4/#sizing-values
+				'auto',
+				'content',
+				'stretch',
+				'min-content',
+				'max-content',
+				'fit-content',
+				'fit-content(10%)',
+				'fit-content(200px)',
+				'fit-content(0)',
+				'0', // 0px
+				'0%',
+				'100%',
+				'300px',
+				'20em',
+				'calc(100% - 1em)',
+				'env(safe-area-inset-top)',
+				'env(safe-area-inset-top, 12px)',
+			],
 		},
 		'flex-direction': {
 			links: {
