@@ -134,9 +134,9 @@ export default {
 				'--first-anchor, --second-anchor',
 			],
 		},
-		'inset-area': {
+		'position-area': {
 			links: {
-				dev: '#inset-area',
+				dev: '#position-area',
 			},
 			tests: [
 				'left',
@@ -417,7 +417,7 @@ export default {
 			tests: [
 				"@position-try --button-popover {\n  top: anchor(--button bottom);\n  left: anchor(--button left);\n}",
 				"@position-try --button-popover {\n  bottom: anchor(--button top);\n  right: anchor(--button right);\n  margin: 1em;\n}",
-				"@position-try --position-try {\n  inset-area: top left;\n}",
+				"@position-try --position-try {\n  position-area: top left;\n}",
 			],
 		},
 	},
