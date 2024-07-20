@@ -102,7 +102,10 @@ export default {
 				dev: '#fontfacesetloadevent',
 				mdnGroup: 'DOM',
 			},
-			tests: ['FontFaceSetLoadEvent'],
+			tests: ['fontfaces'],
+			interface: function() {
+				return new FontFaceSetLoadEvent('loadingdone');
+			},
 		},
 		Document: {
 			links: {

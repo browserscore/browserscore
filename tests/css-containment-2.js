@@ -29,7 +29,10 @@ export default {
 				dev: '#content-visibility-auto-state-change',
 				mdnGroup: 'DOM',
 			},
-			tests: ['ContentVisibilityAutoStateChangeEvent'],
+			tests: ['skipped'],
+			interface: function() {
+				return new ContentVisibilityAutoStateChangeEvent('contentvisibilityautostatechange');
+			}
 		},
 	}
 };

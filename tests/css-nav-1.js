@@ -59,7 +59,10 @@ export default {
 				dev: '#events-navigationevent',
 				mdnGroup: 'DOM',
 			},
-			tests: ['NavigationEvent'],
+			tests: ['dir', 'relatedTarget'],
+			interface: function() {
+				return new NavigationEvent('navbeforefocus');
+			}
 		},
 	},
 };

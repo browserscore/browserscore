@@ -63,7 +63,10 @@ export default {
 				dev: '#interface-transitionevent',
 				mdnGroup: 'DOM',
 			},
-			tests: ['TransitionEvent'],
+			tests: ['propertyName', 'elapsedTime', 'pseudoElement'],
+			interface: function() {
+				return new TransitionEvent('transitionend');
+			},
 		},
 		Element: {
 			links: {

@@ -103,7 +103,10 @@ export default {
 				dev: '#interface-animationevent',
 				mdnGroup: 'DOM',
 			},
-			tests: ['AnimationEvent'],
+			tests: ['animationName', 'elapsedTime', 'pseudoElement'],
+			interface: function() {
+				return new AnimationEvent('animationstart');
+			}
 		},
 		CSSRule: {
 			links: {

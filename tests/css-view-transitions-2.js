@@ -53,12 +53,15 @@ export default {
 				return style.sheet.cssRules[0];
 			},
 		},
-		RevealEvent: {
+		PageRevealEvent: {
 			links: {
-				dev: '#ready-to-render-event',
+				dev: '#new-doc-event',
 				mdnGroup: 'DOM',
 			},
-			tests: ['RevealEvent'],
+			tests: ['viewTransition'],
+			interface: function() {
+				return new PageRevealEvent('reveal');
+			},
 		},
 	},
 };
