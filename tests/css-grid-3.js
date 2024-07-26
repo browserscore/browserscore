@@ -7,17 +7,29 @@ export default {
 		stability: 'experimental',
 	},
 	properties: {
+		grid: {
+			links: {
+				dev: '#masonry-layout',
+			},
+			tests: [
+				'masonry / masonry',
+				'masonry / repeat(4, 2ch)',
+				'repeat(4, 2ch) / masonry',
+				'masonry / repeat(auto-fit, minmax(25ch, 1fr))',
+				'repeat(auto-fit, minmax(25ch, 1fr)) / masonry',
+			],
+		},
 		'grid-template-columns': {
 			links: {
 				dev: '#masonry-layout',
 			},
-			tests: ['masonry'],
+			tests: ['masonry', 'repeat(auto-fit, minmax(25ch, 1fr))'],
 		},
 		'grid-template-rows': {
 			links: {
 				dev: '#masonry-layout',
 			},
-			tests: ['masonry '],
+			tests: ['masonry ', 'repeat(auto-fit, minmax(25ch, 1fr))'],
 		},
 		'masonry-auto-flow': {
 			links: {
@@ -33,49 +45,6 @@ export default {
 				'next definite-first',
 				'next ordered',
 				'ordered pack',
-			],
-		},
-		'align-tracks': {
-			links: {
-				dev: '#tracks-alignment',
-			},
-			tests: [
-				'normal',
-				'baseline',
-				'first baseline',
-				'last baseline',
-				'space-between',
-				'space-around',
-				'space-evenly',
-				'stretch',
-				'center',
-				'start',
-				'end',
-				'flex-start',
-				'flex-end',
-				'unsafe center',
-				'safe start',
-			],
-		},
-		'justify-tracks': {
-			links: {
-				dev: '#tracks-alignment',
-			},
-			tests: [
-				'normal',
-				'space-between',
-				'space-around',
-				'space-evenly',
-				'stretch',
-				'center',
-				'start',
-				'end',
-				'flex-start',
-				'flex-end',
-				'left',
-				'right',
-				'unsafe center',
-				'safe start',
 			],
 		},
 	},
