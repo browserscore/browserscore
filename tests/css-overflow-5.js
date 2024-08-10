@@ -6,39 +6,30 @@ export default {
 	status: {
 		stability: 'experimental',
 	},
-	values: {
-		'continue': {
+	properties: {
+		'scroll-marker-group': {
 			links: {
-				dev: '#channelling-overflow',
+				dev: '#scroll-marker-group',
 			},
-			properties: ['continue'],
 			tests: [
-				'overflow',
-				'paginate',
-				'fragments',
+				'none',
+				'before',
+				'after',
 			],
 		},
 	},
 	selectors: {
-		'::nth-fragment()': {
+		'::scroll-marker': {
 			links: {
-				dev: '#fragment-pseudo-element',
+				dev: '#scroll-marker-pseudo',
 			},
-			tests: [
-				':nth-fragment(even)',
-				':nth-fragment(odd)',
-				':nth-fragment(n)',
-				':nth-fragment(-n)',
-				':nth-fragment(0n)',
-				':nth-fragment(1)',
-				':nth-fragment(-1)',
-				':nth-fragment(0)',
-				':nth-fragment(n+1)',
-				':nth-fragment(3n+1)',
-				':nth-fragment(3n + 1)',
-				':nth-fragment(-n+1)',
-				':nth-fragment(3n-1)',
-			],
+			tests: ['::scroll-marker'],
+		},
+		'::scroll-marker-group': {
+			links: {
+				dev: '#scroll-marker-group-pseudo',
+			},
+			tests: ['::scroll-marker-group'],
 		},
 	},
 };
