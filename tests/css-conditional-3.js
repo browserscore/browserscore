@@ -55,7 +55,7 @@ export default {
 				dev: '#the-cssmediarule-interface',
 				mdnGroup: 'DOM',
 			},
-			tests: ['media', 'conditionText'],
+			tests: ['media', 'matches', 'conditionText'],
 			required: '@media (min-width: 500px) { }',
 			interface: function(style) {
 				return style.sheet.cssRules[0];
@@ -67,7 +67,7 @@ export default {
 				dev: '#the-csssupportsrule-interface',
 				mdnGroup: 'DOM',
 			},
-			tests: ['conditionText'],
+			tests: ['matches', 'conditionText'],
 			required: '@supports (display: grid) { }',
 			interface: function(style) {
 				return style.sheet.cssRules[0];
