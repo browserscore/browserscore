@@ -1,7 +1,6 @@
 export default {
 	title: 'Selectors Level 5',
 	links: {
-		tr: 'selectors-5',
 		dev: 'selectors-5',
 	},
 	status: {
@@ -10,7 +9,6 @@ export default {
 	selectors: {
 		':local-link()': {
 			links: {
-				tr: '#local-pseudo',
 				dev: '#local-pseudo',
 			},
 			tests: [
@@ -19,14 +17,12 @@ export default {
 		},
 		':state()': {
 			links: {
-				tr: '#custom-state',
 				dev: '#custom-state',
 			},
 			tests: [':state(stuck)'],
 		},
 		'Reference selector': {
 			links: {
-				tr: '#idref-combinators',
 				dev: '#idref-combinators',
 			},
 			tests: [
