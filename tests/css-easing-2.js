@@ -11,6 +11,7 @@ export default {
 		properties: ['transition-timing-function'],
 		"linear()": {
 			links: {
+				tr: '#the-linear-easing-function',
 				dev: '#the-linear-easing-function',
 				mdn: 'easing-function#linear_easing_function',
 			},

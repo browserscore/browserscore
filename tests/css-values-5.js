@@ -1,6 +1,7 @@
 export default {
 	title: 'CSS Values and Units Module Level 5',
 	links: {
+		tr: 'css-values-5',
 		dev: 'css-values-5',
 	},
 	status: {
@@ -10,6 +11,7 @@ export default {
 		properties: ['width', 'padding'],
 		'attr()': {
 			links: {
+				tr: '#attr-notation',
 				dev: '#attr-notation',
 			},
 			properties: ['content', 'width', 'padding'],
@@ -33,6 +35,7 @@ export default {
 		},
 		'first-valid()': {
 			links: {
+				tr: '#first-valid',
 				dev: '#first-valid',
 			},
 			tests: [
@@ -43,6 +46,7 @@ export default {
 		},
 		'attr()': {
 			links: {
+				tr: '#attr-notation',
 				dev: '#attr-notation',
 			},
 			properties: ['content', 'width', 'padding'],
@@ -66,6 +70,7 @@ export default {
 		},
 		'random()': {
 			links: {
+				tr: '#random',
 				dev: '#random',
 			},
 			tests: [
@@ -84,6 +89,7 @@ export default {
 		},
 		'random-item() with lengths': {
 			links: {
+				tr: '#random-item',
 				dev: '#random-item',
 			},
 			tests: [
@@ -96,6 +102,7 @@ export default {
 		},
 		'random-item() with keywords': {
 			links: {
+				tr: '#random-item',
 				dev: '#random-item',
 			},
 			properties: ['color'],
@@ -105,6 +112,7 @@ export default {
 		},
 		'random-item() with keywords': {
 			links: {
+				tr: '#random-item',
 				dev: '#random-item',
 			},
 			properties: ['color'],
@@ -114,6 +122,7 @@ export default {
 		},
 		'random-item() with functions': {
 			links: {
+				tr: '#random-item',
 				dev: '#random-item',
 			},
 			properties: ['background-image'],
@@ -123,6 +132,7 @@ export default {
 		},
 		'sibling-count()': {
 			links: {
+				tr: '#tree-counting',
 				dev: '#tree-counting',
 			},
 			tests: [
@@ -131,6 +141,7 @@ export default {
 		},
 		'sibling-index()': {
 			links: {
+				tr: '#tree-counting',
 				dev: '#tree-counting',
 			},
 			tests: [
@@ -139,12 +150,14 @@ export default {
 		},
 		'toggle() with lengths': {
 			links: {
+				tr: '#toggle-notation',
 				dev: '#toggle-notation',
 			},
 			tests: ['toggle(1px, 2px)'],
 		},
 		'toggle() with keywords': {
 			links: {
+				tr: '#toggle-notation',
 				dev: '#toggle-notation',
 			},
 			properties: ['font-style'],
@@ -152,6 +165,7 @@ export default {
 		},
 		'toggle() with mixed keywords and lengths': {
 			links: {
+				tr: '#toggle-notation',
 				dev: '#toggle-notation',
 			},
 			properties: ['background-position'],
@@ -159,6 +173,7 @@ export default {
 		},
 		'Request URL modifiers': {
 			links: {
+				tr: '#request-url-modifiers',
 				dev: '#request-url-modifiers',
 			},
 			tests: [
