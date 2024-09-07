@@ -7,24 +7,6 @@ export default {
 		stability: 'experimental',
 	},
 	properties: {
-		'scroll-start': {
-			links: {
-				dev: '#scroll-start',
-			},
-			tests: [
-				'auto',
-				'start',
-				'end',
-				'center',
-				'left',
-				'right',
-				'top',
-				'bottom',
-				'100px',
-				'10%',
-				'100px 10%',
-			],
-		},
 		'scroll-start-target': {
 			links: {
 				dev: '#scroll-start-target',
@@ -32,58 +14,6 @@ export default {
 			tests: [
 				'none',
 				'auto',
-			],
-		},
-		'scroll-start-x': {
-			links: {
-				dev: '#scroll-start-longhands-physical',
-			},
-			tests: [
-				'auto',
-				'start',
-				'end',
-				'center',
-				'100px',
-				'10%',
-			],
-		},
-		'scroll-start-y': {
-			links: {
-				dev: '#scroll-start-longhands-physical',
-			},
-			tests: [
-				'auto',
-				'start',
-				'end',
-				'center',
-				'100px',
-				'10%',
-			],
-		},
-		'scroll-start-inline': {
-			links: {
-				dev: '#scroll-start-longhands-logical',
-			},
-			tests: [
-				'auto',
-				'start',
-				'end',
-				'center',
-				'100px',
-				'10%',
-			],
-		},
-		'scroll-start-block': {
-			links: {
-				dev: '#scroll-start-longhands-logical',
-			},
-			tests: [
-				'auto',
-				'start',
-				'end',
-				'center',
-				'100px',
-				'10%',
 			],
 		},
 	},
@@ -118,5 +48,28 @@ export default {
 			},
 			tests: ':snapped-block',
 		},
+	},
+	interfaces: {
+		SnapEvent: {
+			links: {
+				dev: '#snap-events',
+				mdnGroup: 'DOM',
+			},
+			tests: ['snapTargetBlock', 'snapTargetInline'],
+			interface: function() {
+				return new SnapEvent('scrollsnapchange');
+			},
+		},
+		Element: {
+			links: {
+				tr: '#interface-globaleventhandlers',
+				dev: '#interface-globaleventhandlers',
+				mdnGroup: 'DOM',
+			},
+			tests: ['onsnapchanged', 'onsnapchanging'],
+			interface: function(style) {
+				return document.body;
+			},
+		}
 	},
 };
