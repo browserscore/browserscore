@@ -65,6 +65,10 @@ export default {
 				'::part(mypart):muted',
 				'::part(mypart):volume-locked',
 
+				// Spec: https://drafts.csswg.org/css-view-transitions-2/#pseudo-classes-for-selective-vt
+				'::part(mypart):active-view-transition',
+				'::part(mypart):active-view-transition-type(mytype)',
+
 				// TODO: add pseudo-elements after ::part()
 			],
 		},
