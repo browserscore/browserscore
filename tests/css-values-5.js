@@ -1,3 +1,42 @@
+const calc_size_auto_tests = [
+	'calc-size(auto, size)',
+	'calc-size(auto, size + 16px)',
+	'calc-size(auto, size - 10rem)',
+	'calc-size(auto, size * 0.9)',
+	'calc-size(auto, size / 2)',
+]
+
+const calc_size_default_tests = [
+	'calc-size(stretch, size)', // -webkit-fill-available
+	'calc-size(stretch, size - 1em)',
+	'calc-size(0px, 0px)',
+	'calc-size(300px, size)',
+	'calc-size(50%, size)',
+	'calc-size(min-content, size)',
+	'calc-size(max-content, size)',
+	'calc-size(fit-content, size)',
+	'calc-size(min-content, size * 2)',
+	'calc-size(max-content, size / 2)',
+	'calc-size(fit-content, 30px + size / 2)',
+	'calc-size(fit-content, 50% + size / 2)',
+	'calc-size(fit-content, 260px + size * -0.3)',
+	'calc-size(fit-content, -100px + size)',
+	'calc-size(any, 0px)',
+	'calc-size(any, 25em)',
+	'calc-size(any, 40%)',
+	'calc-size(any, 50px + 30%)',
+	'calc-size(any, 30% + 2.6rem)',
+	'calc-size(30px, 25em)',
+	'calc-size(10px, sign(size) * size)',
+	// Nested calc-size()
+	'calc-size(calc-size(any, 30px), size)',
+	'calc-size(calc-size(any, 30px), 25em)',
+	'calc-size(calc-size(2in, 30px), 25em)',
+	'calc-size(calc-size(50%, 30px), 25em)',
+	'calc-size(calc-size(max-content, size), size)',
+	'calc-size(calc-size(max-content, size), size)',
+]
+
 export default {
 	title: 'CSS Values and Units Module Level 5',
 	links: {
@@ -7,8 +46,59 @@ export default {
 	status: {
 		stability: 'experimental',
 	},
+	properties: {
+		'interpolate-size': {
+			links: {
+				tr: '#interpolate-size',
+				dev: '#interpolate-size',
+			},
+			tests: [
+				'numeric-only',
+				'allow-keywords',
+			],
+		},
+	},
 	values: {
 		properties: ['width', 'padding'],
+		'calc-size()': {
+			links: {
+				tr: '#calc-size',
+				dev: '#calc-size',
+			},
+			properties: [ 'width', 'min-width', 'height', 'min-height', 'block-size', 'min-block-size', 'inline-size', 'min-inline-size', ],
+			// Note: The none keyword is not usable within calc-size().
+			tests: [
+				...calc_size_auto_tests,
+				...calc_size_default_tests,
+			],
+		},
+		'calc-size() in max-width or max-height': {
+			links: {
+				tr: '#calc-size',
+				dev: '#calc-size',
+			},
+			properties: [ 'max-width', 'max-height', 'max-block-size', 'max-inline-size', ],
+			// Note: The none keyword is not usable within calc-size().
+			tests: calc_size_default_tests,
+		},
+		'calc-size() in flex-basis': {
+			links: {
+				tr: '#calc-size',
+				dev: '#calc-size',
+			},
+			properties: [ 'flex-basis', ],
+			// Note: The none keyword is not usable within calc-size().
+			tests: [
+				'calc-size(content, size)',
+				'calc-size(content, size + 1vw)',
+				'calc-size(content, size - 1em)',
+				'calc-size(content, size * 7)',
+				'calc-size(content, size / 0.9)',
+				'calc-size(content, size * 1.6 + 23px)',
+				...calc_size_auto_tests,
+				...calc_size_default_tests,
+			],
+		},
 		'attr()': {
 			links: {
 				tr: '#attr-notation',
