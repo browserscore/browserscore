@@ -37,5 +37,11 @@ export default {
 			},
 			tests: ['::slotted(*)', '::slotted(.foo)'],
 		},
+		':has-slotted': {
+			links: {
+				dev: '#the-has-slotted-pseudo',
+			},
+			tests: ':has-slotted',
+		},
 	},
 };
