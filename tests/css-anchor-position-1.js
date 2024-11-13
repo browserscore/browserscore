@@ -18,13 +18,13 @@ export default {
 				'right',
 				'bottom',
 				'left',
+				'inset',
 				'inset-block-start',
 				'inset-block-end',
 				'inset-inline-start',
 				'inset-inline-end',
 				'inset-block',
 				'inset-inline',
-				'inset',
 			],
 			tests: [
 				'anchor(inside)',
@@ -90,6 +90,27 @@ export default {
 				'max-inline-size',
 				'min-block-size',
 				'max-block-size',
+
+				// inset
+				'top',
+				'right',
+				'bottom',
+				'left',
+				'inset',
+				'inset-block-start',
+				'inset-block-end',
+				'inset-inline-start',
+				'inset-inline-end',
+				'inset-block',
+				'inset-inline',
+
+				// margin
+				'margin-block',
+				'margin-block-start',
+				'margin-block-end',
+				'margin-inline',
+				'margin-inline-start',
+				'margin-inline-end',
 			],
 			tests: [
 				'anchor-size(width)',
