@@ -29,6 +29,13 @@ export default {
 			},
 			tests: ['::selection'],
 		},
+		'::search-text': {
+			links: {
+				tr: '#selectordef-search-text',
+				dev: '#selectordef-search-text',
+			},
+			tests: ['::search-text'],
+		},
 		'::target-text': {
 			links: {
 				tr: '#selectordef-target-text',
@@ -50,19 +57,17 @@ export default {
 			},
 			tests: ['::grammar-error'],
 		},
-		'::file-selector-button': {
-			links: {
-				tr: '#marker-pseudo',
-				dev: '#marker-pseudo',
-			},
-			tests: ['::file-selector-button'],
-		},
 		'::marker': {
 			links: {
 				tr: '#marker-pseudo',
 				dev: '#marker-pseudo',
 			},
-			tests: ['::marker'],
+			tests: [
+				'::marker',
+				// Made ::before::marker and ::after::marker valid: https://github.com/w3c/csswg-drafts/issues/1793
+				'::before::marker',
+				'::after::marker',
+			],
 		},
 		'::placeholder': {
 			links: {
@@ -71,6 +76,21 @@ export default {
 			},
 			tests: ['::placeholder'],
 		},
+		// Element-backed Pseudo-Elements
+		'::file-selector-button': {
+			links: {
+				tr: '#file-selector-button-pseudo',
+				dev: '#file-selector-button-pseudo',
+			},
+			tests: ['::file-selector-button'],
+		},
+		'::details-content': {
+			links: {
+				tr: '#details-content-pseudo',
+				dev: '#details-content-pseudo',
+			},
+			tests: ['::details-content'],
+		}
 	},
 	interfaces: {
 		Element: {
