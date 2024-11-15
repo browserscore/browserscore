@@ -31,7 +31,6 @@ export default {
 		},
 		'::search-text': {
 			links: {
-				tr: '#selectordef-search-text',
 				dev: '#selectordef-search-text',
 			},
 			tests: ['::search-text'],
@@ -86,7 +85,6 @@ export default {
 		},
 		'::details-content': {
 			links: {
-				tr: '#details-content-pseudo',
 				dev: '#details-content-pseudo',
 			},
 			tests: ['::details-content'],
