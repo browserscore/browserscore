@@ -1,0 +1,317 @@
+export default {
+	title: 'CSS Gap Decorations Module Level 1',
+	links: {
+		dev: 'css-gaps-1',
+	},
+	status: {
+		stability: 'experimental',
+	},
+	properties: {
+		'column-rule-break': {
+			links: {
+				dev: '#propdef-column-rule-break',
+			},
+			tests: [
+				'intersection',
+				'spanning-item',
+				'none',
+			],
+		},
+		'row-rule-break': {
+			links: {
+				dev: '#propdef-row-rule-break',
+			},
+			tests: [
+				'intersection',
+				'spanning-item',
+				'none',
+			],
+		},
+		'gap-rule-break': {
+			links: {
+				dev: '#propdef-gap-rule-break',
+			},
+			tests: [
+				'intersection',
+				'spanning-item',
+				'none',
+			],
+		},
+		'column-rule-outset': {
+			links: {
+				dev: '#propdef-column-rule-outset',
+			},
+			tests: [
+				'10px',
+				'5%',
+			],
+		},
+		'row-rule-outset': {
+			links: {
+				dev: '#propdef-row-rule-outset',
+			},
+			tests: [
+				'10px',
+				'5%',
+			],
+		},
+		'gap-rule-outset': {
+			links: {
+				dev: '#propdef-gap-rule-outset',
+			},
+			tests: [
+				'10px',
+				'5%',
+			],
+		},
+		'gap-rule-paint-order': {
+			links: {
+				dev: '#propdef-gap-rule-paint-order',
+			},
+			tests: [
+				'row-over-column',
+				'column-over-row',
+			],
+		},
+		'column-rule-color': {
+			links: {
+				dev: '#propdef-column-rule-color',
+			},
+			tests: [
+				'red',
+				'rgb(0 0 0 / 0.5)',
+				'repeat(2, red yellow lime blue)',
+				'repeat(auto, red yellow lime blue)',
+				'red repeat(2, lime blue)',
+				'red repeat(auto, red yellow lime blue)',
+				'repeat(2, lime blue) repeat(auto, red yellow lime blue)',
+				'red repeat(2, lime blue) repeat(auto, red yellow lime blue)',
+				'repeat(auto, red yellow lime blue) yellow',
+				'repeat(auto, red yellow lime blue) repeat(2, red yellow)',
+				'repeat(auto, red yellow lime blue) lime repeat(2, red yellow)',
+				'red repeat(2, lime blue) repeat(auto, red yellow lime blue) yellow repeat(2, red yellow)',
+			],
+		},
+		'row-rule-color': {
+			links: {
+				dev: '#propdef-row-rule-color',
+			},
+			tests: [
+				'red',
+				'rgb(0 0 0 / 0.5)',
+				'repeat(2, red yellow lime blue)',
+				'repeat(auto, red yellow lime blue)',
+				'red repeat(2, lime blue)',
+				'red repeat(auto, red yellow lime blue)',
+				'repeat(2, lime blue) repeat(auto, red yellow lime blue)',
+				'red repeat(2, lime blue) repeat(auto, red yellow lime blue)',
+				'repeat(auto, red yellow lime blue) yellow',
+				'repeat(auto, red yellow lime blue) repeat(2, red yellow)',
+				'repeat(auto, red yellow lime blue) lime repeat(2, red yellow)',
+				'red repeat(2, lime blue) repeat(auto, red yellow lime blue) yellow repeat(2, red yellow)',
+			],
+		},
+		'gap-rule-color': {
+			links: {
+				dev: '#propdef-gap-rule-color',
+			},
+			tests: [
+				'red',
+				'rgb(0 0 0 / 0.5)',
+				'repeat(2, red yellow lime blue)',
+				'repeat(auto, red yellow lime blue)',
+				'red repeat(2, lime blue)',
+				'red repeat(auto, red yellow lime blue)',
+				'repeat(2, lime blue) repeat(auto, red yellow lime blue)',
+				'red repeat(2, lime blue) repeat(auto, red yellow lime blue)',
+				'repeat(auto, red yellow lime blue) yellow',
+				'repeat(auto, red yellow lime blue) repeat(2, red yellow)',
+				'repeat(auto, red yellow lime blue) lime repeat(2, red yellow)',
+				'red repeat(2, lime blue) repeat(auto, red yellow lime blue) yellow repeat(2, red yellow)',
+			],
+		},
+		'column-rule-style': {
+			links: {
+				dev: '#propdef-column-rule-style',
+			},
+			tests: [
+				'solid',
+				'dotted',
+				'none',
+				'repeat(2, solid dotted none)',
+				'repeat(auto, solid dotted none)',
+				'solid repeat(2, dotted none)',
+				'solid repeat(auto, solid dotted none)',
+				'repeat(2, dotted none) repeat(auto, solid dotted none)',
+				'solid repeat(2, dotted none) repeat(auto, solid dotted none)',
+				'repeat(auto, solid dotted none) dotted',
+				'repeat(auto, solid dotted none) repeat(2, solid dotted)',
+				'repeat(auto, solid dotted none) none repeat(2, solid dotted)',
+				'solid repeat(2, dotted none) repeat(auto, solid dotted none) dotted repeat(2, solid dotted)',
+			],
+		},
+		'row-rule-style': {
+			links: {
+				dev: '#propdef-row-rule-style',
+			},
+			tests: [
+				'solid',
+				'dotted',
+				'none',
+				'repeat(2, solid dotted none)',
+				'repeat(auto, solid dotted none)',
+				'solid repeat(2, dotted none)',
+				'solid repeat(auto, solid dotted none)',
+				'repeat(2, dotted none) repeat(auto, solid dotted none)',
+				'solid repeat(2, dotted none) repeat(auto, solid dotted none)',
+				'repeat(auto, solid dotted none) dotted',
+				'repeat(auto, solid dotted none) repeat(2, solid dotted)',
+				'repeat(auto, solid dotted none) none repeat(2, solid dotted)',
+				'solid repeat(2, dotted none) repeat(auto, solid dotted none) dotted repeat(2, solid dotted)',
+			],
+		},
+		'gap-rule-style': {
+			links: {
+				dev: '#propdef-gap-rule-style',
+			},
+			tests: [
+				'solid',
+				'dotted',
+				'none',
+				'repeat(2, solid dotted none)',
+				'repeat(auto, solid dotted none)',
+				'solid repeat(2, dotted none)',
+				'solid repeat(auto, solid dotted none)',
+				'repeat(2, dotted none) repeat(auto, solid dotted none)',
+				'solid repeat(2, dotted none) repeat(auto, solid dotted none)',
+				'repeat(auto, solid dotted none) dotted',
+				'repeat(auto, solid dotted none) repeat(2, solid dotted)',
+				'repeat(auto, solid dotted none) none repeat(2, solid dotted)',
+				'solid repeat(2, dotted none) repeat(auto, solid dotted none) dotted repeat(2, solid dotted)',
+			],
+		},
+		'column-rule-width': {
+			links: {
+				dev: '#propdef-column-rule-width',
+			},
+			tests: [
+				'10px',
+				'5%',
+				'thin',
+				'medium',
+				'thick',
+				'repeat(2, 10px 5% thin medium thick)',
+				'repeat(auto, 10px 5% thin medium thick)',
+				'10px repeat(2, 5% thin medium thick)',
+				'10px repeat(auto, 10px 5% thin medium thick)',
+				'repeat(2, 5% thin medium thick) repeat(auto, 10px 5% thin medium thick)',
+				'10px repeat(2, 5% thin medium thick) repeat(auto, 10px 5% thin medium thick)',
+				'repeat(auto, 10px 5% thin medium thick) 5% thin',
+				'repeat(auto, 10px 5% thin medium thick) repeat(2, 10px 5% thin)',
+				'repeat(auto, 10px 5% thin medium thick) medium repeat(2, 10px 5% thin)',
+				'10px repeat(2, 5% thin medium thick) repeat(auto, 10px 5% thin medium thick) 5% thin repeat(2, 10px 5% thin)',
+			],
+		},
+		'row-rule-width': {
+			links: {
+				dev: '#propdef-row-rule-width',
+			},
+			tests: [
+				'10px',
+				'5%',
+				'thin',
+				'medium',
+				'thick',
+				'repeat(2, 10px 5% thin medium thick)',
+				'repeat(auto, 10px 5% thin medium thick)',
+				'10px repeat(2, 5% thin medium thick)',
+				'10px repeat(auto, 10px 5% thin medium thick)',
+				'repeat(2, 5% thin medium thick) repeat(auto, 10px 5% thin medium thick)',
+				'10px repeat(2, 5% thin medium thick) repeat(auto, 10px 5% thin medium thick)',
+				'repeat(auto, 10px 5% thin medium thick) 5% thin',
+				'repeat(auto, 10px 5% thin medium thick) repeat(2, 10px 5% thin)',
+				'repeat(auto, 10px 5% thin medium thick) medium repeat(2, 10px 5% thin)',
+				'10px repeat(2, 5% thin medium thick) repeat(auto, 10px 5% thin medium thick) 5% thin repeat(2, 10px 5% thin)',
+			],
+		},
+		'gap-rule-width': {
+			links: {
+				dev: '#propdef-gap-rule-width',
+			},
+			tests: [
+				'10px',
+				'5%',
+				'thin',
+				'medium',
+				'thick',
+				'repeat(2, 10px 5% thin medium thick)',
+				'repeat(auto, 10px 5% thin medium thick)',
+				'10px repeat(2, 5% thin medium thick)',
+				'10px repeat(auto, 10px 5% thin medium thick)',
+				'repeat(2, 5% thin medium thick) repeat(auto, 10px 5% thin medium thick)',
+				'10px repeat(2, 5% thin medium thick) repeat(auto, 10px 5% thin medium thick)',
+				'repeat(auto, 10px 5% thin medium thick) 5% thin',
+				'repeat(auto, 10px 5% thin medium thick) repeat(2, 10px 5% thin)',
+				'repeat(auto, 10px 5% thin medium thick) medium repeat(2, 10px 5% thin)',
+				'10px repeat(2, 5% thin medium thick) repeat(auto, 10px 5% thin medium thick) 5% thin repeat(2, 10px 5% thin)',
+			],
+		},
+		'column-rule': {
+			links: {
+				dev: '#propdef-column-rule',
+			},
+			tests: [
+				'10px solid red',
+				'5% dotted rgb(0 0 0 / 0.5)',
+				'repeat(2, 10px solid red, 5% dotted yellow)',
+				'repeat(auto, 10px solid red, 5% dotted yellow)',
+				'10px solid red repeat(2, 5% dotted yellow)',
+				'10px solid red repeat(auto, 10px solid red, 5% dotted yellow)',
+				'repeat(2, 5% dotted yellow repeat(auto, 10px solid red, 5% dotted yellow)',
+				'10px solid red repeat(2, 5% dotted yellow repeat(auto, 10px solid red, 5% dotted yellow)',
+				'repeat(auto, 10px solid red, 5% dotted yellow) 5% dotted yellow',
+				'repeat(auto, 10px solid red, 5% dotted yellow) repeat(2, 10px solid red, 5% dotted yellow)',
+				'repeat(auto, 10px solid red, 5% dotted yellow) 5% dotted lime repeat(2, 10px solid red, 5% dotted yellow)',
+				'10px solid red repeat(2, 5% dotted yellow) repeat(auto, 10px solid red, 5% dotted yellow) 5% dotted yellow repeat(2, 10px solid red, 5% dotted yellow)',
+			],
+		},
+		'row-rule': {
+			links: {
+				dev: '#propdef-row-rule',
+			},
+			tests: [
+				'10px solid red',
+				'5% dotted rgb(0 0 0 / 0.5)',
+				'repeat(2, 10px solid red, 5% dotted yellow)',
+				'repeat(auto, 10px solid red, 5% dotted yellow)',
+				'10px solid red repeat(2, 5% dotted yellow)',
+				'10px solid red repeat(auto, 10px solid red, 5% dotted yellow)',
+				'repeat(2, 5% dotted yellow repeat(auto, 10px solid red, 5% dotted yellow)',
+				'10px solid red repeat(2, 5% dotted yellow repeat(auto, 10px solid red, 5% dotted yellow)',
+				'repeat(auto, 10px solid red, 5% dotted yellow) 5% dotted yellow',
+				'repeat(auto, 10px solid red, 5% dotted yellow) repeat(2, 10px solid red, 5% dotted yellow)',
+				'repeat(auto, 10px solid red, 5% dotted yellow) 5% dotted lime repeat(2, 10px solid red, 5% dotted yellow)',
+				'10px solid red repeat(2, 5% dotted yellow) repeat(auto, 10px solid red, 5% dotted yellow) 5% dotted yellow repeat(2, 10px solid red, 5% dotted yellow)',
+			],
+		},
+		'gap-rule': {
+			links: {
+				dev: '#propdef-gap-rule',
+			},
+			tests: [
+				'10px solid red',
+				'5% dotted rgb(0 0 0 / 0.5)',
+				'repeat(2, 10px solid red, 5% dotted yellow)',
+				'repeat(auto, 10px solid red, 5% dotted yellow)',
+				'10px solid red repeat(2, 5% dotted yellow)',
+				'10px solid red repeat(auto, 10px solid red, 5% dotted yellow)',
+				'repeat(2, 5% dotted yellow repeat(auto, 10px solid red, 5% dotted yellow)',
+				'10px solid red repeat(2, 5% dotted yellow repeat(auto, 10px solid red, 5% dotted yellow)',
+				'repeat(auto, 10px solid red, 5% dotted yellow) 5% dotted yellow',
+				'repeat(auto, 10px solid red, 5% dotted yellow) repeat(2, 10px solid red, 5% dotted yellow)',
+				'repeat(auto, 10px solid red, 5% dotted yellow) 5% dotted lime repeat(2, 10px solid red, 5% dotted yellow)',
+				'10px solid red repeat(2, 5% dotted yellow) repeat(auto, 10px solid red, 5% dotted yellow) 5% dotted yellow repeat(2, 10px solid red, 5% dotted yellow)',
+			],
+		},
+	},
+};

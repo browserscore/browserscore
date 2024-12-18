@@ -42,6 +42,7 @@ import cssFontLoading3 from './tests/css-font-loading-3.js';
 import cssFonts3 from './tests/css-fonts-3.js';
 import cssFonts4 from './tests/css-fonts-4.js';
 import cssFonts5 from './tests/css-fonts-5.js';
+import cssGaps1 from './tests/css-gaps-1.js';
 import cssGrid1 from './tests/css-grid-1.js';
 import cssGrid2 from './tests/css-grid-2.js';
 import cssGrid3 from './tests/css-grid-3.js';
@@ -211,6 +212,7 @@ export default {
 	'css-fonts-3': cssFonts3,
 	'css-fonts-4': cssFonts4,
 	'css-fonts-5': cssFonts5,
+	'css-gaps-1': cssGaps1,
 	'css-grid-1': cssGrid1,
 	'css-grid-2': cssGrid2,
 	'css-grid-3': cssGrid3,
