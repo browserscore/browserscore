@@ -134,28 +134,19 @@ export default {
 				'first-valid(foo; 10px)',
 			],
 		},
-		'progress() with lengths and percentages': {
+		'progress()': {
 			links: {
 				tr: '#progress-func',
 				dev: '#progress-func',
 			},
 			tests: [
-				'progress(0.5, 100px, 200px)',
-				'progress(0.5, 10%, 20%)',
-				'progress(0.5, -infinity, infinity)',
-				'progress(0.5, 100px + 200px, 200px + 600px)',
-				'progress(0.5, 3 * (10% + 20%), (60% + 10%) / 2)',
-			],
-		},
-		'progress() with numbers': {
-			links: {
-				tr: '#progress-func',
-				dev: '#progress-func',
-			},
-			properties: ['line-height'],
-			tests: [
-				'progress(0.5, 0, 10)',
-				'progress(0.1 + 0.4, 0, 10)',
+				'calc(100px * progress(150px, 100px, 200px))',
+				'calc(100px * progress(12%, 10%, 20%))',
+				'calc(100px * progress(200deg, 180deg, 360deg))',
+				'calc(100px * progress(4, 0, 10))',
+				'calc(100px * progress(0, -pi, pi))',
+				'calc(100px * progress(150px, 100px + 200px, 200px + 600px))',
+				'calc(100px * progress(3em, 3 * (1em + 2em), (7em + 1em) / 2))',
 			],
 		},
 		'media-progress()': {
@@ -164,12 +155,12 @@ export default {
 				dev: '#media-progress-func',
 			},
 			tests: [
-				'media-progress(width, 500px, 1000px)',
-				'media-progress(width, 20%, 50%)',
-				'media-progress(width, 100px + 200px, 200px + 600px)',
-				'media-progress(width, 3 * (10% + 20%), (60% + 10%) / 2)',
-				'media-progress(height, 500px, 1000px)',
-				'media-progress(resolution, 1dppx, 4dppx)',
+				'calc(100px * media-progress(width, 500px, 1000px))',
+				'calc(100px * media-progress(width, 20%, 50%))',
+				'calc(100px * media-progress(width, 100px + 200px, 200px + 600px))',
+				'calc(100px * media-progress(width, 3 * (10% + 20%), (60% + 10%) / 2))',
+				'calc(100px * media-progress(height, 500px, 1000px))',
+				'calc(100px * media-progress(resolution, 1dppx, 4dppx))',
 			],
 		},
 		'container-progress()': {
@@ -178,16 +169,16 @@ export default {
 				dev: '#container-progress-func',
 			},
 			tests: [
-				'container-progress(width, 500px, 1000px)',
-				'container-progress(width, 20%, 50%)',
-				'container-progress(width, 100px + 200px, 200px + 600px)',
-				'container-progress(width, 3 * (10% + 20%), (60% + 10%) / 2)',
-				'container-progress(height, 500px, 1000px)',
-				'container-progress(width of --test-container, 500px, 1000px)',
-				'container-progress(width of --test-container, 20%, 50%)',
-				'container-progress(width of --test-container, 100px + 200px, 200px + 600px)',
-				'container-progress(width of --test-container, 3 * (10% + 20%), (60% + 10%) / 2)',
-				'container-progress(height of --test-container, 500px, 1000px)',
+				'calc(100px * container-progress(width, 500px, 1000px))',
+				'calc(100px * container-progress(width, 20%, 50%))',
+				'calc(100px * container-progress(width, 100px + 200px, 200px + 600px))',
+				'calc(100px * container-progress(width, 3 * (10% + 20%), (60% + 10%) / 2))',
+				'calc(100px * container-progress(height, 500px, 1000px))',
+				'calc(100px * container-progress(width of --test-container, 500px, 1000px))',
+				'calc(100px * container-progress(width of --test-container, 20%, 50%))',
+				'calc(100px * container-progress(width of --test-container, 100px + 200px, 200px + 600px))',
+				'calc(100px * container-progress(width of --test-container, 3 * (10% + 20%), (60% + 10%) / 2))',
+				'calc(100px * container-progress(height of --test-container, 500px, 1000px))',
 			],
 		},
 		'calc-mix() with lengths and percentages': {
@@ -249,14 +240,13 @@ export default {
 				'color-mix(0.5 in xyz, teal, olive)',
 				'color-mix(0.5 in lab, teal, olive)',
 				'color-mix(50% in srgb, teal, olive)',
-				'calc-mix(50% in srgb, teal, olive)',
-				'calc-mix(--scroll-progress-timeline in srgb, teal, olive)',
-				'calc-mix(scroll() in srgb, teal, olive)',
-				'calc-mix(view() in srgb, teal, olive)',
-				'calc-mix(--scroll-progress-timeline by linear(0, 0.25, 1) in srgb, teal, olive)',
-				'calc-mix(--scroll-progress-timeline by ease-in in srgb, teal, olive)',
-				'calc-mix(--scroll-progress-timeline by cubic-bezier(0.5, 0, 0.3, 1) in srgb, teal, olive)',
-				'calc-mix(--scroll-progress-timeline by steps(10, start) in srgb, teal, olive)',
+				'color-mix(--scroll-progress-timeline in srgb, teal, olive)',
+				'color-mix(scroll() in srgb, teal, olive)',
+				'color-mix(view() in srgb, teal, olive)',
+				'color-mix(--scroll-progress-timeline by linear(0, 0.25, 1) in srgb, teal, olive)',
+				'color-mix(--scroll-progress-timeline by ease-in in srgb, teal, olive)',
+				'color-mix(--scroll-progress-timeline by cubic-bezier(0.5, 0, 0.3, 1) in srgb, teal, olive)',
+				'color-mix(--scroll-progress-timeline by steps(10, start) in srgb, teal, olive)',
 			],
 		},
 		'cross-fade()': {
@@ -338,7 +328,7 @@ export default {
 				'mix(--scroll-progress-timeline by ease-in, 100px, 200px)',
 				'mix(--scroll-progress-timeline by cubic-bezier(0.5, 0, 0.3, 1), 100px, 200px)',
 				'mix(--scroll-progress-timeline by steps(10, start), 100px, 200px)',
-				'mix(0.5 of --keyframes-name)',
+				'mix(0.5 of --keyframes-name, 100px, 200px)',
 			],
 		},
 		'mix() with numbers': {
@@ -357,6 +347,7 @@ export default {
 				'mix(--scroll-progress-timeline by ease-in, 0, 10)',
 				'mix(--scroll-progress-timeline by cubic-bezier(0.5, 0, 0.3, 1), 0, 10)',
 				'mix(--scroll-progress-timeline by steps(10, start), 0, 10)',
+				'mix(50% of --keyframes-name, 0, 10)',
 			],
 		},
 		'mix() with colors': {
@@ -364,7 +355,7 @@ export default {
 				tr: '#mix',
 				dev: '#mix',
 			},
-			properties: ['color', 'background-color', 'border-color', 'text-decoration-color', 'column-rule-color'],
+			properties: ['color', 'background-color', 'text-decoration-color', 'column-rule-color'],
 			tests: [
 				'mix(0.5, #f00, #00f)',
 				'mix(0.5, red, blue)',
@@ -379,6 +370,7 @@ export default {
 				'mix(--scroll-progress-timeline by ease-in, #f00, #00f)',
 				'mix(--scroll-progress-timeline by cubic-bezier(0.5, 0, 0.3, 1), #f00, #00f)',
 				'mix(--scroll-progress-timeline by steps(10, start), #f00, #00f)',
+				'mix(50% of --keyframes-name, #f00, #00f)',
 			],
 		},
 		'mix() with keywords': {
@@ -397,6 +389,7 @@ export default {
 				'mix(--scroll-progress-timeline by ease-in, left, right)',
 				'mix(--scroll-progress-timeline by cubic-bezier(0.5, 0, 0.3, 1), left, right)',
 				'mix(--scroll-progress-timeline by steps(10, start), left, right)',
+				'mix(50% of --keyframes-name, left, right)',
 			],
 		},
 		'mix() with value lists': {
@@ -415,6 +408,7 @@ export default {
 				'mix(\n  --scroll-progress-timeline by ease-in;\n  linear-gradient(red, transparent), radial-gradient(transparent, yellow);\n  linear-gradient(tramsüaremt. green), radial-gradient(blue, transparent)\n)',
 				'mix(\n  --scroll-progress-timeline by cubic-bezier(0.5, 0, 0.3, 1);\n  linear-gradient(red, transparent), radial-gradient(transparent, yellow);\n  linear-gradient(tramsüaremt. green), radial-gradient(blue, transparent)\n)',
 				'mix(\n  --scroll-progress-timeline by steps(10, start);\n  linear-gradient(red, transparent), radial-gradient(transparent, yellow);\n  linear-gradient(tramsüaremt. green), radial-gradient(blue, transparent)\n)',
+				'mix(\n  50% of --keyframes-name;\n  linear-gradient(red, transparent), radial-gradient(transparent, yellow);\n  linear-gradient(tramsüaremt. green), radial-gradient(blue, transparent)\n)',
 			],
 		},
 		'if() with lengths and percentages': {
@@ -450,23 +444,49 @@ export default {
 				'inherit(--custom-property, 100px / 10%)',
 			],
 		},
-		'random()': {
+		'ident()': {
+			links: {
+				tr: '#ident',
+				dev: '#ident',
+			},
+			properties: ['animation-name'],
+			tests: [
+				'ident("cool")',
+				'ident("cool-" var(--animation-name))',
+				'ident("--" var(--animation-name))',
+			],
+		},
+		'random() with lengths': {
 			links: {
 				tr: '#random',
 				dev: '#random',
 			},
 			tests: [
 				'random(0px, 100px)',
-				'random(50%, 100%)',
-				'random(180deg, 360deg)',
-				'random(1s, 10s)',
-				'random(40Hz, 100Hz)',
-				'random(10, 20)',
-				'random(10px, 10em)',
-				'random(-infinity, infinity)',
-				'random(--random-value, 0px, 100px)',
+				'random(--random-value-1, 0px, 100px)',
 				'random(per-element, 0px, 100px)',
-				'random(50px, 100%, by 1em)'
+				'random(50px + 100px, 100px + 200px)',
+				'random(1em + 2em, (3em + 4em) / 2)',
+				'random(0px, 100px, by 10px)',
+				'random(0px, 100px, by 5px + 5px)',
+				'random(0px, 100px, by (20px - 10px) / 2)',
+			],
+		},
+		'random() with degrees': {
+			links: {
+				tr: '#random',
+				dev: '#random',
+			},
+			properties: ['rotate'],
+			tests: [
+				'random(45deg, 0.5turn)',
+				'random(--random-value-1, 45deg, 0.5turn)',
+				'random(per-element, 45deg, 0.5turn)',
+				'random(10deg + 20deg, 20deg + 40deg)',
+				'random(0.1turn + 0.2turn, (0.3turn + 0.4turn) / 2)',
+				'random(45deg, 0.5turn, by 45deg)',
+				'random(45deg, 0.5turn, by 40deg + 5deg)',
+				'random(45deg, 0.5turn, by (100deg - 10deg) / 2)',
 			],
 		},
 		'random-item() with lengths': {
@@ -525,7 +545,11 @@ export default {
 				tr: '#toggle-notation',
 				dev: '#toggle-notation',
 			},
-			tests: ['toggle(1px, 2px)'],
+			tests: [
+				'toggle(1px, 2px)',
+				'toggle(1px, 2px, 3px)',
+				'toggle(1px, 1em, 1vw)',
+			],
 		},
 		'toggle() with keywords': {
 			links: {
@@ -535,13 +559,13 @@ export default {
 			properties: ['font-style'],
 			tests: ['toggle(italic, normal)'],
 		},
-		'toggle() with mixed keywords and lengths': {
+		'toggle() with mixed keywords, lengths, and percentages': {
 			links: {
 				tr: '#toggle-notation',
 				dev: '#toggle-notation',
 			},
 			properties: ['background-position'],
-			tests: ['toggle(top left, 100% 50%)'],
+			tests: ['toggle(top left, 100px 50px, 50% 50%)'],
 		},
 		'Request URL modifiers': {
 			links: {
