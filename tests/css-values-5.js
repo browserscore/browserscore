@@ -418,10 +418,58 @@ export default {
 			},
 			tests: [
 				'if(media(width < 600px): 100px; else: 200px)',
-				'if(media(width < 600px): 100px; else: 200px;)',
 				'if(media(width < 600px): 10%; else: 20%)',
 				'if(supports(line-clamp: 3): 100px; else: 200px)',
 				'if(style(--responsive: true): 100px; else: 200px)',
+				'if(media(width < 600px): 100px; media(width > 1000px): 300px; else: 200px;)',
+				'if(media(width < 600px): 10%; media(width > 1000px): 30%; else: 20%)',
+				'if(supports(line-clamp: 3): 100px; supports(line-clamp: auto): 300px; else: 200px)',
+				'if(style(--responsive: true): 100px; style(--responsive: false): 300px; else: 200px)',
+			],
+		},
+		'if() with numbers': {
+			links: {
+				tr: '#if-notation',
+				dev: '#if-notation',
+			},
+			properties: ['line-height'],
+			tests: [
+				'if(media(width < 600px): 1; else: 2)',
+				'if(supports(line-clamp: 3): 1; else: 2)',
+				'if(style(--responsive: true): 1; else: 2)',
+				'if(media(width < 600px): 1; media(width > 1000px): 3; else: 2;',
+				'if(supports(line-clamp: 3): 1; supports(line-clamp: auto): 3; else: 2',
+				'if(style(--responsive: true): 1; style(--responsive: false): 3; else: 2',
+			],
+		},
+		'if() with colors': {
+			links: {
+				tr: '#if-notation',
+				dev: '#if-notation',
+			},
+			properties: ['color', 'background-color', 'text-decoration-color', 'column-rule-color'],
+			tests: [
+				'if(media(width < 600px): red; else: blue)',
+				'if(supports(line-clamp: 3): red; else: blue)',
+				'if(style(--responsive: true): red; else: blue)',
+				'if(media(width < 600px): red; media(width > 1000px): green; else: blue;',
+				'if(supports(line-clamp: 3): red; supports(line-clamp: auto): green; else: blue',
+				'if(style(--responsive: true): red; style(--responsive: false): green; else: blue',
+			],
+		},
+		'if() with keywords': {
+			links: {
+				tr: '#if-notation',
+				dev: '#if-notation',
+			},
+			properties: ['position'],
+			tests: [
+				'if(media(width < 600px): left; else: right)',
+				'if(supports(line-clamp: 3): left; else: right)',
+				'if(style(--responsive: true): left; else: right)',
+				'if(media(width < 600px): left; media(width > 1000px): center; else: right;',
+				'if(supports(line-clamp: 3): left; supports(line-clamp: auto): center; else: right',
+				'if(style(--responsive: true): left; style(--responsive: false): center; else: right',
 			],
 		},
 		'inherit()': {
@@ -452,8 +500,11 @@ export default {
 			properties: ['animation-name'],
 			tests: [
 				'ident("cool")',
+				'ident("cool-" 1)',
+				'ident("cool-" ident)',
 				'ident("cool-" var(--animation-name))',
 				'ident("--" var(--animation-name))',
+				'ident("cool-" sibling-index())',
 			],
 		},
 		'random() with lengths': {
@@ -540,15 +591,15 @@ export default {
 				'calc(sibling-index() * 10px)',
 			],
 		},
-		'toggle() with lengths': {
+		'toggle() with lengths and percentages': {
 			links: {
 				tr: '#toggle-notation',
 				dev: '#toggle-notation',
 			},
 			tests: [
 				'toggle(1px, 2px)',
-				'toggle(1px, 2px, 3px)',
-				'toggle(1px, 1em, 1vw)',
+				'toggle(1px, 1em, calc(2% + 3px))',
+				'toggle(min(5%, 1rem), 1em, calc(2% + 3px))',
 			],
 		},
 		'toggle() with keywords': {
@@ -556,16 +607,22 @@ export default {
 				tr: '#toggle-notation',
 				dev: '#toggle-notation',
 			},
-			properties: ['font-style'],
-			tests: ['toggle(italic, normal)'],
+			properties: ['list-style-type'],
+			tests: [
+				'toggle(disc, circle)',
+				'toggle(disc, circle, --custom-counter-style)',
+			],
 		},
-		'toggle() with mixed keywords, lengths, and percentages': {
+		'toggle() with mixed values': {
 			links: {
 				tr: '#toggle-notation',
 				dev: '#toggle-notation',
 			},
 			properties: ['background-position'],
-			tests: ['toggle(top left, 100px 50px, 50% 50%)'],
+			tests: [
+				'toggle(top left, 100px 50px, 50% 50%)',
+				'toggle(calc(10% + 2px) min(10%, 5vw), 100px 50px, 50% 50%, 0 0)',
+			],
 		},
 		'Request URL modifiers': {
 			links: {
