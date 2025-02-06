@@ -39,6 +39,13 @@ export default {
 				'linear-gradient(in hsl longer hue to right, #A37, #595)',
 				'linear-gradient(in hsl increasing hue to right, #A37, #595)',
 				'linear-gradient(in hsl decreasing hue to right, #A37, #595)',
+
+				// allow a single color stop with 0-1 positions
+				// https://github.com/w3c/csswg-drafts/issues/10092#issuecomment-2145860054
+				'linear-gradient(in lch, red)',
+				'linear-gradient(in lab, red 0)',
+				'linear-gradient(in oklab to right, red 50px)',
+				'linear-gradient(in hsl shorter hue, red)',
 			],
 		},
 		'radial-gradient()': {
@@ -60,6 +67,12 @@ export default {
 				'radial-gradient(in srgb farthest-side at left bottom, color(display-p3 0.918 0.2 0.161), #081)',
 				'radial-gradient(in oklab farthest-side at left bottom, color(display-p3 0.918 0.2 0.161), #081)',
 				'radial-gradient(in hsl shorter hue at left bottom, color(display-p3 0.918 0.2 0.161), #081)',
+				// allow a single color stop with 0-1 positions
+				// https://github.com/w3c/csswg-drafts/issues/10092#issuecomment-2145860054
+				'radial-gradient(in lch, red)',
+				'radial-gradient(in lab, red 0)',
+				'radial-gradient(in oklab at 50%, red 50px)',
+				'radial-gradient(in hsl shorter hue, red)',
 			],
 		},
 		'conic-gradient()': {
@@ -69,6 +82,7 @@ export default {
 			},
 			tests: [
 				'conic-gradient(white, black)',
+				'conic-gradient(from 0, white, black)',
 				'conic-gradient(from 5deg, white, black)',
 				'conic-gradient(at top left, white, black)',
 				'conic-gradient(white 50%, black)',
@@ -76,6 +90,19 @@ export default {
 				'conic-gradient(white, #f06, black)',
 				'conic-gradient(currentColor, black)',
 				'conic-gradient(black 25%, white 0deg 50%, black 0deg 75%, white 0deg)',
+
+				'conic-gradient(red 0 0)',
+				'conic-gradient(red 90deg 50%)',
+				'conic-gradient(from 0, red 0 0)',
+				'conic-gradient(from 20deg, red 45deg 20%)',
+
+				// allow a single color stop with 0-1 positions
+				// https://github.com/w3c/csswg-drafts/issues/10092#issuecomment-2145860054
+				'conic-gradient(red)',
+				'conic-gradient(red 0)',
+				'conic-gradient(red 50%)',
+				'conic-gradient(red 90deg)',
+				'conic-gradient(from 0, red)',
 			],
 		},
 		'conic-gradient() color interpolation': {
@@ -91,6 +118,14 @@ export default {
 				'conic-gradient(in srgb from 45deg, white, black, white)',
 				'conic-gradient(in oklab at top left, white, black, white)',
 				'conic-gradient(in hsl shorter hue from 45deg, white, black, white)',
+
+				// allow a single color stop with 0-1 positions
+				// https://github.com/w3c/csswg-drafts/issues/10092#issuecomment-2145860054
+				'conic-gradient(in lab, red)',
+				'conic-gradient(from 45deg in lch, red 0)',
+				'conic-gradient(in oklab at top left, red 50%)',
+				'conic-gradient(in hsl shorter hue from 45deg, red 90deg)',
+				'conic-gradient(from 0 in srgb, red)',
 			],
 		},
 		'repeating-conic-gradient()': {
