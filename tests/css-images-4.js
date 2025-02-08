@@ -165,6 +165,12 @@ export default {
 				"image-set(url(foobar.png) type('image/png'))",
 				"image-set(url(foobar.png) 1x type('image/png'))",
 				"image-set(url(foobar.png) type('image/png') 1x)",
+
+				// allow a single color stop with 0-1 positions
+				// https://github.com/w3c/csswg-drafts/issues/10092#issuecomment-2145860054
+				'image-set(linear-gradient(green))',
+				'image-set(radial-gradient(green))',
+				'image-set(conic-gradient(green))',
 			],
 		},
 		'element()': {
@@ -183,6 +189,9 @@ export default {
 				'cross-fade(url(a.png), url(b.png))',
 				'cross-fade(url(a.png) 50%, url(b.png))',
 				'cross-fade(url(a.png) 50%, white)',
+				'cross-fade(linear-gradient(green))',
+				'cross-fade(radial-gradient(green))',
+				'cross-fade(conic-gradient(green))',
 			],
 		},
 	},
