@@ -26,7 +26,6 @@ export default {
 				'linear-gradient(currentColor, black)',
 				'linear-gradient(red -50px, white calc(-25px + 50%), blue 100%)',
 
-				'linear-gradient(red 0 0)',
 				// allow a single color stop with 0-1 positions
 				// https://github.com/w3c/csswg-drafts/issues/10092#issuecomment-2145860054
 				'linear-gradient(red)',
@@ -56,7 +55,6 @@ export default {
 				"radial-gradient(5em circle at top left, yellow, blue)",
 				"radial-gradient(circle farthest-side at top left, white, black)"*/,
 
-				'radial-gradient(red 0 0)',
 				// allow a single color stop with 0-1 positions
 				// https://github.com/w3c/csswg-drafts/issues/10092#issuecomment-2145860054
 				'radial-gradient(red)',
@@ -75,7 +73,6 @@ export default {
 			},
 			tests: [
 				'repeating-linear-gradient(red)',
-				'repeating-linear-gradient(red 0 0)',
 				'repeating-linear-gradient(white, black)',
 			],
 		},
@@ -86,7 +83,6 @@ export default {
 			},
 			tests: [
 				'repeating-radial-gradient(red)',
-				'repeating-radial-gradient(red 0 0)',
 				'repeating-radial-gradient(white, black)',
 			]
 		},
