@@ -45,7 +45,8 @@ export default {
 				'linear-gradient(in lch, red)',
 				'linear-gradient(in lab, red 0)',
 				'linear-gradient(in oklab to right, red 50px)',
-				'linear-gradient(in hsl shorter hue, red)',
+				'linear-gradient(in hsl longer hue, red)',
+				'linear-gradient(90deg in hsl longer hue, red)',
 			],
 		},
 		'radial-gradient()': {
@@ -72,7 +73,7 @@ export default {
 				'radial-gradient(in lch, red)',
 				'radial-gradient(in lab, red 0)',
 				'radial-gradient(in oklab at 50%, red 50px)',
-				'radial-gradient(in hsl shorter hue, red)',
+				'radial-gradient(in hsl longer hue, red)',
 			],
 		},
 		'conic-gradient()': {
@@ -90,11 +91,6 @@ export default {
 				'conic-gradient(white, #f06, black)',
 				'conic-gradient(currentColor, black)',
 				'conic-gradient(black 25%, white 0deg 50%, black 0deg 75%, white 0deg)',
-
-				'conic-gradient(red 0 0)',
-				'conic-gradient(red 90deg 50%)',
-				'conic-gradient(from 0, red 0 0)',
-				'conic-gradient(from 20deg, red 45deg 20%)',
 
 				// allow a single color stop with 0-1 positions
 				// https://github.com/w3c/csswg-drafts/issues/10092#issuecomment-2145860054
@@ -124,6 +120,7 @@ export default {
 				'conic-gradient(in lab, red)',
 				'conic-gradient(from 45deg in lch, red 0)',
 				'conic-gradient(in oklab at top left, red 50%)',
+				'conic-gradient(in hsl longer hue, red)',
 				'conic-gradient(in hsl shorter hue from 45deg, red 90deg)',
 				'conic-gradient(from 0 in srgb, red)',
 			],
@@ -189,6 +186,9 @@ export default {
 				'cross-fade(url(a.png), url(b.png))',
 				'cross-fade(url(a.png) 50%, url(b.png))',
 				'cross-fade(url(a.png) 50%, white)',
+
+				// allow a single color stop with 0-1 positions
+				// https://github.com/w3c/csswg-drafts/issues/10092#issuecomment-2145860054
 				'cross-fade(linear-gradient(green))',
 				'cross-fade(radial-gradient(green))',
 				'cross-fade(conic-gradient(green))',
