@@ -102,6 +102,7 @@ export default {
 				'::details-content::spelling-error',
 				'::details-content::grammar-error',
 				'::details-content::selection',
+				'::details-content::highlight(example-highlight)',
 				'::details-content:hover',
 				'::details-content:active',
 				'::details-content:visited',
