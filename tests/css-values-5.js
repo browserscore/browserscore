@@ -153,7 +153,7 @@ export default {
 				'calc(100px * progress(12%, 10%, 20%))',
 				'calc(100px * progress(200deg, 180deg, 360deg))',
 				'calc(100px * progress(4, 0, 10))',
-				'calc(100px * progress(0, -pi, pi))',
+				'calc(100px * progress(2, 0, pi))',
 				'calc(100px * progress(150px, 100px + 200px, 200px + 600px))',
 				'calc(100px * progress(3em, 3 * (1em + 2em), (7em + 1em) / 2))',
 			],
