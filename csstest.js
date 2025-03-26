@@ -43,6 +43,9 @@ var devLinkFormat = function (params) {
 			return 'https://drafts.css-houdini.org/' + params.dev;
 		case 'github':
 			return 'https://w3c.github.io/' + params.dev;
+		case 'iwwg':
+			// The Immersive Web Working Group
+			return 'https://immersive-web.github.io/' + params.dev;
 		case 'svgwg':
 			// SVG Working Group Editor Drafts
 			return 'https://svgwg.org/' + params.dev;

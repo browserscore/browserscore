@@ -29,6 +29,12 @@ export default {
 			},
 			tests: ['::selection'],
 		},
+		'::search-text': {
+			links: {
+				dev: '#selectordef-search-text',
+			},
+			tests: ['::search-text'],
+		},
 		'::target-text': {
 			links: {
 				tr: '#selectordef-target-text',
@@ -50,19 +56,17 @@ export default {
 			},
 			tests: ['::grammar-error'],
 		},
-		'::file-selector-button': {
-			links: {
-				tr: '#marker-pseudo',
-				dev: '#marker-pseudo',
-			},
-			tests: ['::file-selector-button'],
-		},
 		'::marker': {
 			links: {
 				tr: '#marker-pseudo',
 				dev: '#marker-pseudo',
 			},
-			tests: ['::marker'],
+			tests: [
+				'::marker',
+				// Made ::before::marker and ::after::marker valid: https://github.com/w3c/csswg-drafts/issues/1793
+				'::before::marker',
+				'::after::marker',
+			],
 		},
 		'::placeholder': {
 			links: {
@@ -71,6 +75,42 @@ export default {
 			},
 			tests: ['::placeholder'],
 		},
+		// Element-backed Pseudo-Elements
+		'::file-selector-button': {
+			links: {
+				tr: '#file-selector-button-pseudo',
+				dev: '#file-selector-button-pseudo',
+			},
+			tests: ['::file-selector-button'],
+		},
+		'::details-content': {
+			links: {
+				dev: '#details-content-pseudo',
+			},
+			tests: [
+				'::details-content',
+				'::details-content::first-letter',
+				'::details-content::first-letter::prefix',
+				'::details-content::first-letter::postfix',
+				'::details-content::first-line',
+				'::details-content::before',
+				'::details-content::after',
+				'::details-content::before::marker',
+				'::details-content::after::marker',
+				'::details-content::search-text',
+				'::details-content::target-text',
+				'::details-content::spelling-error',
+				'::details-content::grammar-error',
+				'::details-content::selection',
+				'::details-content::highlight(example-highlight)',
+				'::details-content:hover',
+				'::details-content:active',
+				'::details-content:visited',
+				'::details-content:focus',
+				'::details-content:focus-visible',
+				'::details-content:focus-within',
+			],
+		}
 	},
 	interfaces: {
 		Element: {

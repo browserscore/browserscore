@@ -42,6 +42,7 @@ import cssFontLoading3 from './tests/css-font-loading-3.js';
 import cssFonts3 from './tests/css-fonts-3.js';
 import cssFonts4 from './tests/css-fonts-4.js';
 import cssFonts5 from './tests/css-fonts-5.js';
+import cssGaps1 from './tests/css-gaps-1.js';
 import cssGrid1 from './tests/css-grid-1.js';
 import cssGrid2 from './tests/css-grid-2.js';
 import cssGrid3 from './tests/css-grid-3.js';
@@ -56,6 +57,7 @@ import cssLinkParams1 from './tests/css-link-params-1.js';
 import cssLists3 from './tests/css-lists-3.js';
 import cssLogical1 from './tests/css-logical-1.js';
 import cssMasking1 from './tests/css-masking-1.js';
+import cssMixins1 from './tests/css-mixins-1.js';
 import cssMulticol1 from './tests/css-multicol-1.js';
 import cssMulticol2 from './tests/css-multicol-2.js';
 import cssNamespaces3 from './tests/css-namespaces-3.js';
@@ -138,6 +140,7 @@ import resizeObserver1 from './tests/resize-observer-1.js';
 import scrollAnimations1 from './tests/scroll-animations-1.js';
 import selectors3 from './tests/selectors-3.js';
 import selectors4 from './tests/selectors-4.js';
+import selectors5 from './tests/selectors-5.js';
 import svg2Coords from './tests/svg2-coords.js';
 import svg2Geometry from './tests/svg2-geometry.js';
 import svg2Interact from './tests/svg2-interact.js';
@@ -148,6 +151,7 @@ import svg2Text from './tests/svg2-text.js';
 import webAnimations1 from './tests/web-animations-1.js';
 import webAnimations2 from './tests/web-animations-2.js';
 import webVtt from './tests/webvtt.js';
+import webxrDomOverlays1 from './tests/webxr-dom-overlays-1.js';
 
 
 export default {
@@ -208,6 +212,7 @@ export default {
 	'css-fonts-3': cssFonts3,
 	'css-fonts-4': cssFonts4,
 	'css-fonts-5': cssFonts5,
+	'css-gaps-1': cssGaps1,
 	'css-grid-1': cssGrid1,
 	'css-grid-2': cssGrid2,
 	'css-grid-3': cssGrid3,
@@ -222,6 +227,7 @@ export default {
 	'css-lists-3': cssLists3,
 	'css-logical-1': cssLogical1,
 	'css-masking-1': cssMasking1,
+	'css-mixins-1': cssMixins1,
 	'css-multicol-1': cssMulticol1,
 	'css-multicol-2': cssMulticol2,
 	'css-namespaces-3': cssNamespaces3,
@@ -291,6 +297,7 @@ export default {
 	'scroll-animations-1': scrollAnimations1,
 	'selectors-3': selectors3,
 	'selectors-4': selectors4,
+	'selectors-5': selectors5,
 	'svg2-coords': svg2Coords,
 	'svg2-geometry': svg2Geometry,
 	'svg2-interact': svg2Interact,
@@ -301,4 +308,5 @@ export default {
 	'web-animations-1': webAnimations1,
 	'web-animations-2': webAnimations2,
 	webvtt: webVtt,
+	'webxr-dom-overlays-1': webxrDomOverlays1,
 };
