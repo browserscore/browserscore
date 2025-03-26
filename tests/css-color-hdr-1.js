@@ -11,6 +11,7 @@ export default {
 		properties: ['color', 'background-color', 'border-color', 'text-decoration-color', 'column-rule-color'],
 		'rec2100-pq color space': {
 			links: {
+				tr: '#valdef-color-rec2100-pq',
 				dev: '#valdef-color-rec2100-pq',
 			},
 			tests: [
@@ -19,6 +20,7 @@ export default {
 		},
 		'rec2100-hlg color space': {
 			links: {
+				tr: '#valdef-color-rec2100-hlg',
 				dev: '#valdef-color-rec2100-hlg',
 			},
 			tests: [
@@ -27,6 +29,7 @@ export default {
 		},
 		'rec2100-linear color space': {
 			links: {
+				tr: '#valdef-color-rec2100-linear',
 				dev: '#valdef-color-rec2100-linear',
 			},
 			tests: [
@@ -35,6 +38,7 @@ export default {
 		},
 		'Jzazbz color space': {
 			links: {
+				tr: '#Jzazbz',
 				dev: '#Jzazbz',
 			},
 			tests: [
@@ -43,6 +47,7 @@ export default {
 		},
 		'JzCzHz color space': {
 			links: {
+				tr: '#JzCzHz',
 				dev: '#JzCzHz',
 			},
 			tests: [
@@ -51,6 +56,7 @@ export default {
 		},
 		'ICtCp color space': {
 			links: {
+				tr: '#ICtCp',
 				dev: '#ICtCp',
 			},
 			tests: [

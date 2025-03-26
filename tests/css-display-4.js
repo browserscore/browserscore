@@ -8,17 +8,19 @@ export default {
 		stability: 'experimental',
 	},
 	properties: {
-		'layout-order': {
+		'reading-flow': {
 			links: {
-				dev: '#propdef-layout-order',
+				tr: '#propdef-reading-flow',
+				dev: '#propdef-reading-flow',
 			},
-			tests: ['-1', '0', '1'],
-		},
-		'reading-order': {
-			links: {
-				dev: '#propdef-reading-order',
-			},
-			tests: ['-1', '0', '1'],
+			tests: [
+				'normal',
+				'flex-visual',
+				'flex-flow',
+				'grid-rows',
+				'grid-columns',
+				'grid-order ',
+			],
 		},
 	},
 };

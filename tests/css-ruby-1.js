@@ -36,5 +36,12 @@ export default {
 			},
 			tests: ['start', 'center', 'space-between', 'space-around'],
 		},
+		'ruby-overhang': {
+			links: {
+				tr: '#ruby-overhang',
+				dev: '#ruby-overhang',
+			},
+			tests: ['auto', 'none'],
+		},
 	},
 };

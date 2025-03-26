@@ -137,5 +137,12 @@ export default {
 				'end 20px',
 			],
 		},
+		'background-clip': {
+			links: {
+				tr: '#the-background-clip',
+				dev: '#background-clip',
+			},
+			tests: ['text', 'border-area'],
+		},
 	},
 };
