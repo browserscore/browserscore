@@ -22,7 +22,17 @@ export default {
 				tr: '#column-pseudo',
 				dev: '#column-pseudo',
 			},
-			tests: ['::column'],
+			tests: [
+				// Chrome bug: https://crbug.com/365680822
+				'::column',
+				'::column::scroll-marker',
+
+				// Chrome bug: https://crbug.com/382090952
+				'::before::column',
+				'::after::column',
+				'::before::column::scroll-marker',
+				'::after::column::scroll-marker',
+			],
 		},
 	}
 };
