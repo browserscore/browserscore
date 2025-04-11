@@ -8,6 +8,33 @@ export default {
 	status: {
 		stability: 'stable',
 	},
+	values: {
+		properties: ['background-image', 'list-style-image', 'border-image-source', 'cursor', 'mask-image', 'mask-border-source', 'shape-outside', 'content'],
+		// https://caniuse.com/css-filter-function
+		// There was a bug in Safari before 18.4,
+		// https://bugs.webkit.org/show_bug.cgi?id=250303
+		'filter()': {
+			links: {
+				tr: '#FilterCSSImageValue',
+				dev: '#FilterCSSImageValue',
+			},
+			tests: [
+				// filter() = filter( [ <image> | <string> ], <filter-value-list> )
+				'filter(conic-gradient(red), invert(1))',
+				'filter(conic-gradient(red, orange), invert(1))',
+				'filter(conic-gradient(red 0 0), invert(1))',
+				'filter(conic-gradient(red 0 100%), invert(1))',
+				'filter(linear-gradient(red, orange), invert(1))',
+				'filter(radial-gradient(red, orange), invert(1))',
+				'filter(repeating-conic-gradient(red, red 5%, black 5%, black 10%), invert(1))',
+				'filter(repeating-linear-gradient(red, red 10px, black 10px, black 20px), invert(1))',
+				'filter(repeating-radial-gradient(red, red 10px, black 10px, black 20px), invert(1))',
+				'filter(url("#foo"), blur(8px))',
+				'filter(url(#foo), blur(8px))',
+				'filter(url(foo.png), blur(8px))',
+			],
+		},
+	},
 	properties: {
 		filter: {
 			links: {
