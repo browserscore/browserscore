@@ -498,6 +498,7 @@ window.runTests = function (filter = '') {
 };
 
 onload = function () {
-	$('#filter').value = localStorage.getItem('filter') || '';
-	runTests(localStorage.getItem('filter') || '');
+	const filter = new URLSearchParams(window.location.search).get('filter') ?? localStorage.getItem('filter') ?? '';
+	$('#filter').value = filter;
+	runTests(filter);
 };
