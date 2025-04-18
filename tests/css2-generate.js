@@ -6,8 +6,8 @@ export default {
 	},
 	status: {
 		stability: 'stable',
-		'first-snapshot': 1998,
-		'last-snapshot': 1998,
+		'first-snapshot': 2.2,
+		'last-snapshot': 2.2,
 	},
 	properties: {
 		content: {
