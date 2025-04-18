@@ -366,7 +366,6 @@ export default {
 				'fill-box',
 				'stroke-box',
 				'view-box',
-				'inset(10% round 10% 40% 10% 40%) margin-box',
 			],
 		},
 	},
