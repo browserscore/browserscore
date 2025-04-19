@@ -445,12 +445,12 @@ window.runTests = function (filter = '') {
 			continue;
 		} else if (filter === 'experimental' && Specs[spec].status && Specs[spec].status.stability === 'stable') {
 			continue;
-		} else if (Number(filter) > 0) {
+		} else if (filter.startsWith('css')) {
 			if (!Specs[spec].status || Specs[spec].status['first-snapshot'] === undefined) {
 				continue;
 			}
 
-			const snapshot = Number(filter);
+			const snapshot = Number(filter.substring(3));
 			if (
 				Specs[spec].status['first-snapshot'] > snapshot ||
 				(Specs[spec].status && Specs[spec].status['last-snapshot'] < snapshot)
@@ -498,6 +498,7 @@ window.runTests = function (filter = '') {
 };
 
 onload = function () {
-	$('#filter').value = localStorage.getItem('filter') || '';
-	runTests(localStorage.getItem('filter') || '');
+	const filter = new URLSearchParams(window.location.search).get('filter') ?? localStorage.getItem('filter') ?? '';
+	$('#filter').value = filter;
+	runTests(filter);
 };
