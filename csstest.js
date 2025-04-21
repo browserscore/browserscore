@@ -126,6 +126,17 @@ var Test = function (spec) {
 				}),
 			);
 		}
+
+		contents.push(
+			$.create({
+				tag: 'a',
+				properties: {
+					href: '#' + spec.id,
+					textContent: '#',
+					className: 'section-link',
+				},
+			}),
+		);
 	}
 
 	var h1 = $.create({

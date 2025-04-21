@@ -107,6 +107,11 @@ h2 {
 	display: flex;
 	align-items: center;
 	font-size: 180%;
+	position: relative;
+}
+
+#content > section section section h1:hover > .section-link {
+	display: block;
 }
 
 #content > section section section section h1 {
@@ -178,6 +183,14 @@ details summary > .spec-link::before {
 	width: 18px;
 	background-size: 18px 18px;
 	vertical-align: -4px;
+}
+
+.section-link {
+	display: none;
+	position: absolute;
+	left: calc(-1 * 1.2em);
+	width: 1.2em;
+	text-align: center;
 }
 
 body > h1 {
