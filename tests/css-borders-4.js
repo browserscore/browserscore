@@ -357,6 +357,7 @@ export default {
 				"path('M 20 20 H 80 V 30') margin-box",
 				'rect(10% 20px 30% 40px) margin-box',
 				'xywh(10% 40% 100px 200px round 10% 40% 10% 40%) margin-box',
+				'shape(from 30% 60px, curve to 180px 180px via 90px 190px, close)',
 				'attr(src url)',
 				'url(image.png)',
 				'margin-box',
