@@ -445,7 +445,7 @@ window.runTests = function (filter = '') {
 			continue;
 		} else if (filter === 'experimental' && Specs[spec].status && Specs[spec].status.stability === 'stable') {
 			continue;
-		} else if (filter.startsWith('css')) {
+		} else if (filter.match(/^css\d/)) {
 			if (!Specs[spec].status || Specs[spec].status['first-snapshot'] === undefined) {
 				continue;
 			}
