@@ -15,11 +15,23 @@ export default {
 			},
 			tests: [
 				'normal',
+				'source-order',
 				'flex-visual',
 				'flex-flow',
 				'grid-rows',
 				'grid-columns',
-				'grid-order ',
+				'grid-order',
+			],
+		},
+		'reading-order': {
+			links: {
+				tr: '#propdef-reading-order',
+				dev: '#propdef-reading-order',
+			},
+			tests: [
+				'-1',
+				'0',
+				'1',
 			],
 		},
 	},
