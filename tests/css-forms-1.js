@@ -61,21 +61,21 @@ export default {
 			},
 			tests: ['::checkmark'],
 		},
-		'::thumb': {
+		'::slider-thumb': {
 			links: {
 				tr: '#slider-pseudos',
 				dev: '#slider-pseudos',
 			},
 			tests: ['::thumb'],
 		},
-		'::track': {
+		'::slider-track': {
 			links: {
 				tr: '#slider-pseudos',
 				dev: '#slider-pseudos',
 			},
 			tests: ['::track'],
 		},
-		'::fill': {
+		'::slider-fill': {
 			links: {
 				tr: '#slider-pseudos',
 				dev: '#slider-pseudos',
