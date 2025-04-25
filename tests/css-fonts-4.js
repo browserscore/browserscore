@@ -48,6 +48,13 @@ export default {
 			},
 			tests: 'generic(kai)',
 		},
+		'generic(khmer-mul)': {
+			links: {
+				dev: '#generic(khmer-mul)-def',
+				mdn: 'font-family',
+			},
+			tests: 'generic(khmer-mul)',
+		},
 		'generic(nastaliq)': {
 			links: {
 				dev: '#generic(nastaliq)-def',
@@ -210,7 +217,7 @@ export default {
 				tr: '#font-synthesis-style',
 				dev: '#font-synthesis-style',
 			},
-			tests: ['auto', 'none'],
+			tests: ['auto', 'none', 'oblique-only'],
 		},
 		'font-synthesis-small-caps': {
 			links: {
@@ -329,6 +336,8 @@ export default {
 			},
 			tests: [
 				'auto',
+				'left',
+				'right',
 				'10deg',
 				'10deg 5deg',
 			],
