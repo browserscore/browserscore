@@ -8,6 +8,20 @@ export default {
 		stability: 'experimental',
 	},
 	properties: {
+		'column-height': {
+			links: {
+				tr: '#cc',
+				dev: '#cc',
+			},
+			tests: ['2', 'auto'],
+		},
+		'column-wrap': {
+			links: {
+				tr: '#cwr',
+				dev: '#cwr',
+			},
+			tests: ['auto', 'nowrap', 'wrap'],
+		},
 		'column-span': {
 			links: {
 				tr: '#column-span',
