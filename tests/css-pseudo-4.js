@@ -15,12 +15,12 @@ export default {
 			},
 			tests: ['::first-letter::prefix'],
 		},
-		'::first-letter::postfix': {
+		'::first-letter::suffix': {
 			links: {
 				tr: '#first-letter-pseudo',
 				dev: '#first-letter-pseudo',
 			},
-			tests: ['::first-letter::postfix'],
+			tests: ['::first-letter::suffix'],
 		},
 		'::selection': {
 			links: {
@@ -33,7 +33,10 @@ export default {
 			links: {
 				dev: '#selectordef-search-text',
 			},
-			tests: ['::search-text'],
+			tests: [
+				'::search-text',
+				'::search-text:current',
+			],
 		},
 		'::target-text': {
 			links: {
@@ -91,7 +94,7 @@ export default {
 				'::details-content',
 				'::details-content::first-letter',
 				'::details-content::first-letter::prefix',
-				'::details-content::first-letter::postfix',
+				'::details-content::first-letter::suffix',
 				'::details-content::first-line',
 				'::details-content::before',
 				'::details-content::after',
