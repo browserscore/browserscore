@@ -8,6 +8,16 @@ export default {
 		stability: 'experimental',
 	},
 	properties: {
+		'scroll-target-group': {
+			links: {
+				tr: '#scroll-target-group',
+				dev: '#scroll-target-group',
+			},
+			tests: [
+				'none',
+				'auto',
+			],
+		},
 		'scroll-marker-group': {
 			links: {
 				tr: '#scroll-marker-group-property',
@@ -21,6 +31,25 @@ export default {
 		},
 	},
 	selectors: {
+		'::scroll-button()': {
+			links: {
+				tr: '#scroll-buttons',
+				dev: '#scroll-buttons',
+			},
+			tests: [
+				'::scroll-button(*)',
+				'::scroll-button(up)',
+				'::scroll-button(down)',
+				'::scroll-button(left)',
+				'::scroll-button(right)',
+				'::scroll-button(block-start)',
+				'::scroll-button(block-end)',
+				'::scroll-button(inline-start)',
+				'::scroll-button(inline-end)',
+				'::scroll-button(prev)',
+				'::scroll-button(next)',
+			],
+		},
 		'::scroll-marker': {
 			links: {
 				tr: '#scroll-marker-pseudo',
