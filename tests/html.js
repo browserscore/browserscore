@@ -27,4 +27,16 @@ export default {
 			tests: ':state(checked)',
 		},
 	},
+	interfaces: {
+		PageRevealEvent: {
+			links: {
+				dev: '#the-pagerevealevent-interface',
+				mdnGroup: 'DOM',
+			},
+			tests: ['viewTransition'],
+			interface: function() {
+				return new PageRevealEvent('reveal');
+			},
+		},
+	}
 };
