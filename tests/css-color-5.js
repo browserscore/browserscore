@@ -40,13 +40,13 @@ export default {
 			},
 			tests: [
 				'rgb(from indianred 255 g b)',
-				'hsl(from lightseagreen calc(h+180) s l)',
+				'hsl(from lightseagreen calc(h + 180) s l)',
 				'lab(from orchid l 0 0)',
 				'lch(from peru calc(l * 0.8) c h)',
 				'oklab(from oklab(54.3% -22.5% -5%) calc(1.0 - l) calc(a * 0.8) b)',
 				'oklch(from oklch(52.6% 0.115 44.6deg) l c  calc(h + 90))',
 				'color(from color(srgb 0 0 0 / 60%) srgb alpha 0.6 0.6 / 0.9)',
-				'linear-gradient(in Oklab to right, oklch(from hsl(none 3% 50%) calc(l * 0.8) c h),   #4C3)'
+				'linear-gradient(in oklab to right, oklch(from hsl(none 3% 50%) calc(l * 0.8) c h), #4C3)'
 			],
 		},
 
