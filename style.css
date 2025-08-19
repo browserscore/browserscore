@@ -107,6 +107,7 @@ h2 {
 	display: flex;
 	align-items: center;
 	font-size: 180%;
+	gap: 0.5em;
 }
 
 #content > section section section section h1 {
@@ -122,8 +123,12 @@ h1 > .score {
 	font-weight: bold;
 }
 
+.spec-links {
+	display: flex;
+}
+
 .spec-link {
-	display: inline-block;
+	display: flex;
 	padding: .3em .4em;
 	margin: -.5em 0 -.5em .3em;
 	font-family: sans-serif;
@@ -261,6 +266,7 @@ details summary {
 	list-style: none;
 	cursor: pointer;
 	padding-top: .6em;
+	padding-right: 2em;
 	background: linear-gradient(var(--progress-color), var(--progress-color)) no-repeat 0 0 / calc(var(--progress) * 1%) .2em;
 }
 

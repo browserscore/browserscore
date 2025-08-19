@@ -85,8 +85,15 @@ var Test = function (spec) {
 	var contents = [this.title];
 
 	if (spec.tests.links) {
+		var linksContainer = $.create({
+			tag: 'div',
+			properties: {
+				className: 'spec-links',
+			},
+		});
+
 		if (spec.tests.links.tr) {
-			contents.push(
+			linksContainer.append(
 				$.create({
 					tag: 'a',
 					properties: {
@@ -100,7 +107,7 @@ var Test = function (spec) {
 		}
 
 		if (spec.tests.links.dev) {
-			contents.push(
+			linksContainer.append(
 				$.create({
 					tag: 'a',
 					properties: {
@@ -114,7 +121,7 @@ var Test = function (spec) {
 		}
 
 		if (spec.tests.links.mdn) {
-			contents.push(
+			linksContainer.append(
 				$.create({
 					tag: 'a',
 					properties: {
@@ -126,6 +133,8 @@ var Test = function (spec) {
 				}),
 			);
 		}
+
+		contents.push(linksContainer);
 	}
 
 	var h1 = $.create({
