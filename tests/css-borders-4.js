@@ -80,54 +80,63 @@ export default {
 	properties: {
 		'border-top-radius': {
 			links: {
+				tr: '#corner-sizing-side-shorthands',
 				dev: '#corner-sizing-side-shorthands',
 			},
 			tests: border_radius_tests,
 		},
 		'border-right-radius': {
 			links: {
+				tr: '#corner-sizing-side-shorthands',
 				dev: '#corner-sizing-side-shorthands',
 			},
 			tests: border_radius_tests,
 		},
 		'border-bottom-radius': {
 			links: {
+				tr: '#corner-sizing-side-shorthands',
 				dev: '#corner-sizing-side-shorthands',
 			},
 			tests: border_radius_tests,
 		},
 		'border-left-radius': {
 			links: {
+				tr: '#corner-sizing-side-shorthands',
 				dev: '#corner-sizing-side-shorthands',
 			},
 			tests: border_radius_tests,
 		},
 		'border-block-start-radius': {
 			links: {
+				tr: '#corner-sizing-side-shorthands',
 				dev: '#corner-sizing-side-shorthands',
 			},
 			tests: border_radius_tests,
 		},
 		'border-block-end-radius': {
 			links: {
+				tr: '#corner-sizing-side-shorthands',
 				dev: '#corner-sizing-side-shorthands',
 			},
 			tests: border_radius_tests,
 		},
 		'border-inline-start-radius': {
 			links: {
+				tr: '#corner-sizing-side-shorthands',
 				dev: '#corner-sizing-side-shorthands',
 			},
 			tests: border_radius_tests,
 		},
 		'border-inline-end-radius': {
 			links: {
+				tr: '#corner-sizing-side-shorthands',
 				dev: '#corner-sizing-side-shorthands',
 			},
 			tests: border_radius_tests,
 		},
 		'corner-shape': {
 			links: {
+				tr: '#corner-shaping',
 				dev: '#corner-shaping',
 			},
 			tests: [
@@ -139,102 +148,119 @@ export default {
 		},
 		'corner-top-left-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-top-right-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-bottom-right-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-bottom-left-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-start-start-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-start-end-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-end-end-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-end-start-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-top-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-bottom-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-left-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-right-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-block-start-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-block-end-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-inline-start-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'corner-inline-end-shape': {
 			links: {
-				dev: '#corner-shaping',
+				tr: '#corner-shape-shorthands',
+				dev: '#corner-shape-shorthands',
 			},
 			tests: corner_shape_tests,
 		},
 		'border-limit': {
 			links: {
+				tr: '#border-limit',
 				dev: '#border-limit',
 			},
 			tests: [
@@ -257,36 +283,42 @@ export default {
 		},
 		'border-clip': {
 			links: {
+				tr: '#border-clip',
 				dev: '#border-clip',
 			},
 			tests: border_clip_tests,
 		},
 		'border-clip-top': {
 			links: {
+				tr: '#border-clip',
 				dev: '#border-clip',
 			},
 			tests: border_clip_tests,
 		},
 		'border-clip-right': {
 			links: {
+				tr: '#border-clip',
 				dev: '#border-clip',
 			},
 			tests: border_clip_tests,
 		},
 		'border-clip-bottom': {
 			links: {
+				tr: '#border-clip',
 				dev: '#border-clip',
 			},
 			tests: border_clip_tests,
 		},
 		'border-clip-left': {
 			links: {
+				tr: '#border-clip',
 				dev: '#border-clip',
 			},
 			tests: border_clip_tests,
 		},
 		'box-shadow-color': {
 			links: {
+				tr: '#box-shadow-color',
 				dev: '#box-shadow-color',
 			},
 			tests: [
@@ -296,6 +328,7 @@ export default {
 		},
 		'box-shadow-offset': {
 			links: {
+				tr: '#box-shadow-offset',
 				dev: '#box-shadow-offset',
 			},
 			tests: [
@@ -308,6 +341,7 @@ export default {
 		},
 		'box-shadow-blur': {
 			links: {
+				tr: '#box-shadow-blur',
 				dev: '#box-shadow-blur',
 			},
 			tests: [
@@ -319,6 +353,7 @@ export default {
 		},
 		'box-shadow-spread': {
 			links: {
+				tr: '#box-shadow-spread',
 				dev: '#box-shadow-spread',
 			},
 			tests: [
@@ -330,6 +365,7 @@ export default {
 		},
 		'box-shadow-position': {
 			links: {
+				tr: '#box-shadow-position',
 				dev: '#box-shadow-position',
 			},
 			tests: [
@@ -340,6 +376,7 @@ export default {
 		},
 		'border-shape': {
 			links: {
+				tr: '#border-shape',
 				dev: '#border-shape',
 			},
 			tests: [
