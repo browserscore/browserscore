@@ -34,6 +34,7 @@ const border_clip_tests = [
 export default {
 	title: 'CSS Borders and Box Decorations Module Level 4',
 	links: {
+		tr: 'css-borders-4',
 		dev: 'css-borders-4',
 	},
 	status: {
