@@ -10,15 +10,15 @@ export default {
 	properties: {
 		'print-color-adjust': {
 			links: {
-				tr: '#perf',
-				dev: '#perf',
+				tr: '#print-color-adjust',
+				dev: '#print-color-adjust',
 			},
 			tests: ['economy', 'exact'],
 		},
 		'forced-color-adjust': {
 			links: {
-				tr: '#forced',
-				dev: '#forced',
+				tr: '#forced-color-adjust-prop',
+				dev: '#forced-color-adjust-prop',
 			},
 			tests: ['auto', 'none', 'preserve-parent-color'],
 		},
@@ -38,6 +38,7 @@ export default {
 				'light light',
 				'dark dark',
 				'light purple',
+				'light purple only',
 				'purple dark interesting',
 				'none',
 				'light none',
