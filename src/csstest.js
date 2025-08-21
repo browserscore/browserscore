@@ -1,6 +1,6 @@
 import Supports from './supports.js';
-import Specs from './tests.js';
-import { create, $ } from './src/util.js';
+import Specs from '../tests/index.js';
+import { create, $ } from './util.js';
 
 var Score = function (parent) {
 	this.passed = this.total = this.passedTests = this.totalTests = 0;
