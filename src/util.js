@@ -12,7 +12,7 @@ export function create (o = {}) {
 	for (let property in o) {
 		if (property === "contents") {
 			let contents = Array.isArray(o.contents) ? o.contents : [o.contents];
-			contents = contents.map(content => {
+			contents = contents.filter(Boolean).map(content => {
 				if (content && typeof content === "object" && !(content instanceof Node)) {
 					return create(content)
 				}
