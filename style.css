@@ -87,18 +87,20 @@ h2 {
 	line-height: 1;
 }
 
-#content > section section section h1 {
-	display: flex;
-	align-items: center;
-	font-size: 180%;
-	gap: 0.5em;
-}
+#content > section section section {
+	h1 {
+		display: flex;
+		align-items: center;
+		font-size: 180%;
+		gap: 0.5em;
+	}
 
-#content > section section section section h1 {
-	color: var(--color-text-soft);
-	font-size: 120%;
-	font-weight: bold;
-	text-transform: capitalize;
+	section h1 {
+		color: var(--color-text-soft);
+		font-size: 120%;
+		font-weight: bold;
+		text-transform: capitalize;
+	}
 }
 
 h1 > .score {
@@ -150,21 +152,25 @@ h1 > .score {
 	background-image: url("data:image/svg+xml,<?xml version='1.0' encoding='UTF-8'?> <svg xmlns:cc='http://creativecommons.org/ns%23' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23' version='1.1' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'> <circle cx='50' cy='50' r='45' fill='none' stroke='%23fff' stroke-width='10'/> <path d='m38 38c0-12 24-15 23-2 0 9-16 13-16 23v7h10v-4c0-9 17-12 17-27-2-22-45-22-45 3zm7 32h10v10h-10' fill='%23fff'/> <script/> </svg>");
 }
 
-details summary > .spec-link {
-	display: none;
-	vertical-align: inherit;
-}
+details summary {
+	> .spec-link {
+		display: none;
+		vertical-align: inherit;
 
-details summary:hover > .spec-link,
-details summary:focus-within > .spec-link {
-	display: inline-block;
-}
+		&::before {
+			height: 18px;
+			width: 18px;
+			background-size: 18px 18px;
+			vertical-align: -4px;
+		}
+	}
 
-details summary > .spec-link::before {
-	height: 18px;
-	width: 18px;
-	background-size: 18px 18px;
-	vertical-align: -4px;
+	&:hover,
+	&:focus-within {
+		> .spec-link {
+			display: inline-block;
+		}
+	}
 }
 
 body > h1 {
@@ -191,23 +197,23 @@ body > h1 {
 	flex: 2;
 }
 
-#tests #hgroup {
+#tests > header {
 	text-align: center;
-}
 
-#tests > #hgroup > h1 {
-	font-size: 250%;
-}
+	> h1 {
+		font-size: 250%;
+	}
 
-#tests h1 > strong {
-	display: block;
-	margin-top: .1em;
-	font-size: 500%;
-	line-height: .7;
-}
+	> h1 > strong {
+		display: block;
+		margin-top: .1em;
+		font-size: 500%;
+		line-height: .7;
+	}
 
-#tests h2 {
-	font-size: 80%;
+	> p {
+		font-size: 80%;
+	}
 }
 
 details {
@@ -247,11 +253,11 @@ details li[class] {
 	font-size: 90%;
 	white-space: pre;
 	white-space: break-spaces;
-}
 
-details li[class] small {
-	display: block;
-	opacity: .8;
+	small {
+		display: block;
+		opacity: .8;
+	}
 }
 
 details summary.pass,
