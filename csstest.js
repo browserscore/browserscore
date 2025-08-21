@@ -1,5 +1,6 @@
 import Supports from './supports.js';
 import Specs from './tests.js';
+import { create, $ } from './src/util.js';
 
 var Score = function (parent) {
 	this.passed = this.total = this.passedTests = this.totalTests = 0;
@@ -86,7 +87,7 @@ var Test = function (spec) {
 	var contents = [this.title];
 
 	if (spec.tests.links) {
-		var linksContainer = $.create({
+		var linksContainer = create({
 			tag: 'div',
 			properties: {
 				className: 'spec-links',
@@ -95,7 +96,7 @@ var Test = function (spec) {
 
 		if (spec.tests.links.tr) {
 			linksContainer.append(
-				$.create({
+				create({
 					tag: 'a',
 					properties: {
 						href: 'https://www.w3.org/TR/' + spec.tests.links.tr,
@@ -109,7 +110,7 @@ var Test = function (spec) {
 
 		if (spec.tests.links.dev) {
 			linksContainer.append(
-				$.create({
+				create({
 					tag: 'a',
 					properties: {
 						href: devLinkFormat(spec.tests.links),
@@ -123,7 +124,7 @@ var Test = function (spec) {
 
 		if (spec.tests.links.mdn) {
 			linksContainer.append(
-				$.create({
+				create({
 					tag: 'a',
 					properties: {
 						href: 'https://developer.mozilla.org/en-US/docs/' + spec.tests.links.mdn,
@@ -138,13 +139,13 @@ var Test = function (spec) {
 		contents.push(linksContainer);
 	}
 
-	var h1 = $.create({
+	var h1 = create({
 		tag: 'h1',
 		contents: contents,
 	});
 
 	// Wrapper section
-	this.section = $.create({
+	this.section = create({
 		tag: 'section',
 		id: this.id,
 		className: 'tests',
@@ -157,17 +158,17 @@ var Test = function (spec) {
 	}
 
 	// Display score for this spec
-	$.create({
+	create({
 		tag: 'span',
 		contents: this.score + '',
 		className: 'score',
-		inside: h1,
+		in: h1,
 	});
 
 	$('#all').appendChild(this.section);
 
 	// Add to list of tested specs
-	$.create({
+	create({
 		tag: 'li',
 		className: passclass({
 			passed: this.score.passed,
@@ -181,7 +182,7 @@ var Test = function (spec) {
 				contents: this.title,
 			},
 		],
-		inside: $('#specsTested'),
+		in: $('#specsTested'),
 	});
 };
 
@@ -197,14 +198,14 @@ Test.prototype = {
 
 			thisSection =
 				thisSection ||
-				$.create({
+				create({
 					tag: 'section',
 					className: 'tests ' + what,
 					contents: {
 						tag: 'h1',
 						contents: what,
 					},
-					inside: this.section,
+					in: this.section,
 				});
 
 			var summaryContents = [
@@ -216,7 +217,7 @@ Test.prototype = {
 			if (links) {
 				if (links.tr) {
 					summaryContents.push(
-						$.create({
+						create({
 							tag: 'a',
 							properties: {
 								href: 'https://www.w3.org/TR/' + this.tests.links.tr + links.tr,
@@ -230,7 +231,7 @@ Test.prototype = {
 
 				if (links.dev) {
 					summaryContents.push(
-						$.create({
+						create({
 							tag: 'a',
 							properties: {
 								href: devLinkFormat(this.tests.links).replace(/#.*/, '') + links.dev,
@@ -263,7 +264,7 @@ Test.prototype = {
 					: feature.replace('()', '').replace(/(@[^ \/]+)[^\/]*(\/.*)/, '$1$2');
 
 				summaryContents.push(
-					$.create({
+					create({
 						tag: 'a',
 						properties: {
 							href: mdnLink,
@@ -299,7 +300,7 @@ Test.prototype = {
 				passed += +success;
 
 				testsResults.push(
-					$.create({
+					create({
 						tag: 'li',
 						innerHTML:
 							test.replace(/</g, '&lt;').replace(/>/g, '&gt;') +
@@ -314,7 +315,7 @@ Test.prototype = {
 			}
 
 			if (propertyPrefix) {
-				summaryContents[1] = $.create({
+				summaryContents[1] = create({
 					tag: 'span',
 					className: 'prefix',
 					textContent: propertyPrefix,
@@ -322,7 +323,7 @@ Test.prototype = {
 			}
 
 			var detailsContents = [
-				$.create({
+				create({
 					tag: 'summary',
 					properties: {
 						className: passclass({
@@ -333,13 +334,13 @@ Test.prototype = {
 					},
 					contents: summaryContents,
 				}),
-				$.create({
+				create({
 					tag: 'ul',
 					contents: testsResults,
 				}),
 			];
 
-			var details = $.create({
+			var details = create({
 				tag: 'details',
 				contents: detailsContents,
 			});
