@@ -260,46 +260,39 @@ details li[class] {
 	}
 }
 
-details summary.pass,
-details li.pass,
-#specsTested li.pass::before {
-	background-color: var(--color-pass);
+.pass {
+	--color: var(--color-pass);
 }
 
-details summary.almost-pass,
-details li.almost-pass,
-#specsTested li.almost-pass::before {
-	background-color: var(--color-almost-pass);
+.almost-pass {
+	--color: var(--color-almost-pass);
 }
 
-details summary.slightly-buggy,
-details li.slightly-buggy,
-#specsTested li.slightly-buggy::before {
-	background-color: var(--color-slightly-buggy);
+.slightly-buggy {
+	--color: var(--color-slightly-buggy);
 }
 
-details summary.buggy,
-details li.buggy,
-#specsTested li.buggy::before {
-	background-color: var(--color-buggy);
+.buggy {
+	--color: var(--color-buggy);
 }
 
-details summary.very-buggy,
-details li.very-buggy,
-#specsTested li.very-buggy::before {
-	background-color: var(--color-very-buggy);
+.very-buggy {
+	--color: var(--color-very-buggy);
 }
 
-details summary.fail,
-details li.fail,
-#specsTested li.fail::before {
-	background-color: var(--color-fail);
+.fail {
+	--color: var(--color-fail);
 }
 
-details summary.epic-fail,
-details li.epic-fail,
-#specsTested li.epic-fail::before {
-	background-color: var(--color-epic-fail);
+.epic-fail {
+	--color: var(--color-epic-fail);
+}
+
+details summary[class],
+details li[class],
+#specsTested li[class]::before {
+	background-color: var(--color);
+	color: oklch(from var(--color) var(--text));
 }
 
 details summary::before {
