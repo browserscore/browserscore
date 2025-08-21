@@ -51,6 +51,10 @@
 	--aside-background-color: light-dark(hsl(0 0% 98% / .6), hsl(0 0% 2% / .6));
 	--aside-foreground-color: light-dark(hsl(0 0% 0%), hsl(0 0% 100%));
 
+	--l-threshold: 0.73;
+	--is-light: clamp(0, (l - var(--l-threshold)) * infinity, 1);
+	--is-dark: (1 - var(--is-light));
+	--text: calc(1 * var(--is-dark) + .1 * var(--is-light)) calc(c * var(--is-light)) h;
 }
 
 @media (prefers-color-scheme: dark) {
