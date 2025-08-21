@@ -1,75 +1,60 @@
 :root {
-	--primary-hue-saturation: 24 20%;
-	--secondary-hue-saturation: 200 10%;
-	--tertiary-hue-saturation: 0 0%;
+	--font-sans: system-ui, sans-serif;
+	--font-serif: ui-serif, serif;
+	--font-mono: Monaco, Consolas, monospace;
+	--font-body: var(--font-sans);
+	--font-heading: var(--font-body);
 
-	--lightness-0: 0%;
-	--lightness-5: 5%;
-	--lightness-80: 80%;
-	--lightness-95: 95%;
-	--lightness-98: 98%;
+	--color-gray: hsl(200 10% 50%);
+	--color-magenta: hsl(336 100% 50%);
+	--color-pass: light-dark(hsl(93 100% 30%), hsl(93 100% 25%));
+	--color-almost-pass: light-dark(hsl(80 100% 40%), hsl(80 100% 35%));
+	--color-slightly-buggy: light-dark(hsl(60 100% 37%), hsl(60 100% 32%));
+	--color-buggy: light-dark(hsl(34 100% 47%), hsl(34 100% 42%));
+	--color-very-buggy: light-dark(hsl(17 100% 47%), hsl(17 100% 42%));
+	--color-fail: light-dark(hsl(9 100% 47%), hsl(9 100% 42%));
+	--color-epic-fail: light-dark(hsl(0 100% 37%), hsl(0 100% 32%));
 
-	--primary-shadow-lightness: 100%;
-	--secondary-shadow-lightness: 0%;
-	--primary-border-lightness: var(--secondary-shadow-lightness);
+	--color-neutral: var(--color-gray);
+	--color-accent: var(--color-magenta);
+	--color-accent-text: white;
 
-	--primary-background-color: hsl(var(--primary-hue-saturation) var(--lightness-95));
-	--primary-foreground-color: hsl(var(--primary-hue-saturation) var(--lightness-5));
-	--secondary-background-color: hsl(var(--secondary-hue-saturation) 20%);
-	--secondary-foreground-color: hsl(var(--tertiary-hue-saturation) 100%);
-	--tertiary-background-color: transparent;
-	--tertiary-foreground-color: hsl(var(--secondary-hue-saturation) 20%);
-	--primary-shadow-color: hsl(var(--tertiary-hue-saturation) var(--primary-shadow-lightness));
-	--secondary-shadow-color: hsl(var(--tertiary-hue-saturation) var(--secondary-shadow-lightness) / .5);
-	--primary-border-color: hsl(var(--tertiary-hue-saturation) var(--primary-border-lightness) / .25);
-	--secondary-border-color: var(--secondary-background-color);
-	--shade-color: hsl(var(--tertiary-hue-saturation) 0% / .3);
+	--color-neutral-90-20: light-dark(hsl(from var(--color-neutral) h s 20%), hsl(from var(--color-neutral) h s 90%));
+	--color-neutral-20-90: light-dark(hsl(from var(--color-neutral) h s 20%), hsl(from var(--color-neutral) h s 90%));
+	--color-neutral-80-30: light-dark(hsl(from var(--color-neutral) h s 80%), hsl(from var(--color-neutral) h s 30%));
+	--color-neutral-30-80: light-dark(hsl(from var(--color-neutral) h s 30%), hsl(from var(--color-neutral) h s 80%));
+	--color-neutral-100-10: light-dark(hsl(from var(--color-neutral) h s 100%), hsl(from var(--color-neutral) h s 10%));
+	--color-neutral-10-100: light-dark(hsl(from var(--color-neutral) h s 10%), hsl(from var(--color-neutral) h s 100%));
 
-	--spec-link-background-color: var(--secondary-background-color);
-	--spec-link-foreground-color: var(--secondary-foreground-color);
-	--highlight-background-color: hsl(336 100% 50%);
-	--highlight-foreground-color: hsl(0 0% 100%);
-	--prefix-background-color: var(--shade-color);
+	--color-bg: canvas;
+	--color-text: var(--color-neutral-10-100);
+	--color-border: var(--color-neutral-80-30);
+	--color-shade: hsl(0 0% 0% / .3);
+	--color-bg-soft: var(--color-neutral-90-20);
+	--color-text-soft: var(--color-neutral-20-90);
+	--color-bg-loud: var(--color-neutral-20-90);
+	--color-text-loud: var(--color-neutral-100-10);
+
+	--footer-border-color: var(--color-border);
+
+	--title-background-color: var(--color-bg-loud);
+	--title-foreground-color: var(--color-text-loud);
+	--spec-link-background-color: var(--color-bg-loud);
+	--spec-link-foreground-color: var(--color-text-loud);
+	--highlight-background-color: var(--color-accent);
+	--highlight-foreground-color: var(--color-accent-text);
+	--prefix-background-color: var(--color-shade);
 	--prefix-foreground-color: var(--spec-link-foreground-color);
-	--progress-color: var(--shade-color);
+	--progress-color: var(--color-shade);
 
-	--test-result-darkening: 0%;
+	--aside-border-color: light-dark(hsl(0 0% 80% / .8), hsl(0 0% 20% / .8));
+	--aside-background-color: light-dark(hsl(0 0% 98% / .6), hsl(0 0% 2% / .6));
+	--aside-foreground-color: light-dark(hsl(0 0% 0%), hsl(0 0% 100%));
 
-	--pass-color: hsl(93 100% 30%);
-	--almost-pass-color: hsl(80 100% 40%);
-	--slightly-buggy-color: hsl(60 100% 37%);
-	--buggy-color: hsl(34 100% 47%);
-	--very-buggy-color: hsl(17 100% 47%);
-	--fail-color: hsl(9 100% 47%);
-	--epic-fail-color: hsl(0 100% 37%);
-
-	--aside-border-color: hsl(var(--tertiary-hue-saturation) var(--lightness-80) / .8);
-	--aside-background-color: hsl(var(--tertiary-hue-saturation) var(--lightness-98) / .6);
-	--aside-foreground-color: hsl(var(--tertiary-hue-saturation)  var(--lightness-0));
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--lightness-0: 100%;
-		--lightness-5: 95%;
-		--lightness-80: 20%;
-		--lightness-95: 5%;
-		--lightness-98: 2%;
-
-		--primary-shadow-lightness: 0%;
-		--secondary-shadow-lightness: 25%;
-
-		--tertiary-foreground-color: hsl(var(--secondary-hue-saturation) 90%);
-		--primary-shadow-color: hsl(var(--secondary-hue-saturation) 25% / .25);
-
-		--pass-color: hsl(93 100% 25%);
-		--almost-pass-color: hsl(80 100% 35%);
-		--slightly-buggy-color: hsl(60 100% 32%);
-		--buggy-color: hsl(34 100% 42%);
-		--very-buggy-color: hsl(17 100% 42%);
-		--fail-color: hsl(9 100% 42%);
-		--epic-fail-color: hsl(0 100% 32%);
-
 		color-scheme: dark;
 	}
 }
@@ -83,15 +68,13 @@ body {
 	max-width: 60em;
 	padding: 1em;
 	margin: auto;
-	background: url(https://dabblet.com/img/noise.png) var(--primary-background-color);
-	color: var(--primary-foreground-color);
-	font: 100%/1.5 sans-serif;
-	text-shadow: 0 1px var(--primary-shadow-color);
+	background: var(--color-bg);
+	color: var(--color-text);
+	font: 100%/1.5 var(--font-body);
 }
 
 a {
-	background-color: var(--tertiary-background-color);
-	color: var(--tertiary-foreground-color);
+	color: var(--color-text-soft);
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -99,6 +82,7 @@ a {
 h1,
 h2 {
 	margin: 1em 0 .5em;
+	font-family: var(--font-heading);
 	font-weight: normal;
 	line-height: 1;
 }
@@ -111,8 +95,7 @@ h2 {
 }
 
 #content > section section section section h1 {
-	background-color: var(--tertiary-background-color);
-	color: var(--tertiary-foreground-color);
+	color: var(--color-text-soft);
 	font-size: 120%;
 	font-weight: bold;
 	text-transform: capitalize;
@@ -131,20 +114,19 @@ h1 > .score {
 	display: flex;
 	padding: .3em .4em;
 	margin: -.5em 0 -.5em .3em;
-	font-family: sans-serif;
+	font-family: var(--font-sans);
 	font-size: 0.9rem;
 	background-color: var(--spec-link-background-color);
 	color: var(--spec-link-foreground-color);
 	border-radius: .3em;
 	vertical-align: middle;
-	text-shadow: 0 .1em .1em var(--secondary-shadow-color);
-}
 
-.spec-link:hover,
-.spec-link:focus {
-	outline: none;
-	background-color: var(--highlight-background-color);
-	color: var(--highlight-foreground-color);
+	&:hover,
+	&:focus {
+		outline: none;
+		background-color: var(--highlight-background-color);
+		color: var(--highlight-foreground-color);
+	}
 }
 
 .w3c-link::before,
@@ -190,33 +172,14 @@ body > h1 {
 	left: 0;
 	top: 0;
 	padding: .5em 1em;
-	background: var(--secondary-background-color);
-	box-shadow: -2px 2px 10px var(--secondary-shadow-color);
-	color: var(--secondary-foreground-color);
+	background: var(--title-background-color);
+	color: var(--title-foreground-color);
 	z-index: 1;
 	font-size: 150%;
 	font-weight: bold;
 	text-transform: uppercase;
-	text-shadow: 0 .1em .1em var(--secondary-shadow-color);
-
 	transform:  rotate(-90deg) translateX(-100%);
 	transform-origin: top left;
-}
-
-#mark {
-	position: fixed;
-	left: 10px;
-	top: 235px;
-	z-index: 2;
-}
-
-#mark img {
-	display: block;
-	width: 50px;
-	border-radius: 50%;
-	box-shadow: 2px 2px 10px var(--secondary-shadow-color);
-
-	transform: rotate(-15deg);
 }
 
 #content {
@@ -249,7 +212,7 @@ body > h1 {
 
 details {
 	margin: .3em 0;
-	font: 100% Monaco, Consolas, monospace;
+	font: 100% var(--font-mono);
 }
 
 details summary,
@@ -258,7 +221,6 @@ details li[class] {
 	background: gray;
 	color: white;
 	border-radius: .3em;
-	text-shadow: 0 -.05em .1em var(--secondary-shadow-color);
 	position: relative;
 }
 
@@ -295,43 +257,43 @@ details li[class] small {
 details summary.pass,
 details li.pass,
 #specsTested li.pass::before {
-	background-color: var(--pass-color);
+	background-color: var(--color-pass);
 }
 
 details summary.almost-pass,
 details li.almost-pass,
 #specsTested li.almost-pass::before {
-	background-color: var(--almost-pass-color);
+	background-color: var(--color-almost-pass);
 }
 
 details summary.slightly-buggy,
 details li.slightly-buggy,
 #specsTested li.slightly-buggy::before {
-	background-color: var(--slightly-buggy-color);
+	background-color: var(--color-slightly-buggy);
 }
 
 details summary.buggy,
 details li.buggy,
 #specsTested li.buggy::before {
-	background-color: var(--buggy-color);
+	background-color: var(--color-buggy);
 }
 
 details summary.very-buggy,
 details li.very-buggy,
 #specsTested li.very-buggy::before {
-	background-color: var(--very-buggy-color);
+	background-color: var(--color-very-buggy);
 }
 
 details summary.fail,
 details li.fail,
 #specsTested li.fail::before {
-	background-color: var(--fail-color);
+	background-color: var(--color-fail);
 }
 
 details summary.epic-fail,
 details li.epic-fail,
 #specsTested li.epic-fail::before {
-	background-color: var(--epic-fail-color);
+	background-color: var(--color-epic-fail);
 }
 
 details summary::before {
@@ -356,7 +318,6 @@ details[open] summary::before {
 	color: var(--prefix-foreground-color);
 	border-radius: .3em;
 	vertical-align: middle;
-	text-shadow: 0 .1em .1em var(--secondary-shadow-color);
 }
 
 /* Emoticons */
@@ -377,7 +338,7 @@ details li[class]::after {
 }
 
 #specsTested li::after {
-	font: 83.3%/29px Monaco, Consolas, monospace;
+	font: 83.3%/29px var(--font-mono);
 	right: 0;
 }
 
@@ -417,38 +378,37 @@ aside {
 	align-self: flex-end;
 	position: sticky;
 	bottom: 0;
-}
 
-aside .caution p {
-	padding: 1em;
-	background: var(--secondary-background-color);
-	color: var(--secondary-foreground-color);
-	text-shadow: 0 -.1em .2em var(--secondary-shadow-color);
-}
+	.caution p {
+		padding: 1em;
+		background: var(--color-bg-soft);
+		color: var(--color-text-soft);
+	}
 
-aside h1 {
-	font-size: 150%;
-}
+	h1 {
+		font-size: 150%;
+	}
 
-aside ul {
-	max-height: calc(100vh - 18em);
-	overflow: auto;
-	margin: .5em 0;
-	padding: 0;
-}
+	ul {
+		max-height: calc(100vh - 18em);
+		overflow: auto;
+		margin: .5em 0;
+		padding: 0;
+	}
 
-aside li {
-	list-style: none;
-	padding: .3em 0;
-	border-bottom: 2px dotted var(--primary-border-color);
-}
+	li {
+		list-style: none;
+		padding: .3em 0;
+		border-bottom: 2px dotted var(--color-border);
 
-aside li:first-child {
-	border-top: none;
-}
+		&:first-child {
+			border-top: none;
+		}
 
-aside li:last-child {
-	border-bottom: none;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
 }
 
 #specsTested li {
@@ -463,7 +423,6 @@ aside li:last-child {
 	margin-right: .5em;
 	vertical-align: -.2em;
 	border-radius: 50%;
-	box-shadow: 0 2px var(--primary-shadow-color);
 }
 
 footer {
@@ -472,7 +431,7 @@ footer {
 
 footer > p {
 	padding: 1em 0;
-	border-top: 1px solid var(--secondary-border-color);
+	border-top: 1px solid var(--footer-border-color);
 	text-align: center;
 }
 
