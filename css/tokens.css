@@ -1,0 +1,58 @@
+:root {
+	--font-sans: system-ui, sans-serif;
+	--font-serif: ui-serif, serif;
+	--font-mono: Monaco, Consolas, monospace;
+	--font-body: var(--font-sans);
+	--font-heading: var(--font-body);
+
+	--color-gray: hsl(200 10% 50%);
+	--color-magenta: hsl(336 100% 50%);
+	--color-pass: light-dark(hsl(93 100% 30%), hsl(93 100% 25%));
+	--color-almost-pass: light-dark(hsl(80 100% 40%), hsl(80 100% 35%));
+	--color-slightly-buggy: light-dark(hsl(60 100% 37%), hsl(60 100% 32%));
+	--color-buggy: light-dark(hsl(34 100% 47%), hsl(34 100% 42%));
+	--color-very-buggy: light-dark(hsl(17 100% 47%), hsl(17 100% 42%));
+	--color-fail: light-dark(hsl(9 100% 47%), hsl(9 100% 42%));
+	--color-epic-fail: light-dark(hsl(0 100% 37%), hsl(0 100% 32%));
+
+	--color-neutral: var(--color-gray);
+	--color-accent: var(--color-magenta);
+	--color-accent-text: white;
+
+	--color-neutral-90-20: light-dark(hsl(from var(--color-neutral) h s 20%), hsl(from var(--color-neutral) h s 90%));
+	--color-neutral-20-90: light-dark(hsl(from var(--color-neutral) h s 20%), hsl(from var(--color-neutral) h s 90%));
+	--color-neutral-80-30: light-dark(hsl(from var(--color-neutral) h s 80%), hsl(from var(--color-neutral) h s 30%));
+	--color-neutral-30-80: light-dark(hsl(from var(--color-neutral) h s 30%), hsl(from var(--color-neutral) h s 80%));
+	--color-neutral-100-10: light-dark(hsl(from var(--color-neutral) h s 100%), hsl(from var(--color-neutral) h s 10%));
+	--color-neutral-10-100: light-dark(hsl(from var(--color-neutral) h s 10%), hsl(from var(--color-neutral) h s 100%));
+
+	--color-bg: canvas;
+	--color-text: var(--color-neutral-10-100);
+	--color-border: var(--color-neutral-80-30);
+	--color-shade: hsl(0 0% 0% / .3);
+	--color-bg-soft: var(--color-neutral-90-20);
+	--color-text-soft: var(--color-neutral-20-90);
+	--color-bg-loud: var(--color-neutral-20-90);
+	--color-text-loud: var(--color-neutral-100-10);
+
+	--footer-border-color: var(--color-border);
+
+	--title-background-color: var(--color-bg-loud);
+	--title-foreground-color: var(--color-text-loud);
+	--spec-link-background-color: var(--color-bg-loud);
+	--spec-link-foreground-color: var(--color-text-loud);
+	--highlight-background-color: var(--color-accent);
+	--highlight-foreground-color: var(--color-accent-text);
+	--prefix-background-color: var(--color-shade);
+	--prefix-foreground-color: var(--spec-link-foreground-color);
+	--progress-color: var(--color-shade);
+
+	--aside-border-color: light-dark(hsl(0 0% 80% / .8), hsl(0 0% 20% / .8));
+	--aside-background-color: light-dark(hsl(0 0% 98% / .6), hsl(0 0% 2% / .6));
+	--aside-foreground-color: light-dark(hsl(0 0% 0%), hsl(0 0% 100%));
+
+	--l-threshold: 0.73;
+	--is-light: clamp(0, (l - var(--l-threshold)) * infinity, 1);
+	--is-dark: (1 - var(--is-light));
+	--text: calc(1 * var(--is-dark) + .1 * var(--is-light)) calc(c * var(--is-light)) h;
+}
