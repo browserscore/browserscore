@@ -1,3 +1,4 @@
+import Supports from './supports.js';
 import Specs from './tests.js';
 
 var Score = function (parent) {
