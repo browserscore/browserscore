@@ -22,7 +22,7 @@ export function runTests (filter = '') {
 	var specs = [];
 	var timeBefore = +new Date();
 
-	var removedWords = / *(?:\([^)]*\)|:.*|\b(?:CSS(?! 2)|Module)\b)( *)/g;
+	let timeBefore = performance.now();
 
 	for (var spec in Specs) {
 		// Filter list of specifications
@@ -79,7 +79,7 @@ export function runTests (filter = '') {
 	$('#total').textContent = mainScore.total;
 
 	// Display time taken
-	$('#timeTaken').textContent = +new Date() - timeBefore + 'ms';
+	$('#timeTaken').textContent = Math.round(performance.now() - timeBefore) + 'ms';
 };
 
 onload = function () {
