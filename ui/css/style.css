@@ -112,7 +112,7 @@ h1 > .score {
 }
 
 .w3c-link {
-	--icon: var(--icon-w3);
+	--icon: var(--icon-w3c);
 	--brand-color:  #005a9c;
 }
 
