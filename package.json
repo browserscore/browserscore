@@ -1,0 +1,20 @@
+{
+  "name": "css3test",
+  "version": "1.0.0",
+  "homepage": "https://css3test.com",
+  "bugs": {
+    "url": "https://github.com/LeaVerou/css3test/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeaVerou/css3test.git"
+  },
+  "license": "MIT",
+  "author": "Lea Verou",
+  "contributors": [
+    "Sebastian Zartner"
+  ],
+  "type": "module",
+  "dependencies": {
+  }
+}
