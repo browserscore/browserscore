@@ -1,3 +1,5 @@
+import { resetOutput, runTests } from './csstest.js';
+
 document.getElementById('filter').addEventListener('change', evt => {
 	localStorage.setItem('filter', evt.target.value);
 

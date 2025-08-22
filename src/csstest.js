@@ -3,7 +3,7 @@ import { $ } from './util.js';
 import Score from './classes/Score.js';
 import Test, { mainScore } from './classes/Test.js';
 
-window.resetOutput = function () {
+export function resetOutput () {
 	mainScore = new Score();
 
 	// Output current score
@@ -18,7 +18,7 @@ window.resetOutput = function () {
 	$('#timeTaken').textContent = '';
 };
 
-window.runTests = function (filter = '') {
+export function runTests (filter = '') {
 	var specs = [];
 	var timeBefore = +new Date();
 
