@@ -9,13 +9,15 @@
 	--color-magenta: hsl(336 100% 50%);
 	--color-green: light-dark(hsl(93 100% 30%), hsl(93 100% 25%));
 	--color-lime: light-dark(hsl(80 100% 40%), hsl(80 100% 35%));
+	--color-yellow: light-dark(hsl(48 100% 51%), hsl(50.59 100% 45%));
 	--color-orange: light-dark(hsl(34 100% 47%), hsl(34 100% 42%));
 	--color-red:  light-dark(hsl(9 100% 47%), hsl(9 100% 42%));
 	--color-red-dark: light-dark(hsl(0 100% 37%), hsl(0 100% 32%));
+	--color-blue: light-dark(oklch(65% 0.15 215), oklch(60% 0.15 215));
 
 	--color-pass: var(--color-green);
 	--color-almost-pass: var(--color-lime);
-	--color-slightly-buggy: color-mix(in hsl, var(--color-lime), var(--color-orange) 35%);
+	--color-slightly-buggy: var(--color-yellow);
 	--color-buggy: var(--color-orange);
 	--color-very-buggy: color-mix(in hsl, var(--color-orange), var(--color-red) 60%);
 	--color-fail: var(--color-red);

@@ -28,10 +28,7 @@
 	</section>
 
 	<aside>
-		<section class="caution">
-			<p><strong>Caution:</strong>
-			This test checks which CSS3 features the browser recognizes, <em>not</em> whether they are implemented correctly.</p>
-		</section>
+
 
 		<p>Time taken: <strong id="timeTaken"></strong></p>
 
@@ -72,7 +69,18 @@
 		</section>
 
 		<section>
-			<h1>Specs tested:</h1>
+
+			<h1>
+				Specs tested
+				<ui-tooltip>
+					<button class="icon" style="--icon: var(--icon-warning)"></button>
+					<section class="caution tooltip">
+						<p><strong>Caution:</strong>
+						This test checks which CSS3 features the browser recognizes, <em>not</em> whether they are implemented correctly.</p>
+					</section>
+				</ui-tooltip>
+
+			</h1>
 			<ul id="specsTested"></ul>
 			Want more tests? <a href="https://github.com/LeaVerou/css3test" target="_blank">Be my guest!</a>
 		</section>

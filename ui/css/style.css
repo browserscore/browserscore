@@ -1,6 +1,7 @@
 @import "tokens.css";
 @import "icons.css";
 @import "carbon.css";
+@import "../components/tooltip/tooltip.css";
 
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -62,15 +63,19 @@ h1 > .score {
 .spec-link::before {
 	content:'';
 	display: inline-block;
-	height: 16px;
-	width: 16px;
+	vertical-align: -.1em;
+	font-size: max(1em, 1rem);
+	width: 1em;
+	height: 1em;
 
 	background: var(--icon-color, currentColor);
 	-webkit-mask: var(--icon) no-repeat center / contain;
 	mask: var(--icon) no-repeat center / contain;
-	vertical-align: -3px;
-	margin-right: 3px;
-	opacity: .9;
+}
+
+.icon-before::before,
+.spec-link::before {
+	margin-inline-end: .2em;
 }
 
 .spec-links {
@@ -347,10 +352,16 @@ aside {
 	position: sticky;
 	bottom: 0;
 
-	.caution p {
+	.caution {
 		padding: 1em;
 		background: var(--color-bg-loud);
 		color: var(--color-text-loud);
+		font-size: .85rem;
+		line-height: 1.5;
+
+		p {
+			margin: 0;
+		}
 	}
 
 	h1 {

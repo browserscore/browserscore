@@ -1,0 +1,36 @@
+/* Light DOM CSS for <ui-tooltip> */
+
+ui-tooltip {
+	display: inline-block;
+	position: relative;
+}
+
+/* Trigger */
+ui-tooltip > :not(.tooltip) {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	anchor-name: --trigger;
+
+	&:not(:hover, :focus-within) {
+		opacity: .5;
+	}
+}
+
+ui-tooltip > .tooltip {
+	margin: 0;
+	position: absolute;
+	z-index: 2;
+	/* Anchor positioning as PE (currently not working) */
+	position-anchor: --trigger;
+	position-area: top span-all;
+	position-try: normal flip-block flip-inline;
+	inset: auto;
+	/* Fallback */
+	inset-block-end: 100%;
+	min-width: 15em;
+}
+
+ui-tooltip:not(:hover, :focus-within) > .tooltip {
+	display: none;
+}
