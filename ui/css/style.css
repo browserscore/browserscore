@@ -236,30 +236,37 @@ details li[class] {
 
 .pass {
 	--color: var(--color-pass);
+	--emoji: ':D';
 }
 
 .almost-pass {
 	--color: var(--color-almost-pass);
+	--emoji: ':)';
 }
 
 .slightly-buggy {
 	--color: var(--color-slightly-buggy);
+	--emoji: ':|';
 }
 
 .buggy {
 	--color: var(--color-buggy);
+	--emoji: ':(';
 }
 
 .very-buggy {
 	--color: var(--color-very-buggy);
+	--emoji: ':o';
 }
 
 .fail {
 	--color: var(--color-fail);
+	--emoji: ':′(';
 }
 
 .epic-fail {
 	--color: var(--color-epic-fail);
+	--emoji: '›:(';
 }
 
 details summary[class],
@@ -267,6 +274,12 @@ details li[class],
 #specsTested li[class]::before {
 	background-color: var(--color);
 	color: oklch(from var(--color) var(--text));
+}
+
+details summary[class]::after,
+details li[class]::after,
+#specsTested li[class]::after {
+	content: var(--emoji);
 }
 
 details summary::before {
@@ -313,34 +326,6 @@ details li[class]::after {
 #specsTested li::after {
 	font: 83.3%/29px var(--font-mono);
 	right: 0;
-}
-
-.almost-pass::after {
-	content: ':)';
-}
-
-.buggy::after {
-	content: ':(';
-}
-
-.epic-fail::after {
-	content: '›:(';
-}
-
-.fail::after {
-	content: ':′(';
-}
-
-.pass::after {
-	content: ':D';
-}
-
-.slightly-buggy::after {
-	content: ':|';
-}
-
-.very-buggy::after {
-	content: ':o';
 }
 
 /* End emoticons */
