@@ -7,13 +7,19 @@
 
 	--color-gray: hsl(200 10% 50%);
 	--color-magenta: hsl(336 100% 50%);
-	--color-pass: light-dark(hsl(93 100% 30%), hsl(93 100% 25%));
-	--color-almost-pass: light-dark(hsl(80 100% 40%), hsl(80 100% 35%));
-	--color-slightly-buggy: light-dark(hsl(60 100% 37%), hsl(60 100% 32%));
-	--color-buggy: light-dark(hsl(34 100% 47%), hsl(34 100% 42%));
-	--color-very-buggy: light-dark(hsl(17 100% 47%), hsl(17 100% 42%));
-	--color-fail: light-dark(hsl(9 100% 47%), hsl(9 100% 42%));
-	--color-epic-fail: light-dark(hsl(0 100% 37%), hsl(0 100% 32%));
+	--color-green: light-dark(hsl(93 100% 30%), hsl(93 100% 25%));
+	--color-lime: light-dark(hsl(80 100% 40%), hsl(80 100% 35%));
+	--color-orange: light-dark(hsl(34 100% 47%), hsl(34 100% 42%));
+	--color-red:  light-dark(hsl(9 100% 47%), hsl(9 100% 42%));
+	--color-red-dark: light-dark(hsl(0 100% 37%), hsl(0 100% 32%));
+
+	--color-pass: var(--color-green);
+	--color-almost-pass: var(--color-lime);
+	--color-slightly-buggy: color-mix(in hsl, var(--color-lime), var(--color-orange) 35%);
+	--color-buggy: var(--color-orange);
+	--color-very-buggy: color-mix(in hsl, var(--color-orange), var(--color-red) 60%);
+	--color-fail: var(--color-red);
+	--color-epic-fail: var(--color-red-dark);
 
 	--color-neutral: var(--color-gray);
 	--color-accent: var(--color-magenta);
