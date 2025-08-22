@@ -1,2 +1,3 @@
 *.code-workspace
 .history
+package-lock.json
