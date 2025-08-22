@@ -2,6 +2,81 @@
 
 This document describes the data schema used in the CSS test files located in the `tests/` directory. Each test file exports a JavaScript object that defines tests for various CSS features, properties, values, and interfaces.
 
+## Schema Summary
+
+```javascript
+{
+  // [Required] Human-readable title describing the CSS specification
+  title: string,
+
+  // [Required] Links to relevant documentation
+  links: {
+    tr?: string,           // Link to W3C TR (Technical Report) specification
+    dev?: string,          // Link to W3C Editor's Draft specification
+    devtype?: string,      // Type of specification (e.g., "whatwg", "houdini")
+    mdn?: string,          // Link to MDN documentation
+    mdnGroup?: string      // MDN group classification
+  },
+
+  // [Optional] Information about the specification status
+  status?: {
+    stability: string,     // "stable", "experimental", or other status values
+    "first-snapshot"?: number  // Year of first snapshot
+  },
+
+  // [Optional] Tests for CSS properties and their values
+  properties?: {
+    "property-name": {
+      links: { /* documentation links */ },
+      tests: string[]
+    }
+  },
+
+  // [Optional] Tests for CSS values, functions, or syntax across multiple properties
+  values?: {
+    properties?: string[], // Specific properties this applies to
+    "value-name": {
+      links: { /* documentation links */ },
+      tests: string[]
+    }
+  },
+
+  // [Optional] Tests for CSS declarations (property-value pairs)
+  declaration?: {
+    "declaration-pattern": {
+      links: { /* documentation links */ },
+      tests: string[]
+    }
+  },
+
+  // [Optional] Tests for CSS selectors
+  selectors?: {
+    "selector-name": {
+      links: { /* documentation links */ },
+      tests: string[]
+    }
+  },
+
+  // [Optional] Tests for CSS at-rules like @media, @keyframes, etc.
+  "@rules"?: {
+    "@rule-name": {
+      links: { /* documentation links */ },
+      tests: string[]
+    }
+  },
+
+  // [Optional] Tests for JavaScript/DOM interfaces related to CSS
+  interfaces?: {
+    "InterfaceName": {
+      links: { /* documentation links */ },
+      tests: string[],
+      interface?: function,    // Returns interface object to test
+      required?: string        // CSS required for this test
+    }
+  }
+}
+```
+
 ## Top-Level Structure
 
 Each test file exports an object with the following top-level properties:
@@ -26,7 +101,7 @@ Each test file exports an object with the following top-level properties:
 
 The test files can contain different categories of tests, each with their own structure:
 
-### 1. Properties Tests
+### 1. [Properties Tests](#properties-tests)
 
 Tests for CSS properties and their values.
 
@@ -39,7 +114,9 @@ properties: {
 }
 ```
 
-### 2. Values Tests
+<a name="properties-tests"></a>
+
+### 2. [Values Tests](#values-tests)
 
 Tests for specific CSS values, functions, or syntax that can be used across multiple properties.
 
@@ -53,7 +130,9 @@ values: {
 }
 ```
 
-### 3. Declaration Tests
+<a name="values-tests"></a>
+
+### 3. [Declaration Tests](#declaration-tests)
 
 Tests for CSS declarations (property-value pairs).
 
@@ -66,7 +145,9 @@ declaration: {
 }
 ```
 
-### 4. Selectors Tests
+<a name="declaration-tests"></a>
+
+### 4. [Selectors Tests](#selectors-tests)
 
 Tests for CSS selectors.
 
@@ -79,7 +160,9 @@ selectors: {
 }
 ```
 
-### 5. At-Rules Tests
+<a name="selectors-tests"></a>
+
+### 5. [At-Rules Tests](#at-rules-tests)
 
 Tests for CSS at-rules like `@media`, `@keyframes`, etc.
 
@@ -92,7 +175,9 @@ Tests for CSS at-rules like `@media`, `@keyframes`, etc.
 }
 ```
 
-### 6. Interfaces Tests
+<a name="at-rules-tests"></a>
+
+### 6. [Interfaces Tests](#interfaces-tests)
 
 Tests for JavaScript/DOM interfaces related to CSS.
 
@@ -106,6 +191,8 @@ interfaces: {
   }
 }
 ```
+
+<a name="interfaces-tests"></a>
 
 ## Test Value Types
 
