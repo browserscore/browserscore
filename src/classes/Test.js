@@ -1,4 +1,4 @@
-import Supports from '../supports.js';
+import featureTypes from '../features.js';
 import { groups, orgs } from '../data.js';
 import Score from './Score.js';
 import { create, $ } from '../util.js';
@@ -60,8 +60,8 @@ export default class Test {
 		});
 
 		// Perform tests
-		for (var id in Test.groups) {
-			this.group(id, Test.groups[id]);
+		for (var id in featureTypes) {
+			this.group(id, featureTypes[id]);
 		}
 
 		// Display score for this spec
@@ -234,65 +234,11 @@ export default class Test {
 	}
 };
 
-Test.groups = {
-	values: function (test, name, tests) {
-		var properties = tests[name].properties || tests.properties,
-			failed = [];
-
-		for (var j = 0, property; (property = properties[j++]); ) {
-			if (!Supports.property(property).success) {
-				properties.splice(--j, 1);
-				continue;
-			}
-
-			if (!Supports.value(property, test).success) {
-				failed.push(property);
-			}
-		}
-
-		var success = properties.length > 0 ? 1 - failed.length / properties.length : 0;
-
-		return {
-			success: success,
-			note: success > 0 && success < 1 ? 'Failed in: ' + failed.join(', ') : '',
-		};
-	},
-
-	properties: function (value, property) {
-		return Supports.value(property, value);
-	},
-
-	descriptors: function (value, descriptor, tests) {
-		var required = undefined;
-		if (tests[descriptor].required) {
-			if (tests[descriptor].required[value]) {
-				required = tests[descriptor].required[value];
-			} else if (tests[descriptor].required['*']) {
-				required = tests[descriptor].required['*'];
-			}
-		}
-		return Supports.descriptorvalue(descriptor, value, required);
-	},
-
-	selectors: function (test) {
-		return Supports.selector(test);
-	},
-
-	declaration: function (test) {
-		return Supports.declaration(test);
-	},
-
-	'@rules': function (test) {
-		return Supports.atrule(test);
-	},
-
-	interfaces: function (value, name, tests) {
-		return Supports.attributeOrMethod(name, value, tests[name].required, tests[name].interface);
-	},
-
-	'Media queries': function (test) {
-		return Supports.mq(test);
-	},
+function devLinkFormat (params) {
+	let shortname = params.dev ?? params.dev;
+	let group = params.devtype ?? 'csswg';
+	let groupMeta = groups[group] ?? orgs[group] ?? groups.csswg;
+	return groupMeta.draft.replace('{shortname}', shortname);
 };
 
 function devLinkLogo (type) {
