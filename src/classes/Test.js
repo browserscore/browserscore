@@ -1,8 +1,11 @@
 import Supports from '../supports.js';
+import { groups, orgs } from '../data.js';
 import Score from './Score.js';
 import { create, $ } from '../util.js';
 
 export const mainScore = new Score();
+
+const icons = new Set('w3c', 'mdn', 'whatwg', 'ecma', 'tc39');
 
 export default class Test {
 	constructor(spec) {
@@ -24,43 +27,19 @@ export default class Test {
 
 			if (spec.tests.links.tr) {
 				linksContainer.append(
-					create({
-						tag: 'a',
-						properties: {
-							href: 'https://www.w3.org/TR/' + spec.tests.links.tr,
-							target: '_blank',
-							textContent: 'TR',
-							className: 'spec-link w3c-link',
-						},
-					}),
+					createSpecLink('tr', 'https://www.w3.org/TR/' + spec.tests.links.tr),
 				);
 			}
 
 			if (spec.tests.links.dev) {
 				linksContainer.append(
-					create({
-						tag: 'a',
-						properties: {
-							href: devLinkFormat(spec.tests.links),
-							target: '_blank',
-							textContent: 'DEV',
-							className: 'spec-link ' + devLinkLogo(spec.tests.links) + '-link',
-						},
-					}),
+					createSpecLink('dev', devLinkFormat(spec.tests.links), devLinkLogo(spec.tests.links.devtype)),
 				);
 			}
 
 			if (spec.tests.links.mdn) {
 				linksContainer.append(
-					create({
-						tag: 'a',
-						properties: {
-							href: 'https://developer.mozilla.org/en-US/docs/' + spec.tests.links.mdn,
-							target: '_blank',
-							textContent: 'MDN',
-							className: 'spec-link mdn-link',
-						},
-					}),
+					createSpecLink('mdn', 'https://developer.mozilla.org/en-US/docs/' + spec.tests.links.mdn),
 				);
 			}
 
@@ -144,29 +123,13 @@ export default class Test {
 			if (links) {
 				if (links.tr) {
 					summaryContents.push(
-						create({
-							tag: 'a',
-							properties: {
-								href: 'https://www.w3.org/TR/' + this.tests.links.tr + links.tr,
-								target: '_blank',
-								textContent: 'TR',
-								className: 'spec-link w3c-link',
-							},
-						}),
+						createSpecLink('tr', 'https://www.w3.org/TR/' + this.tests.links.tr + links.tr),
 					);
 				}
 
 				if (links.dev) {
 					summaryContents.push(
-						create({
-							tag: 'a',
-							properties: {
-								href: devLinkFormat(this.tests.links).replace(/#.*/, '') + links.dev,
-								target: '_blank',
-								textContent: 'DEV',
-								className: 'spec-link ' + devLinkLogo(this.tests.links) + '-link',
-							},
-						}),
+						createSpecLink('dev', devLinkFormat(this.tests.links).replace(/#.*/, '') + links.dev, devLinkLogo(this.tests.links)),
 					);
 				}
 
@@ -191,15 +154,7 @@ export default class Test {
 					: feature.replace('()', '').replace(/(@[^ \/]+)[^\/]*(\/.*)/, '$1$2');
 
 				summaryContents.push(
-					create({
-						tag: 'a',
-						properties: {
-							href: mdnLink,
-							target: '_blank',
-							textContent: 'MDN',
-							className: 'spec-link mdn-link',
-						},
-					}),
+					createSpecLink('mdn', mdnLink),
 				);
 			}
 
@@ -340,47 +295,9 @@ Test.groups = {
 	},
 };
 
-var devLinkFormat = function (params) {
-	switch (params.devtype) {
-		case 'fxtf':
-			// FX Task Force Editor Drafts
-			return 'https://drafts.fxtf.org/' + params.dev;
-		case 'houdini':
-			// CSS-TAG Houdini Editor Drafts
-			return 'https://drafts.css-houdini.org/' + params.dev;
-		case 'github':
-			return 'https://w3c.github.io/' + params.dev;
-		case 'iwwg':
-			// The Immersive Web Working Group
-			return 'https://immersive-web.github.io/' + params.dev;
-		case 'svgwg':
-			// SVG Working Group Editor Drafts
-			return 'https://svgwg.org/' + params.dev;
-		case 'whatwg':
-			// WHATWG
-			return 'https://' + params.dev + '.spec.whatwg.org/';
-		case 'math':
-			// The MathML Refresh Community Group
-			return 'https://mathml-refresh.github.io/' + params.dev;
-		default:
-			// CSS Working Group Editor Drafts
-			return 'https://drafts.csswg.org/' + params.dev;
-	}
-};
-
-var devLinkLogo = function (params) {
-	switch (params.devtype) {
-		case 'whatwg':
-			return params.devtype;
-		case 'svgwg':
-		case 'houdini':
-		case 'fxtf':
-		case 'github':
-		case 'math':
-		default:
-			return 'w3c';
-	}
-};
+function devLinkLogo (type) {
+	return icons.has(type) ? type : 'w3c';
+}
 
 function passclass(info) {
 	var success;
@@ -396,4 +313,16 @@ function passclass(info) {
 	var index = Math.round(success * (classes.length - 1));
 
 	return classes[index];
+}
+
+function createSpecLink (type, url, org = 'w3c') {
+	return create({
+		tag: 'a',
+		properties: {
+			href: url,
+			target: '_blank',
+			textContent: type.toUpperCase(),
+			className: `spec-link ${org}-link`,
+		},
+	});
 }
