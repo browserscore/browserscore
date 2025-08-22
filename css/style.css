@@ -1,4 +1,5 @@
 @import "tokens.css";
+@import "icons.css";
 
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -55,48 +56,68 @@ h1 > .score {
 	font-weight: bold;
 }
 
+.icon,
+.icon-before::before,
+.spec-link::before {
+	content:'';
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+
+	background: var(--icon-color, currentColor);
+	-webkit-mask: var(--icon) no-repeat center / contain;
+	mask: var(--icon) no-repeat center / contain;
+	vertical-align: -3px;
+	margin-right: 3px;
+	opacity: .9;
+}
+
 .spec-links {
 	display: flex;
 }
 
 .spec-link {
 	display: flex;
+	align-items: center;
 	padding: .3em .4em;
 	margin: -.5em 0 -.5em .3em;
 	font-family: var(--font-sans);
-	font-size: 0.9rem;
+	font-size: 0.85rem;
 	background-color: var(--spec-link-background-color);
 	color: var(--spec-link-foreground-color);
-	border-radius: .3em;
+	--icon-color: light-dark(color-mix(in oklab,
+	var(--brand-color, currentColor), var(--spec-link-foreground-color) 75%),
+	var(--brand-color, currentColor));
+	border-radius: .25em;
 	vertical-align: middle;
 
 	&:hover,
 	&:focus {
 		outline: none;
-		background-color: var(--highlight-background-color);
-		color: var(--highlight-foreground-color);
+		--background: var(--brand-color, var(--highlight-background-color));
+		background: var(--background);
+		color: oklch(from var(--background) var(--text));
+
+		&::before,
+		&::after {
+			--icon-color: oklch(from var(--background) var(--text));
+		}
 	}
 }
 
-.w3c-link::before,
-.mdn-link::before,
-.whatwg-link::before {
-	content:'';
-	display: inline-block;
-	height: 16px;
-	width: 16px;
-	background: url("data:image/svg+xml,<?xml version='1.0' encoding='UTF-8'?> <svg width='16' height='16' version='1.1' viewBox='0 0 4.2333 4.2333' xmlns='http://www.w3.org/2000/svg' xmlns:cc='http://creativecommons.org/ns%23' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23'> <path d='m0.035363 0.61275h0.4124l0.54126 1.8375 0.34374-1.3614-0.15643-0.47615h0.44465l0.50434 1.8157 0.55325-1.8157 1.4424 0.010055 0.0057528 0.18633-0.56683 0.97156c0.16442 0.026204 0.62609 0.24816 0.61673 0.92355-0.0093492 0.6754-0.47494 0.96237-0.78322 0.95736-0.30827-0.0050015-0.58395-0.15432-0.74365-0.61556l0.29081-0.13409c0.17859 0.3634 0.24065 0.36155 0.44314 0.37218 0.20249 0.010631 0.3613-0.15592 0.35882-0.6854-0.0024723-0.52948-0.40786-0.52174-0.67275-0.49464l-0.01716-0.17759 0.53506-0.92525-0.62349 0.0071148-0.8335 2.6879s-0.58082-1.9604-0.58082-1.9106c0 0.049773-0.57178 1.9056-0.57178 1.9056z' fill='%23fefefe' fill-rule='evenodd'/> </svg>") 0 0 / 16px 16px;
-	vertical-align: -3px;
-	margin-right: 3px;
-	opacity: .5;
+.w3c-link {
+	--icon: var(--icon-w3);
+	--brand-color:  #005a9c;
 }
 
-.mdn-link::before {
-	background-image: url("data:image/svg+xml,<?xml version='1.0' encoding='UTF-8'?> <svg width='16' height='16' version='1.1' viewBox='0 0 4.2333 4.2333' xmlns='http://www.w3.org/2000/svg' xmlns:cc='http://creativecommons.org/ns%23' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23'> <path d='m2.4076 0.6707c-0.51041-0.29724-1.0833-0.14856-1.4449 0.16704l-0.9605 0.9438 0.65147-0.016704-0.3675 0.42596 0.66817 0.016704-0.41761 0.44267 0.56795 0.0083521-0.15034 0.47607c0.41841 0.41283 0.90754 0.64883 1.4199 0.82686 0.1437-0.54959-0.046954-1.3818 0.45937-1.4366 0.33349-0.036107 0.55014 0.12707 0.7517 0.091874s0.25892-0.16704 0.25892-0.16704c0.20521 0.05062 0.25615-0.15587 0.33409-0.31738 0.017978-0.12377 0.0011606-0.21275-0.025056-0.29233 0.0085525-0.16476 0.02152-0.33151-0.22011-0.38909-0.16275-0.063531-0.30787-0.13398-0.51488-0.21226-0.11763-0.036416-0.22295-0.13562-0.28397-0.35914-0.036707-0.13446-0.14207-0.20802-0.29367-0.21808-0.089008-0.005906-0.28178 0.097323-0.43297 0.009278z' fill='%23fefefe' fill-rule='evenodd'/> </svg>");
+.mdn-link {
+	--icon: var(--icon-mdn);
+	--brand-color:  black;
 }
 
-.whatwg-link::before {
-	background-image: url("data:image/svg+xml,<?xml version='1.0' encoding='UTF-8'?> <svg xmlns:cc='http://creativecommons.org/ns%23' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23' version='1.1' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'> <circle cx='50' cy='50' r='45' fill='none' stroke='%23fff' stroke-width='10'/> <path d='m38 38c0-12 24-15 23-2 0 9-16 13-16 23v7h10v-4c0-9 17-12 17-27-2-22-45-22-45 3zm7 32h10v10h-10' fill='%23fff'/> <script/> </svg>");
+.whatwg-link {
+	--icon: var(--icon-whatwg);
+	--brand-color: #3c790a;
 }
 
 details summary {
@@ -327,8 +348,8 @@ aside {
 
 	.caution p {
 		padding: 1em;
-		background: var(--color-bg-soft);
-		color: var(--color-text-soft);
+		background: var(--color-bg-loud);
+		color: var(--color-text-loud);
 	}
 
 	h1 {
