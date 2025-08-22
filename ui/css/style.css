@@ -1,5 +1,6 @@
 @import "tokens.css";
 @import "icons.css";
+@import "carbon.css";
 
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -400,51 +401,4 @@ footer {
 		border-top: 1px solid var(--footer-border-color);
 		text-align: center;
 	}
-}
-
-/* Carbon Ads */
-#carbonads {
-	display: block;
-	overflow: hidden;
-	padding: 1em;
-	border: solid 1px var(--aside-border-color);
-	background-color: var(--aside-background-color);
-	font-size: 12px;
-	line-height: 1.5;
-
-	a {
-		font-weight: 400;
-		color: var(--aside-foreground-color);
-		text-shadow: none;
-	}
-
-	span {
-		position: relative;
-		display: block;
-		overflow: hidden;
-	}
-}
-
-.carbon-img {
-	float: left;
-	margin-right: 1em;
-
-	img {
-		display: block;
-	}
-}
-
-.carbon-text {
-	display: block;
-	float: left;
-	max-width: calc(100% - 130px - 1em);
-	text-align: left;
-}
-
-.carbon-poweredby {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	display: block;
-	font-size: 10px;
 }
