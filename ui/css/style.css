@@ -394,12 +394,12 @@ aside {
 
 footer {
 	word-spacing: -1px;
-}
 
-footer > p {
-	padding: 1em 0;
-	border-top: 1px solid var(--footer-border-color);
-	text-align: center;
+	> p {
+		padding: 1em 0;
+		border-top: 1px solid var(--footer-border-color);
+		text-align: center;
+	}
 }
 
 /* Carbon Ads */
@@ -411,27 +411,27 @@ footer > p {
 	background-color: var(--aside-background-color);
 	font-size: 12px;
 	line-height: 1.5;
-}
 
-#carbonads a {
-	font-weight: 400;
-	color: var(--aside-foreground-color);
-	text-shadow: none;
-}
+	a {
+		font-weight: 400;
+		color: var(--aside-foreground-color);
+		text-shadow: none;
+	}
 
-#carbonads span {
-	position: relative;
-	display: block;
-	overflow: hidden;
+	span {
+		position: relative;
+		display: block;
+		overflow: hidden;
+	}
 }
 
 .carbon-img {
 	float: left;
 	margin-right: 1em;
-}
 
-.carbon-img img {
-	display: block;
+	img {
+		display: block;
+	}
 }
 
 .carbon-text {
