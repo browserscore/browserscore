@@ -4,13 +4,11 @@ This document describes the data schema used in the CSS test files located in th
 
 ## Schema Summary
 
-```javascript
+```ts
 {
   // [Required] Human-readable title describing the CSS specification
   title: string,
-
-  // [Required] Links to relevant documentation
-  links: {
+  links?: {
     tr?: string,           // Link to W3C TR (Technical Report) specification
     dev?: string,          // Link to W3C Editor's Draft specification
     devtype?: string,      // Type of specification (e.g., "whatwg", "houdini")
@@ -18,13 +16,13 @@ This document describes the data schema used in the CSS test files located in th
     mdnGroup?: string      // MDN group classification
   },
 
-  // [Optional] Information about the specification status
+  // Information about the specification status
   status?: {
     stability: string,     // "stable", "experimental", or other status values
     "first-snapshot"?: number  // Year of first snapshot
   },
 
-  // [Optional] Tests for CSS properties and their values
+  // Tests for CSS properties and their values
   properties?: {
     "property-name": {
       links: { /* documentation links */ },
@@ -32,7 +30,7 @@ This document describes the data schema used in the CSS test files located in th
     }
   },
 
-  // [Optional] Tests for CSS values, functions, or syntax across multiple properties
+  // Tests for CSS values, functions, or syntax across multiple properties
   values?: {
     properties?: string[], // Specific properties this applies to
     "value-name": {
@@ -41,7 +39,7 @@ This document describes the data schema used in the CSS test files located in th
     }
   },
 
-  // [Optional] Tests for CSS declarations (property-value pairs)
+  // Tests for CSS declarations (property-value pairs)
   declaration?: {
     "declaration-pattern": {
       links: { /* documentation links */ },
@@ -49,7 +47,7 @@ This document describes the data schema used in the CSS test files located in th
     }
   },
 
-  // [Optional] Tests for CSS selectors
+  // Tests for CSS selectors
   selectors?: {
     "selector-name": {
       links: { /* documentation links */ },
@@ -57,7 +55,7 @@ This document describes the data schema used in the CSS test files located in th
     }
   },
 
-  // [Optional] Tests for CSS at-rules like @media, @keyframes, etc.
+  // Tests for CSS at-rules like @media, @keyframes, etc.
   "@rules"?: {
     "@rule-name": {
       links: { /* documentation links */ },
@@ -65,7 +63,7 @@ This document describes the data schema used in the CSS test files located in th
     }
   },
 
-  // [Optional] Tests for JavaScript/DOM interfaces related to CSS
+  // Tests for JavaScript/DOM interfaces
   interfaces?: {
     "InterfaceName": {
       links: { /* documentation links */ },
@@ -81,18 +79,18 @@ This document describes the data schema used in the CSS test files located in th
 
 Each test file exports an object with the following top-level properties:
 
-### Required Properties
+### Properties
+
+All optional
 
 - **`title`** (string): A human-readable title describing the CSS specification being tested
-- **`links`** (object): Links to relevant documentation
+- **`link`** (string): Spec link (shortname only)
+- **`links`** (object): Links to specs (deprecated)
   - **`tr`** (string, optional): Link to the W3C TR (Technical Report) specification
   - **`dev`** (string, optional): Link to the W3C Editor's Draft specification
   - **`devtype`** (string, optional): Type of specification (e.g., "whatwg", "houdini")
   - **`mdn`** (string, optional): Link to MDN documentation
   - **`mdnGroup`** (string, optional): MDN group classification
-
-### Optional Properties
-
 - **`status`** (object): Information about the specification status
   - **`stability`** (string): One of "stable", "experimental", or other status values
   - **`first-snapshot`** (number, optional): Year of first snapshot
