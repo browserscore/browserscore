@@ -11,31 +11,19 @@ export default {
 	},
 	properties: {
 		'background-attachment': {
-			links: {
-				tr: '#propdef-background-attachment',
-				dev: '#propdef-background-attachment',
-			},
+			link: '#propdef-background-attachment',
 			tests: ['scroll', 'fixed'],
 		},
 		'background-color': {
-			links: {
-				tr: '#propdef-background-color',
-				dev: '#propdef-background-color',
-			},
+			link: '#propdef-background-color',
 			tests: ['black', '#00f', '#000000', 'rgb(255, 255, 255)', 'rgb(100%, 50%, 50%)', 'transparent'],
 		},
 		'background-image': {
-			links: {
-				tr: '#propdef-background-image',
-				dev: '#propdef-background-image',
-			},
+			link: '#propdef-background-image',
 			tests: ['none', "url('image.png')", 'url(image.png)'],
 		},
 		'background-position': {
-			links: {
-				tr: '#propdef-background-position',
-				dev: '#propdef-background-position',
-			},
+			link: '#propdef-background-position',
 			tests: [
 				'10% 100px',
 				'100px center',
@@ -50,17 +38,11 @@ export default {
 			],
 		},
 		'background-repeat': {
-			links: {
-				tr: '#propdef-background-repeat',
-				dev: '#propdef-background-repeat',
-			},
+			link: '#propdef-background-repeat',
 			tests: ['repeat', 'repeat-x', 'repeat-y', 'no-repeat'],
 		},
 		background: {
-			links: {
-				tr: '#propdef-background',
-				dev: '#propdef-background',
-			},
+			link: '#propdef-background',
 			tests: [
 				'none',
 				'black',
@@ -74,10 +56,7 @@ export default {
 			],
 		},
 		color: {
-			links: {
-				tr: '#colors',
-				dev: '#colors',
-			},
+			link: '#colors',
 			tests: ['black', '#00f', '#000000', 'rgb(255, 255, 255)', 'rgb(100%, 50%, 50%)'],
 		},
 	},

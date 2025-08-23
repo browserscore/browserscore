@@ -2,8 +2,8 @@ export default {
 	title: 'Filter Effects Module Level 2',
 	links: {
 		dev: 'filter-effects-2',
-		devtype: 'fxtf',
 	},
+	group: 'fxtf',
 	status: {
 		stability: 'experimental',
 	},

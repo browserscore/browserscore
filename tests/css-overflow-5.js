@@ -1,28 +1,19 @@
 export default {
 	title: 'CSS Overflow Module Level 5',
-	links: {
-		tr: 'css-overflow-5',
-		dev: 'css-overflow-5',
-	},
+	link: 'css-overflow-5',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'scroll-target-group': {
-			links: {
-				tr: '#scroll-target-group',
-				dev: '#scroll-target-group',
-			},
+			link: '#scroll-target-group',
 			tests: [
 				'none',
 				'auto',
 			],
 		},
 		'scroll-marker-group': {
-			links: {
-				tr: '#scroll-marker-group-property',
-				dev: '#scroll-marker-group-property',
-			},
+			link: '#scroll-marker-group-property',
 			tests: [
 				'none',
 				'before',
@@ -32,10 +23,7 @@ export default {
 	},
 	selectors: {
 		'::scroll-button()': {
-			links: {
-				tr: '#scroll-buttons',
-				dev: '#scroll-buttons',
-			},
+			link: '#scroll-buttons',
 			tests: [
 				'::scroll-button(*)',
 				'::scroll-button(up)',
@@ -51,24 +39,15 @@ export default {
 			],
 		},
 		'::scroll-marker': {
-			links: {
-				tr: '#scroll-marker-pseudo',
-				dev: '#scroll-marker-pseudo',
-			},
+			link: '#scroll-marker-pseudo',
 			tests: ['::scroll-marker'],
 		},
 		'::scroll-marker-group': {
-			links: {
-				tr: '#scroll-marker-group-pseudo',
-				dev: '#scroll-marker-group-pseudo',
-			},
+			link: '#scroll-marker-group-pseudo',
 			tests: ['::scroll-marker-group'],
 		},
 		':target-current': {
-			links: {
-				tr: '#active-scroll-marker',
-				dev: '#active-scroll-marker',
-			},
+			link: '#active-scroll-marker',
 			tests: [':target-current'],
 		},
 	},

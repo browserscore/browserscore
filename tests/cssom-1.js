@@ -1,17 +1,13 @@
 export default {
 	title: 'CSS Object Model (CSSOM)',
-	links: {
-		tr: 'cssom-1',
-		dev: 'cssom-1',
-	},
+	link: 'cssom-1',
 	status: {
 		stability: 'experimental',
 	},
 	interfaces: {
 		CSS: {
+			link: '#namespacedef-css',
 			links: {
-				tr: '#namespacedef-css',
-				dev: '#namespacedef-css',
 				mdnGroup: 'DOM',
 			},
 			tests: ['escape'],
@@ -20,9 +16,8 @@ export default {
 			}
 		},
 		StyleSheet: {
+			link: '#the-stylesheet-interface',
 			links: {
-				tr: '#the-stylesheet-interface',
-				dev: '#the-stylesheet-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -39,9 +34,8 @@ export default {
 			}
 		},
 		CSSStyleSheet: {
+			link: '#the-cssstylesheet-interface',
 			links: {
-				tr: '#the-cssstylesheet-interface',
-				dev: '#the-cssstylesheet-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -69,9 +63,8 @@ export default {
 			}
 		},
 		StyleSheetList: {
+			link: '#the-stylesheetlist-interface',
 			links: {
-				tr: '#the-stylesheetlist-interface',
-				dev: '#the-stylesheetlist-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['item', 'length'],
@@ -80,9 +73,8 @@ export default {
 			}
 		},
 		Document: {
+			link: '#extensions-to-the-document-or-shadow-root-interface',
 			links: {
-				tr: '#extensions-to-the-document-or-shadow-root-interface',
-				dev: '#extensions-to-the-document-or-shadow-root-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['styleSheets', 'adoptedStyleSheets'],
@@ -91,9 +83,8 @@ export default {
 			},
 		},
 		Element: {
+			link: '#the-linkstyle-interface',
 			links: {
-				tr: '#the-linkstyle-interface',
-				dev: '#the-linkstyle-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['sheet', 'style'],
@@ -102,9 +93,8 @@ export default {
 			},
 		},
 		Window: {
+			link: '#extensions-to-the-window-interface',
 			links: {
-				tr: '#extensions-to-the-window-interface',
-				dev: '#extensions-to-the-window-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['getComputedStyle'],
@@ -113,9 +103,8 @@ export default {
 			},
 		},
 		MediaList: {
+			link: '#the-medialist-interface',
 			links: {
-				tr: '#the-medialist-interface',
-				dev: '#the-medialist-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['mediaText', 'length', 'item', 'appendMedium', 'deleteMedium'],
@@ -124,9 +113,8 @@ export default {
 			}
 		},
 		CSSRuleList: {
+			link: '#the-cssrulelist-interface',
 			links: {
-				tr: '#the-cssrulelist-interface',
-				dev: '#the-cssrulelist-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['item', 'length'],
@@ -135,9 +123,8 @@ export default {
 			}
 		},
 		CSSRule: {
+			link: '#the-cssrule-interface',
 			links: {
-				tr: '#the-cssrule-interface',
-				dev: '#the-cssrule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -160,9 +147,8 @@ export default {
 			}
 		},
 		CSSStyleRule: {
+			link: '#the-cssstylerule-interface',
 			links: {
-				tr: '#the-cssstylerule-interface',
-				dev: '#the-cssstylerule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -179,9 +165,8 @@ export default {
 		},
 		/* Doesn't currently work because style sheet is only available once imported
 		CSSImportRule: {
+			link: '#the-cssimportrule-interface',
 			links: {
-				tr: '#the-cssimportrule-interface',
-				dev: '#the-cssimportrule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['href', 'media', 'styleSheet'],
@@ -189,9 +174,8 @@ export default {
 		},
 		*/
 		CSSGroupingRule: {
+			link: '#the-cssgroupingrule-interface',
 			links: {
-				tr: '#the-cssgroupingrule-interface',
-				dev: '#the-cssgroupingrule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -208,36 +192,32 @@ export default {
 			},
 		},
 		CSSPageRule: {
+			link: '#the-csspagerule-interface',
 			links: {
-				tr: '#the-csspagerule-interface',
-				dev: '#the-csspagerule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['selectorText', 'style', 'cssRules', 'insertRule', 'deleteRule'],
 			required: '@page { }',
 		},
 		CSSMarginRule: {
+			link: '#the-cssmarginrule-interface',
 			links: {
-				tr: '#the-cssmarginrule-interface',
-				dev: '#the-cssmarginrule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['selectorText', 'style', 'cssText', 'parentRule', 'parentStyleSheet'],
 			required: '@page { @top-left { content: "foo"; } }',
 		},
 		CSSNamespaceRule: {
+			link: '#the-cssnamespacerule-interface',
 			links: {
-				tr: '#the-cssnamespacerule-interface',
-				dev: '#the-cssnamespacerule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['namespaceURI', 'prefix', 'cssText', 'parentRule', 'parentStyleSheet'],
 			required: '@namespace svg url("http://www.w3.org/2000/svg");',
 		},
 		CSSStyleDeclaration: {
+			link: '#the-cssstyledeclaration-interface',
 			links: {
-				tr: '#the-cssstyledeclaration-interface',
-				dev: '#the-cssstyledeclaration-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [

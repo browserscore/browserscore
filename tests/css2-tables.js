@@ -11,38 +11,23 @@ export default {
 	},
 	properties: {
 		'border-collapse': {
-			links: {
-				tr: '#propdef-border-collapse',
-				dev: '#propdef-border-collapse',
-			},
+			link: '#propdef-border-collapse',
 			tests: ['collapse', 'separate'],
 		},
 		'border-spacing': {
-			links: {
-				tr: '#propdef-border-spacing',
-				dev: '#propdef-border-spacing',
-			},
+			link: '#propdef-border-spacing',
 			tests: ['10px', '1em 0.5cm'],
 		},
 		'caption-side': {
-			links: {
-				tr: '#caption-position',
-				dev: '#caption-position',
-			},
+			link: '#caption-position',
 			tests: ['top', 'bottom'],
 		},
 		'empty-cells': {
-			links: {
-				tr: '#empty-cells',
-				dev: '#empty-cells',
-			},
+			link: '#empty-cells',
 			tests: ['show', 'hide'],
 		},
 		'table-layout': {
-			links: {
-				tr: '#width-layout',
-				dev: '#width-layout',
-			},
+			link: '#width-layout',
 			tests: ['auto', 'fixed'],
 		},
 	},

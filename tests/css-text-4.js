@@ -1,81 +1,48 @@
 export default {
 	title: 'CSS Text Module Level 4',
-	links: {
-		tr: 'css-text-4',
-		dev: 'css-text-4',
-	},
+	link: 'css-text-4',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'hyphenate-character': {
-			links: {
-				tr: '#hyphenate-character',
-				dev: '#hyphenate-character',
-			},
+			link: '#hyphenate-character',
 			tests: ['auto', "'\\2010'"],
 		},
 		'hyphenate-limit-chars': {
-			links: {
-				tr: '#hyphenate-char-limits',
-				dev: '#hyphenate-char-limits',
-			},
+			link: '#hyphenate-char-limits',
 			tests: ['auto', '5', 'auto 3', '5 4 3'],
 		},
 		'hyphenate-limit-last': {
-			links: {
-				tr: '#hyphenate-line-limits',
-				dev: '#hyphenate-line-limits',
-			},
+			link: '#hyphenate-line-limits',
 			tests: ['none', 'always', 'column', 'page', 'spread'],
 		},
 		'hyphenate-limit-lines': {
-			links: {
-				tr: '#hyphenate-line-limits',
-				dev: '#hyphenate-line-limits',
-			},
+			link: '#hyphenate-line-limits',
 			tests: ['no-limit', '2'],
 		},
 		'hyphenate-limit-zone': {
-			links: {
-				tr: '#hyphenate-size-limits',
-				dev: '#hyphenate-size-limits',
-			},
+			link: '#hyphenate-size-limits',
 			tests: ['1%', '1em'],
 		},
 		'letter-spacing': {
-			links: {
-				tr: '#letter-spacing-property',
-				dev: '#letter-spacing-property',
-			},
+			link: '#letter-spacing-property',
 			tests: ['1%'],
 		},
 		'line-padding': {
-			links: {
-				tr: '#line-padding-property',
-				dev: '#line-padding-property',
-			},
+			link: '#line-padding-property',
 			tests: ['1em'],
 		},
 		'text-align': {
-			links: {
-				tr: '#text-align-property',
-				dev: '#text-align-property',
-			},
+			link: '#text-align-property',
 			tests: ['"a"'],
 		},
 		'text-align-all': {
-			links: {
-				tr: '#text-align-all-property',
-				dev: '#text-align-all-property',
-			},
+			link: '#text-align-all-property',
 			tests: ['"a"'],
 		},
 		'text-autospace': {
-			links: {
-				tr: '#text-autospace-property',
-				dev: '#text-autospace-property',
-			},
+			link: '#text-autospace-property',
 			tests: [
 				'normal',
 				'no-autospace',
@@ -92,24 +59,15 @@ export default {
 			],
 		},
 		'text-group-align': {
-			links: {
-				tr: '#text-group-align-property',
-				dev: '#text-group-align-property',
-			},
+			link: '#text-group-align-property',
 			tests: ['none', 'start', 'end', 'left', 'right', 'center'],
 		},
 		'text-justify': {
-			links: {
-				tr: '#text-justify-property',
-				dev: '#text-justify-property',
-			},
+			link: '#text-justify-property',
 			tests: ['ruby', 'no-compress', 'inter-word no-compress'],
 		},
 		'text-spacing': {
-			links: {
-				tr: '#text-spacing-property',
-				dev: '#text-spacing-property',
-			},
+			link: '#text-spacing-property',
 			tests: [
 				'none',
 				'auto',
@@ -134,10 +92,7 @@ export default {
 			],
 		},
 		'text-spacing-trim': {
-			links: {
-				tr: '#text-spacing-property',
-				dev: '#text-spacing-property',
-			},
+			link: '#text-spacing-property',
 			tests: [
 				'space-all',
 				'normal',
@@ -149,10 +104,7 @@ export default {
 			],
 		},
 		'text-wrap': {
-			links: {
-				tr: '#text-wrap-shorthand',
-				dev: '#text-wrap-shorthand',
-			},
+			link: '#text-wrap-shorthand',
 			tests: [
 				'wrap',
 				'nowrap',
@@ -165,24 +117,15 @@ export default {
 			],
 		},
 		'text-wrap-mode': {
-			links: {
-				tr: '#text-wrap-mode',
-				dev: '#text-wrap-mode',
-			},
+			link: '#text-wrap-mode',
 			tests: ['wrap', 'nowrap'],
 		},
 		'text-wrap-style': {
-			links: {
-				tr: '#text-wrap-style',
-				dev: '#text-wrap-style',
-			},
+			link: '#text-wrap-style',
 			tests: ['auto', 'balance', 'stable', 'pretty'],
 		},
 		'white-space': {
-			links: {
-				tr: '#white-space-property',
-				dev: '#white-space-property',
-			},
+			link: '#white-space-property',
 			tests: [
 				'collapse',
 				'discard',
@@ -200,10 +143,7 @@ export default {
 			],
 		},
 		'white-space-collapse': {
-			links: {
-				tr: '#white-space-collapsing',
-				dev: '#white-space-collapsing',
-			},
+			link: '#white-space-collapsing',
 			tests: [
 				'collapse',
 				'discard',
@@ -214,10 +154,7 @@ export default {
 			],
 		},
 		'white-space-trim': {
-			links: {
-				tr: '#white-space-trim',
-				dev: '#white-space-trim',
-			},
+			link: '#white-space-trim',
 			tests: [
 				'none',
 				'discard-before',
@@ -228,17 +165,11 @@ export default {
 			],
 		},
 		'word-break': {
-			links: {
-				tr: '#word-break-property',
-				dev: '#word-break-property',
-			},
+			link: '#word-break-property',
 			tests: ['manual', 'auto-phrase'],
 		},
 		'word-space-transform': {
-			links: {
-				tr: '#word-space-transform',
-				dev: '#word-space-transform',
-			},
+			link: '#word-space-transform',
 			tests: [
 				'none',
 				'space',
@@ -248,17 +179,11 @@ export default {
 			],
 		},
 		'word-spacing': {
-			links: {
-				tr: '#word-spacing-property',
-				dev: '#word-spacing-property',
-			},
+			link: '#word-spacing-property',
 			tests: ['1%'],
 		},
 		'wrap-after': {
-			links: {
-				tr: '#wrap-before',
-				dev: '#wrap-before',
-			},
+			link: '#wrap-before',
 			tests: [
 				'auto',
 				'avoid',
@@ -269,10 +194,7 @@ export default {
 			],
 		},
 		'wrap-before': {
-			links: {
-				tr: '#wrap-before',
-				dev: '#wrap-before',
-			},
+			link: '#wrap-before',
 			tests: [
 				'auto',
 				'avoid',
@@ -283,10 +205,7 @@ export default {
 			],
 		},
 		'wrap-inside': {
-			links: {
-				tr: '#wrap-inside',
-				dev: '#wrap-inside',
-			},
+			link: '#wrap-inside',
 			tests: ['auto', 'avoid'],
 		},
 	},

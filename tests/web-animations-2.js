@@ -1,17 +1,13 @@
 export default {
 	title: 'Web Animations Level 2',
-	links: {
-		tr: 'web-animations-2',
-		dev: 'web-animations-2',
-	},
+	link: 'web-animations-2',
 	status: {
 		stability: 'experimental',
 	},
 	interfaces: {
 		AnimationTimeline: {
+			link: '#the-animationtimeline-interface',
 			links: {
-				tr: '#the-animationtimeline-interface',
-				dev: '#the-animationtimeline-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['duration', 'play'],
@@ -20,9 +16,8 @@ export default {
 			}
 		},
 		AnimationEffect: {
+			link: '#the-animationeffect-interface',
 			links: {
-				tr: '#the-animationeffect-interface',
-				dev: '#the-animationeffect-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -47,9 +42,8 @@ export default {
 			}
 		},
 		GroupEffect: {
+			link: '#the-groupeffect-interface',
 			links: {
-				tr: '#the-groupeffect-interface',
-				dev: '#the-groupeffect-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -83,9 +77,8 @@ export default {
 			}
 		},
 		AnimationNodeList: {
+			link: '#the-animationnodelist-interface',
 			links: {
-				tr: '#the-animationnodelist-interface',
-				dev: '#the-animationnodelist-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['length', 'item'],
@@ -112,9 +105,8 @@ export default {
 			}
 		},
 		SequenceEffect: {
+			link: '#the-sequenceeffect-interface',
 			links: {
-				tr: '#the-sequenceeffect-interface',
-				dev: '#the-sequenceeffect-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -148,9 +140,8 @@ export default {
 			}
 		},
 		KeyframeEffect: {
+			link: '#the-keyframeeffect-interface',
 			links: {
-				tr: '#the-keyframeeffect-interface',
-				dev: '#the-keyframeeffect-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['iteratonComposite'],

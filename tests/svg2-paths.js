@@ -3,16 +3,15 @@ export default {
 	links: {
 		tr: 'svg2/paths.html',
 		dev: 'svg2-draft/paths.html',
-		devtype: 'svgwg',
 	},
+	group: 'svgwg',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		d: {
+			link: '#TheDProperty',
 			links: {
-				tr: '#TheDProperty',
-				dev: '#TheDProperty',
 				mdnGroup: 'SVG',
 			},
 			tests: ['none', "'M 20 20 H 80 V 30'"],

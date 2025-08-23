@@ -1,17 +1,13 @@
 export default {
 	title: 'CSS Nesting Module',
-	links: {
-		tr: 'css-nesting-1',
-		dev: 'css-nesting-1',
-	},
+	link: 'css-nesting-1',
 	status: {
 		stability: 'experimental',
 	},
 	interfaces: {
 		CSSStyleRule: {
+			link: '#cssom-style',
 			links: {
-				tr: '#cssom-style',
-				dev: '#cssom-style',
 				mdnGroup: 'DOM',
 			},
 			tests: ['cssRules', 'insertRule', 'deleteRule'],

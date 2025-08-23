@@ -39,19 +39,13 @@ const calc_size_default_tests = [
 
 export default {
 	title: 'CSS Values and Units Module Level 5',
-	links: {
-		tr: 'css-values-5',
-		dev: 'css-values-5',
-	},
+	link: 'css-values-5',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'interpolate-size': {
-			links: {
-				tr: '#interpolate-size',
-				dev: '#interpolate-size',
-			},
+			link: '#interpolate-size',
 			tests: [
 				'numeric-only',
 				'allow-keywords',
@@ -61,10 +55,7 @@ export default {
 	values: {
 		properties: ['width', 'padding'],
 		'calc-size()': {
-			links: {
-				tr: '#calc-size',
-				dev: '#calc-size',
-			},
+			link: '#calc-size',
 			properties: [ 'width', 'min-width', 'height', 'min-height', 'block-size', 'min-block-size', 'inline-size', 'min-inline-size', ],
 			// Note: The none keyword is not usable within calc-size().
 			tests: [
@@ -73,19 +64,13 @@ export default {
 			],
 		},
 		'calc-size() in max-width or max-height': {
-			links: {
-				tr: '#calc-size',
-				dev: '#calc-size',
-			},
+			link: '#calc-size',
 			properties: [ 'max-width', 'max-height', 'max-block-size', 'max-inline-size', ],
 			// Note: The none keyword is not usable within calc-size().
 			tests: calc_size_default_tests,
 		},
 		'calc-size() in flex-basis': {
-			links: {
-				tr: '#calc-size',
-				dev: '#calc-size',
-			},
+			link: '#calc-size',
 			properties: [ 'flex-basis', ],
 			// Note: The none keyword is not usable within calc-size().
 			tests: [
@@ -100,10 +85,7 @@ export default {
 			],
 		},
 		'attr()': {
-			links: {
-				tr: '#attr-notation',
-				dev: '#attr-notation',
-			},
+			link: '#attr-notation',
 			tests: [
 				'attr(data-value)',
 				'attr(data-value, "Hello!")',
@@ -133,10 +115,7 @@ export default {
 			],
 		},
 		'first-valid()': {
-			links: {
-				tr: '#first-valid',
-				dev: '#first-valid',
-			},
+			link: '#first-valid',
 			tests: [
 				'first-valid(10px)',
 				'first-valid(foo)',
@@ -144,10 +123,7 @@ export default {
 			],
 		},
 		'progress()': {
-			links: {
-				tr: '#progress-func',
-				dev: '#progress-func',
-			},
+			link: '#progress-func',
 			tests: [
 				'calc(100px * progress(150px, 100px, 200px))',
 				'calc(100px * progress(12%, 10%, 20%))',
@@ -159,10 +135,7 @@ export default {
 			],
 		},
 		'media-progress()': {
-			links: {
-				tr: '#media-progress-func',
-				dev: '#media-progress-func',
-			},
+			link: '#media-progress-func',
 			tests: [
 				'calc(100px * media-progress(width, 500px, 1000px))',
 				'calc(100px * media-progress(width, 20%, 50%))',
@@ -173,10 +146,7 @@ export default {
 			],
 		},
 		'container-progress()': {
-			links: {
-				tr: '#container-progress-func',
-				dev: '#container-progress-func',
-			},
+			link: '#container-progress-func',
 			tests: [
 				'calc(100px * container-progress(width, 500px, 1000px))',
 				'calc(100px * container-progress(width, 20%, 50%))',
@@ -191,10 +161,7 @@ export default {
 			],
 		},
 		'calc-mix() with lengths and percentages': {
-			links: {
-				tr: '#calc-mix',
-				dev: '#calc-mix',
-			},
+			link: '#calc-mix',
 			tests: [
 				'calc-mix(0.5, 100px, 200px)',
 				'calc-mix(0.5, 10%, 20%)',
@@ -212,10 +179,7 @@ export default {
 			],
 		},
 		'calc-mix() with numbers': {
-			links: {
-				tr: '#calc-mix',
-				dev: '#calc-mix',
-			},
+			link: '#calc-mix',
 			properties: ['line-height'],
 			tests: [
 				'calc-mix(0.5, 0, 10)',
@@ -232,11 +196,8 @@ export default {
 			],
 		},
 		'color-mix()': {
-			links: {
-				tr: '#color-mix',
-				dev: '#color-mix',
-				mdn: 'color_value/color-mix',
-			},
+			link: '#color-mix',
+			mdn: 'color_value/color-mix',
 			properties: ['color', 'background-color', 'border-color', 'text-decoration-color', 'column-rule-color'],
 			tests: [
 				'color-mix(0.5 in srgb, teal, olive)',
@@ -259,10 +220,7 @@ export default {
 			],
 		},
 		'cross-fade()': {
-			links: {
-				tr: '#cross-fade',
-				dev: '#cross-fade',
-			},
+			link: '#cross-fade',
 			properties: ['background-image', 'list-style-image', 'border-image', 'cursor', 'content'],
 			tests: [
 				'cross-fade(0.5, url(a.png), url(b.png))',
@@ -280,10 +238,7 @@ export default {
 			],
 		},
 		'transform-mix()': {
-			links: {
-				tr: '#transform-mix',
-				dev: '#transform-mix',
-			},
+			link: '#transform-mix',
 			properties: ['transform-function'],
 			tests: [
 				'transform-mix(0.5, translate(5px))',
@@ -321,10 +276,7 @@ export default {
 			],
 		},
 		'mix() with lengths and percentages': {
-			links: {
-				tr: '#mix',
-				dev: '#mix',
-			},
+			link: '#mix',
 			tests: [
 				'mix(0.5, 100px, 200px)',
 				'mix(0.5, 10%, 20%)',
@@ -341,10 +293,7 @@ export default {
 			],
 		},
 		'mix() with numbers': {
-			links: {
-				tr: '#mix',
-				dev: '#mix',
-			},
+			link: '#mix',
 			properties: ['line-height'],
 			tests: [
 				'mix(0.5, 0, 10)',
@@ -360,10 +309,7 @@ export default {
 			],
 		},
 		'mix() with colors': {
-			links: {
-				tr: '#mix',
-				dev: '#mix',
-			},
+			link: '#mix',
 			properties: ['color', 'background-color', 'text-decoration-color', 'column-rule-color'],
 			tests: [
 				'mix(0.5, #f00, #00f)',
@@ -383,10 +329,7 @@ export default {
 			],
 		},
 		'mix() with keywords': {
-			links: {
-				tr: '#mix',
-				dev: '#mix',
-			},
+			link: '#mix',
 			properties: ['position'],
 			tests: [
 				'mix(0.5, left, right)',
@@ -402,10 +345,7 @@ export default {
 			],
 		},
 		'mix() with value lists': {
-			links: {
-				tr: '#mix',
-				dev: '#mix',
-			},
+			link: '#mix',
 			properties: ['background-image'],
 			tests: [
 				'mix(\n  0.5;\n  linear-gradient(red, transparent), radial-gradient(transparent, yellow);\n  linear-gradient(tramsüaremt. green), radial-gradient(blue, transparent)\n)',
@@ -421,10 +361,7 @@ export default {
 			],
 		},
 		'if()': {
-			links: {
-				tr: '#if-notation',
-				dev: '#if-notation',
-			},
+			link: '#if-notation',
 			tests: [
 				'if(media(screen): 100px)',
 				'if(media((min-width: 600px)): 100px)',
@@ -455,10 +392,7 @@ export default {
 			],
 		},
 		'if() with numbers': {
-			links: {
-				tr: '#if-notation',
-				dev: '#if-notation',
-			},
+			link: '#if-notation',
 			properties: ['line-height'],
 			tests: [
 				'if(media(width < 600px): 1; else: 2)',
@@ -470,10 +404,7 @@ export default {
 			],
 		},
 		'if() with colors': {
-			links: {
-				tr: '#if-notation',
-				dev: '#if-notation',
-			},
+			link: '#if-notation',
 			properties: ['color', 'background-color', 'text-decoration-color', 'column-rule-color'],
 			tests: [
 				'if(media(width < 600px): red; else: blue)',
@@ -485,10 +416,7 @@ export default {
 			],
 		},
 		'if() with keywords': {
-			links: {
-				tr: '#if-notation',
-				dev: '#if-notation',
-			},
+			link: '#if-notation',
 			properties: ['position'],
 			tests: [
 				'if(media(width < 600px): left; else: right)',
@@ -500,10 +428,7 @@ export default {
 			],
 		},
 		'inherit()': {
-			links: {
-				tr: '#inherit-notation',
-				dev: '#inherit-notation',
-			},
+			link: '#inherit-notation',
 			tests: [
 				'inherit(--custom-property)',
 				'inherit(--custom-property, 100px)',
@@ -520,10 +445,7 @@ export default {
 			],
 		},
 		'ident()': {
-			links: {
-				tr: '#ident',
-				dev: '#ident',
-			},
+			link: '#ident',
 			properties: ['animation-name'],
 			tests: [
 				'ident("cool")',
@@ -535,10 +457,7 @@ export default {
 			],
 		},
 		'random() with lengths': {
-			links: {
-				tr: '#random',
-				dev: '#random',
-			},
+			link: '#random',
 			tests: [
 				'random(0px, 100px)',
 				'random(auto, 0px, 100px)',
@@ -560,10 +479,7 @@ export default {
 			],
 		},
 		'random() with degrees': {
-			links: {
-				tr: '#random',
-				dev: '#random',
-			},
+			link: '#random',
 			properties: ['rotate'],
 			tests: [
 				'random(45deg, 0.5turn)',
@@ -586,10 +502,7 @@ export default {
 			],
 		},
 		'random-item() with lengths': {
-			links: {
-				tr: '#random-item',
-				dev: '#random-item',
-			},
+			link: '#random-item',
 			tests: [
 				'random-item(--random-item; 100px)',
 				'random-item(--random-item; 0px; 50px; 100px)',
@@ -599,48 +512,33 @@ export default {
 			],
 		},
 		'random-item() with keywords': {
-			links: {
-				tr: '#random-item',
-				dev: '#random-item',
-			},
+			link: '#random-item',
 			properties: ['color'],
 			tests: [
 				'random-item(--random-item; red; yellow; green; blue)',
 			],
 		},
 		'random-item() with functions': {
-			links: {
-				tr: '#random-item',
-				dev: '#random-item',
-			},
+			link: '#random-item',
 			properties: ['background-image'],
 			tests: [
 				'random-item(--random-item; linear-gradient(red, yellow); linear-gradient(green, blue))',
 			],
 		},
 		'sibling-count()': {
-			links: {
-				tr: '#tree-counting',
-				dev: '#tree-counting',
-			},
+			link: '#tree-counting',
 			tests: [
 				'calc(sibling-count() * 10px)',
 			],
 		},
 		'sibling-index()': {
-			links: {
-				tr: '#tree-counting',
-				dev: '#tree-counting',
-			},
+			link: '#tree-counting',
 			tests: [
 				'calc(sibling-index() * 10px)',
 			],
 		},
 		'toggle() with lengths and percentages': {
-			links: {
-				tr: '#toggle-notation',
-				dev: '#toggle-notation',
-			},
+			link: '#toggle-notation',
 			tests: [
 				'toggle(1px, 2px)',
 				'toggle(1px, 1em, calc(2% + 3px))',
@@ -648,10 +546,7 @@ export default {
 			],
 		},
 		'toggle() with keywords': {
-			links: {
-				tr: '#toggle-notation',
-				dev: '#toggle-notation',
-			},
+			link: '#toggle-notation',
 			properties: ['list-style-type'],
 			tests: [
 				'toggle(disc, circle)',
@@ -659,10 +554,7 @@ export default {
 			],
 		},
 		'toggle() with mixed values': {
-			links: {
-				tr: '#toggle-notation',
-				dev: '#toggle-notation',
-			},
+			link: '#toggle-notation',
 			properties: ['background-position'],
 			tests: [
 				'toggle(top left, 100px 50px, 50% 50%)',
@@ -670,10 +562,7 @@ export default {
 			],
 		},
 		'Request URL modifiers': {
-			links: {
-				tr: '#request-url-modifiers',
-				dev: '#request-url-modifiers',
-			},
+			link: '#request-url-modifiers',
 			tests: [
 				'url("image.png" crossorigin(anonymous))',
 				'url("image.png" crossorigin(use-credentials))',

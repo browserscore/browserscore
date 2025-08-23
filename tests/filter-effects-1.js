@@ -1,19 +1,13 @@
 export default {
 	title: 'Filter Effects Module Level 1',
-	links: {
-		tr: 'filter-effects-1',
-		dev: 'filter-effects-1',
-		devtype: 'fxtf',
-	},
+	link: 'filter-effects-1',
+	group: 'fxtf',
 	status: {
 		stability: 'stable',
 	},
 	properties: {
 		filter: {
-			links: {
-				tr: '#FilterProperty',
-				dev: '#FilterProperty',
-			},
+			link: '#FilterProperty',
 			tests: [
 				'none',
 				'url(#id)',
@@ -32,31 +26,19 @@ export default {
 			],
 		},
 		'flood-color': {
-			links: {
-				tr: '#FloodColorProperty',
-				dev: '#FloodColorProperty',
-			},
+			link: '#FloodColorProperty',
 			tests: ['black', '#FFF'],
 		},
 		'flood-opacity': {
-			links: {
-				tr: '#FloodOpacityProperty',
-				dev: '#FloodOpacityProperty',
-			},
+			link: '#FloodOpacityProperty',
 			tests: ['1', '0', '0.2', '45%'],
 		},
 		'color-interpolation-filters': {
-			links: {
-				tr: '#ColorInterpolationFiltersProperty',
-				dev: '#ColorInterpolationFiltersProperty',
-			},
+			link: '#ColorInterpolationFiltersProperty',
 			tests: ['auto', 'sRGB', 'linearRGB'],
 		},
 		'lighting-color': {
-			links: {
-				tr: '#LightingColorProperty',
-				dev: '#LightingColorProperty',
-			},
+			link: '#LightingColorProperty',
 			tests: ['white', '#000'],
 		},
 	},

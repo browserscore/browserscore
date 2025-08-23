@@ -1,19 +1,13 @@
 export default {
 	title: 'CSS Grid Layout Module Level 2',
-	links: {
-		tr: 'css-grid-2',
-		dev: 'css-grid-2',
-		mdn: 'Glossary/Grid',
-	},
+	link: 'css-grid-2',
+	mdn: 'Glossary/Grid',
 	status: {
 		stability: 'stable',
 	},
 	properties: {
 		'grid-template-columns': {
-			links: {
-				tr: '#subgrid-per-axis',
-				dev: '#subgrid-per-axis',
-			},
+			link: '#subgrid-per-axis',
 			tests: [
 				'subgrid',
 				'subgrid [sub-a]',
@@ -25,10 +19,7 @@ export default {
 			],
 		},
 		'grid-template-rows': {
-			links: {
-				tr: '#subgrid-per-axis',
-				dev: '#subgrid-per-axis',
-			},
+			link: '#subgrid-per-axis',
 			tests: [
 				'subgrid',
 				'subgrid [sub-a]',

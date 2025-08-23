@@ -3,64 +3,57 @@ export default {
 	links: {
 		tr: 'svg2/geometry.html',
 		dev: 'svg2-draft/geometry.html',
-		devtype: 'svgwg',
 	},
+	group: 'svgwg',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		cx: {
+			link: '#CX',
 			links: {
-				tr: '#CX',
-				dev: '#CX',
 				mdnGroup: 'SVG',
 			},
 			tests: ['0', '1px', '-5px', '25%'],
 		},
 		cy: {
+			link: '#CY',
 			links: {
-				tr: '#CY',
-				dev: '#CY',
 				mdnGroup: 'SVG',
 			},
 			tests: ['0', '1px', '-5px', '25%'],
 		},
 		r: {
+			link: '#R',
 			links: {
-				tr: '#R',
-				dev: '#R',
 				mdnGroup: 'SVG',
 			},
 			tests: ['0', '1px', '25%'],
 		},
 		rx: {
+			link: '#RX',
 			links: {
-				tr: '#RX',
-				dev: '#RX',
 				mdnGroup: 'SVG',
 			},
 			tests: ['auto', '0', '1px', '25%'],
 		},
 		ry: {
+			link: '#RY',
 			links: {
-				tr: '#RY',
-				dev: '#RY',
 				mdnGroup: 'SVG',
 			},
 			tests: ['auto', '0', '1px', '25%'],
 		},
 		x: {
+			link: '#X',
 			links: {
-				tr: '#X',
-				dev: '#X',
 				mdnGroup: 'SVG',
 			},
 			tests: ['0', '1px', '-5px', '25%'],
 		},
 		y: {
+			link: '#Y',
 			links: {
-				tr: '#Y',
-				dev: '#Y',
 				mdnGroup: 'SVG',
 			},
 			tests: ['0', '1px', '-5px', '25%'],

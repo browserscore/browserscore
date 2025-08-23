@@ -12,10 +12,7 @@ export default {
 	values: {
 		properties: ['color', 'border-color'],
 		inherit: {
-			links: {
-				tr: '#value-def-inherit',
-				dev: '#value-def-inherit',
-			},
+			link: '#value-def-inherit',
 			tests: 'inherit',
 		},
 	},

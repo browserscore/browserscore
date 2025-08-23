@@ -1,18 +1,12 @@
 export default {
 	title: 'CSS Display Module Level 3',
-	links: {
-		tr: 'css-display-3',
-		dev: 'css-display-3',
-	},
+	link: 'css-display-3',
 	status: {
 		stability: 'stable',
 	},
 	properties: {
 		display: {
-			links: {
-				tr: '#the-display-properties',
-				dev: '#the-display-properties',
-			},
+			link: '#the-display-properties',
 			tests: [
 				'run-in',
 				'flow',

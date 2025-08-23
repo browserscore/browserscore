@@ -1,8 +1,8 @@
 export default {
 	title: 'Compatibility',
+	group: 'whatwg',
 	links: {
 		dev: 'compat',
-		devtype: 'whatwg',
 	},
 	status: {
 		stability: 'stable',

@@ -1,19 +1,13 @@
 export default {
 	title: 'CSS Properties and Values API Level 1',
-	links: {
-		tr: 'css-properties-values-api-1',
-		dev: 'css-properties-values-api-1',
-		devtype: 'houdini',
-	},
+	link: 'css-properties-values-api-1',
+	group: 'houdini',
 	status: {
 		stability: 'experimental',
 	},
 	descriptors: {
 		'@property --foo/syntax': {
-			links: {
-				tr: '#the-syntax-descriptor',
-				dev: '#the-syntax-descriptor',
-			},
+			link: '#the-syntax-descriptor',
 			required: {
 				"'x | y'": {
 					descriptor: "inherits: false; initial-value: x",
@@ -32,10 +26,7 @@ export default {
 			],
 		},
 		'@property --foo/inherits': {
-			links: {
-				tr: '#inherits-descriptor',
-				dev: '#inherits-descriptor',
-			},
+			link: '#inherits-descriptor',
 			required: {
 				'*': {
 					descriptor: "syntax: '<color>'; initial-value: red",
@@ -44,10 +35,7 @@ export default {
 			tests: ['true', 'false'],
 		},
 		'@property --foo/initial-value': {
-			links: {
-				tr: '#initial-value-descriptor',
-				dev: '#initial-value-descriptor',
-			},
+			link: '#initial-value-descriptor',
 			required: {
 				'*': {
 					descriptor: "syntax: '<color>'; inherits: false",
@@ -58,18 +46,14 @@ export default {
 	},
 	'@rules': {
 		'@property': {
-			links: {
-				tr: '#at-property-rule',
-				dev: '#at-property-rule',
-			},
+			link: '#at-property-rule',
 			tests: "@property --cool-color {\n  syntax: '<color>';\n  inherits: true;\n  initial-value: red;\n}",
 		},
 	},
 	interfaces: {
 		CSS: {
+			link: '#registering-custom-properties',
 			links: {
-				tr: '#registering-custom-properties',
-				dev: '#registering-custom-properties',
 				mdnGroup: 'DOM',
 			},
 			tests: ['registerProperty'],
@@ -78,9 +62,8 @@ export default {
 			},
 		},
 		CSSPropertyRule: {
+			link: '#the-css-property-rule-interface',
 			links: {
-				tr: '#the-css-property-rule-interface',
-				dev: '#the-css-property-rule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['name', 'syntax', 'inherits', 'initialValue'],

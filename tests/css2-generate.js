@@ -31,38 +31,23 @@ export default {
 			],
 		},
 		'counter-increment': {
-			links: {
-				tr: '#counters',
-				dev: '#counters',
-			},
+			link: '#counters',
 			tests: ['none', 'example-counter 1', 'example-counter1 2 example-counter2'],
 		},
 		'counter-reset': {
-			links: {
-				tr: '#counters',
-				dev: '#counters',
-			},
+			link: '#counters',
 			tests: ['none', 'example-counter 1', 'example-counter1 2 example-counter2'],
 		},
 		'list-style-image': {
-			links: {
-				tr: '#propdef-list-style-image',
-				dev: '#propdef-list-style-image',
-			},
+			link: '#propdef-list-style-image',
 			tests: ['none', 'url(image.png)'],
 		},
 		'list-style-position': {
-			links: {
-				tr: '#propdef-list-style-position',
-				dev: '#propdef-list-style-position',
-			},
+			link: '#propdef-list-style-position',
 			tests: ['inside', 'outside'],
 		},
 		'list-style-type': {
-			links: {
-				tr: '#propdef-list-style-type',
-				dev: '#propdef-list-style-type',
-			},
+			link: '#propdef-list-style-type',
 			tests: [
 				'disc',
 				'circle',
@@ -82,10 +67,7 @@ export default {
 			],
 		},
 		'list-style': {
-			links: {
-				tr: '#propdef-list-style',
-				dev: '#propdef-list-style',
-			},
+			link: '#propdef-list-style',
 			tests: [
 				'disc',
 				'inside',
@@ -96,26 +78,17 @@ export default {
 			],
 		},
 		quotes: {
-			links: {
-				tr: '#quotes-specify',
-				dev: '#quotes-specify',
-			},
+			link: '#quotes-specify',
 			tests: ['none', '"»" "«"', '\'"\' \'"\' "\'" "\'"'],
 		},
 	},
 	selectors: {
 		':before': {
-			links: {
-				tr: '#before-after-content',
-				dev: '#before-after-content',
-			},
+			link: '#before-after-content',
 			tests: ':before',
 		},
 		':after': {
-			links: {
-				tr: '#before-after-content',
-				dev: '#before-after-content',
-			},
+			link: '#before-after-content',
 			tests: ':after',
 		},
 	},

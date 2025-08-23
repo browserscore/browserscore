@@ -3,16 +3,15 @@ export default {
 	links: {
 		tr: 'svg2/painting.html',
 		dev: 'svg2-draft/painting.html',
-		devtype: 'svgwg',
 	},
+	group: 'svgwg',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'color-interpolation': {
+			link: '#ColorInterpolation',
 			links: {
-				tr: '#ColorInterpolation',
-				dev: '#ColorInterpolation',
 				mdnGroup: 'SVG',
 			},
 			tests: ['auto', 'sRGB', 'linearRGB'],
@@ -24,56 +23,43 @@ export default {
 			tests: ['auto', 'optimizeSpeed', 'optimizeQuality'],
 		},
 		marker: {
-			links: {
-				tr: '#MarkerShorthand',
-				dev: '#MarkerShorthand',
-			},
+			link: '#MarkerShorthand',
 			tests: ['none', 'url(#marker)'],
 		},
 		'marker-end': {
+			link: '#VertexMarkerProperties',
 			links: {
-				tr: '#VertexMarkerProperties',
-				dev: '#VertexMarkerProperties',
 				mdnGroup: 'SVG',
 			},
 			tests: ['none', 'url(#marker)'],
 		},
 		'marker-mid': {
+			link: '#VertexMarkerProperties',
 			links: {
-				tr: '#VertexMarkerProperties',
-				dev: '#VertexMarkerProperties',
 				mdnGroup: 'SVG',
 			},
 			tests: ['none', 'url(#marker)'],
 		},
 		'marker-start': {
+			link: '#VertexMarkerProperties',
 			links: {
-				tr: '#VertexMarkerProperties',
-				dev: '#VertexMarkerProperties',
 				mdnGroup: 'SVG',
 			},
 			tests: ['none', 'url(#marker)'],
 		},
 		'paint-order': {
-			links: {
-				tr: '#PaintOrder',
-				dev: '#PaintOrder',
-			},
+			link: '#PaintOrder',
 			tests: ['normal', 'fill', 'stroke', 'markers', 'fill stroke markers'],
 		},
 		'shape-rendering': {
+			link: '#ShapeRendering',
 			links: {
-				tr: '#ShapeRendering',
-				dev: '#ShapeRendering',
 				mdnGroup: 'SVG',
 			},
 			tests: ['auto', 'optimizeSpeed', 'crispEdges', 'geometricPrecision'],
 		},
 		'text-rendering': {
-			links: {
-				tr: '#TextRendering',
-				dev: '#TextRendering',
-			},
+			link: '#TextRendering',
 			tests: ['auto', 'optimizeSpeed', 'optimizeLegibility', 'geometricPrecision'],
 		},
 	},

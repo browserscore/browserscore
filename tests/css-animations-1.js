@@ -1,32 +1,20 @@
 export default {
 	title: 'CSS Animations Level 1',
-	links: {
-		tr: 'css-animations-1',
-		dev: 'css-animations-1',
-	},
+	link: 'css-animations-1',
 	status: {
 		stability: 'stable',
 	},
 	properties: {
 		'animation-name': {
-			links: {
-				tr: '#animation-name',
-				dev: '#animation-name',
-			},
+			link: '#animation-name',
 			tests: ['foo', 'foo, bar'],
 		},
 		'animation-duration': {
-			links: {
-				tr: '#animation-duration',
-				dev: '#animation-duration',
-			},
+			link: '#animation-duration',
 			tests: ['0s', '1s', '100ms'],
 		},
 		'animation-timing-function': {
-			links: {
-				tr: '#animation-timing-function',
-				dev: '#animation-timing-function',
-			},
+			link: '#animation-timing-function',
 			tests: [
 				'ease',
 				'linear',
@@ -42,54 +30,33 @@ export default {
 			],
 		},
 		'animation-iteration-count': {
-			links: {
-				tr: '#animation-iteration-count',
-				dev: '#animation-iteration-count',
-			},
+			link: '#animation-iteration-count',
 			tests: ['infinite', '8', '4.35'],
 		},
 		'animation-direction': {
-			links: {
-				tr: '#animation-direction',
-				dev: '#animation-direction',
-			},
+			link: '#animation-direction',
 			tests: ['normal', 'alternate', 'reverse', 'alternate-reverse'],
 		},
 		'animation-play-state': {
-			links: {
-				tr: '#animation-play-state',
-				dev: '#animation-play-state',
-			},
+			link: '#animation-play-state',
 			tests: ['running', 'paused'],
 		},
 		'animation-delay': {
-			links: {
-				tr: '#animation-delay',
-				dev: '#animation-delay',
-			},
+			link: '#animation-delay',
 			tests: ['1s', '-1s'],
 		},
 		'animation-fill-mode': {
-			links: {
-				tr: '#animation-fill-mode',
-				dev: '#animation-fill-mode',
-			},
+			link: '#animation-fill-mode',
 			tests: ['none', 'forwards', 'backwards', 'both'],
 		},
 		animation: {
-			links: {
-				tr: '#animation',
-				dev: '#animation',
-			},
+			link: '#animation',
 			tests: 'foo 1s 2s infinite linear alternate both',
 		},
 	},
 	'@rules': {
 		'@keyframes': {
-			links: {
-				tr: '#keyframes',
-				dev: '#keyframes',
-			},
+			link: '#keyframes',
 			tests: [
 				'@keyframes foo {\n  from: {\n    color: blue;\n  }\n  to: {\n    color: red;\n  }\n}',
 				'@keyframes foo {\n  from: {\n    color: blue;\n  }\n  50%: {\n    color: green;\n  }\n  to: {\n    color: red;\n  }\n}',
@@ -98,22 +65,16 @@ export default {
 	},
 	interfaces: {
 		AnimationEvent: {
-			links: {
-				tr: '#interface-animationevent',
-				dev: '#interface-animationevent',
-				mdnGroup: 'DOM',
-			},
+			link: '#interface-animationevent',
+			mdnGroup: 'DOM',
 			tests: ['animationName', 'elapsedTime', 'pseudoElement'],
 			interface: function() {
 				return new AnimationEvent('animationstart');
 			}
 		},
 		CSSRule: {
-			links: {
-				tr: '#interface-cssrule',
-				dev: '#interface-cssrule',
-				mdnGroup: 'DOM',
-			},
+			link: '#interface-cssrule',
+			mdnGroup: 'DOM',
 			tests: [
 				'KEYFRAMES_RULE',
 				'KEYFRAME_RULE',
@@ -124,29 +85,20 @@ export default {
 			}
 		},
 		CSSKeyframesRule: {
-			links: {
-				tr: '#interface-csskeyframesrule',
-				dev: '#interface-csskeyframesrule',
-				mdnGroup: 'DOM',
-			},
+			link: '#interface-csskeyframesrule',
+			mdnGroup: 'DOM',
 			tests: ['name', 'cssRules', 'length', 'appendRule', 'deleteRule', 'findRule'],
 			required: '@keyframes foo { from {} to {} }',
 		},
 		CSSKeyframeRule: {
-			links: {
-				tr: '#interface-csskeyframerule',
-				dev: '#interface-csskeyframerule',
-				mdnGroup: 'DOM',
-			},
+			link: '#interface-csskeyframerule',
+			mdnGroup: 'DOM',
 			tests: ['keyText', 'style'],
 			required: '@keyframes foo { from {} to {} }',
 		},
 		Element: {
-			links: {
-				tr: '#interface-globaleventhandlers',
-				dev: '#interface-globaleventhandlers',
-				mdnGroup: 'DOM',
-			},
+			link: '#interface-globaleventhandlers',
+			mdnGroup: 'DOM',
 			tests: ['onanimationstart', 'onanimationiteration', 'onanimationend', 'onanimationcancel'],
 			interface: function(style) {
 				return document.body;

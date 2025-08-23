@@ -10,10 +10,7 @@ export default {
 	},
 	'Media queries': {
 		Syntax: {
-			links: {
-				tr: '#syntax',
-				dev: '#syntax',
-			},
+			link: '#syntax',
 			tests: [
 				'not print',
 				'only screen',
@@ -25,26 +22,17 @@ export default {
 			],
 		},
 		width: {
-			links: {
-				tr: '#width',
-				dev: '#width',
-				mdn: 'Media_Queries/Using_media_queries',
-			},
+			link: '#width',
+			mdn: 'Media_Queries/Using_media_queries',
 			tests: ['(width)', '(width:1280px)', '(min-width:1px)', '(max-width:1000000px)'],
 		},
 		height: {
-			links: {
-				tr: '#height',
-				dev: '#height',
-				mdn: 'Media_Queries/Using_media_queries',
-			},
+			link: '#height',
+			mdn: 'Media_Queries/Using_media_queries',
 			tests: ['(height)', '(height:720px)', '(min-height:1px)', '(max-height:1000000px)'],
 		},
 		'device-width': {
-			links: {
-				tr: '#device-width',
-				dev: '#device-width',
-			},
+			link: '#device-width',
 			tests: [
 				'(device-width)',
 				'(device-width:1280px)',
@@ -53,10 +41,7 @@ export default {
 			],
 		},
 		'device-height': {
-			links: {
-				tr: '#device-height',
-				dev: '#device-height',
-			},
+			link: '#device-height',
 			tests: [
 				'(device-height)',
 				'(device-height:720px)',
@@ -65,17 +50,11 @@ export default {
 			],
 		},
 		orientation: {
-			links: {
-				tr: '#orientation',
-				dev: '#orientation',
-			},
+			link: '#orientation',
 			tests: ['(orientation)', '(orientation:portrait)', '(orientation:landscape)'],
 		},
 		'aspect-ratio': {
-			links: {
-				tr: '#aspect-ratio',
-				dev: '#aspect-ratio',
-			},
+			link: '#aspect-ratio',
 			tests: [
 				'(aspect-ratio)',
 				'(aspect-ratio:16/9)',
@@ -85,10 +64,7 @@ export default {
 			],
 		},
 		'device-aspect-ratio': {
-			links: {
-				tr: '#device-aspect-ratio',
-				dev: '#device-aspect-ratio',
-			},
+			link: '#device-aspect-ratio',
 			tests: [
 				'(device-aspect-ratio)',
 				'(device-aspect-ratio:16/9)',
@@ -98,31 +74,19 @@ export default {
 			],
 		},
 		color: {
-			links: {
-				tr: '#color',
-				dev: '#color',
-			},
+			link: '#color',
 			tests: ['(color)', '(color: 8)', '(min-color: 0)', '(max-color: 1000000)'],
 		},
 		'color-index': {
-			links: {
-				tr: '#color-index',
-				dev: '#color-index',
-			},
+			link: '#color-index',
 			tests: ['(color-index)', '(color-index: 256)', '(min-color-index: 0)', '(max-color-index: 1000000)'],
 		},
 		monochrome: {
-			links: {
-				tr: '#monochrome',
-				dev: '#monochrome',
-			},
+			link: '#monochrome',
 			tests: ['(monochrome)', '(monochrome: 8)', '(min-monochrome: 0)', '(max-monochrome: 1000000)'],
 		},
 		resolution: {
-			links: {
-				tr: '#resolution',
-				dev: '#resolution',
-			},
+			link: '#resolution',
 			tests: [
 				'(resolution)',
 				'(resolution:96dpi)',
@@ -132,17 +96,11 @@ export default {
 			],
 		},
 		scan: {
-			links: {
-				tr: '#scan',
-				dev: '#scan',
-			},
+			link: '#scan',
 			tests: ['(scan)', '(scan: progressive)', '(scan: interlace)'],
 		},
 		grid: {
-			links: {
-				tr: '#grid',
-				dev: '#grid',
-			},
+			link: '#grid',
 			tests: ['(grid)', '(grid: 0)', '(grid: 1)'],
 		},
 	},

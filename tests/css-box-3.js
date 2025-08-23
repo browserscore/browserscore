@@ -11,24 +11,15 @@ export default {
 	},
 	properties: {
 		'border-color': {
-			links: {
-				tr: '#border-color-properties',
-				dev: '#border-color-properties',
-			},
+			link: '#border-color-properties',
 			tests: ['black', '#ff0000 rgb(0, 255, 0)', 'rgb(0%, 0%, 100%) #0f0 transparent', 'red green blue yellow'],
 		},
 		'border-style': {
-			links: {
-				tr: '#border-style-properties',
-				dev: '#border-style-properties',
-			},
+			link: '#border-style-properties',
 			tests: ['none', 'hidden', 'none dashed', 'none dashed dotted', 'none dashed dotted solid'],
 		},
 		'border-top': {
-			links: {
-				tr: '#border-shorthand-properties',
-				dev: '#border-shorthand-properties',
-			},
+			link: '#border-shorthand-properties',
 			tests: [
 				'black',
 				'dotted',
@@ -40,10 +31,7 @@ export default {
 			],
 		},
 		'border-right': {
-			links: {
-				tr: '#border-shorthand-properties',
-				dev: '#border-shorthand-properties',
-			},
+			link: '#border-shorthand-properties',
 			tests: [
 				'black',
 				'dotted',
@@ -55,10 +43,7 @@ export default {
 			],
 		},
 		'border-bottom': {
-			links: {
-				tr: '#border-shorthand-properties',
-				dev: '#border-shorthand-properties',
-			},
+			link: '#border-shorthand-properties',
 			tests: [
 				'black',
 				'dotted',
@@ -70,10 +55,7 @@ export default {
 			],
 		},
 		'border-left': {
-			links: {
-				tr: '#border-shorthand-properties',
-				dev: '#border-shorthand-properties',
-			},
+			link: '#border-shorthand-properties',
 			tests: [
 				'black',
 				'dotted',
@@ -85,101 +67,59 @@ export default {
 			],
 		},
 		'border-top-color': {
-			links: {
-				tr: '#border-color-properties',
-				dev: '#border-color-properties',
-			},
+			link: '#border-color-properties',
 			tests: ['black', '#00f', '#000000', 'rgb(255, 255, 255)', 'rgb(100%, 50%, 50%)', 'transparent'],
 		},
 		'border-right-color': {
-			links: {
-				tr: '#border-color-properties',
-				dev: '#border-color-properties',
-			},
+			link: '#border-color-properties',
 			tests: ['black', '#00f', '#000000', 'rgb(255, 255, 255)', 'rgb(100%, 50%, 50%)', 'transparent'],
 		},
 		'border-bottom-color': {
-			links: {
-				tr: '#border-color-properties',
-				dev: '#border-color-properties',
-			},
+			link: '#border-color-properties',
 			tests: ['black', '#00f', '#000000', 'rgb(255, 255, 255)', 'rgb(100%, 50%, 50%)', 'transparent'],
 		},
 		'border-left-color': {
-			links: {
-				tr: '#border-color-properties',
-				dev: '#border-color-properties',
-			},
+			link: '#border-color-properties',
 			tests: ['black', '#00f', '#000000', 'rgb(255, 255, 255)', 'rgb(100%, 50%, 50%)', 'transparent'],
 		},
 		'border-top-style': {
-			links: {
-				tr: '#border-style-properties',
-				dev: '#border-style-properties',
-			},
+			link: '#border-style-properties',
 			tests: ['none', 'hidden', 'dotted', 'dashed', 'solid', 'double', 'groove', 'ridge', 'inset', 'outset'],
 		},
 		'border-right-style': {
-			links: {
-				tr: '#border-style-properties',
-				dev: '#border-style-properties',
-			},
+			link: '#border-style-properties',
 			tests: ['none', 'hidden', 'dotted', 'dashed', 'solid', 'double', 'groove', 'ridge', 'inset', 'outset'],
 		},
 		'border-bottom-style': {
-			links: {
-				tr: '#border-style-properties',
-				dev: '#border-style-properties',
-			},
+			link: '#border-style-properties',
 			tests: ['none', 'hidden', 'dotted', 'dashed', 'solid', 'double', 'groove', 'ridge', 'inset', 'outset'],
 		},
 		'border-left-style': {
-			links: {
-				tr: '#border-style-properties',
-				dev: '#border-style-properties',
-			},
+			link: '#border-style-properties',
 			tests: ['none', 'hidden', 'dotted', 'dashed', 'solid', 'double', 'groove', 'ridge', 'inset', 'outset'],
 		},
 		'border-top-width': {
-			links: {
-				tr: '#border-width-properties',
-				dev: '#border-width-properties',
-			},
+			link: '#border-width-properties',
 			tests: ['thin', 'medium', 'thick', '5px'],
 		},
 		'border-right-width': {
-			links: {
-				tr: '#border-width-properties',
-				dev: '#border-width-properties',
-			},
+			link: '#border-width-properties',
 			tests: ['thin', 'medium', 'thick', '5px'],
 		},
 		'border-bottom-width': {
-			links: {
-				tr: '#border-width-properties',
-				dev: '#border-width-properties',
-			},
+			link: '#border-width-properties',
 			tests: ['thin', 'medium', 'thick', '5px'],
 		},
 		'border-left-width': {
-			links: {
-				tr: '#border-width-properties',
-				dev: '#border-width-properties',
-			},
+			link: '#border-width-properties',
 			tests: ['thin', 'medium', 'thick', '5px'],
 		},
 		'border-width': {
-			links: {
-				tr: '#border-width-properties',
-				dev: '#border-width-properties',
-			},
+			link: '#border-width-properties',
 			tests: ['thin', 'thin medium', 'thin medium thick', 'thin medium thick 5px'],
 		},
 		border: {
-			links: {
-				tr: '#border-shorthand-properties',
-				dev: '#border-shorthand-properties',
-			},
+			link: '#border-shorthand-properties',
 			tests: [
 				'black',
 				'dotted',
@@ -191,73 +131,43 @@ export default {
 			],
 		},
 		'margin-right': {
-			links: {
-				tr: '#propdef-margin-right',
-				dev: '#propdef-margin-right',
-			},
+			link: '#propdef-margin-right',
 			tests: ['auto', '10px', '5%'],
 		},
 		'margin-left': {
-			links: {
-				tr: '#propdef-margin-left',
-				dev: '#propdef-margin-left',
-			},
+			link: '#propdef-margin-left',
 			tests: ['auto', '10px', '5%'],
 		},
 		'margin-top': {
-			links: {
-				tr: '#propdef-margin-top',
-				dev: '#propdef-margin-top',
-			},
+			link: '#propdef-margin-top',
 			tests: ['auto', '10px', '5%'],
 		},
 		'margin-bottom': {
-			links: {
-				tr: '#propdef-margin-bottom',
-				dev: '#propdef-margin-bottom',
-			},
+			link: '#propdef-margin-bottom',
 			tests: ['auto', '10px', '5%'],
 		},
 		margin: {
-			links: {
-				tr: '#propdef-margin',
-				dev: '#propdef-margin',
-			},
+			link: '#propdef-margin',
 			tests: ['10px', '10px 5%', '10px 5px auto', '10px 5px auto 1em'],
 		},
 		'padding-top': {
-			links: {
-				tr: '#padding-properties',
-				dev: '#padding-properties',
-			},
+			link: '#padding-properties',
 			tests: ['10px', '5%'],
 		},
 		'padding-right': {
-			links: {
-				tr: '#padding-properties',
-				dev: '#padding-properties',
-			},
+			link: '#padding-properties',
 			tests: ['10px', '5%'],
 		},
 		'padding-bottom': {
-			links: {
-				tr: '#padding-properties',
-				dev: '#padding-properties',
-			},
+			link: '#padding-properties',
 			tests: ['10px', '5%'],
 		},
 		'padding-left': {
-			links: {
-				tr: '#padding-properties',
-				dev: '#padding-properties',
-			},
+			link: '#padding-properties',
 			tests: ['10px', '5%'],
 		},
 		padding: {
-			links: {
-				tr: '#padding-properties',
-				dev: '#padding-properties',
-			},
+			link: '#padding-properties',
 			tests: ['10px', '10px 5%', '10px 5% 0.5em', '10px 5% 0.5em 0.8mm'],
 		},
 	},

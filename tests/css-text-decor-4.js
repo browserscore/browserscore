@@ -1,25 +1,16 @@
 export default {
 	title: 'CSS Text Decoration Module Level 4',
-	links: {
-		tr: 'css-text-decor-4',
-		dev: 'css-text-decor-4',
-	},
+	link: 'css-text-decor-4',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'text-decoration': {
-			links: {
-				tr: '#text-decoration-property',
-				dev: '#text-decoration-property',
-			},
+			link: '#text-decoration-property',
 			tests: ['underline solid blue 1px'],
 		},
 		'text-decoration-skip': {
-			links: {
-				tr: '#text-decoration-skip-property',
-				dev: '#text-decoration-skip-property',
-			},
+			link: '#text-decoration-skip-property',
 			tests: [
 				'none',
 				'objects',
@@ -44,24 +35,15 @@ export default {
 			],
 		},
 		'text-decoration-skip-box': {
-			links: {
-				tr: '#text-decoration-skip-box-property',
-				dev: '#text-decoration-skip-box-property',
-			},
+			link: '#text-decoration-skip-box-property',
 			tests: ['none', 'all'],
 		},
 		'text-decoration-skip-ink': {
-			links: {
-				tr: '#text-decoration-skip-ink-property',
-				dev: '#text-decoration-skip-ink-property',
-			},
+			link: '#text-decoration-skip-ink-property',
 			tests: ['none', 'auto'],
 		},
 		'text-decoration-skip-self': {
-			links: {
-				tr: '#text-decoration-skip-self-property',
-				dev: '#text-decoration-skip-self-property',
-			},
+			link: '#text-decoration-skip-self-property',
 			tests: [
 				'auto',
 				'skip-all',
@@ -75,10 +57,7 @@ export default {
 			],
 		},
 		'text-decoration-skip-spaces': {
-			links: {
-				tr: '#text-decoration-skip-spaces-property',
-				dev: '#text-decoration-skip-spaces-property',
-			},
+			link: '#text-decoration-skip-spaces-property',
 			tests: [
 				'none',
 				'all',
@@ -88,10 +67,7 @@ export default {
 			],
 		},
 		'text-decoration-trim': {
-			links: {
-				tr: '#text-decoration-skip-inset-property',
-				dev: '#text-decoration-skip-inset-property',
-			},
+			link: '#text-decoration-skip-inset-property',
 			tests: [
 				'auto',
 				'10px',
@@ -99,17 +75,11 @@ export default {
 			],
 		},
 		'text-underline-offset': {
-			links: {
-				tr: '#underline-offset',
-				dev: '#underline-offset',
-			},
+			link: '#underline-offset',
 			tests: ['auto', '3px', '10%'],
 		},
 		'text-underline-position': {
-			links: {
-				tr: '#text-underline-position-property',
-				dev: '#text-underline-position-property',
-			},
+			link: '#text-underline-position-property',
 			tests: [
 				'from-font',
 				'from-font left',
@@ -125,10 +95,7 @@ export default {
 			tests: ['auto', 'from-font', '3px', '10%'],
 		},
 		'text-shadow': {
-			links: {
-				tr: '#text-shadow-property',
-				dev: '#text-shadow-property',
-			},
+			link: '#text-shadow-property',
 			tests: ['1px 2px 3px 4px black'],
 		},
 	},

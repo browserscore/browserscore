@@ -2,8 +2,8 @@ export default {
 	title: 'Fullscreen API',
 	links: {
 		dev: 'fullscreen',
-		devtype: 'whatwg',
 	},
+	group: 'whatwg',
 	status: {
 		stability: 'experimental',
 	},

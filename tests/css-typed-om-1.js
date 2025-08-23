@@ -2,8 +2,8 @@ export default {
 	title: 'CSS Typed OM Level 1',
 	links: {
 		dev: 'css-typed-om-1',
-		devtype: 'houdini',
 	},
+	group: 'houdini',
 	status: {
 		stability: 'experimental',
 	},

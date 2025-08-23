@@ -1,9 +1,6 @@
 export default {
 	title: 'CSS Values and Units Module Level 3',
-	links: {
-		tr: 'css-values-3',
-		dev: 'css-values-3',
-	},
+	link: 'css-values-3',
 	status: {
 		stability: 'stable',
 		'first-snapshot': 2015,
@@ -11,66 +8,42 @@ export default {
 	values: {
 		properties: ['width', 'padding'],
 		rem: {
-			links: {
-				tr: '#rem',
-				dev: '#rem',
-				mdn: 'length',
-			},
+			link: '#rem',
+			mdn: 'length',
 			tests: '5rem',
 		},
 		ch: {
-			links: {
-				tr: '#ch',
-				dev: '#ch',
-				mdn: 'length',
-			},
+			link: '#ch',
+			mdn: 'length',
 			tests: '5ch',
 		},
 		vw: {
-			links: {
-				tr: '#vw',
-				dev: '#vw',
-				mdn: 'length',
-			},
+			link: '#vw',
+			mdn: 'length',
 			tests: '5vw',
 		},
 		vh: {
-			links: {
-				tr: '#vh',
-				dev: '#vh',
-				mdn: 'length',
-			},
+			link: '#vh',
+			mdn: 'length',
 			tests: '5vh',
 		},
 		vmin: {
-			links: {
-				tr: '#vmin',
-				dev: '#vmin',
-				mdn: 'length',
-			},
+			link: '#vmin',
+			mdn: 'length',
 			tests: '5vmin',
 		},
 		vmax: {
-			links: {
-				tr: '#vmax',
-				dev: '#vmax',
-				mdn: 'length',
-			},
+			link: '#vmax',
+			mdn: 'length',
 			tests: '5vmax',
 		},
 		Q: {
-			links: {
-				tr: '#Q',
-				dev: '#Q',
-				mdn: 'length',
-			},
+			link: '#Q',
+			mdn: 'length',
 			tests: '5Q',
 		},
 		'calc()': {
-			links: {
-				tr: '#calc-notation',
-				dev: '#calc-notation',
-			},
+			link: '#calc-notation',
 			tests: [
 				'calc(1px + 2px)',
 				'calc(5px*2)',
@@ -82,10 +55,7 @@ export default {
 			],
 		},
 		'calc() in other functions': {
-			links: {
-				tr: '#calc-notation',
-				dev: '#calc-notation',
-			},
+			link: '#calc-notation',
 			properties: ['transform'],
 			tests: ['translateX(calc(1px + 2px))'],
 		}

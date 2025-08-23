@@ -16,10 +16,7 @@ export default {
 	},
 	properties: {
 		'transition-behavior': {
-			links: {
-				tr: '#transition-behavior-property',
-				dev: '#transition-behavior-property',
-			},
+			link: '#transition-behavior-property',
 			tests: ['normal', 'allow-discrete'],
 		},
 	},

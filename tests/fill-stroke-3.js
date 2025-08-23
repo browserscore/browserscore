@@ -1,19 +1,13 @@
 export default {
 	title: 'CSS Fill and Stroke Module Level 3',
-	links: {
-		tr: 'fill-stroke-3',
-		dev: 'fill-stroke-3',
-		devtype: 'fxtf',
-	},
+	link: 'fill-stroke-3',
+	group: 'fxtf',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		fill: {
-			links: {
-				tr: '#fill-shorthand',
-				dev: '#fill-shorthand',
-			},
+			link: '#fill-shorthand',
 			tests: [
 				'url(foo.png), url(bar.svg)',
 				'top left / 50% 60%',
@@ -23,31 +17,19 @@ export default {
 			],
 		},
 		'fill-rule': {
-			links: {
-				tr: '#fill-rule',
-				dev: '#fill-rule',
-			},
+			link: '#fill-rule',
 			tests: ['nonzero', 'evenodd'],
 		},
 		'fill-break': {
-			links: {
-				tr: '#fill-break',
-				dev: '#fill-break',
-			},
+			link: '#fill-break',
 			tests: ['bounding-box', 'slice', 'clone'],
 		},
 		'fill-color': {
-			links: {
-				tr: '#fill-color',
-				dev: '#fill-color',
-			},
+			link: '#fill-color',
 			tests: 'green',
 		},
 		'fill-image': {
-			links: {
-				tr: '#fill-image',
-				dev: '#fill-image',
-			},
+			link: '#fill-image',
 			tests: [
 				'url(foo.png)',
 				"image('sprites.png#xywh=10,30,60,20')",
@@ -60,31 +42,19 @@ export default {
 			],
 		},
 		'fill-origin': {
-			links: {
-				tr: '#fill-origin',
-				dev: '#fill-origin',
-			},
+			link: '#fill-origin',
 			tests: ['match-parent', 'fill-box', 'stroke-box', 'content-box', 'padding-box', 'border-box'],
 		},
 		'fill-position': {
-			links: {
-				tr: '#fill-position',
-				dev: '#fill-position',
-			},
+			link: '#fill-position',
 			tests: ['center', 'left 50%', 'bottom 10px right 20px', 'bottom 10px right', 'top right 10px'],
 		},
 		'fill-size': {
-			links: {
-				tr: '#fill-size',
-				dev: '#fill-size',
-			},
+			link: '#fill-size',
 			tests: ['auto', 'cover', 'contain', '10px', '50%', '10px auto', 'auto 10%', '50em 50%'],
 		},
 		'fill-repeat': {
-			links: {
-				tr: '#fill-repeat',
-				dev: '#fill-repeat',
-			},
+			link: '#fill-repeat',
 			tests: [
 				'repeat-x',
 				'repeat-y',
@@ -111,17 +81,11 @@ export default {
 			],
 		},
 		'fill-opacity': {
-			links: {
-				tr: '#fill-opacity',
-				dev: '#fill-opacity',
-			},
+			link: '#fill-opacity',
 			tests: ['0.5', '45%'],
 		},
 		stroke: {
-			links: {
-				tr: '#stroke-shorthand',
-				dev: '#stroke-shorthand',
-			},
+			link: '#stroke-shorthand',
 			tests: [
 				'url(foo.png), url(bar.svg)',
 				'top left / 50% 60%',
@@ -131,31 +95,19 @@ export default {
 			],
 		},
 		'stroke-width': {
-			links: {
-				tr: '#stroke-width',
-				dev: '#stroke-width',
-			},
+			link: '#stroke-width',
 			tests: ['0', '1px', '25%'],
 		},
 		'stroke-align': {
-			links: {
-				tr: '#stroke-align',
-				dev: '#stroke-align',
-			},
+			link: '#stroke-align',
 			tests: ['center', 'inset', 'outset '],
 		},
 		'stroke-linecap': {
-			links: {
-				tr: '#stroke-linecap',
-				dev: '#stroke-linecap',
-			},
+			link: '#stroke-linecap',
 			tests: ['butt', 'round', 'square '],
 		},
 		'stroke-linejoin': {
-			links: {
-				tr: '#stroke-linejoin',
-				dev: '#stroke-linejoin',
-			},
+			link: '#stroke-linejoin',
 			tests: [
 				'crop',
 				'arcs',
@@ -169,45 +121,27 @@ export default {
 			],
 		},
 		'stroke-miterlimit': {
-			links: {
-				tr: '#stroke-miterlimit',
-				dev: '#stroke-miterlimit',
-			},
+			link: '#stroke-miterlimit',
 			tests: '4',
 		},
 		'stroke-break': {
-			links: {
-				tr: '#stroke-break',
-				dev: '#stroke-break',
-			},
+			link: '#stroke-break',
 			tests: ['bounding-box', 'slice', 'clone '],
 		},
 		'stroke-dasharray': {
-			links: {
-				tr: '#stroke-dasharray',
-				dev: '#stroke-dasharray',
-			},
+			link: '#stroke-dasharray',
 			tests: ['none', '0', '4px', '4px 12%', '4px 12% 3em', '4px 12% 3em 5px', '4px 12% 3em 5px 10%'],
 		},
 		'stroke-dashoffset': {
-			links: {
-				tr: '#stroke-dashoffset',
-				dev: '#stroke-dashoffset',
-			},
+			link: '#stroke-dashoffset',
 			tests: ['0', '4px', '12%'],
 		},
 		'stroke-dash-corner': {
-			links: {
-				tr: '#corner-control',
-				dev: '#corner-control',
-			},
+			link: '#corner-control',
 			tests: ['none', '15px'],
 		},
 		'stroke-dash-justify': {
-			links: {
-				tr: '#corner-control',
-				dev: '#corner-control',
-			},
+			link: '#corner-control',
 			tests: [
 				'none',
 				'stretch',
@@ -221,17 +155,11 @@ export default {
 			],
 		},
 		'stroke-color': {
-			links: {
-				tr: '#stroke-color',
-				dev: '#stroke-color',
-			},
+			link: '#stroke-color',
 			tests: 'green',
 		},
 		'stroke-image': {
-			links: {
-				tr: '#stroke-image',
-				dev: '#stroke-image',
-			},
+			link: '#stroke-image',
 			tests: [
 				'url(foo.png)',
 				"image('sprites.png#xywh=10,30,60,20')",
@@ -244,31 +172,19 @@ export default {
 			],
 		},
 		'stroke-origin': {
-			links: {
-				tr: '#stroke-origin',
-				dev: '#stroke-origin',
-			},
+			link: '#stroke-origin',
 			tests: ['match-parent', 'fill-box', 'stroke-box', 'content-box', 'padding-box', 'border-box'],
 		},
 		'stroke-position': {
-			links: {
-				tr: '#stroke-position',
-				dev: '#stroke-position',
-			},
+			link: '#stroke-position',
 			tests: ['center', 'left 50%', 'bottom 10px right 20px', 'bottom 10px right', 'top right 10px'],
 		},
 		'stroke-size': {
-			links: {
-				tr: '#stroke-size',
-				dev: '#stroke-size',
-			},
+			link: '#stroke-size',
 			tests: ['auto', 'cover', 'contain', '10px', '50%', '10px auto', 'auto 10%', '50em 50%'],
 		},
 		'stroke-repeat': {
-			links: {
-				tr: '#stroke-repeat',
-				dev: '#stroke-repeat',
-			},
+			link: '#stroke-repeat',
 			tests: [
 				'repeat-x',
 				'repeat-y',
@@ -295,10 +211,7 @@ export default {
 			],
 		},
 		'stroke-opacity': {
-			links: {
-				tr: '#stroke-opacity',
-				dev: '#stroke-opacity',
-			},
+			link: '#stroke-opacity',
 			tests: ['0.5', '45%'],
 		},
 	},

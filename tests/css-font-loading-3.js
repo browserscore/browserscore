@@ -1,17 +1,13 @@
 export default {
 	title: 'CSS Font Loading Module Level 3',
-	links: {
-		tr: 'css-font-loading-3',
-		dev: 'css-font-loading-3',
-	},
+	link: 'css-font-loading-3',
 	status: {
 		stability: 'stable',
 	},
 	interfaces: {
 		FontFace: {
+			link: '#fontface-interface',
 			links: {
-				tr: '#fontface-interface',
-				dev: '#fontface-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -76,9 +72,8 @@ export default {
 			tests: ['FontFacePalette'],
 		},
 		FontFaceSet: {
+			link: '#FontFaceSet-interface',
 			links: {
-				tr: '#FontFaceSet-interface',
-				dev: '#FontFaceSet-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -108,9 +103,8 @@ export default {
 			},
 		},
 		Document: {
+			link: '#font-face-source',
 			links: {
-				tr: '#font-face-source',
-				dev: '#font-face-source',
 				mdnGroup: 'DOM',
 			},
 			tests: ['fonts'],

@@ -9,17 +9,11 @@ export default {
 	},
 	properties: {
 		'wrap-flow': {
-			links: {
-				tr: '#wrap-flow-property',
-				dev: '#wrap-flow-property',
-			},
+			link: '#wrap-flow-property',
 			tests: ['auto', 'both', 'start', 'end', 'minimum', 'maximum', 'clear'],
 		},
 		'wrap-through': {
-			links: {
-				tr: '#wrap-through-property',
-				dev: '#wrap-through-property',
-			},
+			link: '#wrap-through-property',
 			tests: ['wrap', 'none'],
 		},
 	},

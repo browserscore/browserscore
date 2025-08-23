@@ -1,40 +1,27 @@
 export default {
 	title: 'CSS Spatial Navigation Level 1',
-	links: {
-		tr: 'css-nav-1',
-		dev: 'css-nav-1',
-	},
+	link: 'css-nav-1',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'spatial-navigation-action': {
-			links: {
-				tr: '#css-property-spatialnavigationaction',
-				dev: '#css-property-spatialnavigationaction',
-			},
+			link: '#css-property-spatialnavigationaction',
 			tests: ['auto', 'focus', 'scroll'],
 		},
 		'spatial-navigation-contain': {
-			links: {
-				tr: '#container',
-				dev: '#container',
-			},
+			link: '#container',
 			tests: ['auto', 'contain'],
 		},
 		'spatial-navigation-function': {
-			links: {
-				tr: '#css-property-spatialnavigationfunction',
-				dev: '#css-property-spatialnavigationfunction',
-			},
+			link: '#css-property-spatialnavigationfunction',
 			tests: ['normal', 'grid'],
 		},
 	},
 	interfaces: {
 		Window: {
+			link: '#high-level-api',
 			links: {
-				tr: '#high-level-api',
-				dev: '#high-level-api',
 				mdnGroup: 'DOM',
 			},
 			tests: ['navigate'],
@@ -43,9 +30,8 @@ export default {
 			}
 		},
 		Element: {
+			link: '#low-level-api',
 			links: {
-				tr: '#low-level-api',
-				dev: '#low-level-api',
 				mdnGroup: 'DOM',
 			},
 			tests: ['getSpatialNavigationContainer', 'focusableAreas', 'spatialNavigationSearch'],
@@ -54,9 +40,8 @@ export default {
 			}
 		},
 		NavigationEvent: {
+			link: '#events-navigationevent',
 			links: {
-				tr: '#events-navigationevent',
-				dev: '#events-navigationevent',
 				mdnGroup: 'DOM',
 			},
 			tests: ['dir', 'relatedTarget'],

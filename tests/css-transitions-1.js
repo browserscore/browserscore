@@ -1,32 +1,20 @@
 export default {
 	title: 'CSS Transitions',
-	links: {
-		tr: 'css-transitions-1',
-		dev: 'css-transitions-1',
-	},
+	link: 'css-transitions-1',
 	status: {
 		stability: 'stable',
 	},
 	properties: {
 		'transition-property': {
-			links: {
-				tr: '#transition-property-property',
-				dev: '#transition-property-property',
-			},
+			link: '#transition-property-property',
 			tests: ['none', 'all', 'width', 'width, height'],
 		},
 		'transition-duration': {
-			links: {
-				tr: '#transition-duration-property',
-				dev: '#transition-duration-property',
-			},
+			link: '#transition-duration-property',
 			tests: ['0s', '1s', '100ms'],
 		},
 		'transition-timing-function': {
-			links: {
-				tr: '#transition-timing-function-property',
-				dev: '#transition-timing-function-property',
-			},
+			link: '#transition-timing-function-property',
 			tests: [
 				'ease',
 				'linear',
@@ -42,38 +30,26 @@ export default {
 			],
 		},
 		'transition-delay': {
-			links: {
-				tr: '#transition-delay-property',
-				dev: '#transition-delay-property',
-			},
+			link: '#transition-delay-property',
 			tests: ['1s', '-1s'],
 		},
 		transition: {
-			links: {
-				tr: '#transition-shorthand-property',
-				dev: '#transition-shorthand-property',
-			},
+			link: '#transition-shorthand-property',
 			tests: '1s 2s width linear',
 		},
 	},
 	interfaces: {
 		TransitionEvent: {
-			links: {
-				tr: '#interface-transitionevent',
-				dev: '#interface-transitionevent',
-				mdnGroup: 'DOM',
-			},
+			link: '#interface-transitionevent',
+			mdnGroup: 'DOM',
 			tests: ['propertyName', 'elapsedTime', 'pseudoElement'],
 			interface: function() {
 				return new TransitionEvent('transitionend');
 			},
 		},
 		Element: {
-			links: {
-				tr: '#interface-dom',
-				dev: '#interface-dom',
-				mdnGroup: 'DOM',
-			},
+			link: '#interface-dom',
+			mdnGroup: 'DOM',
 			tests: ['ontransitionstart', 'ontransitionrun', 'ontransitionend', 'ontransitioncancel'],
 			interface: function() {
 				return document.body;

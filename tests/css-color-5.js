@@ -11,8 +11,8 @@ export default {
 		'color-mix()': {
 			links: {
 				dev: '#color-mix',
-				mdn: 'color_value/color-mix',
-			},
+				},
+			mdn: 'color_value/color-mix',
 			tests: [
 				'color-mix(in srgb, teal 65%, olive)',
 				'color-mix(in srgb, rgb(255, 0, 0, .2) 65%, olive)',
@@ -28,16 +28,16 @@ export default {
 		'color-adjust()': {
 			links: {
 				dev: '#coloradjust',
-				mdn: 'color_value',
-			},
+				},
+			mdn: 'color_value',
 			tests: ['color-adjust(peru lightness -20%)'],
 		},
 
 		'relative color': {
 			links: {
 				dev: '#relative-colors',
-				mdn: 'color_value',
-			},
+				},
+			mdn: 'color_value',
 			tests: [
 				'rgb(from indianred 255 g b)',
 				'hsl(from lightseagreen calc(h + 180) s l)',
@@ -53,17 +53,14 @@ export default {
 		'light-dark()': {
 			links: {
 				dev: '#light-dark',
-				mdn: 'light-dark',
-			},
+				},
+			mdn: 'light-dark',
 			tests: ['light-dark(green, red)'],
 		},
 
 		'device-cmyk()': {
-			links: {
-				tr: '#cmyk-colors',
-				dev: '#cmyk-colors',
-				mdn: 'color_value/device-cmyk',
-			},
+			link: '#cmyk-colors',
+			mdn: 'color_value/device-cmyk',
 			tests: ['device-cmyk(.2 .3 .4 .5)', 'device-cmyk(.2 .3 .4 .5 / .5)', 'device-cmyk(.2 .3 .4 .5 / 50%)'],
 		},
 	},

@@ -1,18 +1,12 @@
 export default {
 	title: 'CSS Anchor Positioning',
-	links: {
-		tr: 'css-anchor-position-1',
-		dev: 'css-anchor-position-1',
-	},
+	link: 'css-anchor-position-1',
 	status: {
 		stability: 'experimental',
 	},
 	values: {
 		'anchor()': {
-			links: {
-				tr: '#anchor-pos',
-				dev: '#anchor-pos',
-			},
+			link: '#anchor-pos',
 			properties: [
 				'top',
 				'right',
@@ -73,10 +67,7 @@ export default {
 			],
 		},
 		'anchor-size()': {
-			links: {
-				tr: '#anchor-size-fn',
-				dev: '#anchor-size-fn',
-			},
+			link: '#anchor-size-fn',
 			properties: [
 				'width',
 				'height',
@@ -137,17 +128,11 @@ export default {
 	},
 	properties: {
 		'anchor-name': {
-			links: {
-				tr: '#name',
-				dev: '#name',
-			},
+			link: '#name',
 			tests: ['none', '--anchor', '--first-anchor, --second-anchor'],
 		},
 		'anchor-scope': {
-			links: {
-				tr: '#anchor-scope',
-				dev: '#anchor-scope',
-			},
+			link: '#anchor-scope',
 			tests: [
 				'none',
 				'all',
@@ -225,20 +210,14 @@ export default {
 		},
 		// The old name is anchor-default
 		'position-anchor': {
-			links: {
-				tr: '#position-anchor',
-				dev: '#position-anchor',
-			},
+			link: '#position-anchor',
 			tests: [
 				'auto', // the old name is implicit, https://github.com/w3c/csswg-drafts/issues/10312#issuecomment-2112984254
 				'--fallback'
 			],
 		},
 		'position-try': {
-			links: {
-				tr: '#position-try-prop',
-				dev: '#position-try-prop',
-			},
+			link: '#position-try-prop',
 			tests: [
 				'none',
 				'--try-position',
@@ -320,10 +299,7 @@ export default {
 			],
 		},
 		'position-try-fallbacks': {
-			links: {
-				tr: '#position-try-fallbacks',
-				dev: '#position-try-fallbacks',
-			},
+			link: '#position-try-fallbacks',
 			tests: [
 				'none',
 				'--try-position',
@@ -400,10 +376,7 @@ export default {
 			],
 		},
 		'position-try-order': {
-			links: {
-				tr: '#position-try-order-property',
-				dev: '#position-try-order-property',
-			},
+			link: '#position-try-order-property',
 			tests: [
 				'normal',
 				'most-width',
@@ -413,10 +386,7 @@ export default {
 			],
 		},
 		'position-visibility': {
-			links: {
-				tr: '#position-visibility',
-				dev: '#position-visibility',
-			},
+			link: '#position-visibility',
 			tests: [
 				'always',
 				'anchors-valid',
@@ -431,10 +401,7 @@ export default {
 	},
 	'@rules': {
 		'@position-try': {
-			links: {
-				tr: '#fallback-rule',
-				dev: '#fallback-rule',
-			},
+			link: '#fallback-rule',
 			tests: [
 				"@position-try --button-popover {\n  top: anchor(--button bottom);\n  left: anchor(--button left);\n}",
 				"@position-try --button-popover {\n  bottom: anchor(--button top);\n  right: anchor(--button right);\n  margin: 1em;\n}",

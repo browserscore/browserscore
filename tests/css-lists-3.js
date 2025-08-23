@@ -1,18 +1,12 @@
 export default {
 	title: 'CSS Lists Module Level 3',
-	links: {
-		tr: 'css-lists-3',
-		dev: 'css-lists-3',
-	},
+	link: 'css-lists-3',
 	status: {
 		stability: 'stable',
 	},
 	properties: {
 		'list-style-type': {
-			links: {
-				tr: '#text-markers',
-				dev: '#text-markers',
-			},
+			link: '#text-markers',
 			tests: [
 				'disclosure-closed',
 				'disclosure-open',
@@ -74,17 +68,11 @@ export default {
 			],
 		},
 		'marker-side': {
-			links: {
-				tr: '#marker-side',
-				dev: '#marker-side',
-			},
+			link: '#marker-side',
 			tests: ['match-self', 'match-parent'],
 		},
 		'counter-reset': {
-			links: {
-				tr: '#counter-reset',
-				dev: '#counter-reset',
-			},
+			link: '#counter-reset',
 			tests: [
 				'none',
 				'foo',
@@ -102,24 +90,15 @@ export default {
 			],
 		},
 		'counter-set': {
-			links: {
-				tr: '#increment-set',
-				dev: '#increment-set',
-			},
+			link: '#increment-set',
 			tests: ['foo', 'foo 1', 'foo 1 bar', 'foo 1 bar 2', 'none'],
 		},
 		'counter-increment': {
-			links: {
-				tr: '#increment-set',
-				dev: '#increment-set',
-			},
+			link: '#increment-set',
 			tests: ['foo', 'foo 1', 'foo 1 bar', 'foo 1 bar 2', 'none'],
 		},
 		content: {
-			links: {
-				tr: '#counter-functions',
-				dev: '#counter-functions',
-			},
+			link: '#counter-functions',
 			tests: [
 				"counter(chno, upper-latin) '. '",
 				"counter(section, upper-roman) ' - '",

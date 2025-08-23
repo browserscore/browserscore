@@ -1,18 +1,12 @@
 export default {
 	title: 'Media Queries Level 4',
-	links: {
-		tr: 'mediaqueries-4',
-		dev: 'mediaqueries-4',
-	},
+	link: 'mediaqueries-4',
 	status: {
 		stability: 'stable',
 	},
 	'Media queries': {
 		Syntax: {
-			links: {
-				tr: '#mq-syntax',
-				dev: '#mq-syntax',
-			},
+			link: '#mq-syntax',
 			tests: [
 				'not (width)',
 				'(width) or (height)',
@@ -38,52 +32,31 @@ export default {
 			],
 		},
 		resolution: {
-			links: {
-				tr: '#resolution',
-				dev: '#resolution',
-			},
+			link: '#resolution',
 			tests: ['(resolution: infinite)'],
 		},
 		hover: {
-			links: {
-				tr: '#hover',
-				dev: '#hover',
-			},
+			link: '#hover',
 			tests: ['(hover)', '(hover: none)', '(hover: hover)'],
 		},
 		'any-hover': {
-			links: {
-				tr: '#any-input',
-				dev: '#any-input',
-			},
+			link: '#any-input',
 			tests: ['(any-hover)', '(any-hover: none)', '(any-hover: hover)'],
 		},
 		pointer: {
-			links: {
-				tr: '#pointer',
-				dev: '#pointer',
-			},
+			link: '#pointer',
 			tests: ['(pointer)', '(pointer: none)', '(pointer: coarse)', '(pointer: fine)'],
 		},
 		'any-pointer': {
-			links: {
-				tr: '#any-input',
-				dev: '#any-input',
-			},
+			link: '#any-input',
 			tests: ['(any-pointer)', '(any-pointer: none)', '(any-pointer: coarse)', '(any-pointer: fine)'],
 		},
 		update: {
-			links: {
-				tr: '#update',
-				dev: '#update',
-			},
+			link: '#update',
 			tests: ['(update)', '(update: none)', '(update: slow)', '(update: fast)'],
 		},
 		'overflow-block': {
-			links: {
-				tr: '#mf-overflow-block',
-				dev: '#mf-overflow-block',
-			},
+			link: '#mf-overflow-block',
 			tests: [
 				'(overflow-block)',
 				'(overflow-block: none)',
@@ -92,31 +65,19 @@ export default {
 			],
 		},
 		'overflow-inline': {
-			links: {
-				tr: '#mf-overflow-inline',
-				dev: '#mf-overflow-inline',
-			},
+			link: '#mf-overflow-inline',
 			tests: ['(overflow-inline)', '(overflow-inline: none)', '(overflow-inline: scroll)'],
 		},
 		'color-gamut': {
-			links: {
-				tr: '#color-gamut',
-				dev: '#color-gamut',
-			},
+			link: '#color-gamut',
 			tests: ['(color-gamut)', '(color-gamut: srgb)', '(color-gamut: p3)', '(color-gamut: rec2020)'],
 		},
 		'aspect-ratio': {
-			links: {
-				tr: '#aspect-ratio',
-				dev: '#aspect-ratio',
-			},
+			link: '#aspect-ratio',
 			tests: ['(aspect-ratio: 1280.1/720.01)', '(max-aspect-ratio: 1280.1/720.01)', '(min-aspect-ratio: 0.2)'],
 		},
 		'device-aspect-ratio': {
-			links: {
-				tr: '#device-aspect-ratio',
-				dev: '#device-aspect-ratio',
-			},
+			link: '#device-aspect-ratio',
 			tests: [
 				'(device-aspect-ratio:1280.1/720.01)',
 				'(max-device-aspect-ratio:1280.1/720.01)',

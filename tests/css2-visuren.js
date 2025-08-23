@@ -11,31 +11,19 @@ export default {
 	},
 	properties: {
 		bottom: {
-			links: {
-				tr: '#position-props',
-				dev: '#position-props',
-			},
+			link: '#position-props',
 			tests: ['auto', '100px', '10%'],
 		},
 		clear: {
-			links: {
-				tr: '#flow-control',
-				dev: '#flow-control',
-			},
+			link: '#flow-control',
 			tests: ['none', 'left', 'right', 'both'],
 		},
 		direction: {
-			links: {
-				tr: '#propdef-direction',
-				dev: '#propdef-direction',
-			},
+			link: '#propdef-direction',
 			tests: ['ltr', 'rtl'],
 		},
 		display: {
-			links: {
-				tr: '#display-prop',
-				dev: '#display-prop',
-			},
+			link: '#display-prop',
 			tests: [
 				'none',
 				'inline',
@@ -55,52 +43,31 @@ export default {
 			],
 		},
 		float: {
-			links: {
-				tr: '#float-position',
-				dev: '#float-position',
-			},
+			link: '#float-position',
 			tests: ['none', 'left', 'right'],
 		},
 		left: {
-			links: {
-				tr: '#position-props',
-				dev: '#position-props',
-			},
+			link: '#position-props',
 			tests: ['auto', '100px', '10%'],
 		},
 		position: {
-			links: {
-				tr: '#choose-position',
-				dev: '#choose-position',
-			},
+			link: '#choose-position',
 			tests: ['static', 'relative', 'absolute', 'fixed'],
 		},
 		right: {
-			links: {
-				tr: '#position-props',
-				dev: '#position-props',
-			},
+			link: '#position-props',
 			tests: ['auto', '100px', '10%'],
 		},
 		top: {
-			links: {
-				tr: '#position-props',
-				dev: '#position-props',
-			},
+			link: '#position-props',
 			tests: ['100px', '10%', 'auto'],
 		},
 		'unicode-bidi': {
-			links: {
-				tr: '#propdef-unicode-bidi',
-				dev: '#propdef-unicode-bidi',
-			},
+			link: '#propdef-unicode-bidi',
 			tests: ['normal', 'embed', 'bidi-override'],
 		},
 		'z-index': {
-			links: {
-				tr: '#z-index',
-				dev: '#z-index',
-			},
+			link: '#z-index',
 			tests: ['auto', '1', '-1'],
 		},
 	},

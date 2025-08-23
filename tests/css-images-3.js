@@ -11,10 +11,7 @@ export default {
 	values: {
 		properties: ['background-image', 'list-style-image', 'border-image-source', 'mask-image', 'mask-border-source', 'shape-outside', 'content'],
 		'linear-gradient()': {
-			links: {
-				tr: '#linear-gradients',
-				dev: '#linear-gradients',
-			},
+			link: '#linear-gradients',
 			tests: [
 				'linear-gradient(white, black)',
 				'linear-gradient(to right, white, black)',
@@ -35,10 +32,7 @@ export default {
 			],
 		},
 		'radial-gradient()': {
-			links: {
-				tr: '#radial-gradients',
-				dev: '#radial-gradients',
-			},
+			link: '#radial-gradients',
 			tests: [
 				'radial-gradient(white, black)',
 				'radial-gradient(circle, white, black)',
@@ -67,20 +61,14 @@ export default {
 			],
 		},
 		'repeating-linear-gradient()': {
-			links: {
-				tr: '#repeating-gradients',
-				dev: '#repeating-gradients',
-			},
+			link: '#repeating-gradients',
 			tests: [
 				'repeating-linear-gradient(red)',
 				'repeating-linear-gradient(white, black)',
 			],
 		},
 		'repeating-radial-gradient()': {
-			links: {
-				tr: '#repeating-gradients',
-				dev: '#repeating-gradients',
-			},
+			link: '#repeating-gradients',
 			tests: [
 				'repeating-radial-gradient(red)',
 				'repeating-radial-gradient(white, black)',
@@ -110,10 +98,7 @@ export default {
 			tests: ['from-image', '0deg', '90deg', '45deg', '45deg flip', '1turn', '100grad', '2rad'],
 		},
 		'image-rendering': {
-			links: {
-				tr: '#the-image-rendering',
-				dev: '#the-image-rendering',
-			},
+			link: '#the-image-rendering',
 			tests: ['auto', 'smooth', 'high-quality', 'crisp-edges', 'pixelated'],
 		},
 	},

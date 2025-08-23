@@ -1,26 +1,19 @@
 export default {
 	title: 'CSSOM View Module',
-	links: {
-		tr: 'cssom-view-1',
-		dev: 'cssom-view-1',
-	},
+	link: 'cssom-view-1',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'scroll-behavior': {
-			links: {
-				tr: '#smooth-scrolling',
-				dev: '#smooth-scrolling',
-			},
+			link: '#smooth-scrolling',
 			tests: ['auto', 'smooth '],
 		},
 	},
 	interfaces: {
 		Window: {
+			link: '#extensions-to-the-window-interface',
 			links: {
-				tr: '#extensions-to-the-window-interface',
-				dev: '#extensions-to-the-window-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -53,9 +46,8 @@ export default {
 			},
 		},
 		MediaQueryList: {
+			link: '#the-mediaquerylist-interface',
 			links: {
-				tr: '#the-mediaquerylist-interface',
-				dev: '#the-mediaquerylist-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['media', 'matches', 'addListener', 'removeListener', 'onchange'],
@@ -64,9 +56,8 @@ export default {
 			},
 		},
 		MediaQueryListEvent: {
+			link: '#mediaquerylistevent',
 			links: {
-				tr: '#mediaquerylistevent',
-				dev: '#mediaquerylistevent',
 				mdnGroup: 'DOM',
 			},
 			tests: ['matches'],
@@ -75,9 +66,8 @@ export default {
 			},
 		},
 		Screen: {
+			link: '#the-screen-interface',
 			links: {
-				tr: '#the-screen-interface',
-				dev: '#the-screen-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -93,9 +83,8 @@ export default {
 			},
 		},
 		Document: {
+			link: '#extensions-to-the-document-interface',
 			links: {
-				tr: '#extensions-to-the-document-interface',
-				dev: '#extensions-to-the-document-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -113,9 +102,8 @@ export default {
 			},
 		},
 		CaretPosition: {
+			link: '#caretposition',
 			links: {
-				tr: '#caretposition',
-				dev: '#caretposition',
 				mdnGroup: 'DOM',
 			},
 			tests: ['offsetNode', 'offset', 'getClientRect'],
@@ -124,9 +112,8 @@ export default {
 			},
 		},
 		Element: {
+			link: '#extension-to-the-element-interface',
 			links: {
-				tr: '#extension-to-the-element-interface',
-				dev: '#extension-to-the-element-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -155,9 +142,8 @@ export default {
 			},
 		},
 		HTMLElement: {
+			link: '#extensions-to-the-htmlelement-interface',
 			links: {
-				tr: '#extensions-to-the-htmlelement-interface',
-				dev: '#extensions-to-the-htmlelement-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -172,9 +158,8 @@ export default {
 			},
 		},
 		HTMLImageElement: {
+			link: '#extensions-to-the-htmlimageelement-interface',
 			links: {
-				tr: '#extensions-to-the-htmlimageelement-interface',
-				dev: '#extensions-to-the-htmlimageelement-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['x', 'y'],
@@ -183,9 +168,8 @@ export default {
 			},
 		},
 		Range: {
+			link: '#extensions-to-the-range-interface',
 			links: {
-				tr: '#extensions-to-the-range-interface',
-				dev: '#extensions-to-the-range-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['getClientRects', 'getBoundingClientRect'],
@@ -194,9 +178,8 @@ export default {
 			},
 		},
 		MouseEvent: {
+			link: '#extensions-to-the-mouseevent-interface',
 			links: {
-				tr: '#extensions-to-the-mouseevent-interface',
-				dev: '#extensions-to-the-mouseevent-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -216,9 +199,8 @@ export default {
 			},
 		},
 		Text: {
+			link: '#geometryutils',
 			links: {
-				tr: '#geometryutils',
-				dev: '#geometryutils',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -232,9 +214,8 @@ export default {
 			},
 		},
 		CSSPseudoElement: {
+			link: '#geometryutils',
 			links: {
-				tr: '#geometryutils',
-				dev: '#geometryutils',
 				mdnGroup: 'DOM',
 			},
 			tests: [

@@ -1,19 +1,13 @@
 export default {
 	title: 'CSS Transforms Module Level 1',
-	links: {
-		tr: 'css-transforms-1',
-		dev: 'css-transforms-1',
-	},
+	link: 'css-transforms-1',
 	status: {
 		stability: 'stable',
 		'first-snapshot': 2017,
 	},
 	properties: {
 		transform: {
-			links: {
-				tr: '#transform-property',
-				dev: '#transform-property',
-			},
+			link: '#transform-property',
 			tests: [
 				'none',
 				'translate(5px)',
@@ -43,17 +37,11 @@ export default {
 			],
 		},
 		'transform-origin': {
-			links: {
-				tr: '#transform-origin-property',
-				dev: '#transform-origin-property',
-			},
+			link: '#transform-origin-property',
 			tests: ['10px', 'top', 'top left', '50% 100%', 'left 0%', 'left 50% 0'],
 		},
 		'transform-box': {
-			links: {
-				tr: '#transform-box',
-				dev: '#transform-box',
-			},
+			link: '#transform-box',
 			tests: ['border-box', 'fill-box', 'view-box'],
 		},
 	},

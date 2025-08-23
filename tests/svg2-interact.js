@@ -3,17 +3,14 @@ export default {
 	links: {
 		tr: 'svg2/interact.html',
 		dev: 'svg2-draft/interact.html',
-		devtype: 'svgwg',
 	},
+	group: 'svgwg',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'pointer-events': {
-			links: {
-				tr: '#PointerEventsProp',
-				dev: '#PointerEventsProp',
-			},
+			link: '#PointerEventsProp',
 			tests: [
 				'auto',
 				'bounding-box',

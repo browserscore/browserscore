@@ -1,136 +1,97 @@
 export default {
 	title: 'CSS Fonts Module Level 4',
-	links: {
-		tr: 'css-fonts-4',
-		dev: 'css-fonts-4',
-	},
+	link: 'css-fonts-4',
 	status: {
 		stability: 'stable',
 	},
 	values: {
 		properties: ['font-family'],
 		'system-ui': {
-			links: {
-				tr: '#system-ui-def',
-				dev: '#system-ui-def',
-				mdn: 'font-family',
-			},
+			link: '#system-ui-def',
+			mdn: 'font-family',
 			tests: 'system-ui',
 		},
 		'emoji': {
-			links: {
-				tr: '#emoji-def',
-				dev: '#emoji-def',
-				mdn: 'font-family',
-			},
+			link: '#emoji-def',
+			mdn: 'font-family',
 			tests: 'emoji',
 		},
 		'math': {
-			links: {
-				tr: '#math-def',
-				dev: '#math-def',
-				mdn: 'font-family',
-			},
+			link: '#math-def',
+			mdn: 'font-family',
 			tests: 'math',
 		},
 		'generic(fangsong)': {
 			links: {
 				tr: '#fangsong-def',
 				dev: '#generic(fangsong)-def',
-				mdn: 'font-family',
-			},
+				},
+			mdn: 'font-family',
 			tests: 'generic(fangsong)',
 		},
 		'generic(kai)': {
 			links: {
 				dev: '#generic(kai)-def',
-				mdn: 'font-family',
-			},
+				},
+			mdn: 'font-family',
 			tests: 'generic(kai)',
 		},
 		'generic(khmer-mul)': {
 			links: {
 				dev: '#generic(khmer-mul)-def',
-				mdn: 'font-family',
-			},
+				},
+			mdn: 'font-family',
 			tests: 'generic(khmer-mul)',
 		},
 		'generic(nastaliq)': {
 			links: {
 				dev: '#generic(nastaliq)-def',
-				mdn: 'font-family',
-			},
+				},
+			mdn: 'font-family',
 			tests: 'generic(nastaliq)',
 		},
 		'ui-serif': {
-			links: {
-				tr: '#ui-serif-def',
-				dev: '#ui-serif-def',
-				mdn: 'font-family',
-			},
+			link: '#ui-serif-def',
+			mdn: 'font-family',
 			tests: 'ui-serif',
 		},
 		'ui-sans-serif': {
-			links: {
-				tr: '#ui-sans-serif-def',
-				dev: '#ui-sans-serif-def',
-				mdn: 'font-family',
-			},
+			link: '#ui-sans-serif-def',
+			mdn: 'font-family',
 			tests: 'ui-sans-serif',
 		},
 		'ui-monospace': {
-			links: {
-				tr: '#ui-monospace-def',
-				dev: '#ui-monospace-def',
-				mdn: 'font-family',
-			},
+			link: '#ui-monospace-def',
+			mdn: 'font-family',
 			tests: 'ui-monospace',
 		},
 		'ui-rounded': {
-			links: {
-				tr: '#ui-rounded-def',
-				dev: '#ui-rounded-def',
-				mdn: 'font-family',
-			},
+			link: '#ui-rounded-def',
+			mdn: 'font-family',
 			tests: 'ui-rounded',
 		},
 		'xxx-large': {
-			links: {
-				tr: '#font-size-prop',
-				dev: '#font-size-prop',
-			},
+			link: '#font-size-prop',
 			properties: ['font-size'],
 			tests: ['xxx-large'],
 		},
 		'math in font-size': {
-			links: {
-				tr: '#font-size-prop',
-				dev: '#font-size-prop',
-			},
+			link: '#font-size-prop',
 			properties: ['font-size'],
 			tests: ['math'],
 		},
 		'arbitrary font weights': {
-			links: {
-				tr: '#font-weight-prop',
-				dev: '#font-weight-prop',
-			},
+			link: '#font-weight-prop',
 			properties: ['font-weight'],
 			tests: ['1', '90', '750', '1000'],
 		},
 		'angle for oblique': {
-			links: {
-				tr: '#font-style-prop',
-				dev: '#font-style-prop',
-			},
+			link: '#font-style-prop',
 			properties: ['font-style'],
 			tests: ['oblique 15deg', 'oblique -15deg', 'oblique 0deg'],
 		},
 		'font-variant functions and keywords': {
-			links: {
-				tr: '#font-variant-prop',
-				dev: '#font-variant-prop',
-			},
+			link: '#font-variant-prop',
 			properties: ['font-variant'],
 			tests: [
 				'stylistic(salt01)',
@@ -151,10 +112,7 @@ export default {
 	},
 	properties: {
 		'font-variant-alternates': {
-			links: {
-				tr: '#font-variant-alternates-prop',
-				dev: '#font-variant-alternates-prop',
-			},
+			link: '#font-variant-alternates-prop',
 			tests: [
 				'normal',
 				'stylistic(salt01)',
@@ -169,10 +127,7 @@ export default {
 			],
 		},
 		'font-variant-emoji': {
-			links: {
-				tr: '#font-variant-emoji-prop',
-				dev: '#font-variant-emoji-prop',
-			},
+			link: '#font-variant-emoji-prop',
 			tests: [
 				'normal',
 				'text',
@@ -181,10 +136,7 @@ export default {
 			],
 		},
 		'font-variation-settings': {
-			links: {
-				tr: '#font-variation-settings-def',
-				dev: '#font-variation-settings-def',
-			},
+			link: '#font-variation-settings-def',
 			tests: [
 				'normal',
 				'"wght" 2',
@@ -192,45 +144,27 @@ export default {
 			],
 		},
 		'font-feature-settings': {
-			links: {
-				tr: '#font-feature-settings-prop',
-				dev: '#font-feature-settings-prop',
-			},
+			link: '#font-feature-settings-prop',
 			tests: ['normal', "'swsh' 2"],
 		},
 		'font-language-override': {
-			links: {
-				tr: '#font-language-override',
-				dev: '#font-language-override',
-			},
+			link: '#font-language-override',
 			tests: ['normal', "'SRB'"],
 		},
 		'font-synthesis-weight': {
-			links: {
-				tr: '#font-synthesis-weight',
-				dev: '#font-synthesis-weight',
-			},
+			link: '#font-synthesis-weight',
 			tests: ['auto', 'none'],
 		},
 		'font-synthesis-style': {
-			links: {
-				tr: '#font-synthesis-style',
-				dev: '#font-synthesis-style',
-			},
+			link: '#font-synthesis-style',
 			tests: ['auto', 'none', 'oblique-only'],
 		},
 		'font-synthesis-small-caps': {
-			links: {
-				tr: '#font-synthesis-small-caps',
-				dev: '#font-synthesis-small-caps',
-			},
+			link: '#font-synthesis-small-caps',
 			tests: ['auto', 'none'],
 		},
 		'font-synthesis': {
-			links: {
-				tr: '#font-synthesis',
-				dev: '#font-synthesis',
-			},
+			link: '#font-synthesis',
 			tests: [
 				'small-caps',
 				'weight small-caps',
@@ -239,26 +173,17 @@ export default {
 			],
 		},
 		'font-optical-sizing': {
-			links: {
-				tr: '#font-optical-sizing-def',
-				dev: '#font-optical-sizing-def',
-			},
+			link: '#font-optical-sizing-def',
 			tests: ['none', 'auto'],
 		},
 		'font-palette': {
-			links: {
-				tr: '#font-palette-prop',
-				dev: '#font-palette-prop',
-			},
+			link: '#font-palette-prop',
 			tests: ['normal', 'light', 'dark', '--custom-palette'],
 		},
 	},
 	'@rules': {
 		'@font-feature-values': {
-			links: {
-				tr: '#font-feature-values',
-				dev: '#font-feature-values',
-			},
+			link: '#font-feature-values',
 			tests: [
 				'@font-feature-values Jupiter Sans {\n  @stylistic {\n    some-style: 1;\n  }\n}',
 				'@font-feature-values Jupiter Sans {\n  @historical-forms {\n    some-style: 1;\n  }\n}',
@@ -273,10 +198,7 @@ export default {
 			],
 		},
 		'@font-palette-values': {
-			links: {
-				tr: '#font-palette-values',
-				dev: '#font-palette-values',
-			},
+			link: '#font-palette-values',
 			tests: [
 				'@font-palette-values --custom-palette {\n  font-family: Handover Sans;\n  base-palette: 3;\n}',
 				'@font-palette-values --custom-palette {\n  font-family: Handover Sans;\n  override-colors: 0 #000, 1 red;\n}',
@@ -285,55 +207,34 @@ export default {
 	},
 	descriptors: {
 		'@font-face/ascent-override': {
-			links: {
-				tr: '#descdef-font-face-ascent-override',
-				dev: '#descdef-font-face-ascent-override',
-			},
+			link: '#descdef-font-face-ascent-override',
 			tests: ['normal', '125%'],
 		},
 		'@font-face/descent-override': {
-			links: {
-				tr: '#descdef-font-face-descent-override',
-				dev: '#descdef-font-face-descent-override',
-			},
+			link: '#descdef-font-face-descent-override',
 			tests: ['normal', '125%'],
 		},
 		'@font-face/line-gap-override': {
-			links: {
-				tr: '#descdef-font-face-line-gap-override',
-				dev: '#descdef-font-face-line-gap-override',
-			},
+			link: '#descdef-font-face-line-gap-override',
 			tests: ['normal', '90%'],
 		},
 		'@font-face/font-named-instance': {
-			links: {
-				tr: '#font-named-instance',
-				dev: '#font-named-instance',
-			},
+			link: '#font-named-instance',
 			tests: ['auto', "'Grotesque'"],
 		},
 		'@font-face/font-display': {
-			links: {
-				tr: '#descdef-font-face-font-display',
-				dev: '#descdef-font-face-font-display',
-			},
+			link: '#descdef-font-face-font-display',
 			tests: ['auto', 'block', 'swap', 'fallback', 'optional'],
 		},
 		'@font-face/font-stretch': {
-			links: {
-				tr: '#descdef-font-face-font-stretch',
-				dev: '#descdef-font-face-font-stretch',
-			},
+			link: '#descdef-font-face-font-stretch',
 			tests: [
 				'auto',
 				'condensed normal',
 			],
 		},
 		'@font-face/font-style': {
-			links: {
-				tr: '#descdef-font-face-font-style',
-				dev: '#descdef-font-face-font-style',
-			},
+			link: '#descdef-font-face-font-style',
 			tests: [
 				'auto',
 				'left',
@@ -343,10 +244,7 @@ export default {
 			],
 		},
 		'@font-face/font-variation-settings': {
-			links: {
-				tr: '#descdef-font-face-font-variation-settings',
-				dev: '#descdef-font-face-font-variation-settings',
-			},
+			link: '#descdef-font-face-font-variation-settings',
 			tests: [
 				'normal',
 				'"wght" 2',
@@ -354,20 +252,14 @@ export default {
 			],
 		},
 		'@font-face/font-weight': {
-			links: {
-				tr: '#descdef-font-face-font-weight',
-				dev: '#descdef-font-face-font-weight',
-			},
+			link: '#descdef-font-face-font-weight',
 			tests: [
 				'auto',
 				'100 300',
 			],
 		},
 		'@font-face/src': {
-			links: {
-				tr: '#font-face-src-parsing',
-				dev: '#font-face-src-parsing',
-			},
+			link: '#font-face-src-parsing',
 			tests: [
 				'url("foo") format("woff") tech(features-opentype)',
 				'url("foo") format("woff") tech(features-graphite)',
@@ -385,18 +277,14 @@ export default {
 			],
 		},
 		'@font-feature-values/font-display': {
-			links: {
-				tr: '#font-display-font-feature-values',
-				dev: '#font-display-font-feature-values',
-			},
+			link: '#font-display-font-feature-values',
 			tests: ['auto', 'block', 'swap', 'fallback', 'optional'],
 		},
 	},
 	interfaces: {
 		CSSRule: {
+			link: '#om-fontfeaturevalues',
 			links: {
-				tr: '#om-fontfeaturevalues',
-				dev: '#om-fontfeaturevalues',
 				mdnGroup: 'DOM',
 			},
 			tests: ['FONT_FEATURE_VALUES_RULE'],
@@ -406,9 +294,8 @@ export default {
 			}
 		},
 		CSSFontFeatureValuesRule: {
+			link: '#om-fontfeaturevalues',
 			links: {
-				tr: '#om-fontfeaturevalues',
-				dev: '#om-fontfeaturevalues',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -429,9 +316,8 @@ export default {
 			}
 		},
 		CSSFontFeatureValuesMap: {
+			link: '#cssfontfeaturevaluesmap',
 			links: {
-				tr: '#cssfontfeaturevaluesmap',
-				dev: '#cssfontfeaturevaluesmap',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -452,9 +338,8 @@ export default {
 			},
 		},
 		CSSFontPaletteValuesRule: {
+			link: '#om-fontpalettevalues',
 			links: {
-				tr: '#om-fontpalettevalues',
-				dev: '#om-fontpalettevalues',
 				mdnGroup: 'DOM',
 			},
 			tests: [
