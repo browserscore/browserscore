@@ -27,8 +27,8 @@ export default class AbstractFeature {
 	get draftLink () {
 		let link = this.def.link ?? this.def.links?.dev ?? '';
 
-		if (link && this.#parent) {
-			return this.#parent.draftLink + link;
+		if (link) {
+			return (this.parent?.draftLink ?? '') + link;
 		}
 
 		return link;
@@ -37,8 +37,8 @@ export default class AbstractFeature {
 	get specLink () {
 		let link = this.def.link ?? this.def.links?.tr ?? '';
 
-		if (link && this.#parent) {
-			return this.#parent.specLink + link;
+		if (link) {
+			return (this.parent?.specLink ?? '') + link;
 		}
 
 		return link;
