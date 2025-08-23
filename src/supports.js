@@ -52,7 +52,7 @@ const Supports = {
 		this.property.cached[property] = false;
 		return {
 			success: false,
-			property: property,
+			property,
 		};
 	},
 
@@ -79,7 +79,7 @@ const Supports = {
 				return {
 					success: true,
 					prefix: this.prefixes[i],
-					propertyPrefix: propertyPrefix,
+					propertyPrefix,
 				};
 			}
 		}
