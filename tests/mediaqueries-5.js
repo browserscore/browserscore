@@ -1,18 +1,12 @@
 export default {
 	title: 'Media Queries Level 5',
-	links: {
-		tr: 'mediaqueries-5',
-		dev: 'mediaqueries-5',
-	},
+	link: 'mediaqueries-5',
 	status: {
 		stability: 'experimental',
 	},
 	'Media queries': {
 		'display-mode': {
-			links: {
-				tr: '#display-modes',
-				dev: '#display-modes',
-			},
+			link: '#display-modes',
 			tests: [
 				'(display-mode)',
 				'(display-mode: fullscreen)',
@@ -22,10 +16,7 @@ export default {
 			],
 		},
 		'prefers-reduced-motion': {
-			links: {
-				tr: '#prefers-reduced-motion',
-				dev: '#prefers-reduced-motion',
-			},
+			link: '#prefers-reduced-motion',
 			tests: [
 				'(prefers-reduced-motion)',
 				'(prefers-reduced-motion: no-preference)',
@@ -33,10 +24,7 @@ export default {
 			],
 		},
 		'prefers-reduced-transparency': {
-			links: {
-				tr: '#prefers-reduced-transparency',
-				dev: '#prefers-reduced-transparency',
-			},
+			link: '#prefers-reduced-transparency',
 			tests: [
 				'(prefers-reduced-transparency)',
 				'(prefers-reduced-transparency: no-preference)',
@@ -44,10 +32,7 @@ export default {
 			],
 		},
 		'prefers-contrast': {
-			links: {
-				tr: '#prefers-contrast',
-				dev: '#prefers-contrast',
-			},
+			link: '#prefers-contrast',
 			tests: [
 				'(prefers-contrast)',
 				'(prefers-contrast: no-preference)',
@@ -57,31 +42,19 @@ export default {
 			],
 		},
 		'prefers-color-scheme': {
-			links: {
-				tr: '#prefers-color-scheme',
-				dev: '#prefers-color-scheme',
-			},
+			link: '#prefers-color-scheme',
 			tests: ['(prefers-color-scheme)', '(prefers-color-scheme: light)', '(prefers-color-scheme: dark)'],
 		},
 		'prefers-reduced-data': {
-			links: {
-				tr: '#prefers-reduced-data',
-				dev: '#prefers-reduced-data',
-			},
+			link: '#prefers-reduced-data',
 			tests: ['(prefers-reduced-data)', '(prefers-reduced-data: no-preference)', '(prefers-reduced-data: reduce)'],
 		},
 		scripting: {
-			links: {
-				tr: '#scripting',
-				dev: '#scripting',
-			},
+			link: '#scripting',
 			tests: ['(scripting)', '(scripting: none)', '(scripting: initial-only)', '(scripting: enabled)'],
 		},
 		'environment-blending': {
-			links: {
-				tr: '#environment-blending',
-				dev: '#environment-blending',
-			},
+			link: '#environment-blending',
 			tests: [
 				'(environment-blending)',
 				'(environment-blending: opaque)',
@@ -90,45 +63,27 @@ export default {
 			],
 		},
 		'forced-colors': {
-			links: {
-				tr: '#forced-colors',
-				dev: '#forced-colors',
-			},
+			link: '#forced-colors',
 			tests: ['(forced-colors)', '(forced-colors: none)', '(forced-colors: active)'],
 		},
 		'dynamic-range': {
-			links: {
-				tr: '#dynamic-range',
-				dev: '#dynamic-range',
-			},
+			link: '#dynamic-range',
 			tests: ['(dynamic-range)', '(dynamic-range: standard)', '(dynamic-range: high)'],
 		},
 		'horizontal-viewport-segments': {
-			links: {
-				tr: '#mf-horizontal-viewport-segments',
-				dev: '#mf-horizontal-viewport-segments',
-			},
+			link: '#mf-horizontal-viewport-segments',
 			tests: ['(horizontal-viewport-segments)', '(horizontal-viewport-segments: 2)'],
 		},
 		'vertical-viewport-segments': {
-			links: {
-				tr: '#mf-vertical-viewport-segments',
-				dev: '#mf-vertical-viewport-segments',
-			},
+			link: '#mf-vertical-viewport-segments',
 			tests: ['(vertical-viewport-segments)', '(vertical-viewport-segments: 2)'],
 		},
 		'inverted-colors': {
-			links: {
-				tr: '#inverted',
-				dev: '#inverted',
-			},
+			link: '#inverted',
 			tests: ['(inverted-colors)', '(inverted-colors: none)', '(inverted-colors: inverted)'],
 		},
 		'nav-controls': {
-			links: {
-				tr: '#nav-controls',
-				dev: '#nav-controls',
-			},
+			link: '#nav-controls',
 			tests: ['(nav-controls)', '(nav-controls: none)', '(nav-controls: back)'],
 		},
 		'video-color-gamut': {

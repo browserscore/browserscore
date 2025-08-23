@@ -3,8 +3,8 @@ export default {
 	links: {
 		tr: 'pointerevents3',
 		dev: 'pointerevents',
-		devtype: 'github',
 	},
+	group: 'github',
 	status: {
 		stability: 'experimental',
 	},

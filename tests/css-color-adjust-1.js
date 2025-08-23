@@ -1,32 +1,20 @@
 export default {
 	title: 'CSS Color Adjustment Module Level 1',
-	links: {
-		tr: 'css-color-adjust-1',
-		dev: 'css-color-adjust-1',
-	},
+	link: 'css-color-adjust-1',
 	status: {
 		stability: 'stable',
 	},
 	properties: {
 		'print-color-adjust': {
-			links: {
-				tr: '#print-color-adjust',
-				dev: '#print-color-adjust',
-			},
+			link: '#print-color-adjust',
 			tests: ['economy', 'exact'],
 		},
 		'forced-color-adjust': {
-			links: {
-				tr: '#forced-color-adjust-prop',
-				dev: '#forced-color-adjust-prop',
-			},
+			link: '#forced-color-adjust-prop',
 			tests: ['auto', 'none', 'preserve-parent-color'],
 		},
 		'color-scheme': {
-			links: {
-				tr: '#color-scheme-prop',
-				dev: '#color-scheme-prop',
-			},
+			link: '#color-scheme-prop',
 			tests: [
 				'normal',
 				'light',

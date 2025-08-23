@@ -1,18 +1,12 @@
 export default {
 	title: 'CSS Shapes Module Level 1',
-	links: {
-		tr: 'css-shapes-1',
-		dev: 'css-shapes-1',
-	},
+	link: 'css-shapes-1',
 	status: {
 		stability: 'stable',
 	},
 	properties: {
 		'shape-outside': {
-			links: {
-				tr: '#shape-outside-property',
-				dev: '#shape-outside-property',
-			},
+			link: '#shape-outside-property',
 			tests: [
 				'none',
 				'inset(10% round 10% 40% 10% 40%)',
@@ -38,17 +32,11 @@ export default {
 			],
 		},
 		'shape-image-threshold': {
-			links: {
-				tr: '#shape-image-threshold-property',
-				dev: '#shape-image-threshold-property',
-			},
+			link: '#shape-image-threshold-property',
 			tests: ['0', '1', '0.0', '0.1'],
 		},
 		'shape-margin': {
-			links: {
-				tr: '#shape-margin-property',
-				dev: '#shape-margin-property',
-			},
+			link: '#shape-margin-property',
 			tests: ['0', '10px', '50%'],
 		},
 	},

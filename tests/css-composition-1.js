@@ -1,20 +1,14 @@
 export default {
 	title: 'Compositing and Blending Level 1',
-	links: {
-		tr: 'compositing-1',
-		dev: 'compositing-1',
-		devtype: 'fxtf',
-	},
+	link: 'compositing-1',
+	group: 'fxtf',
 	status: {
 		stability: 'stable',
 		'first-snapshot': 2015,
 	},
 	properties: {
 		'mix-blend-mode': {
-			links: {
-				tr: '#mix-blend-mode',
-				dev: '#mix-blend-mode',
-			},
+			link: '#mix-blend-mode',
 			tests: [
 				'normal',
 				'multiply',
@@ -35,17 +29,11 @@ export default {
 			],
 		},
 		isolation: {
-			links: {
-				tr: '#isolation',
-				dev: '#isolation',
-			},
+			link: '#isolation',
 			tests: ['auto', 'isolate'],
 		},
 		'background-blend-mode': {
-			links: {
-				tr: '#background-blend-mode',
-				dev: '#background-blend-mode',
-			},
+			link: '#background-blend-mode',
 			tests: [
 				'normal',
 				'multiply',

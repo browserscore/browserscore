@@ -1,19 +1,13 @@
 export default {
 	title: 'CSS Masking Module Level 1',
-	links: {
-		tr: 'css-masking-1',
-		dev: 'css-masking-1',
-		devtype: 'fxtf',
-	},
+	link: 'css-masking-1',
+	group: 'fxtf',
 	status: {
 		stability: 'stable',
 	},
 	properties: {
 		'clip-path': {
-			links: {
-				tr: '#the-clip-path',
-				dev: '#the-clip-path',
-			},
+			link: '#the-clip-path',
 			tests: [
 				"url('#clip')",
 				'inset(50%)',
@@ -33,17 +27,11 @@ export default {
 			],
 		},
 		'clip-rule': {
-			links: {
-				tr: '#the-clip-rule',
-				dev: '#the-clip-rule',
-			},
+			link: '#the-clip-rule',
 			tests: ['nonzero', 'evenodd'],
 		},
 		'mask-image': {
-			links: {
-				tr: '#the-mask-image',
-				dev: '#the-mask-image',
-			},
+			link: '#the-mask-image',
 			tests: [
 				'none',
 				'linear-gradient(black 0%, transparent 100%)',
@@ -53,17 +41,11 @@ export default {
 			],
 		},
 		'mask-mode': {
-			links: {
-				tr: '#the-mask-mode',
-				dev: '#the-mask-mode',
-			},
+			link: '#the-mask-mode',
 			tests: ['alpha', 'luminance', 'match-source', 'alpha, match-source'],
 		},
 		'mask-repeat': {
-			links: {
-				tr: '#the-mask-repeat',
-				dev: '#the-mask-repeat',
-			},
+			link: '#the-mask-repeat',
 			tests: [
 				'repeat-x',
 				'repeat-y',
@@ -92,10 +74,7 @@ export default {
 			],
 		},
 		'mask-position': {
-			links: {
-				tr: '#the-mask-position',
-				dev: '#the-mask-position',
-			},
+			link: '#the-mask-position',
 			tests: [
 				'left',
 				'center',
@@ -113,10 +92,7 @@ export default {
 			],
 		},
 		'mask-clip': {
-			links: {
-				tr: '#the-mask-clip',
-				dev: '#the-mask-clip',
-			},
+			link: '#the-mask-clip',
 			tests: [
 				'border-box',
 				'padding-box',
@@ -129,10 +105,7 @@ export default {
 			],
 		},
 		'mask-origin': {
-			links: {
-				tr: '#the-mask-origin',
-				dev: '#the-mask-origin',
-			},
+			link: '#the-mask-origin',
 			tests: [
 				'border-box',
 				'padding-box',
@@ -144,10 +117,7 @@ export default {
 			],
 		},
 		'mask-size': {
-			links: {
-				tr: '#the-mask-size',
-				dev: '#the-mask-size',
-			},
+			link: '#the-mask-size',
 			tests: [
 				'auto',
 				'10px',
@@ -163,17 +133,11 @@ export default {
 			],
 		},
 		'mask-composite': {
-			links: {
-				tr: '#the-mask-composite',
-				dev: '#the-mask-composite',
-			},
+			link: '#the-mask-composite',
 			tests: ['add', 'subtract', 'intersect', 'exclude'],
 		},
 		mask: {
-			links: {
-				tr: '#the-mask',
-				dev: '#the-mask',
-			},
+			link: '#the-mask',
 			tests: [
 				'top',
 				'space',
@@ -184,38 +148,23 @@ export default {
 			],
 		},
 		'mask-border-source': {
-			links: {
-				tr: '#the-mask-border-source',
-				dev: '#the-mask-border-source',
-			},
+			link: '#the-mask-border-source',
 			tests: ['none', 'url(image.png)'],
 		},
 		'mask-border-slice': {
-			links: {
-				tr: '#the-mask-border-slice',
-				dev: '#the-mask-border-slice',
-			},
+			link: '#the-mask-border-slice',
 			tests: ['0 fill', '50% fill', '1.1 fill', '0 1 fill', '0 1 2 fill', '0 1 2 3 fill'],
 		},
 		'mask-border-width': {
-			links: {
-				tr: '#the-mask-border-width',
-				dev: '#the-mask-border-width',
-			},
+			link: '#the-mask-border-width',
 			tests: ['auto', '10px', '50%', '1', '1.0', 'auto 1', 'auto 1 50%', 'auto 1 50% 1.1'],
 		},
 		'mask-border-outset': {
-			links: {
-				tr: '#the-mask-border-outset',
-				dev: '#the-mask-border-outset',
-			},
+			link: '#the-mask-border-outset',
 			tests: ['0', '1.1', '0 1', '0 1 2', '0 1 2 3'],
 		},
 		'mask-border-repeat': {
-			links: {
-				tr: '#the-mask-border-repeat',
-				dev: '#the-mask-border-repeat',
-			},
+			link: '#the-mask-border-repeat',
 			tests: [
 				'stretch',
 				'repeat',
@@ -240,10 +189,7 @@ export default {
 			],
 		},
 		'mask-border': {
-			links: {
-				tr: '#the-mask-border',
-				dev: '#the-mask-border',
-			},
+			link: '#the-mask-border',
 			tests: [
 				'url(image.png)',
 				'url(image.png) 10px',
@@ -255,10 +201,7 @@ export default {
 			],
 		},
 		'mask-type': {
-			links: {
-				tr: '#the-mask-type',
-				dev: '#the-mask-type',
-			},
+			link: '#the-mask-type',
 			tests: ['luminance', 'alpha'],
 		},
 	},

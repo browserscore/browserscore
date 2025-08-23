@@ -1,32 +1,20 @@
 export default {
 	title: 'CSS Pseudo-Elements Module Level 4',
-	links: {
-		tr: 'css-pseudo-4',
-		dev: 'css-pseudo-4',
-	},
+	link: 'css-pseudo-4',
 	status: {
 		stability: 'experimental',
 	},
 	selectors: {
 		'::first-letter::prefix': {
-			links: {
-				tr: '#first-letter-pseudo',
-				dev: '#first-letter-pseudo',
-			},
+			link: '#first-letter-pseudo',
 			tests: ['::first-letter::prefix'],
 		},
 		'::first-letter::suffix': {
-			links: {
-				tr: '#first-letter-pseudo',
-				dev: '#first-letter-pseudo',
-			},
+			link: '#first-letter-pseudo',
 			tests: ['::first-letter::suffix'],
 		},
 		'::selection': {
-			links: {
-				tr: '#selectordef-selection',
-				dev: '#selectordef-selection',
-			},
+			link: '#selectordef-selection',
 			tests: ['::selection'],
 		},
 		'::search-text': {
@@ -39,31 +27,19 @@ export default {
 			],
 		},
 		'::target-text': {
-			links: {
-				tr: '#selectordef-target-text',
-				dev: '#selectordef-target-text',
-			},
+			link: '#selectordef-target-text',
 			tests: ['::target-text'],
 		},
 		'::spelling-error': {
-			links: {
-				tr: '#selectordef-spelling-error',
-				dev: '#selectordef-spelling-error',
-			},
+			link: '#selectordef-spelling-error',
 			tests: ['::spelling-error'],
 		},
 		'::grammar-error': {
-			links: {
-				tr: '#selectordef-grammar-error',
-				dev: '#selectordef-grammar-error',
-			},
+			link: '#selectordef-grammar-error',
 			tests: ['::grammar-error'],
 		},
 		'::marker': {
-			links: {
-				tr: '#marker-pseudo',
-				dev: '#marker-pseudo',
-			},
+			link: '#marker-pseudo',
 			tests: [
 				'::marker',
 				// Made ::before::marker and ::after::marker valid: https://github.com/w3c/csswg-drafts/issues/1793
@@ -72,18 +48,12 @@ export default {
 			],
 		},
 		'::placeholder': {
-			links: {
-				tr: '#placeholder-pseudo',
-				dev: '#placeholder-pseudo',
-			},
+			link: '#placeholder-pseudo',
 			tests: ['::placeholder'],
 		},
 		// Element-backed Pseudo-Elements
 		'::file-selector-button': {
-			links: {
-				tr: '#file-selector-button-pseudo',
-				dev: '#file-selector-button-pseudo',
-			},
+			link: '#file-selector-button-pseudo',
 			tests: ['::file-selector-button'],
 		},
 		'::details-content': {
@@ -117,9 +87,8 @@ export default {
 	},
 	interfaces: {
 		Element: {
+			link: '#window-interface',
 			links: {
-				tr: '#window-interface',
-				dev: '#window-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['pseudo'],
@@ -128,9 +97,8 @@ export default {
 			},
 		},
 		CSSPseudoElement: {
+			link: '#CSSPseudoElement-interface',
 			links: {
-				tr: '#CSSPseudoElement-interface',
-				dev: '#CSSPseudoElement-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['type', 'element', 'parent', 'pseudo'],

@@ -11,45 +11,27 @@ export default {
 	},
 	selectors: {
 		'Universal selector': {
-			links: {
-				tr: '#universal-selector',
-				dev: '#universal-selector',
-			},
+			link: '#universal-selector',
 			tests: '*',
 		},
 		'Type selector': {
-			links: {
-				tr: '#type-selectors',
-				dev: '#type-selectors',
-			},
+			link: '#type-selectors',
 			tests: 'h1',
 		},
 		'Descendant selector': {
-			links: {
-				tr: '#descendant-selectors',
-				dev: '#descendant-selectors',
-			},
+			link: '#descendant-selectors',
 			tests: 'div p',
 		},
 		'Child selector': {
-			links: {
-				tr: '#child-selectors',
-				dev: '#child-selectors',
-			},
+			link: '#child-selectors',
 			tests: 'div > p',
 		},
 		'Adjacent sibling selector': {
-			links: {
-				tr: '#adjacent-selectors',
-				dev: '#adjacent-selectors',
-			},
+			link: '#adjacent-selectors',
 			tests: 'div + p',
 		},
 		'Attribute selectors': {
-			links: {
-				tr: '#attribute-selectors',
-				dev: '#attribute-selectors',
-			},
+			link: '#attribute-selectors',
 			tests: [
 				'[title]',
 				'[title=example]',
@@ -61,80 +43,47 @@ export default {
 			],
 		},
 		'Class selector': {
-			links: {
-				tr: '#class-html',
-				dev: '#class-html',
-			},
+			link: '#class-html',
 			tests: ['.class'],
 		},
 		'ID selector': {
-			links: {
-				tr: '#id-selectors',
-				dev: '#id-selectors',
-			},
+			link: '#id-selectors',
 			tests: '#id',
 		},
 		':first-child': {
-			links: {
-				tr: '#first-child',
-				dev: '#first-child',
-			},
+			link: '#first-child',
 			tests: ':first-child',
 		},
 		':link': {
-			links: {
-				tr: '#link-pseudo-classes',
-				dev: '#link-pseudo-classes',
-			},
+			link: '#link-pseudo-classes',
 			tests: ':link',
 		},
 		':visited': {
-			links: {
-				tr: '#link-pseudo-classes',
-				dev: '#link-pseudo-classes',
-			},
+			link: '#link-pseudo-classes',
 			tests: ':visited',
 		},
 		':hover': {
-			links: {
-				tr: '#dynamic-pseudo-classes',
-				dev: '#dynamic-pseudo-classes',
-			},
+			link: '#dynamic-pseudo-classes',
 			tests: ':hover',
 		},
 		':active': {
-			links: {
-				tr: '#dynamic-pseudo-classes',
-				dev: '#dynamic-pseudo-classes',
-			},
+			link: '#dynamic-pseudo-classes',
 			tests: ':active',
 		},
 		':focus': {
-			links: {
-				tr: '#dynamic-pseudo-classes',
-				dev: '#dynamic-pseudo-classes',
-			},
+			link: '#dynamic-pseudo-classes',
 			tests: ':focus',
 		},
 		':lang()': {
-			links: {
-				tr: '#lang',
-				dev: '#lang',
-			},
+			link: '#lang',
 			tests: [':lang(en)', ':lang(en-US)'],
 		},
 		':first-line': {
-			links: {
-				tr: '#first-line-pseudo',
-				dev: '#first-line-pseudo',
-			},
+			link: '#first-line-pseudo',
 			tests: ':first-line',
 		},
 		':first-letter': {
-			links: {
-				tr: '#first-letter',
-				dev: '#first-letter',
-			},
+			link: '#first-letter',
 			tests: ':first-letter',
 		},
 	},

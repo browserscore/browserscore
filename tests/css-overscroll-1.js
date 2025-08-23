@@ -1,9 +1,6 @@
 export default {
 	title: 'CSS Overscroll Behavior Module Level 1',
-	links: {
-		tr: 'css-overscroll-1',
-		dev: 'css-overscroll-1',
-	},
+	link: 'css-overscroll-1',
 	status: {
 		stability: 'experimental',
 	},

@@ -1,19 +1,13 @@
 export default {
 	title: 'Scroll-driven Animations',
-	links: {
-		tr: 'scroll-animations-1',
-		dev: 'scroll-animations-1',
-	},
+	link: 'scroll-animations-1',
 	status: {
 		stability: 'experimental',
 	},
 	'values': {
 		'properties': ['animation-timeline'],
 		'scroll()': {
-			links: {
-				tr: '#scroll-notation',
-				dev: '#scroll-notation',
-			},
+			link: '#scroll-notation',
 			tests: [
 				'scroll()',
 				'scroll(block)',
@@ -32,10 +26,7 @@ export default {
 			],
 		},
 		'view()': {
-			links: {
-				tr: '#view-notation',
-				dev: '#view-notation',
-			},
+			link: '#view-notation',
 			tests: [
 				'view()',
 				'view(block)',
@@ -56,10 +47,7 @@ export default {
 	},
 	properties: {
 		'animation-range': {
-			links: {
-				tr: '#animation-range',
-				dev: '#animation-range',
-			},
+			link: '#animation-range',
 			tests: [
 				'normal',
 				'500px',
@@ -81,10 +69,7 @@ export default {
 			],
 		},
 		'animation-range-start': {
-			links: {
-				tr: '#animation-range-start',
-				dev: '#animation-range-start',
-			},
+			link: '#animation-range-start',
 			tests: [
 				'normal',
 				'500px',
@@ -101,10 +86,7 @@ export default {
 			],
 		},
 		'animation-range-end': {
-			links: {
-				tr: '#animation-range-end',
-				dev: '#animation-range-end',
-			},
+			link: '#animation-range-end',
 			tests: [
 				'normal',
 				'500px',
@@ -121,10 +103,7 @@ export default {
 			],
 		},
 		'scroll-timeline': {
-			links: {
-				tr: '#scroll-timeline',
-				dev: '#scroll-timeline',
-			},
+			link: '#scroll-timeline',
 			tests: [
 				'none',
 				'--some-timeline-name',
@@ -139,10 +118,7 @@ export default {
 			],
 		},
 		'scroll-timeline-axis': {
-			links: {
-				tr: '#scroll-timeline-axis',
-				dev: '#scroll-timeline-axis',
-			},
+			link: '#scroll-timeline-axis',
 			tests: [
 				'block',
 				'inline',
@@ -152,10 +128,7 @@ export default {
 			],
 		},
 		'scroll-timeline-name': {
-			links: {
-				tr: '#scroll-timeline-name',
-				dev: '#scroll-timeline-name',
-			},
+			link: '#scroll-timeline-name',
 			tests: [
 				'none',
 				'--some-timeline-name',
@@ -164,10 +137,7 @@ export default {
 			],
 		},
 		'view-timeline': {
-			links: {
-				tr: '#view-timeline',
-				dev: '#view-timeline',
-			},
+			link: '#view-timeline',
 			tests: [
 				'none',
 				'--some-timeline-name',
@@ -182,10 +152,7 @@ export default {
 			],
 		},
 		'view-timeline-axis': {
-			links: {
-				tr: '#view-timeline-axis',
-				dev: '#view-timeline-axis',
-			},
+			link: '#view-timeline-axis',
 			tests: [
 				'block',
 				'inline',
@@ -195,10 +162,7 @@ export default {
 			],
 		},
 		'view-timeline-inset': {
-			links: {
-				tr: '#view-timeline-inset',
-				dev: '#view-timeline-inset',
-			},
+			link: '#view-timeline-inset',
 			tests: [
 				'auto',
 				'100px',
@@ -209,10 +173,7 @@ export default {
 			],
 		},
 		'view-timeline-name': {
-			links: {
-				tr: '#view-timeline-name',
-				dev: '#view-timeline-name',
-			},
+			link: '#view-timeline-name',
 			tests: [
 				'none',
 				'--some-timeline-name',
@@ -221,10 +182,7 @@ export default {
 			],
 		},
 		'timeline-scope': {
-			links: {
-				tr: '#timeline-scope',
-				dev: '#timeline-scope',
-			},
+			link: '#timeline-scope',
 			tests: [
 				'none',
 				'--timeline-scope',
@@ -234,9 +192,8 @@ export default {
 	},
 	interfaces: {
 		ScrollTimeline: {
+			link: '#scrolltimeline-interface',
 			links: {
-				tr: '#scrolltimeline-interface',
-				dev: '#scrolltimeline-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['source', 'axis', 'currentTime'],
@@ -247,9 +204,8 @@ export default {
 			}
 		},
 		ViewTimeline: {
+			link: '#viewtimeline-interface',
 			links: {
-				tr: '#viewtimeline-interface',
-				dev: '#viewtimeline-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['subject', 'startOffset', 'endOffset', 'currentTime'],

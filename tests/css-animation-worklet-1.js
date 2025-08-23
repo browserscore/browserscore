@@ -1,39 +1,27 @@
 export default {
 	title: 'CSS Animation Worklet Level 1',
-	links: {
-		tr: 'css-animation-worklet-1',
-		dev: 'css-animation-worklet-1',
-		devtype: 'houdini',
-	},
+	group: 'houdini',
+	link: 'css-animation-worklet-1',
 	status: {
 		stability: 'experimental',
 	},
 	interfaces: {
 		CSS: {
-			links: {
-				tr: '#animation-worklet-desc',
-				dev: '#animation-worklet-desc',
-			},
+			link: '#animation-worklet-desc',
 			tests: ['animationWorklet'],
 			interface: function() {
 				return CSS;
 			},
 		},
 		Worklet: {
-			links: {
-				tr: '#animation-worklet-desc',
-				dev: '#animation-worklet-desc',
-			},
+			link: '#animation-worklet-desc',
 			tests: ['addModule'],
 			interface: function() {
 				return CSS.animationWorklet;
 			},
 		},
 		WorkletAnimation: {
-			links: {
-				tr: '#worklet-animation-interface',
-				dev: '#worklet-animation-interface',
-			},
+			link: '#worklet-animation-interface',
 			tests: ['animatorName'],
 			interface: function() {
 				return new WorkletAnimation('Animator', new KeyframeEffect(

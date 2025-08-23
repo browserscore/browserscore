@@ -1,54 +1,33 @@
 export default {
 	title: 'CSS Basic User Interface Module Level 3 (CSS3 UI)',
-	links: {
-		tr: 'css-ui-3',
-		dev: 'css-ui-3',
-	},
+	link: 'css-ui-3',
 	status: {
 		stability: 'stable',
 		'first-snapshot': 2015,
 	},
 	properties: {
 		'box-sizing': {
-			links: {
-				tr: '#box-sizing',
-				dev: '#box-sizing',
-			},
+			link: '#box-sizing',
 			tests: ['border-box', 'content-box'],
 		},
 		'outline-style': {
-			links: {
-				tr: '#outline-style',
-				dev: '#outline-style',
-			},
+			link: '#outline-style',
 			tests: ['auto'],
 		},
 		'outline-offset': {
-			links: {
-				tr: '#outline-offset',
-				dev: '#outline-offset',
-			},
+			link: '#outline-offset',
 			tests: ['-5px', '0', '5px'],
 		},
 		resize: {
-			links: {
-				tr: '#resize',
-				dev: '#resize',
-			},
+			link: '#resize',
 			tests: ['none', 'both', 'horizontal', 'vertical'],
 		},
 		'text-overflow': {
-			links: {
-				tr: '#text-overflow',
-				dev: '#text-overflow',
-			},
+			link: '#text-overflow',
 			tests: ['clip', 'ellipsis'],
 		},
 		cursor: {
-			links: {
-				tr: '#cursor',
-				dev: '#cursor',
-			},
+			link: '#cursor',
 			tests: [
 				'url(foo.png) 2 2, auto',
 				'none',
@@ -73,10 +52,7 @@ export default {
 			],
 		},
 		'caret-color': {
-			links: {
-				tr: '#caret-color',
-				dev: '#caret-color',
-			},
+			link: '#caret-color',
 			tests: ['auto', 'green'],
 		},
 	},

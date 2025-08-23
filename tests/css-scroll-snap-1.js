@@ -1,18 +1,12 @@
 export default {
 	title: 'CSS Scroll Snap Module Level 1',
-	links: {
-		tr: 'css-scroll-snap-1',
-		dev: 'css-scroll-snap-1',
-	},
+	link: 'css-scroll-snap-1',
 	status: {
 		stability: 'stable',
 	},
 	properties: {
 		'scroll-margin': {
-			links: {
-				tr: '#scroll-margin',
-				dev: '#scroll-margin',
-			},
+			link: '#scroll-margin',
 			tests: [
 				'0px',
 				'6px 5px',
@@ -25,80 +19,47 @@ export default {
 			],
 		},
 		'scroll-margin-block': {
-			links: {
-				tr: '#margin-longhands-logical',
-				dev: '#margin-longhands-logical',
-			},
+			link: '#margin-longhands-logical',
 			tests: ['10px', '10px 10px'],
 		},
 		'scroll-margin-block-end': {
-			links: {
-				tr: '#margin-longhands-logical',
-				dev: '#margin-longhands-logical',
-			},
+			link: '#margin-longhands-logical',
 			tests: ['10px'],
 		},
 		'scroll-margin-block-start': {
-			links: {
-				tr: '#margin-longhands-logical',
-				dev: '#margin-longhands-logical',
-			},
+			link: '#margin-longhands-logical',
 			tests: ['10px'],
 		},
 		'scroll-margin-bottom': {
-			links: {
-				tr: '#margin-longhands-physical',
-				dev: '#margin-longhands-physical',
-			},
+			link: '#margin-longhands-physical',
 			tests: ['10px'],
 		},
 		'scroll-margin-inline': {
-			links: {
-				tr: '#margin-longhands-logical',
-				dev: '#margin-longhands-logical',
-			},
+			link: '#margin-longhands-logical',
 			tests: ['10px', '10px 10px'],
 		},
 		'scroll-margin-inline-start': {
-			links: {
-				tr: '#margin-longhands-logical',
-				dev: '#margin-longhands-logical',
-			},
+			link: '#margin-longhands-logical',
 			tests: ['10px'],
 		},
 		'scroll-margin-inline-end': {
-			links: {
-				tr: '#margin-longhands-logical',
-				dev: '#margin-longhands-logical',
-			},
+			link: '#margin-longhands-logical',
 			tests: ['10px'],
 		},
 		'scroll-margin-left': {
-			links: {
-				tr: '#margin-longhands-physical',
-				dev: '#margin-longhands-physical',
-			},
+			link: '#margin-longhands-physical',
 			tests: ['10px'],
 		},
 		'scroll-margin-right': {
-			links: {
-				tr: '#margin-longhands-physical',
-				dev: '#margin-longhands-physical',
-			},
+			link: '#margin-longhands-physical',
 			tests: ['10px'],
 		},
 		'scroll-margin-top': {
-			links: {
-				tr: '#margin-longhands-physical',
-				dev: '#margin-longhands-physical',
-			},
+			link: '#margin-longhands-physical',
 			tests: ['10px'],
 		},
 		'scroll-padding': {
-			links: {
-				tr: '#scroll-padding',
-				dev: '#scroll-padding',
-			},
+			link: '#scroll-padding',
 			tests: [
 				'auto',
 				'0px',
@@ -115,80 +76,47 @@ export default {
 			],
 		},
 		'scroll-padding-block': {
-			links: {
-				tr: '#padding-longhands-logical',
-				dev: '#padding-longhands-logical',
-			},
+			link: '#padding-longhands-logical',
 			tests: ['10px', '50%', '10px 50%', '50% 50%'],
 		},
 		'scroll-padding-block-end': {
-			links: {
-				tr: '#padding-longhands-logical',
-				dev: '#padding-longhands-logical',
-			},
+			link: '#padding-longhands-logical',
 			tests: ['10px', '50%'],
 		},
 		'scroll-padding-block-start': {
-			links: {
-				tr: '#padding-longhands-logical',
-				dev: '#padding-longhands-logical',
-			},
+			link: '#padding-longhands-logical',
 			tests: ['10px', '50%'],
 		},
 		'scroll-padding-bottom': {
-			links: {
-				tr: '#padding-longhands-physical',
-				dev: '#padding-longhands-physical',
-			},
+			link: '#padding-longhands-physical',
 			tests: ['10px', '50%'],
 		},
 		'scroll-padding-inline': {
-			links: {
-				tr: '#padding-longhands-logical',
-				dev: '#padding-longhands-logical',
-			},
+			link: '#padding-longhands-logical',
 			tests: ['10px', '50%', '10px 50%', '50% 50%'],
 		},
 		'scroll-padding-inline-end': {
-			links: {
-				tr: '#padding-longhands-logical',
-				dev: '#padding-longhands-logical',
-			},
+			link: '#padding-longhands-logical',
 			tests: ['10px', '50%'],
 		},
 		'scroll-padding-inline-start': {
-			links: {
-				tr: '#padding-longhands-logical',
-				dev: '#padding-longhands-logical',
-			},
+			link: '#padding-longhands-logical',
 			tests: ['10px', '50%'],
 		},
 		'scroll-padding-left': {
-			links: {
-				tr: '#padding-longhands-physical',
-				dev: '#padding-longhands-physical',
-			},
+			link: '#padding-longhands-physical',
 			tests: ['10px', '50%'],
 		},
 		'scroll-padding-right': {
-			links: {
-				tr: '#padding-longhands-physical',
-				dev: '#padding-longhands-physical',
-			},
+			link: '#padding-longhands-physical',
 			tests: ['10px', '50%'],
 		},
 		'scroll-padding-top': {
-			links: {
-				tr: '#padding-longhands-physical',
-				dev: '#padding-longhands-physical',
-			},
+			link: '#padding-longhands-physical',
 			tests: ['10px', '50%'],
 		},
 		'scroll-snap-align': {
-			links: {
-				tr: '#scroll-snap-align',
-				dev: '#scroll-snap-align',
-			},
+			link: '#scroll-snap-align',
 			tests: [
 				'none',
 				'start',
@@ -202,17 +130,11 @@ export default {
 			],
 		},
 		'scroll-snap-stop': {
-			links: {
-				tr: '#scroll-snap-stop',
-				dev: '#scroll-snap-stop',
-			},
+			link: '#scroll-snap-stop',
 			tests: ['normal', 'always'],
 		},
 		'scroll-snap-type': {
-			links: {
-				tr: '#scroll-snap-type',
-				dev: '#scroll-snap-type',
-			},
+			link: '#scroll-snap-type',
 			tests: [
 				'none',
 				'x mandatory',

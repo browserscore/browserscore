@@ -9,10 +9,7 @@ export default {
 	},
 	properties: {
 		'zoom': {
-			links: {
-				tr: '#zoom-property',
-				dev: '#zoom-property',
-			},
+			link: '#zoom-property',
 			tests: ['0', '1', '1.5', '110%'],
 		},
 	},

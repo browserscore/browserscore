@@ -1,18 +1,12 @@
 export default {
 	title: 'CSS View Transitions Module Level 2',
-	links: {
-		tr: 'css-view-transitions-2',
-		dev: 'css-view-transitions-2',
-	},
+	link: 'css-view-transitions-2',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'view-transition-class': {
-			links: {
-				tr: '#view-transition-class-prop',
-				dev: '#view-transition-class-prop',
-			},
+			link: '#view-transition-class-prop',
 			tests: [
 				'none',
 				'test-view-transition',
@@ -20,10 +14,7 @@ export default {
 			],
 		},
 		'view-transition-group': {
-			links: {
-				tr: '#view-transition-group-prop',
-				dev: '#view-transition-group-prop',
-			},
+			link: '#view-transition-group-prop',
 			tests: [
 				'normal',
 				'contain',
@@ -32,10 +23,7 @@ export default {
 			],
 		},
 		'view-transition-name': {
-			links: {
-				tr: '#additions-to-vt-name',
-				dev: '#additions-to-vt-name',
-			},
+			link: '#additions-to-vt-name',
 			tests: [
 				'auto',
 			],
@@ -43,29 +31,20 @@ export default {
 	},
 	selectors: {
 		':active-view-transition': {
-			links: {
-				tr: '#the-active-view-transition-pseudo',
-				dev: '#the-active-view-transition-pseudo',
-			},
+			link: '#the-active-view-transition-pseudo',
 			tests: [
 				':active-view-transition',
 			],
 		},
 		':active-view-transition-type()': {
-			links: {
-				tr: '#the-active-view-transition-type-pseudo',
-				dev: '#the-active-view-transition-type-pseudo',
-			},
+			link: '#the-active-view-transition-type-pseudo',
 			tests: [
 				':active-view-transition(--foo)',
 				':active-view-transition(--foo, --bar)'
 			],
 		},
 		'::view-transition-group()': {
-			links: {
-				tr: '#pseudo-element-class-additions',
-				dev: '#pseudo-element-class-additions',
-			},
+			link: '#pseudo-element-class-additions',
 			tests: [
 				'::view-transition-group(*.x)',
 				'::view-transition-group(*.x.y)',
@@ -76,10 +55,7 @@ export default {
 			],
 		},
 		'::view-transition-image-pair()': {
-			links: {
-				tr: '#pseudo-element-class-additions',
-				dev: '#pseudo-element-class-additions',
-			},
+			link: '#pseudo-element-class-additions',
 			tests: [
 				'::view-transition-image-pair(*.x)',
 				'::view-transition-image-pair(*.x.y)',
@@ -90,10 +66,7 @@ export default {
 			],
 		},
 		'::view-transition-old()': {
-			links: {
-				tr: '#pseudo-element-class-additions',
-				dev: '#pseudo-element-class-additions',
-			},
+			link: '#pseudo-element-class-additions',
 			tests: [
 				'::view-transition-old(*.x)',
 				'::view-transition-old(*.x.y)',
@@ -104,10 +77,7 @@ export default {
 			],
 		},
 		'::view-transition-new()': {
-			links: {
-				tr: '#pseudo-element-class-additions',
-				dev: '#pseudo-element-class-additions',
-			},
+			link: '#pseudo-element-class-additions',
 			tests: [
 				'::view-transition-new(*.x)',
 				'::view-transition-new(*.x.y)',
@@ -118,10 +88,7 @@ export default {
 			],
 		},
 		'::view-transition-group-children': {
-			links: {
-				tr: '#view-transition-group-children-pseudo',
-				dev: '#view-transition-group-children-pseudo',
-			},
+			link: '#view-transition-group-children-pseudo',
 			tests: [
 				'::view-transition-group-children(*)',
 				'::view-transition-group-children(*.x)',
@@ -136,10 +103,7 @@ export default {
 	},
 	'@rules': {
 		'@view-transition': {
-			links: {
-				tr: '#view-transition-rule',
-				dev: '#view-transition-rule',
-			},
+			link: '#view-transition-rule',
 			tests: [
 				"@view-transition {\n  navigation: auto;\n}",
 				"@view-transition {\n  navigation: none;\n}",
@@ -151,9 +115,8 @@ export default {
 	},
 	interfaces: {
 		CSSViewTransitionRule: {
+			link: '#navgation-behavior-rule-interface',
 			links: {
-				tr: '#navgation-behavior-rule-interface',
-				dev: '#navgation-behavior-rule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -169,9 +132,8 @@ export default {
 			},
 		},
 		ViewTransition: {
+			link: '#view-transitions-extension-types',
 			links: {
-				tr: '#view-transitions-extension-types',
-				dev: '#view-transitions-extension-types',
 				mdnGroup: 'DOM',
 			},
 			tests: ['types'],

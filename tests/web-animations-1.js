@@ -1,17 +1,13 @@
 export default {
 	title: 'Web Animations',
-	links: {
-		tr: 'web-animations-1',
-		dev: 'web-animations-1',
-	},
+	link: 'web-animations-1',
 	status: {
 		stability: 'experimental',
 	},
 	interfaces: {
 		Animation: {
+			link: '#the-animation-interface',
 			links: {
-				tr: '#the-animation-interface',
-				dev: '#the-animation-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -55,9 +51,8 @@ export default {
 			}
 		},
 		AnimationTimeline: {
+			link: '#the-animationtimeline-interface',
 			links: {
-				tr: '#the-animationtimeline-interface',
-				dev: '#the-animationtimeline-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['currentTime'],
@@ -66,9 +61,8 @@ export default {
 			}
 		},
 		AnimationEffect: {
+			link: '#animationeffect',
 			links: {
-				tr: '#animationeffect',
-				dev: '#animationeffect',
 				mdnGroup: 'DOM',
 			},
 			tests: ['getTiming', 'getComputedTiming', 'updateTiming'],
@@ -85,9 +79,8 @@ export default {
 			}
 		},
 		KeyframeEffect: {
+			link: '#the-keyframeeffect-interface',
 			links: {
-				tr: '#the-keyframeeffect-interface',
-				dev: '#the-keyframeeffect-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: [
@@ -113,9 +106,8 @@ export default {
 			}
 		},
 		Element: {
+			link: '#the-animatable-interface-mixin',
 			links: {
-				tr: '#the-animatable-interface-mixin',
-				dev: '#the-animatable-interface-mixin',
 				mdnGroup: 'DOM',
 			},
 			tests: ['animate', 'getAnimations'],
@@ -124,9 +116,8 @@ export default {
 			}
 		},
 		Document: {
+			link: '#extensions-to-the-documentorshadowroot-interface-mixin',
 			links: {
-				tr: '#extensions-to-the-documentorshadowroot-interface-mixin',
-				dev: '#extensions-to-the-documentorshadowroot-interface-mixin',
 				mdnGroup: 'DOM',
 			},
 			tests: ['timeline', 'getAnimations'],
@@ -135,9 +126,8 @@ export default {
 			}
 		},
 		DocumentTimeline: {
+			link: '#the-documenttimeline-interface',
 			links: {
-				tr: '#the-documenttimeline-interface',
-				dev: '#the-documenttimeline-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['currentTime'],
@@ -146,9 +136,8 @@ export default {
 			}
 		},
 		AnimationPlaybackEvent: {
+			link: '#the-animationplaybackevent-interface',
 			links: {
-				tr: '#the-animationplaybackevent-interface',
-				dev: '#the-animationplaybackevent-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['currentTime', 'timelineTime'],

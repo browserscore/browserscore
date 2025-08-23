@@ -1,18 +1,12 @@
 export default {
 	title: 'CSS Box Alignment Module Level 3',
-	links: {
-		tr: 'css-align-3',
-		dev: 'css-align-3',
-	},
+	link: 'css-align-3',
 	status: {
 		stability: 'stable',
 	},
 	properties: {
 		'align-self': {
-			links: {
-				tr: '#align-self-property',
-				dev: '#align-self-property',
-			},
+			link: '#align-self-property',
 			tests: [
 				'auto',
 				'normal',
@@ -30,10 +24,7 @@ export default {
 			],
 		},
 		'align-items': {
-			links: {
-				tr: '#align-items-property',
-				dev: '#align-items-property',
-			},
+			link: '#align-items-property',
 			tests: [
 				'normal',
 				'stretch',
@@ -50,10 +41,7 @@ export default {
 			],
 		},
 		'align-content': {
-			links: {
-				tr: '#align-justify-content',
-				dev: '#align-justify-content',
-			},
+			link: '#align-justify-content',
 			tests: [
 				'normal',
 				'baseline',
@@ -73,10 +61,7 @@ export default {
 			],
 		},
 		'justify-self': {
-			links: {
-				tr: '#justify-self-property',
-				dev: '#justify-self-property',
-			},
+			link: '#justify-self-property',
 			tests: [
 				'auto',
 				'normal',
@@ -97,10 +82,7 @@ export default {
 			],
 		},
 		'justify-items': {
-			links: {
-				tr: '#justify-items-property',
-				dev: '#justify-items-property',
-			},
+			link: '#justify-items-property',
 			tests: [
 				'normal',
 				'stretch',
@@ -124,10 +106,7 @@ export default {
 			],
 		},
 		'justify-content': {
-			links: {
-				tr: '#align-justify-content',
-				dev: '#align-justify-content',
-			},
+			link: '#align-justify-content',
 			tests: [
 				'normal',
 				'space-between',
@@ -147,10 +126,7 @@ export default {
 			],
 		},
 		'place-content': {
-			links: {
-				tr: '#place-content',
-				dev: '#place-content',
-			},
+			link: '#place-content',
 			tests: [
 				'normal',
 				'baseline',
@@ -188,10 +164,7 @@ export default {
 			],
 		},
 		'place-items': {
-			links: {
-				tr: '#place-items-property',
-				dev: '#place-items-property',
-			},
+			link: '#place-items-property',
 			tests: [
 				'normal',
 				'stretch',
@@ -232,24 +205,15 @@ export default {
 			],
 		},
 		gap: {
-			links: {
-				tr: '#gap-shorthand',
-				dev: '#gap-shorthand',
-			},
+			link: '#gap-shorthand',
 			tests: ['0 0', '0 1em', '1em', '1em 1em'],
 		},
 		'column-gap': {
-			links: {
-				tr: '#column-row-gap',
-				dev: '#column-row-gap',
-			},
+			link: '#column-row-gap',
 			tests: ['0', '1em', 'normal'],
 		},
 		'row-gap': {
-			links: {
-				tr: '#column-row-gap',
-				dev: '#column-row-gap',
-			},
+			link: '#column-row-gap',
 			tests: ['0', '1em'],
 		},
 	},

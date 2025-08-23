@@ -2,8 +2,8 @@ export default {
 	title: 'MathML Core',
 	links: {
 		dev: 'mathml-core/#css-extensions-for-math-layout',
-		devtype: 'math',
 	},
+	group: 'math',
 	status: {
 		stability: 'experimental',
 	},

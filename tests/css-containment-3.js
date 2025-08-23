@@ -1,18 +1,12 @@
 export default {
 	title: 'CSS Containment Module Level 3',
-	links: {
-		tr: 'css-contain-3',
-		dev: 'css-contain-3',
-	},
+	link: 'css-contain-3',
 	status: {
 		stability: 'experimental',
 	},
 	'@rules': {
 		'@container': {
-			links: {
-				tr: '#container-rule',
-				dev: '#container-rule',
-			},
+			link: '#container-rule',
 			tests: [
 				'@container (min-width: 150px) { div { margin: 10px } }',
 				'@container (max-width: 1000px) { div { margin: 10px } }',
@@ -35,60 +29,39 @@ export default {
 	values: {
 		properties: ['width'],
 		cqw: {
-			links: {
-				tr: '#container-lengths',
-				dev: '#container-lengths',
-				mdn: 'length',
-			},
+			link: '#container-lengths',
+			mdn: 'length',
 			tests: '5cqw',
 		},
 		cqh: {
-			links: {
-				tr: '#container-lengths',
-				dev: '#container-lengths',
-				mdn: 'length',
-			},
+			link: '#container-lengths',
+			mdn: 'length',
 			tests: '5cqh',
 		},
 		cqi: {
-			links: {
-				tr: '#container-lengths',
-				dev: '#container-lengths',
-				mdn: 'length',
-			},
+			link: '#container-lengths',
+			mdn: 'length',
 			tests: '5cqi',
 		},
 		cqb: {
-			links: {
-				tr: '#container-lengths',
-				dev: '#container-lengths',
-				mdn: 'length',
-			},
+			link: '#container-lengths',
+			mdn: 'length',
 			tests: '5cqb',
 		},
 		cqmin: {
-			links: {
-				tr: '#container-lengths',
-				dev: '#container-lengths',
-				mdn: 'length',
-			},
+			link: '#container-lengths',
+			mdn: 'length',
 			tests: '5cqmin',
 		},
 		cqmax: {
-			links: {
-				tr: '#container-lengths',
-				dev: '#container-lengths',
-				mdn: 'length',
-			},
+			link: '#container-lengths',
+			mdn: 'length',
 			tests: '5cqmax',
 		},
 	},
 	properties: {
 		'container-type': {
-			links: {
-				tr: '#container-type',
-				dev: '#container-type',
-			},
+			link: '#container-type',
 			tests: [
 				'normal',
 				'size',
@@ -96,17 +69,11 @@ export default {
 			],
 		},
 		'container-name': {
-			links: {
-				tr: '#container-name',
-				dev: '#container-name',
-			},
+			link: '#container-name',
 			tests: ['none', 'x', 'x y'],
 		},
 		container: {
-			links: {
-				tr: '#container-shorthand',
-				dev: '#container-shorthand',
-			},
+			link: '#container-shorthand',
 			tests: [
 				'none',
 				'x / normal',
@@ -118,9 +85,8 @@ export default {
 	},
 	interfaces: {
 		CSSContainerRule: {
+			link: '#the-csscontainerrule-interface',
 			links: {
-				tr: '#the-csscontainerrule-interface',
-				dev: '#the-csscontainerrule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['containerName', 'containerQuery', 'conditionText'],

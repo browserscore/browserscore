@@ -11,10 +11,7 @@ export default {
 	},
 	properties: {
 		clip: {
-			links: {
-				tr: '#clipping',
-				dev: '#clipping',
-			},
+			link: '#clipping',
 			tests: ['auto', 'rect(1px, 10em, 3ex, 0.2mm)'],
 		},
 		overflow: {
@@ -25,10 +22,7 @@ export default {
 			tests: ['auto', 'visible', 'hidden', 'scroll'],
 		},
 		visibility: {
-			links: {
-				tr: '#visibility',
-				dev: '#visibility',
-			},
+			link: '#visibility',
 			tests: ['visible', 'hidden', 'collapse'],
 		},
 	},

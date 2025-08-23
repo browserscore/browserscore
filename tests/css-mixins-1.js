@@ -1,9 +1,6 @@
 export default {
 	title: 'CSS Functions and Mixins Module',
-	links: {
-		tr: 'css-mixins-1',
-		dev: 'css-mixins-1',
-	},
+	link: 'css-mixins-1',
 	status: {
 		stability: 'experimental',
 	},

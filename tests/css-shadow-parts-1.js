@@ -1,18 +1,12 @@
 export default {
 	title: 'CSS Shadow Parts',
-	links: {
-		tr: 'css-shadow-parts-1',
-		dev: 'css-shadow-parts-1',
-	},
+	link: 'css-shadow-parts-1',
 	status: {
 		stability: 'experimental',
 	},
 	selectors: {
 		'::part()': {
-			links: {
-				tr: '#part',
-				dev: '#part',
-			},
+			link: '#part',
 			tests: [
 				'::part(label)',
 				'::part(mypart):active',
@@ -75,9 +69,8 @@ export default {
 	},
 	interfaces: {
 		Element: {
+			link: '#idl',
 			links: {
-				tr: '#idl',
-				dev: '#idl',
 				mdnGroup: 'DOM',
 			},
 			tests: ['part'],

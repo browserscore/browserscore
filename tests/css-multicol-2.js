@@ -1,41 +1,26 @@
 export default {
 	title: 'CSS Multi-column Layout Module Level 2',
-	links: {
-		tr: 'css-multicol-2',
-		dev: 'css-multicol-2',
-	},
+	link: 'css-multicol-2',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'column-height': {
-			links: {
-				tr: '#cc',
-				dev: '#cc',
-			},
+			link: '#cc',
 			tests: ['2', 'auto'],
 		},
 		'column-wrap': {
-			links: {
-				tr: '#cwr',
-				dev: '#cwr',
-			},
+			link: '#cwr',
 			tests: ['auto', 'nowrap', 'wrap'],
 		},
 		'column-span': {
-			links: {
-				tr: '#column-span',
-				dev: '#column-span',
-			},
+			link: '#column-span',
 			tests: ['2', 'auto'],
 		},
 	},
 	selectors: {
 		'::column': {
-			links: {
-				tr: '#column-pseudo',
-				dev: '#column-pseudo',
-			},
+			link: '#column-pseudo',
 			tests: [
 				// Chrome bug: https://crbug.com/365680822
 				'::column',

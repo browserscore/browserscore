@@ -8,6 +8,8 @@ This document describes the data schema used in the CSS test files located in th
 {
   // [Required] Human-readable title describing the CSS specification
   title: string,
+  link?: string,
+  mdn?: string, // Mdn link (when it cannot be inferred)
   links?: {
     tr?: string,           // Link to W3C TR (Technical Report) specification
     dev?: string,          // Link to W3C Editor's Draft specification

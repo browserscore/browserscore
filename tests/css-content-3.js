@@ -1,25 +1,16 @@
 export default {
 	title: 'CSS Generated Content Module Level 3',
-	links: {
-		tr: 'css-content-3',
-		dev: 'css-content-3',
-	},
+	link: 'css-content-3',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		quotes: {
-			links: {
-				tr: '#quotes',
-				dev: '#quotes',
-			},
+			link: '#quotes',
 			tests: ['auto'],
 		},
 		content: {
-			links: {
-				tr: '#alt',
-				dev: '#alt',
-			},
+			link: '#alt',
 			tests: ['url(./img/star.png) / "New!"', '"\\25BA" / ""'],
 		},
 	},

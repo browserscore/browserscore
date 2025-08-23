@@ -1,9 +1,6 @@
 export default {
 	title: 'CSS Cascading and Inheritance Level 4',
-	links: {
-		tr: 'css-cascade-4',
-		dev: 'css-cascade-4',
-	},
+	link: 'css-cascade-4',
 	status: {
 		stability: 'stable',
 		'first-snapshot': 2020,
@@ -11,19 +8,13 @@ export default {
 	values: {
 		properties: ['color', 'font-weight', 'background-image', 'all'],
 		revert: {
-			links: {
-				tr: '#default',
-				dev: '#default',
-			},
+			link: '#default',
 			tests: 'revert',
 		},
 	},
 	properties: {
 		all: {
-			links: {
-				tr: '#all-shorthand',
-				dev: '#all-shorthand',
-			},
+			link: '#all-shorthand',
 			tests: 'revert',
 		},
 	},

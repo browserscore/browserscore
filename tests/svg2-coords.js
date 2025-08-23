@@ -3,16 +3,15 @@ export default {
 	links: {
 		tr: 'svg2/coords.html',
 		dev: 'svg2-draft/coords.html',
-		devtype: 'svgwg',
 	},
+	group: 'svgwg',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'vector-effect': {
+			link: '#VectorEffects',
 			links: {
-				tr: '#VectorEffects',
-				dev: '#VectorEffects',
 				mdnGroup: 'SVG',
 			},
 			tests: [

@@ -11,10 +11,7 @@ export default {
 	},
 	'@rules': {
 		'@page': {
-			links: {
-				tr: '#page-box',
-				dev: '#page-box',
-			},
+			link: '#page-box',
 			tests: [
 				'@page { margin: 2cm; }',
 				'@page :left { margin: 2cm; }',
@@ -25,75 +22,45 @@ export default {
 	},
 	descriptors: {
 		'@page/margin': {
-			links: {
-				tr: '#page-box',
-				dev: '#page-box',
-			},
+			link: '#page-box',
 			tests: ['2cm', '4%', 'auto'],
 		},
 		'@page/margin-top': {
-			links: {
-				tr: '#page-box',
-				dev: '#page-box',
-			},
+			link: '#page-box',
 			tests: ['2cm', '4%', 'auto'],
 		},
 		'@page/margin-right': {
-			links: {
-				tr: '#page-box',
-				dev: '#page-box',
-			},
+			link: '#page-box',
 			tests: ['2cm', '4%', 'auto'],
 		},
 		'@page/margin-bottom': {
-			links: {
-				tr: '#page-box',
-				dev: '#page-box',
-			},
+			link: '#page-box',
 			tests: ['2cm', '4%', 'auto'],
 		},
 		'@page/margin-left': {
-			links: {
-				tr: '#page-box',
-				dev: '#page-box',
-			},
+			link: '#page-box',
 			tests: ['2cm', '4%', 'auto'],
 		},
 	},
 	properties: {
 		orphans: {
-			links: {
-				tr: '#break-inside',
-				dev: '#break-inside',
-			},
+			link: '#break-inside',
 			tests: ['1', '2'],
 		},
 		'page-break-after': {
-			links: {
-				tr: '#page-break-props',
-				dev: '#page-break-props',
-			},
+			link: '#page-break-props',
 			tests: ['auto', 'always', 'avoid', 'left', 'right'],
 		},
 		'page-break-before': {
-			links: {
-				tr: '#page-break-props',
-				dev: '#page-break-props',
-			},
+			link: '#page-break-props',
 			tests: ['auto', 'always', 'avoid', 'left', 'right'],
 		},
 		'page-break-inside': {
-			links: {
-				tr: '#page-break-props',
-				dev: '#page-break-props',
-			},
+			link: '#page-break-props',
 			tests: ['auto', 'avoid'],
 		},
 		widows: {
-			links: {
-				tr: '#break-inside',
-				dev: '#break-inside',
-			},
+			link: '#break-inside',
 			tests: ['1', '2'],
 		},
 	},

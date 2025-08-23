@@ -10,10 +10,7 @@ export default {
 	},
 	'@rules': {
 		'@supports': {
-			links: {
-				tr: '#at-supports',
-				dev: '#at-supports',
-			},
+			link: '#at-supports',
 			tests: [
 				'@supports (color: green) {}',
 				'@supports not (foo: bar) {}',
@@ -26,9 +23,8 @@ export default {
 	},
 	interfaces: {
 		CSSRule: {
+			link: '#extensions-to-cssrule-interface',
 			links: {
-				tr: '#extensions-to-cssrule-interface',
-				dev: '#extensions-to-cssrule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['SUPPORTS_RULE'],
@@ -38,9 +34,8 @@ export default {
 			}
 		},
 		CSSConditionRule: {
+			link: '#the-cssconditionrule-interface',
 			links: {
-				tr: '#the-cssconditionrule-interface',
-				dev: '#the-cssconditionrule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['conditionText', 'cssRules', 'insertRule', 'deleteRule'],
@@ -50,9 +45,8 @@ export default {
 			}
 		},
 		CSSMediaRule: {
+			link: '#the-cssmediarule-interface',
 			links: {
-				tr: '#the-cssmediarule-interface',
-				dev: '#the-cssmediarule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['media', 'matches', 'conditionText'],
@@ -62,9 +56,8 @@ export default {
 			}
 		},
 		CSSSupportsRule: {
+			link: '#the-csssupportsrule-interface',
 			links: {
-				tr: '#the-csssupportsrule-interface',
-				dev: '#the-csssupportsrule-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['matches', 'conditionText'],
@@ -74,9 +67,8 @@ export default {
 			}
 		},
 		CSS: {
+			link: '#the-css-namespace',
 			links: {
-				tr: '#the-css-namespace',
-				dev: '#the-css-namespace',
 				mdnGroup: 'DOM',
 			},
 			tests: ['supports'],

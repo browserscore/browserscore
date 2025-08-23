@@ -1,32 +1,20 @@
 export default {
 	title: 'CSS Animations Level 2',
-	links: {
-		tr: 'css-animations-2',
-		dev: 'css-animations-2',
-	},
+	link: 'css-animations-2',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'animation-composition': {
-			links: {
-				tr: '#animation-composition',
-				dev: '#animation-composition',
-			},
+			link: '#animation-composition',
 			tests: ['replace', 'add', 'accumulate', 'replace, add, accumulate'],
 		},
 		'animation-duration': {
-			links: {
-				tr: '#animation-duration',
-				dev: '#animation-duration',
-			},
+			link: '#animation-duration',
 			tests: ['auto'],
 		},
 		'animation-timeline': {
-			links: {
-				tr: '#animation-timeline',
-				dev: '#animation-timeline',
-			},
+			link: '#animation-timeline',
 			tests: [
 				'auto',
 				'none',
@@ -35,10 +23,7 @@ export default {
 			],
 		},
 		animation: {
-			links: {
-				tr: '#animation-shorthand',
-				dev: '#animation-shorthand',
-			},
+			link: '#animation-shorthand',
 			tests: [
 				'1s both infinite auto',
 				'1s both infinite my-animation --animation-timeline'
@@ -47,9 +32,8 @@ export default {
 	},
 	interfaces: {
 		CSSAnimation: {
+			link: '#the-CSSAnimation-interface',
 			links: {
-				tr: '#the-CSSAnimation-interface',
-				dev: '#the-CSSAnimation-interface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['animationName'],

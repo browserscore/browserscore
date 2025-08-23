@@ -1,26 +1,17 @@
 export default {
 	title: 'CSS Grid Layout Module Level 1',
-	links: {
-		tr: 'css-grid-1',
-		dev: 'css-grid-1',
-		mdn: 'Glossary/Grid',
-	},
+	link: 'css-grid-1',
+	mdn: 'Glossary/Grid',
 	status: {
 		stability: 'stable',
 	},
 	properties: {
 		display: {
-			links: {
-				tr: '#grid-containers',
-				dev: '#grid-containers',
-			},
+			link: '#grid-containers',
 			tests: ['grid', 'inline-grid'],
 		},
 		'grid-template-columns': {
-			links: {
-				tr: '#track-sizing',
-				dev: '#track-sizing',
-			},
+			link: '#track-sizing',
 			tests: [
 				'none',
 				'auto',
@@ -38,10 +29,7 @@ export default {
 			],
 		},
 		'grid-template-rows': {
-			links: {
-				tr: '#track-sizing',
-				dev: '#track-sizing',
-			},
+			link: '#track-sizing',
 			tests: [
 				'none',
 				'auto',
@@ -55,17 +43,11 @@ export default {
 			],
 		},
 		'grid-template-areas': {
-			links: {
-				tr: '#grid-template-areas-property',
-				dev: '#grid-template-areas-property',
-			},
+			link: '#grid-template-areas-property',
 			tests: ['none', "'articles'", "'head head'", "'head head' 'nav main' 'foot ....'"],
 		},
 		'grid-template': {
-			links: {
-				tr: '#explicit-grid-shorthand',
-				dev: '#explicit-grid-shorthand',
-			},
+			link: '#explicit-grid-shorthand',
 			tests: [
 				'none',
 				'auto 1fr auto / auto 1fr',
@@ -73,10 +55,7 @@ export default {
 			],
 		},
 		'grid-auto-columns': {
-			links: {
-				tr: '#auto-tracks',
-				dev: '#auto-tracks',
-			},
+			link: '#auto-tracks',
 			tests: [
 				'auto',
 				'1fr',
@@ -89,10 +68,7 @@ export default {
 			],
 		},
 		'grid-auto-rows': {
-			links: {
-				tr: '#auto-tracks',
-				dev: '#auto-tracks',
-			},
+			link: '#auto-tracks',
 			tests: [
 				'auto',
 				'1fr',
@@ -106,17 +82,11 @@ export default {
 			],
 		},
 		'grid-auto-flow': {
-			links: {
-				tr: '#grid-auto-flow-property',
-				dev: '#grid-auto-flow-property',
-			},
+			link: '#grid-auto-flow-property',
 			tests: ['row', 'column', 'row dense', 'column dense'],
 		},
 		grid: {
-			links: {
-				tr: '#grid-shorthand',
-				dev: '#grid-shorthand',
-			},
+			link: '#grid-shorthand',
 			tests: [
 				'auto-flow 1fr / 100px',
 				'none / auto-flow 1fr',
@@ -127,73 +97,43 @@ export default {
 			],
 		},
 		'grid-row-start': {
-			links: {
-				tr: '#line-placement',
-				dev: '#line-placement',
-			},
+			link: '#line-placement',
 			tests: ['auto', '4', 'C', 'C 2', 'span C', 'span 1'],
 		},
 		'grid-column-start': {
-			links: {
-				tr: '#line-placement',
-				dev: '#line-placement',
-			},
+			link: '#line-placement',
 			tests: ['auto', '4', 'C', 'C 2', 'span C', 'span 1'],
 		},
 		'grid-row-end': {
-			links: {
-				tr: '#line-placement',
-				dev: '#line-placement',
-			},
+			link: '#line-placement',
 			tests: ['auto', '4', 'C', 'C 2', 'span C', 'span 1'],
 		},
 		'grid-column-end': {
-			links: {
-				tr: '#line-placement',
-				dev: '#line-placement',
-			},
+			link: '#line-placement',
 			tests: ['auto', '4', 'C', 'C 2', 'span C', 'span 1'],
 		},
 		'grid-column': {
-			links: {
-				tr: '#placement-shorthands',
-				dev: '#placement-shorthands',
-			},
+			link: '#placement-shorthands',
 			tests: ['auto', '1', '-1', '1 / 1', '1 / -1', 'auto / auto', '2 / span 2'],
 		},
 		'grid-row': {
-			links: {
-				tr: '#placement-shorthands',
-				dev: '#placement-shorthands',
-			},
+			link: '#placement-shorthands',
 			tests: ['auto', '1', '-1', '1 / 1', '1 / -1', 'auto / auto', '2 / span 2'],
 		},
 		'grid-area': {
-			links: {
-				tr: '#placement-shorthands',
-				dev: '#placement-shorthands',
-			},
+			link: '#placement-shorthands',
 			tests: ['1 / 1', '1 / span 1', 'span 1 / 10 / -1'],
 		},
 		'grid-column-gap': {
-			links: {
-				tr: '#gutters',
-				dev: '#gutters',
-			},
+			link: '#gutters',
 			tests: ['0', '1em'],
 		},
 		'grid-row-gap': {
-			links: {
-				tr: '#gutters',
-				dev: '#gutters',
-			},
+			link: '#gutters',
 			tests: ['0', '1em'],
 		},
 		'grid-gap': {
-			links: {
-				tr: '#gutters',
-				dev: '#gutters',
-			},
+			link: '#gutters',
 			tests: ['0 0', '0 1em', '1em', '1em 1em'],
 		},
 	},

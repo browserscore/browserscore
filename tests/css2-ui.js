@@ -11,10 +11,7 @@ export default {
 	},
 	properties: {
 		cursor: {
-			links: {
-				tr: '#cursor-props',
-				dev: '#cursor-props',
-			},
+			link: '#cursor-props',
 			tests: [
 				'auto',
 				'crosshair',
@@ -38,31 +35,19 @@ export default {
 			],
 		},
 		'outline-color': {
-			links: {
-				tr: '#dynamic-outlines',
-				dev: '#dynamic-outlines',
-			},
+			link: '#dynamic-outlines',
 			tests: ['black', '#00f', '#000000', 'rgb(255, 255, 255)', 'rgb(100%, 50%, 50%)'],
 		},
 		'outline-style': {
-			links: {
-				tr: '#dynamic-outlines',
-				dev: '#dynamic-outlines',
-			},
+			link: '#dynamic-outlines',
 			tests: ['none', 'dotted', 'dashed', 'solid', 'double', 'groove', 'ridge', 'inset', 'outset'],
 		},
 		'outline-width': {
-			links: {
-				tr: '#dynamic-outlines',
-				dev: '#dynamic-outlines',
-			},
+			link: '#dynamic-outlines',
 			tests: ['thin', 'medium', 'thick', '5px'],
 		},
 		outline: {
-			links: {
-				tr: '#dynamic-outlines',
-				dev: '#dynamic-outlines',
-			},
+			link: '#dynamic-outlines',
 			tests: [
 				'black',
 				'dotted',

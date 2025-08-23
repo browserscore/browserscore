@@ -1,19 +1,13 @@
 export default {
 	title: 'CSS Fonts Module Level 3',
-	links: {
-		tr: 'css-fonts-3',
-		dev: 'css-fonts-3',
-	},
+	link: 'css-fonts-3',
 	status: {
 		stability: 'stable',
 		'first-snapshot': 2015,
 	},
 	values: {
 		'font-variant': {
-			links: {
-				tr: '#font-variant-prop',
-				dev: '#font-variant-prop',
-			},
+			link: '#font-variant-prop',
 			properties: ['font-variant'],
 			tests: [
 				'none',
@@ -56,10 +50,7 @@ export default {
 	},
 	properties: {
 		'font-stretch': {
-			links: {
-				tr: '#font-stretch-prop',
-				dev: '#font-stretch-prop',
-			},
+			link: '#font-stretch-prop',
 			tests: [
 				'normal',
 				'ultra-condensed',
@@ -73,38 +64,23 @@ export default {
 			],
 		},
 		'font-size-adjust': {
-			links: {
-				tr: '#font-size-adjust-prop',
-				dev: '#font-size-adjust-prop',
-			},
+			link: '#font-size-adjust-prop',
 			tests: ['none', '0', '.5', '1.234'],
 		},
 		'font-synthesis': {
-			links: {
-				tr: '#font-synthesis-prop',
-				dev: '#font-synthesis-prop',
-			},
+			link: '#font-synthesis-prop',
 			tests: ['none', 'weight', 'style', 'weight style', 'style weight'],
 		},
 		'font-kerning': {
-			links: {
-				tr: '#font-kerning-prop',
-				dev: '#font-kerning-prop',
-			},
+			link: '#font-kerning-prop',
 			tests: ['auto', 'normal', 'none'],
 		},
 		'font-variant-position': {
-			links: {
-				tr: '#font-variant-position-prop',
-				dev: '#font-variant-position-prop',
-			},
+			link: '#font-variant-position-prop',
 			tests: ['normal', 'sub', 'super'],
 		},
 		'font-variant-ligatures': {
-			links: {
-				tr: '#font-variant-ligatures-prop',
-				dev: '#font-variant-ligatures-prop',
-			},
+			link: '#font-variant-ligatures-prop',
 			tests: [
 				'normal',
 				'none',
@@ -120,10 +96,7 @@ export default {
 			],
 		},
 		'font-variant-caps': {
-			links: {
-				tr: '#font-variant-caps-prop',
-				dev: '#font-variant-caps-prop',
-			},
+			link: '#font-variant-caps-prop',
 			tests: [
 				'normal',
 				'small-caps',
@@ -135,10 +108,7 @@ export default {
 			],
 		},
 		'font-variant-numeric': {
-			links: {
-				tr: '#font-variant-numeric-prop',
-				dev: '#font-variant-numeric-prop',
-			},
+			link: '#font-variant-numeric-prop',
 			tests: [
 				'normal',
 				'lining-nums',
@@ -155,10 +125,7 @@ export default {
 			],
 		},
 		'font-variant-east-asian': {
-			links: {
-				tr: '#font-variant-east-asian-prop',
-				dev: '#font-variant-east-asian-prop',
-			},
+			link: '#font-variant-east-asian-prop',
 			tests: [
 				'normal',
 				'jis78',
@@ -175,19 +142,13 @@ export default {
 		},
 
 		'font-feature-settings': {
-			links: {
-				tr: '#font-feature-settings-prop',
-				dev: '#font-feature-settings-prop',
-			},
+			link: '#font-feature-settings-prop',
 			tests: ['normal', "'c2sc'", "'smcp' on", "'liga' off", "'swsh' 2", "'smcp', 'liga' off, 'swsh' 2"],
 		},
 	},
 	descriptors: {
 		'@font-face/src': {
-			links: {
-				tr: '#descdef-src',
-				dev: '#descdef-src',
-			},
+			link: '#descdef-src',
 			tests: [
 				'url(http://example.com/fonts/Gentium.woff)',
 				'url(ideal-sans-serif.woff2) format("woff2"), url(good-sans-serif.woff) format("woff"), url(basic-sans-serif.ttf) format("opentype")',
@@ -195,31 +156,19 @@ export default {
 			],
 		},
 		'@font-face/font-family': {
-			links: {
-				tr: '#descdef-font-family',
-				dev: '#descdef-font-family',
-			},
+			link: '#descdef-font-family',
 			tests: ['Gentium'],
 		},
 		'@font-face/font-style': {
-			links: {
-				tr: '#font-prop-desc',
-				dev: '#font-prop-desc',
-			},
+			link: '#font-prop-desc',
 			tests: ['normal', 'italic', 'oblique '],
 		},
 		'@font-face/font-weight': {
-			links: {
-				tr: '#font-prop-desc',
-				dev: '#font-prop-desc',
-			},
+			link: '#font-prop-desc',
 			tests: ['normal', 'bold', '100', '200', '300', '400', '500', '600', '700', '800', '900'],
 		},
 		'@font-face/font-stretch': {
-			links: {
-				tr: '#font-prop-desc',
-				dev: '#font-prop-desc',
-			},
+			link: '#font-prop-desc',
 			tests: [
 				'normal',
 				'ultra-condensed',
@@ -233,41 +182,28 @@ export default {
 			],
 		},
 		'@font-face/font-feature-settings': {
-			links: {
-				tr: '#font-rend-desc',
-				dev: '#font-rend-desc',
-			},
+			link: '#font-rend-desc',
 			tests: ['normal', "'c2sc'", "'smcp' on", "'liga' off", "'smcp', 'swsh' 2"],
 		},
 		'@font-face/font-variation-settings': {
-			links: {
-				tr: '#font-rend-desc',
-				dev: '#font-rend-desc',
-			},
+			link: '#font-rend-desc',
 			tests: ['normal', "'swsh' 2"],
 		},
 		'@font-face/unicode-range': {
-			links: {
-				tr: '#unicode-range-desc',
-				dev: '#unicode-range-desc',
-			},
+			link: '#unicode-range-desc',
 			tests: ['U+416', 'U+0-7F', 'U+A5, U+4E00-9FFF', 'U+30??'],
 		},
 	},
 	'@rules': {
 		'@font-face': {
-			links: {
-				tr: '#font-face-rule',
-				dev: '#font-face-rule',
-			},
+			link: '#font-face-rule',
 			tests: "@font-face {\n  font-family: foo;\n  src: local('Arial');\n}",
 		},
 	},
 	interfaces: {
 		CSSFontFaceRule: {
+			link: '#om-fontface',
 			links: {
-				tr: '#om-fontface',
-				dev: '#om-fontface',
 				mdnGroup: 'DOM',
 			},
 			tests: ['style', 'cssText', 'parentRule', 'parentStyleSheet'],

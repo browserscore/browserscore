@@ -1,54 +1,33 @@
 export default {
 	title: 'CSS Multi-column Layout Module Level 1',
-	links: {
-		tr: 'css-multicol-1',
-		dev: 'css-multicol-1',
-	},
+	link: 'css-multicol-1',
 	status: {
 		stability: 'stable',
 		'first-snapshot': 2015,
 	},
 	properties: {
 		'column-width': {
-			links: {
-				tr: '#cw',
-				dev: '#cw',
-			},
+			link: '#cw',
 			tests: ['10em', 'auto'],
 		},
 		'column-count': {
-			links: {
-				tr: '#cc',
-				dev: '#cc',
-			},
+			link: '#cc',
 			tests: ['2', 'auto'],
 		},
 		columns: {
-			links: {
-				tr: '#columns',
-				dev: '#columns',
-			},
+			link: '#columns',
 			tests: ['100px', '3', '10em 2', 'auto 2', '10em auto', 'auto auto', '2 10em', 'auto 10em', '2 auto'],
 		},
 		'column-rule-color': {
-			links: {
-				tr: '#crc',
-				dev: '#crc',
-			},
+			link: '#crc',
 			tests: 'red',
 		},
 		'column-rule-style': {
-			links: {
-				tr: '#crs',
-				dev: '#crs',
-			},
+			link: '#crs',
 			tests: ['none', 'solid', 'dotted'],
 		},
 		'column-rule-width': {
-			links: {
-				tr: '#crw',
-				dev: '#crw',
-			},
+			link: '#crw',
 			tests: '1px',
 		},
 		'column-rule': {
@@ -59,17 +38,11 @@ export default {
 			tests: ['transparent', '1px solid black'],
 		},
 		'column-span': {
-			links: {
-				tr: '#column-span',
-				dev: '#column-span',
-			},
+			link: '#column-span',
 			tests: ['none', 'all'],
 		},
 		'column-fill': {
-			links: {
-				tr: '#cf',
-				dev: '#cf',
-			},
+			link: '#cf',
 			tests: ['auto', 'balance', 'balance-all'],
 		},
 	},

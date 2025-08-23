@@ -1,25 +1,16 @@
 export default {
 	title: 'CSS Basic User Interface Module Level 4',
-	links: {
-		tr: 'css-ui-4',
-		dev: 'css-ui-4',
-	},
+	link: 'css-ui-4',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'accent-color': {
-			links: {
-				tr: '#widget-accent',
-				dev: '#widget-accent',
-			},
+			link: '#widget-accent',
 			tests: ['auto', 'red'],
 		},
 		appearance: {
-			links: {
-				tr: '#appearance-switching',
-				dev: '#appearance-switching',
-			},
+			link: '#appearance-switching',
 			tests: [
 				'auto',
 				'none',
@@ -40,55 +31,34 @@ export default {
 			],
 		},
 		'input-security': {
-			links: {
-				tr: '#input-security',
-				dev: '#input-security',
-			},
+			link: '#input-security',
 			tests: ['auto', 'none'],
 		},
 		caret: {
-			links: {
-				tr: '#caret',
-				dev: '#caret',
-			},
+			link: '#caret',
 			tests: ['auto', 'green', 'bar', 'green bar'],
 		},
 		'caret-shape': {
-			links: {
-				tr: '#caret-shape',
-				dev: '#caret-shape',
-			},
+			link: '#caret-shape',
 			tests: ['auto', 'bar', 'block', 'underscore'],
 		},
 		cursor: {
-			links: {
-				tr: '#cursor',
-				dev: '#cursor',
-			},
+			link: '#cursor',
 			tests: [
 				'image-set(url("foo.png") 1x, url("foo-2x.png") 2x) 2 2, auto',
 				'image-set(url("foo.png") 96dpi, url("foo-2x.png") 192dpi) 2 2, auto',
 			],
 		},
 		'field-sizing': {
-			links: {
-				tr: '#field-sizing',
-				dev: '#field-sizing',
-			},
+			link: '#field-sizing',
 			tests: ['fixed', 'content'],
 		},
 		resize: {
-			links: {
-				tr: '#resize',
-				dev: '#resize',
-			},
+			link: '#resize',
 			tests: ['block', 'inline'],
 		},
 		'text-overflow': {
-			links: {
-				tr: '#text-overflow',
-				dev: '#text-overflow',
-			},
+			link: '#text-overflow',
 			tests: [
 				'fade',
 				'fade(10px)',
@@ -133,17 +103,11 @@ export default {
 			],
 		},
 		'user-select': {
-			links: {
-				tr: '#content-selection',
-				dev: '#content-selection',
-			},
+			link: '#content-selection',
 			tests: ['auto', 'text', 'none', 'contain', 'all'],
 		},
 		'nav-up': {
-			links: {
-				tr: '#nav-dir',
-				dev: '#nav-dir',
-			},
+			link: '#nav-dir',
 			tests: [
 				'auto',
 				'#foo',
@@ -154,10 +118,7 @@ export default {
 			],
 		},
 		'nav-right': {
-			links: {
-				tr: '#nav-dir',
-				dev: '#nav-dir',
-			},
+			link: '#nav-dir',
 			tests: [
 				'auto',
 				'#foo',
@@ -168,10 +129,7 @@ export default {
 			],
 		},
 		'nav-down': {
-			links: {
-				tr: '#nav-dir',
-				dev: '#nav-dir',
-			},
+			link: '#nav-dir',
 			tests: [
 				'auto',
 				'#foo',
@@ -182,10 +140,7 @@ export default {
 			],
 		},
 		'nav-left': {
-			links: {
-				tr: '#nav-dir',
-				dev: '#nav-dir',
-			},
+			link: '#nav-dir',
 			tests: [
 				'auto',
 				'#foo',
@@ -196,10 +151,7 @@ export default {
 			],
 		},
 		'outline-color': {
-			links: {
-				tr: '#outline-color',
-				dev: '#outline-color',
-			},
+			link: '#outline-color',
 			tests: [
 				'stripes(red, yellow, green, blue)',
 				'stripes(red 1px, yellow 2px, green 3px, blue 4px)',
@@ -209,10 +161,7 @@ export default {
 			]
 		},
 		'pointer-events': {
-			links: {
-				tr: '#pointer-events-control',
-				dev: '#pointer-events-control',
-			},
+			link: '#pointer-events-control',
 			tests: ['auto', 'none']
 		},
 	},

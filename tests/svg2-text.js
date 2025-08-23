@@ -3,17 +3,14 @@ export default {
 	links: {
 		tr: 'svg2/text.html',
 		dev: 'svg2-draft/text.html',
-		devtype: 'svgwg',
 	},
+	group: 'svgwg',
 	status: {
 		stability: 'experimental',
 	},
 	properties: {
 		'shape-subtract': {
-			links: {
-				tr: '#TextShapeSubtract',
-				dev: '#TextShapeSubtract',
-			},
+			link: '#TextShapeSubtract',
 			tests: [
 				'none',
 				"url('#shape')",
@@ -26,9 +23,8 @@ export default {
 			],
 		},
 		'text-anchor': {
+			link: '#TextAnchoringProperties',
 			links: {
-				tr: '#TextAnchoringProperties',
-				dev: '#TextAnchoringProperties',
 				mdnGroup: 'SVG',
 			},
 			tests: ['start', 'middle', 'end'],

@@ -3,8 +3,8 @@ export default {
 	links: {
 		tr: 'svg2/pservers.html',
 		dev: 'svg2-draft/pservers.html',
-		devtype: 'svgwg',
 	},
+	group: 'svgwg',
 	status: {
 		stability: 'experimental',
 	},

@@ -61,9 +61,8 @@ export default {
 			},
 		},
 		Element: {
+			link: '#interface-globaleventhandlers',
 			links: {
-				tr: '#interface-globaleventhandlers',
-				dev: '#interface-globaleventhandlers',
 				mdnGroup: 'DOM',
 			},
 			tests: ['onsnapchanged', 'onsnapchanging'],

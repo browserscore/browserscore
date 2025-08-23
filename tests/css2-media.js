@@ -11,10 +11,7 @@ export default {
 	},
 	'Media queries': {
 		Syntax: {
-			links: {
-				tr: '#at-media-rule',
-				dev: '#at-media-rule',
-			},
+			link: '#at-media-rule',
 			tests: ['all', 'print', 'screen', 'print, screen'],
 		},
 	},

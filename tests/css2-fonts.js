@@ -11,10 +11,7 @@ export default {
 	},
 	properties: {
 		'font-family': {
-			links: {
-				tr: '#font-family-prop',
-				dev: '#font-family-prop',
-			},
+			link: '#font-family-prop',
 			tests: [
 				'Arial',
 				'"Helvetica"',
@@ -28,10 +25,7 @@ export default {
 			],
 		},
 		'font-size': {
-			links: {
-				tr: '#font-size-props',
-				dev: '#font-size-props',
-			},
+			link: '#font-size-props',
 			tests: [
 				'xx-small',
 				'x-small',
@@ -47,24 +41,15 @@ export default {
 			],
 		},
 		'font-style': {
-			links: {
-				tr: '#font-styling',
-				dev: '#font-styling',
-			},
+			link: '#font-styling',
 			tests: ['normal', 'italic', 'oblique'],
 		},
 		'font-variant': {
-			links: {
-				tr: '#small-caps',
-				dev: '#small-caps',
-			},
+			link: '#small-caps',
 			tests: ['normal', 'small-caps'],
 		},
 		'font-weight': {
-			links: {
-				tr: '#font-boldness',
-				dev: '#font-boldness',
-			},
+			link: '#font-boldness',
 			tests: [
 				'normal',
 				'bold',
@@ -82,10 +67,7 @@ export default {
 			],
 		},
 		font: {
-			links: {
-				tr: '#font-shorthand',
-				dev: '#font-shorthand',
-			},
+			link: '#font-shorthand',
 			tests: [
 				'caption',
 				'icon',

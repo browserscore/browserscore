@@ -1,9 +1,6 @@
 export default {
 	title: 'CSS Backgrounds and Borders Module Level 3',
-	links: {
-		tr: 'css-backgrounds-3',
-		dev: 'css-backgrounds-3',
-	},
+	link: 'css-backgrounds-3',
 	status: {
 		stability: 'stable',
 		'first-snapshot': 2015,

@@ -3,8 +3,8 @@ export default {
 	links: {
 		dev: 'motion-1',
 		tr: 'motion-1',
-		devtype: 'fxtf',
 	},
+	group: 'fxtf',
 	status: {
 		stability: 'experimental',
 	},
