@@ -1,25 +1,20 @@
+import AbstractFeature from './AbstractFeature.js';
 import { groups, orgs } from '../data.js';
 import Feature from "./Feature.js";
 import featureTypes from '../features.js';
-import Score from './Score.js';
+
 const removedWords = / *(?:\([^)]*\)|:.*|\b(?:CSS(?! 2)|Module)\b)( *)/g;
 
-export default class Spec {
+export default class Spec extends AbstractFeature {
 	features = {};
 
-	constructor (spec, parent) {
-		this.def = spec;
-		this.id = spec.id;
-		this.parent = parent;
-		this.score = new Score(parent?.score);
+	constructor (def, parent) {
+		super(def, parent);
 
 		// Shorten the title by removing parentheticals,
 		// subheadings, CSS and Module words
-		if (this.def.title) {
-			this.title = this.def.title.replace(removedWords, '$1').trim();
-		}
-		else {
-			this.title = this.id;
+		if (this.title) {
+			this.title = this.title.replace(removedWords, '$1').trim();
 		}
 
 		for (let type in featureTypes) {
@@ -73,13 +68,8 @@ export default class Spec {
 		return orgs[org];
 	}
 
-	get link () {
-		return this.stableLink || this.draftLink;
-	}
-
 	get specLink () {
-		let links = this.def.links;
-		let ret = this.def.link ?? links?.tr;
+		let ret = super.specLink;
 
 		if (ret) {
 			let template = this.group.specs ?? this.org.specs;
@@ -90,7 +80,7 @@ export default class Spec {
 	}
 
 	get draftLink () {
-		let ret = this.def.link ?? this.def.links?.stable ?? this.def.links?.tr;
+		let ret = super.draftLink;
 
 		if (ret) {
 			let template = this.group.drafts ?? this.org.drafts;
@@ -100,17 +90,15 @@ export default class Spec {
 		return '';
 	}
 
-	get mdnLink () {
-		let ret = this.def.mdn ?? this.def.links?.mdn;
-		return ret ? 'https://developer.mozilla.org/en-US/docs/Web/' + ret : '';
-	}
-
 	test() {
+		let startTime = performance.now();
 		for (let type in this.features) {
 			let features = this.features[type];
 			for (let id in features) {
 				features[id].test();
 			}
 		}
+
+		this.testTime = performance.now() - startTime;
 	}
 }

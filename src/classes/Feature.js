@@ -1,14 +1,13 @@
 import featureTypes from '../features.js';
-import Score from './Score.js';
+import AbstractFeature from './AbstractFeature.js';
 
-export default class Feature {
-	#parent;
+export default class Feature extends AbstractFeature {
+	static featureCount = 1;
 	constructor (def, parent) {
-		this.def = def;
-		this.id = def.id;
+		super(def, parent);
 		this.type = def.type;
-		this.#parent = parent;
-		this.score = new Score(this.#parent.score, 1);
+
+
 		this.properties = def.properties;
 		this.required = def.required;
 		this.interface = def.interface;
@@ -25,32 +24,6 @@ export default class Feature {
 		if (this.tests && !Array.isArray(this.tests)) {
 			this.tests = [this.tests];
 		}
-	}
-
-	get parent () {
-		return this.#parent;
-	}
-
-	get link() {
-		return this.specLink ?? this.draftLink;
-	}
-
-	get draftLink () {
-		let link = this.def.link ?? this.def.links?.dev;
-		if (link) {
-			return this.parent.draftLink + link;
-		}
-
-		return '';
-	}
-
-	get specLink () {
-		let link = this.def.link ?? this.def.links?.tr;
-		if (link) {
-			return this.parent.specLink + link;
-		}
-
-		return '';
 	}
 
 	get mdnLink () {
