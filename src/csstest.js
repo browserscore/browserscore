@@ -1,68 +1,172 @@
+import { createApp } from '../node_modules/vue/dist/vue.esm-browser.js';
+import AbstractFeature from './classes/AbstractFeature.js';
 import Specs from '../tests/index.js';
-import { $ } from './util.js';
 import Score from './classes/Score.js';
-import Test from './classes/Test.js';
 import Spec from './classes/Spec.js';
+import content from './vue/directives/content.js';
+import CarbonAds from './vue/components/carbon-ads.js';
 
 let mainScore = new Score();
-
-export function resetOutput () {
-	mainScore = new Score();
-
-	// Output current score
-	$('#score').textContent = '';
-	$('#passedTests').textContent = '';
-	$('#totalTests').textContent = '';
-	$('#total').textContent = '';
-	$('#specsTested').textContent = '';
-	$('#all').textContent = '';
-
-	// Display time taken
-	$('#timeTaken').textContent = '';
-};
-
+const classes = ['epic-fail', 'fail', 'very-buggy', 'buggy', 'slightly-buggy', 'almost-pass', 'pass'];
 
 let allSpecs = {};
-globalThis.allSpecs = allSpecs;
+
+let root = new AbstractFeature();
+root.score = mainScore;
 
 for (let id in Specs) {
 	let spec = Specs[id];
 	spec.id = id;
-	spec = new Spec(spec, { score: mainScore });
+	spec = new Spec(spec, root);
 	allSpecs[id] = spec;
 }
 
-export function runTests (filter = '') {
-	var specs = [];
-	let timeBefore = performance.now();
+let components = {
+	"carbon-ads": CarbonAds,
+}
 
-	for (let spec of Object.values(allSpecs)) {
-		if (!spec.matchesFilter(filter)) {
-			continue;
-		}
+let appSpec = {
+	data() {
+		return {
+			/**
+			 * Score for all specs
+			 * @type {Score}
+			 */
+			mainScore,
 
-		specs.push(spec);
-	}
+			/**
+			 * All specs as dictionary
+			 * @type {Record<string, Spec>}
+			 */
+			allSpecs,
+			filter: new URLSearchParams(window.location.search).get('filter') ?? '',
+			// TODO move this to Score
+			testTime: 0,
+			filterScores: {},
+		};
+	},
 
-	specs.sort(function (a, b) {
-		return a.title.localeCompare(b.title);
-	});
+	mounted() {
+		this.runTests(this.filter);
+	},
 
-	// Run tests
-	specs.forEach(spec => new Test(spec));
+	computed: {
+		/** Sorted and filtered specs
+		 * @type {Spec[]}
+		 */
+		specs () {
+			let specs = Object.values(this.allSpecs).filter(spec => spec.matchesFilter(this.filter)).sort((a, b) => a.title.localeCompare(b.title));
 
-	// Output score
-	$('#score').textContent = mainScore + '';
-	$('#passedTests').textContent = ~~mainScore.passedTests;
-	$('#totalTests').textContent = mainScore.totalTests;
-	$('#total').textContent = mainScore.total;
+			for (let spec of specs) {
+				spec.test();
+			}
 
-	// Display time taken
-	$('#timeTaken').textContent = Math.round(performance.now() - timeBefore) + 'ms';
+			return specs;
+		},
+
+		/** All specs as array
+		 * @type {Spec[]}
+		 */
+		allSpecsList () {
+			return Object.values(this.allSpecs);
+		},
+
+		/** Score for filtered specs
+		 * @type {Score}
+		 */
+		score () {
+			if (this.specs.length === this.allSpecsList.length) {
+				// All specs shown
+				return this.mainScore;
+			}
+
+			let score = this.filterScores[this.filter];
+
+			if (!score) {
+				score = new Score();
+				score.children = this.specs.map(spec => spec.score);
+
+				score.recalc();
+
+				this.filterScores[this.filter] = score;
+			}
+
+			return score;
+		},
+	},
+
+	methods: {
+		passclass (info) {
+			if (info === undefined || info === null) {
+				return '';
+			}
+
+			let success;
+
+			if (typeof info === 'boolean') {
+				success = +info;
+			}
+			else if (typeof info === 'number') {
+				success = info;
+			}
+			else if (typeof info === 'object' && 'passed' in info) {
+				success = info.passed / info.total;
+			}
+
+			let index = Math.round(success * (classes.length - 1));
+			return classes[index];
+		},
+
+		runTests() {
+			let startTime = performance.now();
+
+			for (let spec of this.specs) {
+				spec.test();
+			}
+
+			this.testTime = performance.now() - startTime;
+		},
+
+		round(value, maxDecimals = 0) {
+			return Math.round(value * 10 ** maxDecimals) / 10 ** maxDecimals;
+		},
+	},
+
+	watch: {
+		filter: {
+			handler() {
+				// Update address bar
+				let searchParams = new URLSearchParams(location.search);
+				if (this.filter) {
+					searchParams.set('filter', this.filter);
+				}
+				else {
+					searchParams.delete('filter');
+				}
+
+				let newUrl = location.pathname + '?' + searchParams + location.hash;
+
+				history.replaceState({}, '', newUrl);
+			},
+		},
+	},
+
+	directives: {
+		content,
+	},
+
+	components,
+
+	compilerOptions: {
+		isCustomElement: tag => !Object.keys(components).includes(tag),
+	},
 };
 
-onload = function () {
-	const filter = new URLSearchParams(window.location.search).get('filter') ?? localStorage.getItem('filter') ?? '';
-	$('#filter').value = filter;
-	runTests(filter);
-};
+let app = createApp(appSpec).mount("#content");
+
+// Global exports
+Object.assign(globalThis, {
+	app,
+	appSpec,
+	allSpecs,
+});

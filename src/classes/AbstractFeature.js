@@ -1,11 +1,17 @@
 import Score from './Score.js';
 
 export default class AbstractFeature {
-	#parent;
-
-	constructor (def, parent) {
+	constructor (def = {}, parent) {
 		this.def = def;
-		this.#parent = parent;
+
+		if (parent) {
+			Object.defineProperty(this, 'parent', {
+				value: parent,
+				enumerable: false,
+				writable: true,
+				configurable: true,
+			});
+		}
 
 		this.id = def.id;
 
@@ -13,11 +19,7 @@ export default class AbstractFeature {
 			this.title = def.title;
 		}
 
-		this.score = new Score(this.#parent?.score, this.constructor.featureCount);
-	}
-
-	get parent () {
-		return this.#parent;
+		this.score = new Score(this.parent?.score, this.constructor.featureCount);
 	}
 
 	get link() {
