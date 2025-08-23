@@ -37,31 +37,7 @@ export function runTests (filter = '') {
 	let timeBefore = performance.now();
 
 	for (let spec of Object.values(allSpecs)) {
-		// Filter list of specifications
-		if (filter === 'stable' && spec.stability !== 'stable') {
-			continue;
-		} else if (filter === 'experimental' && spec.stability === 'stable') {
-			continue;
-		} else if (filter.match(/^css\d/)) {
-			if (!spec.firstSnapshot) {
-				continue;
-			}
-
-			const snapshot = Number(filter.substring(3));
-			if (spec.firstSnapshot > snapshot || spec.lastSnapshot < snapshot) {
-				continue;
-			}
-		} else if (filter === '' && spec.firstSnapshot === 2.2) {
-			continue;
-		} else if (filter === 'csswg' && spec.group && !spec.group.match(/fxtf/)) {
-			continue;
-		} else if (filter === 'houdini' && (!('group' in spec) || !spec.group.match(/houdini/))) {
-			continue;
-		} else if (filter === 'svgwg' && spec.group !== 'svgwg') {
-			continue;
-		} else if (filter === 'whatwg' && spec.group !== 'whatwg') {
-			continue;
-		} else if (filter === 'others' && (!('group' in spec) || spec.group.match(/fxtf|houdini|svgwg|whatwg/))) {
+		if (!spec.matchesFilter(filter)) {
 			continue;
 		}
 
