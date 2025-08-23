@@ -1,7 +1,10 @@
 import Specs from '../tests/index.js';
 import { $ } from './util.js';
 import Score from './classes/Score.js';
-import Test, { mainScore } from './classes/Test.js';
+import Test from './classes/Test.js';
+import Spec from './classes/Spec.js';
+
+let mainScore = new Score();
 
 export function resetOutput () {
 	mainScore = new Score();
@@ -18,51 +21,51 @@ export function resetOutput () {
 	$('#timeTaken').textContent = '';
 };
 
+
+let allSpecs = {};
+globalThis.allSpecs = allSpecs;
+
+for (let id in Specs) {
+	let spec = Specs[id];
+	spec.id = id;
+	spec = new Spec(spec, { score: mainScore });
+	allSpecs[id] = spec;
+}
+
 export function runTests (filter = '') {
 	var specs = [];
-	var timeBefore = +new Date();
-
 	let timeBefore = performance.now();
 
-	for (var spec in Specs) {
+	for (let spec of Object.values(allSpecs)) {
 		// Filter list of specifications
-		if (filter === 'stable' && Specs[spec].status && Specs[spec].status.stability !== 'stable') {
+		if (filter === 'stable' && spec.stability !== 'stable') {
 			continue;
-		} else if (filter === 'experimental' && Specs[spec].status && Specs[spec].status.stability === 'stable') {
+		} else if (filter === 'experimental' && spec.stability === 'stable') {
 			continue;
 		} else if (filter.match(/^css\d/)) {
-			if (!Specs[spec].status || Specs[spec].status['first-snapshot'] === undefined) {
+			if (!spec.firstSnapshot) {
 				continue;
 			}
 
 			const snapshot = Number(filter.substring(3));
-			if (
-				Specs[spec].status['first-snapshot'] > snapshot ||
-				(Specs[spec].status && Specs[spec].status['last-snapshot'] < snapshot)
-			) {
+			if (spec.firstSnapshot > snapshot || spec.lastSnapshot < snapshot) {
 				continue;
 			}
-		} else if (filter === '' && Specs[spec].status && Specs[spec].status['first-snapshot'] === 2.2) {
+		} else if (filter === '' && spec.firstSnapshot === 2.2) {
 			continue;
-		} else if (filter === 'csswg' && Specs[spec].links.devtype && !Specs[spec].links.devtype.match(/fxtf/)) {
+		} else if (filter === 'csswg' && spec.group && !spec.group.match(/fxtf/)) {
 			continue;
-		} else if (filter === 'houdini' && (!('devtype' in Specs[spec].links) || !Specs[spec].links.devtype.match(/houdini/))) {
+		} else if (filter === 'houdini' && (!('group' in spec) || !spec.group.match(/houdini/))) {
 			continue;
-		} else if (filter === 'svgwg' && Specs[spec].links.devtype !== 'svgwg') {
+		} else if (filter === 'svgwg' && spec.group !== 'svgwg') {
 			continue;
-		} else if (filter === 'whatwg' && Specs[spec].links.devtype !== 'whatwg') {
+		} else if (filter === 'whatwg' && spec.group !== 'whatwg') {
 			continue;
-		} else if (filter === 'others' && (!('devtype' in Specs[spec].links) || Specs[spec].links.devtype.match(/fxtf|houdini|svgwg|whatwg/))) {
+		} else if (filter === 'others' && (!('group' in spec) || spec.group.match(/fxtf|houdini|svgwg|whatwg/))) {
 			continue;
 		}
 
-		specs.push({
-			id: spec,
-			// Shorten the title by removing parentheticals,
-			// subheadings, CSS and Module words
-			title: Specs[spec].title.replace(removedWords, '$1').trim(),
-			tests: Specs[spec],
-		});
+		specs.push(spec);
 	}
 
 	specs.sort(function (a, b) {

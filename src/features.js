@@ -1,12 +1,13 @@
 import Supports from './supports.js';
 
 export default {
-	values: function (test, name, tests) {
-		var properties = tests[name].properties || tests.properties,
-			failed = [];
+	values: function (test, name, feature) {
+		let properties = feature[feature.type]?.properties || feature.properties;
+		let failed = [];
 
 		for (var j = 0, property; (property = properties[j++]); ) {
 			if (!Supports.property(property).success) {
+				// Property not supported, no point in using it to test values
 				properties.splice(--j, 1);
 				continue;
 			}
@@ -28,16 +29,16 @@ export default {
 		return Supports.value(property, value);
 	},
 
-	descriptors: function (value, descriptor, tests) {
+	descriptors: function (value, name, feature) {
 		var required = undefined;
-		if (tests[descriptor].required) {
-			if (tests[descriptor].required[value]) {
-				required = tests[descriptor].required[value];
-			} else if (tests[descriptor].required['*']) {
-				required = tests[descriptor].required['*'];
+		if (feature.required) {
+			if (feature.required[value]) {
+				required = feature.required[value];
+			} else if (feature.required['*']) {
+				required = feature.required['*'];
 			}
 		}
-		return Supports.descriptorvalue(descriptor, value, required);
+		return Supports.descriptorvalue(name, value, required);
 	},
 
 	selectors: function (test) {
@@ -52,8 +53,8 @@ export default {
 		return Supports.atrule(test);
 	},
 
-	interfaces: function (value, name, tests) {
-		return Supports.attributeOrMethod(name, value, tests[name].required, tests[name].interface);
+	interfaces: function (value, name, feature) {
+		return Supports.attributeOrMethod(name, value, feature.required, feature.interface);
 	},
 
 	'Media queries': function (test) {

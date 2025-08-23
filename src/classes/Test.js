@@ -1,47 +1,24 @@
-import featureTypes from '../features.js';
-import { groups, orgs } from '../data.js';
-import Score from './Score.js';
 import { create, $ } from '../util.js';
-
-export const mainScore = new Score();
-
-const icons = new Set('w3c', 'mdn', 'whatwg', 'ecma', 'tc39');
 
 export default class Test {
 	constructor(spec) {
+		this.spec = spec;
+
 		this.tests = spec.tests;
 		this.id = spec.id;
 		this.title = spec.title;
 
-		this.score = new Score(mainScore);
+		var contents = [this.spec.title];
+		let links = createLinks(this.spec);
 
-		var contents = [this.title];
-
-		if (spec.tests.links) {
+		if (links.length) {
 			var linksContainer = create({
 				tag: 'div',
 				properties: {
 					className: 'spec-links',
 				},
+				contents: links
 			});
-
-			if (spec.tests.links.tr) {
-				linksContainer.append(
-					createSpecLink('tr', 'https://www.w3.org/TR/' + spec.tests.links.tr),
-				);
-			}
-
-			if (spec.tests.links.dev) {
-				linksContainer.append(
-					createSpecLink('dev', devLinkFormat(spec.tests.links), devLinkLogo(spec.tests.links.devtype)),
-				);
-			}
-
-			if (spec.tests.links.mdn) {
-				linksContainer.append(
-					createSpecLink('mdn', 'https://developer.mozilla.org/en-US/docs/' + spec.tests.links.mdn),
-				);
-			}
 
 			contents.push(linksContainer);
 		}
@@ -60,8 +37,9 @@ export default class Test {
 		});
 
 		// Perform tests
-		for (var id in featureTypes) {
-			this.group(id, featureTypes[id]);
+		this.spec.test();
+		for (let type in this.spec.features) {
+			this.group(type);
 		}
 
 		// Display score for this spec
@@ -86,112 +64,69 @@ export default class Test {
 				{
 					tag: 'a',
 					href: '#' + spec.id,
-					contents: this.title,
+					contents: this.spec.title,
 				},
 			],
 			in: $('#specsTested'),
 		});
 	}
 
-	group (what, testCallback) {
-		var thisSection,
-			theseTests = this.tests[what];
+	get score () {
+		return this.spec.score;
+	}
 
-		for (var feature in theseTests) {
-			if (feature === 'properties') {
+	group (type) {
+		let thisSection;
+		let features = this.spec.features[type];
+
+		for (let id in features) {
+			if (id === 'properties') {
 				continue;
 			}
 
-			thisSection =
-				thisSection ||
-				create({
+			let feature = features[id];
+
+			thisSection ??= create({
 					tag: 'section',
-					className: 'tests ' + what,
+					className: 'tests ' + type,
 					contents: {
 						tag: 'h1',
-						contents: what,
+						contents: type,
 					},
 					in: this.section,
 				});
 
 			var summaryContents = [
-				document.createTextNode(feature),
+				document.createTextNode(id),
 				null, // for prefix
 			];
 
-			var links = theseTests[feature].links;
-			if (links) {
-				if (links.tr) {
-					summaryContents.push(
-						createSpecLink('tr', 'https://www.w3.org/TR/' + this.tests.links.tr + links.tr),
-					);
-				}
-
-				if (links.dev) {
-					summaryContents.push(
-						createSpecLink('dev', devLinkFormat(this.tests.links).replace(/#.*/, '') + links.dev, devLinkLogo(this.tests.links)),
-					);
-				}
-
-				var mdnLink = 'https://developer.mozilla.org/en-US/docs/Web/';
-				switch (links.mdnGroup) {
-					case 'SVG':
-						mdnLink += 'SVG/Attribute/';
-						break;
-					case 'DOM':
-						mdnLink += 'API/';
-						break;
-					default:
-						mdnLink += 'CSS/';
-						// add exception for Media Queries if no link define
-						if (what === 'Media queries' && !links.mdn) {
-							mdnLink += '@media/';
-						}
-						break;
-				}
-				mdnLink += links.mdn
-					? links.mdn
-					: feature.replace('()', '').replace(/(@[^ \/]+)[^\/]*(\/.*)/, '$1$2');
-
-				summaryContents.push(
-					createSpecLink('mdn', mdnLink),
-				);
+			var links = createLinks(feature, this.spec);
+			if (links.length) {
+				summaryContents.push(...links);
 			}
 
-			var passed = 0,
-				tests = theseTests[feature].tests || theseTests[feature],
-				propertyPrefix = null,
-				testsResults = [];
+			let {passed, propertyPrefix} = feature;
+			let results = [];
 
-			tests = tests instanceof Array ? tests : [tests];
+			for (let i=0; i<feature.tests.length; i++) {
+				let test = feature.tests[i];
+				let result = feature.results[i];
 
-			for (var i = 0, test; (test = tests[i++]); ) {
-				var results = testCallback(test, feature, theseTests),
-					success,
-					prefix,
-					propertyPrefix,
-					note;
+				let className = passclass({
+					passed: Math.round(result.success * 10000),
+					total: 10000,
+				});
 
-				if (typeof results === 'object') {
-					success = results.success;
-					propertyPrefix = propertyPrefix || results.propertyPrefix;
-					prefix = results.prefix;
-					note = results.note;
-				}
+				let title = test.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+				let prefix = result.prefix ? `<span class="prefix">${result.prefix}</span>` : '';
+				let note = result.note ? `<small>${result.note}</small>` : '';
 
-				passed += +success;
-
-				testsResults.push(
+				results.push(
 					create({
 						tag: 'li',
-						innerHTML:
-							test.replace(/</g, '&lt;').replace(/>/g, '&gt;') +
-							(prefix ? '<span class="prefix">' + prefix + '</span>' : '') +
-							(note ? '<small>' + note + '</small>' : ''),
-						className: passclass({
-							passed: Math.round(success * 10000),
-							total: 10000,
-						}),
+						innerHTML: title + prefix + note,
+						className,
 					}),
 				);
 			}
@@ -210,15 +145,15 @@ export default class Test {
 					properties: {
 						className: passclass({
 							passed: passed,
-							total: tests.length,
+							total: feature.tests.length,
 						}),
-						style: '--progress: ' + (passed / tests.length) * 100,
+						style: '--progress: ' + (passed / feature.tests.length) * 100,
 					},
 					contents: summaryContents,
 				}),
 				create({
 					tag: 'ul',
-					contents: testsResults,
+					contents: results,
 				}),
 			];
 
@@ -228,22 +163,11 @@ export default class Test {
 			});
 
 			thisSection.appendChild(details);
-
-			this.score.update({ passed: passed, total: tests.length });
 		}
 	}
 };
 
-function devLinkFormat (params) {
-	let shortname = params.dev ?? params.dev;
-	let group = params.devtype ?? 'csswg';
-	let groupMeta = groups[group] ?? orgs[group] ?? groups.csswg;
-	return groupMeta.draft.replace('{shortname}', shortname);
-};
-
-function devLinkLogo (type) {
-	return icons.has(type) ? type : 'w3c';
-}
+const classes = ['epic-fail', 'fail', 'very-buggy', 'buggy', 'slightly-buggy', 'almost-pass', 'pass'];
 
 function passclass(info) {
 	var success;
@@ -253,8 +177,6 @@ function passclass(info) {
 	} else if ('failed' in info) {
 		success = 1 - info.failed / info.total;
 	}
-
-	var classes = ['epic-fail', 'fail', 'very-buggy', 'buggy', 'slightly-buggy', 'almost-pass', 'pass'];
 
 	var index = Math.round(success * (classes.length - 1));
 
@@ -271,4 +193,34 @@ function createSpecLink (type, url, org = 'w3c') {
 			className: `spec-link ${org}-link`,
 		},
 	});
+}
+
+function createLinks(feature, spec) {
+	if (!spec) {
+		spec = feature;
+	}
+
+	let {specLink, draftLink, mdnLink} = feature ?? spec;
+
+	let ret = [];
+
+	if (specLink) {
+		ret.push(
+			createSpecLink('tr', specLink, spec.org.id),
+		);
+	}
+
+	if (draftLink && draftLink !== specLink) {
+		ret.push(
+			createSpecLink('dev', draftLink, spec.org.id),
+		);
+	}
+
+	if (mdnLink) {
+		ret.push(
+			createSpecLink('mdn', mdnLink, 'mdn'),
+		);
+	}
+
+	return ret;
 }
