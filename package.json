@@ -16,5 +16,7 @@
   ],
   "type": "module",
   "dependencies": {
+    "ua-parser-js": "^2.0.4",
+    "vue": "^3.5.19"
   }
 }
