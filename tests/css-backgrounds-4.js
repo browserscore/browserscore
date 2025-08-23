@@ -36,7 +36,6 @@ export default {
 				'left 20px',
 				'right -50px',
 				'left -50px',
-				'right 20px',
 			],
 		},
 		'background-position-y': {
