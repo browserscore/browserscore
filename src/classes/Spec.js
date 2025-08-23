@@ -64,7 +64,7 @@ export default class Spec extends AbstractFeature {
 	}
 
 	get org () {
-		let org = this.group.org ?? 'w3c';
+		let org = this.group.org ?? this.group.id;
 		return orgs[org];
 	}
 
