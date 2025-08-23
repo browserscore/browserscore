@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="ui/css/style.css" />
 
 <script src="src/csstest.js" type="module"></script>
-<script src="src/filter.js" type="module"></script>
 
 <script>var _gaq = [['_setAccount', 'UA-28874455-1'], ['_trackPageview'], ['_gat._anonymizeIp']];</script>
 <script src="https://www.google-analytics.com/ga.js" async></script>
@@ -17,29 +16,62 @@
 
 <h1>The CSS3 test</h1>
 
-<div id="content">
+<div id="content" v-cloak>
 	<section id="tests">
 		<header>
-			<h1>Your browser scores <strong id="score">0%</strong></h1>
-			<p>Determined by passing <strong id="passedTests"></strong> tests out of <strong id="totalTests"></strong> total for <strong id="total"></strong> features</p>
+			<h1>Your browser scores <strong v-content="score">0%</strong></h1>
+			<p>
+				Determined by passing
+				<strong v-content="round(score.passedTests)">0</strong> tests
+				out of <strong v-content="round(score.totalTests)">0</strong> total
+				for <strong v-content="round(score.total)">0</strong> features
+				(<strong v-content="round(testTime) + ' ms'">0 ms</strong>)
+			</p>
 		</header>
 
-		<section id="all"></section>
+		<section id="all">
+			<section v-for="spec in specs" :key="spec.id" class="tests">
+				<h1>
+					<span v-text="spec.title"></span>
+					<div class="spec-links">
+						<a v-if="spec.specLink" :href="spec.specLink" target="_blank" class="spec-link" :class="`${spec.org.id}-link`">TR</a>
+						<a v-if="spec.draftLink && spec.draftLink !== spec.specLink" :href="spec.draftLink" target="_blank" class="spec-link" :class="`${spec.org.id}-link`">DEV</a>
+						<a v-if="spec.mdnLink" :href="spec.mdnLink" target="_blank" class="spec-link" :class="`${spec.org.id}-link`">MDN</a>
+					</div>
+
+				</h1>
+				<section v-for="features, type in spec.features" :key="[spec.id, type].join('/')">
+					<h1 v-text="type"></h1>
+					<details v-for="feature in features" :key="[spec.id, type, feature.id].join('/')">
+						<summary :class="passclass({
+							passed: feature.passed,
+							total: feature.tests.length,
+						})" :style="{ '--progress': round(feature.passed / feature.tests.length * 100, 2) }">
+							{{ feature.title }}
+							<a v-if="feature.specLink" :href="feature.specLink" target="_blank" :class="`spec-link ${feature.parent.org.id}-link`">TR</a>
+							<a v-if="feature.draftLink && feature.draftLink !== feature.specLink" :href="feature.draftLink" target="_blank" :class="`spec-link ${feature.parent.org.id}-link`">DEV</a>
+							<a v-if="feature.mdnLink" :href="feature.mdnLink" target="_blank" class="spec-link mdn-link">MDN</a>
+						</summary>
+						<ul>
+							<li v-for="result, index of feature.results" :key="[spec.id, type, feature.id, index].join('/')" :data-success="result.success" :class="passclass(result.success)">
+								{{ feature.tests[index] }}
+								<span class="prefix" v-if="result.prefix">{{ result.prefix }}</span>
+								<span class="note" v-if="result.note">{{ result.note }}</span>
+							</li>
+						</ul>
+					</details>
+				</section>
+			</section>
+		</section>
 	</section>
 
 	<aside>
-
-
-		<p>Time taken: <strong id="timeTaken"></strong></p>
-
-		<section>
-			<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=css3testcom" id="_carbonads_js"></script>
-		</section>
+		<carbon-ads params="zoneid=1673&serve=C6AILKT&placement=css3testcom"></carbon-ads>
 
 		<section>
 			<h1>Filter:</h1>
 			<form>
-				<select id="filter">
+				<select id="filter" v-model="filter">
 					<option value="" title="All specifications including experimental ones but without CSS 2.2">All except CSS 2.2</option>
 					<option value="all" title="All specifications including experimental ones">All</option>
 					<option value="stable" title="All specifications listed in the latest CSS snapshot, their predecessors and others that won't change much anymore">Stable</option>
@@ -71,7 +103,7 @@
 		<section>
 
 			<h1>
-				Specs tested
+				{{ specs.length }} Specs tested
 				<ui-tooltip>
 					<button class="icon" style="--icon: var(--icon-warning)"></button>
 					<section class="caution tooltip">
@@ -81,7 +113,14 @@
 				</ui-tooltip>
 
 			</h1>
-			<ul id="specsTested"></ul>
+			<ul id="specsTested">
+				<li v-for="spec in specs" :key="spec.id" :class="passclass({
+					passed: spec.score.passed,
+					total: spec.score.total,
+				})">
+					<a :href="`#${spec.id}`">{{ spec.title }}</a>
+				</li>
+			</ul>
 			Want more tests? <a href="https://github.com/LeaVerou/css3test" target="_blank">Be my guest!</a>
 		</section>
 

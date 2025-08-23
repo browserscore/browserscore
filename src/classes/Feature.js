@@ -7,10 +7,11 @@ export default class Feature extends AbstractFeature {
 		super(def, parent);
 		this.type = def.type;
 
-
 		this.properties = def.properties;
 		this.required = def.required;
 		this.interface = def.interface;
+
+		this.title ??= this.id;
 
 		if (def.tests) {
 			this.def = def;

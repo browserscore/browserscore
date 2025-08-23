@@ -4,6 +4,7 @@ export default class Score {
 	total = 0;
 	passedTests = 0;
 	totalTests = 0;
+	children = [];
 
 	/**
 	 * @param {*} parent - Score of parent object
@@ -13,7 +14,6 @@ export default class Score {
 		this.featureCount = featureCount;
 		if (parent) {
 			this.parent = parent;
-			parent.children ??= [];
 			parent.children.push(this);
 		}
 	}

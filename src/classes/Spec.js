@@ -16,6 +16,9 @@ export default class Spec extends AbstractFeature {
 		if (this.title) {
 			this.title = this.title.replace(removedWords, '$1').trim();
 		}
+		else {
+			this.title = this.id;
+		}
 
 		for (let type in featureTypes) {
 			if (!(type in this.def)) {
@@ -104,35 +107,36 @@ export default class Spec extends AbstractFeature {
 
 	matchesFilter (filter) {
 		if (!filter) {
-			return true;
+			return this.firstSnapshot !== 2.2;
 		}
 
 		// Filter list of specifications
-		if (filter === 'stable' && this.stability !== 'stable') {
-			return false;
-		} else if (filter === 'experimental' && this.stability === 'stable') {
-			return false;
-		} else if (filter.match(/^css\d/)) {
-			if (!spec.firstSnapshot) {
+		if (filter === 'stable') {
+			return this.stability === 'stable';
+		}
+		else if (filter === 'experimental') {
+			return this.stability !== 'stable';
+		}
+		else if (filter.match(/^css\d/)) {
+			if (!this.firstSnapshot) {
 				return false;
 			}
 
 			const snapshot = Number(filter.substring(3));
-			if (spec.firstSnapshot > snapshot || spec.lastSnapshot < snapshot) {
+			if (this.firstSnapshot > snapshot || this.lastSnapshot < snapshot) {
 				return false;
 			}
-		} else if (filter === '' && this.firstSnapshot === 2.2) {
-			return false;
-		} else if (filter === 'csswg' && spec.group && !spec.group.match(/fxtf/)) {
-			return false;
-		} else if (filter === 'houdini' && (!('group' in spec) || !spec.group.match(/houdini/))) {
-			return false;
-		} else if (filter === 'svgwg' && spec.group !== 'svgwg') {
-			return false;
-		} else if (filter === 'whatwg' && spec.group !== 'whatwg') {
-			return false;
-		} else if (filter === 'others' && (!('group' in spec) || spec.group.match(/fxtf|houdini|svgwg|whatwg/))) {
-			return false;
+		}
+
+		// Group & org filters
+		if (filter === 'others') {
+			return this.group && this.group.id !== 'csswg';
+		}
+		else if (filter in groups) {
+			return this.group && this.group.id === filter;
+		}
+		else if (filter in orgs) {
+			return this.org && this.org.id === filter;
 		}
 
 		return true;
