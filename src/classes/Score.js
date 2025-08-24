@@ -43,17 +43,19 @@ export default class Score {
 		return this.passed / this.total;
 	}
 
-	update(data) {
-		if (!data.total) {
+	set (score) {
+		if (!score.totalTests) {
 			return;
 		}
 
-		this.passed = this.passedTests = data.passed;
-		this.total = this.totalTests = data.total;
+		this.passedTests = score.passedTests;
+		this.totalTests = score.totalTests;
 
-		if (this.forceTotal) {
-			this.total = this.forceTotal;
-			this.passed *= this.total / this.totalTests;
+		this.total = this.forceTotal ?? this.totalTests;
+		this.passed = this.passedTests * this.total / this.totalTests;
+
+		if (score.testTime) {
+			this.testTime = score.testTime;
 		}
 
 		this.parent?.recalc();

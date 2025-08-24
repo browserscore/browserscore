@@ -51,19 +51,23 @@ export default class Feature extends AbstractFeature {
 		let startTime = performance.now();
 		let testCallback = featureTypes[this.type];
 
-		this.passed = 0;
+		let passedTests = 0;
+		let totalTests = this.tests.length;
 		this.propertyPrefix = null;
 		this.results = [];
 
 		for (let test of this.tests) {
 			let result = testCallback(test, this.id, this) ?? {};
 			this.propertyPrefix ??= result.propertyPrefix;
-			this.passed += +result.success;
+			passedTests += +result.success;
 			this.results.push(result);
 		}
 
-		this.score.testTime = performance.now() - startTime;
-		this.score.update({ passed: this.passed, total: this.tests.length });
+		this.score.set({
+			passedTests: passedTests,
+			totalTests: totalTests,
+			testTime: performance.now() - startTime,
+		});
 	}
 }
 
