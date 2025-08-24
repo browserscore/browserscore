@@ -18,6 +18,24 @@ export default class Score {
 		}
 	}
 
+	/**
+	 * Percentage of passed tests
+	 */
+	get success () {
+		return this.passedTests / this.totalTests;
+	}
+
+	get value () {
+		return this.valueOf();
+	}
+
+	/**
+	 * Percentage of passed features
+	 */
+	valueOf () {
+		return this.passed / this.total;
+	}
+
 	update(data) {
 		if (!data.total) {
 			return;
@@ -53,10 +71,6 @@ export default class Score {
 
 	toString () {
 		return this.percent() + '%';
-	}
-
-	percent () {
-		return Math.round((100 * this.passed) / this.total);
 	}
 
 	/**

@@ -19,7 +19,7 @@
 <div id="content" v-cloak>
 	<section id="tests">
 		<header>
-			<h1>Your browser scores <strong v-content="score">0%</strong></h1>
+			<h1>Your browser scores <strong v-content="percent(score)">0%</strong></h1>
 			<p>
 				Recognized
 				<span :title="`passed ${round(score.passedTests)} out of ${score.totalTests} tests`">
@@ -43,10 +43,7 @@
 				<section v-for="features, type in spec.features" :key="spec.getUid('.', type)">
 					<h1 v-text="type"></h1>
 					<details v-for="feature in features" :key="feature.uid" :id="feature.htmlId">
-						<summary :class="passclass({
-							passed: feature.passed,
-							total: feature.tests.length,
-						})" :style="{ '--progress': round(feature.passed / feature.tests.length * 100, 2) }">
+						<summary :class="passclass(feature.score)" :style="{ '--progress': round(feature.score.value * 100, 2) }">
 							{{ feature.title }}
 							<a v-if="feature.specLink" :href="feature.specLink" target="_blank" :class="`spec-link ${feature.parent.org.id}-link`">TR</a>
 							<a v-if="feature.draftLink && feature.draftLink !== feature.specLink" :href="feature.draftLink" target="_blank" :class="`spec-link ${feature.parent.org.id}-link`">DEV</a>

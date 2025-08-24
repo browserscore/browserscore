@@ -131,6 +131,15 @@ let appSpec = {
 		round(value, maxDecimals = 0) {
 			return Math.round(value * 10 ** maxDecimals) / 10 ** maxDecimals;
 		},
+
+		percent(value, maxDecimals = 0) {
+			value = +value;
+			return value.toLocaleString("en-US", {
+				style: "percent",
+				minimumFractionDigits: 0,
+				maximumFractionDigits: maxDecimals,
+			});
+		},
 	},
 
 	watch: {
