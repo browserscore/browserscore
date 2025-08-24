@@ -3,6 +3,14 @@ import Supports from './supports.js';
 export default {
 	values: function (test, name, feature) {
 		let properties = feature[feature.type]?.properties || feature.properties;
+
+		if (!properties) {
+			return {
+				success: 0,
+				note: 'No properties to test',
+			};
+		}
+
 		let failed = [];
 
 		for (var j = 0, property; (property = properties[j++]); ) {
