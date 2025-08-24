@@ -33,7 +33,6 @@ export default class Spec extends AbstractFeature {
 				let feature = features[id];
 				feature.id = id;
 				feature.type = type;
-				feature = this.features[type][id] = new Feature(feature, this);
 
 				// Apply aggregate properties if no override
 				if (properties) {
@@ -45,6 +44,10 @@ export default class Spec extends AbstractFeature {
 				if (Interface) {
 					feature.interface ??= Interface;
 				}
+
+				feature = this.features[type][id] = new Feature(feature, this);
+
+				this.children.push(feature);
 			}
 		}
 	}
@@ -91,18 +94,6 @@ export default class Spec extends AbstractFeature {
 		}
 
 		return '';
-	}
-
-	test() {
-		let startTime = performance.now();
-		for (let type in this.features) {
-			let features = this.features[type];
-			for (let id in features) {
-				features[id].test();
-			}
-		}
-
-		this.testTime = performance.now() - startTime;
 	}
 
 	matchesFilter (filter) {

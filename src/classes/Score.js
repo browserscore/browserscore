@@ -4,18 +4,25 @@ export default class Score {
 	total = 0;
 	passedTests = 0;
 	totalTests = 0;
-	children = [];
+	testTime = 0;
 
 	/**
-	 * @param {*} parent - Score of parent object
+	 * @param {*} node - Score of parent object
 	 * @param {*} forceTotal - By default, all tests count as individual features. Set this to 1 to count them as 1 feature.
 	 */
-	constructor(parent, forceTotal) {
+	constructor(node, forceTotal) {
 		this.forceTotal = forceTotal;
-		if (parent) {
-			this.parent = parent;
-			parent.children.push(this);
+		if (node) {
+			this.node = node;
 		}
+	}
+
+	get parent () {
+		return this.node?.parent ?? null;
+	}
+
+	get children () {
+		return this.node?.children?.map(child => child.score) ?? [];
 	}
 
 	/**
@@ -58,12 +65,15 @@ export default class Score {
 		this.total = 0;
 		this.passedTests = 0;
 		this.totalTests = 0;
+		this.testTime = 0;
 
-		for (let child of this.children) {
+		let children = this.children;
+		for (let child of children) {
 			this.passed += child.passed;
 			this.total += child.total;
 			this.passedTests += child.passedTests;
 			this.totalTests += child.totalTests;
+			this.testTime += child.testTime;
 		}
 
 		this.parent?.recalc(this);

@@ -42,11 +42,13 @@ export default class Feature extends AbstractFeature {
 	}
 
 	test () {
-		if (this.results) {
-			// Already tested
+		if (this.tested) {
 			return;
 		}
 
+		this.tested = true;
+
+		let startTime = performance.now();
 		let testCallback = featureTypes[this.type];
 
 		this.passed = 0;
@@ -60,6 +62,7 @@ export default class Feature extends AbstractFeature {
 			this.results.push(result);
 		}
 
+		this.score.testTime = performance.now() - startTime;
 		this.score.update({ passed: this.passed, total: this.tests.length });
 	}
 }

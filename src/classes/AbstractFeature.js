@@ -1,6 +1,9 @@
 import Score from './Score.js';
 
 export default class AbstractFeature {
+	children = [];
+	tested = false;
+
 	constructor (def = {}, parent) {
 		this.def = def;
 
@@ -19,7 +22,7 @@ export default class AbstractFeature {
 			this.title = def.title;
 		}
 
-		this.score = new Score(this.parent?.score, this.constructor.forceTotal);
+		this.score = new Score(this, this.constructor.forceTotal);
 	}
 
 	get link() {
@@ -81,6 +84,20 @@ export default class AbstractFeature {
 	}
 
 	test() {
-		this.tests.forEach(test => test());
+		if (this.tested) {
+			return;
+		}
+
+		this.tested = true;
+
+		if (this.children?.length > 0) {
+			let startTime = performance.now();
+			for (let child of this.children) {
+				child.test();
+			}
+
+			this.score.testTime = performance.now() - startTime;
+			this.score.recalc();
+		}
 	}
 }

@@ -6,18 +6,16 @@ import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
 import CarbonAds from './vue/components/carbon-ads.js';
 
-let mainScore = new Score();
 const classes = ['epic-fail', 'fail', 'very-buggy', 'buggy', 'slightly-buggy', 'almost-pass', 'pass'];
 
 let allSpecs = {};
 
-let rootFeature = new AbstractFeature();
-rootFeature.score = mainScore;
+let root = new AbstractFeature();
 
 for (let id in Specs) {
 	let spec = Specs[id];
 	spec.id = id;
-	spec = new Spec(spec, rootFeature);
+	spec = new Spec(spec, root);
 	allSpecs[id] = spec;
 }
 
@@ -28,27 +26,17 @@ let components = {
 let appSpec = {
 	data() {
 		return {
-			/**
-			 * Score for all specs
-			 * @type {Score}
-			 */
-			mainScore,
+			root,
 
 			/**
 			 * All specs as dictionary
 			 * @type {Record<string, Spec>}
 			 */
 			allSpecs,
-			rootFeature,
 			filter: new URLSearchParams(window.location.search).get('filter') ?? '',
 			// TODO move this to Score
 			testTime: 0,
-			filterScores: {},
 		};
-	},
-
-	mounted() {
-		this.runTests();
 	},
 
 	computed: {
@@ -56,13 +44,7 @@ let appSpec = {
 		 * @type {Spec[]}
 		 */
 		specs () {
-			let specs = Object.values(this.allSpecs).filter(spec => spec.matchesFilter(this.filter)).sort((a, b) => a.title.localeCompare(b.title));
-
-			for (let spec of specs) {
-				spec.test();
-			}
-
-			return specs;
+			return this.allSpecsList.filter(spec => spec.matchesFilter(this.filter)).sort((a, b) => a.title.localeCompare(b.title));
 		},
 
 		/** All specs as array
@@ -76,23 +58,7 @@ let appSpec = {
 		 * @type {Score}
 		 */
 		score () {
-			if (this.specs.length === this.allSpecsList.length) {
-				// All specs shown
-				return this.mainScore;
-			}
-
-			let score = this.filterScores[this.filter];
-
-			if (!score) {
-				score = new Score();
-				score.children = this.specs.map(spec => spec.score);
-
-				score.recalc();
-
-				this.filterScores[this.filter] = score;
-			}
-
-			return score;
+			return this.root.score;
 		},
 	},
 
@@ -118,16 +84,6 @@ let appSpec = {
 			return classes[index];
 		},
 
-		runTests() {
-			let startTime = performance.now();
-
-			for (let spec of this.specs) {
-				spec.test();
-			}
-
-			this.testTime = performance.now() - startTime;
-		},
-
 		round(value, maxDecimals = 0) {
 			return Math.round(value * 10 ** maxDecimals) / 10 ** maxDecimals;
 		},
@@ -143,6 +99,18 @@ let appSpec = {
 	},
 
 	watch: {
+		specs: {
+			handler() {
+				this.root.children = this.specs;
+
+				for (let spec of this.specs) {
+					spec.test();
+				}
+
+				this.root.score.recalc();
+			},
+			immediate: true,
+		},
 		filter: {
 			handler() {
 				// Update address bar
