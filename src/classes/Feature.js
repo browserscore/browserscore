@@ -35,6 +35,12 @@ export default class Feature extends AbstractFeature {
 		return '';
 	}
 
+	get uid () {
+		let parentUid = this.parent ? this.parent.uid + '.' : '';
+		let typeUid = this.type ? this.type + '.' : '';
+		return parentUid + typeUid + this.id;
+	}
+
 	test () {
 		if (this.results) {
 			// Already tested

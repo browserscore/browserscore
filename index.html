@@ -30,7 +30,7 @@
 		</header>
 
 		<section id="all">
-			<section v-for="spec in specs" :key="spec.id" class="tests">
+			<section v-for="spec in specs" :key="spec.uid" class="tests" :id="spec.htmlId">
 				<h1>
 					<span v-text="spec.title"></span>
 					<div class="spec-links">
@@ -40,9 +40,9 @@
 					</div>
 
 				</h1>
-				<section v-for="features, type in spec.features" :key="[spec.id, type].join('/')">
+				<section v-for="features, type in spec.features" :key="spec.getUid('.', type)">
 					<h1 v-text="type"></h1>
-					<details v-for="feature in features" :key="[spec.id, type, feature.id].join('/')">
+					<details v-for="feature in features" :key="feature.uid" :id="feature.htmlId">
 						<summary :class="passclass({
 							passed: feature.passed,
 							total: feature.tests.length,
@@ -53,7 +53,7 @@
 							<a v-if="feature.mdnLink" :href="feature.mdnLink" target="_blank" class="spec-link mdn-link">MDN</a>
 						</summary>
 						<ul>
-							<li v-for="result, index of feature.results" :key="[spec.id, type, feature.id, index].join('/')" :data-success="result.success" :class="passclass(result.success)">
+							<li v-for="result, index of feature.results" :key="feature.getUid('.', index)" :data-success="result.success" :class="passclass(result.success)">
 								{{ feature.tests[index] }}
 								<span class="prefix" v-if="result.prefix">{{ result.prefix }}</span>
 								<span class="note" v-if="result.note">{{ result.note }}</span>
