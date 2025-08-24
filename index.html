@@ -39,7 +39,6 @@
 						<a v-if="spec.draftLink && spec.draftLink !== spec.specLink" :href="spec.draftLink" target="_blank" class="spec-link" :class="`${spec.org.id}-link`">DEV</a>
 						<a v-if="spec.mdnLink" :href="spec.mdnLink" target="_blank" class="spec-link" :class="`${spec.org.id}-link`">MDN</a>
 					</div>
-
 				</h1>
 				<section v-for="features, type in spec.features" :key="spec.getUid('.', type)">
 					<h1 v-text="type"></h1>
@@ -54,11 +53,13 @@
 							<a v-if="feature.mdnLink" :href="feature.mdnLink" target="_blank" class="spec-link mdn-link">MDN</a>
 						</summary>
 						<ul>
-							<li v-for="result, index of feature.results" :key="feature.getUid('.', index)" :data-success="result.success" :class="passclass(result.success)">
-								{{ feature.tests[index] }}
-								<span class="prefix" v-if="result.prefix">{{ result.prefix }}</span>
-								<span class="note" v-if="result.note">{{ result.note }}</span>
-							</li>
+							<template v-for="test, index of feature.tests" :key="feature.getUid('.', index)">
+								<li v-for="result of [feature.results?.[index] ?? {}]" :data-success="result.success" :class="passclass(result.success)">
+									{{ test }}
+									<span class="prefix" v-if="result.prefix">{{ result.prefix }}</span>
+									<span class="note" v-if="result.note">{{ result.note }}</span>
+								</li>
+							</template>
 						</ul>
 					</details>
 				</section>
