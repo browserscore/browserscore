@@ -76,7 +76,7 @@ export default class Spec extends AbstractFeature {
 
 		if (ret) {
 			let template = this.group.specs ?? this.org.specs;
-			return template.replace('{shortname}', ret);
+			return template.replace('{shortname}', ret).replace(/(\/|\.html)\/$/, '$1');
 		}
 
 		return '';
@@ -87,7 +87,7 @@ export default class Spec extends AbstractFeature {
 
 		if (ret) {
 			let template = this.group.drafts ?? this.org.drafts;
-			return template.replace('{shortname}', ret);
+			return template.replace('{shortname}', ret).replace(/(\/|\.html)\/$/, '$1');
 		}
 
 		return '';
