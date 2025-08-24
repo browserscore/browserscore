@@ -1,3 +1,4 @@
 *.code-workspace
 .history
 package-lock.json
+node_modules/*
