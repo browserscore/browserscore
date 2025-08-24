@@ -58,4 +58,19 @@ export default class Score {
 	percent () {
 		return Math.round((100 * this.passed) / this.total);
 	}
+
+	/**
+	 * Convert to JSON
+	 * @returns {Object}
+	 */
+	toJSON () {
+		return {
+			passed: this.passed,
+			total: this.total,
+			passedTests: this.passedTests,
+			failedTests: this.failedTests,
+			totalTests: this.totalTests,
+			testTime: this.testTime,
+		};
+	}
 }
