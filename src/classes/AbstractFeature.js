@@ -19,7 +19,7 @@ export default class AbstractFeature {
 			this.title = def.title;
 		}
 
-		this.score = new Score(this.parent?.score, this.constructor.featureCount);
+		this.score = new Score(this.parent?.score, this.constructor.forceTotal);
 	}
 
 	get link() {

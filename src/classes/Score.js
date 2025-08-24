@@ -8,10 +8,10 @@ export default class Score {
 
 	/**
 	 * @param {*} parent - Score of parent object
-	 * @param {*} featureCount - By default, all tests count as individual features. Set this to 1 to count them as 1 feature.
+	 * @param {*} forceTotal - By default, all tests count as individual features. Set this to 1 to count them as 1 feature.
 	 */
-	constructor(parent, featureCount) {
-		this.featureCount = featureCount;
+	constructor(parent, forceTotal) {
+		this.forceTotal = forceTotal;
 		if (parent) {
 			this.parent = parent;
 			parent.children.push(this);
@@ -26,8 +26,8 @@ export default class Score {
 		this.passed = this.passedTests = data.passed;
 		this.total = this.totalTests = data.total;
 
-		if (this.featureCount) {
-			this.total = this.featureCount;
+		if (this.forceTotal) {
+			this.total = this.forceTotal;
 			this.passed *= this.total / this.totalTests;
 		}
 

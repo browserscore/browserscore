@@ -2,7 +2,7 @@ import featureTypes from '../features.js';
 import AbstractFeature from './AbstractFeature.js';
 
 export default class Feature extends AbstractFeature {
-	static featureCount = 1;
+	static forceTotal = 1;
 	constructor (def, parent) {
 		super(def, parent);
 		this.type = def.type;
