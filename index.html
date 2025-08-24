@@ -21,11 +21,12 @@
 		<header>
 			<h1>Your browser scores <strong v-content="score">0%</strong></h1>
 			<p>
-				Determined by passing
-				<strong v-content="round(score.passedTests)">0</strong> tests
-				out of <strong v-content="round(score.totalTests)">0</strong> total
-				for <strong v-content="round(score.total)">0</strong> features
-				(<strong v-content="round(testTime) + ' ms'">0 ms</strong>)
+				Recognized
+				<span :title="`passed ${round(score.passedTests)} out of ${score.totalTests} tests`">
+					<strong v-content="round(score.passed)">0</strong>
+					out of <strong v-content="round(score.total)">0</strong> features
+				</span>
+				in <strong v-content="round(testTime) + ' ms'">0 ms</strong>
 			</p>
 		</header>
 
