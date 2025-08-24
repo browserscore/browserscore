@@ -51,6 +51,35 @@ export default class AbstractFeature {
 		return ret ? 'https://developer.mozilla.org/en-US/docs/Web/' + ret : '';
 	}
 
+	/**
+	 * Get a globally unique id for this feature.
+	 */
+	get uid () {
+		return this.getUid();
+	}
+
+	/**
+	 * Same as uid, but uses hyphens instead of dots.
+	 */
+	get htmlId () {
+		return this.getUid('--');
+	}
+
+	/**
+	 * Get a globally unique id for this feature, with a custom separator for different levels
+	 */
+	getUid (separator = '.', pathSuffix = '') {
+		let parentUid = this.parent?.getUid(separator) ?? '';
+		if (parentUid) {
+			parentUid += separator;
+		}
+
+		pathSuffix = pathSuffix ? separator + pathSuffix : '';
+		let id = this.id ?? '';
+
+		return parentUid + id + pathSuffix;
+	}
+
 	test() {
 		this.tests.forEach(test => test());
 	}

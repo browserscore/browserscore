@@ -11,13 +11,13 @@ const classes = ['epic-fail', 'fail', 'very-buggy', 'buggy', 'slightly-buggy', '
 
 let allSpecs = {};
 
-let root = new AbstractFeature();
-root.score = mainScore;
+let rootFeature = new AbstractFeature();
+rootFeature.score = mainScore;
 
 for (let id in Specs) {
 	let spec = Specs[id];
 	spec.id = id;
-	spec = new Spec(spec, root);
+	spec = new Spec(spec, rootFeature);
 	allSpecs[id] = spec;
 }
 
@@ -39,6 +39,7 @@ let appSpec = {
 			 * @type {Record<string, Spec>}
 			 */
 			allSpecs,
+			rootFeature,
 			filter: new URLSearchParams(window.location.search).get('filter') ?? '',
 			// TODO move this to Score
 			testTime: 0,
