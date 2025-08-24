@@ -48,7 +48,7 @@ let appSpec = {
 	},
 
 	mounted() {
-		this.runTests(this.filter);
+		this.runTests();
 	},
 
 	computed: {
