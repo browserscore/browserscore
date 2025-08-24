@@ -1,7 +1,7 @@
 import { createApp } from '../node_modules/vue/dist/vue.esm-browser.js';
 import AbstractFeature from './classes/AbstractFeature.js';
-import Specs from '../tests/index.js';
 import Score from './classes/Score.js';
+import Specs from './tests.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
 import CarbonAds from './vue/components/carbon-ads.js';
