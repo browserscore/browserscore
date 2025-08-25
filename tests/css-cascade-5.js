@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Cascading and Inheritance Level 5',
 	link: 'css-cascade-5',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	values: {
 		properties: ['color', 'font-weight', 'background-image', 'all'],
 		'revert-layer': {

@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Basic User Interface Module Level 4',
 	link: 'css-ui-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'accent-color': {
 			link: '#widget-accent',

@@ -2,9 +2,7 @@ export default {
 	title: 'CSS Masking Module Level 1',
 	link: 'css-masking-1',
 	group: 'fxtf',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'clip-path': {
 			link: '#the-clip-path',

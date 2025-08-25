@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Writing Modes Level 4',
 	link: 'css-writing-modes-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'writing-mode': {
 			link: '#block-flow',

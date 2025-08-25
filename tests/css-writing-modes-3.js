@@ -1,10 +1,8 @@
 export default {
 	title: 'CSS Writing Modes Level 3',
 	link: 'css-writing-modes-3',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2017,
-	},
+	status: 'stable',
+	firstSnapshot: 2017,
 	properties: {
 		'unicode-bidi': {
 			link: '#unicode-bidi',

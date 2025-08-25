@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Conditional Rules Module Level 5',
 	link: 'css-conditional-5',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	'@rules': {
 		'@supports': {
 			link: '#at-supports-ext',

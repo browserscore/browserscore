@@ -3,9 +3,7 @@ export default {
 	links: {
 		dev: 'css-images-5',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'object-view-box': {
 			links: {

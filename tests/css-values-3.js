@@ -1,10 +1,8 @@
 export default {
 	title: 'CSS Values and Units Module Level 3',
 	link: 'css-values-3',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2015,
-	},
+	status: 'stable',
+	firstSnapshot: 2015,
 	values: {
 		properties: ['width', 'padding'],
 		rem: {

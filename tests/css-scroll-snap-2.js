@@ -3,9 +3,7 @@ export default {
 	links: {
 		dev: 'css-scroll-snap-2',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'scroll-start-target': {
 			links: {

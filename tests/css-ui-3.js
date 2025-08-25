@@ -1,10 +1,8 @@
 export default {
 	title: 'CSS Basic User Interface Module Level 3 (CSS3 UI)',
 	link: 'css-ui-3',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2015,
-	},
+	status: 'stable',
+	firstSnapshot: 2015,
 	properties: {
 		'box-sizing': {
 			link: '#box-sizing',

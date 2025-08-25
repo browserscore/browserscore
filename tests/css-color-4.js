@@ -1,10 +1,8 @@
 export default {
 	title: 'CSS Color Module Level 4',
 	link: 'css-color-4',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2022,
-	},
+	status: 'stable',
+	firstSnapshot: 2022,
 	values: {
 		properties: ['color', 'background-color', 'border-color', 'text-decoration-color', 'column-rule-color'],
 		'comma-less colors': {

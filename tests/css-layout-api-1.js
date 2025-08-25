@@ -2,9 +2,7 @@ export default {
 	title: 'CSS Layout API Level 1',
 	link: 'css-layout-api-1',
 	group: 'houdini',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		display: {
 			link: '#layout-api-containers',

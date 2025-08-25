@@ -5,9 +5,7 @@ export default {
 		dev: 'svg2-draft/paths.html',
 	},
 	group: 'svgwg',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		d: {
 			link: '#TheDProperty',

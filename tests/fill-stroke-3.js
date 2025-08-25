@@ -2,9 +2,7 @@ export default {
 	title: 'CSS Fill and Stroke Module Level 3',
 	link: 'fill-stroke-3',
 	group: 'fxtf',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		fill: {
 			link: '#fill-shorthand',

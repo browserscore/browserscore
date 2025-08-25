@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Fonts Module Level 5',
 	link: 'css-fonts-5',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'font-size-adjust': {
 			link: '#font-size-adjust-prop',

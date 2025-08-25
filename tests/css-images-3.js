@@ -4,10 +4,8 @@ export default {
 		tr: 'css3-images',
 		dev: 'css-images-3',
 	},
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2015,
-	},
+	status: 'stable',
+	firstSnapshot: 2015,
 	values: {
 		properties: ['background-image', 'list-style-image', 'border-image-source', 'mask-image', 'mask-border-source', 'shape-outside', 'content'],
 		'linear-gradient()': {

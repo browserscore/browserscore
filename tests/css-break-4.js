@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Fragmentation Module Level 4',
 	link: 'css-break-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	values: {
 		properties: ['break-before', 'break-after'],
 		always: {

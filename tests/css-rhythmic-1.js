@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Rhythmic Sizing',
 	link: 'css-rhythm-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'line-height-step': {
 			link: '#line-height-step',

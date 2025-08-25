@@ -1,10 +1,8 @@
 export default {
 	title: 'CSS Custom Properties for Cascading Variables Module Level 1',
 	link: 'css-variables-1',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2018,
-	},
+	status: 'stable',
+	firstSnapshot: 2018,
 	declaration: {
 		'--*': {
 			link: '#defining-variables',

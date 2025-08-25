@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Speech Module Level 1',
 	link: 'css-speech-1',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		cue: {
 			link: '#cue-props-cue',

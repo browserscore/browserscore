@@ -1,10 +1,8 @@
 export default {
 	title: 'CSS Fonts Module Level 3',
 	link: 'css-fonts-3',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2015,
-	},
+	status: 'stable',
+	firstSnapshot: 2015,
 	values: {
 		'font-variant': {
 			link: '#font-variant-prop',

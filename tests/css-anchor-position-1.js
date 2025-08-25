@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Anchor Positioning',
 	link: 'css-anchor-position-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	values: {
 		'anchor()': {
 			link: '#anchor-pos',

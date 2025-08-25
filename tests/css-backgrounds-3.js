@@ -1,10 +1,8 @@
 export default {
 	title: 'CSS Backgrounds and Borders Module Level 3',
 	link: 'css-backgrounds-3',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2015,
-	},
+	status: 'stable',
+	firstSnapshot: 2015,
 	properties: {
 		'background-repeat': {
 			links: {

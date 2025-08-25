@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Cascading and Inheritance Level 6',
 	link: 'css-cascade-6',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	'@rules': {
 		'@scope': {
 			link: '#scope-atrule',

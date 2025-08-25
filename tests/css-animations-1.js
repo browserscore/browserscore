@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Animations Level 1',
 	link: 'css-animations-1',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'animation-name': {
 			link: '#animation-name',

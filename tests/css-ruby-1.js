@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Ruby Layout Module Level 1',
 	link: 'css-ruby-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		display: {
 			link: '#ruby-display',

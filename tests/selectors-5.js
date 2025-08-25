@@ -3,9 +3,7 @@ export default {
 	links: {
 		dev: 'selectors-5',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	selectors: {
 		':local-link()': {
 			links: {

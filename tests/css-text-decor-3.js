@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Text Decoration Module Level 3',
 	link: 'css-text-decor-3',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'text-decoration': {
 			link: '#text-decoration-property',

@@ -1,9 +1,7 @@
 export default {
 	title: 'Web Animations Level 2',
 	link: 'web-animations-2',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	interfaces: {
 		AnimationTimeline: {
 			link: '#the-animationtimeline-interface',

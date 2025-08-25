@@ -3,9 +3,7 @@ export default {
 	links: {
 		dev: 'css-link-params-1',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'link-parameters': {
 			links: {

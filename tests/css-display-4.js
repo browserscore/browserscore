@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Display Module Level 4',
 	link: 'css-display-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'reading-flow': {
 			link: '#propdef-reading-flow',

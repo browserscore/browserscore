@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Display Module Level 3',
 	link: 'css-display-3',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		display: {
 			link: '#the-display-properties',
