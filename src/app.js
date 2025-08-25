@@ -37,6 +37,7 @@ let appSpec = {
 			filter: new URLSearchParams(window.location.search).get('filter') ?? '',
 			// TODO move this to Score
 			testTime: 0,
+			favicon: '',
 		};
 	},
 
@@ -63,10 +64,22 @@ let appSpec = {
 		},
 	},
 
+	mounted() {
+		this.updateFavicon();
+	},
+
 	methods: {
 		passclass,
 		round,
 		percent,
+
+		async updateFavicon() {
+			if (this.$refs.supportStatus) {
+				let favicon = await this.$refs.supportStatus.getDataUrl();
+				this.favicon = favicon;
+				document.getElementById('favicon').href = favicon;
+			}
+		},
 	},
 
 	watch: {
@@ -82,6 +95,7 @@ let appSpec = {
 			},
 			immediate: true,
 		},
+
 		filter: {
 			handler() {
 				// Update address bar
@@ -96,6 +110,14 @@ let appSpec = {
 				let newUrl = location.pathname + '?' + searchParams + location.hash;
 
 				history.replaceState({}, '', newUrl);
+			},
+		},
+
+		"score.value": {
+			handler() {
+				this.$nextTick(() => {
+					this.updateFavicon();
+				});
 			},
 		},
 	},

@@ -4,6 +4,7 @@
 
 <meta charset="utf-8" />
 <title>The CSS3 Test</title>
+<link rel="icon" href="" id="favicon" />
 <link rel="stylesheet" href="ui/css/style.css" />
 
 <script src="src/app.js" type="module"></script>
@@ -22,7 +23,7 @@
 			<h1>Your browser scores <strong v-content="percent(score)">0%</strong></h1>
 
 			<p>
-				<support-status :score="score"></support-status>
+				<support-status :score="score" ref="supportStatus"></support-status>
 				Recognized
 				<span :title="`passed ${round(score.passedTests)} out of ${score.totalTests} tests`">
 					<strong v-content="round(score.passed)">0</strong>
