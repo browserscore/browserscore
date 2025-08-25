@@ -5,7 +5,8 @@ import featureTypes from '../features.js';
 
 // Shorten the title by removing parentheticals,
 // subheadings, CSS and Module words
-const removedWords = / *(?:\([^)]*\)|:.*|\b(?:CSS(?! 2)|Module)\b)( *)/g;
+const removedWords = RegExp(` *(?:\\b${['Level', 'Module'].join('|')}\\b)(?=\\s)`, 'g');
+const removedOther = / *(?:\([^)]*\)|:.*)( *)/g;
 
 export default class Spec extends AbstractFeature {
 	features = {};
@@ -15,7 +16,9 @@ export default class Spec extends AbstractFeature {
 
 
 		if (this.title) {
-			this.title = this.title.replace(removedWords, '$1').trim();
+			this.title = this.title.replace(removedWords, '');
+			this.title = this.title.replace(removedOther, '$1');
+			this.title = this.title.trim();
 		}
 		else {
 			this.title = this.id;
