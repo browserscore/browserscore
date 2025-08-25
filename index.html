@@ -20,7 +20,9 @@
 	<section id="tests">
 		<header>
 			<h1>Your browser scores <strong v-content="percent(score)">0%</strong></h1>
+
 			<p>
+				<support-status :score="score"></support-status>
 				Recognized
 				<span :title="`passed ${round(score.passedTests)} out of ${score.totalTests} tests`">
 					<strong v-content="round(score.passed)">0</strong>

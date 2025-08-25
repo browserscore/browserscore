@@ -227,7 +227,14 @@ body > h1 {
 	}
 
 	> p {
-		font-size: 80%;
+		font-weight: 500;
+
+		.progress {
+			display: inline-block;
+			vertical-align: -.05em;
+			height: 1.2em;
+			--stroke-width: 20;
+		}
 	}
 }
 
@@ -371,9 +378,7 @@ aside {
 	padding-inline-start: .2em;
 
 	.progress {
-		--progress-color: var(--color);
 		--stroke-width: 20;
-		color: var(--color);
 	}
 }
 
