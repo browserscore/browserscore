@@ -138,7 +138,7 @@ export default {
 			},
 			tests: ['types'],
 			interface: function() {
-				return document.startViewTransition();
+				return ViewTransition.prototype;
 			},
 		},
 	},

@@ -60,7 +60,7 @@ export default {
 			},
 			tests: ['updateCallbackDone', 'ready', 'finished', 'skipTransition'],
 			interface: function() {
-				return document.startViewTransition();
+				return ViewTransition.prototype;
 			},
 		},
 	},
