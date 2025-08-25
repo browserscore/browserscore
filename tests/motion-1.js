@@ -5,9 +5,7 @@ export default {
 		tr: 'motion-1',
 	},
 	group: 'fxtf',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'offset-anchor': {
 			links: {

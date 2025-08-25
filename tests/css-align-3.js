@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Box Alignment Module Level 3',
 	link: 'css-align-3',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'align-self': {
 			link: '#align-self-property',

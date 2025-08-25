@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Multi-column Layout Module Level 2',
 	link: 'css-multicol-2',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'column-height': {
 			link: '#cc',

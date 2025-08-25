@@ -3,9 +3,7 @@ export default {
 	links: {
 		dev: 'css-color-5',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	values: {
 		properties: ['color', 'background-color', 'border-color', 'text-decoration-color', 'column-rule-color'],
 		'color-mix()': {

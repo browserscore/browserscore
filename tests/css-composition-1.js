@@ -2,10 +2,8 @@ export default {
 	title: 'Compositing and Blending Level 1',
 	link: 'compositing-1',
 	group: 'fxtf',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2015,
-	},
+	status: 'stable',
+	firstSnapshot: 2015,
 	properties: {
 		'mix-blend-mode': {
 			link: '#mix-blend-mode',

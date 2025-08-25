@@ -1,9 +1,7 @@
 export default {
 	title: 'Scroll-driven Animations',
 	link: 'scroll-animations-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	'values': {
 		'properties': ['animation-timeline'],
 		'scroll()': {

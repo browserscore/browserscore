@@ -3,9 +3,7 @@ export default {
 	links: {
 		dev: 'css-grid-3',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		grid: {
 			links: {

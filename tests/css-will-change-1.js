@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Will Change Module Level 1',
 	link: 'css-will-change-1',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'will-change': {
 			link: '#will-change',

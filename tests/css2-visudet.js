@@ -4,11 +4,9 @@ export default {
 		tr: 'CSS22/visudet.html',
 		dev: 'css2/',
 	},
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2.2,
-		'last-snapshot': 2.2,
-	},
+	status: 'stable',
+	firstSnapshot: 2.2,
+	lastSnapshot: 2.2,
 	properties: {
 		height: {
 			link: '#the-height-property',

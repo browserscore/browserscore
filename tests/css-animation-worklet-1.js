@@ -2,9 +2,7 @@ export default {
 	title: 'CSS Animation Worklet Level 1',
 	group: 'houdini',
 	link: 'css-animation-worklet-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	interfaces: {
 		CSS: {
 			link: '#animation-worklet-desc',

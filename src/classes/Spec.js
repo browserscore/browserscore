@@ -8,12 +8,14 @@ import featureTypes from '../features.js';
 const removedWords = RegExp(` *(?:\\b${['Level', 'Module'].join('|')}\\b)(?=\\s)`, 'g');
 const removedOther = / *(?:\([^)]*\)|:.*)( *)/g;
 
+const statuses = new Set(['stable', 'experimental']);
+
 export default class Spec extends AbstractFeature {
 	features = {};
+	static statuses = statuses;
 
 	constructor (def, parent) {
 		super(def, parent);
-
 
 		if (this.title) {
 			this.title = this.title.replace(removedWords, '');
@@ -57,16 +59,16 @@ export default class Spec extends AbstractFeature {
 		}
 	}
 
-	get stability () {
-		return this.def.status?.stability;
+	get status () {
+		return this.def.status;
 	}
 
 	get firstSnapshot () {
-		return this.def.status?.['first-snapshot'];
+		return this.def.firstSnapshot;
 	}
 
 	get lastSnapshot () {
-		return this.def.status?.['last-snapshot'];
+		return this.def.lastSnapshot;
 	}
 
 	get group () {
@@ -107,13 +109,11 @@ export default class Spec extends AbstractFeature {
 		}
 
 		// Filter list of specifications
-		if (filter === 'stable') {
-			return this.stability === 'stable';
+		if (statuses.has(filter)) {
+			return this.status === filter;
 		}
-		else if (filter === 'experimental') {
-			return this.stability !== 'stable';
-		}
-		else if (filter.match(/^css\d/)) {
+
+		if (filter.match(/^css\d/)) {
 			if (!this.firstSnapshot) {
 				return false;
 			}

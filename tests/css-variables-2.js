@@ -3,9 +3,7 @@ export default {
 	links: {
 		dev: 'css-variables-2',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	declaration: {
 		'Variable units': {
 			links: {

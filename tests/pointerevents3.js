@@ -5,9 +5,7 @@ export default {
 		dev: 'pointerevents',
 	},
 	group: 'github',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'touch-action': {
 			links: {

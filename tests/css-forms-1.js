@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Form Control Styling Level 1',
 	link: 'css-forms-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	values: {
 		properties: ['content', 'color', 'line-height'],
 		'control-value()': {

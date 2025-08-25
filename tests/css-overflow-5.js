@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Overflow Module Level 5',
 	link: 'css-overflow-5',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'scroll-target-group': {
 			link: '#scroll-target-group',

@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Text Decoration Module Level 4',
 	link: 'css-text-decor-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'text-decoration': {
 			link: '#text-decoration-property',

@@ -4,9 +4,7 @@ export default {
 		tr: 'css-viewport-1',
 		dev: 'css-viewport',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'zoom': {
 			link: '#zoom-property',

@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Color HDR Module Level 1',
 	link: 'css-color-hdr-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'dynamic-range-limit': {
 			link: '#perf',

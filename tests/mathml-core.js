@@ -4,9 +4,7 @@ export default {
 		dev: 'mathml-core/#css-extensions-for-math-layout',
 	},
 	group: 'math',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		display: {
 			links: {

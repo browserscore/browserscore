@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Scroll Snap Module Level 1',
 	link: 'css-scroll-snap-1',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'scroll-margin': {
 			link: '#scroll-margin',

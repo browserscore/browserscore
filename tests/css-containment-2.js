@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Containment Module Level 2',
 	link: 'css-contain-2',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		contain: {
 			link: '#contain-property',

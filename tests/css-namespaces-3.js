@@ -1,10 +1,8 @@
 export default {
 	title: 'CSS Namespaces Module Level 3',
 	link: 'css-namespaces-3',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2007,
-	},
+	status: 'stable',
+	firstSnapshot: 2007,
 	'@rules': {
 		'@namespace': {
 			link: '#declaration',

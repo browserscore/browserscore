@@ -1,10 +1,8 @@
 export default {
 	title: 'CSS Transforms Module Level 1',
 	link: 'css-transforms-1',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2017,
-	},
+	status: 'stable',
+	firstSnapshot: 2017,
 	properties: {
 		transform: {
 			link: '#transform-property',

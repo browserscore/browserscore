@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Values and Units Module Level 4',
 	link: 'css-values-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	values: {
 		properties: ['width', 'padding'],
 		ex: {

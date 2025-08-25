@@ -5,9 +5,7 @@ export default {
 		dev: 'dom-overlays',
 	},
 	group: 'iwwg',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	selectors: {
 		':xr-overlay': {
 			link: '#css-pseudo-class',

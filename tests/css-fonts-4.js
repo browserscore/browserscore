@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Fonts Module Level 4',
 	link: 'css-fonts-4',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	values: {
 		properties: ['font-family'],
 		'system-ui': {

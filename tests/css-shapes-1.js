@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Shapes Module Level 1',
 	link: 'css-shapes-1',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'shape-outside': {
 			link: '#shape-outside-property',

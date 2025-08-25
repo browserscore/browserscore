@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Transitions',
 	link: 'css-transitions-1',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'transition-property': {
 			link: '#transition-property-property',

@@ -5,9 +5,7 @@ export default {
 		dev: 'svg2-draft/interact.html',
 	},
 	group: 'svgwg',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'pointer-events': {
 			link: '#PointerEventsProp',

@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Logical Properties and Values Level 1',
 	link: 'css-logical-1',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'caption-side': {
 			link: '#caption-side',

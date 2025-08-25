@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Regions Module Level 1',
 	link: 'css-regions-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'flow-from': {
 			link: '#flow-from',

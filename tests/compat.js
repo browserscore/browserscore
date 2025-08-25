@@ -4,9 +4,7 @@ export default {
 	links: {
 		dev: 'compat',
 	},
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'touch-action': {
 			links: {

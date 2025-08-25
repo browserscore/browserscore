@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Positioned Layout Module Level 3',
 	link: 'css-position-3',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		position: {
 			link: '#position-property',

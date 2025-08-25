@@ -4,9 +4,7 @@ export default {
 		dev: 'css-typed-om-1',
 	},
 	group: 'houdini',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	interfaces: {
 		Element: {
 			links: {

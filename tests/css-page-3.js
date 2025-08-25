@@ -1,9 +1,7 @@
 export default {
 	title: 'Paged Media Module Level 3',
 	link: 'css-page-3',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		page: {
 			links: {

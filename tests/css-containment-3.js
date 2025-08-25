@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Containment Module Level 3',
 	link: 'css-contain-3',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	'@rules': {
 		'@container': {
 			link: '#container-rule',

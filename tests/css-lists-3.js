@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Lists Module Level 3',
 	link: 'css-lists-3',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'list-style-type': {
 			link: '#text-markers',

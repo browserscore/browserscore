@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Easing Functions Level 2',
 	link: 'css-easing-2',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	values: {
 		properties: ['transition-timing-function'],
 		"linear()": {

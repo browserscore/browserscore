@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Box Sizing Module Level 4',
 	link: 'css-sizing-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'aspect-ratio': {
 			link: '#aspect-ratio',

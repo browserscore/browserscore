@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Fragmentation Module Level 3',
 	link: 'css-break-3',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'break-before': {
 			link: '#break-between',

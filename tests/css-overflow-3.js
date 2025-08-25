@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Overflow Module Level 3',
 	link: 'css-overflow-3',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'block-ellipsis': {
 			link: '#block-ellipsis',

@@ -3,9 +3,7 @@ export default {
 	links: {
 		tr: 'pointerevents1',
 	},
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'touch-action': {
 			links: {

@@ -34,9 +34,7 @@ const border_clip_tests = [
 export default {
 	title: 'CSS Borders and Box Decorations Module Level 4',
 	link: 'css-borders-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	values: {
 		'properties': ['border-top-color', 'border-block-start-color'],
 		'stripes()': {

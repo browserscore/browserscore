@@ -4,9 +4,7 @@ export default {
 		dev: 'css-inline-3',
 		tr: 'css-inline-3',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'alignment-baseline': {
 			links: {

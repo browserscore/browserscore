@@ -3,9 +3,7 @@ export default {
 	links: {
 		dev: 'css-transitions-2',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	'@rules': {
 		'@starting-style': {
 			links: {

@@ -1,9 +1,7 @@
 export default {
 	title: 'Web Animations',
 	link: 'web-animations-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	interfaces: {
 		Animation: {
 			link: '#the-animation-interface',

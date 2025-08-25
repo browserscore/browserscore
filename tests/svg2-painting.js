@@ -5,9 +5,7 @@ export default {
 		dev: 'svg2-draft/painting.html',
 	},
 	group: 'svgwg',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'color-interpolation': {
 			link: '#ColorInterpolation',

@@ -3,9 +3,7 @@ export default {
 	links: {
 		dev: 'css-env-1',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	values: {
 		properties: ['width', 'padding'],
 		'env()': {

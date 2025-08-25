@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Overflow Module Level 4',
 	link: 'css-overflow-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'overflow-clip-margin-top': {
 			link: '#overflow-clip-margin',

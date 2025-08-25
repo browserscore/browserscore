@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Spatial Navigation Level 1',
 	link: 'css-nav-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'spatial-navigation-action': {
 			link: '#css-property-spatialnavigationaction',

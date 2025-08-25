@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Shadow Parts',
 	link: 'css-shadow-parts-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	selectors: {
 		'::part()': {
 			link: '#part',

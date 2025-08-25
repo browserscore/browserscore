@@ -1,10 +1,8 @@
 export default {
 	title: 'CSS Multi-column Layout Module Level 1',
 	link: 'css-multicol-1',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2015,
-	},
+	status: 'stable',
+	firstSnapshot: 2015,
 	properties: {
 		'column-width': {
 			link: '#cw',

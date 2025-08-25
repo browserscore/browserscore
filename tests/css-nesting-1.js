@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Nesting Module',
 	link: 'css-nesting-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	interfaces: {
 		CSSStyleRule: {
 			link: '#cssom-style',

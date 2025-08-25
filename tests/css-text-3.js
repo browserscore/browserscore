@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Text Module Level 3',
 	link: 'css-text-3',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'text-transform': {
 			links: {

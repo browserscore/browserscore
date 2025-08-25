@@ -3,9 +3,7 @@ export default {
 	links: {
 		dev: 'css-shapes-2',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'shape-inside': {
 			links: {
