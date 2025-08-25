@@ -419,11 +419,15 @@ aside {
 	bottom: 0;
 }
 
-aside .caution p {
+.caution p {
 	padding: 1em;
 	background: var(--secondary-background-color);
 	color: var(--secondary-foreground-color);
 	text-shadow: 0 -.1em .2em var(--secondary-shadow-color);
+}
+
+.caution p a {
+	color: var(--secondary-foreground-color);
 }
 
 aside h1 {
