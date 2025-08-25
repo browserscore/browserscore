@@ -19,10 +19,9 @@ This document describes the data schema used in the CSS test files located in th
   },
 
   // Information about the specification status
-  status?: {
-    stability: string,     // "stable", "experimental", or other status values
-    "first-snapshot"?: number  // Year of first snapshot
-  },
+  status?: string,         // "stable", "experimental", or other status values
+  firstSnapshot?: number,  // Year of first snapshot (camelCase)
+  lastSnapshot?: number,   // Year of last snapshot (camelCase)
 
   // Tests for CSS properties and their values
   properties?: {
@@ -93,9 +92,9 @@ All optional
   - **`devtype`** (string, optional): Type of specification (e.g., "whatwg", "houdini")
   - **`mdn`** (string, optional): Link to MDN documentation
   - **`mdnGroup`** (string, optional): MDN group classification
-- **`status`** (object): Information about the specification status
-  - **`stability`** (string): One of "stable", "experimental", or other status values
-  - **`first-snapshot`** (number, optional): Year of first snapshot
+- **`status`** (string): One of "stable", "experimental", or other status values
+- **`firstSnapshot`** (number, optional): Year of first snapshot (camelCase)
+- **`lastSnapshot`** (number, optional): Year of last snapshot (camelCase)
 
 ## Test Categories
 
@@ -228,6 +227,7 @@ In `values` tests, the `properties` array specifies which CSS properties the val
 ```javascript
 export default {
   title: 'CSS Grid Layout Module Level 1',
+  status: 'stable',
   links: {
     tr: 'css-grid-1',
     dev: 'css-grid-1'
@@ -248,6 +248,8 @@ export default {
 ```javascript
 export default {
   title: 'CSS Color Module Level 4',
+  status: 'stable',
+  firstSnapshot: 2022,
   links: {
     tr: 'css-color-4',
     dev: 'css-color-4'
@@ -269,6 +271,7 @@ export default {
 ```javascript
 export default {
   title: 'CSS Typed OM Level 1',
+  status: 'experimental',
   links: {
     dev: 'css-typed-om-1',
     devtype: 'houdini'
