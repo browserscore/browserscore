@@ -2,6 +2,7 @@
 @import "icons.css";
 @import "carbon.css";
 @import "../components/tooltip/tooltip.css";
+@import "../../src/vue/components/support-status/support-status.css";
 
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -80,13 +81,14 @@ h1 > .score {
 
 .spec-links {
 	display: flex;
+	gap: 0.3em;
 }
 
 .spec-link {
 	display: flex;
 	align-items: center;
 	padding: .3em .4em;
-	margin: -.5em 0 -.5em .3em;
+	margin: -.5em 0;
 	font-family: var(--font-sans);
 	font-size: 0.85rem;
 	background-color: var(--spec-link-background-color);
@@ -171,6 +173,34 @@ body > h1 {
 	flex: 2;
 }
 
+.pass {
+	--color: var(--color-pass);
+}
+
+.almost-pass {
+	--color: var(--color-almost-pass);
+}
+
+.slightly-buggy {
+	--color: var(--color-slightly-buggy);
+}
+
+.buggy {
+	--color: var(--color-buggy);
+}
+
+.very-buggy {
+	--color: var(--color-very-buggy);
+}
+
+.fail {
+	--color: var(--color-fail);
+}
+
+.epic-fail {
+	--color: var(--color-epic-fail);
+}
+
 #tests > header {
 	text-align: center;
 
@@ -195,25 +225,45 @@ details {
 	font: 100% var(--font-mono);
 }
 
-details summary,
-details li[class] {
-	padding: .5em;
-	background: gray;
-	color: white;
+.feature {
+	display: flex;
+	gap: .5em;
+	align-items: center;
+	padding: .5em .6em;
+	background: var(--color, var(--color-gray));
+	color: oklch(from var(--color) var(--text));
 	border-radius: .3em;
 	position: relative;
+	--progress-color: oklch(from var(--color) calc(l + 0.4) 0 0);
+
+	.title {
+		flex: 1;
+	}
+
+	.progress {
+		height: 1.2lh;
+
+		.x {
+			opacity: .5;
+		}
+	}
 }
 
-details summary {
+summary.feature {
 	list-style: none;
 	cursor: pointer;
-	padding-top: .6em;
-	padding-right: 2em;
-	background: linear-gradient(var(--progress-color), var(--progress-color)) no-repeat 0 0 / calc(var(--progress) * 1%) .2em;
-}
 
-details summary::-webkit-details-marker {
-	display: none;
+	&::before {
+		content: '▶';
+		display: inline-block;
+		margin-right: .5em;
+		font-size: 60%;
+		opacity: 0.6;
+	}
+
+	&:is([open] > *)::before {
+		content: '▼';
+	}
 }
 
 details ul {
@@ -221,7 +271,7 @@ details ul {
 	padding: 0 0 0 2em;
 }
 
-details li[class] {
+details li.feature {
 	list-style: none;
 	margin: .3em 0;
 	font-size: 90%;
@@ -234,65 +284,7 @@ details li[class] {
 	}
 }
 
-.pass {
-	--color: var(--color-pass);
-	--emoji: ':D';
-}
 
-.almost-pass {
-	--color: var(--color-almost-pass);
-	--emoji: ':)';
-}
-
-.slightly-buggy {
-	--color: var(--color-slightly-buggy);
-	--emoji: ':|';
-}
-
-.buggy {
-	--color: var(--color-buggy);
-	--emoji: ':(';
-}
-
-.very-buggy {
-	--color: var(--color-very-buggy);
-	--emoji: ':o';
-}
-
-.fail {
-	--color: var(--color-fail);
-	--emoji: ':′(';
-}
-
-.epic-fail {
-	--color: var(--color-epic-fail);
-	--emoji: '›:(';
-}
-
-details summary[class],
-details li[class],
-#specsTested li[class]::before {
-	background-color: var(--color);
-	color: oklch(from var(--color) var(--text));
-}
-
-details summary[class]::after,
-details li[class]::after,
-#specsTested li[class]::after {
-	content: var(--emoji);
-}
-
-details summary::before {
-	content: '▶';
-	display: inline-block;
-	margin-right: .5em;
-	font-size: 60%;
-	opacity: .5;
-}
-
-details[open] summary::before {
-	content: '▼';
-}
 
 .prefix {
 	display: inline-block;
@@ -305,30 +297,6 @@ details[open] summary::before {
 	border-radius: .3em;
 	vertical-align: middle;
 }
-
-/* Emoticons */
-
-details summary::after,
-details li[class]::after,
-#specsTested li::after {
-	opacity: 0.75;
-	position: absolute;
-	top: 0;
-}
-
-details summary::after,
-details li[class]::after {
-	letter-spacing: -2px;
-	padding-top: .6em;
-	right: 10px;
-}
-
-#specsTested li::after {
-	font: 83.3%/29px var(--font-mono);
-	right: 0;
-}
-
-/* End emoticons */
 
 aside {
 	flex: 1;
@@ -363,7 +331,7 @@ aside {
 	li {
 		list-style: none;
 		padding: .3em 0;
-		border-bottom: 2px dotted var(--color-border);
+		border-bottom: 1px dotted var(--color-border);
 
 		&:first-child {
 			border-top: none;
@@ -377,16 +345,16 @@ aside {
 
 #specsTested li {
 	position: relative;
-}
+	display: flex;
+	align-items: center;
+	gap: .5em;
+	padding-inline-start: .2em;
 
-#specsTested li::before {
-	content: '';
-	display: inline-block;
-	width: 1.2em;
-	height: 1.2em;
-	margin-right: .5em;
-	vertical-align: -.2em;
-	border-radius: 50%;
+	.progress {
+		--progress-color: var(--color);
+		--stroke-width: 20;
+		color: var(--color);
+	}
 }
 
 footer {

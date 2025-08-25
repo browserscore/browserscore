@@ -6,6 +6,7 @@ import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
 import { passclass, round, percent } from './util.js';
 import CarbonAds from './vue/components/carbon-ads.js';
+import SupportStatus from './vue/components/support-status/support-status.js';
 
 let allSpecs = {};
 
@@ -19,6 +20,7 @@ for (let id in Specs) {
 }
 
 let components = {
+	"support-status": SupportStatus,
 	"carbon-ads": CarbonAds,
 }
 

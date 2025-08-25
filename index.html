@@ -31,7 +31,7 @@
 		</header>
 
 		<section id="all">
-			<section v-for="spec in specs" :key="spec.uid" class="tests" :id="spec.htmlId">
+			<section v-for="spec in specs" :key="spec.uid" :id="spec.htmlId">
 				<h1>
 					<span v-text="spec.title"></span>
 					<div class="spec-links">
@@ -42,16 +42,18 @@
 				</h1>
 				<section v-for="features, type in spec.features" :key="spec.getUid('.', type)">
 					<h1 v-text="type"></h1>
-					<details v-for="feature of features" :key="feature.uid" :id="feature.htmlId">
-						<summary :class="passclass(feature.score)" :style="{ '--progress': round(feature.score.value * 100, 2) }">
-							{{ feature.title }}
+					<details class="features" v-for="feature of features" :key="feature.uid" :id="feature.htmlId">
+						<summary class="feature" :class="passclass(feature.score)">
+							<span class="title" v-text="feature.title"></span>
 							<a v-if="feature.specLink" :href="feature.specLink" target="_blank" :class="`spec-link ${feature.parent.org.id}-link`">TR</a>
 							<a v-if="feature.draftLink && feature.draftLink !== feature.specLink" :href="feature.draftLink" target="_blank" :class="`spec-link ${feature.parent.org.id}-link`">DEV</a>
 							<a v-if="feature.mdnLink" :href="feature.mdnLink" target="_blank" class="spec-link mdn-link">MDN</a>
+
+							<support-status :score="feature.score"></support-status>
 						</summary>
 						<ul>
 							<template v-for="test, index of feature.tests" :key="feature.getUid('.', index)">
-								<li v-for="result of [feature.results?.[index] ?? {}]" :data-success="result.success" :class="passclass(result.success)">
+								<li class="feature" v-for="result of [feature.results?.[index] ?? {}]" :data-success="result.success" :class="passclass(result.success)">
 									{{ test }}
 									<span class="prefix" v-if="result.prefix">{{ result.prefix }}</span>
 									<span class="note" v-if="result.note">{{ result.note }}</span>
@@ -117,6 +119,7 @@
 					passed: spec.score.passed,
 					total: spec.score.total,
 				})">
+					<support-status :score="spec.score"></support-status>
 					<a :href="`#${spec.id}`">{{ spec.title }}</a>
 				</li>
 			</ul>

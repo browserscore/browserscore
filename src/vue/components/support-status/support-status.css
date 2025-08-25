@@ -1,0 +1,39 @@
+.progress {
+	--_stroke-width: var(--stroke-width, 16);
+	--_faded-opacity: var(--faded-opacity, 0.2);
+	--_progress-color: var(--progress-color, currentColor);
+	--_r: calc(50 - var(--_stroke-width) / 2);
+	--_perimeter: calc(2 * 3.1415926 * var(--_r));
+
+	overflow: visible;
+	width: 1lh;
+	height: 1lh;
+	margin: -0.1lh;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+
+	.check {
+		stroke: var(--_progress-color);
+		stroke-width: 10;
+	}
+
+	circle {
+		fill: none;
+		stroke: var(--_progress-color);
+		stroke-width: var(--_stroke-width);
+		r: calc(var(--_r) * 1px);
+		stroke-dasharray: calc(var(--_perimeter) * 1px);
+		transform-origin: center;
+		transform-box: fill-box;
+		transform: rotate(-90deg);
+	}
+
+	circle:not(.partial) {
+		stroke-opacity: var(--_faded-opacity);
+	}
+
+	circle.partial {
+		stroke-dashoffset: calc(var(--_perimeter) * 1px * (1 - var(--progress, 0)/100));
+	}
+}

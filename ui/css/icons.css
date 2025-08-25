@@ -1,4 +1,6 @@
 :root {
+	--icon-check: url('../icons/check.svg');
+	--icon-x: url('../icons/x.svg');
 	--icon-warning: url('../icons/warning.svg');
 	--icon-w3c: url('../icons/w3c.svg');
 	--icon-mdn: url('../icons/mdn.svg');

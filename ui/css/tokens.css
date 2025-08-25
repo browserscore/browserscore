@@ -53,7 +53,6 @@
 	--highlight-foreground-color: var(--color-accent-text);
 	--prefix-background-color: var(--color-shade);
 	--prefix-foreground-color: var(--spec-link-foreground-color);
-	--progress-color: var(--color-shade);
 
 	--aside-border-color: light-dark(hsl(0 0% 80% / .8), hsl(0 0% 20% / .8));
 	--aside-background-color: light-dark(hsl(0 0% 98% / .6), hsl(0 0% 2% / .6));
