@@ -27,7 +27,7 @@ export default class Spec extends AbstractFeature {
 
 			let {properties, required, interface: Interface, ...features} = this.def[type];
 
-			this.features[type] = {};
+			this.features[type] = [];
 
 			for (let id in features) {
 				let feature = features[id];
@@ -45,7 +45,8 @@ export default class Spec extends AbstractFeature {
 					feature.interface ??= Interface;
 				}
 
-				feature = this.features[type][id] = new Feature(feature, this);
+				feature = new Feature(feature, this);
+				this.features[type].push(feature);
 
 				this.children.push(feature);
 			}

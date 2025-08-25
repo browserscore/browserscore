@@ -42,7 +42,7 @@
 				</h1>
 				<section v-for="features, type in spec.features" :key="spec.getUid('.', type)">
 					<h1 v-text="type"></h1>
-					<details v-for="feature in features" :key="feature.uid" :id="feature.htmlId">
+					<details v-for="feature of features" :key="feature.uid" :id="feature.htmlId">
 						<summary :class="passclass(feature.score)" :style="{ '--progress': round(feature.score.value * 100, 2) }">
 							{{ feature.title }}
 							<a v-if="feature.specLink" :href="feature.specLink" target="_blank" :class="`spec-link ${feature.parent.org.id}-link`">TR</a>
