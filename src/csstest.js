@@ -4,9 +4,8 @@ import Score from './classes/Score.js';
 import Specs from './tests.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
+import { passclass, round, percent } from './util.js';
 import CarbonAds from './vue/components/carbon-ads.js';
-
-const classes = ['epic-fail', 'fail', 'very-buggy', 'buggy', 'slightly-buggy', 'almost-pass', 'pass'];
 
 let allSpecs = {};
 
@@ -63,39 +62,9 @@ let appSpec = {
 	},
 
 	methods: {
-		passclass (info) {
-			if (info === undefined || info === null) {
-				return '';
-			}
-
-			let success;
-
-			if (typeof info === 'boolean') {
-				success = +info;
-			}
-			else if (typeof info === 'number') {
-				success = info;
-			}
-			else if (typeof info === 'object' && 'passed' in info) {
-				success = info.passed / info.total;
-			}
-
-			let index = Math.round(success * (classes.length - 1));
-			return classes[index];
-		},
-
-		round(value, maxDecimals = 0) {
-			return Math.round(value * 10 ** maxDecimals) / 10 ** maxDecimals;
-		},
-
-		percent(value, maxDecimals = 0) {
-			value = +value;
-			return value.toLocaleString("en-US", {
-				style: "percent",
-				minimumFractionDigits: 0,
-				maximumFractionDigits: maxDecimals,
-			});
-		},
+		passclass,
+		round,
+		percent,
 	},
 
 	watch: {
