@@ -3,6 +3,8 @@ import { groups, orgs } from '../data.js';
 import Feature from "./Feature.js";
 import featureTypes from '../features.js';
 
+// Shorten the title by removing parentheticals,
+// subheadings, CSS and Module words
 const removedWords = / *(?:\([^)]*\)|:.*|\b(?:CSS(?! 2)|Module)\b)( *)/g;
 
 export default class Spec extends AbstractFeature {
@@ -11,8 +13,7 @@ export default class Spec extends AbstractFeature {
 	constructor (def, parent) {
 		super(def, parent);
 
-		// Shorten the title by removing parentheticals,
-		// subheadings, CSS and Module words
+
 		if (this.title) {
 			this.title = this.title.replace(removedWords, '$1').trim();
 		}
