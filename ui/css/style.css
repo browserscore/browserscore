@@ -26,6 +26,11 @@
 	outline-offset: var(--focus-ring-offset);
 }
 
+html {
+	container-type: scroll-state;
+	container-name: document;
+}
+
 body {
 	max-width: 60em;
 	padding: 1em;
@@ -46,7 +51,7 @@ h2 {
 	margin: 1em 0 .5em;
 	font-family: var(--font-heading);
 	font-weight: normal;
-	line-height: 1;
+	line-height: 1.1;
 }
 
 #content > section section section {
@@ -160,19 +165,45 @@ details summary {
 	}
 }
 
+/* Logo */
 body > h1 {
-	position: fixed;
-	left: 0;
-	top: 0;
-	padding: .5em 1em;
+	position: absolute;
+	inset-inline-start: 1em;
+	inset-block-start: 0;
+	z-index: 1;
+	padding-block: .5em;
+	padding-inline: .8em .6em;
+	margin: 0;
 	background: var(--title-background-color);
 	color: var(--title-foreground-color);
-	z-index: 1;
 	font-size: 150%;
-	font-weight: bold;
+	font-weight: 900;
 	text-transform: uppercase;
-	transform:  rotate(-90deg) translateX(-100%);
-	transform-origin: top left;
+	transition: .1s;
+	box-shadow: 0 .4em .7em -.3em var(--color-shade);
+
+	a {
+		color: inherit;
+	}
+
+	small {
+		display: block;
+		text-transform: none;
+		font-size: 75%;
+		opacity: 0.8;
+		font-weight: 600;
+		letter-spacing: normal;
+		word-spacing: .1em;
+	}
+
+	@container document scroll-state(scrollable: top) {
+		position: fixed;
+		inset-inline-start: 0;
+		inset-block-start: 1em;
+		transform:  rotate(-90deg) translateX(-100%);
+		transform-origin: top left;
+		box-shadow: -.4em 0 .7em -.3em var(--color-shade);
+	}
 }
 
 #content {

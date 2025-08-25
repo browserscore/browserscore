@@ -1,6 +1,6 @@
 :root {
 	--font-sans: system-ui, sans-serif;
-	--font-serif: ui-serif, serif;
+	--font-serif: ui-serif,serif;
 	--font-mono: Monaco, Consolas, monospace;
 	--font-body: var(--font-sans);
 	--font-heading: var(--font-body);
@@ -40,7 +40,7 @@
 	--color-bg: canvas;
 	--color-text: var(--color-neutral-10-100);
 	--color-border: var(--color-neutral-80-30);
-	--color-shade: hsl(0 0% 0% / .3);
+	--color-shade: light-dark(oklab(none none none / .4), black);
 	--color-bg-soft: var(--color-neutral-90-20);
 	--color-text-soft: var(--color-neutral-20-90);
 	--color-bg-loud: var(--color-neutral-20-90);
