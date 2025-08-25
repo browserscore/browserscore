@@ -11,8 +11,9 @@
 }
 
 :focus {
-	outline: .1em dotted var(--highlight-background-color);
-	outline-offset: .1em;
+	outline: var(--focus-ring);
+	outline-offset: var(--focus-ring-offset);
+}
 }
 
 body {
@@ -102,7 +103,7 @@ h1 > .score {
 	&:hover,
 	&:focus {
 		outline: none;
-		--background: var(--brand-color, var(--highlight-background-color));
+		--background: var(--brand-color, color-mix(in-oklab, var(--spec-link-background-color), var(--color-neutral-0-100) 25%));
 		background: var(--background);
 		color: oklch(from var(--background) var(--text));
 
