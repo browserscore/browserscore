@@ -3,6 +3,7 @@ export default class Score {
 	passed = 0;
 	total = 0;
 	passedTests = 0;
+	failedTests = 0;
 	totalTests = 0;
 	testTime = 0;
 
@@ -50,6 +51,7 @@ export default class Score {
 
 		this.passedTests = score.passedTests;
 		this.totalTests = score.totalTests;
+		this.failedTests = score.failedTests ?? (this.totalTests - this.passedTests);
 
 		this.total = this.forceTotal ?? this.totalTests;
 		this.passed = this.passedTests * this.total / this.totalTests;
@@ -61,11 +63,20 @@ export default class Score {
 		this.parent?.recalc();
 	}
 
-	// TODO optimize this
+	/**
+	 * Recalculate this and ancestor scores from children
+	 * @returns
+	 */
 	recalc() {
+		if (!this.children?.length) {
+			// Nothing to do here
+			return;
+		}
+
 		this.passed = 0;
 		this.total = 0;
 		this.passedTests = 0;
+		this.failedTests = 0;
 		this.totalTests = 0;
 		this.testTime = 0;
 
@@ -74,15 +85,16 @@ export default class Score {
 			this.passed += child.passed;
 			this.total += child.total;
 			this.passedTests += child.passedTests;
+			this.failedTests += child.failedTests;
 			this.totalTests += child.totalTests;
 			this.testTime += child.testTime;
 		}
 
-		this.parent?.recalc(this);
+		this.parent?.recalc();
 	}
 
 	toString () {
-		return +this.value.toFixed(2) + '%';
+		return +(this.value * 100).toFixed(2) + '%';
 	}
 
 	/**
