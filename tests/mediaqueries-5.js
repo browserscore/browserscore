@@ -1,9 +1,7 @@
 export default {
 	title: 'Media Queries Level 5',
 	link: 'mediaqueries-5',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	'Media queries': {
 		'display-mode': {
 			link: '#display-modes',

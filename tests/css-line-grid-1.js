@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Line Grid Module Level 1',
 	link: 'css-line-grid-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'box-snap': {
 			link: '#box-snap',

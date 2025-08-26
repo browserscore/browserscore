@@ -1,11 +1,9 @@
 export default {
 	title: 'CSS Color Module Level 3',
 	link: 'css-color-3',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2007,
-		'last-snapshot': 2021,
-	},
+	status: 'stable',
+	firstSnapshot: 2007,
+	lastSnapshot: 2021,
 	values: {
 		properties: ['color', 'background-color', 'border-color', 'text-decoration-color', 'column-rule-color'],
 		rgba: {

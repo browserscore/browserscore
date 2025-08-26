@@ -1,9 +1,7 @@
 export default {
 	title: 'CSSOM View Module',
 	link: 'cssom-view-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'scroll-behavior': {
 			link: '#smooth-scrolling',

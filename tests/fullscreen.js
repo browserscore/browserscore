@@ -4,9 +4,7 @@ export default {
 		dev: 'fullscreen',
 	},
 	group: 'whatwg',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	selectors: {
 		'::backdrop': {
 			links: {

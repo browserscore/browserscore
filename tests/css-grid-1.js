@@ -2,9 +2,7 @@ export default {
 	title: 'CSS Grid Layout Module Level 1',
 	link: 'css-grid-1',
 	mdn: 'Glossary/Grid',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		display: {
 			link: '#grid-containers',

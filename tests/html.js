@@ -4,9 +4,7 @@ export default {
 		dev: 'html',
 	},
 	group: 'whatwg',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	selectors: {
 		':autofill': {
 			links: {

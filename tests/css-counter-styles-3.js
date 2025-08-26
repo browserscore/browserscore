@@ -1,10 +1,8 @@
 export default {
 	title: 'CSS Counter Styles Level 3',
 	link: 'css-counter-styles-3',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2021,
-	},
+	status: 'stable',
+	firstSnapshot: 2021,
 	'@rules': {
 		'@counter-style': {
 			link: '#the-counter-style-rule',

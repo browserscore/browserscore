@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Generated Content Module Level 3',
 	link: 'css-content-3',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		quotes: {
 			link: '#quotes',

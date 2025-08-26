@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS View Transitions Module Level 2',
 	link: 'css-view-transitions-2',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'view-transition-class': {
 			link: '#view-transition-class-prop',

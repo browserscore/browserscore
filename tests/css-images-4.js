@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Images Module Level 4',
 	link: 'css-images-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	values: {
 		properties: ['background-image', 'list-style-image', 'border-image-source', 'mask-image', 'mask-border-source', 'shape-outside', 'content'],
 		'linear-gradient()': {

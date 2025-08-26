@@ -4,9 +4,7 @@ export default {
 		tr: 'css3-exclusions',
 		dev: 'css-exclusions-1',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'wrap-flow': {
 			link: '#wrap-flow-property',

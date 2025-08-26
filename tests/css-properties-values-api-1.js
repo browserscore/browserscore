@@ -2,9 +2,7 @@ export default {
 	title: 'CSS Properties and Values API Level 1',
 	link: 'css-properties-values-api-1',
 	group: 'houdini',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	descriptors: {
 		'@property --foo/syntax': {
 			link: '#the-syntax-descriptor',

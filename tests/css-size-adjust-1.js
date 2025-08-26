@@ -3,9 +3,7 @@ export default {
 	links: {
 		dev: 'css-size-adjust-1',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'text-size-adjust': {
 			links: {

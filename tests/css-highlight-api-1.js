@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Custom Highlight API Module Level 1',
 	link: 'css-highlight-api-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	selectors: {
 		'::highlight()': {
 			link: '#custom-highlight-pseudo',

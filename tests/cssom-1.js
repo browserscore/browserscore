@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Object Model (CSSOM)',
 	link: 'cssom-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	interfaces: {
 		CSS: {
 			link: '#namespacedef-css',

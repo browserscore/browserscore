@@ -2,9 +2,7 @@ export default {
 	title: 'CSS Painting API Level 1',
 	link: 'css-paint-api-1',
 	group: 'houdini',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	values: {
 		properties: ['background-image', 'list-style-image', 'border-image', 'cursor', 'content'],
 		'paint()': {

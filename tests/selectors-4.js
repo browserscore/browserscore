@@ -1,9 +1,7 @@
 export default {
 	title: 'Selectors Level 4',
 	link: 'selectors-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	selectors: {
 		':indeterminate': {
 			link: '#indeterminate',

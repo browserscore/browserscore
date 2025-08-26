@@ -3,9 +3,7 @@ export default {
 	links: {
 		dev: 'css-backgrounds-4',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'background-position-x': {
 			links: {

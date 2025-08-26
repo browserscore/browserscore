@@ -5,9 +5,7 @@ export default {
 		dev: 'svg2-draft/text.html',
 	},
 	group: 'svgwg',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'shape-subtract': {
 			link: '#TextShapeSubtract',

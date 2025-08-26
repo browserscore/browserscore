@@ -4,9 +4,7 @@ export default {
 		dev: 'filter-effects-2',
 	},
 	group: 'fxtf',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'backdrop-filter': {
 			links: {

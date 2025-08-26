@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Scroll Anchoring Module Level 1',
 	link: 'css-scroll-anchoring-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'overflow-anchor': {
 			links: {

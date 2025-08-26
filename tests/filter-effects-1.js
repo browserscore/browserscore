@@ -2,9 +2,7 @@ export default {
 	title: 'Filter Effects Module Level 1',
 	link: 'filter-effects-1',
 	group: 'fxtf',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		filter: {
 			link: '#FilterProperty',

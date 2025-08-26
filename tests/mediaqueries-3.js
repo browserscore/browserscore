@@ -4,10 +4,8 @@ export default {
 		tr: 'css3-mediaqueries',
 		dev: 'mediaqueries-3',
 	},
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2010,
-	},
+	status: 'stable',
+	firstSnapshot: 2010,
 	'Media queries': {
 		Syntax: {
 			link: '#syntax',

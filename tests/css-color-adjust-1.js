@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Color Adjustment Module Level 1',
 	link: 'css-color-adjust-1',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'print-color-adjust': {
 			link: '#print-color-adjust',

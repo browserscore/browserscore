@@ -5,9 +5,7 @@ export default {
 		dev: 'svg2-draft/pservers.html',
 	},
 	group: 'svgwg',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'stop-color': {
 			links: {
