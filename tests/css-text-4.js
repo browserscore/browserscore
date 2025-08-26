@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Text Module Level 4',
 	link: 'css-text-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'hyphenate-character': {
 			link: '#hyphenate-character',

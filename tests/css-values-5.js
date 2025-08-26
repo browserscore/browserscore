@@ -40,9 +40,7 @@ const calc_size_default_tests = [
 export default {
 	title: 'CSS Values and Units Module Level 5',
 	link: 'css-values-5',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'interpolate-size': {
 			link: '#interpolate-size',

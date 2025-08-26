@@ -1,9 +1,7 @@
 export default {
 	title: 'Resize Observer',
 	link: 'resize-observer-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	interfaces: {
 		ResizeObserver: {
 			link: '#api',
