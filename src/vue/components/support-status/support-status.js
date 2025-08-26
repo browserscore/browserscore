@@ -25,7 +25,7 @@ export default {
 
 	computed: {
 		tooltip () {
-			return `Passed ${round(this.score.passed)} / ${round(this.score.total)} tests in ${round(this.score.testTime, 2)} ms`
+			return `Scored ${this.score} by passing ${round(this.score.passed)} / ${round(this.score.total)} tests in ${round(this.score.testTime, 2)} ms`
 		}
 	},
 
