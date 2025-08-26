@@ -18,7 +18,7 @@ export default class Score {
 	}
 
 	get parent () {
-		return this.node?.parent ?? null;
+		return this.node?.parent?.score ?? null;
 	}
 
 	get children () {
@@ -82,7 +82,7 @@ export default class Score {
 	}
 
 	toString () {
-		return this.percent() + '%';
+		return +this.value.toFixed(2) + '%';
 	}
 
 	/**
