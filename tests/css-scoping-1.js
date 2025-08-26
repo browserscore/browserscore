@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Scoping Module Level 1',
 	link: 'css-scoping-1',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	selectors: {
 		':host': {
 			link: '#host-selector',

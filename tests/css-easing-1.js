@@ -1,10 +1,8 @@
 export default {
 	title: 'CSS Easing Functions Level 1',
 	link: 'css-easing-1',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2020,
-	},
+	status: 'stable',
+	firstSnapshot: 2020,
 	properties: {
 		'transition-timing-function': {
 			link: '#easing-functions',

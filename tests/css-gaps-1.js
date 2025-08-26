@@ -4,9 +4,7 @@ export default {
 		dev: 'css-gaps-1',
 		tr: 'css-gaps-1',
 	},
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'column-rule-break': {
 			links: {

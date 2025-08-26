@@ -5,9 +5,7 @@ export default {
 		dev: 'webvtt',
 	},
 	group: 'github',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	selectors: {
 		'::cue': {
 			link: '#the-cue-pseudo-element',

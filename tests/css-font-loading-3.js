@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Font Loading Module Level 3',
 	link: 'css-font-loading-3',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	interfaces: {
 		FontFace: {
 			link: '#fontface-interface',

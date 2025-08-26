@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Animations Level 2',
 	link: 'css-animations-2',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'animation-composition': {
 			link: '#animation-composition',

@@ -2,10 +2,8 @@ export default {
 	title: 'CSS Flexible Box Layout Module Level 1',
 	link: 'css-flexbox-1',
 	mdn: 'Glossary/Flexbox',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2018,
-	},
+	status: 'stable',
+	firstSnapshot: 2018,
 	properties: {
 		'align-content': {
 			link: '#align-content-property',

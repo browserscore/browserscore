@@ -4,10 +4,8 @@ export default {
 		tr: 'css3-conditional',
 		dev: 'css-conditional-3',
 	},
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2015,
-	},
+	status: 'stable',
+	firstSnapshot: 2015,
 	'@rules': {
 		'@supports': {
 			link: '#at-supports',

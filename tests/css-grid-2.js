@@ -2,9 +2,7 @@ export default {
 	title: 'CSS Grid Layout Module Level 2',
 	link: 'css-grid-2',
 	mdn: 'Glossary/Grid',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'grid-template-columns': {
 			link: '#subgrid-per-axis',

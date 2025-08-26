@@ -2,10 +2,8 @@ export default {
 	title: 'Selectors Level 3',
 	link: 'selectors-3',
 	mdn: 'Glossary/CSS_Selector',
-	status: {
-		stability: 'stable',
-		'first-snapshot': 2007,
-	},
+	status: 'stable',
+	firstSnapshot: 2007,
 	selectors: {
 		'Sibling combinator': {
 			link: '#sibling-combinators',

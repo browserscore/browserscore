@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Pseudo-Elements Module Level 4',
 	link: 'css-pseudo-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	selectors: {
 		'::first-letter::prefix': {
 			link: '#first-letter-pseudo',

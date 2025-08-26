@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Box Model Module Level 4',
 	link: 'css-box-4',
-	status: {
-		stability: 'experimental',
-	},
+	status: 'experimental',
 	properties: {
 		'margin-trim': {
 			link: '#margin-trim',
