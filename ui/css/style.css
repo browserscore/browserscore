@@ -359,9 +359,9 @@ details li.feature {
 aside {
 	flex: 1;
 	font-size: 85%;
-	align-self: flex-end;
+	align-self: flex-start;
 	position: sticky;
-	bottom: 0;
+	top: 0;
 
 	.caution {
 		padding: 1em;
