@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Scrollbars Module Level 1',
 	link: 'css-scrollbars-1',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		'scrollbar-color': {
 			link: '#scrollbar-color',

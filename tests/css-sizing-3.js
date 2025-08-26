@@ -1,9 +1,7 @@
 export default {
 	title: 'CSS Box Sizing Module Level 3',
 	link: 'css-sizing-3',
-	status: {
-		stability: 'stable',
-	},
+	status: 'stable',
 	properties: {
 		width: {
 			link: '#preferred-size-properties',
