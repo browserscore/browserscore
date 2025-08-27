@@ -1,4 +1,4 @@
-export const IS_DEV = location.hostname === 'localhost' && !location.search.includes('prod');
+export const IS_DEV = (location.hostname === 'localhost' || location.search.includes('env=dev')) && !location.search.includes('env=prod');
 const classes = ['epic-fail', 'fail', 'very-buggy', 'buggy', 'slightly-buggy', 'almost-pass', 'pass'];
 
 export function passclass(info) {
