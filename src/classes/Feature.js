@@ -5,6 +5,7 @@
 
 import featureTypes from '../features.js';
 import AbstractFeature from './AbstractFeature.js';
+import { toArray } from '../supports/util.js';
 
 export default class Feature extends AbstractFeature {
 	static forceTotal = 1;
@@ -13,6 +14,17 @@ export default class Feature extends AbstractFeature {
 		super(def, parent);
 		this.type = def.type ?? group?.type ?? parent?.type;
 		this.group = group;
+
+		if (Array.isArray(def) && typeof def[0] === 'string') {
+			// feature: [test1, test2, ...]
+			def = {tests: def};
+		}
+
+		this.def = def;
+
+		if (def.tests) {
+			this.tests = toArray(def.tests);
+		}
 
 		// Type-specific properties
 		if (this.type === 'values') {
@@ -25,19 +37,6 @@ export default class Feature extends AbstractFeature {
 			if (this.type === 'interfaces') {
 				this.interface = def.interface ?? group?.interface;
 			}
-		}
-
-		if (def.tests) {
-			this.def = def;
-			this.tests = def.tests;
-		}
-		else {
-			// feature: [test1, test2, ...]
-			this.tests = def;
-		}
-
-		if (this.tests && !Array.isArray(this.tests)) {
-			this.tests = [this.tests];
 		}
 
 		if (this.children.length === 0 && this.tests.length > 0) {

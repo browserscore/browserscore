@@ -114,7 +114,7 @@ export default class AbstractFeature {
 		return fn(this) ?? this.parent?.closestValue(fn);
 	}
 
-	test() {
+	test () {
 		if (this.tested) {
 			return;
 		}
