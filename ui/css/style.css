@@ -46,6 +46,10 @@ a {
 	text-decoration: none;
 }
 
+code {
+	font-family: var(--font-mono);
+}
+
 h1,
 h2 {
 	margin: 1em 0 .5em;
@@ -324,25 +328,27 @@ summary.feature {
 	}
 }
 
-details ul {
-	margin: 0;
-	padding: 0 0 0 2em;
-}
-
-details li.feature {
-	list-style: none;
-	margin: .3em 0;
-	font-size: 90%;
+.feature {
 	white-space: pre;
 	white-space: break-spaces;
-
-	small {
-		display: block;
-		opacity: .8;
-	}
 }
 
+.feature-group,
+.feature:not(.feature-group > *) {
+	margin-block: .3em;
+}
 
+.feature-group > :not(summary),
+li.feature {
+	margin-block: .3em;
+	margin-inline-start: 2em;
+	font-size: 85%;
+}
+
+.feature small {
+	display: block;
+	opacity: .8;
+}
 
 .prefix {
 	display: inline-block;
