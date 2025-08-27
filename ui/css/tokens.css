@@ -56,7 +56,7 @@
 	--spec-link-background-color: var(--color-bg-loud);
 	--spec-link-foreground-color: var(--color-text-loud);
 
-	--prefix-background-color: var(--color-shade);
+	--prefix-background-color: light-dark(oklab(none none none / 0.4), oklab(100% 0 0 / 0.4));
 	--prefix-foreground-color: var(--spec-link-foreground-color);
 
 	--aside-border-color: light-dark(hsl(0 0% 80% / .8), hsl(0 0% 20% / .8));
