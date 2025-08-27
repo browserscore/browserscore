@@ -1,7 +1,10 @@
 import AbstractFeature from './AbstractFeature.js';
 import { groups, orgs } from '../data.js';
 import Feature from "./Feature.js";
-import featureTypes from '../features.js';
+import supportsMap from '../features.js';
+import featureMap from './Feature/index.js';
+
+let featureTypes = {...featureMap, ...supportsMap};
 
 // Shorten the title by removing parentheticals,
 // subheadings, CSS and Module words
@@ -24,6 +27,8 @@ export default class Spec extends AbstractFeature {
 		}
 
 		for (let type in featureTypes) {
+			let meta = featureTypes[type];
+
 			if (!(type in this.def)) {
 				continue;
 			}
@@ -35,11 +40,14 @@ export default class Spec extends AbstractFeature {
 
 			this.features[type] = [];
 
+			let Class = typeof meta === 'function' ? meta : Feature;
+
 			for (let id in features) {
 				let feature = features[id];
 				feature.id = id;
 
-				feature = new Feature(feature, this, group);
+				feature = new Class(feature, this, group);
+
 				this.features[type].push(feature);
 
 				this.children.push(feature);

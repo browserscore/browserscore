@@ -45,19 +45,23 @@ export default class Score {
 	}
 
 	set (score) {
-		if (!score.totalTests) {
+		if (!score || (!score.totalTests && !this.totalTests)) {
 			return;
 		}
 
-		this.passedTests = score.passedTests;
-		this.totalTests = score.totalTests;
-		this.failedTests = score.failedTests ?? (this.totalTests - this.passedTests);
+		for (let key in score) {
+			if (key in this) {
+				this[key] = score[key];
+			}
+		}
 
-		this.total = this.forceTotal ?? this.totalTests;
-		this.passed = this.passedTests * this.total / this.totalTests;
+		if ('totalTests' in score) {
+			this.total = this.forceTotal ?? this.totalTests;
+		}
 
-		if (score.testTime) {
-			this.testTime = score.testTime;
+		if ('passedTests' in score) {
+			this.failedTests = score.failedTests ?? (this.totalTests - this.passedTests);
+			this.passed = this.passedTests * this.total / this.totalTests;
 		}
 
 		this.parent?.recalc();
@@ -81,13 +85,26 @@ export default class Score {
 		this.testTime = 0;
 
 		let children = this.children;
-		for (let child of children) {
-			this.passed += child.passed;
-			this.total += child.total;
-			this.passedTests += child.passedTests;
-			this.failedTests += child.failedTests;
-			this.totalTests += child.totalTests;
-			this.testTime += child.testTime;
+
+		if (children.length === 1) {
+			this.set(children[0]);
+		}
+		else {
+			for (let child of children) {
+				this.passed += child.passed;
+				this.total += child.total;
+				this.passedTests += child.passedTests;
+				this.failedTests += child.failedTests;
+				this.totalTests += child.totalTests;
+				this.testTime += child.testTime;
+			}
+		}
+
+		if (this.forceTotal) {
+			let actualTotal = this.total;
+			this.total = this.forceTotal;
+			let previousPassed = this.passed;
+			this.passed = previousPassed * this.forceTotal / actualTotal;
 		}
 
 		this.parent?.recalc();
