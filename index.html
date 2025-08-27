@@ -64,7 +64,7 @@
 		<section id="all">
 			<section v-for="spec in specs" :key="spec.uid" :id="spec.htmlId" class="spec">
 				<h1>
-					<span v-text="spec.title"></span>
+					<a :href="'#' + spec.htmlId" v-text="spec.title"></a>
 					<div class="spec-links">
 						<a v-if="spec.specLink" :href="spec.specLink" target="_blank" class="spec-link" :class="`${spec.org.id}-link`">TR</a>
 						<a v-if="spec.draftLink && spec.draftLink !== spec.specLink" :href="spec.draftLink" target="_blank" class="spec-link" :class="`${spec.org.id}-link`">DEV</a>
@@ -85,7 +85,7 @@
 		<section>
 			<h1>Filter:</h1>
 			<form>
-				<select id="filter" v-model="filter">
+				<select id="filter" v-model="filter.show">
 					<option value="" title="All specifications including experimental ones but without CSS 2.2">All except CSS 2.2</option>
 					<option value="all" title="All specifications including experimental ones">All</option>
 					<option value="stable" title="All specifications listed in the latest CSS snapshot, their predecessors and others that won't change much anymore">Stable</option>

@@ -104,6 +104,10 @@ export default class Spec extends AbstractFeature {
 			return this.firstSnapshot !== 2.2;
 		}
 
+		if (filter === 'all') {
+			return true;
+		}
+
 		// Filter list of specifications
 		if (statuses.has(filter)) {
 			return this.status === filter;

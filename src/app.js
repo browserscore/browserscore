@@ -33,6 +33,9 @@ let localComponents = {
 	"carbon-ads": CarbonAds,
 };
 
+let urlParams = new URLSearchParams(window.location.search);
+let filterParams = new Set(['show', 'q', 'spec']);
+
 let appSpec = {
 	data() {
 		return {
@@ -43,7 +46,7 @@ let appSpec = {
 			 * @type {Record<string, Spec>}
 			 */
 			allSpecs,
-			filter: new URLSearchParams(window.location.search).get('filter') ?? '',
+			filter: Object.fromEntries([...urlParams].filter(e => filterParams.has(e[0]))),
 			// TODO move this to Score
 			testTime: 0,
 			favicon: '',
@@ -55,7 +58,13 @@ let appSpec = {
 		 * @type {Spec[]}
 		 */
 		specs () {
-			return this.allSpecsList.filter(spec => spec.matchesFilter(this.filter)).sort((a, b) => a.title.localeCompare(b.title));
+			let specs = this.allSpecsList.filter(spec => spec.matchesFilter(this.filter.show));
+
+			if (this.filter.spec) {
+				specs = specs.filter(spec => spec.id.indexOf(this.filter.spec) > -1);
+			}
+
+			return specs.sort((a, b) => a.title.localeCompare(b.title));
 		},
 
 		/** All specs as array
@@ -106,17 +115,20 @@ let appSpec = {
 		},
 
 		filter: {
+			deep: true,
+
 			handler() {
 				// Update address bar
-				let searchParams = new URLSearchParams(location.search);
-				if (this.filter) {
-					searchParams.set('filter', this.filter);
-				}
-				else {
-					searchParams.delete('filter');
+				for (let param in this.filter) {
+					if (this.filter[param]) {
+						urlParams.set(param, this.filter[param]);
+					}
+					else {
+						urlParams.delete(param);
+					}
 				}
 
-				let newUrl = location.pathname + '?' + searchParams + location.hash;
+				let newUrl = location.pathname + '?' + urlParams + location.hash;
 
 				history.replaceState({}, '', newUrl);
 			},
