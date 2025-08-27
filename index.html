@@ -22,6 +22,7 @@
 <template id="feature-component-template">
 	<details v-if="feature.children?.length > 0" class="feature-group" :key="feature.uid" :id="feature.htmlId" ref="container">
 		<summary class="feature" :class="passclass(feature.score)">
+			<support-status :score="feature.score"></support-status>
 			<span class="title" v-if="feature.title" v-text="feature.title"></span>
 			<code class="title" v-else v-text="feature.code ?? feature.id"></code>
 
@@ -29,7 +30,7 @@
 			<a v-if="feature.draftLink && feature.draftLink !== feature.specLink" :href="feature.draftLink" target="_blank" :class="`spec-link ${feature.spec.org.id}-link`">DEV</a>
 			<a v-if="feature.mdnLink" :href="feature.mdnLink" target="_blank" class="spec-link mdn-link">MDN</a>
 
-			<support-status :score="feature.score"></support-status>
+
 		</summary>
 
 		<template v-for="child, index of feature.children" :key="feature.getUid('.', index)">

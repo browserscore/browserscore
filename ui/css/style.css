@@ -307,7 +307,7 @@ summary.feature {
 	cursor: pointer;
 	--icon: var(--icon-caret);
 
-	&::before {
+	&::after {
 		content:'';
 		display: inline-block;
 		vertical-align: -.1em;
@@ -323,7 +323,7 @@ summary.feature {
 		transition: transform 0.2s;
 	}
 
-	&:is([open] > *)::before {
+	&:is([open] > *)::after {
 		transform: rotate(90deg);
 	}
 }
