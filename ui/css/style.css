@@ -328,20 +328,21 @@ summary.feature {
 	}
 }
 
+.feature {
+	white-space: pre;
+	white-space: break-spaces;
+}
+
 .feature-group,
 .feature:not(.feature-group > *) {
 	margin-block: .3em;
 }
 
-.feature-group > :not(summary) {
+.feature-group > :not(summary),
+li.feature {
 	margin-block: .3em;
 	margin-inline-start: 2em;
 	font-size: 85%;
-}
-
-.feature {
-	white-space: pre;
-	white-space: break-spaces;
 }
 
 .feature small {
