@@ -58,15 +58,22 @@ h2 {
 	line-height: 1.1;
 }
 
-#content > section section section {
-	h1 {
+.spec {
+	padding-block-start: 2rem;
+
+	> summary {
 		display: flex;
 		align-items: center;
 		font-size: 180%;
 		gap: 0.5em;
+
+		h1 {
+			margin: 0;
+			font-size: inherit;
+		}
 	}
 
-	section h1 {
+	section h2 {
 		color: var(--color-text-soft);
 		font-size: 120%;
 		font-weight: bold;
@@ -74,15 +81,11 @@ h2 {
 	}
 }
 
-h1 > .score {
-	margin-left: auto;
-	font-weight: bold;
-}
-
 .icon,
 .icon-before::before,
+.badge::before,
 .spec-link::before {
-	content:'';
+	content: '';
 	display: inline-block;
 	vertical-align: -.1em;
 	font-size: max(1em, 1rem);
@@ -101,23 +104,36 @@ h1 > .score {
 
 .spec-links {
 	display: flex;
-	gap: 0.3em;
+	align-items: center;
+	gap: calc(0.15rem + 0.15em);
+}
+
+.badge,
+.spec-link {
+	display: inline-flex;
+	align-items: center;
+	gap: .1em;
+	padding: .3em .4em;
+	font-family: var(--font-sans);
+	font-size: 0.85rem;
+	line-height: 1;
+	background-color: var(--spec-link-background-color);
+	color: var(--spec-link-foreground-color);
+
+	border-radius: .25em;
+	vertical-align: middle;
+
+	@container not style(--icon) {
+		&::before {
+			content: none;
+		}
+	}
 }
 
 .spec-link {
-	display: flex;
-	align-items: center;
-	padding: .3em .4em;
-	margin: -.5em 0;
-	font-family: var(--font-sans);
-	font-size: 0.85rem;
-	background-color: var(--spec-link-background-color);
-	color: var(--spec-link-foreground-color);
 	--icon-color: light-dark(color-mix(in oklab,
-	var(--brand-color, currentColor), var(--spec-link-foreground-color) 75%),
-	var(--brand-color, currentColor));
-	border-radius: .25em;
-	vertical-align: middle;
+		var(--brand-color, currentColor), var(--spec-link-foreground-color) 75%),
+		var(--brand-color, currentColor));
 
 	&:hover,
 	&:focus {
@@ -146,27 +162,6 @@ h1 > .score {
 .whatwg-link {
 	--icon: var(--icon-whatwg);
 	--brand-color: #3c790a;
-}
-
-details summary {
-	> .spec-link {
-		display: none;
-		vertical-align: inherit;
-
-		&::before {
-			height: 18px;
-			width: 18px;
-			background-size: 18px 18px;
-			vertical-align: -4px;
-		}
-	}
-
-	&:hover,
-	&:focus-within {
-		> .spec-link {
-			display: inline-block;
-		}
-	}
 }
 
 /* Logo */
@@ -273,36 +268,8 @@ body > h1 {
 	}
 }
 
-details {
-	margin: .3em 0;
-	font: 100% var(--font-mono);
-}
-
-.feature {
-	display: flex;
-	gap: .5em;
-	align-items: center;
-	padding: .5em .6em;
-	background: var(--color, var(--color-gray));
-	color: oklch(from var(--color) var(--text));
-	border-radius: .3em;
-	position: relative;
-	--progress-color: oklch(from var(--color) calc(l + 0.4) 0 0);
-
-	.title {
-		flex: 1;
-	}
-
-	.progress {
-		height: 1.2lh;
-
-		.x {
-			opacity: .5;
-		}
-	}
-}
-
-summary.feature {
+/* Add custom markers */
+summary {
 	list-style: none;
 	cursor: pointer;
 	--icon: var(--icon-caret);
@@ -325,6 +292,42 @@ summary.feature {
 
 	&:is([open] > *)::after {
 		transform: rotate(90deg);
+	}
+}
+
+.feature,
+.spec {
+	.title {
+		flex: 1;
+	}
+
+	summary > .spec-link,
+	summary > .spec-links {
+		transition: opacity 100ms 100ms;
+
+		:is(details, summary):not(:hover, :focus-within, :target) & {
+			opacity: 0;
+		}
+	}
+}
+
+.feature {
+	display: flex;
+	gap: .5em;
+	align-items: center;
+	padding: .5em .6em;
+	background: var(--color, var(--color-gray));
+	color: oklch(from var(--color) var(--text));
+	border-radius: .3em;
+	position: relative;
+	--progress-color: oklch(from var(--color) calc(l + 0.4) 0 0);
+
+	.progress {
+		height: 1.2lh;
+
+		.x {
+			opacity: .5;
+		}
 	}
 }
 
