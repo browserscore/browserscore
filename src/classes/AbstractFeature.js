@@ -1,4 +1,5 @@
 import Score from './Score.js';
+import { IS_DEV } from '../util.js';
 
 export default class AbstractFeature {
 	children = [];
@@ -6,6 +7,16 @@ export default class AbstractFeature {
 
 	constructor (def = {}, parent) {
 		this.def = def;
+
+		// For debugging
+		if (IS_DEV) {
+			// Expose all instances
+			this.constructor.all ??= [];
+			this.constructor.all.push(this);
+
+			// Make class a global
+			globalThis[this.constructor.name] ??= this.constructor;
+		}
 
 		if (parent) {
 			Object.defineProperty(this, 'parent', {
