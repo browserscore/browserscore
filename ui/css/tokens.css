@@ -32,7 +32,7 @@
 	--color-neutral-20-90: light-dark(hsl(from var(--color-neutral) h s 20%), hsl(from var(--color-neutral) h s 90%));
 	--color-neutral-30-80: light-dark(hsl(from var(--color-neutral) h s 30%), hsl(from var(--color-neutral) h s 80%));
 	--color-neutral-80-30: light-dark(hsl(from var(--color-neutral) h s 80%), hsl(from var(--color-neutral) h s 30%));
-	--color-neutral-90-20: light-dark(hsl(from var(--color-neutral) h s 20%), hsl(from var(--color-neutral) h s 90%));
+	--color-neutral-90-20: light-dark(hsl(from var(--color-neutral) h s 90%), hsl(from var(--color-neutral) h s 20%));
 	--color-neutral-100-10: light-dark(hsl(from var(--color-neutral) h s 100%), hsl(from var(--color-neutral) h s 10%));
 	--color-neutral-100-0: light-dark(white, black);
 	--color-transparent: oklab(none none none / 0);

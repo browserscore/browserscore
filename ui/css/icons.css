@@ -6,4 +6,6 @@
 	--icon-w3c: url('../icons/w3c.svg');
 	--icon-mdn: url('../icons/mdn.svg');
 	--icon-whatwg: url('../icons/whatwg.svg');
+	--icon-light: url('../icons/sun.svg');
+	--icon-dark: url('../icons/moon.svg');
 }

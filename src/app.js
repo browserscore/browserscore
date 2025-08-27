@@ -10,6 +10,7 @@ import { passclass, round, percent } from './util.js';
 import Feature from './vue/components/feature/feature.js';
 import CarbonAds from './vue/components/carbon-ads.js';
 import SupportStatus from './vue/components/support-status/support-status.js';
+import ColorSchemeToggle from './vue/components/color-scheme-toggle/color-scheme-toggle.js';
 
 let allSpecs = {};
 
@@ -31,6 +32,7 @@ let globalComponents = {
 // Components only available in the top-level app instance
 let localComponents = {
 	"carbon-ads": CarbonAds,
+	"color-scheme-toggle": ColorSchemeToggle,
 };
 
 let urlParams = new URLSearchParams(window.location.search);

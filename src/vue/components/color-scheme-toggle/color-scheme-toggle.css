@@ -1,0 +1,47 @@
+:root {
+	--color-scheme-toggle-light: #000;
+	--color-scheme-toggle-dark: #fff;
+}
+
+.color-scheme-toggle {
+	--icon: var(--icon-light);
+	--icon-opposite: var(--icon-dark);
+
+	appearance: none;
+	display: inline-flex;
+	font-size: 1.8em;
+	width: 1em;
+	height: 1em;
+	box-sizing: content-box;
+	padding: .2em;
+	aspect-ratio: 1;
+	border: 1px solid transparent;
+	border-radius: .25em;
+	cursor: pointer;
+	transition: 100ms;
+
+	&:checked {
+		--icon: var(--icon-opposite);
+		border-color: var(--color-border);
+	}
+
+	&:hover,
+	&:focus-visible {
+		background-color: var(--color-bg-soft);
+	}
+
+	&:active {
+		transform: scale(.95);
+	}
+
+	&&::before {
+		margin: 0;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		--icon: var(--icon-dark);
+		--icon-opposite: var(--icon-light);
+	}
+}
+
+

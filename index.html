@@ -6,7 +6,9 @@
 <title>Browser Score</title>
 <link rel="icon" href="ui/logo.svg" id="favicon" />
 <link rel="stylesheet" href="ui/css/style.css" />
-
+<script>
+	document.documentElement.style.colorScheme = localStorage.getItem('color-scheme-toggle');
+</script>
 <script src="src/app.js" type="module"></script>
 
 </head>
@@ -45,6 +47,8 @@
 </template>
 
 <div id="content" v-cloak>
+	<color-scheme-toggle></color-scheme-toggle>
+
 	<main id="tests">
 		<header>
 			<h1>Your browser scores <strong v-content="percent(score)">0%</strong></h1>

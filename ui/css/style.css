@@ -3,6 +3,7 @@
 @import "carbon.css";
 @import "../components/tooltip/tooltip.css";
 @import "../../src/vue/components/support-status/support-status.css";
+@import "../../src/vue/components/color-scheme-toggle/color-scheme-toggle.css";
 
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -432,3 +433,9 @@ footer {
 	}
 }
 
+.color-scheme-toggle {
+	position: absolute;
+	inset-block-start: .4em;
+	inset-inline-end: .5em;
+	z-index: 1;
+}
