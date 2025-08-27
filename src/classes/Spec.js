@@ -17,13 +17,10 @@ export default class Spec extends AbstractFeature {
 	constructor (def, parent) {
 		super(def, parent);
 
-		if (this.title) {
+		if (def.title) {
 			this.title = this.title.replace(removedWords, '');
 			this.title = this.title.replace(removedOther, '$1');
 			this.title = this.title.trim();
-		}
-		else {
-			this.title = this.id;
 		}
 
 		for (let type in featureTypes) {

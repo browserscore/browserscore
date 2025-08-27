@@ -14,7 +14,6 @@ export default class Feature extends AbstractFeature {
 		this.type = def.type ?? group?.type ?? parent?.type;
 		this.group = group;
 
-		this.title ??= this.id;
 		// Type-specific properties
 		if (this.type === 'values') {
 			this.properties = def.properties ?? group?.properties;
