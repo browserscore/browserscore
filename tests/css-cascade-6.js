@@ -11,12 +11,6 @@ export default {
 			],
 		},
 	},
-	selectors: {
-		'Scoped Descendant Combinator': {
-			link: '#scope-combinator',
-			tests: 'foo >> bar',
-		},
-	},
 	interfaces: {
 		CSSScopeRule: {
 			links: {
