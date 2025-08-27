@@ -5,6 +5,9 @@ import Specs from './tests.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
 import { passclass, round, percent } from './util.js';
+
+// Vue components
+import Feature from './vue/components/feature/feature.js';
 import CarbonAds from './vue/components/carbon-ads.js';
 import SupportStatus from './vue/components/support-status/support-status.js';
 
@@ -19,10 +22,16 @@ for (let id in Specs) {
 	allSpecs[id] = spec;
 }
 
-let components = {
+// Components available in every component
+let globalComponents = {
 	"support-status": SupportStatus,
+	"bs-feature": Feature,
+};
+
+// Components only available in the top-level app instance
+let localComponents = {
 	"carbon-ads": CarbonAds,
-}
+};
 
 let appSpec = {
 	data() {
@@ -126,14 +135,21 @@ let appSpec = {
 		content,
 	},
 
-	components,
+	components: localComponents,
 
 	compilerOptions: {
-		isCustomElement: tag => !Object.keys(components).includes(tag),
+		isCustomElement: tag => !(tag in globalComponents || tag in localComponents),
 	},
 };
 
-let app = createApp(appSpec).mount("#content");
+let createdApp = createApp(appSpec)
+
+// Global components
+for (let [tag, component] of Object.entries(globalComponents)) {
+	createdApp.component(tag, component);
+}
+
+let app = createdApp.mount("#content");
 
 // Global exports
 Object.assign(globalThis, {

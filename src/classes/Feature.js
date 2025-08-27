@@ -1,23 +1,28 @@
+/**
+ * A syntax feature (i.e. not a spec)
+ * May or may not have children
+ */
+
 import featureTypes from '../features.js';
 import AbstractFeature from './AbstractFeature.js';
 
 export default class Feature extends AbstractFeature {
 	static forceTotal = 1;
-	constructor (def, parent) {
+	constructor (def, parent, group) {
 		super(def, parent);
-		this.type = def.type;
 
-		this.properties = def.properties;
-		this.required = def.required;
-		this.interface = def.interface;
+		if (def.code) {
+			this.id ??= def.code;
+		}
 
-		this.title ??= this.id;
+		this.group = group;
+		this.type = def.type ?? parent?.type;
 
 		if (def.tests) {
 			this.def = def;
 			this.tests = def.tests;
 		}
-		else {
+		else if (Array.isArray(def) && typeof def[0] === 'string') {
 			// feature: [test1, test2, ...]
 			this.tests = def;
 		}
@@ -25,6 +30,28 @@ export default class Feature extends AbstractFeature {
 		if (this.tests && !Array.isArray(this.tests)) {
 			this.tests = [this.tests];
 		}
+
+		if (this.constructor === Feature && this.tests) {
+			// Subclasses need to call this on their own
+			this._createChildren();
+		}
+	}
+
+	_createChildren () {
+		if (this.tests.length > 0) {
+			for (let test of this.tests) {
+				let subFeature = new this.constructor({id: test}, this);
+				this.children.push(subFeature);
+			}
+		}
+	}
+
+	get spec () {
+		return this.closest(f => f.constructor.name === 'Spec');
+	}
+
+	get code () {
+		return this.def.code ?? this.id;
 	}
 
 	get mdnLink () {
@@ -41,7 +68,23 @@ export default class Feature extends AbstractFeature {
 		return parentUid + typeUid + this.id;
 	}
 
+	leafTest () {
+		let testCallback = featureTypes[this.type];
+
+		if (!testCallback) {
+			return null;
+		}
+
+		let test = this.tests?.[0] ?? this.id;
+		test = test?.id ?? test; // test must be a string
+		return testCallback(test, this.id, this) ?? {};
+	}
+
 	test () {
+		if (this.children.length > 0) {
+			return super.test();
+		}
+
 		if (this.tested) {
 			return;
 		}
@@ -49,25 +92,17 @@ export default class Feature extends AbstractFeature {
 		this.tested = true;
 
 		let startTime = performance.now();
-		let testCallback = featureTypes[this.type];
 
-		let passedTests = 0;
-		let totalTests = this.tests.length;
-		this.propertyPrefix = null;
-		this.results = [];
-
-		for (let test of this.tests) {
-			let result = testCallback(test, this.id, this) ?? {};
-			this.propertyPrefix ??= result.propertyPrefix;
-			passedTests += +result.success;
-			this.results.push(result);
-		}
+		// TODO run leafTest for parents that support it to save work on testing the children
+		this.result = this.leafTest();
 
 		this.score.set({
-			passedTests: passedTests,
-			totalTests: totalTests,
+			passedTests: this.result.success,
+			totalTests: 1,
 			testTime: performance.now() - startTime,
 		});
+
+		this.score.recalc();
 	}
 }
 

@@ -1,7 +1,10 @@
 import AbstractFeature from './AbstractFeature.js';
 import { groups, orgs } from '../data.js';
 import Feature from "./Feature.js";
-import featureTypes from '../features.js';
+import CSSValueFeature from './CSSValueFeature.js';
+import CSSPropertyFeature from './CSSPropertyFeature.js';
+import {types as featureTypes} from '../features.js';
+import InterfaceFeature from './InterfaceFeature.js';
 
 // Shorten the title by removing parentheticals,
 // subheadings, CSS and Module words
@@ -17,16 +20,13 @@ export default class Spec extends AbstractFeature {
 	constructor (def, parent) {
 		super(def, parent);
 
-		if (this.title) {
+		if (def.title) {
 			this.title = this.title.replace(removedWords, '');
 			this.title = this.title.replace(removedOther, '$1');
 			this.title = this.title.trim();
 		}
-		else {
-			this.title = this.id;
-		}
 
-		for (let type in featureTypes) {
+		for (let type of featureTypes) {
 			if (!(type in this.def)) {
 				continue;
 			}
@@ -40,18 +40,19 @@ export default class Spec extends AbstractFeature {
 				feature.id = id;
 				feature.type = type;
 
-				// Apply aggregate properties if no override
-				if (properties) {
-					feature.properties ??= properties;
+				if (type === 'values') {
+					feature = new CSSValueFeature(feature, this, this.def[type]);
 				}
-				if (required) {
-					feature.required ??= required;
+				else if (type === 'interfaces') {
+					feature = new InterfaceFeature(feature, this, this.def[type]);
 				}
-				if (Interface) {
-					feature.interface ??= Interface;
+				else if (type === 'properties') {
+					feature = new CSSPropertyFeature(feature, this, this.def[type]);
+				}
+				else {
+					feature = new Feature(feature, this);
 				}
 
-				feature = new Feature(feature, this);
 				this.features[type].push(feature);
 
 				this.children.push(feature);

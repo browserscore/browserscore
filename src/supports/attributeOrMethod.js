@@ -1,9 +1,10 @@
-import { domPrefixes, styleElement } from './shared.js';
+// TODO refactor this
+import { domPrefixes as prefixes, styleElement, prefixCamelCase as prefixName } from './shared.js';
 
 import supportsInterface from './interface.js';
 
 function getInterfaceFromRules(rules, interfaceName) {
-	for (var i = 0; i < rules.length; i++) {
+	for (let i = 0; i < rules.length; i++) {
 		if (rules[i].constructor.name === interfaceName) {
 			return rules[i];
 		}
@@ -19,47 +20,84 @@ function getInterfaceFromRules(rules, interfaceName) {
 	return null;
 }
 
-export default function attributeOrMethod (interfaceName, attributeOrMethod, required, interfaceCallback) {
-	interfaceName = supportsInterface(interfaceName);
+let instances = {};
 
-	if (!interfaceName.success) {
-		return interfaceName;
+export function isSupported (interfaceNameOrProto, name) {
+	let prototype = typeof interfaceNameOrProto === 'string' ? window[interfaceNameOrProto]?.prototype : interfaceNameOrProto;
+
+	if (!prototype) {
+		return false;
 	}
 
-	// If no CSS rules are defined to test against and no interface is defined explicitly,
-	// only return the interface info
-	if (!required && !interfaceCallback) {
-		return interfaceName;
+	if (name in prototype) {
+		return true;
 	}
 
-	styleElement.textContent = required;
+	return isSupported(Object.getPrototypeOf(prototype), name);
+}
 
-	let cssInterface = null;
+export function getInstance (name, testCss, fn) {
+	let instance = instances[name];
+
+	if (instance !== undefined) {
+		return instance;
+	}
+
+	if (testCss) {
+		styleElement.textContent = testCss;
+	}
+
 	try {
-		if (interfaceCallback) {
-				cssInterface = interfaceCallback(styleElement);
-		} else {
-			cssInterface = getInterfaceFromRules(styleElement.sheet.cssRules, interfaceName.interface);
+		if (fn) {
+			instance = fn(styleElement);
 		}
-	} catch (e) {
-		return interfaceName;
-	}
-
-	if (cssInterface) {
-		for (var i = 0; i < domPrefixes.length; i++) {
-			var prefixed = domPrefixes[i] + attributeOrMethod;
-
-			if (prefixed in cssInterface) {
-				return {
-					success: true,
-					prefix: domPrefixes[i],
-					interfacePrefix: interfaceName.prefix,
-				};
-			}
+		else if (testCss) {
+			instance = getInterfaceFromRules(styleElement.sheet.cssRules, name);
 		}
 	}
+	catch (e) {
+		return null;
+	}
+
+	if (instance) {
+		instances[name] = instance;
+		return instance;
+	}
+}
+
+export default function attributeOrMethod (interfaceName, name, testCss, interfaceCallback) {
+	let interfaceSupported = supportsInterface(interfaceName);
+
+	if (!interfaceSupported.success) {
+		return {success: false};
+	}
+
+
+
+
+	let prefixedInterfaceName = interfaceSupported.name;
+	let prefix = prefixes.find(prefix => isSupported(prefixedInterfaceName, prefixName(prefix, name)));
+
+	if (prefix !== undefined) {
+		return {success: true, prefix};
+	}
+
+	// Not found in prototype, try to get an instance (slow)
+	if (interfaceName.startsWith('CSSKeyframe')) {
+		console.log(interfaceName, name, interfaceSupported);
+		// debugger;
+	}
+	let instance = getInstance(prefixedInterfaceName, testCss, interfaceCallback);
+
+	if (!instance) {
+		return {success: false};
+	}
+
+	prefix = prefixes.find(prefix => isSupported(instance, prefixName(prefix, name)));
+	let success = prefix !== undefined;
 
 	return {
-		success: false,
+		success,
+		prefix,
 	};
 }

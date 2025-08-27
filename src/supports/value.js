@@ -1,37 +1,24 @@
-import { prefixes, inlineStyle } from './shared.js';
-import { camelCase } from './util.js';
+import { prefixes } from './shared.js';
 
-import supportsProperty from './property.js';
+import supportsProperty, { isSupported } from './property.js';
 
-export default function value (property, value) {
+export default function value (value, property = 'all') {
+	// First, check if the *property* is supported
 	property = supportsProperty(property);
 
 	if (!property.success) {
 		return property;
 	}
+
 	const propertyPrefix = property.prefix;
-	property = camelCase(property.property);
+	const prefixedProperty = propertyPrefix + property.property;
 
-	inlineStyle.cssText = '';
-	inlineStyle[property] = '';
-
-	for (var i = 0; i < prefixes.length; i++) {
-		var prefixed = prefixes[i] + value;
-
-		try {
-			inlineStyle[property] = prefixed;
-		} catch (e) {}
-
-		if (inlineStyle.length > 0) {
-			return {
-				success: true,
-				prefix: prefixes[i],
-				propertyPrefix,
-			};
-		}
-	}
+	const prefix = prefixes.find(prefix => isSupported(prefixedProperty, prefix + value));
+	const success = prefix !== undefined;
 
 	return {
-		success: false,
+		success,
+		prefix,
+		propertyPrefix,
 	};
 }

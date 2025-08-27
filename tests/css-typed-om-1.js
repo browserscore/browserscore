@@ -545,7 +545,6 @@ export default {
 				dev: '#colorvalue-objects',
 				mdnGroup: 'DOM',
 			},
-		 	tests: ['CSSColorValue'],
 		},
 		CSSRGB: {
 			links: {

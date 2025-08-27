@@ -1,41 +1,43 @@
 import Supports from './supports.js';
 
+export const types = new Set(['properties', 'values', 'interfaces', 'descriptors', 'selectors', 'declaration', '@rules', 'Media queries']);
+
 export default {
-	values: function (test, name, feature) {
-		let properties = feature[feature.type]?.properties || feature.properties;
+	// values: function (test, name, feature) {
+	// 	let properties = feature[feature.type]?.properties || feature.properties;
 
-		if (!properties) {
-			return {
-				success: 0,
-				note: 'No properties to test',
-			};
-		}
+	// 	if (!properties) {
+	// 		return {
+	// 			success: 0,
+	// 			note: 'No properties to test',
+	// 		};
+	// 	}
 
-		let failed = [];
+	// 	let failed = [];
 
-		for (var j = 0, property; (property = properties[j++]); ) {
-			if (!Supports.property(property).success) {
-				// Property not supported, no point in using it to test values
-				properties.splice(--j, 1);
-				continue;
-			}
+	// 	for (var j = 0, property; (property = properties[j++]); ) {
+	// 		if (!Supports.property(property).success) {
+	// 			// Property not supported, no point in using it to test values
+	// 			properties.splice(--j, 1);
+	// 			continue;
+	// 		}
 
-			if (!Supports.value(property, test).success) {
-				failed.push(property);
-			}
-		}
+	// 		if (!Supports.value(property, test).success) {
+	// 			failed.push(property);
+	// 		}
+	// 	}
 
-		var success = properties.length > 0 ? 1 - failed.length / properties.length : 0;
+	// 	var success = properties.length > 0 ? 1 - failed.length / properties.length : 0;
 
-		return {
-			success: success,
-			note: success > 0 && success < 1 ? 'Failed in: ' + failed.join(', ') : '',
-		};
-	},
+	// 	return {
+	// 		success: success,
+	// 		note: success > 0 && success < 1 ? 'Failed in: ' + failed.join(', ') : '',
+	// 	};
+	// },
 
-	properties: function (value, property) {
-		return Supports.value(property, value);
-	},
+	// properties: function (value, property) {
+	// 	return Supports.value(property, value);
+	// },
 
 	descriptors: function (value, name, feature) {
 		var required = undefined;
@@ -61,9 +63,9 @@ export default {
 		return Supports.atrule(test);
 	},
 
-	interfaces: function (value, name, feature) {
-		return Supports.attributeOrMethod(name, value, feature.required, feature.interface);
-	},
+	// interfaces: function (value, name, feature) {
+	// 	return Supports.attributeOrMethod(name, value, feature.required, feature.interface);
+	// },
 
 	'Media queries': function (test) {
 		return Supports.mq(test);

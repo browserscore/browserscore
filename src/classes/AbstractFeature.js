@@ -1,4 +1,9 @@
+/**
+ * Base class for all features or feature groups (including specs)
+ */
+
 import Score from './Score.js';
+import { IS_DEV } from '../util.js';
 
 export default class AbstractFeature {
 	children = [];
@@ -6,6 +11,16 @@ export default class AbstractFeature {
 
 	constructor (def = {}, parent) {
 		this.def = def;
+
+		// For debugging
+		if (IS_DEV) {
+			// Expose all instances
+			this.constructor.all ??= [];
+			this.constructor.all.push(this);
+
+			// Make class a global
+			globalThis[this.constructor.name] ??= this.constructor;
+		}
 
 		if (parent) {
 			Object.defineProperty(this, 'parent', {
@@ -19,7 +34,12 @@ export default class AbstractFeature {
 		this.id = def.id;
 
 		if (def.title) {
-			this.title = def.title;
+			Object.defineProperty(this, 'title', {
+				value: def.title,
+				enumerable: true,
+				writable: true,
+				configurable: true,
+			});
 		}
 
 		this.score = new Score(this, this.constructor.forceTotal);
@@ -83,7 +103,19 @@ export default class AbstractFeature {
 		return parentUid + id + pathSuffix;
 	}
 
-	test() {
+	closest (fn) {
+		if (fn(this)) {
+			return this;
+		}
+
+		return this.parent?.closest(fn) ?? null;
+	}
+
+	closestValue (fn) {
+		return fn(this) ?? this.parent?.closestValue(fn);
+	}
+
+	test () {
 		if (this.tested) {
 			return;
 		}
@@ -91,13 +123,13 @@ export default class AbstractFeature {
 		this.tested = true;
 
 		if (this.children?.length > 0) {
-			let startTime = performance.now();
 			for (let child of this.children) {
 				child.test();
 			}
 
-			this.score.testTime = performance.now() - startTime;
 			this.score.recalc();
 		}
 	}
 }
+
+globalThis.AbstractFeature = AbstractFeature;

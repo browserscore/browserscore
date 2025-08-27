@@ -1,41 +1,46 @@
-import { domPrefixes } from './shared.js';
-import { getPrefixedVariants } from './util.js';
+import { domPrefixes as prefixes, prefixCamelCase as prefixName } from './shared.js';
 
 let cached = {};
 
+/**
+ * Low-level, no caching, no prefixes
+ * @param {string} name
+ */
+export function isSupported (name) {
+	return name in window;
+}
+
 export default function (name) {
-	if (!cached[name]) {
-		cached[name] = {};
-	} else if (cached[name]) {
-		return {
-			success: true,
-			interface: cached[name].interface,
-			prefix: cached[name].prefix,
-		};
-	}
+	let cachedResult = cached[name];
+	let success, prefix, prefixedName;
 
-	for (var i = 0; i < domPrefixes.length; i++) {
-		var prefixed = getPrefixedVariants(name, domPrefixes[i]);
+	if (cachedResult === undefined) {
+		prefix = prefixes.find(prefix => isSupported(prefixName(prefix, name)));
 
-		for (var j = 0; j < prefixed.length; j++) {
-			if (prefixed[j] in window) {
-				cached[name] = {
-					interface: prefixed[j],
-					prefix: domPrefixes[i],
-				};
+		if (prefix === undefined && name.indexOf('CSS') === 0) {
+			// Last ditch effort to find a prefix: try CSS[Prefix]Name
+			let nameWithoutCSS = name.slice(3);
+			prefix = prefixes.find(prefix => isSupported('CSS' + prefixName(prefix, nameWithoutCSS)));
 
-				return {
-					success: true,
-					interface: prefixed[j],
-					prefix: domPrefixes[i],
-				};
+			if (prefix !== undefined) {
+				prefixedName = 'CSS' + prefixName(prefix, nameWithoutCSS);
 			}
 		}
+
+		prefixedName ??= prefixName(prefix, name)
+		cached[name] = success = prefix !== undefined;
+
+		if (success && prefix) {
+			cached[name] = prefixedName;
+		}
+	}
+	else {
+		success = Boolean(cachedResult);
+		prefixedName = cachedResult === true ? name : (cachedResult || undefined);
 	}
 
-	cached[name] = false;
 	return {
-		success: false,
-		interface: name,
+		success,
+		name: prefixedName,
 	};
 }

@@ -12,7 +12,8 @@ export default {
 		},
 	},
 	selectors: {
-		'Scoped Descendant Combinator': {
+		'scope-combinator': {
+			title: 'Scoped Descendant Combinator',
 			link: '#scope-combinator',
 			tests: 'foo >> bar',
 		},
