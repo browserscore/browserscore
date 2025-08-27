@@ -110,12 +110,10 @@ export default class AbstractFeature {
 		this.tested = true;
 
 		if (this.children?.length > 0) {
-			let startTime = performance.now();
 			for (let child of this.children) {
 				child.test();
 			}
 
-			this.score.testTime = performance.now() - startTime;
 			this.score.recalc();
 		}
 	}
