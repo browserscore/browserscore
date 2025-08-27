@@ -19,6 +19,32 @@
 	</a>
 </h1>
 
+<template id="feature-component-template">
+	<details v-if="feature.children?.length > 0" class="feature-group" :key="feature.uid" :id="feature.htmlId" ref="container">
+		<summary class="feature" :class="passclass(feature.score)">
+			<span class="title" v-if="feature.title" v-text="feature.title"></span>
+			<code class="title" v-else v-text="feature.code ?? feature.id"></code>
+
+			<a v-if="feature.specLink" :href="feature.specLink" target="_blank" :class="`spec-link ${feature.spec.org.id}-link`">TR</a>
+			<a v-if="feature.draftLink && feature.draftLink !== feature.specLink" :href="feature.draftLink" target="_blank" :class="`spec-link ${feature.spec.org.id}-link`">DEV</a>
+			<a v-if="feature.mdnLink" :href="feature.mdnLink" target="_blank" class="spec-link mdn-link">MDN</a>
+
+			<support-status :score="feature.score"></support-status>
+		</summary>
+
+		<template v-for="child, index of feature.children" :key="feature.getUid('.', index)">
+			<bs-feature :feature="child"></bs-feature>
+		</template>
+	</details>
+	<article v-else class="feature" :class="passclass(feature.score)" ref="container">
+		<span class="title" v-if="feature.title" v-text="feature.title"></span>
+		<code class="title" v-else v-text="feature.code ?? feature.id"></code>
+
+		<span class="prefix" v-if="feature.result?.prefix">{{ feature.result.prefix }}</span>
+		<span class="note" v-if="feature.result?.note">{{ feature.result.note }}</span>
+	</article>
+</template>
+
 <div id="content" v-cloak>
 	<section id="tests">
 		<header>
@@ -47,23 +73,7 @@
 				</h1>
 				<section v-for="features, type in spec.features" :key="spec.getUid('.', type)">
 					<h1 v-text="type"></h1>
-					<details class="feature-group" v-for="feature of features" :key="feature.uid" :id="feature.htmlId">
-						<summary class="feature" :class="passclass(feature.score)">
-							<span class="title" v-text="feature.title"></span>
-							<a v-if="feature.specLink" :href="feature.specLink" target="_blank" :class="`spec-link ${feature.parent.org.id}-link`">TR</a>
-							<a v-if="feature.draftLink && feature.draftLink !== feature.specLink" :href="feature.draftLink" target="_blank" :class="`spec-link ${feature.parent.org.id}-link`">DEV</a>
-							<a v-if="feature.mdnLink" :href="feature.mdnLink" target="_blank" class="spec-link mdn-link">MDN</a>
-
-							<support-status :score="feature.score"></support-status>
-						</summary>
-						<template v-for="test, index of feature.tests" :key="feature.getUid('.', index)">
-							<article class="feature" v-for="result of [feature.results?.[index] ?? {}]" :data-success="result.success" :class="passclass(result.success)">
-								{{ test }}
-								<span class="prefix" v-if="result.prefix">{{ result.prefix }}</span>
-								<span class="note" v-if="result.note">{{ result.note }}</span>
-							</article>
-						</template>
-					</details>
+					<bs-feature :feature="feature" v-for="feature in features"></bs-feature>
 				</section>
 			</section>
 		</section>

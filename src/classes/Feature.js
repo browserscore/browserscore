@@ -40,6 +40,29 @@ export default class Feature extends AbstractFeature {
 		if (this.tests && !Array.isArray(this.tests)) {
 			this.tests = [this.tests];
 		}
+
+		if (this.children.length === 0 && this.tests.length > 0) {
+			// Stub to pave the way for children
+			Object.defineProperty(this, 'children', {
+				get () {
+					return this.tests.map((test, index) => {
+						let result = this.results?.[index] ?? {};
+						return {
+							id: test,
+							result,
+							score: result?.success,
+							spec: this.spec,
+						}
+					});
+				},
+				enumerable: true,
+				configurable: true,
+			});
+		}
+	}
+
+	get spec () {
+		return this.closest(f => f.constructor.name === 'Spec');
 	}
 
 	get mdnLink () {

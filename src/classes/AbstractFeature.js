@@ -102,6 +102,18 @@ export default class AbstractFeature {
 		return parentUid + id + pathSuffix;
 	}
 
+	closest (fn) {
+		if (fn(this)) {
+			return this;
+		}
+
+		return this.parent?.closest(fn) ?? null;
+	}
+
+	closestValue (fn) {
+		return fn(this) ?? this.parent?.closestValue(fn);
+	}
+
 	test() {
 		if (this.tested) {
 			return;
