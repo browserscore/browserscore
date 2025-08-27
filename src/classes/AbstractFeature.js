@@ -1,3 +1,7 @@
+/**
+ * Base class for all features or feature groups (including specs)
+ */
+
 import Score from './Score.js';
 import { IS_DEV } from '../util.js';
 
@@ -11,7 +15,11 @@ export default class AbstractFeature {
 		// For debugging
 		if (IS_DEV) {
 			// Expose all instances
-			this.constructor.all ??= [];
+			if (!Object.hasOwn(this.constructor, 'all')) {
+				// We don't want classes to share the same array
+				this.constructor.all = [];
+			}
+
 			this.constructor.all.push(this);
 
 			// Make class a global
