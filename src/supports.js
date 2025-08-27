@@ -3,6 +3,7 @@
  * Setup dummy elements
  */
 import { prefixes, domPrefixes } from './supports/shared.js';
+import { IS_DEV } from './util.js';
 
 import property from './supports/property.js';
 import value from './supports/value.js';
@@ -18,7 +19,6 @@ import attributeOrMethod from './supports/attributeOrMethod.js';
 const Supports = {
 	prefixes,
 	domPrefixes,
-
 	property,
 	value,
 	descriptorvalue,
@@ -30,6 +30,10 @@ const Supports = {
 	interface: Interface,
 	attributeOrMethod,
 };
+
+if (IS_DEV) {
+	window.Supports = Supports;
+}
 
 export default Supports;
 export { property, value, descriptorvalue, selector, atrule, mq, variable, declaration, Interface, attributeOrMethod };
