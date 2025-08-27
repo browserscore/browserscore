@@ -31,27 +31,18 @@ export default class Spec extends AbstractFeature {
 				continue;
 			}
 
-			let {properties, required, interface: Interface, ...features} = this.def[type];
+			let group = this.def[type];
+
+			let {properties, required, interface: Interface, ...features} = group;
+			group.type = type;
 
 			this.features[type] = [];
 
 			for (let id in features) {
 				let feature = features[id];
 				feature.id = id;
-				feature.type = type;
 
-				// Apply aggregate properties if no override
-				if (properties) {
-					feature.properties ??= properties;
-				}
-				if (required) {
-					feature.required ??= required;
-				}
-				if (Interface) {
-					feature.interface ??= Interface;
-				}
-
-				feature = new Feature(feature, this);
+				feature = new Feature(feature, this, group);
 				this.features[type].push(feature);
 
 				this.children.push(feature);

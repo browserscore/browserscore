@@ -1,17 +1,32 @@
+/**
+ * A syntax feature (i.e. not a spec)
+ * May or may not have children
+ */
+
 import featureTypes from '../features.js';
 import AbstractFeature from './AbstractFeature.js';
 
 export default class Feature extends AbstractFeature {
 	static forceTotal = 1;
-	constructor (def, parent) {
-		super(def, parent);
-		this.type = def.type;
 
-		this.properties = def.properties;
-		this.required = def.required;
-		this.interface = def.interface;
+	constructor (def, parent, group) {
+		super(def, parent);
+		this.type = def.type ?? group?.type ?? parent?.type;
+		this.group = group;
 
 		this.title ??= this.id;
+		// Type-specific properties
+		if (this.type === 'values') {
+			this.properties = def.properties ?? group?.properties;
+		}
+
+		if (this.type === 'descriptors' || this.type === 'interfaces') {
+			this.required = def.required ?? group?.required;
+
+			if (this.type === 'interfaces') {
+				this.interface = def.interface ?? group?.interface;
+			}
+		}
 
 		if (def.tests) {
 			this.def = def;
