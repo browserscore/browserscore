@@ -33,7 +33,6 @@ export const orgs = {
 	whatwg: {
 		title: 'WHATWG',
 		specs: 'https://{shortname}.spec.whatwg.org/',
-		drafts: 'https://{shortname}.spec.whatwg.org/',
 	},
 	ecma: {
 		title: 'ECMA',

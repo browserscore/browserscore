@@ -1,8 +1,6 @@
 export default {
 	title: 'HTML Living Standard',
-	links: {
-		dev: 'html',
-	},
+	link: 'html',
 	group: 'whatwg',
 	status: 'experimental',
 	selectors: {

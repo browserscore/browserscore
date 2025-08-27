@@ -1,9 +1,7 @@
 export default {
 	title: 'Compatibility',
 	group: 'whatwg',
-	links: {
-		dev: 'compat',
-	},
+	link: 'compat',
 	status: 'stable',
 	properties: {
 		'touch-action': {

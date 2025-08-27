@@ -79,9 +79,9 @@ export default class Spec extends AbstractFeature {
 
 	get specLink () {
 		let ret = super.specLink;
+		let template = this.group?.specs ?? this.org?.specs;
 
-		if (ret) {
-			let template = this.group.specs ?? this.org.specs;
+		if (ret && template) {
 			return template.replace('{shortname}', ret).replace(/(\/|\.html)\/$/, '$1');
 		}
 
@@ -90,9 +90,9 @@ export default class Spec extends AbstractFeature {
 
 	get draftLink () {
 		let ret = super.draftLink;
+		let template = this.group?.drafts ?? this.org?.drafts;
 
-		if (ret) {
-			let template = this.group.drafts ?? this.org.drafts;
+		if (ret && template) {
 			return template.replace('{shortname}', ret).replace(/(\/|\.html)\/$/, '$1');
 		}
 
