@@ -3,42 +3,48 @@ import { camelCase } from './util.js';
 
 let cached = {};
 
-export default function property (property) {
-	if (property.charAt(0) === '-') {
-		return {
-			success: camelCase(property) in inlineStyle ? true : false,
-			property: property,
-		};
+/**
+ * Low level support check, no caching, no prefixes
+ * @param {*} property
+ * @returns
+ */
+export function isSupported (property, value) {
+	if (globalThis.CSS && CSS.supports) {
+		return CSS.supports(property, value ?? 'initial');
 	}
 
-	if (cached[property]) {
-		return {
-			success: true,
-			property: cached[property].property,
-			prefix: cached[property].prefix,
-		};
+	// No CSS, fall back to the DOM
+	if (value === undefined || value === '') {
+		// No value, check if the property is present
+		return inlineStyle[property] !== undefined;
 	}
 
-	for (var i = 0; i < prefixes.length; i++) {
-		var prefixed = prefixes[i] + property;
+	// Set and check if it takes
+	inlineStyle.setProperty(property, '');
+	inlineStyle.setProperty(property, value);
+	let result = inlineStyle.getPropertyValue(property) !== value;
+	inlineStyle.setProperty(property, '');
+	return result;
+}
 
-		if (camelCase(prefixed) in inlineStyle) {
-			cached[property] = {
-				property: prefixed,
-				prefix: prefixes[i],
-			};
-			return {
-				success: true,
-				property: prefixed,
-				prefix: prefixes[i],
-			};
-		}
+export default function (name) {
+	let cachedResult = cached[name];
+	let success, prefix;
+
+	if (cachedResult === undefined) {
+		prefix = prefixes.find(prefix => isSupported(prefix + name));
+		success = prefix !== undefined;
+		cached[name] = prefix === '' ? true : (prefix ?? false);
+	}
+	else {
+		success = Boolean(cachedResult);
+		prefix = typeof cachedResult === "boolean" ? '' : cachedResult;
 	}
 
-	cached[property] = false;
 	return {
-		success: false,
-		property,
+		success,
+		property: prefix + name,
+		prefix,
 	};
 }
 

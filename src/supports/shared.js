@@ -1,5 +1,5 @@
-export const prefixes = ['', '-moz-', '-webkit-', '-o-', '-ms-', 'ms-', '-khtml-'];
-export const domPrefixes = ['', 'Moz', 'Webkit', 'WebKit'];
+export const prefixes = ['', '-moz-', '-webkit-', '-ms-', 'ms-', '-o-', '-khtml-'];
+export const domPrefixes = ['', 'Webkit', 'WebKit', 'webkit', 'Moz', 'moz', 'ms', 'Ms'];
 
 const dummy = document.createElement('_');
 const inlineStyle = dummy.style;
@@ -11,3 +11,12 @@ dummy.setAttribute('data-px', '1px');
 document.documentElement.appendChild(dummy);
 
 export {dummy, inlineStyle, styleElement}
+
+export function prefixCamelCase (prefix, name) {
+	if (!prefix) {
+		return name;
+	}
+
+	let capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+	return prefix + capitalizedName;
+}

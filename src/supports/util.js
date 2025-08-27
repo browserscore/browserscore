@@ -5,10 +5,3 @@ export function camelCase(str) {
 		})
 		.replace('-', '');
 }
-
-export function getPrefixedVariants(featureName, prefix) {
-	return [
-		prefix + featureName,
-		featureName.replace('CSS', 'CSS' + prefix),
-	]
-}
