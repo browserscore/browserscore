@@ -98,6 +98,34 @@ export default class Feature extends AbstractFeature {
 		return this.def.code ?? this.id;
 	}
 
+	get draftLink () {
+		let specLink = this.spec?.draftLink;
+
+		if (!specLink) {
+			return '';
+		}
+
+		let link = this.def.links?.dev ?? this.def.link;
+
+		return link ? specLink + link : '';
+	}
+
+	get specLink () {
+		let specLink = this.spec?.specLink;
+
+		if (!specLink) {
+			return '';
+		}
+
+		let link = this.def.links?.tr ?? this.def.link;
+
+		if (link) {
+			return specLink + link;
+		}
+
+		return link;
+	}
+
 	get mdnLink () {
 		let link = this.def.mdn ?? this.def.links?.mdn;
 		if (link) {
