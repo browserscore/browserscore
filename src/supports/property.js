@@ -28,6 +28,11 @@ export function isSupported (property, value) {
 }
 
 export default function (name) {
+	if (!name || !name.replace) {
+		return {success: false, note: 'Invalid property name: ' + name};
+	}
+
+	name = name.replace(/\*/g, 'foo');
 	let cachedResult = cached[name];
 	let success, prefix;
 
