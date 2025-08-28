@@ -78,7 +78,7 @@ export default class Spec extends AbstractFeature {
 	}
 
 	get specLink () {
-		let ret = super.specLink;
+		let ret = this.def.links?.tr ?? this.def.link;
 		let template = this.group?.specs ?? this.org?.specs;
 
 		if (ret && template) {
@@ -89,7 +89,7 @@ export default class Spec extends AbstractFeature {
 	}
 
 	get draftLink () {
-		let ret = super.draftLink;
+		let ret = this.def.links?.dev ?? this.def.link;
 		let template = this.group?.drafts ?? this.org?.drafts;
 
 		if (ret && template) {

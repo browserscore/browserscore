@@ -49,23 +49,11 @@ export default class AbstractFeature {
 	}
 
 	get draftLink () {
-		let link = this.def.link ?? this.def.links?.dev ?? '';
-
-		if (link) {
-			return (this.parent?.draftLink ?? '') + link;
-		}
-
-		return link;
+		// To be overridden by subclasses
 	}
 
 	get specLink () {
-		let link = this.def.link ?? this.def.links?.tr ?? '';
-
-		if (link) {
-			return (this.parent?.specLink ?? '') + link;
-		}
-
-		return link;
+		// To be overridden by subclasses
 	}
 
 	get mdnLink () {
