@@ -38,6 +38,7 @@
 		</template>
 	</details>
 	<article v-else class="feature" :class="passclass(feature.score)" ref="container">
+		<support-status :score="feature.score"></support-status>
 		<span class="title" v-if="feature.title" v-text="feature.title"></span>
 		<code class="title" v-else v-text="feature.code ?? feature.id"></code>
 
