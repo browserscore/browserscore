@@ -2,113 +2,46 @@ export default {
 	title: 'CSS Fonts Module Level 4',
 	link: 'css-fonts-4',
 	status: 'stable',
-	values: {
-		properties: ['font-family'],
-		'system-ui': {
-			link: '#system-ui-def',
+	properties: {
+		'font-family': {
+			forceTotal: false, // count each value as a feature
+			link: '#font-family-prop',
 			mdn: 'font-family',
-			tests: 'system-ui',
+			tests: {
+				'system-ui': {link: '#system-ui-def'},
+				'emoji': {link: '#emoji-def'},
+				'math': {link: '#math-def'},
+				'generic(fangsong)': {link: '#generic(fangsong)-def'},
+				'generic(kai)': {link: '#generic(kai)-def'},
+				'generic(khmer-mul)': {link: '#generic(khmer-mul)-def'},
+				'generic(nastaliq)': {link: '#generic(nastaliq)-def'},
+				'ui-serif': {link: '#ui-serif-def'},
+				'ui-sans-serif': {link: '#ui-sans-serif-def'},
+				'ui-monospace': {link: '#ui-monospace-def'},
+				'ui-rounded': {link: '#ui-rounded-def'},
+			},
 		},
-		'emoji': {
-			link: '#emoji-def',
-			mdn: 'font-family',
-			tests: 'emoji',
-		},
-		'math': {
-			link: '#math-def',
-			mdn: 'font-family',
-			tests: 'math',
-		},
-		'generic(fangsong)': {
-			links: {
-				tr: '#fangsong-def',
-				dev: '#generic(fangsong)-def',
-				},
-			mdn: 'font-family',
-			tests: 'generic(fangsong)',
-		},
-		'generic(kai)': {
-			links: {
-				dev: '#generic(kai)-def',
-				},
-			mdn: 'font-family',
-			tests: 'generic(kai)',
-		},
-		'generic(khmer-mul)': {
-			links: {
-				dev: '#generic(khmer-mul)-def',
-				},
-			mdn: 'font-family',
-			tests: 'generic(khmer-mul)',
-		},
-		'generic(nastaliq)': {
-			links: {
-				dev: '#generic(nastaliq)-def',
-				},
-			mdn: 'font-family',
-			tests: 'generic(nastaliq)',
-		},
-		'ui-serif': {
-			link: '#ui-serif-def',
-			mdn: 'font-family',
-			tests: 'ui-serif',
-		},
-		'ui-sans-serif': {
-			link: '#ui-sans-serif-def',
-			mdn: 'font-family',
-			tests: 'ui-sans-serif',
-		},
-		'ui-monospace': {
-			link: '#ui-monospace-def',
-			mdn: 'font-family',
-			tests: 'ui-monospace',
-		},
-		'ui-rounded': {
-			link: '#ui-rounded-def',
-			mdn: 'font-family',
-			tests: 'ui-rounded',
-		},
-		'xxx-large': {
+		'font-size': {
+			forceTotal: false,
 			link: '#font-size-prop',
-			properties: ['font-size'],
-			tests: ['xxx-large'],
+			mdn: 'font-size',
+			tests: {
+				'xxx-large': {link: '#xxx-large-def'},
+				'math': {link: '#math-in-font-size-def'},
+			},
 		},
-		'math in font-size': {
-			link: '#font-size-prop',
-			properties: ['font-size'],
-			tests: ['math'],
-		},
-		'arbitrary font weights': {
+		'font-weight': {
+			title: 'Arbitrary font weights',
 			link: '#font-weight-prop',
-			properties: ['font-weight'],
+			mdn: 'font-weight',
 			tests: ['1', '90', '750', '1000'],
 		},
-		'angle for oblique': {
+		'font-style': {
+			title: 'Angle for oblique',
 			link: '#font-style-prop',
-			properties: ['font-style'],
+			mdn: 'font-style',
 			tests: ['oblique 15deg', 'oblique -15deg', 'oblique 0deg'],
 		},
-		'font-variant functions and keywords': {
-			link: '#font-variant-prop',
-			properties: ['font-variant'],
-			tests: [
-				'stylistic(salt01)',
-				'historical-forms',
-				'styleset(ss01)',
-				'styleset(stacked-g, geometric-m)',
-				'character-variant(cv02)',
-				'character-variant(beta-3, gamma)',
-				'swash(flowing)',
-				'ornaments(leaves)',
-				'annotation(blocky)',
-				'text',
-				'emoji',
-				'unicode',
-				'discretionary-ligatures character-variant(leo-B, leo-M, leo-N, leo-T, leo-U)',
-			],
-		},
-	},
-	properties: {
 		'font-variant-alternates': {
 			link: '#font-variant-alternates-prop',
 			tests: [
@@ -132,6 +65,28 @@ export default {
 				'emoji',
 				'unicode',
 			],
+		},
+		'font-variant': {
+			title: 'font-variant functions and keywords',
+			link: '#font-variant-prop',
+			mdn: 'font-variant',
+			tests: [
+				// font-variant-alternates
+				'stylistic(salt01)',
+				'historical-forms',
+				'styleset(ss01)',
+				'styleset(stacked-g, geometric-m)',
+				'character-variant(cv02)',
+				'character-variant(beta-3, gamma)',
+				'swash(flowing)',
+				'ornaments(leaves)',
+				'annotation(blocky)',
+				// font-variant-emoji
+				'text',
+				'emoji',
+				'unicode',
+				'discretionary-ligatures character-variant(leo-B, leo-M, leo-N, leo-T, leo-U)',
+			]
 		},
 		'font-variation-settings': {
 			link: '#font-variation-settings-def',
