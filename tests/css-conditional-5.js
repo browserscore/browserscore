@@ -2,7 +2,7 @@ export default {
 	title: 'CSS Conditional Rules Module Level 5',
 	link: 'css-conditional-5',
 	status: 'experimental',
-	'@rules': {
+	atrules: {
 		'@supports': {
 			link: '#at-supports-ext',
 			tests: ['@supports font-tech(features-opentype) {}', '@supports font-format(woff2) {}'],

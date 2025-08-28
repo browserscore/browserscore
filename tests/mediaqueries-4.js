@@ -2,7 +2,7 @@ export default {
 	title: 'Media Queries Level 4',
 	link: 'mediaqueries-4',
 	status: 'stable',
-	'Media queries': {
+	mediaqueries: {
 		Syntax: {
 			link: '#mq-syntax',
 			tests: [

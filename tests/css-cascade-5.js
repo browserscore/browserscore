@@ -15,7 +15,7 @@ export default {
 			tests: 'revert-layer',
 		},
 	},
-	'@rules': {
+	atrules: {
 		'@layer': {
 			link: '#at-layer',
 			tests: [

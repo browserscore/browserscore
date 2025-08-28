@@ -2,7 +2,7 @@ export default {
 	title: 'CSS Cascading and Inheritance Level 6',
 	link: 'css-cascade-6',
 	status: 'experimental',
-	'@rules': {
+	atrules: {
 		'@scope': {
 			link: '#scope-atrule',
 			tests: [

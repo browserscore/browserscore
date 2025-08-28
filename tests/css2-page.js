@@ -7,7 +7,7 @@ export default {
 	status: 'stable',
 	firstSnapshot: 2.2,
 	lastSnapshot: 2.2,
-	'@rules': {
+	atrules: {
 		'@page': {
 			link: '#page-box',
 			tests: [

@@ -85,7 +85,7 @@
 					</h1>
 				</summary>
 				<section v-for="features, type in spec.features" :key="spec.getUid('.', type)">
-					<h2 v-text="type"></h2>
+					<h2 v-text="featureTypeTitles[type] ?? type"></h2>
 					<bs-feature :feature="feature" v-for="feature in features"></bs-feature>
 				</section>
 			</details>

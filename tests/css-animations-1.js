@@ -52,7 +52,7 @@ export default {
 			tests: 'foo 1s 2s infinite linear alternate both',
 		},
 	},
-	'@rules': {
+	atrules: {
 		'@keyframes': {
 			link: '#keyframes',
 			tests: [

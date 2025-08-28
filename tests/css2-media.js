@@ -7,7 +7,7 @@ export default {
 	status: 'stable',
 	firstSnapshot: 2.2,
 	lastSnapshot: 2.2,
-	'Media queries': {
+	mediaqueries: {
 		Syntax: {
 			link: '#at-media-rule',
 			tests: ['all', 'print', 'screen', 'print, screen'],

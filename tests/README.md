@@ -143,7 +143,7 @@ selectors: {
 Tests for CSS at-rules like `@media`, `@keyframes`, etc.
 
 ```javascript
-'@rules': {
+atrules: {
   '@rule-name': {
     links: { /* documentation links */ },
     tests: ['@rule syntax1', '@rule syntax2']

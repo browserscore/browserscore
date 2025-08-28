@@ -4,7 +4,7 @@ export default {
 		dev: 'css-transitions-2',
 	},
 	status: 'experimental',
-	'@rules': {
+	atrules: {
 		'@starting-style': {
 			links: {
 				dev: '#defining-before-change-style-the-starting-style-rule',

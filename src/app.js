@@ -5,6 +5,7 @@ import Specs from './tests.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
 import { passclass, round, percent } from './util.js';
+import { titles as featureTypeTitles } from './features.js';
 
 // Vue components
 import Feature from './vue/components/feature/feature.js';
@@ -53,6 +54,11 @@ let appSpec = {
 			testTime: 0,
 			favicon: '',
 		};
+	},
+
+	created () {
+		// Add constants that we don't need to be reactive
+		this.featureTypeTitles = featureTypeTitles;
 	},
 
 	computed: {

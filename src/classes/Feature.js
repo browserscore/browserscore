@@ -3,7 +3,7 @@
  * May or may not have children
  */
 
-import supportsMap from '../features.js';
+import {supportsNames} from '../features.js';
 import Supports from '../supports.js';
 import AbstractFeature from './AbstractFeature.js';
 import { toArray } from '../supports/util.js';
@@ -140,7 +140,8 @@ export default class Feature extends AbstractFeature {
 	 * @returns {{success: number, note?: string, prefix?: string, name?: string}}
 	 */
 	leafTest () {
-		let testCallback = Supports[supportsMap[this.type]];
+		let supportsName = supportsNames[this.type] ?? this.type;
+		let testCallback = Supports[supportsName];
 
 		if (!testCallback) {
 			return null;
@@ -190,7 +191,7 @@ function getMdnLink (mdn, feature, mdnGroup) {
 		default:
 			mdnLink += 'CSS/';
 			// add exception for Media Queries if no link define
-			// if (what === 'Media queries' && !links.mdn) {
+			// if (what === mediaqueries: && !links.mdn) {
 			// 	mdnLink += '@media/';
 			// }
 	}

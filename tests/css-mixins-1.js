@@ -2,7 +2,7 @@ export default {
 	title: 'CSS Functions and Mixins Module',
 	link: 'css-mixins-1',
 	status: 'experimental',
-	'@rules': {
+	atrules: {
 		'@function': {
 			links: {
 				dev: '#defining-custom-functions',
