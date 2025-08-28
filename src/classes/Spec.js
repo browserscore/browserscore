@@ -6,9 +6,7 @@ import featureMap from './Feature/index.js';
 
 let featureTypes = {...featureMap, ...supportsMap};
 
-// Shorten the title by removing parentheticals,
-// subheadings, CSS and Module words
-const removedWords = RegExp(` *(?:\\b${['Level', 'Module'].join('|')}\\b)(?=\\s)`, 'g');
+// Shorten the title by removing parentheticals, subheadings, and superfluous words
 const removedOther = / *(?:\([^)]*\)|:.*)( *)/g;
 
 const statuses = new Set(['stable', 'experimental']);
@@ -21,7 +19,13 @@ export default class Spec extends AbstractFeature {
 		super(def, parent);
 
 		if (def.title) {
-			this.title = this.title.replace(removedWords, '');
+			let removedWords = [
+				...(this.group.removedWords ?? []),
+				...(this.org.removedWords ?? []),
+			];
+			let removedWordsRegex = RegExp(`\\b(?:${removedWords.join('|')})\\b`, 'g');
+
+			this.title = this.title.replace(removedWordsRegex, '');
 			this.title = this.title.replace(removedOther, '$1');
 			this.title = this.title.trim();
 		}

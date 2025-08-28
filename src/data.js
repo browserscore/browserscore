@@ -7,6 +7,7 @@ export const orgs = {
 			csswg: {
 				title: 'CSS Working Group',
 				drafts: 'https://drafts.csswg.org/{shortname}/',
+				removedWords: ['Level', 'Module'],
 			},
 			fxtf: {
 				title: 'FX Task Force',
@@ -33,6 +34,7 @@ export const orgs = {
 	whatwg: {
 		title: 'WHATWG',
 		specs: 'https://{shortname}.spec.whatwg.org/',
+		removedWords: ['Living Standard'],
 	},
 	ecma: {
 		title: 'ECMA',
