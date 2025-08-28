@@ -9,51 +9,37 @@ export default {
 	properties: {
 		cx: {
 			link: '#CX',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['0', '1px', '-5px', '25%'],
 		},
 		cy: {
 			link: '#CY',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['0', '1px', '-5px', '25%'],
 		},
 		r: {
 			link: '#R',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['0', '1px', '25%'],
 		},
 		rx: {
 			link: '#RX',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['auto', '0', '1px', '25%'],
 		},
 		ry: {
 			link: '#RY',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['auto', '0', '1px', '25%'],
 		},
 		x: {
 			link: '#X',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['0', '1px', '-5px', '25%'],
 		},
 		y: {
 			link: '#Y',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['0', '1px', '-5px', '25%'],
 		},
 	},

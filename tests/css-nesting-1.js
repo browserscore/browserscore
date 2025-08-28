@@ -5,9 +5,7 @@ export default {
 	interfaces: {
 		CSSStyleRule: {
 			link: '#cssom-style',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['cssRules', 'insertRule', 'deleteRule'],
 			required: 'div { }',
 		},

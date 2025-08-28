@@ -60,9 +60,7 @@ export default {
 		},
 		Element: {
 			link: '#interface-globaleventhandlers',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['onsnapchanged', 'onsnapchanging'],
 			interface: function(style) {
 				return document.body;

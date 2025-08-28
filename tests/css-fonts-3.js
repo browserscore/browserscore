@@ -194,6 +194,7 @@ export default {
 	},
 	atrules: {
 		'@font-face': {
+			forceTotal: false, // count each descriptor as a feature
 			link: '#font-face-rule',
 			tests: "@font-face {\n  font-family: foo;\n  src: local('Arial');\n}",
 		},
@@ -201,11 +202,7 @@ export default {
 	interfaces: {
 		CSSFontFaceRule: {
 			link: '#om-fontface',
-			links: {
-				mdnGroup: 'DOM',
-			},
-			tests: ['style', 'cssText', 'parentRule', 'parentStyleSheet'],
-			required: '@font-face { font-family: "Foo"; src: local("Foo") }',
+			mdnGroup: 'DOM',
 		},
 	},
 };

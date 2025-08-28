@@ -30,26 +30,20 @@ export default {
 		/* Doesn't currently work because style sheet is only available once imported
 		CSSImportRule: {
 			link: '#extensions-to-cssimportrule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['layerName'],
 			required: '@import url("foo.css") layer(mylayer);',
 		},
 		*/
 		CSSLayerBlockRule: {
 			link: '#the-csslayerblockrule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['name', 'cssRules', 'insertRule', 'deleteRule'],
 			required: '@layer mylayer { }',
 		},
 		CSSLayerStatementRule: {
 			link: '#the-csslayerstatementrule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['nameList', 'cssText', 'parentRule', 'parentStyleSheet'],
 			required: '@layer firstLayer, secondLayer;',
 		},

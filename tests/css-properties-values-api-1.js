@@ -51,9 +51,7 @@ export default {
 	interfaces: {
 		CSS: {
 			link: '#registering-custom-properties',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['registerProperty'],
 			interface: function() {
 				return CSS;
@@ -61,9 +59,7 @@ export default {
 		},
 		CSSPropertyRule: {
 			link: '#the-css-property-rule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['name', 'syntax', 'inherits', 'initialValue'],
 			required: "@property --foo { syntax: '<color>'; inherits: true; initial-value: blue; }",
 			interface: function(style) {

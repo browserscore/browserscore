@@ -84,9 +84,7 @@ export default {
 	interfaces: {
 		CSSContainerRule: {
 			link: '#the-csscontainerrule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['containerName', 'containerQuery', 'conditionText'],
 			required: '@container (min-width: 500px) { }',
 			interface: function(style) {

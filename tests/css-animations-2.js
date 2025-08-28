@@ -31,9 +31,7 @@ export default {
 	interfaces: {
 		CSSAnimation: {
 			link: '#the-CSSAnimation-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['animationName'],
 			required: '@keyframes slide-in { 0% { transform: translateY(-1000px); } 100% { transform: translateY(0); } } .animate { animation: slide-in 0.7s both; }',
 			interface: function(style) {

@@ -11,9 +11,7 @@ export default {
 	interfaces: {
 		CSS: {
 			link: '#registration',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['highlights'],
 			interface: function() {
 				return CSS;
@@ -21,9 +19,7 @@ export default {
 		},
 		Highlight: {
 			link: '#creation',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'priority',
 				'type',

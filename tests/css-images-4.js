@@ -182,9 +182,7 @@ export default {
 	interfaces: {
 		CSS: {
 			link: '#elementsources',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['elementSources'],
 			interface: function () {
 				return CSS;

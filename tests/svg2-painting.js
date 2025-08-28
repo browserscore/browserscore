@@ -9,9 +9,7 @@ export default {
 	properties: {
 		'color-interpolation': {
 			link: '#ColorInterpolation',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['auto', 'sRGB', 'linearRGB'],
 		},
 		'color-rendering': {
@@ -26,23 +24,17 @@ export default {
 		},
 		'marker-end': {
 			link: '#VertexMarkerProperties',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['none', 'url(#marker)'],
 		},
 		'marker-mid': {
 			link: '#VertexMarkerProperties',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['none', 'url(#marker)'],
 		},
 		'marker-start': {
 			link: '#VertexMarkerProperties',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['none', 'url(#marker)'],
 		},
 		'paint-order': {
@@ -51,9 +43,7 @@ export default {
 		},
 		'shape-rendering': {
 			link: '#ShapeRendering',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['auto', 'optimizeSpeed', 'crispEdges', 'geometricPrecision'],
 		},
 		'text-rendering': {

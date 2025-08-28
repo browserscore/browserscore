@@ -5,9 +5,7 @@ export default {
 	interfaces: {
 		CSS: {
 			link: '#namespacedef-css',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['escape'],
 			interface: function() {
 				return CSS;
@@ -15,9 +13,7 @@ export default {
 		},
 		StyleSheet: {
 			link: '#the-stylesheet-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'type',
 				'href',
@@ -33,9 +29,7 @@ export default {
 		},
 		CSSStyleSheet: {
 			link: '#the-cssstylesheet-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'type',
 				'href',
@@ -62,9 +56,7 @@ export default {
 		},
 		StyleSheetList: {
 			link: '#the-stylesheetlist-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['item', 'length'],
 			interface: function() {
 				return document.styleSheets;
@@ -72,9 +64,7 @@ export default {
 		},
 		Document: {
 			link: '#extensions-to-the-document-or-shadow-root-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['styleSheets', 'adoptedStyleSheets'],
 			interface: function() {
 				return document;
@@ -82,9 +72,7 @@ export default {
 		},
 		Element: {
 			link: '#the-linkstyle-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['sheet', 'style'],
 			interface: function(style) {
 				return style;
@@ -92,9 +80,7 @@ export default {
 		},
 		Window: {
 			link: '#extensions-to-the-window-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['getComputedStyle'],
 			interface: function() {
 				return window;
@@ -102,9 +88,7 @@ export default {
 		},
 		MediaList: {
 			link: '#the-medialist-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['mediaText', 'length', 'item', 'appendMedium', 'deleteMedium'],
 			interface: function(style) {
 				return style.sheet.media;
@@ -112,9 +96,7 @@ export default {
 		},
 		CSSRuleList: {
 			link: '#the-cssrulelist-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['item', 'length'],
 			interface: function(style) {
 				return style.sheet.cssRules;
@@ -122,9 +104,7 @@ export default {
 		},
 		CSSRule: {
 			link: '#the-cssrule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'cssText',
 				'parentRule',
@@ -146,9 +126,7 @@ export default {
 		},
 		CSSStyleRule: {
 			link: '#the-cssstylerule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'selectorText',
 				'style',
@@ -164,18 +142,14 @@ export default {
 		/* Doesn't currently work because style sheet is only available once imported
 		CSSImportRule: {
 			link: '#the-cssimportrule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['href', 'media', 'styleSheet'],
 			required: '@import url("foo.css");',
 		},
 		*/
 		CSSGroupingRule: {
 			link: '#the-cssgroupingrule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'cssRules',
 				'insertRule',
@@ -191,33 +165,25 @@ export default {
 		},
 		CSSPageRule: {
 			link: '#the-csspagerule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['selectorText', 'style', 'cssRules', 'insertRule', 'deleteRule'],
 			required: '@page { }',
 		},
 		CSSMarginRule: {
 			link: '#the-cssmarginrule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['selectorText', 'style', 'cssText', 'parentRule', 'parentStyleSheet'],
 			required: '@page { @top-left { content: "foo"; } }',
 		},
 		CSSNamespaceRule: {
 			link: '#the-cssnamespacerule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['namespaceURI', 'prefix', 'cssText', 'parentRule', 'parentStyleSheet'],
 			required: '@namespace svg url("http://www.w3.org/2000/svg");',
 		},
 		CSSStyleDeclaration: {
 			link: '#the-cssstyledeclaration-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'cssText',
 				'length',

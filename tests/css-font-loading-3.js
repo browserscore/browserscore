@@ -5,9 +5,7 @@ export default {
 	interfaces: {
 		FontFace: {
 			link: '#fontface-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'family',
 				'style',
@@ -71,9 +69,7 @@ export default {
 		},
 		FontFaceSet: {
 			link: '#FontFaceSet-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'add',
 				'delete',
@@ -102,9 +98,7 @@ export default {
 		},
 		Document: {
 			link: '#font-face-source',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['fonts'],
 			interface: function() {
 				return document;
