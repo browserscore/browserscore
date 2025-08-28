@@ -48,6 +48,13 @@ export default class Feature extends AbstractFeature {
 
 		let totalTests = this.children.length > 0 ? this.children.length + (this.constructor.gatingTest ? 1 : 0) : 1;
 		this.score.set({totalTests});
+
+		if (this.title && this.title.indexOf('`') !== this.title.lastIndexOf('`')) {
+			// Inline code
+			this.titleMd = this.title;
+			this.titleHtml = this.title.replace(/`([^`]+?)`/g, '<code>$1</code>');
+			this.title = this.title.replace(/`/g, '');
+		}
 	}
 
 	get forceTotal () {

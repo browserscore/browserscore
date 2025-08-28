@@ -25,7 +25,8 @@
 	<details v-if="feature.children?.length > 0" class="feature-group" :key="feature.uid" :id="feature.htmlId" ref="details" @toggle="handleToggle">
 		<summary class="feature" :class="passclass(feature.score)">
 			<support-status :score="feature.score"></support-status>
-			<span class="title" v-if="feature.title" v-text="feature.title"></span>
+			<span class="title" v-if="feature.titleHtml" v-html="feature.titleHtml"></span>
+			<span class="title" v-else-if="feature.title" v-text="feature.title"></span>
 			<code class="title" v-else v-text="feature.code ?? feature.id"></code>
 
 			<a v-if="feature.specLink" :href="feature.specLink" target="_blank" class="badge spec-link" :class="`${feature.spec.org.id}-link`">Spec</a>

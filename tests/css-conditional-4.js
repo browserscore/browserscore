@@ -4,6 +4,7 @@ export default {
 	status: 'experimental',
 	atrules: {
 		'@supports': {
+			title: '`@supports selector()`',
 			link: '#at-supports-ext',
 			tests: [
 				'@supports selector(::before) {}',
