@@ -4,6 +4,7 @@ export default class Score {
 	total = 0;
 	passedTests = 0;
 	failedTests = 0;
+	skipped = 0;
 	totalTests = 0;
 	testTime = 0;
 
@@ -110,6 +111,7 @@ export default class Score {
 
 		this.passed = 0;
 		this.total = 0;
+		this.skipped = 0;
 		this.passedTests = 0;
 		this.failedTests = 0;
 		this.totalTests = 0;
@@ -122,6 +124,11 @@ export default class Score {
 		}
 		else {
 			for (let child of children) {
+				if (isNaN(child.total) || isNaN(child.passed)) {
+					this.skipped++;
+					continue;
+				}
+
 				this.passed += child.passed;
 				this.total += child.total;
 				this.passedTests += child.passedTests;
