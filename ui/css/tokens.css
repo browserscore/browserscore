@@ -72,7 +72,7 @@
 	--badge-background-color: var(--color-neutral-90-20);
 	--badge-foreground-color: var(--color-neutral-30-100);
 
-	--prefix-background-color: var(--color-shade);
+	--prefix-background-color: light-dark(oklab(none none none / 0.4), oklab(100% 0 0 / 0.4));
 	--prefix-foreground-color: var(--color-text-loud);
 
 	--aside-border-color: light-dark(hsl(0 0% 80% / .8), hsl(0 0% 20% / .8));
