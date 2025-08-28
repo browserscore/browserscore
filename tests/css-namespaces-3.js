@@ -3,7 +3,7 @@ export default {
 	link: 'css-namespaces-3',
 	status: 'stable',
 	firstSnapshot: 2007,
-	'@rules': {
+	atrules: {
 		'@namespace': {
 			link: '#declaration',
 			tests: [

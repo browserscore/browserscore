@@ -6,7 +6,7 @@ export default {
 	},
 	status: 'stable',
 	firstSnapshot: 2010,
-	'Media queries': {
+	mediaqueries: {
 		Syntax: {
 			link: '#syntax',
 			tests: [

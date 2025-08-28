@@ -397,7 +397,7 @@ export default {
 			],
 		},
 	},
-	'@rules': {
+	atrules: {
 		'@position-try': {
 			link: '#fallback-rule',
 			tests: [

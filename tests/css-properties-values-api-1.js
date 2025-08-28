@@ -42,7 +42,7 @@ export default {
 			tests: ['blue', '#00f', 'rgb(0, 0, 255)'],
 		},
 	},
-	'@rules': {
+	atrules: {
 		'@property': {
 			link: '#at-property-rule',
 			tests: "@property --cool-color {\n  syntax: '<color>';\n  inherits: true;\n  initial-value: red;\n}",

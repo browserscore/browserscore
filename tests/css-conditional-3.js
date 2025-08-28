@@ -6,7 +6,7 @@ export default {
 	},
 	status: 'stable',
 	firstSnapshot: 2015,
-	'@rules': {
+	atrules: {
 		'@supports': {
 			link: '#at-supports',
 			tests: [

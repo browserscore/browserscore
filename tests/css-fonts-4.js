@@ -179,7 +179,7 @@ export default {
 			tests: ['normal', 'light', 'dark', '--custom-palette'],
 		},
 	},
-	'@rules': {
+	atrules: {
 		'@font-feature-values': {
 			link: '#font-feature-values',
 			tests: [

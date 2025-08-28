@@ -2,7 +2,7 @@ export default {
 	title: 'CSS Conditional Rules Module Level 4',
 	link: 'css-conditional-4',
 	status: 'experimental',
-	'@rules': {
+	atrules: {
 		'@supports': {
 			link: '#at-supports-ext',
 			tests: [

@@ -3,7 +3,7 @@ export default {
 	link: 'css-counter-styles-3',
 	status: 'stable',
 	firstSnapshot: 2021,
-	'@rules': {
+	atrules: {
 		'@counter-style': {
 			link: '#the-counter-style-rule',
 			tests: "@counter-style foo {\n  system: numeric;\n  symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';\n}",

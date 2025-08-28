@@ -192,7 +192,7 @@ export default {
 			tests: ['U+416', 'U+0-7F', 'U+A5, U+4E00-9FFF', 'U+30??'],
 		},
 	},
-	'@rules': {
+	atrules: {
 		'@font-face': {
 			link: '#font-face-rule',
 			tests: "@font-face {\n  font-family: foo;\n  src: local('Arial');\n}",

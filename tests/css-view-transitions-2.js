@@ -99,7 +99,7 @@ export default {
 			],
 		},
 	},
-	'@rules': {
+	atrules: {
 		'@view-transition': {
 			link: '#view-transition-rule',
 			tests: [

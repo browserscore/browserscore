@@ -11,7 +11,7 @@ export default {
 			tests: ['auto', 'customName'],
 		},
 	},
-	'@rules': {
+	atrules: {
 		'@page': {
 			link: '#at-page-rule',
 			tests: ['@page :blank { margin: 2cm }', '@page customName { margin: 2cm }'],
