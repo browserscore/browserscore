@@ -4,14 +4,13 @@ export default {
 		dev: 'css-variables-2',
 	},
 	status: 'experimental',
-	declaration: {
-		'Variable units': {
-			links: {
-				dev: '#variable-units',
-				mdn: '--*',
-			},
+	values: {
+		'<number>--*': {
+			title: 'Variable units',
+			link: '#variable-units',
+			properties: ['margin-block'],
 			tests: [
-				'margin-block: 1.5--bs',
+				'1.5--bs',
 			],
 		},
 	},

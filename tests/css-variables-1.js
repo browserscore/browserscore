@@ -9,13 +9,14 @@ export default {
 			mdn: '--*',
 		},
 	},
-	declaration: {
+	values: {
 		'var(--*)': {
 			link: '#using-variables',
 			mdn: 'var',
+			properties: ['width'],
 			tests: [
-				'width: var(--foo)',
-				'width: var(--foo, fallback)'
+				'var(--foo)',
+				'var(--foo, fallback)'
 			],
 		},
 	},

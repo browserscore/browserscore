@@ -12,7 +12,6 @@ import selector from './supports/selector.js';
 import atrule from './supports/atrule.js';
 import mq from './supports/mq.js';
 import variable from './supports/variable.js';
-import declaration from './supports/declaration.js';
 import Interface from './supports/interface.js';
 import attributeOrMethod from './supports/attributeOrMethod.js';
 
@@ -26,7 +25,6 @@ const Supports = {
 	atrule,
 	mq,
 	variable,
-	declaration,
 	interface: Interface,
 	attributeOrMethod,
 };
@@ -36,5 +34,5 @@ if (IS_DEV) {
 }
 
 export default Supports;
-export { property, value, descriptorvalue, selector, atrule, mq, variable, declaration, Interface, attributeOrMethod };
+export { property, value, descriptorvalue, selector, atrule, mq, variable, Interface, attributeOrMethod };
 
