@@ -45,12 +45,8 @@ export default class Feature extends AbstractFeature {
 		this.beforeChildren();
 		this._createChildren();
 
-		if (this.children.length > 0) {
-			this.score.totalTests = this.children.length + (this.constructor.gatingTest ? 1 : 0);
-		}
-		else {
-			this.score.totalTests = 1;
-		}
+		let totalTests = this.children.length > 0 ? this.children.length + (this.constructor.gatingTest ? 1 : 0) : 1;
+		this.score.set({totalTests});
 	}
 
 	get forceTotal () {
@@ -224,7 +220,7 @@ export default class Feature extends AbstractFeature {
 		this.result = this.leafTest();
 
 		this.score.add({
-			passedTests: this.result.success,
+			passedTests: Number(this.result.success),
 			failedTests: 1 - this.result.success,
 			testTime: performance.now() - startTime,
 		});

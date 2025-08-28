@@ -52,23 +52,23 @@ export default class Score {
 		return this.passed / this.total;
 	}
 
-	set (score) {
-		if (!score || (!score.totalTests && !this.totalTests)) {
+	set (partial) {
+		if (!partial || (!partial.totalTests && !this.totalTests)) {
 			return;
 		}
 
-		for (let key in score) {
+		for (let key in partial) {
 			if (key in this) {
-				this[key] = score[key];
+				this[key] = partial[key];
 			}
 		}
 
-		if ('totalTests' in score) {
+		if ('totalTests' in partial) {
 			this.total = this.forceTotal ?? this.totalTests;
 		}
 
-		if ('passedTests' in score) {
-			this.failedTests = score.failedTests ?? (this.totalTests - this.passedTests);
+		if ('passedTests' in partial) {
+			this.failedTests = partial.failedTests ?? (this.totalTests - this.passedTests);
 			this.passed = this.passedTests * this.total / this.totalTests;
 		}
 
@@ -91,8 +91,8 @@ export default class Score {
 		}
 
 		if ('passedTests' in partial) {
-			if ('totalTests' in partial) {
-				this.failedTests += partial.failedTests ?? (partial.totalTests - partial.passedTests);
+			if ('totalTests' in partial && !('failedTests' in partial)) {
+				this.failedTests += partial.totalTests - partial.passedTests;
 			}
 
 			this.passed = this.passedTests * this.total / this.totalTests;
