@@ -3,7 +3,7 @@
 	--_faded-opacity: var(--faded-opacity, 0.2);
 	--_progress-color: var(--progress-color, var(--color));
 	--_r: calc(50 - var(--_stroke-width) / 2);
-	--_perimeter: calc(2 * 3.1415926 * var(--_r));
+	--_perimeter: calc(2 * 3.1415926 * var(--_r) - var(--_stroke-width));
 
 	width: 1lh;
 	height: 1lh;
