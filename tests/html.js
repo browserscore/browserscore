@@ -5,30 +5,22 @@ export default {
 	status: 'experimental',
 	selectors: {
 		':autofill': {
-			links: {
-				dev: '#selector-autofill',
-			},
+			link: '#selector-autofill',
 			tests: ':autofill',
 		},
 		':popover-open': {
-			links: {
-				dev: '#selector-popover-open',
-			},
+			link: '#selector-popover-open',
 			tests: ':popover-open',
 		},
 		':state()': {
-			links: {
-				dev: '#selector-custom',
-			},
+			link: '#selector-custom',
 			tests: ':state(checked)',
 		},
 	},
 	interfaces: {
 		PageRevealEvent: {
-			links: {
-				dev: '#the-pagerevealevent-interface',
-				mdnGroup: 'DOM',
-			},
+			link: '#the-pagerevealevent-interface',
+			mdnGroup: 'DOM',
 			tests: ['viewTransition'],
 			interface: function() {
 				return new PageRevealEvent('reveal');
