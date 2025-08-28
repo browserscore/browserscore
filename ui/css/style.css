@@ -445,7 +445,7 @@ footer {
 }
 
 .color-scheme-toggle {
-	position: absolute;
+	position: fixed;
 	inset-block-start: .4em;
 	inset-inline-end: .5em;
 	z-index: 1;
