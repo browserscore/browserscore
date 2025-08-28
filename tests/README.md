@@ -40,14 +40,6 @@ This document describes the data schema used in the CSS test files located in th
     }
   },
 
-  // Tests for CSS declarations (property-value pairs)
-  declaration?: {
-    "declaration-pattern": {
-      links: { /* documentation links */ },
-      tests: string[]
-    }
-  },
-
   // Tests for CSS selectors
   selectors?: {
     "selector-name": {
@@ -131,22 +123,7 @@ values: {
 
 <a name="values-tests"></a>
 
-### 3. [Declaration Tests](#declaration-tests)
-
-Tests for CSS declarations (property-value pairs).
-
-```javascript
-declaration: {
-  'declaration-pattern': {
-    links: { /* documentation links */ },
-    tests: ['property: value1', 'property: value2']
-  }
-}
-```
-
-<a name="declaration-tests"></a>
-
-### 4. [Selectors Tests](#selectors-tests)
+### 3. [Selectors Tests](#selectors-tests)
 
 Tests for CSS selectors.
 
@@ -161,7 +138,7 @@ selectors: {
 
 <a name="selectors-tests"></a>
 
-### 5. [At-Rules Tests](#at-rules-tests)
+### 4. [At-Rules Tests](#at-rules-tests)
 
 Tests for CSS at-rules like `@media`, `@keyframes`, etc.
 
@@ -176,7 +153,7 @@ Tests for CSS at-rules like `@media`, `@keyframes`, etc.
 
 <a name="at-rules-tests"></a>
 
-### 6. [Interfaces Tests](#interfaces-tests)
+### 5. [Interfaces Tests](#interfaces-tests)
 
 Tests for JavaScript/DOM interfaces related to CSS.
 
@@ -200,7 +177,6 @@ Most test values are strings representing CSS syntax:
 - **CSS properties**: `'grid'`, `'inline-grid'`
 - **CSS values**: `'100px'`, `'1fr'`, `'auto'`
 - **CSS functions**: `'calc(100px + 1fr)'`, `'rgb(255, 0, 0)'`
-- **CSS declarations**: `'width: var(--foo)'`, `'--foo: 2px'`
 
 ### Array Values
 Some tests use arrays for complex values:
