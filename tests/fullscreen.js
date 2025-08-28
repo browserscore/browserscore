@@ -5,9 +5,7 @@ export default {
 	status: 'experimental',
 	selectors: {
 		'::backdrop': {
-			links: {
-				dev: '#::backdrop-pseudo-element',
-			},
+			link: '#::backdrop-pseudo-element',
 			tests: '::backdrop',
 		},
 	},
