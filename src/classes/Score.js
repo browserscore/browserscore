@@ -11,16 +11,18 @@ export default class Score {
 	 * @param {*} node - Score of parent object
 	 * @param {*} forceTotal - By default, all tests count as individual features. Set this to 1 to count them as 1 feature.
 	 */
-	constructor(node, forceTotal) {
-		this.forceTotal = forceTotal;
+	constructor(node) {
+		if (node) {
+			this.node = node;
+		}
 
 		if (this.forceTotal) {
 			this.total = this.forceTotal;
 		}
+	}
 
-		if (node) {
-			this.node = node;
-		}
+	get forceTotal () {
+		return this.node?.forceTotal;
 	}
 
 	get parent () {

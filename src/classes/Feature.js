@@ -8,8 +8,21 @@ import Supports from '../supports.js';
 import AbstractFeature from './AbstractFeature.js';
 import { toArray } from '../supports/util.js';
 
+/**
+ * @typedef {Object} ChildSchema
+ * @property {string} [single] - Related property name for when there is only one value.
+ *          Can be specified explicitly, or auto-filled when the parent has only one value.
+ *          If not specified, the property will *always* create children.
+ * @property {typeof Feature} type - Class to use for children. Defaults to the parent class.
+ */
+
 export default class Feature extends AbstractFeature {
 	static forceTotal = 1;
+
+	/**
+	 * Child schema
+	 * @type {Record<string, {single?: string, type: typeof Feature}>}
+	 */
 	static children = {tests: {single: 'id'}};
 
 	constructor (def, parent, group) {
@@ -40,10 +53,21 @@ export default class Feature extends AbstractFeature {
 		}
 	}
 
+	get forceTotal () {
+		let forceTotal = this.def.forceTotal ?? this.group?.forceTotal ?? this.constructor.forceTotal;
+		// false → undefined
+		return forceTotal || undefined;
+	}
+
 	beforeChildren () {
 		// Override in child classes to run before children are created
 	}
 
+	/**
+	 * Creates children based on the schema defined in {@link Feature.children}
+	 * @private
+	 * @returns {void}
+	 */
 	_createChildren () {
 		let treeSchema = this.constructor.children;
 
@@ -52,11 +76,14 @@ export default class Feature extends AbstractFeature {
 			return;
 		}
 
-		let nestingLevel = 0;
-		for (let property in treeSchema) {
-			nestingLevel++;
+		let childProperties = Object.keys(treeSchema);
+		let maxNestingLevel = childProperties.length;
 
+
+		for (let nestingLevel = 1; nestingLevel <= maxNestingLevel; nestingLevel++) {
+			let property = childProperties[nestingLevel - 1];
 			let schema = treeSchema[property];
+
 			let {single: singleProp, type: ChildType = this.constructor} = schema;
 
 			if (singleProp && this.def[singleProp]) {
@@ -66,15 +93,44 @@ export default class Feature extends AbstractFeature {
 
 			let multiple;
 
-			// This is a nested child property, so we may need to go up to find its value
+			// This is often a nested child property, so we may need to go up to find its value
+			// Just make sure you're not reading the same property on ancestors that got us here
 			multiple = this.closestValue(f => f.def[property] ?? f.group?.[property], {
-				maxSteps: nestingLevel,
+				maxSteps: this.def.fromParent === property ? 1 : nestingLevel,
 				stopIf: f => f.constructor.name === 'Spec'
 			});
 
+			// Is an object of ids to child defs like {id1: test1, id2: [test1, test2, ...], id3: {foo: bar, baz: qux}}
+			// Convert it to an array
+			if (multiple && typeof multiple === 'object' && !Array.isArray(multiple)) {
+				// Property to "unroll" child values into
+				let nextProperty = childProperties[nestingLevel];
+
+				if (!nextProperty && ChildType.children) {
+					nextProperty = Object.keys(schema.type.children)[0];
+				}
+				let arr = [];
+
+				for (let id in multiple) {
+					let def = multiple[id];
+					let childDef = {id};
+
+					if (nextProperty && (Array.isArray(def) || typeof def === 'string')) {
+						childDef[nextProperty] = def;
+					}
+					else if (def && typeof def === 'object') {
+						Object.assign(childDef, def);
+					}
+
+					arr.push(childDef);
+				}
+
+				multiple = arr;
+			}
+
 			multiple = toArray(multiple);
 
-			if (singleProp && multiple.length === 1) {
+			if (singleProp && multiple.length === 1 && this[singleProp] === undefined) {
 				// We use a single property if there's only one
 				this[singleProp] = multiple[0];
 			}
@@ -82,7 +138,11 @@ export default class Feature extends AbstractFeature {
 				if (this.children.length === 0) {
 					// Create children
 					for (let child of multiple) {
+						if (child === null || child === undefined) {
+							continue;
+						}
 						let childDef = typeof child === 'string' ? {id: child} : child;
+						childDef.fromParent = property;
 						let subFeature = new ChildType(childDef, this);
 						this.children.push(subFeature);
 					}
@@ -91,7 +151,6 @@ export default class Feature extends AbstractFeature {
 					// Just set plural property, the children will take care of it
 					this[property] = multiple;
 				}
-
 			}
 		}
 	}
