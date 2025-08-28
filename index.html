@@ -22,7 +22,7 @@
 </h1>
 
 <template id="feature-component-template">
-	<details v-if="feature.children?.length > 0" class="feature-group" :key="feature.uid" :id="feature.htmlId" ref="container">
+	<details v-if="feature.children?.length > 0" class="feature-group" :key="feature.uid" :id="feature.htmlId" ref="details" @toggle="handleToggle">
 		<summary class="feature" :class="passclass(feature.score)">
 			<support-status :score="feature.score"></support-status>
 			<span class="title" v-if="feature.title" v-text="feature.title"></span>
@@ -33,7 +33,7 @@
 			<a v-if="feature.mdnLink" :href="feature.mdnLink" target="_blank" class="badge spec-link mdn-link">MDN</a>
 		</summary>
 
-		<template v-for="child, index of feature.children" :key="feature.getUid('.', index)">
+		<template v-for="child, index of renderedChildren" :key="feature.getUid('.', index)">
 			<bs-feature :feature="child"></bs-feature>
 		</template>
 	</details>
