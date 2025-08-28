@@ -37,7 +37,7 @@ export default {
 			tests: ['1', '90', '750', '1000'],
 		},
 		'font-style': {
-			title: 'Angle for oblique',
+			title: '`oblique &lt;angle>`',
 			link: '#font-style-prop',
 			mdn: 'font-style',
 			tests: ['oblique 15deg', 'oblique -15deg', 'oblique 0deg'],
@@ -67,7 +67,7 @@ export default {
 			],
 		},
 		'font-variant': {
-			title: 'font-variant functions and keywords',
+			title: '`font-variant` functions and keywords',
 			link: '#font-variant-prop',
 			mdn: 'font-variant',
 			tests: [
