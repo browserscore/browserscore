@@ -109,8 +109,21 @@ h2 {
 	gap: calc(0.15rem + 0.15em);
 }
 
-.badge,
-.spec-link {
+.badge {
+	--icon-color: light-dark(var(--accent-color), color-mix(in oklab, var(--accent-color), currentColor 50%));
+	--accent-color-h: hsl(from var(--accent-color) h none none);
+	--accent-color-s: hsl(from var(--accent-color) none s none);
+	--accent-color-l: hsl(from var(--accent-color) none none l);
+
+	--tinted-background-color: color-mix(in hsl,
+		var(--accent-color-h) 100%, color-mix(in hsl,
+			var(--accent-color-s) 60%, color-mix(in hsl,
+				var(--accent-color-l) 0%, var(--badge-background-color))));
+	--tinted-foreground-color: color-mix(in hsl,
+	var(--accent-color-h) 100%, color-mix(in hsl,
+		var(--accent-color-s) 80%, color-mix(in hsl,
+			var(--accent-color-l) 0%, var(--badge-foreground-color))));
+
 	display: inline-flex;
 	align-items: center;
 	gap: .1em;
@@ -118,8 +131,9 @@ h2 {
 	font-family: var(--font-sans);
 	font-size: 0.85rem;
 	line-height: 1;
-	background-color: var(--spec-link-background-color);
-	color: var(--spec-link-foreground-color);
+
+	background-color: var(--tinted-background-color, var(--badge-background-color));
+	color: var(--tinted-foreground-color, var(--badge-foreground-color));
 
 	border-radius: .25em;
 	vertical-align: middle;
@@ -129,40 +143,33 @@ h2 {
 			content: none;
 		}
 	}
-}
 
-.spec-link {
-	--icon-color: light-dark(color-mix(in oklab,
-		var(--brand-color, currentColor), var(--spec-link-foreground-color) 75%),
-		var(--brand-color, currentColor));
-
-	&:hover,
-	&:focus {
-		outline: none;
-		--background: var(--brand-color, color-mix(in-oklab, var(--spec-link-background-color), var(--color-neutral-0-100) 25%));
-		background: var(--background);
-		color: oklch(from var(--background) var(--text));
-
-		&::before,
-		&::after {
-			--icon-color: oklch(from var(--background) var(--text));
+	&:is(a, button, [tabindex]) {
+		&:hover {
+			background: var(--accent-color);
+			color: oklch(from var(--accent-color) var(--text));
+			--icon-color: oklch(from var(--accent-color) var(--text) / 80%);
 		}
 	}
 }
 
+.spec-link {
+	text-transform: uppercase;
+}
+
 .w3c-link {
 	--icon: var(--icon-w3c);
-	--brand-color:  #005a9c;
+	--accent-color:  #005a9c;
 }
 
 .mdn-link {
 	--icon: var(--icon-mdn);
-	--brand-color:  black;
+	--accent-color:  black;
 }
 
 .whatwg-link {
 	--icon: var(--icon-whatwg);
-	--brand-color: #3c790a;
+	--accent-color: #3c790a;
 }
 
 /* Logo */
@@ -300,19 +307,23 @@ summary {
 .spec {
 	.title {
 		flex: 1;
+
+		.badge {
+			margin-inline-start: 1ch;
+		}
 	}
 
-	summary > .spec-link,
-	summary > .spec-links {
+	summary .badge {
 		transition: opacity 100ms 100ms;
+	}
 
-		:is(details, summary):not(:hover, :focus-within, :target) & {
-			opacity: 0;
-		}
+	:is(&, summary):not(:hover, :focus-within, :target) .badge:not(.primary) {
+		opacity: 0;
 	}
 }
 
 .feature {
+	color-scheme: dark;
 	display: flex;
 	gap: .5em;
 	align-items: center;

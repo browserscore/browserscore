@@ -7,12 +7,12 @@
 
 	--color-gray: hsl(200 10% 50%);
 	--color-magenta: hsl(336 100% 50%);
-	--color-green: light-dark(hsl(93 100% 30%), hsl(93 100% 25%));
-	--color-lime: light-dark(hsl(80 100% 40%), hsl(80 100% 35%));
+	--color-green: hsl(93 100% 30%);
+	--color-lime: hsl(80 100% 40%);
 	--color-yellow: oklch(85% 0.2 91);
-	--color-orange: light-dark(hsl(34 100% 47%), hsl(34 100% 42%));
-	--color-red:  light-dark(hsl(9 100% 47%), hsl(9 100% 42%));
-	--color-red-dark: light-dark(hsl(0 100% 37%), hsl(0 100% 32%));
+	--color-orange: hsl(34 100% 47%);
+	--color-red:  hsl(9 100% 47%);
+	--color-red-dark: hsl(0 100% 37%);
 	--color-blue: light-dark(oklch(65% 0.15 220), oklch(60% 0.15 220));
 
 	--color-pass: var(--color-green);
@@ -27,14 +27,30 @@
 	--color-accent: var(--color-magenta);
 	--color-accent-text: white;
 
-	--color-neutral-0-100: light-dark(white, black);
-	--color-neutral-10-100: light-dark(hsl(from var(--color-neutral) h s 10%), hsl(from var(--color-neutral) h s 100%));
-	--color-neutral-20-90: light-dark(hsl(from var(--color-neutral) h s 20%), hsl(from var(--color-neutral) h s 90%));
-	--color-neutral-30-80: light-dark(hsl(from var(--color-neutral) h s 30%), hsl(from var(--color-neutral) h s 80%));
-	--color-neutral-80-30: light-dark(hsl(from var(--color-neutral) h s 80%), hsl(from var(--color-neutral) h s 30%));
-	--color-neutral-90-20: light-dark(hsl(from var(--color-neutral) h s 90%), hsl(from var(--color-neutral) h s 20%));
-	--color-neutral-100-10: light-dark(hsl(from var(--color-neutral) h s 100%), hsl(from var(--color-neutral) h s 10%));
-	--color-neutral-100-0: light-dark(white, black);
+	--color-neutral-0: black;
+	--color-neutral-10: hsl(from var(--color-neutral) h s 10%);
+	--color-neutral-20: hsl(from var(--color-neutral) h s 20%);
+	--color-neutral-30: hsl(from var(--color-neutral) h s 30%);
+	--color-neutral-40: hsl(from var(--color-neutral) h s 40%);
+	--color-neutral-50: hsl(from var(--color-neutral) h s 50%);
+	--color-neutral-60: hsl(from var(--color-neutral) h s 60%);
+	--color-neutral-70: hsl(from var(--color-neutral) h s 70%);
+	--color-neutral-80: hsl(from var(--color-neutral) h s 80%);
+	--color-neutral-90: hsl(from var(--color-neutral) h s 90%);
+	--color-neutral-100: white;
+
+	--color-neutral-0-100: light-dark(var(--color-neutral-0), var(--color-neutral-100));
+	--color-neutral-10-100: light-dark(var(--color-neutral-10), var(--color-neutral-100));
+	--color-neutral-20-100: light-dark(var(--color-neutral-20), var(--color-neutral-100));
+	--color-neutral-20-90: light-dark(var(--color-neutral-20), var(--color-neutral-90));
+	--color-neutral-30-80: light-dark(var(--color-neutral-30), var(--color-neutral-80));
+	--color-neutral-30-90: light-dark(var(--color-neutral-30), var(--color-neutral-90));
+	--color-neutral-30-100: light-dark(var(--color-neutral-30), var(--color-neutral-100));
+	--color-neutral-80-30: light-dark(var(--color-neutral-80), var(--color-neutral-30));
+	--color-neutral-90-20: light-dark(var(--color-neutral-90), var(--color-neutral-20));
+	--color-neutral-100-20: light-dark(var(--color-neutral-100), var(--color-neutral-20));
+	--color-neutral-100-10: light-dark(var(--color-neutral-100), var(--color-neutral-10));
+	--color-neutral-100-0: light-dark(var(--color-neutral-100), var(--color-neutral-0));
 	--color-transparent: oklab(none none none / 0);
 
 	--color-bg: canvas;
@@ -48,16 +64,16 @@
 
 	--footer-border-color: var(--color-border);
 	--focus-border-color: color-mix(in oklab, var(--color-blue), var(--color-transparent) 60%);
-	--focus-ring: .15em solid var(--focus-border-color, red);
+	--focus-ring: clamp(.1rem, .15em, .2rem) solid var(--focus-border-color, red);
 	--focus-ring-offset: .1em;
 
 	--title-background-color: var(--color-bg-loud);
 	--title-foreground-color: var(--color-text-loud);
-	--spec-link-background-color: var(--color-bg-loud);
-	--spec-link-foreground-color: var(--color-text-loud);
+	--badge-background-color: var(--color-neutral-90-20);
+	--badge-foreground-color: var(--color-neutral-30-100);
 
 	--prefix-background-color: var(--color-shade);
-	--prefix-foreground-color: var(--spec-link-foreground-color);
+	--prefix-foreground-color: var(--color-text-loud);
 
 	--aside-border-color: light-dark(hsl(0 0% 80% / .8), hsl(0 0% 20% / .8));
 	--aside-background-color: light-dark(hsl(0 0% 98% / .6), hsl(0 0% 2% / .6));
