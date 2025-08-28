@@ -19,9 +19,7 @@ export default {
 	interfaces: {
 		Window: {
 			link: '#high-level-api',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['navigate'],
 			interface: function() {
 				return window;
@@ -29,9 +27,7 @@ export default {
 		},
 		Element: {
 			link: '#low-level-api',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['getSpatialNavigationContainer', 'focusableAreas', 'spatialNavigationSearch'],
 			interface: function() {
 				return document.body;
@@ -39,9 +35,7 @@ export default {
 		},
 		NavigationEvent: {
 			link: '#events-navigationevent',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['dir', 'relatedTarget'],
 			interface: function() {
 				return new NavigationEvent('navbeforefocus');

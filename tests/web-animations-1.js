@@ -5,9 +5,7 @@ export default {
 	interfaces: {
 		Animation: {
 			link: '#the-animation-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'id',
 				'effect',
@@ -50,9 +48,7 @@ export default {
 		},
 		AnimationTimeline: {
 			link: '#the-animationtimeline-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['currentTime'],
 			interface: function() {
 				return document.timeline;
@@ -60,9 +56,7 @@ export default {
 		},
 		AnimationEffect: {
 			link: '#animationeffect',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['getTiming', 'getComputedTiming', 'updateTiming'],
 			interface: function() {
 				var div = document.createElement('div');
@@ -78,9 +72,7 @@ export default {
 		},
 		KeyframeEffect: {
 			link: '#the-keyframeeffect-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'target',
 				'pseudoElement',
@@ -105,9 +97,7 @@ export default {
 		},
 		Element: {
 			link: '#the-animatable-interface-mixin',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['animate', 'getAnimations'],
 			interface: function() {
 				return document.body;
@@ -115,9 +105,7 @@ export default {
 		},
 		Document: {
 			link: '#extensions-to-the-documentorshadowroot-interface-mixin',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['timeline', 'getAnimations'],
 			interface: function() {
 				return document;
@@ -125,9 +113,7 @@ export default {
 		},
 		DocumentTimeline: {
 			link: '#the-documenttimeline-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['currentTime'],
 			interface: function() {
 				return document.timeline;
@@ -135,9 +121,7 @@ export default {
 		},
 		AnimationPlaybackEvent: {
 			link: '#the-animationplaybackevent-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['currentTime', 'timelineTime'],
 			interface: function() {
 				return new AnimationPlaybackEvent('finish');

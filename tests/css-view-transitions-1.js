@@ -45,9 +45,7 @@ export default {
 	interfaces: {
 		Document: {
 			link: '#additions-to-document-api',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['startViewTransition'],
 			interface: function() {
 				return document;
@@ -55,9 +53,7 @@ export default {
 		},
 		ViewTransition: {
 			link: '#the-domtransition-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['updateCallbackDone', 'ready', 'finished', 'skipTransition'],
 			interface: function() {
 				return ViewTransition.prototype;

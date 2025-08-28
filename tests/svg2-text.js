@@ -22,9 +22,7 @@ export default {
 		},
 		'text-anchor': {
 			link: '#TextAnchoringProperties',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['start', 'middle', 'end'],
 		},
 		'text-decoration-fill': {

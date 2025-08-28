@@ -5,9 +5,7 @@ export default {
 	interfaces: {
 		AnimationTimeline: {
 			link: '#the-animationtimeline-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['duration', 'play'],
 			interface: function() {
 				return document.timeline;
@@ -15,9 +13,7 @@ export default {
 		},
 		AnimationEffect: {
 			link: '#the-animationeffect-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'parent',
 				'previousSibling',
@@ -41,9 +37,7 @@ export default {
 		},
 		GroupEffect: {
 			link: '#the-groupeffect-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'children',
 				'firstChild',
@@ -76,9 +70,7 @@ export default {
 		},
 		AnimationNodeList: {
 			link: '#the-animationnodelist-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['length', 'item'],
 			interface: function() {
 				var div = document.createElement('div');
@@ -104,9 +96,7 @@ export default {
 		},
 		SequenceEffect: {
 			link: '#the-sequenceeffect-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'children',
 				'firstChild',
@@ -139,9 +129,7 @@ export default {
 		},
 		KeyframeEffect: {
 			link: '#the-keyframeeffect-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['iteratonComposite'],
 			interface: function() {
 				var div = document.createElement('div');

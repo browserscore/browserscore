@@ -68,9 +68,7 @@ export default {
 	interfaces: {
 		Element: {
 			link: '#idl',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['part'],
 			interface: function() {
 				return document.body;

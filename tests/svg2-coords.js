@@ -9,9 +9,7 @@ export default {
 	properties: {
 		'vector-effect': {
 			link: '#VectorEffects',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: [
 				'none',
 				'non-scaling-stroke',

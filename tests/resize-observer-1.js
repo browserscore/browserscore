@@ -5,9 +5,7 @@ export default {
 	interfaces: {
 		ResizeObserver: {
 			link: '#api',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['observe', 'unobserve', 'disconnect'],
 			interface: function() {
 				return new ResizeObserver(function() {});
@@ -15,16 +13,12 @@ export default {
 		},
 		ResizeObserverEntry: {
 			link: '#resize-observer-entry-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['ResizeObserverEntry'],
 		},
 		ResizeObserverSize: {
 			link: '#resizeobserversize',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['ResizeObserverEntry'],
 		},
 	},

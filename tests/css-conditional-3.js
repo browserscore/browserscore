@@ -22,9 +22,7 @@ export default {
 	interfaces: {
 		CSSRule: {
 			link: '#extensions-to-cssrule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['SUPPORTS_RULE'],
 			required: 'div { }',
 			interface: function(style) {
@@ -33,9 +31,7 @@ export default {
 		},
 		CSSConditionRule: {
 			link: '#the-cssconditionrule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['conditionText', 'cssRules', 'insertRule', 'deleteRule'],
 			required: '@supports (color: green) { }',
 			interface: function(style) {
@@ -44,9 +40,7 @@ export default {
 		},
 		CSSMediaRule: {
 			link: '#the-cssmediarule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['media', 'matches', 'conditionText'],
 			required: '@media (min-width: 500px) { }',
 			interface: function(style) {
@@ -55,9 +49,7 @@ export default {
 		},
 		CSSSupportsRule: {
 			link: '#the-csssupportsrule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['matches', 'conditionText'],
 			required: '@supports (display: grid) { }',
 			interface: function(style) {
@@ -66,9 +58,7 @@ export default {
 		},
 		CSS: {
 			link: '#the-css-namespace',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['supports'],
 			interface: function() {
 				return CSS;

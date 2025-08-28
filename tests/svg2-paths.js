@@ -9,9 +9,7 @@ export default {
 	properties: {
 		d: {
 			link: '#TheDProperty',
-			links: {
-				mdnGroup: 'SVG',
-			},
+			mdnGroup: 'SVG',
 			tests: ['none', "'M 20 20 H 80 V 30'"],
 		},
 	},

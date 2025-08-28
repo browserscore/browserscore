@@ -114,9 +114,7 @@ export default {
 	interfaces: {
 		CSSViewTransitionRule: {
 			link: '#navgation-behavior-rule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'navigation',
 				'types',
@@ -131,9 +129,7 @@ export default {
 		},
 		ViewTransition: {
 			link: '#view-transitions-extension-types',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['types'],
 			interface: function() {
 				return ViewTransition.prototype;

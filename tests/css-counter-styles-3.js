@@ -122,9 +122,7 @@ export default {
 	interfaces: {
 		CSSRule: {
 			link: '#extensions-to-cssrule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['COUNTER_STYLE_RULE'],
 			required: 'div { }',
 			interface: function(style) {
@@ -133,9 +131,7 @@ export default {
 		},
 		CSSCounterStyleRule: {
 			link: '#the-csscounterstylerule-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'name',
 				'system',

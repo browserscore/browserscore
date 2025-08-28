@@ -86,9 +86,7 @@ export default {
 	interfaces: {
 		Element: {
 			link: '#window-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['pseudo'],
 			interface: function() {
 				return document.body;
@@ -96,9 +94,7 @@ export default {
 		},
 		CSSPseudoElement: {
 			link: '#CSSPseudoElement-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['type', 'element', 'parent', 'pseudo'],
 			interface: function() {
 				return document.body.pseudo('::selection');

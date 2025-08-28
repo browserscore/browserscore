@@ -191,9 +191,7 @@ export default {
 	interfaces: {
 		ScrollTimeline: {
 			link: '#scrolltimeline-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['source', 'axis', 'currentTime'],
 			interface: function() {
 				return new ScrollTimeline({
@@ -203,9 +201,7 @@ export default {
 		},
 		ViewTimeline: {
 			link: '#viewtimeline-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['subject', 'startOffset', 'endOffset', 'currentTime'],
 			interface: function() {
 				return new ViewTimeline({

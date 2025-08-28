@@ -237,9 +237,7 @@ export default {
 	interfaces: {
 		CSSRule: {
 			link: '#om-fontfeaturevalues',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['FONT_FEATURE_VALUES_RULE'],
 			required: 'div { }',
 			interface: function(style) {
@@ -248,9 +246,7 @@ export default {
 		},
 		CSSFontFeatureValuesRule: {
 			link: '#om-fontfeaturevalues',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'fontFamily',
 				'annotation',
@@ -270,9 +266,7 @@ export default {
 		},
 		CSSFontFeatureValuesMap: {
 			link: '#cssfontfeaturevaluesmap',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'has',
 				'get',
@@ -292,9 +286,7 @@ export default {
 		},
 		CSSFontPaletteValuesRule: {
 			link: '#om-fontpalettevalues',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'name',
 				'fontFamily',

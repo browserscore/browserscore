@@ -19,9 +19,7 @@ export default {
 	interfaces: {
 		Document: {
 			link: '#the-namedflow-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['namedFlows'],
 			interface: function() {
 				return document;
@@ -29,9 +27,7 @@ export default {
 		},
 		Element: {
 			link: '#the-region-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['regionOverset', 'getRegionFlowRanges'],
 			interface: function() {
 				return document.body;

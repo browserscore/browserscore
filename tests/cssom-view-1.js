@@ -11,9 +11,7 @@ export default {
 	interfaces: {
 		Window: {
 			link: '#extensions-to-the-window-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'matchMedia',
 				'screen',
@@ -45,9 +43,7 @@ export default {
 		},
 		MediaQueryList: {
 			link: '#the-mediaquerylist-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['media', 'matches', 'addListener', 'removeListener', 'onchange'],
 			interface: function() {
 				return window.matchMedia('');
@@ -55,9 +51,7 @@ export default {
 		},
 		MediaQueryListEvent: {
 			link: '#mediaquerylistevent',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['matches'],
 			interface: function() {
 				return new MediaQueryListEvent('change', {matches: true});
@@ -65,9 +59,7 @@ export default {
 		},
 		Screen: {
 			link: '#the-screen-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'availWidth',
 				'availHeight',
@@ -82,9 +74,7 @@ export default {
 		},
 		Document: {
 			link: '#extensions-to-the-document-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'elementFromPoint',
 				'elementsFromPoint',
@@ -101,9 +91,7 @@ export default {
 		},
 		CaretPosition: {
 			link: '#caretposition',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['offsetNode', 'offset', 'getClientRect'],
 			interface: function() {
 				return document.caretPositionFromPoint(0, 0);
@@ -111,9 +99,7 @@ export default {
 		},
 		Element: {
 			link: '#extension-to-the-element-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'getClientRects',
 				'getBoundingClientRect',
@@ -141,9 +127,7 @@ export default {
 		},
 		HTMLElement: {
 			link: '#extensions-to-the-htmlelement-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'offsetParent',
 				'offsetTop',
@@ -157,9 +141,7 @@ export default {
 		},
 		HTMLImageElement: {
 			link: '#extensions-to-the-htmlimageelement-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['x', 'y'],
 			interface: function() {
 				return document.createElement('img');
@@ -167,9 +149,7 @@ export default {
 		},
 		Range: {
 			link: '#extensions-to-the-range-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: ['getClientRects', 'getBoundingClientRect'],
 			interface: function() {
 				return document.createRange();
@@ -177,9 +157,7 @@ export default {
 		},
 		MouseEvent: {
 			link: '#extensions-to-the-mouseevent-interface',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'screenX',
 				'screenY',
@@ -198,9 +176,7 @@ export default {
 		},
 		Text: {
 			link: '#geometryutils',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'getBoxQuads',
 				'convertQuadFromNode',
@@ -213,9 +189,7 @@ export default {
 		},
 		CSSPseudoElement: {
 			link: '#geometryutils',
-			links: {
-				mdnGroup: 'DOM',
-			},
+			mdnGroup: 'DOM',
 			tests: [
 				'getBoxQuads',
 				'convertQuadFromNode',
