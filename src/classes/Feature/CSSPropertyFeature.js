@@ -17,6 +17,7 @@ export default class CSSPropertyFeature extends Feature {
 			type: CSSPropertyValueFeature,
 		}
 	}
+	static gatingTest = true;
 
 	leafTest () {
 		// Has no values

@@ -7,7 +7,6 @@ import { IS_DEV } from '../util.js';
 
 export default class AbstractFeature {
 	children = [];
-	tested = false;
 
 	constructor (def = {}, parent) {
 		this.def = def;
@@ -126,8 +125,6 @@ export default class AbstractFeature {
 		if (this.tested) {
 			return;
 		}
-
-		this.tested = true;
 
 		if (this.children?.length > 0) {
 			for (let child of this.children) {

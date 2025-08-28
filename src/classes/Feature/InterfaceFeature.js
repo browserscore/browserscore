@@ -16,6 +16,7 @@ export default class InterfaceFeature extends Feature {
 	static children = {
 		tests: { type: InterfacePropertyFeature }
 	}
+	static gatingTest = true;
 
 	constructor (def, parent, group) {
 		super(def, parent, group);

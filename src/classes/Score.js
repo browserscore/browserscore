@@ -13,6 +13,11 @@ export default class Score {
 	 */
 	constructor(node, forceTotal) {
 		this.forceTotal = forceTotal;
+
+		if (this.forceTotal) {
+			this.total = this.forceTotal;
+		}
+
 		if (node) {
 			this.node = node;
 		}
@@ -65,6 +70,30 @@ export default class Score {
 		}
 
 		this.parent?.recalc();
+	}
+
+	/**
+	 * Add a partial score to this score. No recalc is done.
+	 * @param {Object} partial - Partial score to add
+	 */
+	add (partial) {
+		for (let key in partial) {
+			if (key in this) {
+				this[key] += partial[key];
+			}
+		}
+
+		if ('totalTests' in partial) {
+			this.total = this.forceTotal ?? this.totalTests;
+		}
+
+		if ('passedTests' in partial) {
+			if ('totalTests' in partial) {
+				this.failedTests += partial.failedTests ?? (partial.totalTests - partial.passedTests);
+			}
+
+			this.passed = this.passedTests * this.total / this.totalTests;
+		}
 	}
 
 	/**

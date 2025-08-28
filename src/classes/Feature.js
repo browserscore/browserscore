@@ -31,6 +31,13 @@ export default class Feature extends AbstractFeature {
 
 		this.beforeChildren();
 		this._createChildren();
+
+		if (this.children.length > 0) {
+			this.score.totalTests = this.children.length + (this.constructor.gatingTest ? 1 : 0);
+		}
+		else {
+			this.score.totalTests = 1;
+		}
 	}
 
 	beforeChildren () {
@@ -152,27 +159,53 @@ export default class Feature extends AbstractFeature {
 		return testCallback(test, this.id, this) ?? {};
 	}
 
+	_doLeafTest () {
+		let startTime = performance.now();
+
+		this.result = this.leafTest();
+
+		this.score.add({
+			passedTests: this.result.success,
+			failedTests: 1 - this.result.success,
+			testTime: performance.now() - startTime,
+		});
+	}
+
+	get tested () {
+		return this.score.passedTests + this.score.failedTests >= this.score.totalTests;
+	}
+
 	test () {
-		if (this.children.length > 0) {
-			return super.test();
+		if (this.tested) {
+			return;
+		}
+
+		if (this.constructor.gatingTest) {
+			// console.log('gating test', this.score.totalTests, this.score.isDone);
+			this._doLeafTest();
+
+			if (!this.result.success && this.children.length > 0) {
+				// No point in testing the children
+				// just mark them all as failed
+				this.score.add({
+					passedTests: 0,
+					failedTests: this.children.length,
+				});
+
+				this.score.recalc();
+				return;
+			}
 		}
 
 		if (this.tested) {
 			return;
 		}
 
-		this.tested = true;
+		if (this.children.length > 0) {
+			return super.test();
+		}
 
-		let startTime = performance.now();
-
-		// TODO run leafTest for parents that support it to save work on testing the children
-		this.result = this.leafTest();
-
-		this.score.set({
-			passedTests: this.result.success,
-			totalTests: 1,
-			testTime: performance.now() - startTime,
-		});
+		this._doLeafTest();
 
 		this.score.recalc();
 	}
