@@ -16,6 +16,7 @@ export default class Feature extends AbstractFeature {
 		super(def, parent);
 		this.type = def.type ?? group?.type ?? parent?.type;
 		this.group = group;
+		this.spec = this.closest(f => f.constructor.name === 'Spec');
 
 		if (Array.isArray(def) && typeof def[0] === 'string') {
 			// feature: [test1, test2, ...]
@@ -88,10 +89,6 @@ export default class Feature extends AbstractFeature {
 
 			}
 		}
-	}
-
-	get spec () {
-		return this.closest(f => f.constructor.name === 'Spec');
 	}
 
 	get code () {
