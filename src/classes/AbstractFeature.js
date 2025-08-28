@@ -90,16 +90,36 @@ export default class AbstractFeature {
 		return parentUid + id + pathSuffix;
 	}
 
-	closest (fn) {
-		if (fn(this)) {
-			return this;
+	_closest (fn, {maxSteps, stopIf} = {}) {
+		if (maxSteps <= 0) {
+			return null;
 		}
 
-		return this.parent?.closest(fn) ?? null;
+		if (stopIf) {
+			if (stopIf(this)) {
+				return null;
+			}
+		}
+
+		let result = fn(this);
+		if (result || result === 0 || result === '') {
+			return {node: this, value: result};
+		}
+
+		if (this.parent) {
+			maxSteps = maxSteps >= 0 ? maxSteps - 1 : undefined;
+			return this.parent._closest(fn, {maxSteps, stopIf});
+		}
+
+		return null;
 	}
 
-	closestValue (fn) {
-		return fn(this) ?? this.parent?.closestValue(fn);
+	closest (fn, options) {
+		return this._closest(fn, options)?.node ?? null;
+	}
+
+	closestValue (fn, options) {
+		return this._closest(fn, options)?.value;
 	}
 
 	test () {

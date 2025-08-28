@@ -59,13 +59,11 @@ export default class Feature extends AbstractFeature {
 
 			let multiple;
 
-			if (nestingLevel > 1) {
-				// This is a nested child property, so we may need to go up to find its value
-				multiple = this.closestValue(f => f.def[property] ?? f.group?.[property]);
-			}
-			else {
-				multiple = this.def[property] ?? this.group?.[property];
-			}
+			// This is a nested child property, so we may need to go up to find its value
+			multiple = this.closestValue(f => f.def[property] ?? f.group?.[property], {
+				maxSteps: nestingLevel,
+				stopIf: f => f.constructor.name === 'Spec'
+			});
 
 			multiple = toArray(multiple);
 
