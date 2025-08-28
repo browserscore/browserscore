@@ -3,19 +3,19 @@ export default {
 	link: 'css-variables-1',
 	status: 'stable',
 	firstSnapshot: 2018,
-	declaration: {
+	properties: {
 		'--*': {
 			link: '#defining-variables',
-			tests: ['--foo: 2px'],
+			mdn: '--*',
 		},
+	},
+	declaration: {
 		'var(--*)': {
 			link: '#using-variables',
-			mdn: '--*',
+			mdn: 'var',
 			tests: [
 				'width: var(--foo)',
-				'width: var(--FOO)',
-				'width: var(--foo, 4px)',
-				'color: rgba(255, 255, 255, var(--foo, .2) )',
+				'width: var(--foo, fallback)'
 			],
 		},
 	},
