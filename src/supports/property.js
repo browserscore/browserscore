@@ -1,30 +1,23 @@
 import { prefixes, inlineStyle } from './shared.js';
-import { camelCase } from './util.js';
 
 let cached = {};
 
 /**
  * Low level support check, no caching, no prefixes
- * @param {*} property
- * @returns
+ * @param {string} property
+ * @param {string} [value]
+ * @param {CSSStyleDeclaration} [style] - Provide the context to check in. Mainly used for descriptors.
+ * @returns {boolean}
  */
-export function isSupported (property, value) {
-	if (globalThis.CSS && CSS.supports) {
-		return CSS.supports(property, value ?? 'initial');
+export function isSupported (property, style) {
+	if (!style && globalThis.CSS && CSS.supports) {
+		return CSS.supports(property, 'inherit');
 	}
 
-	// No CSS, fall back to the DOM
-	if (value === undefined || value === '') {
-		// No value, check if the property is present
-		return inlineStyle[property] !== undefined;
-	}
+	style ??= inlineStyle;
 
-	// Set and check if it takes
-	inlineStyle.setProperty(property, '');
-	inlineStyle.setProperty(property, value);
-	let result = inlineStyle.getPropertyValue(property) !== value;
-	inlineStyle.setProperty(property, '');
-	return result;
+	// Can't use CSS.supports(), fall back to the DOM
+	return property in style || style[property] !== undefined;
 }
 
 export default function (name) {

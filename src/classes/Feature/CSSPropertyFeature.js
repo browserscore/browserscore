@@ -6,7 +6,9 @@ export class CSSPropertyValueFeature extends Feature {
 	static children = null;
 
 	leafTest () {
-		return supportsValue(this.id, this.parent.id);
+		let property = this.parent.id;
+		let value = this.id;
+		return supportsValue(property, value);
 	}
 }
 
@@ -21,7 +23,8 @@ export default class CSSPropertyFeature extends Feature {
 
 	leafTest () {
 		// Has no values
-		return supportsProperty(this.id);
+		let property = this.id;
+		return supportsProperty(property);
 	}
 }
 
