@@ -24,37 +24,21 @@ export default {
 			link: '#extensions-to-cssrule-interface',
 			mdnGroup: 'DOM',
 			tests: ['SUPPORTS_RULE'],
-			required: 'div { }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			}
 		},
 		CSSConditionRule: {
 			link: '#the-cssconditionrule-interface',
 			mdnGroup: 'DOM',
 			tests: ['conditionText', 'cssRules', 'insertRule', 'deleteRule'],
-			required: '@supports (color: green) { }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			}
 		},
 		CSSMediaRule: {
 			link: '#the-cssmediarule-interface',
 			mdnGroup: 'DOM',
 			tests: ['media', 'matches', 'conditionText'],
-			required: '@media (min-width: 500px) { }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			}
 		},
 		CSSSupportsRule: {
 			link: '#the-csssupportsrule-interface',
 			mdnGroup: 'DOM',
 			tests: ['matches', 'conditionText'],
-			required: '@supports (display: grid) { }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			}
 		},
 		CSS: {
 			link: '#the-css-namespace',

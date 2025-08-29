@@ -124,10 +124,6 @@ export default {
 			link: '#extensions-to-cssrule-interface',
 			mdnGroup: 'DOM',
 			tests: ['COUNTER_STYLE_RULE'],
-			required: 'div { }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			}
 		},
 		CSSCounterStyleRule: {
 			link: '#the-csscounterstylerule-interface',
@@ -148,10 +144,6 @@ export default {
 				'parentRule',
 				'parentStyleSheet',
 			],
-			required: '@counter-style example { system: alphabetic; symbols: A B C D; additive-symbols: 1000 M, 500 C; }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			}
 		},
 	},
 };

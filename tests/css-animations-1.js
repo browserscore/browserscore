@@ -77,10 +77,6 @@ export default {
 				'KEYFRAMES_RULE',
 				'KEYFRAME_RULE',
 			],
-			required: 'div { }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			}
 		},
 		CSSKeyframesRule: {
 			link: '#interface-csskeyframesrule',

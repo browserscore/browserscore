@@ -122,10 +122,6 @@ export default {
 				'parentRule',
 				'parentStyleSheet',
 			],
-			required: '@view-transition { navigation: auto; }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			},
 		},
 		ViewTransition: {
 			link: '#view-transitions-extension-types',

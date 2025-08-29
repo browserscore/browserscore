@@ -61,10 +61,6 @@ export default {
 			link: '#the-css-property-rule-interface',
 			mdnGroup: 'DOM',
 			tests: ['name', 'syntax', 'inherits', 'initialValue'],
-			required: "@property --foo { syntax: '<color>'; inherits: true; initial-value: blue; }",
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			},
 		},
 	},
 };

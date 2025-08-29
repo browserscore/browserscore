@@ -239,10 +239,6 @@ export default {
 			link: '#om-fontfeaturevalues',
 			mdnGroup: 'DOM',
 			tests: ['FONT_FEATURE_VALUES_RULE'],
-			required: 'div { }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			}
 		},
 		CSSFontFeatureValuesRule: {
 			link: '#om-fontfeaturevalues',
@@ -259,10 +255,6 @@ export default {
 				'parentRule',
 				'parentStyleSheet',
 			],
-			required: '@font-feature-values Font One { @styleset { nice-style: 12; } }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			}
 		},
 		CSSFontFeatureValuesMap: {
 			link: '#cssfontfeaturevaluesmap',
@@ -296,10 +288,6 @@ export default {
 				'parentRule',
 				'parentStyleSheet',
 			],
-			required: '@font-palette-values --identifier { font-family: foo; override-colors: 0 #00ffbb, 1 #007744; }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			}
 		},
 	},
 };
