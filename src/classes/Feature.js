@@ -65,7 +65,7 @@ export default class Feature extends AbstractFeature {
 	get forceTotal () {
 		let forceTotal = this.def.forceTotal
 		               ?? this.group?.forceTotal
-		               ?? (this.def.isGroup ? false : undefined)
+		               ?? (this.def.isGroup || this.def.children ? false : undefined)
 		               ?? this.constructor.forceTotal;
 		// false → undefined
 		return forceTotal || undefined;
