@@ -23,9 +23,13 @@ export default class Spec extends AbstractFeature {
 				...(this.group.removedWords ?? []),
 				...(this.org.removedWords ?? []),
 			];
-			let removedWordsRegex = RegExp(` (?:${removedWords.join('|')})\\b`, 'g');
 
-			this.title = this.title.replace(removedWordsRegex, '');
+			if (removedWords.length > 0) {
+				let removedWordsRegex = RegExp(` (?:${removedWords.join('|')})\\b`, 'g');
+
+				this.title = this.title.replace(removedWordsRegex, '');
+			}
+
 			this.title = this.title.replace(removedOther, '$1');
 			this.title = this.title.trim();
 		}
