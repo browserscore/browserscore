@@ -46,7 +46,7 @@ export default class Feature extends AbstractFeature {
 		this.beforeChildren();
 		this._createChildren();
 
-		let totalTests = this.children.length > 0 ? this.children.length + (this.constructor.gatingTest ? 1 : 0) : 1;
+		let totalTests = this.children.length > 0 ? this.children.length + (this.gatingTest ? 1 : 0) : 1;
 		this.score.set({totalTests});
 
 		if (this.title && this.title.indexOf('`') !== this.title.lastIndexOf('`')) {
@@ -82,7 +82,6 @@ export default class Feature extends AbstractFeature {
 
 		let childProperties = Object.keys(treeSchema);
 		let maxNestingLevel = childProperties.length;
-
 
 		for (let nestingLevel = 1; nestingLevel <= maxNestingLevel; nestingLevel++) {
 			let property = childProperties[nestingLevel - 1];
@@ -222,6 +221,12 @@ export default class Feature extends AbstractFeature {
 		return testCallback(test, this.id, this) ?? {};
 	}
 
+	get gatingTest () {
+		// Can be overridden in child classes for when it depends on test meta
+		// E.g. see CSSAtruleFeature for an example
+		return this.constructor.gatingTest;
+	}
+
 	_doLeafTest () {
 		let startTime = performance.now();
 
@@ -243,7 +248,7 @@ export default class Feature extends AbstractFeature {
 			return;
 		}
 
-		if (this.constructor.gatingTest) {
+		if (this.gatingTest) {
 			// console.log('gating test', this.score.totalTests, this.score.isDone);
 			this._doLeafTest();
 
