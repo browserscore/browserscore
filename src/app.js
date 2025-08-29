@@ -53,6 +53,7 @@ let appSpec = {
 			// TODO move this to Score
 			testTime: 0,
 			favicon: '',
+			mounted: false,
 		};
 	},
 
@@ -61,11 +62,20 @@ let appSpec = {
 		this.featureTypeTitles = featureTypeTitles;
 	},
 
+	mounted() {
+		this.updateFavicon();
+		this.mounted = true;
+	},
+
 	computed: {
 		/** Sorted and filtered specs
 		 * @type {Spec[]}
 		 */
 		specs () {
+			if (!this.mounted) {
+				return [];
+			}
+
 			let specs = this.allSpecsList.filter(spec => spec.matchesFilter(this.filter.show));
 
 			if (this.filter.spec) {
@@ -88,10 +98,6 @@ let appSpec = {
 		score () {
 			return this.root.score;
 		},
-	},
-
-	mounted() {
-		this.updateFavicon();
 	},
 
 	methods: {
