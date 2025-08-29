@@ -18,12 +18,12 @@ export default {
 	atrules: {
 		'@layer': {
 			link: '#at-layer',
-			tests: [
-				'@layer framework {\n  h1, h2 { color: maroon; background: white; }\n}',
-				'@layer framework {\n  h1, h2 { color: maroon; background: white; }\n  \n  @media (prefers-color-scheme: dark) {\n    h1, h2 { color: red; background: black; }\n  }\n}',
-				'@layer framework;',
-				'@layer default, framework;',
-			],
+			prelude: 'foo',
+			children: [
+				{/* block */},
+				{prelude: 'foo, bar', contents: false},
+
+			]
 		},
 	},
 	interfaces: {

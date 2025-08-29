@@ -6,117 +6,100 @@ export default {
 	atrules: {
 		'@counter-style': {
 			link: '#the-counter-style-rule',
-			tests: "@counter-style foo {\n  system: numeric;\n  symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9';\n}",
-		},
-	},
-	descriptors: {
-		'@counter-style example/system': {
-			link: '#counter-style-system',
-			required: {
-				'*': {
-					descriptor: 'system: alphabetic; symbols: A B C D; additive-symbols: 1000 M, 500 C',
+			forceTotal: false, // count each descriptor as a feature
+			preludeRequired: true,
+			prelude: 'foo',
+			descriptors: {
+				'system': {
+					link: '#counter-style-system',
+					mdn: '@counter-style/system',
+					values: ['cyclic', 'numeric', 'alphabetic', 'symbolic', 'additive', 'fixed 3', 'extends decimal'],
 				},
-				'extends decimal': {},
-			},
-			tests: ['cyclic', 'numeric', 'alphabetic', 'symbolic', 'additive', 'fixed 3', 'extends decimal'],
-		},
-		'@counter-style example/negative': {
-			link: '#counter-style-negative',
-			required: {
-				'*': {
-					descriptor: 'system: alphabetic; symbols: A B C D; additive-symbols: 1000 M, 500 C',
+				'symbols': {
+					link: '#counter-style-symbols',
+					mdn: '@counter-style/symbols',
+					values: [
+						'A B C D E F',
+						"'\\24B6' '\\24B7' '\\24B8' D E F",
+						"'0' '1' '2' '4' '5' '6' '7'",
+						"'1' url('image.png') '2'",
+						"url('image1.png') url('image2.png') url('image3.png')",
+						'custom-numbers',
+					],
 				},
-			},
-			tests: ["'-'", "'(' ')'"],
-		},
-		'@counter-style example/prefix': {
-			link: '#counter-style-prefix',
-			required: {
-				'*': {
-					descriptor: 'system: alphabetic; symbols: A B C D; additive-symbols: 1000 M, 500 C',
+				'additive-symbols': {
+					link: '#counter-style-additive-symbols',
+					mdn: '@counter-style/additive-symbols',
+					values: [
+						'1000 M, 500 C',
+						'1000 M, 500 C, 100 L, 50 X',
+					],
 				},
-			},
-			tests: ['»', 'url(https://lea.verou.me/mark.svg)'],
-		},
-		'@counter-style example/suffix': {
-			link: '#counter-style-suffix',
-			required: {
-				'*': {
-					descriptor: 'system: alphabetic; symbols: A B C D; additive-symbols: 1000 M, 500 C',
+				'negative': {
+					link: '#counter-style-negative',
+					mdn: '@counter-style/negative',
+					values: [
+						'"--"',
+						'"(" ")"',
+					],
 				},
-			},
-			tests: ['»', 'url(https://lea.verou.me/mark.svg)'],
-		},
-		'@counter-style example/range': {
-			link: '#counter-style-range',
-			required: {
-				'*': {
-					descriptor: 'system: alphabetic; symbols: A B C D; additive-symbols: 1000 M, 500 C',
+				'prefix': {
+					link: '#counter-style-prefix',
+					mdn: '@counter-style/prefix',
+					values: [
+						'a', // <custom-ident>
+						'"a"', // <string>
+						'url(image.png)', // <image>
+					],
 				},
-			},
-			tests: [
-				'auto',
-				'2 5',
-				'infinite 10',
-				'10 infinite',
-				'infinite infinite',
-				'2 5, 8 10',
-				'infinite 8, 6 infinite',
-			],
-		},
-		'@counter-style example/symbols': {
-			link: '#counter-style-symbols',
-			required: {
-				'*': { descriptor: 'system: alphabetic' },
-				'custom-numbers': {
-					rule: '@counter-style custom-numbers { system: fixed; symbols: A B C D E;}',
+				'suffix': {
+					link: '#counter-style-suffix',
+					mdn: '@counter-style/suffix',
+					values: [
+						'a', // <custom-ident>
+						'"a"', // <string>
+						'url(image.png)', // <image>
+					],
 				},
-			},
-			tests: [
-				'A B C D E F',
-				"'\\24B6' '\\24B7' '\\24B8' D E F",
-				"'0' '1' '2' '4' '5' '6' '7'",
-				"'1' url('second.svg') '2'",
-				"url('first.svg') url('second.svg') url('third.svg')",
-				'custom-numbers',
-			],
-		},
-		'@counter-style example/additive-symbols': {
-			links: {
-				tr: '#additive-system',
-				dev: '#descdef-counter-style-additive-symbols',
-			},
-			required: {
-				'*': { descriptor: 'system: additive' },
-			},
-			tests: ["3 '0'", "3 '1', 2 '\\2E\\20'", "3 '1', 2 url(symbol.svg)"],
-		},
-		'@counter-style example/pad': {
-			link: '#counter-style-pad',
-			required: {
-				'*': {
-					descriptor: 'system: alphabetic; symbols: A B C D; additive-symbols: 1000 M, 500 C',
+				'range': {
+					link: '#counter-style-range',
+					mdn: '@counter-style/range',
+					values: [
+						'auto',
+						'2 5',
+						'infinite 10',
+						'10 infinite',
+						'infinite infinite',
+						'2 5, 8 10',
+						'infinite 8, 6 infinite',
+					],
 				},
-			},
-			tests: ["0 ''", "3 '0'", "'0' 3"],
-		},
-		'@counter-style example/fallback': {
-			link: '#counter-style-fallback',
-			required: {
-				'*': {
-					descriptor: 'system: alphabetic; symbols: A B C D; additive-symbols: 1000 M, 500 C',
+				'pad': {
+					link: '#counter-style-pad',
+					mdn: '@counter-style/pad',
+					values: [
+						'3 "0"',
+						'"0" 3',
+					],
+				},
+				'speak-as': {
+					link: '#counter-style-speak-as',
+					mdn: '@counter-style/speak-as',
+					values: [
+						'auto',
+						'bullets',
+						'numbers',
+						'words',
+						'spell-out',
+						'example-counter',
+					],
+				},
+				'fallback': {
+					link: '#counter-style-fallback',
+					mdn: '@counter-style/fallback',
+					values: ['decimal'],
 				},
 			},
-			tests: ['decimal'],
-		},
-		'@counter-style example/speak-as': {
-			link: '#counter-style-speak-as',
-			required: {
-				'*': {
-					descriptor: 'system: alphabetic; symbols: A B C D; additive-symbols: 1000 M, 500 C',
-				},
-			},
-			tests: ['auto', 'bullets', 'numbers', 'words', 'spell-out', 'example-counter'],
 		},
 	},
 	interfaces: {

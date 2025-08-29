@@ -7,6 +7,7 @@ import { IS_DEV } from './util.js';
 
 import property from './supports/property.js';
 import value from './supports/value.js';
+import descriptor from './supports/descriptor.js';
 import descriptorvalue from './supports/descriptorvalue.js';
 import selector from './supports/selector.js';
 import atrule from './supports/atrule.js';
@@ -21,6 +22,7 @@ const Supports = {
 	property,
 	value,
 	descriptorvalue,
+	descriptor,
 	selector,
 	atrule,
 	mq,
@@ -34,5 +36,5 @@ if (IS_DEV) {
 }
 
 export default Supports;
-export { property, value, descriptorvalue, selector, atrule, mq, variable, Interface, attributeOrMethod };
+export { property, value, descriptor, descriptorvalue, selector, atrule, mq, variable, Interface, attributeOrMethod };
 

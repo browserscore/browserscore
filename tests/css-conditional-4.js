@@ -6,10 +6,9 @@ export default {
 		'@supports': {
 			title: '`@supports selector()`',
 			link: '#at-supports-ext',
-			tests: [
-				'@supports selector(::before) {}',
-				'@supports not selector(::-webkit-unknown-pseudo) {}',
-				'@supports selector(div, div) {}',
+			preludes: [
+				'selector(.foo)',
+				'selector(::-webkit-unknown-pseudo)',
 			],
 		},
 	},

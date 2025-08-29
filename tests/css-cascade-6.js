@@ -5,9 +5,9 @@ export default {
 	atrules: {
 		'@scope': {
 			link: '#scope-atrule',
-			tests: [
-				'@scope (#hero) {\n  img {\n    border-radius: 50%;\n  }\n}',
-				'@scope ([data-scope="main-component"]) to ([data-scope]) {\n  p {\n    color: red;\n  }\n\n  section {\n    background-color: snow;\n  }\n}',
+			preludes: [
+				'(.foo)',
+				'(.foo) to (.bar)',
 			],
 		},
 	},

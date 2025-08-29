@@ -144,59 +144,59 @@ export default {
 			tests: ['normal', "'c2sc'", "'smcp' on", "'liga' off", "'swsh' 2", "'smcp', 'liga' off, 'swsh' 2"],
 		},
 	},
-	descriptors: {
-		'@font-face/src': {
-			link: '#descdef-src',
-			tests: [
-				'url(http://example.com/fonts/Gentium.woff)',
-				'url(ideal-sans-serif.woff2) format("woff2"), url(good-sans-serif.woff) format("woff"), url(basic-sans-serif.ttf) format("opentype")',
-				'local(Gentium), url(Gentium.woff)',
-			],
-		},
-		'@font-face/font-family': {
-			link: '#descdef-font-family',
-			tests: ['Gentium'],
-		},
-		'@font-face/font-style': {
-			link: '#font-prop-desc',
-			tests: ['normal', 'italic', 'oblique '],
-		},
-		'@font-face/font-weight': {
-			link: '#font-prop-desc',
-			tests: ['normal', 'bold', '100', '200', '300', '400', '500', '600', '700', '800', '900'],
-		},
-		'@font-face/font-stretch': {
-			link: '#font-prop-desc',
-			tests: [
-				'normal',
-				'ultra-condensed',
-				'extra-condensed',
-				'condensed',
-				'semi-condensed',
-				'semi-expanded',
-				'expanded',
-				'extra-expanded',
-				'ultra-expanded ',
-			],
-		},
-		'@font-face/font-feature-settings': {
-			link: '#font-rend-desc',
-			tests: ['normal', "'c2sc'", "'smcp' on", "'liga' off", "'smcp', 'swsh' 2"],
-		},
-		'@font-face/font-variation-settings': {
-			link: '#font-rend-desc',
-			tests: ['normal', "'swsh' 2"],
-		},
-		'@font-face/unicode-range': {
-			link: '#unicode-range-desc',
-			tests: ['U+416', 'U+0-7F', 'U+A5, U+4E00-9FFF', 'U+30??'],
-		},
-	},
+
 	atrules: {
 		'@font-face': {
 			forceTotal: false, // count each descriptor as a feature
 			link: '#font-face-rule',
-			tests: "@font-face {\n  font-family: foo;\n  src: local('Arial');\n}",
+			descriptors: {
+				src: {
+					link: '#descdef-src',
+					values: [
+						'url(http://example.com/fonts/Gentium.woff)',
+						'url(ideal-sans-serif.woff2) format("woff2"), url(good-sans-serif.woff) format("woff"), url(basic-sans-serif.ttf) format("opentype")',
+						'local(Gentium), url(Gentium.woff)'
+					],
+				},
+				'font-family': {
+					link: '#descdef-font-family',
+					value: 'Gentium'
+				},
+				'font-style': {
+					link: '#font-prop-desc',
+					values: ['normal', 'italic', 'oblique'],
+				},
+				'font-weight': {
+					link: '#font-prop-desc',
+					values: ['normal', 'bold', '100', '200', '300', '400', '500', '600', '700', '800', '900'],
+				},
+				'font-stretch': {
+					link: '#font-prop-desc',
+					values: [
+						'normal',
+						'ultra-condensed',
+						'extra-condensed',
+						'condensed',
+						'semi-condensed',
+						'semi-expanded',
+						'expanded',
+						'extra-expanded',
+						'ultra-expanded ',
+					],
+				},
+				'font-feature-settings': {
+					link: '#font-rend-desc',
+					values: ['normal', "'c2sc'", "'smcp' on", "'liga' off", "'smcp', 'swsh' 2"],
+				},
+				'font-variation-settings': {
+					link: '#font-rend-desc',
+					values: ['normal', "'swsh' 2"],
+				},
+				'unicode-range': {
+					link: '#unicode-range-desc',
+					values: ['U+416', 'U+0-7F', 'U+A5, U+4E00-9FFF', 'U+30??'],
+				},
+			}
 		},
 	},
 	interfaces: {

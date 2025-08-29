@@ -400,11 +400,8 @@ export default {
 	atrules: {
 		'@position-try': {
 			link: '#fallback-rule',
-			tests: [
-				"@position-try --button-popover {\n  top: anchor(--button bottom);\n  left: anchor(--button left);\n}",
-				"@position-try --button-popover {\n  bottom: anchor(--button top);\n  right: anchor(--button right);\n  margin: 1em;\n}",
-				"@position-try --position-try {\n  position-area: top left;\n}",
-			],
+			prelude: "--foo",
+			descriptors: ['top', 'left', 'bottom', 'right', 'position-area', 'margin'],
 		},
 	},
 	interfaces: {
