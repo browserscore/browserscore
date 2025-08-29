@@ -29,125 +29,135 @@ export default {
 	version: 2.2,
 	properties: {
 		border: {
-			link: '#border-shorthand-properties',
-			tests: borderShorthands,
+			title: '`border` properties',
+			children: {
+				border: {
+					link: '#border-shorthand-properties',
+					children: {
+						'border': {
+							tests: borderShorthands,
+						},
+						'border-top': {
+							tests: borderShorthands,
+						},
+						'border-right': {
+							tests: borderShorthands,
+						},
+						'border-bottom': {
+							tests: borderShorthands,
+						},
+						'border-left': {
+							tests: borderShorthands,
+						},
+					},
+				},
+				'border-color': {
+					link: '#border-color-properties',
+					children: {
+						'border-color': {
+							tests: borderColors_1_4,
+						},
+						'border-top-color': {
+							tests: borderColors,
+						},
+						'border-right-color': {
+							tests: borderColors,
+						},
+						'border-bottom-color': {
+							tests: borderColors,
+						},
+						'border-left-color': {
+							tests: borderColors,
+						},
+					}
+				},
+				'border-style': {
+					link: '#border-style-properties',
+					children: {
+						'border-style': {
+							tests: borderStyles_1_4,
+						},
+						'border-top-style': {
+							tests: borderStyles,
+						},
+						'border-right-style': {
+							tests: borderStyles,
+						},
+						'border-bottom-style': {
+							tests: borderStyles,
+						},
+						'border-left-style': {
+							tests: borderStyles,
+						},
+					}
+				},
+				'border-width': {
+					link: '#border-width-properties',
+					children: {
+						'border-width': {
+							tests: borderWidths_1_4,
+						},
+						'border-top-width': {
+							tests: borderWidths,
+						},
+						'border-right-width': {
+							tests: borderWidths,
+						},
+						'border-bottom-width': {
+							tests: borderWidths,
+						},
+						'border-left-width': {
+							tests: borderWidths,
+						},
+					},
+				},
+			},
 		},
-		'border-color': {
-			link: '#border-color-properties',
-			tests: borderColors_1_4,
-		},
-		'border-style': {
-			link: '#border-style-properties',
-			tests: borderStyles_1_4,
-		},
-		'border-width': {
-			link: '#border-width-properties',
-			tests: borderWidths_1_4,
-		},
-		'border-top': {
-			link: '#border-shorthand-properties',
-			tests: borderShorthands,
-		},
-		'border-right': {
-			link: '#border-shorthand-properties',
-			tests: borderShorthands,
-		},
-		'border-bottom': {
-			link: '#border-shorthand-properties',
-			tests: borderShorthands,
-		},
-		'border-left': {
-			link: '#border-shorthand-properties',
-			tests: borderShorthands,
-		},
-		'border-top-color': {
-			link: '#border-color-properties',
-			tests: borderColors,
-		},
-		'border-right-color': {
-			link: '#border-color-properties',
-			tests: borderColors,
-		},
-		'border-bottom-color': {
-			link: '#border-color-properties',
-			tests: borderColors,
-		},
-		'border-left-color': {
-			link: '#border-color-properties',
-			tests: borderColors,
-		},
-		'border-top-style': {
-			link: '#border-style-properties',
-			tests: borderStyles,
-		},
-		'border-right-style': {
-			link: '#border-style-properties',
-			tests: borderStyles,
-		},
-		'border-bottom-style': {
-			link: '#border-style-properties',
-			tests: borderStyles,
-		},
-		'border-left-style': {
-			link: '#border-style-properties',
-			tests: borderStyles,
-		},
-		'border-top-width': {
-			link: '#border-width-properties',
-			tests: borderWidths,
-		},
-		'border-right-width': {
-			link: '#border-width-properties',
-			tests: borderWidths,
-		},
-		'border-bottom-width': {
-			link: '#border-width-properties',
-			tests: borderWidths,
-		},
-		'border-left-width': {
-			link: '#border-width-properties',
-			tests: borderWidths,
-		},
+
 		margin: {
-			link: '#propdef-margin',
-			tests: margin_1_4,
-		},
-		'margin-right': {
-			link: '#propdef-margin-right',
-			tests: margin,
-		},
-		'margin-left': {
-			link: '#propdef-margin-left',
-			tests: margin,
-		},
-		'margin-top': {
-			link: '#propdef-margin-top',
-			tests: margin,
-		},
-		'margin-bottom': {
-			link: '#propdef-margin-bottom',
-			tests: margin,
+			children: {
+				margin: {
+					link: '#propdef-margin',
+					tests: margin_1_4,
+				},
+				'margin-right': {
+					link: '#propdef-margin-right',
+					tests: margin,
+				},
+				'margin-left': {
+					link: '#propdef-margin-left',
+					tests: margin,
+				},
+				'margin-top': {
+					link: '#propdef-margin-top',
+					tests: margin,
+				},
+				'margin-bottom': {
+					link: '#propdef-margin-bottom',
+					tests: margin,
+				},
+			},
 		},
 
 		padding: {
 			link: '#padding-properties',
-			tests: padding_1_4,
-		},
-		'padding-top': {
-			link: '#padding-properties',
-			tests: padding,
-		},
-		'padding-right': {
-			link: '#padding-properties',
-			tests: padding,
-		},
-		'padding-bottom': {
-			link: '#padding-properties',
-			tests: padding,
-		},
-		'padding-left': {
-			link: '#padding-properties',
-			tests: padding,
-		},
+			children: {
+				padding: {
+					tests: padding_1_4,
+				},
+				'padding-top': {
+					tests: padding,
+				},
+				'padding-right': {
+					tests: padding,
+				},
+				'padding-bottom': {
+					tests: padding,
+				},
+				'padding-left': {
+					tests: padding,
+				},
+			},
+		}
 	},
 };
