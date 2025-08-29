@@ -27,7 +27,6 @@
 		stroke: var(--_progress-color);
 		stroke-width: var(--_stroke-width);
 		r: calc(var(--_r) * 1px);
-		stroke-dasharray: calc(var(--_perimeter) * 1px);
 		transform-origin: center;
 		transform-box: fill-box;
 		transform: rotate(-90deg);
@@ -38,6 +37,7 @@
 	}
 
 	circle.partial {
+		stroke-dasharray: calc(var(--_perimeter) * 1px);
 		stroke-dashoffset: calc(var(--_perimeter) * 1px * (1 - var(--progress, 0)/100));
 	}
 }
