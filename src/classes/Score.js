@@ -119,23 +119,18 @@ export default class Score {
 
 		let children = this.children;
 
-		if (children.length === 1) {
-			this.set(children[0]);
-		}
-		else {
-			for (let child of children) {
-				if (isNaN(child.total) || isNaN(child.passed)) {
-					this.skipped++;
-					continue;
-				}
-
-				this.passed += child.passed;
-				this.total += child.total;
-				this.passedTests += child.passedTests;
-				this.failedTests += child.failedTests;
-				this.totalTests += child.totalTests;
-				this.testTime += child.testTime;
+		for (let child of children) {
+			if (isNaN(child.total) || isNaN(child.passed)) {
+				this.skipped++;
+				continue;
 			}
+
+			this.passed += child.passed;
+			this.total += child.total;
+			this.passedTests += child.passedTests;
+			this.failedTests += child.failedTests;
+			this.totalTests += child.totalTests;
+			this.testTime += child.testTime;
 		}
 
 		if (this.forceTotal) {
