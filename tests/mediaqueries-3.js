@@ -1,4 +1,5 @@
 export default {
+	id: 'mediaqueries-3',
 	title: 'Media Queries Level 3',
 	links: {
 		tr: 'css3-mediaqueries',

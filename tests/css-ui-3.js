@@ -1,4 +1,5 @@
 export default {
+	id: 'css-ui-3',
 	title: 'CSS Basic User Interface Module Level 3 (CSS3 UI)',
 	link: 'css-ui-3',
 	status: 'stable',

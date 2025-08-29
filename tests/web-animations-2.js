@@ -1,4 +1,5 @@
 export default {
+	id: 'web-animations-2',
 	title: 'Web Animations Level 2',
 	link: 'web-animations-2',
 	status: 'experimental',

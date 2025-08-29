@@ -1,4 +1,5 @@
 export default {
+	id: 'webxr-dom-overlays-1',
 	title: 'WebXR DOM Overlays Module',
 	links: {
 		tr: 'webxr-dom-overlays-1',

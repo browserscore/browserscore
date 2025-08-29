@@ -1,4 +1,5 @@
 export default {
+	id: 'css-text-4',
 	title: 'CSS Text Module Level 4',
 	link: 'css-text-4',
 	status: 'experimental',

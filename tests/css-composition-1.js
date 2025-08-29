@@ -1,4 +1,5 @@
 export default {
+	id: 'css-composition-1',
 	title: 'Compositing and Blending Level 1',
 	link: 'compositing-1',
 	group: 'fxtf',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css-scroll-anchoring-1',
 	title: 'CSS Scroll Anchoring Module Level 1',
 	link: 'css-scroll-anchoring-1',
 	status: 'experimental',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css2-media',
 	title: 'CSS 2 Media types',
 	links: {
 		tr: 'CSS22/media.html',

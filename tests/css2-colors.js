@@ -1,4 +1,5 @@
 export default {
+	id: 'css2-colors',
 	title: 'CSS 2 Colors and Backgrounds',
 	links: {
 		tr: 'CSS22/colors.html',

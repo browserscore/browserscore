@@ -1,4 +1,5 @@
 export default {
+	id: 'css-position-3',
 	title: 'CSS Positioned Layout Module Level 3',
 	link: 'css-position-3',
 	status: 'stable',

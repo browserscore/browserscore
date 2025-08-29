@@ -1,4 +1,5 @@
 export default {
+	id: 'css-pseudo-4',
 	title: 'CSS Pseudo-Elements Module Level 4',
 	link: 'css-pseudo-4',
 	status: 'experimental',

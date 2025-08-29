@@ -1,4 +1,5 @@
 export default {
+	id: 'css-link-params-1',
 	title: 'CSS Linked Parameters',
 	links: {
 		dev: 'css-link-params-1',

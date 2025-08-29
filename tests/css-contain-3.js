@@ -1,4 +1,5 @@
 export default {
+	id: 'css-contain-3',
 	title: 'CSS Containment Module Level 3',
 	link: 'css-contain-3',
 	status: 'experimental',

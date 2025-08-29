@@ -1,4 +1,5 @@
 export default {
+	id: 'css2-visuren',
 	title: 'CSS 2 Visual Formatting Model',
 	links: {
 		tr: 'CSS22/visuren.html',

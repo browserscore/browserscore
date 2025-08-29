@@ -1,4 +1,5 @@
 export default {
+	id: 'css-backgrounds-4',
 	title: 'CSS Backgrounds Module Level 4',
 	links: {
 		dev: 'css-backgrounds-4',

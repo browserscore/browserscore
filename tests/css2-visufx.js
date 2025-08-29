@@ -1,4 +1,5 @@
 export default {
+	id: 'css2-visufx',
 	title: 'CSS 2 Visual Effects',
 	links: {
 		tr: 'CSS22/visufx.html',

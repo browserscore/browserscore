@@ -1,4 +1,5 @@
 export default {
+	id: 'css-cascade-5',
 	title: 'CSS Cascading and Inheritance Level 5',
 	link: 'css-cascade-5',
 	status: 'experimental',

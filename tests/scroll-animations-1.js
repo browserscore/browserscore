@@ -1,4 +1,5 @@
 export default {
+	id: 'scroll-animations-1',
 	title: 'Scroll-driven Animations',
 	link: 'scroll-animations-1',
 	status: 'experimental',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css-masking-1',
 	title: 'CSS Masking Module Level 1',
 	link: 'css-masking-1',
 	group: 'fxtf',

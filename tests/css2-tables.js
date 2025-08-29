@@ -1,4 +1,5 @@
 export default {
+	id: 'css2-tables',
 	title: 'CSS 2 Tables',
 	links: {
 		tr: 'CSS22/tables.html',

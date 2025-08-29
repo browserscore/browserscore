@@ -1,4 +1,5 @@
 export default {
+	id: 'css-inline-3',
 	title: 'CSS Inline Layout Module Level 3',
 	links: {
 		dev: 'css-inline-3',

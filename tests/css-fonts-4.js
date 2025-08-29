@@ -1,4 +1,5 @@
 export default {
+	id: 'css-fonts-4',
 	title: 'CSS Fonts Module Level 4',
 	link: 'css-fonts-4',
 	status: 'stable',

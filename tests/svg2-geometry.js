@@ -1,4 +1,5 @@
 export default {
+	id: 'svg2-geometry',
 	title: 'SVG 2 Geometry Properties',
 	links: {
 		tr: 'svg2/geometry.html',

@@ -1,4 +1,5 @@
 export default {
+	id: 'selectors-3',
 	title: 'Selectors Level 3',
 	link: 'selectors-3',
 	mdn: 'Glossary/CSS_Selector',

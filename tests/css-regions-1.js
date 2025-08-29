@@ -1,4 +1,5 @@
 export default {
+	id: 'css-regions-1',
 	title: 'CSS Regions Module Level 1',
 	link: 'css-regions-1',
 	status: 'experimental',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css-values-3',
 	title: 'CSS Values and Units Module Level 3',
 	link: 'css-values-3',
 	status: 'stable',

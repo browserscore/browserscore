@@ -1,4 +1,5 @@
 export default {
+	id: 'css-typed-om-1',
 	title: 'CSS Typed OM Level 1',
 	links: {
 		dev: 'css-typed-om-1',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css-highlight-api-1',
 	title: 'CSS Custom Highlight API Module Level 1',
 	link: 'css-highlight-api-1',
 	status: 'experimental',

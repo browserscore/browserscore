@@ -1,4 +1,5 @@
 export default {
+	id: 'svg2-painting',
 	title: 'SVG 2 Painting: Filling, Stroking and Marker Symbols',
 	links: {
 		tr: 'svg2/painting.html',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css-color-4',
 	title: 'CSS Color Module Level 4',
 	link: 'css-color-4',
 	status: 'stable',

@@ -1,4 +1,5 @@
 export default {
+	id: 'compat',
 	title: 'Compatibility',
 	group: 'whatwg',
 	link: 'compat',

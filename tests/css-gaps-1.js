@@ -1,4 +1,5 @@
 export default {
+	id: 'css-gaps-1',
 	title: 'CSS Gap Decorations Module Level 1',
 	links: {
 		dev: 'css-gaps-1',

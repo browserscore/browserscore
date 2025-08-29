@@ -1,4 +1,5 @@
 export default {
+	id: 'css-scrollbars-1',
 	title: 'CSS Scrollbars Module Level 1',
 	link: 'css-scrollbars-1',
 	status: 'stable',

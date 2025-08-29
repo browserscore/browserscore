@@ -1,4 +1,5 @@
 export default {
+	id: 'css-grid-3',
 	title: 'CSS Grid Layout Module Level 3',
 	links: {
 		dev: 'css-grid-3',

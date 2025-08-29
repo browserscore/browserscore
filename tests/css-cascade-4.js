@@ -1,4 +1,5 @@
 export default {
+	id: 'css-cascade-4',
 	title: 'CSS Cascading and Inheritance Level 4',
 	link: 'css-cascade-4',
 	status: 'stable',

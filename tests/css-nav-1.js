@@ -1,4 +1,5 @@
 export default {
+	id: 'css-nav-1',
 	title: 'CSS Spatial Navigation Level 1',
 	link: 'css-nav-1',
 	status: 'experimental',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css-view-transitions-2',
 	title: 'CSS View Transitions Module Level 2',
 	link: 'css-view-transitions-2',
 	status: 'experimental',

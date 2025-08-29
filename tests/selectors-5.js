@@ -1,4 +1,5 @@
 export default {
+	id: 'selectors-5',
 	title: 'Selectors Level 5',
 	links: {
 		dev: 'selectors-5',

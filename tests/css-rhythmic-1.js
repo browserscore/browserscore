@@ -1,4 +1,5 @@
 export default {
+	id: 'css-rhythmic-1',
 	title: 'CSS Rhythmic Sizing',
 	link: 'css-rhythm-1',
 	status: 'experimental',

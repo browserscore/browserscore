@@ -1,4 +1,5 @@
 export default {
+	id: 'css-display-4',
 	title: 'CSS Display Module Level 4',
 	link: 'css-display-4',
 	status: 'experimental',

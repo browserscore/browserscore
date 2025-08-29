@@ -1,4 +1,5 @@
 export default {
+	id: 'css-color-3',
 	title: 'CSS Color Module Level 3',
 	link: 'css-color-3',
 	status: 'stable',

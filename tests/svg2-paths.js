@@ -1,4 +1,5 @@
 export default {
+	id: 'svg2-paths',
 	title: 'SVG 2 Paths',
 	links: {
 		tr: 'svg2/paths.html',

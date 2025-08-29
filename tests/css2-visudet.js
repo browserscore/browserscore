@@ -1,4 +1,5 @@
 export default {
+	id: 'css2-visudet',
 	title: 'CSS 2 Visual Formatting Model Details',
 	links: {
 		tr: 'CSS22/visudet.html',

@@ -1,4 +1,5 @@
 export default {
+	id: 'selectors-4',
 	title: 'Selectors Level 4',
 	link: 'selectors-4',
 	status: 'experimental',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css-ui-4',
 	title: 'CSS Basic User Interface Module Level 4',
 	link: 'css-ui-4',
 	status: 'experimental',

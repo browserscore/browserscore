@@ -1,4 +1,5 @@
 export default {
+	id: 'css-lists-3',
 	title: 'CSS Lists Module Level 3',
 	link: 'css-lists-3',
 	status: 'stable',

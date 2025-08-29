@@ -1,4 +1,5 @@
 export default {
+	id: 'css-text-decor-3',
 	title: 'CSS Text Decoration Module Level 3',
 	link: 'css-text-decor-3',
 	status: 'stable',

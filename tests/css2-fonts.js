@@ -1,4 +1,5 @@
 export default {
+	id: 'css2-fonts',
 	title: 'CSS 2 Fonts',
 	links: {
 		tr: 'CSS22/fonts.html',
