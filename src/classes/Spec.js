@@ -91,6 +91,16 @@ export default class Spec extends AbstractFeature {
 		return this.def.status;
 	}
 
+	get version () {
+		if (this.def.version) {
+			return this.def.version;
+		}
+
+		if (/\d$/.test(this.id)) {
+			return Number(this.id.match(/\d+$/)?.[0]);
+		}
+	}
+
 	get firstSnapshot () {
 		return this.def.firstSnapshot;
 	}
@@ -133,7 +143,8 @@ export default class Spec extends AbstractFeature {
 
 	matchesFilter (filter) {
 		if (!filter) {
-			return this.firstSnapshot !== 2.2;
+			// TODO this makes no sense outside CSS
+			return !this.version || this.version > 2.2;
 		}
 
 		if (filter === 'all') {
@@ -143,6 +154,10 @@ export default class Spec extends AbstractFeature {
 		// Filter list of specifications
 		if (statuses.has(filter)) {
 			return this.status === filter;
+		}
+
+		if (filter.match(/^v\d/)) {
+			return this.version === Number(filter.substring(1));
 		}
 
 		if (filter.match(/^css\d/)) {

@@ -6,8 +6,7 @@ export default {
 		dev: 'css2/',
 	},
 	status: 'stable',
-	firstSnapshot: 2.2,
-	lastSnapshot: 2.2,
+	version: 2.2,
 	mediaqueries: {
 		Syntax: {
 			link: '#at-media-rule',
