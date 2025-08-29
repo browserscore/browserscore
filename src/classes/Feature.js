@@ -29,13 +29,18 @@ export default class Feature extends AbstractFeature {
 		super(def, parent);
 		this.type = def.type ?? group?.type ?? parent?.type;
 		this.group = group;
-		// Non-enumerable
-		Object.defineProperty(this, 'spec', { value: this.closest(f => f.constructor.name === 'Spec'), writable: true });
 
 		if (Array.isArray(def) && typeof def[0] === 'string') {
 			// feature: [test1, test2, ...]
 			def = {tests: def};
 		}
+
+		// Non-enumerable
+		this.defineProperties({
+			spec: this.closest(f => f.constructor.name === 'Spec'),
+			titleMd: undefined,
+			titleHtml: undefined,
+		});
 
 		this.def = def;
 
