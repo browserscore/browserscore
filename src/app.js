@@ -13,15 +13,12 @@ import CarbonAds from './vue/components/carbon-ads.js';
 import SupportStatus from './vue/components/support-status/support-status.js';
 import ColorSchemeToggle from './vue/components/color-scheme-toggle/color-scheme-toggle.js';
 
-let allSpecs = {};
-
 let root = new AbstractFeature();
 
 for (let id in Specs) {
 	let spec = Specs[id];
 	spec.id = id;
 	spec = new Spec(spec, root);
-	allSpecs[id] = spec;
 }
 
 // Components available in every component
@@ -48,7 +45,7 @@ let appSpec = {
 			 * All specs as dictionary
 			 * @type {Record<string, Spec>}
 			 */
-			allSpecs,
+			allSpecs: Spec.byId,
 			filter: Object.fromEntries([...urlParams].filter(e => filterParams.has(e[0]))),
 			// TODO move this to Score
 			testTime: 0,
@@ -79,20 +76,13 @@ let appSpec = {
 				return [];
 			}
 
-			let specs = this.allSpecsList.filter(spec => spec.matchesFilter(this.filter.show));
+			let specs = Spec.all.filter(spec => spec.matchesFilter(this.filter.show));
 
 			if (this.filter.spec) {
 				specs = specs.filter(spec => spec.id.indexOf(this.filter.spec) > -1);
 			}
 
 			return specs.sort((a, b) => a.title.localeCompare(b.title));
-		},
-
-		/** All specs as array
-		 * @type {Spec[]}
-		 */
-		allSpecsList () {
-			return Object.values(this.allSpecs);
 		},
 
 		/** Score for filtered specs
@@ -184,5 +174,5 @@ let app = createdApp.mount("#content");
 Object.assign(globalThis, {
 	app,
 	appSpec,
-	allSpecs,
+	Spec,
 });

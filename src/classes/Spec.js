@@ -13,8 +13,20 @@ const statuses = new Set(['stable', 'experimental']);
 
 export default class Spec extends AbstractFeature {
 	features = {};
+
+	/** All specs as array
+	 * @type {Spec[]}
+	 */
 	static all = [];
+
+	/** All created specs as a dictionary of id → spec
+	 * @type {Record<string, Spec>}
+	 */
 	static byId = {};
+
+	/** All spec statuses
+	 * @type {Set<string>}
+	 */
 	static statuses = statuses;
 
 	constructor (def, parent) {
