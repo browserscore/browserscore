@@ -1,6 +1,7 @@
 export const orgs = {
 	w3c: {
 		title: 'W3C',
+		longTitle: 'World Wide Web Consortium',
 		specs: 'https://www.w3.org/TR/{shortname}/',
 		drafts: 'https://w3c.github.io/{shortname}/',
 		groups: {
@@ -22,7 +23,7 @@ export const orgs = {
 				drafts: 'https://immersive-web.github.io/{shortname}/',
 			},
 			svgwg: {
-				title: 'SVG Working Group Editor Drafts',
+				title: 'SVG Working Group',
 				drafts: 'https://svgwg.org/{shortname}/',
 			},
 			math: {
@@ -33,11 +34,13 @@ export const orgs = {
 	},
 	whatwg: {
 		title: 'WHATWG',
+		longTitle: 'Web Hypertext Application Technology Working Group',
 		specs: 'https://{shortname}.spec.whatwg.org/',
 		removedWords: ['Living Standard'],
 	},
 	ecma: {
 		title: 'ECMA',
+		longTitle: 'European Computer Manufacturers Association',
 		specs: 'https://www.ecma-international.org/publications-and-standards/standards/ecma-{shortname}/',
 		groups: {
 			tc39: {

@@ -142,44 +142,35 @@ export default class Spec extends AbstractFeature {
 	}
 
 	matchesFilter (filter) {
-		if (!filter) {
-			// TODO this makes no sense outside CSS
-			return !this.version || this.version > 2.2;
+		if (statuses.has(filter.status) && this.status !== filter.status) {
+			return false;
 		}
 
-		if (filter === 'all') {
-			return true;
+		// Loose == intentional
+		if (filter.status === '' && this.version == 2.2 && this.id.startsWith('css')) {
+			// Currently the only legacy spec is CSS 2.2
+			return false;
 		}
 
-		// Filter list of specifications
-		if (statuses.has(filter)) {
-			return this.status === filter;
+		// Loose != intentional
+		if (filter.version && this.version != filter.version) {
+			return false;
 		}
 
-		if (filter.match(/^v\d/)) {
-			return this.version === Number(filter.substring(1));
-		}
-
-		if (filter.match(/^css\d/)) {
-			if (!this.firstSnapshot) {
-				return false;
-			}
-
-			const snapshot = Number(filter.substring(3));
-			if (this.firstSnapshot > snapshot || this.lastSnapshot < snapshot) {
+		for (let key of ['group', 'org']) {
+			if (filter[key] && this[key]?.id !== filter[key]) {
 				return false;
 			}
 		}
 
-		// Group & org filters
-		if (filter === 'others') {
-			return this.group && this.group.id !== 'csswg';
-		}
-		else if (filter in groups) {
-			return this.group && this.group.id === filter;
-		}
-		else if (filter in orgs) {
-			return this.org && this.org.id === filter;
+		if (filter.snapshot) {
+			if (!this.firstSnapshot || this.firstSnapshot > filter.snapshot) {
+				return false;
+			}
+
+			if (this.lastSnapshot && this.lastSnapshot < filter.snapshot) {
+				return false;
+			}
 		}
 
 		return true;

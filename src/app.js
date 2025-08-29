@@ -2,6 +2,7 @@ import { createApp } from '../node_modules/vue/dist/vue.esm-browser.js';
 import AbstractFeature from './classes/AbstractFeature.js';
 import Score from './classes/Score.js';
 import * as specs from './specs.js';
+import { orgs, groups } from './data.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
 import { IS_DEV, passclass, round, percent } from './util.js';
@@ -33,7 +34,24 @@ let localComponents = {
 };
 
 let urlParams = new URLSearchParams(window.location.search);
-let filterParams = new Set(['show', 'q', 'spec']);
+let defaultFilter = {
+	show: '',
+	q: '',
+	spec: '',
+	snapshot: '',
+	version: '',
+	group: '',
+	org: '',
+	type: '',
+	status: '',
+};
+let filter = { ...defaultFilter };
+
+for (let param in defaultFilter) {
+	if (urlParams.has(param)) {
+		filter[param] = urlParams.get(param);
+	}
+}
 
 let appSpec = {
 	data() {
@@ -45,7 +63,7 @@ let appSpec = {
 			 * @type {Record<string, Spec>}
 			 */
 			allSpecs: Spec.byId,
-			filter: Object.fromEntries([...urlParams].filter(e => filterParams.has(e[0]))),
+			filter,
 			// TODO move this to Score
 			testTime: 0,
 			favicon: '',
@@ -58,6 +76,10 @@ let appSpec = {
 		Object.assign(this, {
 			IS_DEV,
 			featureTypeTitles,
+			currentYear: new Date().getFullYear(),
+			urlParams,
+			orgs,
+			groups,
 		});
 	},
 
@@ -75,7 +97,7 @@ let appSpec = {
 				return [];
 			}
 
-			let specs = Spec.all.filter(spec => spec.matchesFilter(this.filter.show));
+			let specs = Spec.all.filter(spec => spec.matchesFilter(this.filter));
 
 			if (this.filter.spec) {
 				specs = specs.filter(spec => spec.id.indexOf(this.filter.spec) > -1);
@@ -89,6 +111,11 @@ let appSpec = {
 		 */
 		score () {
 			return this.root.score;
+		},
+
+		snapshots () {
+			let firstSnapshot = 2007;
+			return Array(this.currentYear - firstSnapshot).fill(0).map((_, i) => firstSnapshot + i);
 		},
 	},
 
