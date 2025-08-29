@@ -48,7 +48,17 @@ export default class Spec extends AbstractFeature {
 
 			for (let id in features) {
 				let feature = features[id];
-				feature.id = id;
+				if (feature.id) {
+					if (feature.title) {
+						feature.code = id;
+					}
+					else {
+						feature.title = id;
+					}
+				}
+				else {
+					feature.id = id;
+				}
 
 				feature = new Class(feature, this, group);
 
