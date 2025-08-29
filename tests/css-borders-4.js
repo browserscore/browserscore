@@ -32,6 +32,7 @@ const border_clip_tests = [
 ];
 
 export default {
+	id: 'css-borders-4',
 	title: 'CSS Borders and Box Decorations Module Level 4',
 	link: 'css-borders-4',
 	status: 'experimental',
