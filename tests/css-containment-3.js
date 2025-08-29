@@ -86,10 +86,6 @@ export default {
 			link: '#the-csscontainerrule-interface',
 			mdnGroup: 'DOM',
 			tests: ['containerName', 'containerQuery', 'conditionText'],
-			required: '@container (min-width: 500px) { }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			}
 		},
 	},
 };

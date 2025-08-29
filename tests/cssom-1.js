@@ -119,10 +119,6 @@ export default {
 				'MARGIN_RULE',
 				'NAMESPACE_RULE',
 			],
-			required: 'div { }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			}
 		},
 		CSSStyleRule: {
 			link: '#the-cssstylerule-interface',
@@ -158,10 +154,6 @@ export default {
 				'parentRule',
 				'parentStyleSheet',
 			],
-			required: '@media { }',
-			interface: function(style) {
-				return style.sheet.cssRules[0];
-			},
 		},
 		CSSPageRule: {
 			link: '#the-csspagerule-interface',

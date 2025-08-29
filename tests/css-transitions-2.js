@@ -26,7 +26,7 @@ export default {
 			},
 			tests: [
 				'cssRules',
-				'addRule',
+				'insertRule',
 				'deleteRule',
 			],
 			required: '@starting-style { h1 { background-color: red; } }',

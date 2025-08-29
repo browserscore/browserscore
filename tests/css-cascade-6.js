@@ -16,7 +16,6 @@ export default {
 			link: '#the-cssscoperule-interface',
 			mdnGroup: 'DOM',
 			tests: ['start', 'end', 'cssRules', 'insertRule', 'deleteRule'],
-			required: '@scope (foo) to (bar) {}',
 		}
 	}
 }

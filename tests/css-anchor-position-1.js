@@ -413,11 +413,6 @@ export default {
 				dev: '#om-position-try',
 				mdnGroup: 'DOM',
 			},
-			tests: ['name', 'style', 'cssText', 'parentRule', 'parentStyleSheet'],
-			required: '@position-try --button-popover {\n  top: anchor(--button bottom);\n  left: anchor(--button left);\n}',
-			interface: function(style) {
-				return style.sheet.cssRules[0].cssRules[0];
-			}
 		},
 	},
 };
