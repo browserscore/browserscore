@@ -83,12 +83,28 @@ export default class Feature extends AbstractFeature {
 	_createChildren () {
 		if (this.def.children) {
 			// Explicitly defined children. This overrides the schema
-			let def = {...this.def};
-			delete def.children;
+			let {children, title, code, link, links, ...def} = this.def;
 
-			for (let child of toArray(this.def.children)) {
+			if (Array.isArray(this.def.children)) {
+				children = children.map(child => typeof child === 'string' ? {id: child} : child);
+			}
+			else {
+				// id -> child def
+				children = Object.entries(children).map(([id, child]) => ({...child, id}));
+			}
+
+			for (let child of children) {
 				// Because the class is not necessarily built to handle children, we copy the parent def over
-				let childDef = typeof child === 'string' ? {...def, id: child} : {...def, ...child};
+				let childDef = {...def, ...child};
+				childDef.id = child.id ?? def.id;
+
+				if (!child.id) {
+					// We want to avoid copying over the title when the child has its own id
+					childDef.title = child.title ?? title;
+					childDef.code = child.code ?? code;
+				}
+
+				Object.assign(childDef, child);
 				childDef.fromParent = 'children';
 				let subFeature = new this.constructor(childDef, this);
 				this.children.push(subFeature);
