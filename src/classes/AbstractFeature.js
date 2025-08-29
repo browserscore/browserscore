@@ -19,6 +19,10 @@ export default class AbstractFeature {
 			this.constructor.all.push(this);
 		}
 
+		if (Object.hasOwn(this.constructor, 'byId')) {
+			this.constructor.byId[this.id] = this;
+		}
+
 		if (parent) {
 			Object.defineProperty(this, 'parent', {
 				value: parent,
@@ -48,6 +52,10 @@ export default class AbstractFeature {
 				// We don't want classes to share the same array
 				// Also, using this as a signal means classes can define their own to have these objects even outside of debug mode
 				this.all = [];
+			}
+
+			if (!Object.hasOwn(this, 'byId')) {
+				this.byId = {};
 			}
 
 			// Make class a global

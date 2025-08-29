@@ -13,6 +13,8 @@ const statuses = new Set(['stable', 'experimental']);
 
 export default class Spec extends AbstractFeature {
 	features = {};
+	static all = [];
+	static byId = {};
 	static statuses = statuses;
 
 	constructor (def, parent) {
