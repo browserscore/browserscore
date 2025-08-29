@@ -148,7 +148,7 @@ export default {
 
 	atrules: {
 		'@font-face': {
-			forceTotal: false, // count each descriptor as a feature
+			isGroup: true,
 			link: '#font-face-rule',
 			descriptors: {
 				src: {
