@@ -18,11 +18,20 @@ export function isSupported (property, value, style) {
 	// Set and check if it takes
 	value ??= 'inherit'; // default to a value supported everywhere
 
-	style.setProperty(property, ''); // first, clear out any existing value
-	style.setProperty(property, value);
-	// We're not checking if it's === value because browsers often process it, but it shouldn't be blank
-	let result = style.getPropertyValue(property);
-	style.setProperty(property, ''); // finally, clear out the value
+	if (style.setProperty) {
+		style.setProperty(property, ''); // first, clear out any existing value
+		style.setProperty(property, value);
+		// We're not checking if it's === value because browsers often process it, but it shouldn't be blank
+		let result = style.getPropertyValue(property);
+		style.setProperty(property, ''); // finally, clear out the value
+		return Boolean(result);
+	}
+
+	// Last resort, just set as a property
+	style[property] = '';
+	style[property] = value;
+	let result = style[property];
+	style[property] = '';
 	return Boolean(result);
 }
 
