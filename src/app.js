@@ -4,7 +4,7 @@ import Score from './classes/Score.js';
 import Specs from './tests.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
-import { passclass, round, percent } from './util.js';
+import { IS_DEV, passclass, round, percent } from './util.js';
 import { titles as featureTypeTitles } from './features.js';
 
 // Vue components
@@ -59,7 +59,10 @@ let appSpec = {
 
 	created () {
 		// Add constants that we don't need to be reactive
-		this.featureTypeTitles = featureTypeTitles;
+		Object.assign(this, {
+			IS_DEV,
+			featureTypeTitles,
+		});
 	},
 
 	mounted() {
