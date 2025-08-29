@@ -13,6 +13,9 @@ const template = `
 <span v-else class="icon" style="--icon: var(--icon-warning)" :title="tooltip"></span>
 `;
 
+const pluralize = (n, one, many = one + 's') => n === 1 ? one : many;
+const formatRatio = (passed, total) => passed === total ? `all ${round(total)}` : `${round(passed)}/${round(total)}`;
+
 export default {
 	props: {
 		score: {
@@ -25,7 +28,18 @@ export default {
 
 	computed: {
 		tooltip () {
-			return `Scored ${this.score} by passing ${round(this.score.passed)} / ${round(this.score.total)} tests in ${round(this.score.testTime, 2)} ms`
+			let ret = `Scored ${this.score}`;
+			let tests = formatRatio(this.score.passedTests, this.score.totalTests) + " " + pluralize(this.score.totalTests, 'test');
+
+			if (this.score.total !== this.score.totalTests && this.score.total > 1) {
+				ret += ` by recognizing ${ formatRatio(this.score.passed, this.score.total) } ${ pluralize(this.score.total, 'feature') } (passed ${ tests })`;
+			}
+			else {
+				ret += ` by passing ${tests}`;
+			}
+
+			ret += ` in ${round(this.score.testTime, 2)} ms`;
+			return ret;
 		}
 	},
 
