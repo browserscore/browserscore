@@ -71,15 +71,15 @@ export default function attributeOrMethod (interfaceName, name, testCss, interfa
 		return {success: false};
 	}
 
-	let prefixedInterfaceName = interfaceSupported.name;
-	let prefix = prefixes.find(prefix => isSupported(prefixedInterfaceName, prefixName(prefix, name)));
+	let resolvedInterfaceName = interfaceSupported.name;
+	let prefix = prefixes.find(prefix => isSupported(resolvedInterfaceName, prefixName(prefix, name)));
 
 	if (prefix !== undefined) {
 		return {success: true, prefix};
 	}
 
 	// Not found in prototype, try to get an instance (slow)
-	let instance = getInstance(prefixedInterfaceName, testCss, interfaceCallback);
+	let instance = getInstance(resolvedInterfaceName, testCss, interfaceCallback);
 
 	if (!instance) {
 		return {success: false};

@@ -10,9 +10,9 @@ export default function selector (selector) {
 	}
 
 	for (let i = 0; i < prefixes.length; i++) {
-		let prefixed = selector.replace(/^(:+)/, '$1' + prefixes[i]);
+		let resolved = selector.replace(/^(:+)/, '$1' + prefixes[i]);
 
-		if (CSS.supports('selector(' + prefixed + ')')) {
+		if (CSS.supports('selector(' + resolved + ')')) {
 			cached[selector] = true;
 			return {
 				success: true,

@@ -39,8 +39,7 @@ export default function value (property, value) {
 	let success, prefix;
 
 	if (cachedResult === undefined) {
-		const prefixedProperty = propertySupported.prefix + propertySupported.property;
-		prefix = prefixes.find(prefix => isSupported(prefixedProperty, prefix + value));
+		prefix = prefixes.find(prefix => isSupported(propertySupported.resolved, prefix + value));
 		success = prefix !== undefined;
 		cached[property][value] = prefix === '' ? true : (prefix ?? false);
 	}

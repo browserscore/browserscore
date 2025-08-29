@@ -1,4 +1,5 @@
 import { prefixes, inlineStyle } from './shared.js';
+import { camelCase } from './util.js';
 
 let cached = {};
 
@@ -17,7 +18,7 @@ export function isSupported (property, style) {
 	style ??= inlineStyle;
 
 	// Can't use CSS.supports(), fall back to the DOM
-	return property in style || style[property] !== undefined;
+	return property in style || style[property] !== undefined || style[camelCase(property)] !== undefined;
 }
 
 export default function (name) {
@@ -41,7 +42,7 @@ export default function (name) {
 
 	return {
 		success,
-		property: prefix + name,
+		resolved: prefix + name,
 		prefix,
 	};
 }

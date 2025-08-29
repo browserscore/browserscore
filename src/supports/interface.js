@@ -12,7 +12,7 @@ export function isSupported (name) {
 
 export default function (name) {
 	let cachedResult = cached[name];
-	let success, prefix, prefixedName;
+	let success, prefix, resolvedName;
 
 	if (cachedResult === undefined) {
 		prefix = prefixes.find(prefix => isSupported(prefixName(prefix, name)));
@@ -23,24 +23,24 @@ export default function (name) {
 			prefix = prefixes.find(prefix => isSupported('CSS' + prefixName(prefix, nameWithoutCSS)));
 
 			if (prefix !== undefined) {
-				prefixedName = 'CSS' + prefixName(prefix, nameWithoutCSS);
+				resolvedName = 'CSS' + prefixName(prefix, nameWithoutCSS);
 			}
 		}
 
-		prefixedName ??= prefixName(prefix, name)
+		resolvedName ??= prefixName(prefix, name)
 		cached[name] = success = prefix !== undefined;
 
 		if (success && prefix) {
-			cached[name] = prefixedName;
+			cached[name] = resolvedName;
 		}
 	}
 	else {
 		success = Boolean(cachedResult);
-		prefixedName = cachedResult === true ? name : (cachedResult || undefined);
+		resolvedName = cachedResult === true ? name : (cachedResult || undefined);
 	}
 
 	return {
 		success,
-		name: prefixedName,
+		name: resolvedName,
 	};
 }
