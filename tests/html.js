@@ -1,4 +1,5 @@
 export default {
+	id: 'html',
 	title: 'HTML Living Standard',
 	link: 'html',
 	group: 'whatwg',

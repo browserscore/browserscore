@@ -1,4 +1,5 @@
 export default {
+	id: 'css-ruby-1',
 	title: 'CSS Ruby Layout Module Level 1',
 	link: 'css-ruby-1',
 	status: 'experimental',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css-mixins-1',
 	title: 'CSS Functions and Mixins Module',
 	link: 'css-mixins-1',
 	status: 'experimental',

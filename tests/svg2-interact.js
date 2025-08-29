@@ -1,4 +1,5 @@
 export default {
+	id: 'svg2-interact',
 	title: 'SVG 2 Scripting and Interactivity',
 	links: {
 		tr: 'svg2/interact.html',

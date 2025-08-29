@@ -1,4 +1,5 @@
 export default {
+	id: 'css-multicol-1',
 	title: 'CSS Multi-column Layout Module Level 1',
 	link: 'css-multicol-1',
 	status: 'stable',

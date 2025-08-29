@@ -1,4 +1,5 @@
 export default {
+	id: 'css-easing-1',
 	title: 'CSS Easing Functions Level 1',
 	link: 'css-easing-1',
 	status: 'stable',

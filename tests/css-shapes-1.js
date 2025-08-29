@@ -1,4 +1,5 @@
 export default {
+	id: 'css-shapes-1',
 	title: 'CSS Shapes Module Level 1',
 	link: 'css-shapes-1',
 	status: 'stable',

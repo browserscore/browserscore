@@ -1,4 +1,5 @@
 export default {
+	id: 'resize-observer-1',
 	title: 'Resize Observer',
 	link: 'resize-observer-1',
 	status: 'experimental',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css-images-4',
 	title: 'CSS Images Module Level 4',
 	link: 'css-images-4',
 	status: 'experimental',

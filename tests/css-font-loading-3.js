@@ -1,4 +1,5 @@
 export default {
+	id: 'css-font-loading-3',
 	title: 'CSS Font Loading Module Level 3',
 	link: 'css-font-loading-3',
 	status: 'stable',

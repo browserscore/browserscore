@@ -1,4 +1,5 @@
 export default {
+	id: 'css-box-3',
 	title: 'CSS 2 Box Model',
 	links: {
 		tr: 'CSS22/box.html',

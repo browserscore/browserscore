@@ -1,4 +1,5 @@
 export default {
+	id: 'mathml-core',
 	title: 'MathML Core',
 	links: {
 		dev: 'mathml-core/#css-extensions-for-math-layout',

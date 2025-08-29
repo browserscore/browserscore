@@ -1,4 +1,5 @@
 export default {
+	id: 'fullscreen',
 	title: 'Fullscreen API',
 	link: 'fullscreen',
 	group: 'whatwg',

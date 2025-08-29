@@ -1,4 +1,5 @@
 export default {
+	id: 'css-page-3',
 	title: 'Paged Media Module Level 3',
 	link: 'css-page-3',
 	status: 'experimental',

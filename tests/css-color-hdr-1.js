@@ -1,4 +1,5 @@
 export default {
+	id: 'css-color-hdr-1',
 	title: 'CSS Color HDR Module Level 1',
 	link: 'css-color-hdr-1',
 	status: 'experimental',

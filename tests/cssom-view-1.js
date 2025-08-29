@@ -1,4 +1,5 @@
 export default {
+	id: 'cssom-view-1',
 	title: 'CSSOM View Module',
 	link: 'cssom-view-1',
 	status: 'experimental',

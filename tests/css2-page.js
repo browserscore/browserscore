@@ -1,6 +1,6 @@
 export default {
-	title: 'CSS 2 Paged Media',
 	id: 'css2-page',
+	title: 'CSS 2 Paged Media',
 	links: {
 		tr: 'CSS22/page.html',
 		dev: 'css2/',

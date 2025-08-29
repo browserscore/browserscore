@@ -1,4 +1,5 @@
 export default {
+	id: 'css-color-5',
 	title: 'CSS Color Module Level 5',
 	links: {
 		dev: 'css-color-5',

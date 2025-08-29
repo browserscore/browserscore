@@ -1,4 +1,5 @@
 export default {
+	id: 'css-contain-1',
 	title: 'CSS Containment Module Level 1',
 	link: 'css-contain-1',
 	status: 'stable',

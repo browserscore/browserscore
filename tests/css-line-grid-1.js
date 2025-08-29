@@ -1,4 +1,5 @@
 export default {
+	id: 'css-line-grid-1',
 	title: 'CSS Line Grid Module Level 1',
 	link: 'css-line-grid-1',
 	status: 'experimental',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css-animations-2',
 	title: 'CSS Animations Level 2',
 	link: 'css-animations-2',
 	status: 'experimental',

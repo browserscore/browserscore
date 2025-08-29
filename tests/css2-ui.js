@@ -1,4 +1,5 @@
 export default {
+	id: 'css2-ui',
 	title: 'CSS 2 User Interface',
 	links: {
 		tr: 'CSS22/ui.html',

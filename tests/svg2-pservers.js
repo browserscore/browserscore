@@ -1,4 +1,5 @@
 export default {
+	id: 'svg2-pServers',
 	title: 'SVG 2 Paint Servers: Gradients and Patterns',
 	links: {
 		tr: 'svg2/pservers.html',

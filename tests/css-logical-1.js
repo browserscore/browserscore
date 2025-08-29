@@ -1,4 +1,5 @@
 export default {
+	id: 'css-logical-1',
 	title: 'CSS Logical Properties and Values Level 1',
 	link: 'css-logical-1',
 	status: 'stable',

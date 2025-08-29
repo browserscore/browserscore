@@ -1,4 +1,5 @@
 export default {
+	id: 'cssom-1',
 	title: 'CSS Object Model (CSSOM)',
 	link: 'cssom-1',
 	status: 'experimental',

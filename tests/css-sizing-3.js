@@ -1,4 +1,5 @@
 export default {
+	id: 'css-sizing-3',
 	title: 'CSS Box Sizing Module Level 3',
 	link: 'css-sizing-3',
 	status: 'stable',

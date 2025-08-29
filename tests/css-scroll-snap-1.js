@@ -1,4 +1,5 @@
 export default {
+	id: 'css-scroll-snap-1',
 	title: 'CSS Scroll Snap Module Level 1',
 	link: 'css-scroll-snap-1',
 	status: 'stable',

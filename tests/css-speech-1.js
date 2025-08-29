@@ -1,4 +1,5 @@
 export default {
+	id: 'css-speech-1',
 	title: 'CSS Speech Module Level 1',
 	link: 'css-speech-1',
 	status: 'stable',

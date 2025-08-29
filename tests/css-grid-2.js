@@ -1,4 +1,5 @@
 export default {
+	id: 'css-grid-2',
 	title: 'CSS Grid Layout Module Level 2',
 	link: 'css-grid-2',
 	mdn: 'Glossary/Grid',

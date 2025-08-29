@@ -1,4 +1,5 @@
 export default {
+	id: 'css-display-3',
 	title: 'CSS Display Module Level 3',
 	link: 'css-display-3',
 	status: 'stable',

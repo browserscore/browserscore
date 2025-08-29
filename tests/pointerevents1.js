@@ -1,4 +1,5 @@
 export default {
+	id: 'pointerevents-1',
 	title: 'Pointer Events Level 1',
 	links: {
 		tr: 'pointerevents1',

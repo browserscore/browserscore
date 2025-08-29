@@ -1,4 +1,5 @@
 export default {
+	id: 'css-shapes-2',
 	title: 'CSS Shapes Module Level 2',
 	links: {
 		dev: 'css-shapes-2',

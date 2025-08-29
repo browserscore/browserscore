@@ -1,4 +1,5 @@
 export default {
+	id: 'css-color-adjust-1',
 	title: 'CSS Color Adjustment Module Level 1',
 	link: 'css-color-adjust-1',
 	status: 'stable',

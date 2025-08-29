@@ -1,4 +1,5 @@
 export default {
+	id: 'css-forms-1',
 	title: 'CSS Form Control Styling Level 1',
 	link: 'css-forms-1',
 	status: 'experimental',

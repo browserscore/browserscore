@@ -1,4 +1,5 @@
 export default {
+	id: 'css-shadow-parts-1',
 	title: 'CSS Shadow Parts',
 	link: 'css-shadow-parts-1',
 	status: 'experimental',

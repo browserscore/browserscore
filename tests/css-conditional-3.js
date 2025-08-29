@@ -1,4 +1,5 @@
 export default {
+	id: 'css-conditional-3',
 	title: 'CSS Conditional Rules Module Level 3',
 	links: {
 		tr: 'css3-conditional',

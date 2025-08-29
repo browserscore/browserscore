@@ -1,4 +1,5 @@
 export default {
+	id: 'fill-stroke-3',
 	title: 'CSS Fill and Stroke Module Level 3',
 	link: 'fill-stroke-3',
 	group: 'fxtf',

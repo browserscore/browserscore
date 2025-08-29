@@ -1,4 +1,5 @@
 export default {
+	id: 'css-flexbox-1',
 	title: 'CSS Flexible Box Layout Module Level 1',
 	link: 'css-flexbox-1',
 	mdn: 'Glossary/Flexbox',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css-content-3',
 	title: 'CSS Generated Content Module Level 3',
 	link: 'css-content-3',
 	status: 'experimental',

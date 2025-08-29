@@ -1,4 +1,5 @@
 export default {
+	id: 'motion-1',
 	title: 'Motion Path Module Level 1',
 	links: {
 		dev: 'motion-1',

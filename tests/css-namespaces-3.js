@@ -1,4 +1,5 @@
 export default {
+	id: 'css-namespaces-3',
 	title: 'CSS Namespaces Module Level 3',
 	link: 'css-namespaces-3',
 	status: 'stable',

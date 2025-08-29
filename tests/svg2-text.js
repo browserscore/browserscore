@@ -1,4 +1,5 @@
 export default {
+	id: 'svg2-text',
 	title: 'SVG 2 Text',
 	links: {
 		tr: 'svg2/text.html',

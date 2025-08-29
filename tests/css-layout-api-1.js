@@ -1,4 +1,5 @@
 export default {
+	id: 'css-layout-api-1',
 	title: 'CSS Layout API Level 1',
 	link: 'css-layout-api-1',
 	group: 'houdini',

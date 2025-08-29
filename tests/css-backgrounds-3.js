@@ -1,4 +1,5 @@
 export default {
+	id: 'css-backgrounds-3',
 	title: 'CSS Backgrounds and Borders Module Level 3',
 	link: 'css-backgrounds-3',
 	status: 'stable',

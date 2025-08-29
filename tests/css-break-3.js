@@ -1,4 +1,5 @@
 export default {
+	id: 'css-break-3',
 	title: 'CSS Fragmentation Module Level 3',
 	link: 'css-break-3',
 	status: 'stable',

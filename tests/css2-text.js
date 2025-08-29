@@ -1,4 +1,5 @@
 export default {
+	id: 'css2-text',
 	title: 'CSS 2 Text',
 	links: {
 		tr: 'CSS22/text.html',

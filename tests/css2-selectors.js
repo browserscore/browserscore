@@ -1,4 +1,5 @@
 export default {
+	id: 'css2-selectors',
 	title: 'CSS 2 Selectors',
 	links: {
 		tr: 'CSS22/selector.html',

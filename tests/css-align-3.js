@@ -1,4 +1,5 @@
 export default {
+	id: 'css-align-3',
 	title: 'CSS Box Alignment Module Level 3',
 	link: 'css-align-3',
 	status: 'stable',

@@ -1,4 +1,5 @@
 export default {
+	id: 'filter-effects-1',
 	title: 'Filter Effects Module Level 1',
 	link: 'filter-effects-1',
 	group: 'fxtf',

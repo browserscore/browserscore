@@ -1,4 +1,5 @@
 export default {
+	id: 'css-writing-modes-3',
 	title: 'CSS Writing Modes Level 3',
 	link: 'css-writing-modes-3',
 	status: 'stable',

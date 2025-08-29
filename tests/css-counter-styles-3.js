@@ -1,4 +1,5 @@
 export default {
+	id: 'css-counter-styles-3',
 	title: 'CSS Counter Styles Level 3',
 	link: 'css-counter-styles-3',
 	status: 'stable',

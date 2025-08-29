@@ -1,4 +1,5 @@
 export default {
+	id: 'css-variables-2',
 	title: 'CSS Custom Properties for Cascading Variables Module Level 2',
 	links: {
 		dev: 'css-variables-2',

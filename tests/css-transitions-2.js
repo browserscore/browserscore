@@ -1,4 +1,5 @@
 export default {
+	id: 'css-transitions-2',
 	title: 'CSS Transitions 2',
 	links: {
 		dev: 'css-transitions-2',

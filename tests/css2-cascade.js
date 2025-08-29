@@ -1,4 +1,5 @@
 export default {
+	id: 'css2-cascade',
 	title: 'CSS 2 Assigning property values, Cascading, and Inheritance',
 	links: {
 		tr: 'CSS22/cascade.html',

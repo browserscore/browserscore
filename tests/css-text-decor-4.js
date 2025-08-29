@@ -1,4 +1,5 @@
 export default {
+	id: 'css-text-decor-4',
 	title: 'CSS Text Decoration Module Level 4',
 	link: 'css-text-decor-4',
 	status: 'experimental',

@@ -1,4 +1,5 @@
 export default {
+	id: 'css-scoping-1',
 	title: 'CSS Scoping Module Level 1',
 	link: 'css-scoping-1',
 	status: 'experimental',

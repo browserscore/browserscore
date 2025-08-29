@@ -1,4 +1,5 @@
 export default {
+	id: 'css-text-3',
 	title: 'CSS Text Module Level 3',
 	link: 'css-text-3',
 	status: 'stable',

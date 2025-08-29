@@ -1,4 +1,5 @@
 export default {
+	id: 'css-exclusions-1',
 	title: 'CSS Exclusions Module Level 1',
 	links: {
 		tr: 'css3-exclusions',

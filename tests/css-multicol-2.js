@@ -1,4 +1,5 @@
 export default {
+	id: 'css-multicol-2',
 	title: 'CSS Multi-column Layout Module Level 2',
 	link: 'css-multicol-2',
 	status: 'experimental',

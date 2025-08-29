@@ -1,4 +1,5 @@
 export default {
+	id: 'css-paint-api-1',
 	title: 'CSS Painting API Level 1',
 	link: 'css-paint-api-1',
 	group: 'houdini',

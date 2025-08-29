@@ -1,4 +1,5 @@
 export default {
+	id: 'svg2-coords',
 	title: 'SVG 2 Coordinate Systems, Transformations and Units',
 	links: {
 		tr: 'svg2/coords.html',

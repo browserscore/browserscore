@@ -1,4 +1,5 @@
 export default {
+	id: 'css2-generate',
 	title: 'CSS 2 Generated Content, Automatic Numbering, and Lists',
 	links: {
 		tr: 'CSS22/generate.html',

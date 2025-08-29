@@ -1,4 +1,5 @@
 export default {
+	id: 'css-properties-values-api-1',
 	title: 'CSS Properties and Values API Level 1',
 	link: 'css-properties-values-api-1',
 	group: 'houdini',

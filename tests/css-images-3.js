@@ -1,4 +1,5 @@
 export default {
+	id: 'css-images-3',
 	title: 'CSS Images Module Level 3',
 	links: {
 		tr: 'css3-images',
