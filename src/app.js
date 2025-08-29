@@ -1,7 +1,7 @@
 import { createApp } from '../node_modules/vue/dist/vue.esm-browser.js';
 import AbstractFeature from './classes/AbstractFeature.js';
 import Score from './classes/Score.js';
-import Specs from './tests.js';
+import * as specs from './specs.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
 import { IS_DEV, passclass, round, percent } from './util.js';
@@ -15,9 +15,8 @@ import ColorSchemeToggle from './vue/components/color-scheme-toggle/color-scheme
 
 let root = new AbstractFeature();
 
-for (let id in Specs) {
-	let spec = Specs[id];
-	spec.id = id;
+for (let key in specs) {
+	let spec = specs[key];
 	spec = new Spec(spec, root);
 }
 
