@@ -7,7 +7,7 @@ export default {
 	atrules: {
 		'@counter-style': {
 			link: '#the-counter-style-rule',
-			forceTotal: false, // count each descriptor as a feature
+			isGroup: true,
 			preludeRequired: true,
 			prelude: 'foo',
 			descriptors: {

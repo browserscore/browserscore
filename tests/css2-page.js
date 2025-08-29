@@ -20,7 +20,7 @@ export default {
 		'`@page` descriptors': {
 			id: '@page',
 			link: '#page-box',
-			forceTotal: false,
+			isGroup: true,
 			descriptors: ['margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left'],
 		},
 	},

@@ -5,7 +5,7 @@ export default {
 	status: 'stable',
 	properties: {
 		'font-family': {
-			forceTotal: false, // count each value as a feature
+			isGroup: true,
 			link: '#font-family-prop',
 			mdn: 'font-family',
 			tests: {
@@ -23,7 +23,7 @@ export default {
 			},
 		},
 		'font-size': {
-			forceTotal: false,
+			isGroup: true,
 			link: '#font-size-prop',
 			mdn: 'font-size',
 			tests: {
@@ -137,7 +137,7 @@ export default {
 	},
 	atrules: {
 		'@font-face': {
-			forceTotal: false, // count each descriptor as a feature
+			isGroup: true,
 			descriptors: {
 				'ascent-override': {
 					link: '#descdef-font-face-ascent-override',

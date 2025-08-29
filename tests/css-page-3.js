@@ -20,7 +20,7 @@ export default {
 		},
 		'`@page` descriptors': {
 			id: '@page',
-			forceTotal: false,
+			isGroup: true,
 			descriptors: {
 				size: {
 					link: '#page-size-prop',

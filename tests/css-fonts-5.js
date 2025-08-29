@@ -25,7 +25,7 @@ export default {
 		'`@font-face` descriptors': {
 			id: '@font-face',
 			link: '#at-font-face-rule',
-			forceTotal: false, // count each descriptor as a separate feature
+			isGroup: true,
 			descriptors: {
 				'ascent-override': {
 					link: '#descdef-font-face-ascent-override',
