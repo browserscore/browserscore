@@ -7,22 +7,16 @@ import { IS_DEV } from '../util.js';
 
 export default class AbstractFeature {
 	children = [];
+	static _initialized = false;
 
 	constructor (def = {}, parent) {
+		this.constructor._init();
+
 		this.def = def;
+		this.id = def.id;
 
-		// For debugging
-		if (IS_DEV) {
-			// Expose all instances
-			if (!Object.hasOwn(this.constructor, 'all')) {
-				// We don't want classes to share the same array
-				this.constructor.all = [];
-			}
-
+		if (Object.hasOwn(this.constructor, 'all')) {
 			this.constructor.all.push(this);
-
-			// Make class a global
-			globalThis[this.constructor.name] ??= this.constructor;
 		}
 
 		if (parent) {
@@ -34,13 +28,33 @@ export default class AbstractFeature {
 			});
 		}
 
-		this.id = def.id;
-
 		if (def.title) {
 			this.title = def.title;
 		}
 
 		this.score = new Score(this, this.constructor.forceTotal);
+	}
+
+	/** Stuff that runs when the first instance is created */
+	static _init () {
+		if (Object.hasOwn(this, '_initialized') && this._initialized) {
+			return;
+		}
+
+		// For debugging
+		if (IS_DEV) {
+			// Expose all instances
+			if (!Object.hasOwn(this, 'all')) {
+				// We don't want classes to share the same array
+				// Also, using this as a signal means classes can define their own to have these objects even outside of debug mode
+				this.all = [];
+			}
+
+			// Make class a global
+			globalThis[this.name] ??= this;
+		}
+
+		this._initialized = true;
 	}
 
 	get link() {
