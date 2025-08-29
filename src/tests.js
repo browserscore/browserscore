@@ -25,9 +25,9 @@ import cssComposition2 from '../tests/css-composition-2.js';
 import cssConditional3 from '../tests/css-conditional-3.js';
 import cssConditional4 from '../tests/css-conditional-4.js';
 import cssConditional5 from '../tests/css-conditional-5.js';
-import cssContainment1 from '../tests/css-containment-1.js';
-import cssContainment2 from '../tests/css-containment-2.js';
-import cssContainment3 from '../tests/css-containment-3.js';
+import cssContain1 from '../tests/css-contain-1.js';
+import cssContain2 from '../tests/css-contain-2.js';
+import cssContain3 from '../tests/css-contain-3.js';
 import cssContent3 from '../tests/css-content-3.js';
 import cssCounterStyles3 from '../tests/css-counter-styles-3.js';
 import cssDisplay3 from '../tests/css-display-3.js';
@@ -195,9 +195,9 @@ export default {
 	'css-conditional-3': cssConditional3,
 	'css-conditional-4': cssConditional4,
 	'css-conditional-5': cssConditional5,
-	'css-containment-1': cssContainment1,
-	'css-containment-2': cssContainment2,
-	'css-containment-3': cssContainment3,
+	'css-contain-1': cssContain1,
+	'css-contain-2': cssContain2,
+	'css-contain-3': cssContain3,
 	'css-content-3': cssContent3,
 	'css-counter-styles-3': cssCounterStyles3,
 	'css-display-3': cssDisplay3,
