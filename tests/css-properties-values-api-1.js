@@ -3,7 +3,7 @@ export default {
 	link: 'css-properties-values-api-1',
 	group: 'houdini',
 	status: 'experimental',
-	descriptors: {
+	xdescriptors: {
 		'@property --foo/syntax': {
 			link: '#the-syntax-descriptor',
 			required: {
@@ -45,7 +45,9 @@ export default {
 	atrules: {
 		'@property': {
 			link: '#at-property-rule',
-			tests: "@property --cool-color {\n  syntax: '<color>';\n  inherits: true;\n  initial-value: red;\n}",
+			prelude: '--foo',
+			preludeRequired: true,
+			contents: 'syntax: "*"; inherits: true;'
 		},
 	},
 	interfaces: {

@@ -1,5 +1,6 @@
 export default {
 	title: 'CSS 2 Paged Media',
+	id: 'css2-page',
 	links: {
 		tr: 'CSS22/page.html',
 		dev: 'css2/',
@@ -10,15 +11,20 @@ export default {
 	atrules: {
 		'@page': {
 			link: '#page-box',
-			tests: [
-				'@page { margin: 2cm; }',
-				'@page :left { margin: 2cm; }',
-				'@page :right { margin: 2cm; }',
-				'@page :first { margin: 2cm; }',
+			preludes: [
+				':left',
+				':right',
+				':first',
 			],
 		},
+		'`@page` descriptors': {
+			id: '@page',
+			link: '#page-box',
+			forceTotal: false,
+			descriptors: ['margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left'],
+		},
 	},
-	descriptors: {
+	xdescriptors: {
 		'@page/margin': {
 			link: '#page-box',
 			tests: ['2cm', '4%', 'auto'],

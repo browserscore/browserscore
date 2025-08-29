@@ -9,13 +9,14 @@ export default {
 	atrules: {
 		'@supports': {
 			link: '#at-supports',
-			tests: [
-				'@supports (color: green) {}',
-				'@supports not (foo: bar) {}',
-				'@supports (color: green) or (color: red) {}',
-				'@supports (color: green) and (color: red) {}',
-				'@supports (color: green) and (not (foo: bar)) {}',
-				'@supports (color: green) or (not (foo: bar)) {}',
+			preludeRequired: true,
+			preludes: [
+				'(color: green)',
+				'not (color: green)',
+				'(color: green) or (color: red)',
+				'(color: green) and (color: red)',
+				'(color: green) and (not (foo: bar))',
+				'(color: green) or (not (foo: bar))',
 			],
 		},
 	},

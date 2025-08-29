@@ -135,103 +135,101 @@ export default {
 		},
 	},
 	atrules: {
+		'@font-face': {
+			forceTotal: false, // count each descriptor as a feature
+			descriptors: {
+				'ascent-override': {
+					link: '#descdef-font-face-ascent-override',
+					tests: ['normal', '125%'],
+				},
+				'descent-override': {
+					link: '#descdef-font-face-descent-override',
+					tests: ['normal', '125%'],
+				},
+				'line-gap-override': {
+					link: '#descdef-font-face-line-gap-override',
+					tests: ['normal', '90%'],
+				},
+				'font-named-instance': {
+					link: '#font-named-instance',
+					tests: ['auto', "'Grotesque'"],
+				},
+				'font-display': {
+					link: '#descdef-font-face-font-display',
+					tests: ['auto', 'block', 'swap', 'fallback', 'optional'],
+				},
+				'font-stretch': {
+					link: '#descdef-font-face-font-stretch',
+					tests: [
+						'auto',
+						'condensed normal',
+					],
+				},
+				'font-style': {
+					link: '#descdef-font-face-font-style',
+					tests: [
+						'auto',
+						'left',
+						'right',
+						'10deg',
+						'10deg 5deg',
+					],
+				},
+				'font-variation-settings': {
+					link: '#descdef-font-face-font-variation-settings',
+					tests: [
+						'normal',
+						'"wght" 2',
+						'"wght" 2, "ital" 1.2',
+					],
+				},
+				'font-weight': {
+					link: '#descdef-font-face-font-weight',
+					tests: [
+						'auto',
+						'100 300',
+					],
+				},
+				'src': {
+					code: 'tech()',
+					link: '#font-face-src-parsing',
+					tests: [
+						'url("foo") format("woff") tech(features-opentype)',
+						'url("foo") format("woff") tech(features-graphite)',
+						'url("foo") format("woff") tech(features-aat)',
+						'url("foo") format("woff") tech(color-COLRv0)',
+						'url("foo") format("woff") tech(color-COLRv1)',
+						'url("foo") format("woff") tech(color-SVG)',
+						'url("foo") format("woff") tech(color-sbix)',
+						'url("foo") format("woff") tech(color-CBDT)',
+						'url("foo") format("woff") tech(variations)',
+						'url("foo") format("woff") tech(palettes)',
+						'url("foo") format("woff") tech(incremental)',
+						'url("foo") tech(color-COLRv1)',
+						'url("foo") format("woff") tech(features-opentype, color-COLRv1)',
+					],
+				},
+			},
+		},
 		'@font-feature-values': {
 			link: '#font-feature-values',
-			tests: [
-				'@font-feature-values Jupiter Sans {\n  @stylistic {\n    some-style: 1;\n  }\n}',
-				'@font-feature-values Jupiter Sans {\n  @historical-forms {\n    some-style: 1;\n  }\n}',
-				'@font-feature-values Jupiter Sans {\n  @styleset {\n    some-style: 1;\n  }\n}',
-				'@font-feature-values Jupiter Sans {\n  @character-variant {\n    some-style: 1;\n  }\n}',
-				'@font-feature-values Jupiter Sans {\n  @swash {\n    some-style: 1;\n  }\n}',
-				'@font-feature-values Jupiter Sans {\n  @ornaments {\n    some-style: 1;\n  }\n}',
-				'@font-feature-values Jupiter Sans {\n  @annotation {\n    some-style: 1;\n  }\n}',
-				'@font-feature-values Jupiter Sans, Foo Bar {\n  @styleset {\n    some-style: 1;\n  }\n}',
-				'@font-feature-values Jupiter Sans {\n  @styleset {\n    some-style: 1 2 3;\n  }\n}',
-				'@font-feature-values Jupiter Sans {\n  @styleset {\n    some-style: 1;\n  }\n@styleset {\n    other-style: 2;\n  }\n}',
-			],
+			preludeRequired: true,
+			prelude: 'Foo',
+			atrules: {
+				'@stylistic': { contents: 'a: 1' },
+				'@historical-forms': { contents: 'a: 1' },
+				'@styleset': { contents: 'a: 1' },
+				'@character-variant': { contents: 'a: 1' },
+				'@swash': { contents: 'a: 1' },
+				'@ornaments': { contents: 'a: 1' },
+				'@annotation': { contents: 'a: 1' },
+				'@styleset': { contents: 'a: 1' },
+			},
 		},
 		'@font-palette-values': {
 			link: '#font-palette-values',
-			tests: [
-				'@font-palette-values --custom-palette {\n  font-family: Handover Sans;\n  base-palette: 3;\n}',
-				'@font-palette-values --custom-palette {\n  font-family: Handover Sans;\n  override-colors: 0 #000, 1 red;\n}',
-			],
-		},
-	},
-	descriptors: {
-		'@font-face/ascent-override': {
-			link: '#descdef-font-face-ascent-override',
-			tests: ['normal', '125%'],
-		},
-		'@font-face/descent-override': {
-			link: '#descdef-font-face-descent-override',
-			tests: ['normal', '125%'],
-		},
-		'@font-face/line-gap-override': {
-			link: '#descdef-font-face-line-gap-override',
-			tests: ['normal', '90%'],
-		},
-		'@font-face/font-named-instance': {
-			link: '#font-named-instance',
-			tests: ['auto', "'Grotesque'"],
-		},
-		'@font-face/font-display': {
-			link: '#descdef-font-face-font-display',
-			tests: ['auto', 'block', 'swap', 'fallback', 'optional'],
-		},
-		'@font-face/font-stretch': {
-			link: '#descdef-font-face-font-stretch',
-			tests: [
-				'auto',
-				'condensed normal',
-			],
-		},
-		'@font-face/font-style': {
-			link: '#descdef-font-face-font-style',
-			tests: [
-				'auto',
-				'left',
-				'right',
-				'10deg',
-				'10deg 5deg',
-			],
-		},
-		'@font-face/font-variation-settings': {
-			link: '#descdef-font-face-font-variation-settings',
-			tests: [
-				'normal',
-				'"wght" 2',
-				'"wght" 2, "ital" 1.2',
-			],
-		},
-		'@font-face/font-weight': {
-			link: '#descdef-font-face-font-weight',
-			tests: [
-				'auto',
-				'100 300',
-			],
-		},
-		'@font-face/src': {
-			link: '#font-face-src-parsing',
-			tests: [
-				'url("foo") format("woff") tech(features-opentype)',
-				'url("foo") format("woff") tech(features-graphite)',
-				'url("foo") format("woff") tech(features-aat)',
-				'url("foo") format("woff") tech(color-COLRv0)',
-				'url("foo") format("woff") tech(color-COLRv1)',
-				'url("foo") format("woff") tech(color-SVG)',
-				'url("foo") format("woff") tech(color-sbix)',
-				'url("foo") format("woff") tech(color-CBDT)',
-				'url("foo") format("woff") tech(variations)',
-				'url("foo") format("woff") tech(palettes)',
-				'url("foo") format("woff") tech(incremental)',
-				'url("foo") tech(color-COLRv1)',
-				'url("foo") format("woff") tech(features-opentype, color-COLRv1)',
-			],
-		},
-		'@font-feature-values/font-display': {
-			link: '#font-display-font-feature-values',
-			tests: ['auto', 'block', 'swap', 'fallback', 'optional'],
+			prelude: '--custom-palette',
+			descriptors: ['font-family', 'base-palette', 'override-colors', 'font-display'],
 		},
 	},
 	interfaces: {

@@ -20,78 +20,86 @@ export default {
 			],
 		},
 	},
-	descriptors: {
-		'@font-face/ascent-override': {
-			link: '#descdef-font-face-ascent-override',
-			tests: ['normal 125%', '125% normal'],
-		},
-		'@font-face/descent-override': {
-			link: '#descdef-font-face-descent-override',
-			tests: ['normal 125%', '125% normal'],
-		},
-		'@font-face/font-size': {
-			link: '#font-size-desc',
-			tests: ['auto', '0.7', '0.7 0.9'],
-		},
-		'@font-face/line-gap-override': {
-			link: '#descdef-font-face-line-gap-override',
-			tests: ['normal 125%', '125% normal'],
-		},
-		'@font-face/size-adjust': {
-			link: '#size-adjust-desc',
-			tests: ['125%'],
-		},
-		'@font-face/subscript-position-override': {
-			link: '#descdef-font-face-subscript-position-override',
-			tests: [
-				'normal',
-				'from-font',
-				'125%',
-				'normal normal',
-				'normal 125%',
-				'normal from-font',
-				'125% normal',
-				'from-font normal',
-			],
-		},
-		'@font-face/subscript-size-override': {
-			link: '#descdef-font-face-subscript-size-override',
-			tests: [
-				'normal',
-				'from-font',
-				'125%',
-				'normal normal',
-				'normal 125%',
-				'normal from-font',
-				'125% normal',
-				'from-font normal',
-			],
-		},
-		'@font-face/superscript-size-override': {
-			link: '#descdef-font-face-superscript-size-override',
-			tests: [
-				'normal',
-				'from-font',
-				'125%',
-				'normal normal',
-				'normal 125%',
-				'normal from-font',
-				'125% normal',
-				'from-font normal',
-			],
-		},
-		'@font-face/superscript-position-override': {
-			link: '#descdef-font-face-superscript-position-override',
-			tests: [
-				'normal',
-				'from-font',
-				'125%',
-				'normal normal',
-				'normal 125%',
-				'normal from-font',
-				'125% normal',
-				'from-font normal',
-			],
+	atrules: {
+		'`@font-face` descriptors': {
+			id: '@font-face',
+			link: '#at-font-face-rule',
+			forceTotal: false, // count each descriptor as a separate feature
+			descriptors: {
+				'ascent-override': {
+					link: '#descdef-font-face-ascent-override',
+					values: ['normal 125%', '125% normal'],
+				},
+				'descent-override': {
+					link: '#descdef-font-face-descent-override',
+					values: ['normal 125%', '125% normal'],
+				},
+				'font-size': {
+					link: '#font-size-desc',
+					values: ['auto', '0.7', '0.7 0.9'],
+				},
+				'line-gap-override': {
+					link: '#descdef-font-face-line-gap-override',
+					values: ['normal 125%', '125% normal'],
+				},
+				'size-adjust': {
+					link: '#size-adjust-desc',
+					values: ['125%'],
+				},
+				'subscript-position-override': {
+					link: '#descdef-font-face-subscript-position-override',
+					values: [
+						'normal',
+						'from-font',
+						'125%',
+						'normal normal',
+						'normal 125%',
+						'normal from-font',
+						'125% normal',
+						'from-font normal',
+					],
+				},
+				'subscript-size-override': {
+					link: '#descdef-font-face-subscript-size-override',
+					values: [
+						'normal',
+						'from-font',
+						'125%',
+						'normal normal',
+						'normal 125%',
+						'normal from-font',
+						'125% normal',
+						'from-font normal',
+					],
+				},
+				'superscript-size-override': {
+					link: '#descdef-font-face-superscript-size-override',
+					values: [
+						'normal',
+						'from-font',
+						'125%',
+						'normal normal',
+						'normal 125%',
+						'normal from-font',
+						'125% normal',
+						'from-font normal',
+					],
+				},
+				'superscript-position-override': {
+					link: '#descdef-font-face-superscript-position-override',
+					values: [
+						'normal',
+						'from-font',
+						'125%',
+						'normal normal',
+						'normal 125%',
+						'normal from-font',
+						'125% normal',
+						'from-font normal',
+					],
+				},
+
+			}
 		},
 	},
 };

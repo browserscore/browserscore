@@ -6,10 +6,7 @@ export default {
 	status: 'experimental',
 	atrules: {
 		'@starting-style': {
-			links: {
-				dev: '#defining-before-change-style-the-starting-style-rule',
-			},
-			tests: "@starting-style {\n  h1 {\n    background-color: red;\n  }\n}",
+			link: '#defining-before-change-style-the-starting-style-rule',
 		},
 	},
 	properties: {

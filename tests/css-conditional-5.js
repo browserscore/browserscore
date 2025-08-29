@@ -5,26 +5,39 @@ export default {
 	atrules: {
 		'@supports': {
 			link: '#at-supports-ext',
-			tests: ['@supports font-tech(features-opentype) {}', '@supports font-format(woff2) {}'],
+			preludeRequired: true,
+			children: [
+				{
+					title: '`@supports font-tech()`',
+					prelude: 'font-tech(features-opentype)',
+
+				},
+				{
+					title: '`@supports font-format()`',
+					prelude: 'font-format(woff2)',
+				},
+			],
 		},
 		'@when': {
 			link: '#when-rule',
-			tests: [
-				'@when media(min-width: 200px) {}',
-				'@when media(width >= 200px) {}',
-				'@when media(pointer) {}',
-				'@when supports(display: flex) {}',
+			preludeRequired: true,
+			preludes: [
+				'media(min-width: 0px)',
+				'media(pointer)',
+				'supports(color: red)',
 			],
 		},
 		'@else': {
 			link: '#else-rule',
-			tests: [
-				'@when media(min-width: 200px) {} @else {}',
-				'@when media(min-width: 200px) {} @else media(min-width: 100px) {}',
-				'@when media(min-width: 200px) {} @else media(min-width >= 100px) {}',
-				'@when media(min-width: 200px) {} @else supports(display: flex) {}',
-				'@when media(min-width: 200px) {} @else media(min-width: 100px) {} @else {}',
+			preludeRequired: true,
+			contentBefore: '@when media(min-width: 0px) {} ',
+			preludes: [
+				'media(min-width: 200px)',
+				'media(width >= 200px)',
+				'media(pointer)',
+				'supports(display: flex)',
 			],
+			// TODO @else media(min-width: 0px) {} @else {}
 		},
 	},
 };
