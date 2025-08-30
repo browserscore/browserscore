@@ -7,7 +7,7 @@ export { default as cssAnimations2 } from '../tests/css-animations-2.js';
 export { default as cssBackgrounds3 } from '../tests/css-backgrounds-3.js';
 export { default as cssBackgrounds4 } from '../tests/css-backgrounds-4.js';
 export { default as cssBorders4 } from '../tests/css-borders-4.js';
-// export { default as cssBox3 } from '../tests/css-box-3.js';
+export { default as cssBox3 } from '../tests/css-box-3.js';
 export { default as cssBox4 } from '../tests/css-box-4.js';
 export { default as cssBreak3 } from '../tests/css-break-3.js';
 export { default as cssBreak4 } from '../tests/css-break-4.js';
