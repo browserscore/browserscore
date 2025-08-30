@@ -2,6 +2,7 @@
 @import "icons.css";
 @import "carbon.css";
 @import "../components/tooltip/tooltip.css";
+@import "../../src/vue/components/feature/feature.css";
 @import "../../src/vue/components/support-status/support-status.css";
 @import "../../src/vue/components/color-scheme-toggle/color-scheme-toggle.css";
 @import "../../src/vue/components/filter/filter.css";
@@ -79,29 +80,6 @@ h2 {
 	font-family: var(--font-heading);
 	font-weight: normal;
 	line-height: 1.1;
-}
-
-.spec {
-	padding-block-start: 2rem;
-
-	> summary {
-		display: flex;
-		align-items: center;
-		font-size: var(--font-size-2xl);
-		gap: 0.5em;
-
-		h1 {
-			margin: 0;
-			font-size: inherit;
-		}
-	}
-
-	section h2 {
-		color: var(--color-text-soft);
-		font-size: var(--font-size-l);
-		font-weight: bold;
-		text-transform: capitalize;
-	}
 }
 
 .icon,
@@ -332,68 +310,6 @@ summary {
 	&:is([open] > *)::after {
 		transform: rotate(90deg);
 	}
-}
-
-.feature,
-.spec {
-	.title {
-		flex: 1;
-
-		.badge {
-			margin-inline-start: 1ch;
-		}
-	}
-
-	summary .badge {
-		transition: opacity 100ms 100ms;
-	}
-
-	:is(&, summary):not(:hover, :focus-within, :target) .badge:not(.primary) {
-		opacity: 0;
-	}
-}
-
-.feature {
-	color-scheme: dark;
-	display: flex;
-	gap: .5em;
-	align-items: center;
-	padding: .5em .6em;
-	background: var(--color, var(--color-gray));
-	color: oklch(from var(--color) var(--text));
-	border-radius: .3em;
-	position: relative;
-	--progress-color: oklch(from var(--color) calc(l + 0.4) 0 0);
-
-	.progress {
-		height: 1.2lh;
-
-		.x {
-			opacity: .5;
-		}
-	}
-}
-
-.feature {
-	white-space: pre;
-	white-space: break-spaces;
-}
-
-.feature-group,
-.feature:not(.feature-group > *) {
-	margin-block: .3em;
-}
-
-.feature-group > :not(summary),
-li.feature {
-	margin-block: .3em;
-	margin-inline-start: 2em;
-	font-size: max(var(--font-size-xs), 85%);
-}
-
-.feature small {
-	display: block;
-	opacity: .8;
 }
 
 .prefix {
