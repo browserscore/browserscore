@@ -173,4 +173,9 @@ export default class AbstractFeature {
 			this.score.recalc();
 		}
 	}
+
+	matchesFilter (filter) {
+		// To be overridden by subclasses
+		return true;
+	}
 }
