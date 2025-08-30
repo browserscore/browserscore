@@ -18,6 +18,8 @@ for (let key in specs) {
 	spec = new Spec(spec, root);
 }
 
+root.children = [...Spec.all].sort((a, b) => a.title.localeCompare(b.title));
+
 // Components available in every component
 let globalComponents = {
 	"support-status": components.SupportStatus,
@@ -67,6 +69,7 @@ let appSpec = {
 			testTime: 0,
 			favicon: '',
 			mounted: false,
+			score: null,
 		};
 	},
 
@@ -105,13 +108,6 @@ let appSpec = {
 			return specs.sort((a, b) => a.title.localeCompare(b.title));
 		},
 
-		/** Score for filtered specs
-		 * @type {Score}
-		 */
-		score () {
-			return this.root.score;
-		},
-
 		snapshots () {
 			let firstSnapshot = 2007;
 			return Array(this.currentYear - firstSnapshot).fill(0).map((_, i) => firstSnapshot + i);
@@ -133,19 +129,6 @@ let appSpec = {
 	},
 
 	watch: {
-		specs: {
-			handler() {
-				this.root.children = this.specs;
-
-				for (let spec of this.specs) {
-					spec.test();
-				}
-
-				this.root.score.recalc();
-			},
-			immediate: true,
-		},
-
 		filter: {
 			deep: true,
 
@@ -169,9 +152,12 @@ let appSpec = {
 		"score.value": {
 			handler() {
 				this.$nextTick(() => {
-					this.updateFavicon();
+					if (this.score) {
+						this.updateFavicon();
+					}
 				});
 			},
+			immediate: true,
 		},
 	},
 

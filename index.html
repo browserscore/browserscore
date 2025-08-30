@@ -22,8 +22,8 @@
 </h1>
 
 <template id="feature-component-template">
-	<details v-if="feature.children?.length > 0" class="feature-group" :data-level="level" :key="feature.uid" :id="feature.htmlId" ref="details" @toggle="handleToggle" :open="level === 0">
-		<summary class="feature" :class="passclass(feature.score)">
+	<wrap-if :is="isCollapsible ? 'details' : ''" class="feature-group" :data-level="level" :key="feature.uid" :id="feature.htmlId" ref="details" @toggle="handleToggle" :open="level === 1" ref="details">
+		<component v-if="level > 0" :is="isCollapsible ? 'summary' : 'article'" class="feature" :class="passclass(feature.score)" :data-level="level" ref="container">
 			<support-status :score="feature.score"></support-status>
 			<wrap-if :is="level > 0 ? '' : 'h1'" class="title">
 				<span class="title" v-if="feature.titleHtml" v-html="feature.titleHtml"></span>
@@ -41,35 +41,26 @@
 			</div>
 
 			<span class="count" v-if="feature.score.total > 1">{{ feature.score.total }}</span>
-		</summary>
-		<section v-if="groupBy" v-for="features, type in groupedChildren" :key="feature.getUid('.', type)">
-			<h2 v-text="getGroupTitle(type)"></h2>
-			<bs-feature v-for="f in features" :feature="f" :key="feature.getUid('.', type)" :level="level + 1" ></bs-feature>
+
+			<span class="prefix" v-if="feature.result?.prefix">{{ feature.result.prefix }}</span>
+			<span class="note" v-if="feature.result?.note">{{ feature.result.note }}</span>
+		</component>
+		<section v-if="groupedChildren" v-for="features, key in groupedChildren" :key="feature.getUid('.', key)">
+			<h2 v-text="getGroupTitle(key)"></h2>
+			<bs-feature v-for="f in features" :feature="f" :key="feature.getUid('.', key)" :level="level + 1" :groupBy="childGroupBy"></bs-feature>
 		</section>
 		<div v-else class="feature-children">
-			<bs-feature v-for="child, index of renderedChildren" :feature="child" :key="feature.getUid('.', index)" :level="level + 1"></bs-feature>
+			<bs-feature v-for="child, index of renderedChildren" :feature="child" :key="feature.getUid('.', index)" :level="level + 1" :groupBy="childGroupBy"></bs-feature>
 		</div>
-	</details>
-	<article v-else class="feature" :class="passclass(feature.score)" ref="container">
-		<support-status :score="feature.score"></support-status>
-		<span class="title" v-if="feature.titleHtml" v-html="feature.titleHtml"></span>
-		<span class="title" v-else-if="feature.title" v-text="feature.title"></span>
-		<code class="title" v-else v-text="feature.code ?? feature.id"></code>
+	</wrap-if>
 
-		<a  v-if="feature.specLink && feature.link !== feature.specLink" :href="feature.specLink" target="_blank" class="badge spec-link" :class="`${feature.spec.org.id}-link`">Spec</a>
-		<a v-if="feature.draftLink && feature.draftLink !== feature.specLink" :href="feature.draftLink" target="_blank" class="badge spec-link" :class="`${feature.spec.org.id}-link`">Draft</a>
-		<a v-if="feature.mdnLink" :href="feature.mdnLink" target="_blank" class="badge spec-link mdn-link">MDN</a>
-
-		<span class="prefix" v-if="feature.result?.prefix">{{ feature.result.prefix }}</span>
-		<span class="note" v-if="feature.result?.note">{{ feature.result.note }}</span>
-	</article>
 </template>
 
 <div id="content" v-cloak>
 	<color-scheme-toggle></color-scheme-toggle>
 
 	<main id="tests">
-		<header>
+		<header v-if="score">
 			<h1>Your browser scores <strong v-content="percent(score)">0%</strong></h1>
 
 			<div class="description">
@@ -88,9 +79,8 @@
 				in <strong v-content="round(score.testTime) + ' ms'">0 ms</strong>
 			</div>
 		</header>
-
 		<section id="all">
-			<bs-feature v-for="spec of specs" :feature="spec" group-by="type" :group-title="featureTypeTitles"></bs-feature>
+			<bs-feature :feature="root" ref="root" :filter="filter" :group-by="{key: 'type', titles: featureTypeTitles, level: 1}" @update:score="score = $event"></bs-feature>
 		</section>
 	</main>
 
@@ -99,7 +89,7 @@
 
 		<section>
 			<h1>
-				{{ specs.length }} specs
+				{{ score?.children.length }} specs
 			</h1>
 			<fieldset class="filters">
 				<legend>Filter</legend>

@@ -32,7 +32,7 @@
 	}
 }
 
-.feature-group[data-level="0"] {
+.feature-group[data-level="1"] {
 	padding-block-start: 2rem;
 
 	> summary {
@@ -59,7 +59,7 @@
 	}
 }
 
-.feature:not([data-level="0"] > *) {
+.feature:not([data-level="0"], [data-level="1"]) {
 	color-scheme: dark;
 	display: flex;
 	gap: .5em;
