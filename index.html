@@ -80,7 +80,7 @@
 			</div>
 		</header>
 		<section id="all">
-			<bs-feature :feature="root" ref="root" :filter="filter" :group-by="{key: 'type', titles: key => featureTypes[key]?.title ?? capitalize(key), level: 1}" @update:score="score = $event"></bs-feature>
+			<bs-feature :feature="root" ref="root" :filter="filter" :group-by="{key: 'type', titles: featureTypeTitles, level: 1}" @update:score="score = $event"></bs-feature>
 		</section>
 	</main>
 

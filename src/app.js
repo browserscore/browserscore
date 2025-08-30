@@ -5,6 +5,7 @@ import { orgs, groups } from './data.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
 import { IS_DEV, passclass, round, percent, capitalize } from './util.js';
+import { titles as featureTypeTitles } from './features.js';
 
 // Vue components
 import * as components from './vue/components/index.js';
@@ -76,6 +77,7 @@ let appSpec = {
 		Object.assign(this, {
 			IS_DEV,
 			featureTypes: Spec.featureTypes,
+			featureTypeTitles,
 			currentYear: new Date().getFullYear(),
 			urlParams,
 			orgs,
