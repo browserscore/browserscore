@@ -193,6 +193,10 @@ for (let [tag, component] of Object.entries(globalComponents)) {
 	createdApp.component(tag, component);
 }
 
+for (let [tag, directive] of Object.entries(appSpec.directives)) {
+	createdApp.directive(tag, directive);
+}
+
 let app = createdApp.mount("#content");
 
 // Global exports
