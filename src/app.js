@@ -9,10 +9,7 @@ import { IS_DEV, passclass, round, percent } from './util.js';
 import { titles as featureTypeTitles } from './features.js';
 
 // Vue components
-import Feature from './vue/components/feature/feature.js';
-import CarbonAds from './vue/components/carbon-ads.js';
-import SupportStatus from './vue/components/support-status/support-status.js';
-import ColorSchemeToggle from './vue/components/color-scheme-toggle/color-scheme-toggle.js';
+import * as components from './vue/components/index.js';
 
 let root = new AbstractFeature();
 
@@ -23,14 +20,15 @@ for (let key in specs) {
 
 // Components available in every component
 let globalComponents = {
-	"support-status": SupportStatus,
-	"bs-feature": Feature,
+	"support-status": components.SupportStatus,
+	"bs-feature": components.Feature,
 };
 
 // Components only available in the top-level app instance
 let localComponents = {
-	"carbon-ads": CarbonAds,
-	"color-scheme-toggle": ColorSchemeToggle,
+	"carbon-ads": components.CarbonAds,
+	"color-scheme-toggle": components.ColorSchemeToggle,
+	"bs-filter": components.Filter,
 };
 
 let urlParams = new URLSearchParams(window.location.search);

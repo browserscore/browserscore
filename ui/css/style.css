@@ -4,6 +4,7 @@
 @import "../components/tooltip/tooltip.css";
 @import "../../src/vue/components/support-status/support-status.css";
 @import "../../src/vue/components/color-scheme-toggle/color-scheme-toggle.css";
+@import "../../src/vue/components/filter/filter.css";
 
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -470,9 +471,4 @@ footer {
 	justify-content: center;
 	font-size: 85%;
 	font-weight: bold;
-}
-
-.filter {
-	display: block;
-	margin-block: 1em;
 }

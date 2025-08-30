@@ -100,45 +100,15 @@
 		<carbon-ads params="zoneid=1673&serve=C6AILKT&placement=css3testcom"></carbon-ads>
 
 		<section>
-			<h1>Filter:</h1>
-			<form>
-				<label class="filter">
-					Status:
-					<select id="filter" v-model="filter.status">
-						<option value="" title="All specifications including experimental ones but without CSS 2.2">Any except legacy</option>
-						<option value="all" title="All specifications including experimental ones">Any</option>
-						<option value="stable" title="All specifications listed in the latest CSS snapshot, their predecessors and others that won't change much anymore">Stable</option>
-						<option value="experimental" title="All specifications not listed in the latest CSS snapshot">Experimental</option>
-					</select>
-				</label>
+			<h1>Filter</h1>
+			<form class="filters">
+				<bs-filter label="Status" v-model="filter.status"
+				           :values="{'': 'Any except legacy', 'all': 'Any', 'stable': 'Stable', 'experimental': 'Experimental'}"></bs-filter>
+				<bs-filter label="Snapshot" v-model="filter.snapshot" with-empty :values="snapshots"></bs-filter>
+				<bs-filter label="Standards group" v-model="filter.group" with-empty
+				           :values="groups" :get-label="(id, group) => group?.title || id || group"></bs-filter>
 
-				<label class="filter">
-					Standardization groups:
-					<select v-model="filter.group">
-						<option value="">Any</option>
-						<option v-for="id, group of groups" :value="group">{{ groups[group]?.title ?? group.id }}</option>
-					</select>
-				</label>
-
-				<label class="filter">
-					Snapshot:
-					<select v-model="filter.snapshot">
-						<option value="">Any</option>
-						<option v-for="snapshot in snapshots" :value="snapshot">{{ snapshot }}</option>
-					</select>
-				</label>
-
-				<label class="filter">
-					CSS level:
-					<select v-model="filter.version">
-						<option value="">Any</option>
-						<option value="2.2" title="Everything included in CSS 2.2">CSS 2.2</option>
-						<option value="3" title="Everything included in CSS 3">Level 3 Specs</option>
-						<option value="4" title="Everything included in CSS 4">Level 4 Specs</option>
-						<option value="5" title="Everything included in CSS 5">Level 5 Specs</option>
-						<option value="6" title="Everything included in CSS 6">Level 6 Specs</option>
-					</select>
-				</label>
+				<bs-filter v-if="filter.group === 'csswg'" label="CSS level" v-model="filter.version" with-empty :values="[2.2, 3, 4, 5, 6]"></bs-filter>
 			</form>
 		</section>
 

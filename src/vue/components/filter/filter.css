@@ -1,0 +1,25 @@
+.filters {
+	display: flex;
+	flex-flow: column;
+	gap: .8em;
+}
+
+.filter {
+	display: block;
+	display: flex;
+	flex-flow: column;
+	gap: .2em;
+
+	.label {
+		display: block;
+		font-size: var(--font-size-xs);
+		font-weight: 550;
+	}
+
+	select {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+	}
+}
+
