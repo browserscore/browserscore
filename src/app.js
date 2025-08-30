@@ -22,6 +22,7 @@ for (let key in specs) {
 let globalComponents = {
 	"support-status": components.SupportStatus,
 	"bs-feature": components.Feature,
+	"wrap-if": components.WrapIf,
 };
 
 // Components only available in the top-level app instance
