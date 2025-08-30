@@ -1,12 +1,10 @@
 import { createApp } from '../node_modules/vue/dist/vue.esm-browser.js';
 import AbstractFeature from './classes/AbstractFeature.js';
-import Score from './classes/Score.js';
 import * as specs from './specs.js';
 import { orgs, groups } from './data.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
 import { IS_DEV, passclass, round, percent } from './util.js';
-import { titles as featureTypeTitles } from './features.js';
 
 // Vue components
 import * as components from './vue/components/index.js';
@@ -77,7 +75,7 @@ let appSpec = {
 		// Add constants that we don't need to be reactive
 		Object.assign(this, {
 			IS_DEV,
-			featureTypeTitles,
+			featureTypes: Spec.featureTypes,
 			currentYear: new Date().getFullYear(),
 			urlParams,
 			orgs,

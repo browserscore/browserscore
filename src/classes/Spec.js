@@ -1,10 +1,21 @@
 import AbstractFeature from './AbstractFeature.js';
 import { groups, orgs } from '../data.js';
 import Feature from "./Feature.js";
-import {supportsNames} from '../features.js';
+import { supportsNames, titles as featureTypeTitles} from '../features.js';
 import featureMap from './Feature/index.js';
 
-let featureTypes = {...featureMap, ...supportsNames};
+let featureTypes = {...featureMap};
+
+for (let type in featureTypeTitles) {
+	featureTypes[type] ??= {};
+	featureTypes[type].title = featureTypeTitles[type];
+}
+
+for (let type in supportsNames) {
+	featureTypes[type] ??= {};
+	featureTypes[type].supports = supportsNames[type];
+}
+
 
 // Shorten the title by removing parentheticals, subheadings, and superfluous words
 const removedOther = / *(?:\([^)]*\)|:.*)( *)/g;
@@ -27,6 +38,8 @@ export default class Spec extends AbstractFeature {
 	 */
 	static statuses = statuses;
 
+	static featureTypes = featureTypes;
+
 	constructor (def, parent) {
 		super(def, parent);
 
@@ -47,12 +60,11 @@ export default class Spec extends AbstractFeature {
 		}
 
 		for (let type in featureTypes) {
-			let meta = featureTypes[type];
-
 			if (!(type in this.def)) {
 				continue;
 			}
 
+			let meta = featureTypes[type];
 			let group = this.def[type];
 
 			let {properties, required, interface: Interface, ...features} = group;
