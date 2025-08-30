@@ -22,7 +22,7 @@
 </h1>
 
 <template id="feature-component-template">
-	<wrap-if :is="isCollapsible ? 'details' : ''" class="feature-group" :data-level="level" :key="feature.uid" :id="feature.htmlId" ref="details" @toggle="handleToggle" :open="level === 1" ref="details">
+	<wrap-if v-if="!isEmpty" :is="isCollapsible ? 'details' : ''" class="feature-group" :data-level="level" :key="feature.uid" :id="feature.htmlId" ref="details" @toggle="handleToggle" :open="level === 1" ref="details">
 		<component v-if="level > 0" :is="isCollapsible ? 'summary' : 'article'" class="feature" :class="passclass(feature.score)" :data-level="level" ref="container">
 			<support-status :score="feature.score"></support-status>
 			<wrap-if :is="level > 0 ? '' : 'h1'" class="title">
@@ -47,10 +47,10 @@
 		</component>
 		<section v-if="groupedChildren" v-for="features, key in groupedChildren" :key="feature.getUid('.', key)">
 			<h2 v-text="getGroupTitle(key)"></h2>
-			<bs-feature v-for="f in features" :feature="f" :key="feature.getUid('.', key)" :level="level + 1" :group-by="childGroupBy"></bs-feature>
+			<bs-feature v-for="f in features" :feature="f" :key="feature.getUid('.', key)" :level="level + 1" :group-by="childGroupBy" :filter="childFilter"></bs-feature>
 		</section>
 		<div v-else class="feature-children">
-			<bs-feature v-for="child, index of renderedChildren" :feature="child" :key="feature.getUid('.', index)" :level="level + 1" :group-by="childGroupBy"></bs-feature>
+			<bs-feature v-for="child, index of renderedChildren" :feature="child" :key="feature.getUid('.', index)" :level="level + 1" :group-by="childGroupBy" :filter="childFilter"></bs-feature>
 		</div>
 	</wrap-if>
 
@@ -86,6 +86,12 @@
 
 	<aside>
 		<carbon-ads params="zoneid=1673&serve=C6AILKT&placement=css3testcom"></carbon-ads>
+
+		<fieldset class="filters">
+			<legend>Filter features</legend>
+
+			<bs-filter label="Type" v-model="filter.type" with-empty :values="featureTypes" :get-label="(id, type) => featureTypeTitles[id] || capitalize(id)"></bs-filter>
+		</fieldset>
 
 		<section>
 			<h1>

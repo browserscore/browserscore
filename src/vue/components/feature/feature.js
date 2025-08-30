@@ -61,6 +61,15 @@ export default {
 			return this.children.length < this.feature.children.length;
 		},
 
+		isEmpty () {
+			if (!this.feature.children?.length) {
+				// Leaf
+				return false;
+			}
+
+			return this.children.length === 0;
+		},
+
 		score () {
 			return this.isFiltered ? this.filteredScore : this.feature.score;
 		},
@@ -80,6 +89,14 @@ export default {
 		childGroupBy () {
 			if (this.computedGroupBy && this.computedGroupBy.level > this.level) {
 				return this.computedGroupBy;
+			}
+
+			return null;
+		},
+
+		childFilter () {
+			if (this.hasFilter && this.level < 3) {
+				return this.filter;
 			}
 
 			return null;

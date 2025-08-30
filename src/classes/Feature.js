@@ -314,6 +314,14 @@ export default class Feature extends AbstractFeature {
 
 		this.score.recalc();
 	}
+
+	matchesFilter (filter) {
+		if (filter.type && this.type && (this.type !== filter.type)) {
+			return false;
+		}
+
+		return true;
+	}
 }
 
 function getMdnLink (mdn, feature, mdnGroup) {
