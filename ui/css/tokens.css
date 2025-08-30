@@ -1,4 +1,6 @@
 :root {
+	/* Literal tokens */
+
 	--font-sans: system-ui, sans-serif;
 	--font-serif: ui-serif,serif;
 	--font-mono: Monaco, Consolas, monospace;
@@ -14,6 +16,16 @@
 	--color-red:  hsl(9 100% 47%);
 	--color-red-dark: hsl(0 100% 37%);
 	--color-blue: light-dark(oklch(65% 0.15 220), oklch(60% 0.15 220));
+
+	--font-size-xs: .72rem;
+	--font-size-s: .85rem;
+	--font-size-m: 1rem;
+	--font-size-l: 1.25rem;
+	--font-size-xl: 1.5rem;
+	--font-size-2xl: 2rem;
+	--font-size-3xl: 3rem;
+
+	/* Semantic tokens */
 
 	--color-pass: var(--color-green);
 	--color-almost-pass: var(--color-lime);
