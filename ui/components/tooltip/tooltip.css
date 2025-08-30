@@ -7,28 +7,32 @@ ui-tooltip {
 
 /* Trigger */
 ui-tooltip > :not(.tooltip) {
-	display: inline-flex;
-	align-items: center;
 	cursor: pointer;
 	anchor-name: --trigger;
-
-	&:not(:hover, :focus-within) {
-		opacity: .5;
-	}
 }
 
 ui-tooltip > .tooltip {
 	margin: 0;
 	position: absolute;
 	z-index: 2;
-	/* Anchor positioning as PE (currently not working) */
+
+	/* Anchor positioning as PE */
 	position-anchor: --trigger;
-	position-area: top span-all;
+	position-area: bottom span-all;
+	/* Currently not working: :( */
 	position-try: normal flip-block flip-inline;
-	inset: auto;
+
 	/* Fallback */
-	inset-block-end: 100%;
+	inset: auto;
+	inset-block-start: 100%;
 	min-width: 15em;
+	text-align: start;
+}
+
+ui-tooltip.top > .tooltip {
+	inset-block-start: auto;
+	inset-block-end: 100%;
+	position-area: top span-all;
 }
 
 ui-tooltip:not(:hover, :focus-within) > .tooltip {

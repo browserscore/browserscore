@@ -62,15 +62,21 @@
 		<header>
 			<h1>Your browser scores <strong v-content="percent(score)">0%</strong></h1>
 
-			<p>
+			<div class="description">
 				<support-status :score="score" ref="supportStatus"></support-status>
-				Recognized
+				<ui-tooltip>
+					&nbsp;<span class="recognized">Recognized</span>&nbsp;
+					<article class="caution tooltip">
+						<p><strong>Caution:</strong>
+						This test checks which web platform features the browser recognizes, <em>not</em> whether they are implemented correctly.</p>
+					</article>
+				</ui-tooltip>
 				<span :title="`passed ${round(score.passedTests)} out of ${score.totalTests} tests`">
 					<strong v-content="round(score.passed)">0</strong>
 					out of <strong v-content="round(score.total)">0</strong> features
 				</span>
 				in <strong v-content="round(score.testTime) + ' ms'">0 ms</strong>
-			</p>
+			</div>
 		</header>
 
 		<section id="all">
@@ -101,7 +107,8 @@
 
 		<section>
 			<h1>Filter</h1>
-			<form class="filters">
+			<fieldset class="filters">
+				<legend>Spec</legend>
 				<bs-filter label="Status" v-model="filter.status"
 				           :values="{'': 'Any except legacy', 'all': 'Any', 'stable': 'Stable', 'experimental': 'Experimental'}"></bs-filter>
 				<bs-filter label="Snapshot" v-model="filter.snapshot" with-empty :values="snapshots"></bs-filter>
@@ -115,15 +122,7 @@
 		<section>
 
 			<h1>
-				{{ specs.length }} specs tested
-				<ui-tooltip>
-					<button class="icon" style="--icon: var(--icon-warning)"></button>
-					<section class="caution tooltip">
-						<p><strong>Caution:</strong>
-						This test checks which web platform features the browser recognizes, <em>not</em> whether they are implemented correctly.</p>
-					</section>
-				</ui-tooltip>
-
+				{{ specs.length }} specs
 			</h1>
 			<ul id="specsTested">
 				<li v-for="spec in specs" :key="spec.id" :class="passclass({
