@@ -12,8 +12,6 @@ const removedOther = / *(?:\([^)]*\)|:.*)( *)/g;
 const statuses = new Set(['stable', 'experimental']);
 
 export default class Spec extends AbstractFeature {
-	features = {};
-
 	/** All specs as array
 	 * @type {Spec[]}
 	 */
@@ -60,8 +58,6 @@ export default class Spec extends AbstractFeature {
 			let {properties, required, interface: Interface, ...features} = group;
 			group.type = type;
 
-			this.features[type] = [];
-
 			let Class = typeof meta === 'function' ? meta : Feature;
 
 			for (let id in features) {
@@ -79,8 +75,6 @@ export default class Spec extends AbstractFeature {
 				}
 
 				feature = new Class(feature, this, group);
-
-				this.features[type].push(feature);
 
 				this.children.push(feature);
 			}
