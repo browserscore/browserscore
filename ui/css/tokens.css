@@ -25,7 +25,7 @@
 	--font-size-2xl: 2rem;
 	--font-size-3xl: 3rem;
 
-	/* Semantic tokens */
+	/* Semantic or higher level tokens */
 
 	--color-pass: var(--color-green);
 	--color-almost-pass: var(--color-lime);
@@ -95,4 +95,7 @@
 	--is-light: clamp(0, (l - var(--l-threshold)) * infinity, 1);
 	--is-dark: (1 - var(--is-light));
 	--text: calc(1 * var(--is-dark) + .1 * var(--is-light)) calc(c * var(--is-light)) h;
+
+	--shadow-l: 0 .4em .7em -.3em var(--color-shade);
+	--shadow-l-90deg: -.4em 0 .7em -.3em var(--color-shade);
 }

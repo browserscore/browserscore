@@ -196,7 +196,7 @@ body > h1 {
 	font-weight: 900;
 	text-transform: uppercase;
 	transition: .1s;
-	box-shadow: 0 .4em .7em -.3em var(--color-shade);
+	box-shadow: var(--shadow-l);
 
 	a {
 		color: inherit;
@@ -218,7 +218,7 @@ body > h1 {
 		inset-block-start: 1em;
 		transform:  rotate(-90deg) translateX(-100%);
 		transform-origin: top left;
-		box-shadow: -.4em 0 .7em -.3em var(--color-shade);
+		box-shadow: var(--shadow-l-90deg);
 	}
 }
 
@@ -386,24 +386,26 @@ li.feature {
 	vertical-align: middle;
 }
 
+.caution {
+	padding: 1em;
+	border-radius: .3em;
+	background: var(--color-bg-loud);
+	color: var(--color-text-loud);
+	font-size: var(--font-size-s);
+	line-height: 1.5;
+	box-shadow: var(--shadow-l);
+
+	p {
+		margin: 0;
+	}
+}
+
 aside {
 	flex: 1;
 	font-size: var(--font-size-s);
 	align-self: flex-start;
 	position: sticky;
 	top: 0;
-
-	.caution {
-		padding: 1em;
-		background: var(--color-bg-loud);
-		color: var(--color-text-loud);
-		font-size: var(--font-size-s);
-		line-height: 1.5;
-
-		p {
-			margin: 0;
-		}
-	}
 
 	h1 {
 		font-size: var(--font-size-xl);
