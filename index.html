@@ -47,10 +47,10 @@
 		</component>
 		<section v-if="groupedChildren" v-for="features, key in groupedChildren" :key="feature.getUid('.', key)">
 			<h2 v-text="getGroupTitle(key)"></h2>
-			<bs-feature v-for="f in features" :feature="f" :key="feature.getUid('.', key)" :level="level + 1" :groupBy="childGroupBy"></bs-feature>
+			<bs-feature v-for="f in features" :feature="f" :key="feature.getUid('.', key)" :level="level + 1" :group-by="childGroupBy"></bs-feature>
 		</section>
 		<div v-else class="feature-children">
-			<bs-feature v-for="child, index of renderedChildren" :feature="child" :key="feature.getUid('.', index)" :level="level + 1" :groupBy="childGroupBy"></bs-feature>
+			<bs-feature v-for="child, index of renderedChildren" :feature="child" :key="feature.getUid('.', index)" :level="level + 1" :group-by="childGroupBy"></bs-feature>
 		</div>
 	</wrap-if>
 

@@ -99,9 +99,9 @@ export default {
 		},
 
 		groupedChildren () {
-			if (this.groupBy) {
+			if (this.computedGroupBy) {
 				if (this.computedGroupBy.level === this.level) {
-					return groupBy(this.renderedChildren, this.computedGroupBy);
+					return groupBy(this.renderedChildren, this.computedGroupBy.key);
 				}
 			}
 		},
