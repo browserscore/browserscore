@@ -4,7 +4,7 @@ import * as specs from './specs.js';
 import { orgs, groups } from './data.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
-import { IS_DEV, passclass, round, percent } from './util.js';
+import { IS_DEV, passclass, round, percent, capitalize } from './util.js';
 
 // Vue components
 import * as components from './vue/components/index.js';
@@ -116,6 +116,7 @@ let appSpec = {
 		passclass,
 		round,
 		percent,
+		capitalize,
 
 		async updateFavicon() {
 			if (this.$refs.supportStatus) {
