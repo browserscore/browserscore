@@ -37,7 +37,6 @@ export default class Feature extends AbstractFeature {
 
 		// Non-enumerable
 		this.defineProperties({
-			spec: this.closest(f => f.constructor.name === 'Spec'),
 			titleMd: undefined,
 			titleHtml: undefined,
 		});

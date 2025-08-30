@@ -25,6 +25,7 @@ export default class AbstractFeature {
 
 		this.defineProperties({
 			parent,
+			spec: this.closest(f => f.constructor.name === 'Spec'),
 		});
 
 		this.title = def.title;
