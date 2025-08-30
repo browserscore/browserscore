@@ -93,7 +93,7 @@
 	margin-block: .3em;
 }
 
-.feature-children > .feature {
+.feature-group:not([data-level="0"], [data-level="1"]) > .feature-children {
 	margin-block: .3em;
 	margin-inline-start: 2em;
 	font-size: max(var(--font-size-xs), 85%);
