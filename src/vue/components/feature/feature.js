@@ -1,5 +1,5 @@
 /**
- * Component to render a feature or feature group or spec
+ * Component to render one AbstractFeature instance (feature, feature group, spec, etc.)
  */
 import { IS_DEV, passclass, groupBy } from '../../../util.js';
 
@@ -28,7 +28,6 @@ export default {
 		return {
 			open: false,
 			everOpened: false,
-			renderedChildren: []
 		};
 	},
 
@@ -48,7 +47,11 @@ export default {
 			if (this.groupBy) {
 				return groupBy(this.feature.children, this.groupBy);
 			}
-		}
+		},
+
+		renderedChildren () {
+			return this.everOpened ? this.feature.children : [];
+		},
 	},
 
 	methods: {
@@ -76,14 +79,4 @@ export default {
 			return this.groupTitle[type] ?? type;
 		},
 	},
-
-	watch: {
-		everOpened: {
-			handler (newVal) {
-				if (newVal) {
-					this.renderedChildren = this.feature.children;
-				}
-			},
-		},
-	}
 };
