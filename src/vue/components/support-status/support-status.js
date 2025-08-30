@@ -9,6 +9,10 @@ const template = `
 	<polyline v-if="score.value >= 1" class="check" points="33,50 46,65 68,36" />
 	<use v-else-if="score.value === 0" href="ui/icons/x.svg#x" width="100%" height="100%" class="x" />
 	<circle v-else cx="50" cy="50" r="45" class="partial" />
+	<text v-if="score.value > 0 && score.value < 1" class="percentage" x="52" y="50" dy=".1em">
+		{{ round(score.value * 100) }}
+		<tspan class="percent">﹪</tspan>
+	</text>
 </svg>
 <span v-else class="icon" style="--icon: var(--icon-warning)" :title="tooltip"></span>
 `;

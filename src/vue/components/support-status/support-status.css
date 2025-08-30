@@ -12,6 +12,8 @@
 	stroke-linecap: round;
 	stroke-linejoin: round;
 	flex-shrink: 0;
+	container: support-status / inline-size;
+	font-kerning: normal;
 
 	.check {
 		stroke: var(--_progress-color);
@@ -39,5 +41,37 @@
 	circle.partial {
 		stroke-dasharray: calc(var(--_perimeter) * 1px);
 		stroke-dashoffset: calc(var(--_perimeter) * 1px * (1 - var(--progress, 0)/100));
+	}
+
+	.percentage {
+		display: none;
+		text-anchor: middle;
+		dominant-baseline: middle;
+		font-size: 82%;
+		font-weight: 650;
+
+		letter-spacing: -.04em;
+		word-spacing: -.22em;
+		fill: color-mix(in oklab, var(--_progress-color) 70%, currentColor);
+
+		.percent {
+			font-size: 80%;
+			opacity: .9;
+			fill: color-mix(in oklab, var(--_progress-color) 80%, currentColor);
+		}
+	}
+}
+
+@media (min-width: 30px) {
+	/* Standalone SVG */
+	svg:root .progress .percentage {
+		display: block;
+	}
+}
+
+@container (min-width: 30px) {
+	/* Inline SVG */
+	html:root .progress .percentage {
+		display: block;
 	}
 }
