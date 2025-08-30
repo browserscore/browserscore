@@ -38,3 +38,18 @@ export function percent(value, maxDecimals = 0) {
 		maximumFractionDigits: maxDecimals,
 	});
 }
+
+export function groupBy (arr, fn) {
+	let grouped = {};
+	let isString = typeof fn === 'string';
+
+	for (let item of arr) {
+		let key = isString ? item[fn] : fn(item);
+		grouped[key] = grouped[key] || [];
+		grouped[key].push(item);
+	}
+
+
+	return grouped;
+}
+

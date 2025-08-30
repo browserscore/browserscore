@@ -1,5 +1,22 @@
-.feature,
-.spec {
+.feature {
+	small {
+		display: block;
+		opacity: .8;
+	}
+
+	.count {
+		display: inline-flex;
+		background: light-dark(color-mix(in oklab, var(--color), white 80%), oklch(from var(--color) calc(l * .85) c h));
+		padding: 0 .3em;
+		min-width: 2em;
+		line-height: 1.8;
+		border-radius: 4em;
+		align-items: center;
+		justify-content: center;
+		font-size: clamp(var(--font-size-xs), 85%, var(--font-size-m));
+		font-weight: bold;
+	}
+
 	.title {
 		flex: 1;
 
@@ -8,16 +25,14 @@
 		}
 	}
 
-	summary .badge {
-		transition: opacity 100ms 100ms;
-	}
-
-	:is(&, summary):not(:hover, :focus-within, :target) .badge:not(.primary) {
-		opacity: 0;
+	.meta {
+		display: flex;
+		gap: .2em;
+		align-items: center;
 	}
 }
 
-.spec {
+.feature-group[data-level="0"] {
 	padding-block-start: 2rem;
 
 	> summary {
@@ -30,6 +45,10 @@
 			margin: 0;
 			font-size: inherit;
 		}
+
+		.title {
+			font-weight: bold;
+		}
 	}
 
 	section h2 {
@@ -40,7 +59,7 @@
 	}
 }
 
-.feature {
+.feature:not([data-level="0"] > *) {
 	color-scheme: dark;
 	display: flex;
 	gap: .5em;
@@ -52,6 +71,14 @@
 	position: relative;
 	--progress-color: oklch(from var(--color) calc(l + 0.4) 0 0);
 
+	.badge {
+		transition: opacity 100ms 100ms;
+	}
+
+	&:not(:hover, :focus-within, :target) .badge {
+		opacity: 0;
+	}
+
 	.progress {
 		height: 1.2lh;
 
@@ -61,24 +88,13 @@
 	}
 }
 
-.feature {
-	white-space: pre;
-	white-space: break-spaces;
-}
-
 .feature-group,
-.feature:not(.feature-group > *) {
+.feature-children > .feature {
 	margin-block: .3em;
 }
 
-.feature-group > :not(summary),
-li.feature {
+.feature-children > .feature {
 	margin-block: .3em;
 	margin-inline-start: 2em;
 	font-size: max(var(--font-size-xs), 85%);
-}
-
-.feature small {
-	display: block;
-	opacity: .8;
 }

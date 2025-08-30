@@ -1,4 +1,7 @@
-import { IS_DEV, passclass } from '../../../util.js';
+/**
+ * Component to render a feature or feature group or spec
+ */
+import { IS_DEV, passclass, groupBy } from '../../../util.js';
 
 export default {
 	props: {
@@ -6,6 +9,19 @@ export default {
 			type: Object,
 			required: true,
 		},
+
+		groupBy: {
+			type: [String, Function],
+		},
+
+		groupTitle: {
+			type: [Function, Object],
+		},
+
+		level: {
+			type: Number,
+			default: 0,
+		}
 	},
 
 	data () {
@@ -27,6 +43,14 @@ export default {
 
 	template: "#feature-component-template",
 
+	computed: {
+		groupedChildren () {
+			if (this.groupBy) {
+				return groupBy(this.feature.children, this.groupBy);
+			}
+		}
+	},
+
 	methods: {
 		passclass,
 
@@ -38,6 +62,18 @@ export default {
 				this.everOpened = true;
 			}
 
+		},
+
+		getGroupTitle (type) {
+			if (!this.groupTitle) {
+				return type;
+			}
+
+			if (typeof this.groupTitle === 'function') {
+				return this.groupTitle(type) ?? type;
+			}
+
+			return this.groupTitle[type] ?? type;
 		},
 	},
 
