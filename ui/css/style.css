@@ -52,6 +52,19 @@ code {
 	font-family: var(--font-mono);
 }
 
+fieldset {
+	border: .15em solid var(--color-border);
+	border-radius: .5em;
+	padding: .5em 1em 1.25em;
+	margin-block-end: 1em;
+
+	legend {
+		padding-inline: .5em;
+		font-weight: 600;
+		color: var(--color-text-soft);
+	}
+}
+
 input, select, textarea, button {
 	font: inherit;
 	padding: .2em .3em;
