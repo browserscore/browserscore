@@ -93,31 +93,32 @@
 			<bs-filter label="Type" v-model="filter.type" with-empty :values="featureTypes" :get-label="(id, type) => featureTypeTitles[id] || capitalize(id)"></bs-filter>
 		</fieldset>
 
-		<section>
-			<h1>
-				{{ score?.children.length }} specs
-			</h1>
-			<fieldset class="filters">
-				<legend>Filter</legend>
-				<bs-filter label="Status" v-model="filter.status"
-				           :values="{'': 'Any except legacy', 'all': 'Any', 'stable': 'Stable', 'experimental': 'Experimental'}"></bs-filter>
-				<bs-filter label="Snapshot" v-model="filter.snapshot" with-empty :values="snapshots"></bs-filter>
-				<bs-filter label="Standards group" v-model="filter.group" with-empty
-				           :values="groups" :get-label="(id, group) => group?.title || id || group"></bs-filter>
+		<fieldset class="filters">
+			<legend>Filter specs</legend>
+			<bs-filter label="Status" v-model="filter.status"
+					   :values="{'': 'Any except legacy', 'all': 'Any', 'stable': 'Stable', 'experimental': 'Experimental'}"></bs-filter>
+			<bs-filter label="Snapshot" v-model="filter.snapshot" with-empty :values="snapshots"></bs-filter>
+			<bs-filter label="Standards group" v-model="filter.group" with-empty
+					   :values="groups" :get-label="(id, group) => group?.title || id || group"></bs-filter>
 
-				<bs-filter v-if="filter.group === 'csswg'" label="CSS level" v-model="filter.version" with-empty :values="[2.2, 3, 4, 5, 6]"></bs-filter>
-			</fieldset>
-			<ul id="specsTested">
-				<li v-for="spec in specs" :key="spec.id" :class="passclass({
-					passed: spec.score.passed,
-					total: spec.score.total,
-				})">
-					<support-status :score="spec.score"></support-status>
-					<a :href="`#${spec.id}`">{{ spec.title }}</a>
-				</li>
-			</ul>
-			<p>Want more tests? <a href="https://github.com/LeaVerou/css3test" target="_blank">Be my guest!</a></p>
-		</section>
+			<bs-filter v-if="filter.group === 'csswg'" label="CSS level" v-model="filter.version" with-empty :values="[2.2, 3, 4, 5, 6]"></bs-filter>
+
+			<details>
+				<summary>Showing <strong v-text="score?.children.length"></strong> specs</summary>
+
+				<ul id="specsTested">
+					<li v-for="spec in specs" :key="spec.id" :class="passclass({
+						passed: spec.score.passed,
+						total: spec.score.total,
+					})">
+						<support-status :score="spec.score"></support-status>
+						<a :href="`#${spec.id}`">{{ spec.title }}</a>
+					</li>
+				</ul>
+			</details>
+		</fieldset>
+
+		<p>Want more tests? <a href="https://github.com/LeaVerou/css3test" target="_blank">Be my guest!</a></p>
 
 		<footer>
 			<p>
