@@ -124,7 +124,7 @@ export default {
 		},
 
 		isCollapsible () {
-			return this.level > 0 && this.feature.children?.length > 0;
+			return this.feature.constructor.name === 'Spec' || (this.level > 0 && this.feature.children?.length > 0);
 		}
 	},
 
