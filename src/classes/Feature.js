@@ -25,6 +25,14 @@ export default class Feature extends AbstractFeature {
 	 */
 	static children = {tests: {single: 'id'}};
 
+	static filters = {
+		type: {
+			matches (filter) {
+				return filter.type === this.type;
+			},
+		},
+	}
+
 	constructor (def, parent, group) {
 		super(def, parent);
 		this.type = def.type ?? group?.type ?? parent?.type;
@@ -315,13 +323,7 @@ export default class Feature extends AbstractFeature {
 		this.score.recalc();
 	}
 
-	matchesFilter (filter) {
-		if (filter.type && this.type && (this.type !== filter.type)) {
-			return false;
-		}
 
-		return true;
-	}
 }
 
 function getMdnLink (mdn, feature, mdnGroup) {

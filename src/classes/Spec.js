@@ -40,6 +40,56 @@ export default class Spec extends AbstractFeature {
 
 	static featureTypes = featureTypes;
 
+	static filters = {
+		spec: {
+			matches(filter) {
+				return this.id.startsWith(filter.spec);
+			},
+		},
+		status: {
+			matches(filter) {
+				return filter.status === 'all' || filter.status === this.status;
+			},
+		},
+		version: {
+			matches(filter) {
+				return filter.version === this.version;
+			},
+		},
+		group: {
+			matches(filter) {
+				return filter.group === this.group?.id;
+			},
+		},
+		org: {
+			matches(filter) {
+				return filter.org === this.org?.id;
+			},
+		},
+		snapshot: {
+			matches(filter) {
+				if (!this.firstSnapshot || this.firstSnapshot > filter.snapshot) {
+					return false;
+				}
+
+				if (this.lastSnapshot && this.lastSnapshot < filter.snapshot) {
+					return false;
+				}
+
+				return true;
+			},
+			type: 'number',
+			min: 2007,
+			max: new Date().getFullYear(),
+		},
+		version: {
+			matches(filter) {
+				return filter.version === this.version;
+			},
+			type: 'number',
+		},
+	}
+
 	constructor (def, parent) {
 		super(def, parent);
 
@@ -148,41 +198,12 @@ export default class Spec extends AbstractFeature {
 	}
 
 	matchesFilter (filter) {
-		if (filter.spec && !this.id.startsWith(filter.spec)) {
-			return false;
-		}
-
-		if (statuses.has(filter.status) && this.status !== filter.status) {
-			return false;
-		}
-
 		// Loose == intentional
 		if (filter.status === '' && this.version == 2.2 && this.id.startsWith('css')) {
 			// Currently the only legacy spec is CSS 2.2
 			return false;
 		}
 
-		// Loose != intentional
-		if (filter.version && this.version != filter.version) {
-			return false;
-		}
-
-		for (let key of ['group', 'org']) {
-			if (filter[key] && this[key]?.id !== filter[key]) {
-				return false;
-			}
-		}
-
-		if (filter.snapshot) {
-			if (!this.firstSnapshot || this.firstSnapshot > filter.snapshot) {
-				return false;
-			}
-
-			if (this.lastSnapshot && this.lastSnapshot < filter.snapshot) {
-				return false;
-			}
-		}
-
-		return true;
+		return super.matchesFilter(filter);
 	}
 }

@@ -177,7 +177,52 @@ export default class AbstractFeature {
 	}
 
 	matchesFilter (filter) {
-		// To be overridden by subclasses
+		let allFilters = this.constructor.allFilters;
+
+		for (let key in filter) {
+			if (!allFilters[key] || !filter[key]) {
+				continue;
+			}
+
+			if (!allFilters[key]?.matches.call(this, filter)) {
+				return false;
+			}
+		}
+
 		return true;
+	}
+
+	/** Get base class this extends from */
+	static get parent () {
+		if (this === AbstractFeature) {
+			return null;
+		}
+
+		return Object.getPrototypeOf(this);
+	}
+
+	/** Get all classes this extends from */
+	static get ancestors () {
+		let ret = [];
+		let current = this;
+
+		// Walk up until we reach AbstractFeature
+		do {
+			current = current.parent;
+			ret.unshift(current); // put subclasses at the end
+		} while (current && current !== AbstractFeature);
+
+		return ret;
+	}
+
+	static get allFilters () {
+		return [...this.ancestors, this].reduce((acc, curr) => {
+			if (!Object.hasOwn(curr, 'filters')) {
+				return acc;
+			}
+
+			Object.assign(acc, curr.filters);
+			return acc;
+		}, {});
 	}
 }
