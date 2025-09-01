@@ -21,18 +21,17 @@ function getInterfaceFromRules(rules, interfaceName) {
 
 let instances = {};
 
-export function isSupported (interfaceNameOrProto, name) {
-	let prototype = typeof interfaceNameOrProto === 'string' ? window[interfaceNameOrProto]?.prototype : interfaceNameOrProto;
-
-	if (!prototype) {
-		return false;
-	}
-
-	if (name in prototype) {
+export function isSupported (object, name) {
+	if (name in object) {
 		return true;
 	}
 
-	return isSupported(Object.getPrototypeOf(prototype), name);
+	// Check parent classes
+	let parent = Object.getPrototypeOf(object);
+	if (!parent || parent === Object.prototype) {
+		return false;
+	}
+	return isSupported(parent, name);
 }
 
 export function getInstance (name, testCss, fn) {
@@ -64,7 +63,7 @@ export function getInstance (name, testCss, fn) {
 	}
 }
 
-export default function attributeOrMethod (interfaceName, name, testCss, interfaceCallback) {
+export default function member (interfaceName, name, testCss, interfaceCallback) {
 	let interfaceSupported = supportsInterface(interfaceName);
 
 	if (!interfaceSupported.success) {
@@ -72,7 +71,9 @@ export default function attributeOrMethod (interfaceName, name, testCss, interfa
 	}
 
 	let resolvedInterfaceName = interfaceSupported.name;
-	let prefix = prefixes.find(prefix => isSupported(resolvedInterfaceName, prefixName(prefix, name)));
+	let object = window[resolvedInterfaceName]?.prototype ?? window[resolvedInterfaceName];
+
+	let prefix = prefixes.find(prefix => isSupported(object, prefixName(prefix, name)));
 
 	if (prefix !== undefined) {
 		return {success: true, prefix};
@@ -87,7 +88,6 @@ export default function attributeOrMethod (interfaceName, name, testCss, interfa
 
 	prefix = prefixes.find(prefix => isSupported(instance, prefixName(prefix, name)));
 	let success = prefix !== undefined;
-
 	return {
 		success,
 		prefix,

@@ -1,6 +1,6 @@
 import Feature from '../Feature.js';
 import supportsInterface from '../../supports/interface.js';
-import supportsAttributeOrMethod from '../../supports/attributeOrMethod.js';
+import supportsAttributeOrMethod from '../../supports/member.js';
 
 export class InterfacePropertyFeature extends Feature {
 	leafTest () {
@@ -14,7 +14,7 @@ export class InterfacePropertyFeature extends Feature {
 
 export default class InterfaceFeature extends Feature {
 	static children = {
-		tests: { type: InterfacePropertyFeature }
+		tests: { type: InterfacePropertyFeature },
 	}
 	static gatingTest = true;
 
