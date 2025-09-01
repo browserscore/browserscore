@@ -270,10 +270,6 @@ export default {
 				'delete',
 				'size',
 			],
-			required: '@font-feature-values Font One { @styleset { nice-style: 12; } }',
-			interface: function(style) {
-				return style.sheet.cssRules[0].styleset;
-			},
 		},
 		CSSFontPaletteValuesRule: {
 			link: '#om-fontpalettevalues',

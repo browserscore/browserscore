@@ -34,15 +34,6 @@ export default {
 			link: '#the-CSSAnimation-interface',
 			mdnGroup: 'DOM',
 			tests: ['animationName'],
-			required: '@keyframes slide-in { 0% { transform: translateY(-1000px); } 100% { transform: translateY(0); } } .animate { animation: slide-in 0.7s both; }',
-			interface: function(style) {
-				var div = document.createElement('div');
-				div.className = 'animate';
-				body.append(div);
-				var animations = div.getAnimations && div.getAnimations();
-				div.remove();
-				return animations.length > 0 && animations[0];
-			}
 		},
 	},
 };

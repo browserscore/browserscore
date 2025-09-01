@@ -93,7 +93,7 @@ export default {
 			link: '#interface-globaleventhandlers',
 			mdnGroup: 'DOM',
 			tests: ['onanimationstart', 'onanimationiteration', 'onanimationend', 'onanimationcancel'],
-			interface: function(style) {
+			interface: function() {
 				return document.body;
 			},
 		}
