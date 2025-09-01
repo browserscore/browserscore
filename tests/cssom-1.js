@@ -51,17 +51,11 @@ export default {
 				'replace',
 				'replaceSync',
 			],
-			interface: function(style) {
-				return style.sheet;
-			}
 		},
 		StyleSheetList: {
 			link: '#the-stylesheetlist-interface',
 			mdnGroup: 'DOM',
 			tests: ['item', 'length'],
-			interface: function() {
-				return document.styleSheets;
-			}
 		},
 		Document: {
 			link: '#extensions-to-the-document-or-shadow-root-interface',
@@ -91,17 +85,11 @@ export default {
 			link: '#the-medialist-interface',
 			mdnGroup: 'DOM',
 			tests: ['mediaText', 'length', 'item', 'appendMedium', 'deleteMedium'],
-			interface: function(style) {
-				return style.sheet.media;
-			}
 		},
 		CSSRuleList: {
 			link: '#the-cssrulelist-interface',
 			mdnGroup: 'DOM',
 			tests: ['item', 'length'],
-			interface: function(style) {
-				return style.sheet.cssRules;
-			}
 		},
 		CSSRule: {
 			link: '#the-cssrule-interface',
@@ -134,16 +122,12 @@ export default {
 				'parentRule',
 				'parentStyleSheet',
 			],
-			required: 'div { }',
 		},
-		/* Doesn't currently work because style sheet is only available once imported
 		CSSImportRule: {
 			link: '#the-cssimportrule-interface',
 			mdnGroup: 'DOM',
 			tests: ['href', 'media', 'styleSheet'],
-			required: '@import url("foo.css");',
 		},
-		*/
 		CSSGroupingRule: {
 			link: '#the-cssgroupingrule-interface',
 			mdnGroup: 'DOM',
@@ -160,19 +144,16 @@ export default {
 			link: '#the-csspagerule-interface',
 			mdnGroup: 'DOM',
 			tests: ['selectorText', 'style', 'cssRules', 'insertRule', 'deleteRule'],
-			required: '@page { }',
 		},
 		CSSMarginRule: {
 			link: '#the-cssmarginrule-interface',
 			mdnGroup: 'DOM',
 			tests: ['selectorText', 'style', 'cssText', 'parentRule', 'parentStyleSheet'],
-			required: '@page { @top-left { content: "foo"; } }',
 		},
 		CSSNamespaceRule: {
 			link: '#the-cssnamespacerule-interface',
 			mdnGroup: 'DOM',
 			tests: ['namespaceURI', 'prefix', 'cssText', 'parentRule', 'parentStyleSheet'],
-			required: '@namespace svg url("http://www.w3.org/2000/svg");',
 		},
 		CSSStyleDeclaration: {
 			link: '#the-cssstyledeclaration-interface',
