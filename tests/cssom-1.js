@@ -188,9 +188,8 @@ export default {
 				'parentRule',
 				'cssFloat'
 			],
-			required: 'div { color: red; }',
-			interface: function(style) {
-				return style.sheet.cssRules[0].style;
+			interface: function() {
+				return document.body.style;
 			}
 		},
 	},
