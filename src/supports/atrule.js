@@ -46,11 +46,11 @@ export function isSupported (atrule, { parent, contentBefore = '' } = {}) {
 		let codeWithout = parent ? `${parent.resolved} { ${contentBefore} }` : contentBefore;
 
 		styleElement.textContent = codeWithout;
-		let obj = parent ? styleElement.sheet.cssRules[0] : styleElement.sheet.cssRules[0];
-		let cssTextWithout = obj.cssText;
+
+		let cssTextWithout = styleElement.sheet.cssRules[0].cssText;
 
 		styleElement.textContent = code;
-		let cssText = obj.cssText;
+		let cssText = styleElement.sheet.cssRules[0].cssText;
 
 		return cssText !== cssTextWithout;
 	}
@@ -111,7 +111,7 @@ export default function supportsAtrule (atrule, {parent: parentRule, contentBefo
 
 	success ??= false;
 
-	return {success, prefix, instance: instances[atrule], resolved};
+	return {success, prefix, instance: instances[atrule], resolved: success ? resolved : atrule};
 }
 
 function prefixAtrule (atrule, prefix = '') {
