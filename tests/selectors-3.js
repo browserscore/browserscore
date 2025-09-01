@@ -13,19 +13,15 @@ export default {
 		},
 		'::before': {
 			link: '#gen-content',
-			tests: '::before',
 		},
 		'::after': {
 			link: '#gen-content',
-			tests: '::after',
 		},
 		'::first-letter': {
 			link: '#first-letter',
-			tests: '::first-letter',
 		},
 		'::first-line': {
 			link: '#first-line',
-			tests: '::first-line',
 		},
 		'[att^=val]': {
 			link: '#attribute-substrings',
@@ -49,27 +45,21 @@ export default {
 		},
 		':target': {
 			link: '#target-pseudo',
-			tests: ':target',
 		},
 		':enabled': {
 			link: '#enableddisabled',
-			tests: ':enabled',
 		},
 		':disabled': {
 			link: '#enableddisabled',
-			tests: ':disabled',
 		},
 		':checked': {
 			link: '#checked',
-			tests: ':checked',
 		},
 		':indeterminate': {
 			link: '#indeterminate',
-			tests: ':indeterminate',
 		},
 		':root': {
 			link: '#root-pseudo',
-			tests: ':root',
 		},
 		':nth-child()': {
 			link: '#nth-child-pseudo',
@@ -145,27 +135,21 @@ export default {
 		},
 		':last-child': {
 			link: '#last-child-pseudo',
-			tests: ':last-child',
 		},
 		':only-child': {
 			link: '#only-child-pseudo',
-			tests: ':only-child',
 		},
 		':first-of-type': {
 			link: '#first-of-type-pseudo',
-			tests: ':first-of-type',
 		},
 		':last-of-type': {
 			link: '#last-of-type-pseudo',
-			tests: ':last-of-type',
 		},
 		':only-of-type': {
 			link: '#only-of-type-pseudo',
-			tests: ':only-of-type',
 		},
 		':empty': {
 			link: '#empty-pseudo',
-			tests: ':empty',
 		},
 		':not()': {
 			link: '#negation',
