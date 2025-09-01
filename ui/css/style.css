@@ -66,6 +66,10 @@ fieldset {
 	}
 }
 
+aside fieldset {
+	margin-block: 1em;
+}
+
 input, select, textarea, button {
 	font: inherit;
 	padding: .2em .3em;

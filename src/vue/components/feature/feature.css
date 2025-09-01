@@ -32,7 +32,7 @@
 	}
 }
 
-.feature-group[data-level="1"] {
+.spec {
 	padding-block-start: 2rem;
 
 	> summary {
@@ -50,16 +50,16 @@
 			font-weight: bold;
 		}
 	}
-
-	section h2 {
-		color: var(--color-text-soft);
-		font-size: var(--font-size-l);
-		font-weight: bold;
-		text-transform: capitalize;
-	}
 }
 
-.feature:not([data-level="0"], [data-level="1"]) {
+.group-title {
+	color: var(--color-text-soft);
+	font-size: var(--font-size-l);
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+.feature:not(.spec > *) {
 	color-scheme: dark;
 	display: flex;
 	gap: .5em;

@@ -22,7 +22,7 @@
 </h1>
 
 <template id="feature-component-template">
-	<wrap-if v-if="!isEmpty" :is="isCollapsible ? 'details' : ''" class="feature-group" :data-level="level" :key="feature.uid" :id="feature.htmlId" ref="details" @toggle="handleToggle" :open="level === 1" ref="details">
+	<wrap-if v-if="!isEmpty" :is="isCollapsible ? 'details' : ''" class="feature-group" :class="{spec: isSpec}" :data-level="level" :key="feature.uid" :id="feature.htmlId" ref="details" @toggle="handleToggle" :open="isSpec" ref="details">
 		<component v-if="level > 0" :is="isCollapsible ? 'summary' : 'article'" class="feature" :class="passclass(feature.score)" :data-level="level" ref="container">
 			<support-status :score="feature.score"></support-status>
 			<wrap-if :is="level > 0 ? '' : 'h1'" class="title">
@@ -45,13 +45,17 @@
 			<span class="prefix" v-if="feature.result?.prefix">{{ feature.result.prefix }}</span>
 			<span class="note" v-if="feature.result?.note">{{ feature.result.note }}</span>
 		</component>
+
 		<section v-if="groupedChildren" v-for="features, key in groupedChildren" :key="feature.getUid('.', key)">
-			<h2 v-text="getGroupTitle(key)"></h2>
+			<h2 class="group-title" v-text="getGroupTitle(key)"></h2>
+			<div class="group-children feature-children">
 			<bs-feature v-for="f in features" :feature="f" :key="feature.getUid('.', key)" :level="level + 1" :group-by="childGroupBy" :filter="childFilter"></bs-feature>
+			</div>
 		</section>
 		<div v-else class="feature-children">
 			<bs-feature v-for="child, index of renderedChildren" :feature="child" :key="feature.getUid('.', index)" :level="level + 1" :group-by="childGroupBy" :filter="childFilter"></bs-feature>
 		</div>
+
 	</wrap-if>
 
 </template>
@@ -80,12 +84,24 @@
 			</div>
 		</header>
 		<section id="all">
-			<bs-feature :feature="root" ref="root" :filter="filter" :group-by="{key: 'type', titles: featureTypeTitles, level: 1}" @update:score="score = $event"></bs-feature>
+			<bs-feature :feature="root" ref="root" :filter="filter" :group-by="rootGroupBy" @update:score="score = $event"></bs-feature>
 		</section>
 	</main>
 
 	<aside>
 		<carbon-ads params="zoneid=1673&serve=C6AILKT&placement=css3testcom"></carbon-ads>
+
+		<fieldset>
+			<legend>Group by</legend>
+			<label>
+				<input type="checkbox" name="groupby" v-model="groupBy" value="spec">
+				Spec
+			</label>
+			<label>
+				<input type="checkbox" name="groupby" v-model="groupBy" value="type">
+				Type
+			</label>
+		</fieldset>
 
 		<fieldset class="filters">
 			<legend>Filter features</legend>

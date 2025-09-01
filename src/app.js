@@ -10,14 +10,16 @@ import { titles as featureTypeTitles } from './features.js';
 // Vue components
 import * as components from './vue/components/index.js';
 
-let root = new AbstractFeature();
+let specRoot = new AbstractFeature();
+let featureRoot = new AbstractFeature();
 
 for (let key in specs) {
 	let spec = specs[key];
-	spec = new Spec(spec, root);
+	spec = new Spec(spec, specRoot);
+	featureRoot.children.push(...spec.children);
 }
 
-root.children = [...Spec.all].sort((a, b) => a.title.localeCompare(b.title));
+specRoot.children = [...Spec.all].sort((a, b) => a.title.localeCompare(b.title));
 
 // Components available in every component
 let globalComponents = {
@@ -56,7 +58,7 @@ for (let param in defaultFilter) {
 let appSpec = {
 	data() {
 		return {
-			root,
+			root: specRoot,
 
 			/**
 			 * All specs as dictionary
@@ -64,6 +66,7 @@ let appSpec = {
 			 */
 			allSpecs: Spec.byId,
 			filter,
+			groupBy: ['spec', 'type'],
 			// TODO move this to Score
 			testTime: 0,
 			favicon: '',
@@ -112,6 +115,14 @@ let appSpec = {
 			let firstSnapshot = 2007;
 			return Array(this.currentYear - firstSnapshot).fill(0).map((_, i) => firstSnapshot + i);
 		},
+
+		rootGroupBy () {
+			if (this.groupBy.includes('type')) {
+				return {key: 'type', titles: featureTypeTitles, level: this.groupBy.includes('spec') ? 1 : 0}
+			}
+
+			return null;
+		},
 	},
 
 	methods: {
@@ -147,6 +158,12 @@ let appSpec = {
 				let newUrl = location.pathname + '?' + urlParams + location.hash;
 
 				history.replaceState({}, '', newUrl);
+			},
+		},
+
+		groupBy: {
+			handler() {
+				this.root = this.groupBy.includes('spec') ? specRoot : featureRoot;
 			},
 		},
 

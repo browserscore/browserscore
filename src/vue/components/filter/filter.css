@@ -2,7 +2,6 @@
 	display: flex;
 	flex-flow: column;
 	gap: .8em;
-	margin-block: 1em;
 }
 
 .filter {

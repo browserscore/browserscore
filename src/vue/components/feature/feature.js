@@ -117,14 +117,18 @@ export default {
 
 		groupedChildren () {
 			if (this.computedGroupBy) {
-				if (this.computedGroupBy.level === this.level) {
+				if (this.computedGroupBy.level === this.level || this.computedGroupBy.level === undefined) {
 					return groupBy(this.renderedChildren, this.computedGroupBy.key);
 				}
 			}
 		},
 
+		isSpec () {
+			return this.feature.constructor.name === 'Spec';
+		},
+
 		isCollapsible () {
-			return this.feature.constructor.name === 'Spec' || (this.level > 0 && this.feature.children?.length > 0);
+			return this.isSpec || (this.level > 0 && this.feature.children?.length > 0);
 		}
 	},
 
