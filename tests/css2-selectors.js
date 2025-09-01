@@ -24,7 +24,8 @@ export default {
 			link: '#child-selectors',
 			tests: 'div > p',
 		},
-		'Adjacent sibling selector': {
+		'e + f': {
+			title: 'Adjacent sibling combinator',
 			link: '#adjacent-selectors',
 			tests: 'div + p',
 		},

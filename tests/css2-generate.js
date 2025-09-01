@@ -83,11 +83,9 @@ export default {
 	selectors: {
 		':before': {
 			link: '#before-after-content',
-			tests: ':before',
 		},
 		':after': {
 			link: '#before-after-content',
-			tests: ':after',
 		},
 	},
 };
