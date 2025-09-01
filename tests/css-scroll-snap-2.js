@@ -55,15 +55,12 @@ export default {
 				mdnGroup: 'DOM',
 			},
 			tests: ['snapTargetBlock', 'snapTargetInline'],
-			interface: function() {
-				return new SnapEvent('scrollsnapchange');
-			},
 		},
 		Element: {
 			link: '#interface-globaleventhandlers',
 			mdnGroup: 'DOM',
 			tests: ['onsnapchanged', 'onsnapchanging'],
-			interface: function(style) {
+			interface: function() {
 				return document.body;
 			},
 		}

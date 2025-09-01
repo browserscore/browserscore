@@ -33,12 +33,6 @@ export default {
 				'entries',
 				'forEach',
 			],
-			interface: function(style) {
-				var range = new Range();
-				range.setStart(document.body, 10);
-				range.setEnd(document.body, 20);
-				return new Highlight(range);
-			}
 		},
 	}
 };
