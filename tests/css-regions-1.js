@@ -35,10 +35,8 @@ export default {
 			}
 		},
 		NamedFlowMap: {
-			links: {
-				dev: '#namedflowmap',
-				mdnGroup: 'DOM',
-			},
+			link: '#namedflowmap',
+			mdnGroup: 'DOM',
 			tests: [
 				'has',
 				'get',
@@ -53,10 +51,8 @@ export default {
 			}
 		},
 		NamedFlow: {
-			links: {
-				dev: '#namedflow',
-				mdnGroup: 'DOM',
-			},
+			link: '#namedflow',
+			mdnGroup: 'DOM',
 			tests: [
 				'name',
 				'overset',
@@ -65,7 +61,6 @@ export default {
 				'getContent',
 				'getRegionsByContent',
 			],
-			required: 'div { flow-from: --named-flow; }',
 			interface: function() {
 				return document.namedFlows.get('--named-flow');
 			}
