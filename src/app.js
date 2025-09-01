@@ -48,16 +48,14 @@ let defaultFilter = {
 	type: '',
 	status: '',
 };
-let filter = { ...defaultFilter };
-
-for (let param in defaultFilter) {
-	if (urlParams.has(param)) {
-		filter[param] = urlParams.get(param);
-	}
-}
+let defaultGroupBy = ['spec', 'type'];
 
 let appSpec = {
 	data() {
+		let filter = Object.assign({}, defaultFilter, urlParams.toJSON({properties: new Set(Object.keys(defaultFilter))}));
+		let groupBy = urlParams.getAll('groupby');
+		groupBy = groupBy.length > 0 ? groupBy : defaultGroupBy;
+
 		return {
 			root: specRoot,
 
@@ -67,7 +65,7 @@ let appSpec = {
 			 */
 			allSpecs: Spec.byId,
 			filter,
-			groupBy: ['spec', 'type'],
+			groupBy,
 			// TODO move this to Score
 			testTime: 0,
 			favicon: '',
@@ -173,6 +171,19 @@ let appSpec = {
 		groupBy: {
 			handler() {
 				this.root = this.groupBy.includes('spec') ? specRoot : featureRoot;
+
+				let groupBy = this.groupBy.filter(Boolean);
+				// We want to store the empty value as it's not the same as the default grouping
+				groupBy = groupBy.length === 0 ? [''] : groupBy;
+
+				if (groupBy.sort().toString() === defaultGroupBy.sort().toString()) {
+					this.urlParams.delete('groupby');
+				}
+				else {
+					this.urlParams.setAll('groupby', groupBy);
+				}
+
+				this.urlParamsObject = this.urlParams.toJSON();
 			},
 		},
 

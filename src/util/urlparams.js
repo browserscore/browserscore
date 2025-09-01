@@ -15,9 +15,14 @@ export default class URLParams extends URLSearchParams {
 	 * Get URL params as an object, with arrays for multiple values
 	 * @returns {Object}
 	 */
-	toJSON () {
+	toJSON (options = {}) {
+		let properties = options.properties ? new Set(options.properties) : null;
 		let ret = {};
 		for (let key of this.keys()) {
+			if (properties && !properties.has(key)) {
+				continue;
+			}
+
 			ret[key] = this.getAny(key);
 		}
 		return ret;
