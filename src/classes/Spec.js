@@ -148,6 +148,10 @@ export default class Spec extends AbstractFeature {
 	}
 
 	matchesFilter (filter) {
+		if (filter.spec && !this.id.startsWith(filter.spec)) {
+			return false;
+		}
+
 		if (statuses.has(filter.status) && this.status !== filter.status) {
 			return false;
 		}
