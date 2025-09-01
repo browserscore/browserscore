@@ -23,32 +23,9 @@ export default {
 			descriptors: ['margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left'],
 		},
 	},
-	xdescriptors: {
-		'@page/margin': {
-			link: '#page-box',
-			tests: ['2cm', '4%', 'auto'],
-		},
-		'@page/margin-top': {
-			link: '#page-box',
-			tests: ['2cm', '4%', 'auto'],
-		},
-		'@page/margin-right': {
-			link: '#page-box',
-			tests: ['2cm', '4%', 'auto'],
-		},
-		'@page/margin-bottom': {
-			link: '#page-box',
-			tests: ['2cm', '4%', 'auto'],
-		},
-		'@page/margin-left': {
-			link: '#page-box',
-			tests: ['2cm', '4%', 'auto'],
-		},
-	},
 	properties: {
 		orphans: {
 			link: '#break-inside',
-			tests: ['1', '2'],
 		},
 		'page-break-after': {
 			link: '#page-break-props',
@@ -64,7 +41,6 @@ export default {
 		},
 		widows: {
 			link: '#break-inside',
-			tests: ['1', '2'],
 		},
 	},
 };
