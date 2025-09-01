@@ -5,6 +5,7 @@ import { orgs, groups } from './data.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
 import { IS_DEV, passclass, round, percent, capitalize } from './util.js';
+import URLParams from './util/urlparams.js';
 import { titles as featureTypeTitles } from './features.js';
 
 // Vue components
@@ -35,7 +36,7 @@ let localComponents = {
 	"bs-filter": components.Filter,
 };
 
-let urlParams = new URLSearchParams(window.location.search);
+let urlParams = new URLParams();
 let defaultFilter = {
 	show: '',
 	q: '',
@@ -72,6 +73,8 @@ let appSpec = {
 			favicon: '',
 			mounted: false,
 			score: null,
+			urlParams,
+			urlParamsObject: urlParams.toJSON(),
 		};
 	},
 
@@ -82,7 +85,6 @@ let appSpec = {
 			featureTypes: Spec.featureTypes,
 			featureTypeTitles,
 			currentYear: new Date().getFullYear(),
-			urlParams,
 			orgs,
 			groups,
 		});
@@ -141,23 +143,30 @@ let appSpec = {
 	},
 
 	watch: {
+		urlParamsObject: {
+			deep: true,
+			handler() {
+				// Update location
+				let newUrl = location.pathname + '?' + this.urlParams + location.hash;
+				history.replaceState({}, '', newUrl);
+			},
+		},
+
 		filter: {
 			deep: true,
 
 			handler() {
 				// Update address bar
 				for (let param in this.filter) {
-					if (this.filter[param]) {
-						urlParams.set(param, this.filter[param]);
+					if (this.filter[param] && this.filter[param] !== defaultFilter[param]) {
+						this.urlParams.set(param, this.filter[param]);
 					}
 					else {
-						urlParams.delete(param);
+						this.urlParams.delete(param);
 					}
 				}
 
-				let newUrl = location.pathname + '?' + urlParams + location.hash;
-
-				history.replaceState({}, '', newUrl);
+				this.urlParamsObject = this.urlParams.toJSON();
 			},
 		},
 
