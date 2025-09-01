@@ -23,12 +23,13 @@ export default {
 	},
 	interfaces: {
 		CSSFunctionRule: {
-			links: {
-				dev: '#cssfunctionrule',
-				mdnGroup: 'DOM',
-			},
+			link: '#the-function-interface',
+			mdnGroup: 'DOM',
 			tests: ['cssRules', 'insertRule', 'deleteRule'],
-			required: 'div { }',
 		},
+		CSSFunctionDeclarations: {
+			link: '#the-function-declarations-interface',
+			mdnGroup: 'DOM',
+		}
 	},
 };
