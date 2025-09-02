@@ -163,7 +163,7 @@ export default class AbstractFeature {
 	}
 
 	test () {
-		if (this.tested) {
+		if (this.score.isDone) {
 			return;
 		}
 

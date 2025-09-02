@@ -45,6 +45,10 @@ export default class Score {
 		return this.valueOf();
 	}
 
+	get isDone () {
+		return this.passedTests + this.failedTests >= this.totalTests;
+	}
+
 	/**
 	 * Percentage of passed features
 	 */
@@ -73,6 +77,14 @@ export default class Score {
 		}
 
 		this.parent?.recalc();
+	}
+
+	fail () {
+		this.set({failedTests: this.totalTests - this.passedTests});
+
+		for (let child of this.children) {
+			child.fail();
+		}
 	}
 
 	/**
