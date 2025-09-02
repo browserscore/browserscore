@@ -3,7 +3,7 @@
  */
 
 import Score from './Score.js';
-import { IS_DEV } from '../util.js';
+import { IS_DEV, symmetricDifference } from '../util.js';
 
 export default class AbstractFeature {
 	children = [];
@@ -180,11 +180,19 @@ export default class AbstractFeature {
 		let allFilters = this.constructor.allFilters;
 
 		for (let key in filter) {
-			if (!allFilters[key] || !filter[key]) {
+			let filterSpec = allFilters[key];
+
+			if (!filterSpec || !filter[key]) {
 				continue;
 			}
 
-			if (!allFilters[key]?.matches.call(this, filter)) {
+			if (Array.isArray(filterSpec.default) || Array.isArray(filter[key])) {
+				if (symmetricDifference(filterSpec.default, filter[key]).length === 0) {
+					continue;
+				}
+			}
+
+			if (!filterSpec.matches.call(this, filter)) {
 				return false;
 			}
 		}

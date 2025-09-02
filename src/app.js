@@ -4,7 +4,7 @@ import * as specs from './specs.js';
 import { orgs, groups } from './data.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
-import { IS_DEV, passclass, round, percent, capitalize } from './util.js';
+import { IS_DEV, passclass, round, percent, capitalize, symmetricDifference } from './util.js';
 import URLParams from './util/urlparams.js';
 import { titles as featureTypeTitles } from './features.js';
 
@@ -47,6 +47,7 @@ let defaultFilter = {
 	org: '',
 	type: '',
 	status: '',
+	supported: ['pass', 'partial', 'fail'],
 };
 let defaultGroupBy = ['spec', 'type'];
 
@@ -155,35 +156,56 @@ let appSpec = {
 
 			handler() {
 				// Update address bar
+				let changed = false;
+
 				for (let param in this.filter) {
-					if (this.filter[param] && this.filter[param] !== defaultFilter[param]) {
-						this.urlParams.set(param, this.filter[param]);
-					}
-					else {
+					let oldValue = this.urlParams.getAny(param);
+					let value = this.filter[param];
+					let defaultValue = defaultFilter[param];
+
+					if (symmetricDifference(value, defaultValue).length === 0) {
+						changed = this.urlParams.has(param);
 						this.urlParams.delete(param);
+					}
+					else if (symmetricDifference(value, oldValue).length > 0) {
+						changed = true;
+						this.urlParams.setAll(param, value);
 					}
 				}
 
-				this.urlParamsObject = this.urlParams.toJSON();
+				if (changed) {
+					this.urlParamsObject = this.urlParams.toJSON();
+				}
 			},
 		},
 
 		groupBy: {
-			handler() {
+			handler(groupBy, oldGroupBy) {
 				this.root = this.groupBy.includes('spec') ? specRoot : featureRoot;
 
-				let groupBy = this.groupBy.filter(Boolean);
+				groupBy = groupBy.filter(Boolean);
 				// We want to store the empty value as it's not the same as the default grouping
 				groupBy = groupBy.length === 0 ? [''] : groupBy;
 
-				if (groupBy.sort().toString() === defaultGroupBy.sort().toString()) {
+				if (symmetricDifference(groupBy, oldGroupBy).length === 0) {
+					// No change
+					return;
+				}
+
+				let changed = false;
+
+				if (symmetricDifference(groupBy, defaultGroupBy).length === 0) {
 					this.urlParams.delete('groupby');
+					changed = true;
 				}
 				else {
 					this.urlParams.setAll('groupby', groupBy);
+					changed = true;
 				}
 
-				this.urlParamsObject = this.urlParams.toJSON();
+				if (changed) {
+					this.urlParamsObject = this.urlParams.toJSON();
+				}
 			},
 		},
 

@@ -20,8 +20,6 @@ for (let type in supportsNames) {
 // Shorten the title by removing parentheticals, subheadings, and superfluous words
 const removedOther = / *(?:\([^)]*\)|:.*)( *)/g;
 
-const statuses = new Set(['stable', 'experimental']);
-
 export default class Spec extends AbstractFeature {
 	/** All specs as array
 	 * @type {Spec[]}
@@ -33,11 +31,6 @@ export default class Spec extends AbstractFeature {
 	 */
 	static byId = {};
 
-	/** All spec statuses
-	 * @type {Set<string>}
-	 */
-	static statuses = statuses;
-
 	static featureTypes = featureTypes;
 
 	static filters = {
@@ -48,8 +41,16 @@ export default class Spec extends AbstractFeature {
 		},
 		status: {
 			matches(filter) {
-				return filter.status === 'all' || filter.status === this.status;
+				if (this.status) {
+					return filter.status.includes(this.status);
+				}
+				else {
+					return filter.status.includes('');
+				}
 			},
+			multiple: true,
+			options: ['', 'stable', 'experimental', 'superseded'],
+			default: ['', 'stable', 'experimental']
 		},
 		version: {
 			matches(filter) {

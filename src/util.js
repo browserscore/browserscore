@@ -1,3 +1,6 @@
+import { toArray } from "./supports/util.js";
+export { toArray };
+
 export const IS_DEV = (location.hostname === 'localhost' || location.search.includes('env=dev')) && !location.search.includes('env=prod');
 const classes = ['epic-fail', 'fail', 'very-buggy', 'buggy', 'slightly-buggy', 'almost-pass', 'pass'];
 
@@ -41,6 +44,29 @@ export function percent(value, maxDecimals = 0) {
 
 export function capitalize (string) {
 	return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+export function symmetricDifference (a, b) {
+	a = toArray(a);
+	b = toArray(b);
+
+	let setA = new Set(a);
+	let setB = new Set(b);
+
+	return [
+		...a.filter(value => !setB.has(value)),
+		...b.filter(value => !setA.has(value)),
+	];
+}
+
+export function pick (obj, keys) {
+	let ret = {};
+	for (let key of keys) {
+		if (key in obj) {
+			ret[key] = obj[key];
+		}
+	}
+	return ret;
 }
 
 export function groupBy (arr, fn) {

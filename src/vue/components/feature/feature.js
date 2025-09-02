@@ -1,8 +1,10 @@
 /**
  * Component to render one AbstractFeature instance (feature, feature group, spec, etc.)
  */
-import { IS_DEV, passclass, groupBy, round, percent } from '../../../util.js';
+import { IS_DEV, passclass, groupBy, round, percent, symmetricDifference, pick } from '../../../util.js';
 import Score from '../../../classes/Score.js';
+import Spec from '../../../classes/Spec.js';
+import Feature from '../../../classes/Feature.js';
 
 export default {
 	props: {
@@ -35,7 +37,6 @@ export default {
 		return {
 			open: false,
 			everOpened: false,
-			filteredScore: null,
 		};
 	},
 
@@ -54,7 +55,19 @@ export default {
 
 	computed: {
 		hasFilter () {
-			return this.filter && Object.keys(this.filter).some(Boolean);
+			if (!this.filter) {
+				return false;
+			}
+
+			let filters = { ...Spec.allFilters, ...Feature.allFilters};
+
+			for (let key in filters) {
+				if (hasFilter(filters[key], this.filter[key])) {
+					return true;
+				}
+			}
+
+			return false;
 		},
 
 		isFiltered () {
@@ -68,6 +81,19 @@ export default {
 			}
 
 			return this.children.length === 0;
+		},
+
+		filteredScore (_, old) {
+			if (!this.hasFilter) {
+				return null;
+			}
+
+			if (old) {
+				old.node.children = [...this.children];
+				return old;
+			}
+
+			return new Score({children: [...this.children]});
 		},
 
 		score () {
@@ -95,11 +121,17 @@ export default {
 		},
 
 		childFilter () {
-			if (this.hasFilter && this.level < 3) {
-				return this.filter;
+			if (!this.hasFilter || this.level >= 3) {
+				return null;
 			}
 
-			return null;
+			if (this.feature.constructor.name === 'Spec') {
+				// We can only have Spec instances in one level,
+				// so we don't need to pass down those filters
+				return pick(this.filter, Object.keys(Feature.allFilters));
+			}
+
+			return this.filter;
 		},
 
 		children () {
@@ -111,7 +143,6 @@ export default {
 		},
 
 		renderedChildren () {
-			// return !this.isCollapsible || this.everOpened ? this.feature.children : [];
 			return !this.isCollapsible || this.everOpened ? this.children : [];
 		},
 
@@ -169,22 +200,10 @@ export default {
 	},
 
 	watch: {
-		isFiltered: {
-			handler() {
-				if (this.filteredScore) {
-					this.filteredScore.node = {children: this.children};
-				}
-				else {
-					this.filteredScore = new Score({children: this.children});
-				}
-			},
-			immediate: true,
-		},
-
 		children: {
 			handler() {
 				if (this.hasFilter) {
-					this.filteredScore.node = {children: this.children};
+					this.filteredScore.node.children = [...this.children];
 				}
 
 				for (let child of this.children) {
@@ -210,3 +229,22 @@ export default {
 		isCustomElement: tag => tag === 'ui-tooltip',
 	},
 };
+
+
+function hasFilter (filterSpec, value) {
+	if (!filterSpec) {
+		return false;
+	}
+
+	let defaultValue = filterSpec.default || '';
+
+	if (!defaultValue && value) {
+		return true;
+	}
+
+	if (symmetricDifference(value, defaultValue).length === 0) {
+		return false;
+	}
+
+	return true;
+}

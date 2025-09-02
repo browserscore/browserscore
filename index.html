@@ -107,6 +107,22 @@
 			<legend>Filter features</legend>
 
 			<bs-filter label="Type" v-model="filter.type" with-empty :values="featureTypes" :get-label="(id, type) => featureTypeTitles[id] || capitalize(id)"></bs-filter>
+
+			<div class="filter">
+				Show:
+				<label>
+					<input type="checkbox" name="filter.supported" v-model="filter.supported" value="pass">
+					Supported
+				</label>
+				<label>
+					<input type="checkbox" name="filter.supported" v-model="filter.supported" value="partial">
+					Partially supported
+				</label>
+				<label>
+					<input type="checkbox" name="filter.supported" v-model="filter.supported" value="fail">
+					Unsupported
+				</label>
+			</div>
 		</fieldset>
 
 		<fieldset class="filters">

@@ -31,6 +31,23 @@ export default class Feature extends AbstractFeature {
 				return filter.type === this.type;
 			},
 		},
+		supported: {
+			matches (filter) {
+				let supported = 'partial';
+
+				if (this.score.passedTests > 0 && this.score.failedTests === 0) {
+					supported = 'pass';
+				}
+				else if (this.score.failedTests > 0 && this.score.passedTests === 0) {
+					supported = 'fail';
+				}
+
+				return filter.supported.includes(supported);
+			},
+			type: 'multiple',
+			options: ['pass', 'partial', 'fail'],
+			default: ['pass', 'partial', 'fail'],
+		},
 	}
 
 	constructor (def, parent, group) {
