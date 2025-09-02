@@ -44,6 +44,10 @@ export default {
 
 	created () {
 		this.open = this.everOpened = this.defaultOpen;
+
+		if (this.open) {
+			this.test();
+		}
 	},
 
 	mounted () {
@@ -84,7 +88,7 @@ export default {
 		},
 
 		isFiltered () {
-			return this.children.length < this.feature.children.length;
+			return this.filteredChildren.length < this.feature.children.length;
 		},
 
 		isEmpty () {
@@ -102,11 +106,11 @@ export default {
 			}
 
 			if (old) {
-				old.node.children = [...this.children];
+				old.node.children = this.filteredChildren;
 				return old;
 			}
 
-			return new Score({children: [...this.children]});
+			return new Score({children: this.filteredChildren});
 		},
 
 		score () {
@@ -147,12 +151,14 @@ export default {
 			return this.filter;
 		},
 
-		children () {
+		filteredChildren () {
 			if (this.hasFilter) {
 				return this.feature.children.filter(child => child.matchesFilter(this.filter));
 			}
+		},
 
-			return this.feature.children;
+		children () {
+			return this.isFiltered ? this.filteredChildren : this.feature.children;
 		},
 
 		renderedChildren () {
@@ -210,22 +216,25 @@ export default {
 			// No mapping provided or the mapping returned nothing, just use raw key
 			return ret ?? key;
 		},
+
+		test () {
+			if (this.isFiltered) {
+				for (let child of this.filteredChildren) {
+					child.test();
+				}
+
+				this.filteredScore.recalc();
+			}
+			else {
+				this.feature.test();
+			}
+		}
 	},
 
 	watch: {
 		children: {
 			handler() {
-				if (this.hasFilter) {
-					this.filteredScore.node.children = [...this.children];
-				}
-
-				for (let child of this.children) {
-					child.test();
-				}
-
-				if (this.score !== this.feature.score || this.level < 2) {
-					this.score.recalc();
-				}
+				this.test();
 			},
 			immediate: true,
 		},
