@@ -15,6 +15,9 @@ export class InterfacePropertyFeature extends Feature {
 export default class InterfaceFeature extends Feature {
 	static children = {
 		tests: { type: InterfacePropertyFeature },
+		// members: { type: InterfacePropertyFeature },
+		// static: { type: InterfacePropertyFeature },
+		extends: { type: InterfaceFeature },
 	}
 	static gatingTest = true;
 
@@ -25,7 +28,33 @@ export default class InterfaceFeature extends Feature {
 		this.interface = def.interface ?? group?.interface;
 	}
 
+	get code () {
+		if (this.fromParent === 'extends') {
+			return 'extends ' + this.id;
+		}
+
+		return this.id;
+	}
+
 	leafTest () {
+		if (this.fromParent === 'extends') {
+			let superClass = window[this.id];
+			let thisClass = window[this.parent.id];
+
+			if (!superClass) {
+				return {success: false, note: 'Parent class not found: ' + this.id};
+			}
+
+			do {
+				thisClass = Object.getPrototypeOf(superClass);
+				if (thisClass === superClass) {
+					return {success: true};
+				}
+			} while (thisClass);
+
+			return {success: false};
+		}
+
 		return supportsInterface(this.id);
 	}
 }
