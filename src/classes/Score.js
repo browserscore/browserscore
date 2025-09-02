@@ -63,9 +63,11 @@ export default class Score {
 		}
 
 		for (let key in partial) {
-			if (key in this) {
-				this[key] = partial[key];
+			if (!(key in this) || isNaN(partial[key]) || isNaN(this[key])) {
+				continue;
 			}
+
+			this[key] = partial[key];
 		}
 
 		if ('totalTests' in partial) {
@@ -86,9 +88,12 @@ export default class Score {
 	 */
 	add (partial) {
 		for (let key in partial) {
-			if (key in this) {
-				this[key] += partial[key];
+			if (!(key in this) || isNaN(partial[key]) || isNaN(this[key])) {
+				continue;
 			}
+
+			this[key] += partial[key];
+
 		}
 
 		if ('totalTests' in partial) {
