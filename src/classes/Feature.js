@@ -72,7 +72,6 @@ export default class Feature extends AbstractFeature {
 			this.tests = toArray(def.tests);
 		}
 
-		this.beforeChildren();
 		this._createChildren();
 
 		let totalTests = this.children.length > 0 ? this.children.length + (this.gatingTest ? 1 : 0) : 1;
@@ -93,10 +92,6 @@ export default class Feature extends AbstractFeature {
 		               ?? this.constructor.forceTotal;
 		// false → undefined
 		return forceTotal || undefined;
-	}
-
-	beforeChildren () {
-		// Override in child classes to run before children are created
 	}
 
 	/**
