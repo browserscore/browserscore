@@ -296,9 +296,7 @@ export default class Feature extends AbstractFeature {
 			if (!this.result.success && this.children.length > 0) {
 				// No point in testing the children
 				// just mark them all as failed
-				for (let child of this.children) {
-					child.score.fail();
-				}
+				this.score.fail();
 
 				this.score.recalc();
 				return;
