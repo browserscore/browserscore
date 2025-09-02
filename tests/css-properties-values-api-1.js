@@ -8,20 +8,92 @@ export default {
 		'@property --foo/syntax': {
 			link: '#the-syntax-descriptor',
 			required: {
-				"'x | y'": {
+				"'*'": {
+					descriptor: "inherits: false; initial-value: foo",
+				},
+				"'x'": {
 					descriptor: "inherits: false; initial-value: x",
 				},
 				"'<length>'": {
 					descriptor: "inherits: false; initial-value: 100px",
 				},
+				"'<number>'": {
+					descriptor: "inherits: false; initial-value: 1.23",
+				},
+				"'<percentage>'": {
+					descriptor: "inherits: false; initial-value: 50%",
+				},
+				"'<length-percentage>'": {
+					descriptor: "inherits: false; initial-value: calc(50% + 10px)",
+				},
+				"'<string>'": {
+					descriptor: "inherits: false; initial-value: 'foo'",
+				},
 				"'<color>'": {
 					descriptor: "inherits: false; initial-value: red",
 				},
+				"'<image>'": {
+					descriptor: "inherits: false; initial-value: linear-gradient(red, blue)",
+				},
+				"'<url>'": {
+					descriptor: "inherits: false; initial-value: url('foo.png')",
+				},
+				"'<integer>'": {
+					descriptor: "inherits: false; initial-value: 1",
+				},
+				"'<angle>'": {
+					descriptor: "inherits: false; initial-value: 90deg",
+				},
+				"'<time>'": {
+					descriptor: "inherits: false; initial-value: 1s",
+				},
+				"'<resolution>'": {
+					descriptor: "inherits: false; initial-value: 300dpi",
+				},
+				"'<transform-function>'": {
+					descriptor: "inherits: false; initial-value: rotate(90deg)",
+				},
+				"'<custom-ident>'": {
+					descriptor: "inherits: false; initial-value: foo",
+				},
+				"'<transform-list>'": {
+					descriptor: "inherits: false; initial-value: rotate(90deg) translate(10px, 20px)",
+				},
+				"'<length>+'": {
+					descriptor: "inherits: false; initial-value: 100px 50px",
+				},
+				"'<length>#'": {
+					descriptor: "inherits: false; initial-value: 100px, 50px",
+				},
+				"'x | y'": {
+					descriptor: "inherits: false; initial-value: y",
+				},
+				"'<length> | <color>+ | foo'": {
+					descriptor: "inherits: false; initial-value: red #00f",
+				},
 			},
 			tests: [
-				"'x | y'",
+				"'*'",
+				"'x'",
 				"'<length>'",
+				"'<number>'",
+				"'<percentage>'",
+				"'<length-percentage>'",
+				"'<string>'",
 				"'<color>'",
+				"'<image>'",
+				"'<url>'",
+				"'<integer>'",
+				"'<angle>'",
+				"'<time>'",
+				"'<resolution>'",
+				"'<transform-function>'",
+				"'<custom-ident>'",
+				"'<transform-list>'",
+				"'<length>+'",
+				"'<length>#'",
+				"'x | y'",
+				"'<length> | <color>+ | foo'",
 			],
 		},
 		'@property --foo/inherits': {
