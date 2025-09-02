@@ -22,7 +22,7 @@
 </h1>
 
 <template id="feature-component-template">
-	<wrap-if v-if="!isEmpty" :is="isCollapsible ? 'details' : ''" class="feature-group" :class="{spec: isSpec}" :data-level="level" :key="feature.uid" :id="feature.htmlId" ref="details" @toggle="handleToggle" :open="isSpec" ref="details">
+	<wrap-if v-if="!isEmpty" :is="isCollapsible ? 'details' : ''" class="feature-group" :class="{spec: isSpec}" :data-level="level" :key="feature.uid" :id="feature.htmlId" ref="details" @toggle="handleToggle" :open="defaultOpen" ref="details">
 		<component v-if="level > 0" :is="isCollapsible ? 'summary' : 'article'" class="feature" :class="passclass(feature.score)" :data-level="level" ref="container">
 			<support-status :score="feature.score"></support-status>
 			<wrap-if :is="level > 0 ? '' : 'h1'" class="title">

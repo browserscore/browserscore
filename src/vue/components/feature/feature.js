@@ -42,6 +42,10 @@ export default {
 
 	emits: ['update:score'],
 
+	created () {
+		this.open = this.everOpened = this.defaultOpen;
+	},
+
 	mounted () {
 		let container = this.$refs.container ?? this.$refs.details;
 
@@ -54,6 +58,15 @@ export default {
 	template: "#feature-component-template",
 
 	computed: {
+		defaultOpen () {
+			if (this.isSpec) {
+				return true;
+			}
+
+			return false;
+		},
+
+
 		hasFilter () {
 			if (!this.filter) {
 				return false;

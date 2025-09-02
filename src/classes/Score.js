@@ -80,14 +80,6 @@ export default class Score {
 		this.parent?.recalc();
 	}
 
-	fail () {
-		this.set({failedTests: this.totalTests - this.passedTests});
-
-		for (let child of this.children) {
-			child.fail();
-		}
-	}
-
 	/**
 	 * Add a partial score to this score. No recalc is done.
 	 * @param {Object} partial - Partial score to add
@@ -109,6 +101,14 @@ export default class Score {
 			}
 
 			this.passed = this.passedTests * this.total / this.totalTests;
+		}
+	}
+
+	fail () {
+		this.set({failedTests: this.totalTests - this.passedTests});
+
+		for (let child of this.children) {
+			child.fail();
 		}
 	}
 
