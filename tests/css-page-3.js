@@ -15,12 +15,8 @@ export default {
 	atrules: {
 		'@page': {
 			link: '#at-page-rule',
-			tests: ['@page :blank { margin: 2cm }', '@page customName { margin: 2cm }'],
-			prelude: ':blank',
-		},
-		'`@page` descriptors': {
-			id: '@page',
 			isGroup: true,
+			preludes: [':blank'],
 			descriptors: {
 				size: {
 					link: '#page-size-prop',

@@ -15,11 +15,6 @@ export default {
 				':right',
 				':first',
 			],
-		},
-		'`@page` descriptors': {
-			id: '@page',
-			link: '#page-box',
-			isGroup: true,
 			descriptors: ['margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left'],
 		},
 	},
