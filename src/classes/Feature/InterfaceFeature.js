@@ -4,11 +4,10 @@ import supportsAttributeOrMethod from '../../supports/member.js';
 
 export class InterfacePropertyFeature extends Feature {
 	leafTest () {
-		let required = this.required ?? this.parent.required;
 		let interfaceObject = this.interface ?? this.parent.interface;
 		let interfaceName = this.parent.id;
 
-		return supportsAttributeOrMethod(interfaceName, this.id, required, interfaceObject);
+		return supportsAttributeOrMethod(interfaceName, this.id, interfaceObject);
 	}
 }
 
@@ -24,7 +23,6 @@ export default class InterfaceFeature extends Feature {
 	constructor (def, parent, group) {
 		super(def, parent, group);
 
-		this.required = def.required ?? group?.required;
 		this.interface = def.interface ?? group?.interface;
 	}
 

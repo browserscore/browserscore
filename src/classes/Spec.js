@@ -122,7 +122,7 @@ export default class Spec extends AbstractFeature {
 			let meta = featureTypes[type];
 			let group = this.def[type];
 
-			let {properties, required, interface: Interface, ...features} = group;
+			let {properties, interface: Interface, ...features} = group;
 			group.type = type;
 
 			let Class = typeof meta === 'function' ? meta : Feature;

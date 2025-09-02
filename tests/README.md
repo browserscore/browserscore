@@ -62,7 +62,6 @@ This document describes the data schema used in the CSS test files located in th
       links: { /* documentation links */ },
       tests: string[],
       interface?: function,    // Returns interface object to test
-      required?: string        // CSS required for this test
     }
   }
 }
@@ -163,7 +162,6 @@ interfaces: {
     links: { /* documentation links */ },
     tests: ['method1', 'method2', 'property1'],
     interface: function() { /* returns interface object */ },
-    required: 'CSS required for this test' // Optional
   }
 }
 ```
@@ -190,9 +188,6 @@ For interface tests, the `interface` property contains a function that returns t
 
 ### Links Object
 Each test category can have its own `links` object with the same structure as the top-level links.
-
-### Required Property
-Some tests have a `required` property that specifies CSS code that must be present for the test to work properly.
 
 ### Properties Array
 In `values` tests, the `properties` array specifies which CSS properties the values apply to.

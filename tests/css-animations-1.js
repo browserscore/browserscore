@@ -81,13 +81,11 @@ export default {
 			link: '#interface-csskeyframesrule',
 			mdnGroup: 'DOM',
 			tests: ['name', 'cssRules', 'length', 'appendRule', 'deleteRule', 'findRule'],
-			required: '@keyframes foo { from {} to {} }',
 		},
 		CSSKeyframeRule: {
 			link: '#interface-csskeyframerule',
 			mdnGroup: 'DOM',
 			tests: ['keyText', 'style'],
-			required: '@keyframes foo { from {} to {} }',
 		},
 		Element: {
 			link: '#interface-globaleventhandlers',

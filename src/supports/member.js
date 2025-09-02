@@ -34,23 +34,16 @@ export function isSupported (object, name) {
 	return isSupported(parent, name);
 }
 
-export function getInstance (name, testCss, fn) {
+export function getInstance (name, fn) {
 	let instance = instances[name];
 
 	if (instance !== undefined) {
 		return instance;
 	}
 
-	if (testCss) {
-		styleElement.textContent = testCss;
-	}
-
 	try {
 		if (fn) {
 			instance = fn(styleElement);
-		}
-		else if (testCss) {
-			instance = getInterfaceFromRules(styleElement.sheet.cssRules, name);
 		}
 	}
 	catch (e) {
@@ -63,7 +56,7 @@ export function getInstance (name, testCss, fn) {
 	}
 }
 
-export default function member (interfaceName, name, testCss, interfaceCallback) {
+export default function member (interfaceName, name, interfaceCallback) {
 	let interfaceSupported = supportsInterface(interfaceName);
 
 	if (!interfaceSupported.success) {
@@ -80,7 +73,7 @@ export default function member (interfaceName, name, testCss, interfaceCallback)
 	}
 
 	// Not found in prototype, try to get an instance (slow)
-	let instance = getInstance(resolvedInterfaceName, testCss, interfaceCallback);
+	let instance = getInstance(resolvedInterfaceName, interfaceCallback);
 
 	if (!instance) {
 		return {success: false};

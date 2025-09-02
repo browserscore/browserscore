@@ -18,22 +18,13 @@ export default {
 	},
 	interfaces: {
 		CSSStartingStyleRule: {
-			links: {
-				dev: '#the-cssstartingstylerule-interface',
-				mdnGroup: 'DOM',
-			},
-			tests: [
-				'cssRules',
-				'insertRule',
-				'deleteRule',
-			],
-			required: '@starting-style { h1 { background-color: red; } }',
+			link: '#the-cssstartingstylerule-interface',
+			mdnGroup: 'DOM',
+			extends: 'CSSRule',
 		},
 		CSSTransition: {
-			links: {
-				dev: '#the-CSSTransition-interface',
-				mdnGroup: 'DOM',
-			},
+			link: '#the-CSSTransition-interface',
+			mdnGroup: 'DOM',
 			tests: [
 				'transitionProperty',
 				'id',
