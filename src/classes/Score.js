@@ -1,6 +1,4 @@
 export default class Score {
-	parent = null;
-
 	passedTests = 0;
 	failedTests = 0;
 	totalTests = 0;
