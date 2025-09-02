@@ -11,7 +11,6 @@ export default {
 		properties: ['color', 'border-color'],
 		inherit: {
 			link: '#value-def-inherit',
-			tests: 'inherit',
 		},
 	},
 };

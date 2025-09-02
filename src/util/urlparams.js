@@ -30,7 +30,7 @@ export default class URLParams extends URLSearchParams {
 
 	/**
 	 * Set URL params from an object, or set a key to multiple values
-	 * @param {Object} params
+	 * @param {Record<string, string | string[] | undefined>} params
 	 *
 	 * @overload
 	 * @param {string} key

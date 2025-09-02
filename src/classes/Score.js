@@ -1,11 +1,12 @@
 export default class Score {
 	parent = null;
-	passed = 0;
-	total = 0;
+
 	passedTests = 0;
 	failedTests = 0;
-	skipped = 0;
 	totalTests = 0;
+	skipped = 0;
+	passed = 0;
+	total = 0;
 	testTime = 0;
 
 	/**
