@@ -39,14 +39,14 @@ export default {
 		CSSLayerBlockRule: {
 			link: '#the-csslayerblockrule-interface',
 			mdnGroup: 'DOM',
-			tests: ['name', 'cssRules', 'insertRule', 'deleteRule'],
-			required: '@layer mylayer { }',
+			extends: 'CSSRule',
+			tests: ['name'],
 		},
 		CSSLayerStatementRule: {
 			link: '#the-csslayerstatementrule-interface',
 			mdnGroup: 'DOM',
-			tests: ['nameList', 'cssText', 'parentRule', 'parentStyleSheet'],
-			required: '@layer firstLayer, secondLayer;',
+			extends: 'CSSRule',
+			tests: ['nameList'],
 		},
 	},
 };
