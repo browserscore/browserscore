@@ -5,9 +5,7 @@ export default {
 	status: 'experimental',
 	atrules: {
 		'@function': {
-			links: {
-				dev: '#defining-custom-functions',
-			},
+			link: '#defining-custom-functions',
 			preludeRequired: true,
 			contents: 'result: var(--a, 1);',
 			preludes: [
