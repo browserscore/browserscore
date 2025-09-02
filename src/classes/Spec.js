@@ -41,6 +41,10 @@ export default class Spec extends AbstractFeature {
 		},
 		status: {
 			matches(filter) {
+				if (filter.status === 'all') {
+					return true;
+				}
+
 				if (this.status) {
 					return filter.status.includes(this.status);
 				}
