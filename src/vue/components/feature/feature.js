@@ -210,7 +210,7 @@ export default {
 					child.test();
 				}
 
-				if (this.score !== this.feature.score || this.level < 1) {
+				if (this.score !== this.feature.score || this.level < 2) {
 					this.score.recalc();
 				}
 			},
