@@ -41,7 +41,8 @@ export default class CSSValueFeature extends Feature {
 		},
 		properties: {
 			type: CSSValuePropertyFeature,
-			single: 'property'
+			single: 'property',
+			nest: true,
 		}
 	}
 

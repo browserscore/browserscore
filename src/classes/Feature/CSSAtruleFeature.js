@@ -20,15 +20,11 @@ export class CSSAtruleDescriptorFeature extends Feature {
 	}
 
 	get name () {
-		if (this.def.fromParent === 'descriptors') {
-			return this.id;
+		if (this.def.fromParent === 'values') {
+			return this.parent.id;
 		}
 
-		if (!(this.parent instanceof this.constructor)) {
-			return undefined;
-		}
-
-		return this.parent.name;
+		return this.id ?? this.parent.id;
 	}
 
 	get value () {
@@ -59,7 +55,6 @@ export class CSSAtruleDescriptorFeature extends Feature {
 export default class CSSAtruleFeature extends Feature {
 	static forceTotal = undefined;
 	static children = {
-
 		suffixes: {
 			type: CSSAtruleFeature,
 		},

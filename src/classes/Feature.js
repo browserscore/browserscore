@@ -161,7 +161,7 @@ export default class Feature extends AbstractFeature {
 			// This is often a nested child property, so we may need to go up to find its value
 			// Just make sure you're not reading the same property on ancestors that got us here
 			multiple = this.closestValue(f => f.def[property] ?? f.group?.[property], {
-				maxSteps: this.def.fromParent === property ? 1 : nestingLevel,
+				maxSteps: !schema.nest || this.def.fromParent === property ? 1 : nestingLevel,
 				stopIf: f => f.constructor.name === 'Spec'
 			});
 
@@ -195,26 +195,23 @@ export default class Feature extends AbstractFeature {
 
 			multiple = toArray(multiple);
 
-			if (singleProp && multiple.length === 1 && this[singleProp] === undefined) {
-				// We use a single property if there's only one
-				this[singleProp] = multiple[0];
-			}
-			else if (multiple.length > 0) {
-				if (this.children.length === 0) {
+			if (multiple.length > 0) {
+				if (this.children.length > 0 && schema.nest) {
+					// Just set plural property, the children will take care of it
+					this[property] = multiple;
+				}
+				else {
 					// Create children
 					for (let child of multiple) {
 						if (child === null || child === undefined) {
 							continue;
 						}
+
 						let childDef = typeof child === 'string' ? {id: child} : child;
 						childDef.fromParent = property;
 						let subFeature = new ChildType(childDef, this);
 						this.children.push(subFeature);
 					}
-				}
-				else {
-					// Just set plural property, the children will take care of it
-					this[property] = multiple;
 				}
 			}
 		}
