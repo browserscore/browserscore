@@ -1,4 +1,11 @@
+import { pick } from '../util.js';
+
+const stats = ['passedTests', 'failedTests', 'totalTests', 'skipped', 'total', 'passed', 'testTime'];
+const statsSet = new Set(stats);
+
 export default class Score {
+	static stats = stats;
+
 	passedTests = 0;
 	failedTests = 0;
 	totalTests = 0;
@@ -55,29 +62,28 @@ export default class Score {
 		return this.passed / this.total;
 	}
 
+	equals (other) {
+		return stats.every(stat => this[stat] === other[stat]);
+	}
+
 	set (partial) {
-		if (!partial || (!partial.totalTests && !this.totalTests)) {
-			return;
-		}
+		let oldValues = this.toJSON();
 
 		for (let key in partial) {
-			if (!(key in this) || isNaN(partial[key]) || isNaN(this[key])) {
+			if (!statsSet.has(key)) {
 				continue;
 			}
 
 			this[key] = partial[key];
 		}
 
-		if ('totalTests' in partial) {
-			this.total = this.forceTotal ?? this.totalTests;
-		}
+		if (!this.equals(oldValues)) {
+			if ('totalTests' in partial || 'passedTests' in partial) {
+				this.update();
+			}
 
-		if ('passedTests' in partial) {
-			this.failedTests = partial.failedTests ?? (this.totalTests - this.passedTests);
-			this.passed = this.passedTests * this.total / this.totalTests;
+			this.recalcAncestors();
 		}
-
-		this.parent?.recalc();
 	}
 
 	/**
@@ -85,28 +91,26 @@ export default class Score {
 	 * @param {Object} partial - Partial score to add
 	 */
 	add (partial) {
+		let oldValues = this.toJSON();
+
 		for (let key in partial) {
-			if (!(key in this) || isNaN(partial[key]) || isNaN(this[key])) {
+			if (!statsSet.has(key)) {
 				continue;
 			}
 
 			this[key] += partial[key];
-
 		}
 
-		if ('totalTests' in partial) {
-			this.total = this.forceTotal ?? this.totalTests;
-		}
-
-		if ('passedTests' in partial) {
-			if ('totalTests' in partial && !('failedTests' in partial)) {
-				this.failedTests += partial.totalTests - partial.passedTests;
+		if (!this.equals(oldValues)) {
+			if ('totalTests' in partial || 'passedTests' in partial) {
+				this.update();
 			}
 
-			this.passed = this.passedTests * this.total / this.totalTests;
+			this.recalcAncestors();
 		}
 	}
 
+	/** Fail all pending tests */
 	fail () {
 		this.set({failedTests: this.totalTests - this.passedTests});
 
@@ -115,48 +119,80 @@ export default class Score {
 		}
 	}
 
+	update () {
+		if (this.children?.length) {
+			return;
+		}
+
+		this.total = this.forceTotal ?? this.totalTests;
+		this.passed = this.passedTests * this.total / this.totalTests;
+	}
+
 	/**
 	 * Recalculate this and ancestor scores from children
 	 * @returns
 	 */
-	recalc() {
+	recalc ({ancestors = true, descendants = 0, self = true} = {}) {
 		if (!this.children?.length) {
 			// Nothing to do here
 			return;
 		}
 
-		this.passed = 0;
-		this.total = 0;
-		this.skipped = 0;
-		this.passedTests = 0;
-		this.failedTests = 0;
-		this.totalTests = 0;
-		this.testTime = 0;
+		if (descendants) {
+			this.recalcDescendants(descendants === true ? Infinity : descendants);
+		}
+
+		if (self) {
+			this.recalcSelf();
+		}
+
+		if (ancestors) {
+			this.recalcAncestors(ancestors === true ? Infinity : ancestors);
+		}
+	}
+
+	recalcSelf () {
+		this.node.recalcs ??= 0;
+		this.node.recalcs++;
+
+		for (let stat of stats) {
+			this[stat] = 0;
+		}
 
 		let children = this.children;
 
 		for (let child of children) {
-			if (isNaN(child.total) || isNaN(child.passed)) {
+			if (stats.some(stat => stat in child && isNaN(child[stat]))) {
 				this.skipped++;
 				continue;
 			}
 
-			this.passed += child.passed;
-			this.total += child.total;
-			this.passedTests += child.passedTests;
-			this.failedTests += child.failedTests;
-			this.totalTests += child.totalTests;
-			this.testTime += child.testTime;
+			for (let stat of stats) {
+				if (stat in child) {
+					this[stat] += child[stat];
+				}
+			}
+		}
+	}
+
+	recalcAncestors (limit = Infinity) {
+		if (!this.parent || limit <= 0) {
+			return;
 		}
 
-		if (this.forceTotal) {
-			let actualTotal = this.total;
-			this.total = this.forceTotal;
-			let previousPassed = this.passed;
-			this.passed = previousPassed * this.forceTotal / actualTotal;
+		this.parent.recalcSelf();
+		this.parent.recalcAncestors(limit - 1);
+	}
+
+	recalcDescendants (limit = Infinity) {
+		if (!this.children || limit <= 0) {
+			return;
 		}
 
-		this.parent?.recalc();
+		for (let child of this.children) {
+			child.recalcSelf();
+			child.recalcDescendants(limit - 1);
+		}
 	}
 
 	toString () {
@@ -168,13 +204,6 @@ export default class Score {
 	 * @returns {Object}
 	 */
 	toJSON () {
-		return {
-			passed: this.passed,
-			total: this.total,
-			passedTests: this.passedTests,
-			failedTests: this.failedTests,
-			totalTests: this.totalTests,
-			testTime: this.testTime,
-		};
+		return pick(this, stats);
 	}
 }
