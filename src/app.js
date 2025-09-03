@@ -205,7 +205,7 @@ let appSpec = {
 					let defaultValue = defaultFilter[param];
 
 					if (symmetricDifference(value, defaultValue).length === 0) {
-						changed = this.urlParams.has(param);
+						changed ||= this.urlParams.has(param);
 						this.urlParams.delete(param);
 					}
 					else if (symmetricDifference(value, oldValue).length > 0) {
