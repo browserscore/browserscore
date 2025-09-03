@@ -4,20 +4,42 @@ import supportsInterface from '../../supports/interface.js';
 import supportsMember from '../../supports/member.js';
 
 export class MemberFeature extends Feature {
-	testSelf () {
-		let interfaceObject = this.interface ?? this.parent.interface;
-		let interfaceName = this.parent.id;
+	constructor (def, parent) {
+		super(def, parent);
 
-		return supportsMember(interfaceName, this.id, interfaceObject);
+		let fromParent = this.def.fromParent;
+		this.memberType = fromParent === 'properties' || fromParent === 'functions' ? 'static' : 'instance';
+		this.memberKind = fromParent === 'methods' || fromParent === 'functions' ? 'method' : 'property';
+		this.base = this.parent.base;
+	}
+
+	get code () {
+		if (this.memberKind === 'method') {
+			return this.id + '()';
+		}
+
+		return this.id;
+	}
+
+	testSelf () {
+		let {memberType: type, memberKind: kind, base} = this;
+
+		let interfaceName = base.id;
+		let interfaceCallback = this.interface ?? base.interface;
+		let context = {name: interfaceName, callback: interfaceCallback};
+
+		return supportsMember(this.id, {type, kind, context});
 	}
 }
 
 export default class InterfaceFeature extends Feature {
 	static children = {
 		tests: { type: MemberFeature },
-		// members: { type: InterfacePropertyFeature },
-		// static: { type: InterfacePropertyFeature },
 		extends: { type: InterfaceFeature },
+		members: { type: MemberFeature },
+		methods: { type: MemberFeature },
+		properties: { type: MemberFeature },
+		functions: { type: MemberFeature },
 	}
 	static gatingTest = true;
 
@@ -33,6 +55,17 @@ export default class InterfaceFeature extends Feature {
 		}
 
 		return this.id;
+	}
+
+	/**
+	 * Get the InterfaceFeature that contains the actual interface these are testing stuff in
+	 */
+	get base () {
+		if (this.def.fromParent === 'extends') {
+			return this.parent;
+		}
+
+		return this;
 	}
 
 	testSelf () {

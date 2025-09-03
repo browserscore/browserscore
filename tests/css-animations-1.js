@@ -64,15 +64,12 @@ export default {
 		AnimationEvent: {
 			link: '#interface-animationevent',
 			mdnGroup: 'DOM',
-			tests: ['animationName', 'elapsedTime', 'pseudoElement'],
-			interface: function() {
-				return new AnimationEvent('animationstart');
-			}
+			members: ['animationName', 'elapsedTime', 'pseudoElement'],
 		},
 		CSSRule: {
 			link: '#interface-cssrule',
 			mdnGroup: 'DOM',
-			tests: [
+			properties: [
 				'KEYFRAMES_RULE',
 				'KEYFRAME_RULE',
 			],
@@ -80,20 +77,19 @@ export default {
 		CSSKeyframesRule: {
 			link: '#interface-csskeyframesrule',
 			mdnGroup: 'DOM',
-			tests: ['name', 'cssRules', 'length', 'appendRule', 'deleteRule', 'findRule'],
+			extends: 'CSSRule',
+			members: ['name', 'cssRules', 'length'],
+			methods: ['appendRule', 'deleteRule', 'findRule'],
 		},
 		CSSKeyframeRule: {
 			link: '#interface-csskeyframerule',
 			mdnGroup: 'DOM',
 			tests: ['keyText', 'style'],
 		},
-		Element: {
+		HTMLElement: {
 			link: '#interface-globaleventhandlers',
 			mdnGroup: 'DOM',
-			tests: ['onanimationstart', 'onanimationiteration', 'onanimationend', 'onanimationcancel'],
-			interface: function() {
-				return document.body;
-			},
+			members: ['onanimationstart', 'onanimationiteration', 'onanimationend', 'onanimationcancel'],
 		}
 	},
 };

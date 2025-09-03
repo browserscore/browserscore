@@ -16,15 +16,12 @@ export default {
 		CSS: {
 			link: '#registering-custom-properties',
 			mdnGroup: 'DOM',
-			tests: ['registerProperty'],
-			interface: function() {
-				return CSS;
-			},
+			functions: ['registerProperty'],
 		},
 		CSSPropertyRule: {
 			link: '#the-css-property-rule-interface',
 			mdnGroup: 'DOM',
-			tests: ['name', 'syntax', 'inherits', 'initialValue'],
+			members: ['name', 'syntax', 'inherits', 'initialValue'],
 		},
 	},
 };

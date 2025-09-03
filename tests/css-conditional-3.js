@@ -25,30 +25,27 @@ export default {
 		CSSRule: {
 			link: '#extensions-to-cssrule-interface',
 			mdnGroup: 'DOM',
-			tests: ['SUPPORTS_RULE'],
+			properties: ['SUPPORTS_RULE'],
 		},
 		CSSConditionRule: {
 			link: '#the-cssconditionrule-interface',
 			mdnGroup: 'DOM',
-			tests: ['conditionText', 'cssRules', 'insertRule', 'deleteRule'],
+			members: ['conditionText', 'cssRules', 'insertRule', 'deleteRule'],
 		},
 		CSSMediaRule: {
 			link: '#the-cssmediarule-interface',
 			mdnGroup: 'DOM',
-			tests: ['media', 'matches', 'conditionText'],
+			members: ['media', 'matches', 'conditionText'],
 		},
 		CSSSupportsRule: {
 			link: '#the-csssupportsrule-interface',
 			mdnGroup: 'DOM',
-			tests: ['matches', 'conditionText'],
+			members: ['matches', 'conditionText'],
 		},
 		CSS: {
 			link: '#the-css-namespace',
 			mdnGroup: 'DOM',
-			tests: ['supports'],
-			interface: function() {
-				return CSS;
-			}
+			properties: ['supports'],
 		},
 	},
 };

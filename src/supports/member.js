@@ -1,88 +1,72 @@
-import { domPrefixes as prefixes, styleElement, prefixCamelCase as prefixName } from './shared.js';
+import { domPrefixes as prefixes, prefixCamelCase as prefixName } from './shared.js';
 
 import supportsInterface from './interface.js';
 
-function getInterfaceFromRules(rules, interfaceName) {
-	for (let i = 0; i < rules.length; i++) {
-		if (rules[i].constructor.name === interfaceName) {
-			return rules[i];
+/**
+ * Check for the presence of a member or static property
+ * @param {*} name
+ * @param {*} options
+ * @param {string} options.context - The context to check in
+ * @param {string} [options.context.name] - The name of the context object
+ * @param {Object} [options.context.object] - The instance to check
+ * @param {Function} [options.context.callback] - A callback to get an object to check
+ * @returns
+ */
+export default function member (name, options) {
+	if (!options) {
+		throw new Error('No context info provided');
+	}
+
+	if (typeof options === 'string') {
+		options = {context: options};
+	}
+	else if (!options.context) {
+		options = {context: options};
+	}
+
+	let {name: contextName, object: contextObject, callback} = options.context;
+
+	let object = contextObject ?? callback?.() ?? globalThis[contextName];
+
+	if (!object) {
+		let contextSupported = supportsInterface(contextName);
+
+		if (!contextSupported.success) {
+			return {success: false};
 		}
 
-		if (rules[i].cssRules) {
-			let ret = getInterfaceFromRules(rules[i].cssRules, interfaceName);
-			if (ret) {
-				return ret;
-			}
-		}
+		contextName = contextSupported.name;
+		object = globalThis[contextName];
 	}
 
-	return null;
-}
-
-let instances = {};
-
-export function isSupported (object, name) {
-	if (name in object) {
-		return true;
+	if (options.type !== 'static' && !(contextObject || callback)) {
+		// Non-static member, and the object was not provided
+		object = object.prototype;
 	}
 
-	// Check parent classes
-	let parent = Object.getPrototypeOf(object);
-	if (!parent || parent === Object.prototype) {
-		return false;
-	}
-	return isSupported(parent, name);
-}
-
-export function getInstance (name, fn) {
-	let instance = instances[name];
-
-	if (instance !== undefined) {
-		return instance;
+	if (!object) {
+		return {success: false, note: 'No base object'};
 	}
 
-	try {
-		if (fn) {
-			instance = fn(styleElement);
-		}
-	}
-	catch (e) {
-		return null;
-	}
+	let prefix = prefixes.find(prefix => prefixName(prefix, name) in object);
 
-	if (instance) {
-		instances[name] = instance;
-		return instance;
-	}
-}
-
-export default function member (interfaceName, name, interfaceCallback) {
-	let interfaceSupported = supportsInterface(interfaceName);
-
-	if (!interfaceSupported.success) {
+	if (prefix === undefined) {
 		return {success: false};
 	}
 
-	let resolvedInterfaceName = interfaceSupported.name;
-	let object = window[resolvedInterfaceName]?.prototype ?? window[resolvedInterfaceName];
+	let resolvedName = prefixName(prefix, name);
 
-	let prefix = prefixes.find(prefix => isSupported(object, prefixName(prefix, name)));
+	if (options.type === "function") {
+		let actualType = typeof object[resolvedName];
 
-	if (prefix !== undefined) {
-		return {success: true, prefix};
+		if (actualType !== "function") {
+			return {success: false, type: actualType};
+		}
 	}
 
-	// Not found in prototype, try to get an instance (slow)
-	let instance = getInstance(resolvedInterfaceName, interfaceCallback);
-
-	if (!instance) {
-		return {success: false};
-	}
-
-	prefix = prefixes.find(prefix => isSupported(instance, prefixName(prefix, name)));
-	let success = prefix !== undefined;
 	return {
-		success,
+		success: true,
 		prefix,
+		resolved: resolvedName,
 	};
 }

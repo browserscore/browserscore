@@ -13,17 +13,16 @@ export default {
 		CSS: {
 			link: '#registration',
 			mdnGroup: 'DOM',
-			tests: ['highlights'],
-			interface: function() {
-				return CSS;
-			}
+			properties: ['highlights'],
 		},
 		Highlight: {
 			link: '#creation',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'priority',
 				'type',
+			],
+			methods: [
 				'has',
 				'add',
 				'delete',
