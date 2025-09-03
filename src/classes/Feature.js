@@ -6,7 +6,8 @@
 import featureTypes from '../data/types.js';
 import Supports from '../supports.js';
 import AbstractFeature from './AbstractFeature.js';
-import { toArray } from '../supports/util.js';
+import { toArray, mapObject } from '../util.js';
+import Spec from './Spec.js';
 
 /**
  * @typedef {Object} ChildSchema
@@ -48,11 +49,19 @@ export default class Feature extends AbstractFeature {
 			options: ['pass', 'partial', 'fail'],
 			default: ['pass', 'partial', 'fail'],
 		},
+
+		...mapObject(Spec.filters, filter => ({
+			...filter,
+			matches () {
+				return filter.matches(this.spec);
+			},
+		})),
 	}
 
 	constructor (def, parent) {
 		super(def, parent);
 		this.type = this.def.type ?? parent?.type;
+		this.spec = this.def.spec;
 
 		if (this.def.tests) {
 			this.tests = toArray(this.def.tests);
@@ -60,7 +69,7 @@ export default class Feature extends AbstractFeature {
 
 		this._createChildren();
 
-		let totalTests = this.children.length > 0 ? this.children.length + (this.gatingTest ? 1 : 0) : 1;
+		let totalTests = this.children.length > 0 ? this.children.flatMap(c => c.score.totalTests || 0).reduce((a, b) => a + b, 0) + (this.gatingTest ? 1 : 0) : 1;
 		this.score.set({totalTests});
 
 		// Inline code

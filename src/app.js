@@ -6,14 +6,13 @@ import content from './vue/directives/content.js';
 import { IS_DEV, passclass, round, percent, capitalize, symmetricDifference, mapObject } from './util.js';
 import URLParams from './util/urlparams.js';
 import featureTypes from './data/types.js';
-import { specRoot } from './data/specs.js';
+import { groupFeatures } from './classes/feature-utils.js';
 
 // Vue components
 import * as components from './vue/components/index.js';
 
-let featureRoot = new AbstractFeature();
-
-
+let root = new AbstractFeature();
+root.children = specs.flatMap(spec => spec.children);
 
 // Components available in every component
 let globalComponents = {
@@ -51,7 +50,7 @@ let appSpec = {
 		groupBy = groupBy.length > 0 ? groupBy : defaultGroupBy;
 
 		return {
-			root: specRoot,
+			root,
 
 			/**
 			 * All specs as dictionary
@@ -116,6 +115,54 @@ let appSpec = {
 
 			return null;
 		},
+
+		hasFilter () {
+			if (!this.filter) {
+				return false;
+			}
+
+			let filters = { ...Spec.allFilters, ...Feature.allFilters};
+
+			for (let key in filters) {
+				let filterSpec = filters[key];
+
+				if (!filterSpec) {
+					continue;
+				}
+
+				let value = this.filter[key];
+				let defaultValue = filterSpec.default || '';
+
+				if (!defaultValue && value) {
+					return true;
+				}
+
+				if (symmetricDifference(value, defaultValue).length > 0) {
+					return true;
+				}
+			}
+
+			return false;
+		},
+
+		computedFilter () {
+			if (!this.filter || !this.hasFilter) {
+				return null;
+			}
+
+			return this.filter;
+		},
+
+		computedRoot () {
+			if (!this.groupBy.length && !this.computedFilter) {
+				return root;
+			}
+
+			let children = this.computedFilter ? root.children.filter(child => child.matchesFilter(this.computedFilter)) : root.children;
+			children = this.groupBy.length ? groupFeatures(children, this.groupBy) : children;
+
+			return new FeatureProxy(this.root, children);
+		}
 	},
 
 	methods: {
@@ -173,8 +220,6 @@ let appSpec = {
 
 		groupBy: {
 			handler(groupBy, oldGroupBy) {
-				this.root = this.groupBy.includes('spec') ? specRoot : featureRoot;
-
 				groupBy = groupBy.filter(Boolean);
 				// We want to store the empty value as it's not the same as the default grouping
 				groupBy = groupBy.length === 0 ? [''] : groupBy;
@@ -211,6 +256,13 @@ let appSpec = {
 			},
 			immediate: true,
 		},
+
+		computedRoot: {
+			handler() {
+				this.computedRoot.score.recalc({descendants: this.groupBy.length});
+			},
+			immediate: true,
+		}
 	},
 
 	directives: {

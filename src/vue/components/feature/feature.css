@@ -1,4 +1,4 @@
-.feature {
+.featurish {
 	small {
 		display: block;
 		opacity: .8;
@@ -32,23 +32,34 @@
 	}
 }
 
+.feature-group > summary {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+
+	.title:not(.feature *) {
+		font-weight: bold;
+
+		&:is(h1, h2) {
+			margin: 0;
+			font-size: inherit;
+		}
+	}
+
+	&:not(.feature, .feature *) {
+		margin-block: 1em .5em;
+	}
+
+	&:has(> h2) {
+		font-size: var(--font-size-xl);
+	}
+}
+
 .spec {
 	padding-block-start: 2rem;
 
 	> summary {
-		display: flex;
-		align-items: center;
 		font-size: var(--font-size-2xl);
-		gap: 0.5em;
-
-		h1 {
-			margin: 0;
-			font-size: inherit;
-		}
-
-		.title {
-			font-weight: bold;
-		}
 	}
 }
 
@@ -59,7 +70,7 @@
 	text-transform: capitalize;
 }
 
-.feature:not(.spec > *) {
+.feature {
 	color-scheme: dark;
 	display: flex;
 	gap: .5em;
@@ -93,7 +104,8 @@
 	margin-block: .3em;
 }
 
-.feature-group:not([data-level="0"], [data-level="1"]) > .feature-children {
+.feature .feature-children,
+.feature + .feature-children {
 	margin-block: .3em;
 	margin-inline-start: 2em;
 	font-size: max(var(--font-size-xs), 85%);

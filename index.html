@@ -22,21 +22,25 @@
 </h1>
 
 <template id="feature-component-template">
-	<wrap-if v-if="!isEmpty" :is="isCollapsible ? 'details' : ''" class="feature-group" :class="{spec: isSpec}" :data-level="level" :key="feature.uid" :id="feature.htmlId" ref="details" @toggle="handleToggle" :open="defaultOpen" ref="details">
-		<component v-if="level > 0" :is="isCollapsible ? 'summary' : 'article'" class="feature" :class="passclass(feature.score)" :data-level="level" ref="container">
+	<wrap-if  :is="isCollapsible ? 'details' : ''" class="feature-group" :class="{spec: species === 'Spec'}" :data-level="level" :key="feature.uid || feature.id" :id="feature.htmlId || feature.id" ref="details" @toggle="handleToggle" :open="defaultOpen" ref="details">
+		<component v-if="level > 0" :is="isCollapsible ? 'summary' : 'article'"
+			class="featurish" :class="{
+				[passclass(feature.score)]: true,
+				feature: species === 'Feature',
+			}" :data-level="level" ref="container">
 			<support-status :score="feature.score"></support-status>
-			<wrap-if :is="level > 0 ? '' : 'h1'" class="title">
+			<wrap-if v-if="feature.title || feature.code || feature.id" :is="level > 2 ? '' : 'h' + level" class="title">
 				<span class="title" v-if="feature.titleHtml" v-html="feature.titleHtml"></span>
 				<wrap-if :is="feature.title ? 'span' : 'code'" class="title" v-else v-text="feature.title ?? feature.code ?? feature.id"></wrap-if>
 			</wrap-if>
 
-			<div class="meta">
-				<a v-if="feature.specLink" :href="feature.specLink" target="_blank" class="badge primary spec-link" :class="`${feature.spec.org.id}-link`">
+			<div class="meta" v-if="feature.link || feature.mdnLink">
+				<a v-if="feature.link && feature.spec" :href="feature.link" target="_blank" class="badge primary spec-link" :class="`${feature.spec.org.id}-link`">
 					{{ feature.spec.org.title }}
 					<span v-if="feature.link === feature.draftLink">Proposal</span>
 				</a>
-				<a v-if="feature.specLink && feature.specLink !== feature.link" :href="feature.specLink" target="_blank" class="badge spec-link" :class="`${feature.spec.org.id}-link`">Spec</a>
-				<a v-if="feature.draftLink && feature.draftLink !== feature.specLink" :href="feature.draftLink" target="_blank" class="badge spec-link" :class="`${feature.spec.org.id}-link`">Draft</a>
+				<a v-if="feature.specLink && feature.spec && feature.specLink !== feature.link" :href="feature.specLink" target="_blank" class="badge spec-link" :class="`${feature.spec.org.id}-link`">Spec</a>
+				<a v-if="feature.draftLink && feature.spec && feature.draftLink !== feature.specLink" :href="feature.draftLink" target="_blank" class="badge spec-link" :class="`${feature.spec.org.id}-link`">Draft</a>
 				<a v-if="feature.mdnLink" :href="feature.mdnLink" target="_blank" class="badge spec-link mdn-link">MDN</a>
 			</div>
 
@@ -45,15 +49,8 @@
 			<span class="prefix" v-if="feature.result?.prefix">{{ feature.result.prefix }}</span>
 			<span class="note" v-if="feature.result?.note">{{ feature.result.note }}</span>
 		</component>
-
-		<section v-if="groupedChildren" v-for="features, key in groupedChildren" :key="feature.getUid('.', key)">
-			<h2 class="group-title" v-text="getGroupTitle(key)"></h2>
-			<div class="group-children feature-children">
-			<bs-feature v-for="f in features" :feature="f" :key="feature.getUid('.', key)" :level="level + 1" :group-by="childGroupBy" :filter="childFilter"></bs-feature>
-			</div>
-		</section>
-		<div v-else class="feature-children">
-			<bs-feature v-for="child, index of renderedChildren" :feature="child" :key="feature.getUid('.', index)" :level="level + 1" :group-by="childGroupBy" :filter="childFilter"></bs-feature>
+		<div v-if="renderedChildren.length > 0" class="feature-children">
+			<bs-feature v-for="child, index of renderedChildren" :feature="child" :key="child.uid" :level="level + 1"></bs-feature>
 		</div>
 
 	</wrap-if>
@@ -84,7 +81,7 @@
 			</div>
 		</header>
 		<section id="all">
-			<bs-feature :feature="root" ref="root" :filter="filter" :group-by="rootGroupBy" @update:score="score = $event"></bs-feature>
+			<bs-feature :feature="computedRoot" ref="root" @update:score="score = $event"></bs-feature>
 		</section>
 	</main>
 

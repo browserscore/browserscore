@@ -135,7 +135,7 @@ export default class CSSAtruleFeature extends Feature {
 			return this.prelude;
 		}
 
-		if (this.def.fromParent !== 'atrules') {
+		if (this.def.fromParent !== 'atrules' && this.parent) {
 			return this.parent.computedPrelude;
 		}
 
@@ -147,8 +147,8 @@ export default class CSSAtruleFeature extends Feature {
 			return this.id;
 		}
 
-		if (this.def.fromParent !== 'atrules') {
-			return this.parent.computedSuffix ?? '';
+		if (this.def.fromParent !== 'atrules' && this.parent) {
+			return this.parent.computedSuffix;
 		}
 
 		return '';
@@ -159,7 +159,7 @@ export default class CSSAtruleFeature extends Feature {
 			return this.def.contents;
 		}
 
-		if (this.def.fromParent !== 'atrules') {
+		if (this.def.fromParent !== 'atrules' && this.parent) {
 			return this.parent.contents;
 		}
 
