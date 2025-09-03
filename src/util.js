@@ -89,6 +89,20 @@ export function pick (obj, keys) {
 	return ret;
 }
 
+export function isSubsetOf (subset, set) {
+	if (subset === set) {
+		return true;
+	}
+
+	if (Array.isArray(subset)) {
+		return subset.every(value => set.includes(value));
+	}
+
+	if (subset instanceof Object) {
+		return Object.keys(subset).every(key => subset[key] === set[key]);
+	}
+}
+
 export function groupBy (arr, fn) {
 	let grouped = {};
 	let isString = typeof fn === 'string';
