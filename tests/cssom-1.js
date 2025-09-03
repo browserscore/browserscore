@@ -148,7 +148,6 @@ export default {
 		CSSMarginRule: {
 			link: '#the-cssmarginrule-interface',
 			mdnGroup: 'DOM',
-			tests: ['selectorText', 'style', 'cssText', 'parentRule', 'parentStyleSheet'],
 		},
 		CSSNamespaceRule: {
 			link: '#the-cssnamespacerule-interface',
