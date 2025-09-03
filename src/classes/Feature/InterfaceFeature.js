@@ -1,20 +1,20 @@
 import Feature from '../Feature.js';
-import classExtends from '../../supports/extends.js';
+import testExtends from '../../supports/extends.js';
 import supportsInterface from '../../supports/interface.js';
-import supportsAttributeOrMethod from '../../supports/member.js';
+import supportsMember from '../../supports/member.js';
 
-export class InterfacePropertyFeature extends Feature {
+export class MemberFeature extends Feature {
 	testSelf () {
 		let interfaceObject = this.interface ?? this.parent.interface;
 		let interfaceName = this.parent.id;
 
-		return supportsAttributeOrMethod(interfaceName, this.id, interfaceObject);
+		return supportsMember(interfaceName, this.id, interfaceObject);
 	}
 }
 
 export default class InterfaceFeature extends Feature {
 	static children = {
-		tests: { type: InterfacePropertyFeature },
+		tests: { type: MemberFeature },
 		// members: { type: InterfacePropertyFeature },
 		// static: { type: InterfacePropertyFeature },
 		extends: { type: InterfaceFeature },
@@ -40,7 +40,7 @@ export default class InterfaceFeature extends Feature {
 			let SuperClass = this.id;
 			let Class = this.parent.id;
 
-			return classExtends(Class, SuperClass);
+			return testExtends(Class, SuperClass);
 		}
 
 		return supportsInterface(this.id);

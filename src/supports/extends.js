@@ -1,4 +1,4 @@
-export default function classExtends (Class, SuperClass) {
+export default function testExtends (Class, SuperClass) {
 	let args = [Class, SuperClass];
 	if (typeof Class === 'string') {
 		Class = globalThis[Class];
