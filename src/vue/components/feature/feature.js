@@ -14,6 +14,10 @@ export default {
 			type: Number,
 			default: 0,
 		},
+
+		parent: {
+			type: Object,
+		},
 	},
 
 	inheritAttrs: false,
@@ -55,10 +59,6 @@ export default {
 			return this.feature.score;
 		},
 
-		children () {
-			return this.feature.children;
-		},
-
 		renderedChildren () {
 			return !this.isCollapsible || this.everOpened ? this.feature.children : [];
 		},
@@ -69,6 +69,18 @@ export default {
 
 		isCollapsible () {
 			return this.level > 0 && this.feature.children?.length > 0;
+		},
+
+		computedParent () {
+			return this.parent ?? this.feature.parent;
+		},
+
+		showScore () {
+			return !this.parent || this.species === 'Feature' || this.parent.score.total !== this.feature.score.total;
+		},
+
+		showFeatureCount () {
+			return this.feature.score.total > 1 && (!this.parent || this.parent.score.total !== this.feature.score.total);
 		}
 	},
 

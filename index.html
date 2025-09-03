@@ -28,7 +28,7 @@
 				[passclass(feature.score)]: true,
 				feature: species === 'Feature',
 			}" :data-level="level" ref="container">
-			<support-status :score="feature.score"></support-status>
+			<support-status :score="feature.score" v-if="showScore"></support-status>
 			<wrap-if v-if="feature.title || feature.code || feature.id" :is="level > 2 ? '' : 'h' + level" class="title">
 				<span class="title" v-if="feature.titleHtml" v-html="feature.titleHtml"></span>
 				<wrap-if :is="feature.title ? 'span' : 'code'" class="title" v-else v-text="feature.title ?? feature.code ?? feature.id"></wrap-if>
@@ -44,13 +44,13 @@
 				<a v-if="feature.mdnLink" :href="feature.mdnLink" target="_blank" class="badge spec-link mdn-link">MDN</a>
 			</div>
 
-			<span class="count" v-if="feature.score.total > 1">{{ feature.score.total }}</span>
+			<span class="count" v-if="showFeatureCount">{{ feature.score.total }}</span>
 
 			<span class="prefix" v-if="feature.result?.prefix">{{ feature.result.prefix }}</span>
 			<span class="note" v-if="feature.result?.note">{{ feature.result.note }}</span>
 		</component>
 		<div v-if="renderedChildren.length > 0" class="feature-children">
-			<bs-feature v-for="child, index of renderedChildren" :feature="child" :key="child.uid" :level="level + 1"></bs-feature>
+			<bs-feature v-for="child, index of renderedChildren" :parent="feature" :feature="child" :key="child.uid" :level="level + 1"></bs-feature>
 		</div>
 
 	</wrap-if>
