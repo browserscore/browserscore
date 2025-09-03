@@ -173,8 +173,12 @@ export default {
 			}
 		},
 
+		species () {
+			return this.feature.species;
+		},
+
 		isSpec () {
-			return this.feature.constructor.name === 'Spec';
+			return this.feature.species === 'Spec';
 		},
 
 		isCollapsible () {

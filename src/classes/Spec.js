@@ -101,6 +101,9 @@ export default class Spec extends AbstractFeature {
 		this.children = createFeatures(this.def, {spec: this});
 	}
 
+	get species () {
+		return 'Spec';
+	}
 
 
 	get status () {

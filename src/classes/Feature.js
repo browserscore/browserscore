@@ -85,6 +85,10 @@ export default class Feature extends AbstractFeature {
 		}
 	}
 
+	get species () {
+		return 'Feature';
+	}
+
 	get forceTotal () {
 		let forceTotal = this.def.forceTotal
 		               ?? this.group?.forceTotal
