@@ -50,10 +50,10 @@ export default class Feature extends AbstractFeature {
 			default: ['pass', 'partial', 'fail'],
 		},
 
-		...mapObject(Spec.filters, filter => ({
-			...filter,
-			matches () {
-				return filter.matches(this.spec);
+		...mapObject(Spec.filters, filterSpec => ({
+			...filterSpec,
+			matches (filter) {
+				return filterSpec.matches.call(this.spec, filter);
 			},
 		})),
 	}
