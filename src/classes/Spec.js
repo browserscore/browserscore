@@ -52,9 +52,10 @@ export default class Spec extends AbstractFeature {
 					return filter.status.includes('');
 				}
 			},
-			multiple: true,
-			options: ['', 'stable', 'experimental', 'superseded'],
-			default: ['', 'stable', 'experimental']
+			// multiple: true,
+			// options: ['', 'stable', 'experimental', 'superseded'],
+			// default: ['', 'stable', 'experimental']
+			default: '',
 		},
 		version: {
 			matches(filter) {
