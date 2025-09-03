@@ -105,6 +105,9 @@ export default class Spec extends AbstractFeature {
 		return 'Spec';
 	}
 
+	get spec () {
+		return this;
+	}
 
 	get status () {
 		return this.def.status;
