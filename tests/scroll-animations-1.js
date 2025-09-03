@@ -4,7 +4,7 @@ export default {
 	link: 'scroll-animations-1',
 	status: 'experimental',
 	'values': {
-		'properties': ['animation-timeline'],
+		properties: ['animation-timeline'],
 		'scroll()': {
 			link: '#scroll-notation',
 			tests: [

@@ -60,6 +60,8 @@ export default {
 		}
 	},
 	properties: {
-		transform: ['rotate(calc(15deg + 30deg))'],
+		transform: {
+			tests: ['rotate(calc(15deg + 30deg))'],
+		},
 	},
 };
