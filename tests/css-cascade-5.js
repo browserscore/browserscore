@@ -37,7 +37,7 @@ export default {
 		CSSLayerBlockRule: {
 			link: '#the-csslayerblockrule-interface',
 			mdnGroup: 'DOM',
-			extends: 'CSSRule',
+			extends: 'CSSGroupingRule',
 			tests: ['name'],
 		},
 
