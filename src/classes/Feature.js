@@ -54,13 +54,6 @@ export default class Feature extends AbstractFeature {
 		super(def, parent);
 		this.type = this.def.type ?? parent?.type;
 
-		if (Array.isArray(def) && typeof def[0] === 'string') {
-			// feature: [test1, test2, ...]
-			def = {tests: def};
-		}
-
-		this.def = def;
-
 		if (this.def.tests) {
 			this.tests = toArray(this.def.tests);
 		}
