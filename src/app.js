@@ -289,7 +289,7 @@ for (let [tag, directive] of Object.entries(appSpec.directives)) {
 	createdApp.directive(tag, directive);
 }
 
-let app = createdApp.mount("#content");
+let app = createdApp.mount("#main_content");
 
 // Global exports
 Object.assign(globalThis, {

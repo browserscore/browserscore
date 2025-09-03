@@ -217,7 +217,7 @@ body > h1 {
 	}
 }
 
-#content {
+#main_content {
 	display: flex;
 	gap: 2em;
 }
