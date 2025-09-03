@@ -1,5 +1,4 @@
 import AbstractFeature from './AbstractFeature.js';
-import { groups, orgs } from '../data.js';
 import Feature from "./Feature.js";
 import { supportsNames, titles as featureTypeTitles} from '../features.js';
 import featureMap from './Feature/index.js';
@@ -16,6 +15,7 @@ for (let type in supportsNames) {
 	featureTypes[type].supports = supportsNames[type];
 }
 
+import { groups, orgs } from '../data/orgs.js';
 
 // Shorten the title by removing parentheticals, subheadings, and superfluous words
 const removedOther = / *(?:\([^)]*\)|:.*)( *)/g;
