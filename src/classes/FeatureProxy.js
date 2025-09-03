@@ -3,7 +3,7 @@
  * Used to filter features
  */
 
-import { isSubsetOf, symmetricDifference } from '../util.js';
+import { symmetricDifference } from '../util.js';
 import AbstractFeature from './AbstractFeature.js';
 
 export default class FeatureProxy extends AbstractFeature {
