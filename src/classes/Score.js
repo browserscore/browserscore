@@ -173,6 +173,12 @@ export default class Score {
 				}
 			}
 		}
+
+		if (this.forceTotal) {
+			let childTotal = this.total;
+			this.total = this.forceTotal;
+			this.passed = this.passed * this.total / childTotal;
+		}
 	}
 
 	recalcAncestors (limit = Infinity) {
