@@ -1,4 +1,5 @@
 import Feature from '../Feature.js';
+import classExtends from '../../supports/extends.js';
 import supportsInterface from '../../supports/interface.js';
 import supportsAttributeOrMethod from '../../supports/member.js';
 
@@ -27,7 +28,7 @@ export default class InterfaceFeature extends Feature {
 	}
 
 	get code () {
-		if (this.fromParent === 'extends') {
+		if (this.def.fromParent === 'extends') {
 			return 'extends ' + this.id;
 		}
 
@@ -35,22 +36,11 @@ export default class InterfaceFeature extends Feature {
 	}
 
 	testSelf () {
-		if (this.fromParent === 'extends') {
-			let superClass = window[this.id];
-			let thisClass = window[this.parent.id];
+		if (this.def.fromParent === 'extends') {
+			let SuperClass = this.id;
+			let Class = this.parent.id;
 
-			if (!superClass) {
-				return {success: false, note: 'Parent class not found: ' + this.id};
-			}
-
-			do {
-				thisClass = Object.getPrototypeOf(superClass);
-				if (thisClass === superClass) {
-					return {success: true};
-				}
-			} while (thisClass);
-
-			return {success: false};
+			return classExtends(Class, SuperClass);
 		}
 
 		return supportsInterface(this.id);

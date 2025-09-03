@@ -15,6 +15,7 @@ import mq from './supports/mq.js';
 import variable from './supports/variable.js';
 import Interface from './supports/interface.js';
 import member from './supports/member.js';
+import classExtends from './supports/extends.js';
 
 const Supports = {
 	prefixes,
@@ -29,6 +30,7 @@ const Supports = {
 	variable,
 	interface: Interface,
 	member,
+	extends: classExtends,
 };
 
 if (IS_DEV) {
@@ -36,5 +38,5 @@ if (IS_DEV) {
 }
 
 export default Supports;
-export { property, value, descriptor, descriptorvalue, selector, atrule, mq, variable, Interface, member };
+export { property, value, descriptor, descriptorvalue, selector, atrule, mq, variable, Interface, member, classExtends };
 
