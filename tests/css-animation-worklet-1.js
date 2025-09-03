@@ -7,28 +7,19 @@ export default {
 	interfaces: {
 		CSS: {
 			link: '#animation-worklet-desc',
-			tests: ['animationWorklet'],
-			interface: function() {
-				return CSS;
-			},
+			properties: ['animationWorklet'],
 		},
 		Worklet: {
 			link: '#animation-worklet-desc',
-			tests: ['addModule'],
 			interface: function() {
 				return CSS.animationWorklet;
 			},
+			methods: ['addModule'],
 		},
 		WorkletAnimation: {
 			link: '#worklet-animation-interface',
-			tests: ['animatorName'],
-			interface: function() {
-				return new WorkletAnimation('Animator', new KeyframeEffect(
-					document.body,
-					{transform: ['translateX(0)', 'translateX(50vw)']},
-					{duration: 1000}
-				));
-			},
+			extends: 'Animation',
+			members: ['animatorName'],
 		},
 	},
 };

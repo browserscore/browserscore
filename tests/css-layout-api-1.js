@@ -13,10 +13,7 @@ export default {
 	interfaces: {
 		CSS: {
 			link: '#layout-worklet',
-			tests: ['layoutWorklet'],
-			interface: function() {
-				return CSS;
-			},
+			properties: ['layoutWorklet'],
 		},
 		Worklet: {
 			link: '#layout-worklet',

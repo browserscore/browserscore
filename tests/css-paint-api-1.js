@@ -17,10 +17,7 @@ export default {
 	interfaces: {
 		CSS: {
 			link: '#paint-worklet',
-			tests: ['paintWorklet'],
-			interface: function() {
-				return CSS;
-			},
+			properties: ['paintWorklet'],
 		},
 		Worklet: {
 			link: '#paint-worklet',

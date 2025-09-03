@@ -7,15 +7,12 @@ export default {
 		CSS: {
 			link: '#namespacedef-css',
 			mdnGroup: 'DOM',
-			tests: ['escape'],
-			interface: function() {
-				return CSS;
-			}
+			functions: ['escape'],
 		},
 		StyleSheet: {
 			link: '#the-stylesheet-interface',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'type',
 				'href',
 				'ownerNode',
@@ -24,81 +21,74 @@ export default {
 				'media',
 				'disabled',
 			],
-			interface: function(style) {
-				return style.sheet;
-			}
 		},
 		CSSStyleSheet: {
 			link: '#the-cssstylesheet-interface',
 			mdnGroup: 'DOM',
-			tests: [
-				'type',
-				'href',
-				'title',
-				'media',
-				'ownerNode',
-				'parentStyleSheet',
-				'title',
-				'media',
-				'disabled',
+			members: [
 				'ownerRule',
 				'cssRules',
+			],
+			methods: [
 				'insertRule',
 				'deleteRule',
-				'rules',
-				'addRule',
-				'removeRule',
 				'replace',
 				'replaceSync',
 			],
+			extends: 'StyleSheet',
+			children: {
+				CSSStyleSheet: {
+					title: 'Deprecated `CSSStyleSheet` members',
+					// FIXME this inherits the extends from above, but it shouldn't
+					members: ['rules'],
+					methods: ['addRule', 'removeRule'],
+				}
+			}
 		},
 		StyleSheetList: {
 			link: '#the-stylesheetlist-interface',
 			mdnGroup: 'DOM',
-			tests: ['item', 'length'],
+			members: ['length'],
+			methods: ['item'],
 		},
-		Document: {
+		document: {
 			link: '#extensions-to-the-document-or-shadow-root-interface',
 			mdnGroup: 'DOM',
-			tests: ['styleSheets', 'adoptedStyleSheets'],
-			interface: function() {
-				return document;
-			},
+			properties: ['styleSheets', 'adoptedStyleSheets'],
 		},
-		Element: {
+		HTMLLinkElement: {
 			link: '#the-linkstyle-interface',
+			title: 'The `LinkStyle` interface',
 			mdnGroup: 'DOM',
-			tests: ['sheet', 'style'],
-			interface: function(style) {
-				return style;
-			},
+			members: ['sheet', 'style'],
 		},
-		Window: {
+		window: {
 			link: '#extensions-to-the-window-interface',
 			mdnGroup: 'DOM',
-			tests: ['getComputedStyle'],
-			interface: function() {
-				return window;
-			},
+			functions: ['getComputedStyle'],
 		},
 		MediaList: {
 			link: '#the-medialist-interface',
 			mdnGroup: 'DOM',
-			tests: ['mediaText', 'length', 'item', 'appendMedium', 'deleteMedium'],
+			tests: ['mediaText', 'length'],
+			methods: ['item', 'appendMedium', 'deleteMedium'],
 		},
 		CSSRuleList: {
 			link: '#the-cssrulelist-interface',
 			mdnGroup: 'DOM',
-			tests: ['item', 'length'],
+			members: ['length'],
+			methods: ['item'],
 		},
 		CSSRule: {
 			link: '#the-cssrule-interface',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'cssText',
 				'parentRule',
 				'parentStyleSheet',
-				'type',
+				{id: 'type', title: 'Deprecated `type` attribute'},
+			],
+			properties: [
 				'STYLE_RULE',
 				'CHARSET_RULE',
 				'IMPORT_RULE',
@@ -107,52 +97,74 @@ export default {
 				'PAGE_RULE',
 				'MARGIN_RULE',
 				'NAMESPACE_RULE',
-			],
+			]
 		},
 		CSSStyleRule: {
 			link: '#the-cssstylerule-interface',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'selectorText',
 				'style',
-				'cssRules',
-				'insertRule',
-				'deleteRule',
-				'cssText',
-				'parentRule',
-				'parentStyleSheet',
 			],
+			extends: 'CSSGroupingRule',
 		},
 		CSSImportRule: {
 			link: '#the-cssimportrule-interface',
 			mdnGroup: 'DOM',
-			tests: ['href', 'media', 'styleSheet'],
+			members: [
+				'href',
+				'media',
+				'styleSheet',
+				'layerName',
+				'supportsText',
+			],
 		},
 		CSSGroupingRule: {
 			link: '#the-cssgroupingrule-interface',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'cssRules',
-				'insertRule',
-				'deleteRule',
-				'cssText',
-				'parentRule',
-				'parentStyleSheet',
+			],
+			methods: ['insertRule', 'deleteRule'],
+			extends: 'CSSRule',
+		},
+		CSSPageDescriptors: {
+			link: '#the-csspagerule-interface',
+			extends: 'CSSStyleDeclaration',
+			members: [
+				'margin',
+				'marginTop',
+				'marginRight',
+				'marginBottom',
+				'marginLeft',
+				'margin-top',
+				'margin-right',
+				'margin-bottom',
+				'margin-left',
+				'size',
+				'pageOrientation',
+				'page-orientation',
+				'marks',
+				'bleed',
 			],
 		},
 		CSSPageRule: {
 			link: '#the-csspagerule-interface',
 			mdnGroup: 'DOM',
-			tests: ['selectorText', 'style', 'cssRules', 'insertRule', 'deleteRule'],
+			extends: 'CSSGroupingRule',
+			members: ['selectorText', 'style'],
 		},
 		CSSMarginRule: {
 			link: '#the-cssmarginrule-interface',
 			mdnGroup: 'DOM',
+			extends: 'CSSRule',
+			members: ['name', 'style'],
 		},
 		CSSNamespaceRule: {
 			link: '#the-cssnamespacerule-interface',
 			mdnGroup: 'DOM',
-			tests: ['namespaceURI', 'prefix', 'cssText', 'parentRule', 'parentStyleSheet'],
+			extends: 'CSSRule',
+			members: ['namespaceURI', 'prefix'],
 		},
 		CSSStyleDeclaration: {
 			link: '#the-cssstyledeclaration-interface',
@@ -160,17 +172,20 @@ export default {
 			tests: [
 				'cssText',
 				'length',
+				'parentRule',
+			],
+			methods: [
 				'item',
 				'getPropertyValue',
 				'getPropertyPriority',
 				'setProperty',
 				'removeProperty',
-				'parentRule',
-				'cssFloat'
-			],
-			interface: function() {
-				return document.body.style;
-			}
+			]
 		},
+		CSSStyleProperties: {
+			link: '#the-cssstyledeclaration-interface',
+			extends: 'CSSStyleDeclaration',
+			members: ['cssFloat'],
+		}
 	},
 };

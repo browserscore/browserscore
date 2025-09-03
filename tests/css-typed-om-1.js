@@ -8,28 +8,24 @@ export default {
 		Element: {
 			link: '#computed-stylepropertymapreadonly-objects',
 			mdnGroup: 'DOM',
-			tests: ['computedStyleMap'],
-			interface: function() {
-				return document.body;
-			},
+			members: [
+				'computedStyleMap',
+			],
 		},
 		StylePropertyMapReadOnly: {
 			link: '#the-stylepropertymap',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'get',
 				'getAll',
 				'has',
 				'size',
 			],
-			interface: function() {
-				return document.body.computedStyleMap();
-			},
 		},
 		StylePropertyMap: {
 			link: '#the-stylepropertymap',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'get',
 				'getAll',
 				'has',
@@ -39,52 +35,43 @@ export default {
 				'delete',
 				'clear',
 			],
-			interface: function() {
-				return document.body.attributeStyleMap;
-			},
 		},
 		CSSStyleValue: {
 			link: '#stylevalue-objects',
 			mdnGroup: 'DOM',
-			tests: ['parse', 'parseAll'],
-			interface: function() {
-				return CSSStyleValue
-			},
+			functions: [
+				'parse',
+				'parseAll',
+			],
 		},
 		CSSUnparsedValue: {
 			link: '#unparsedvalue-objects',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'length',
 				'entries',
 				'keys',
 				'values',
 				'forEach',
 			],
-			interface: function(style) {
-				return style.sheet.cssRules[0].styleMap.get('--foo');
-			},
 		},
 		CSSVariableReferenceValue: {
 			link: '#unparsedvalue-objects',
 			mdnGroup: 'DOM',
-			tests: ['variable', 'fallback'],
-			interface: function(style) {
-				return style.sheet.cssRules[0].styleMap.get('margin-top')[0];
-			},
+			members: [
+				'variable',
+				'fallback',
+			],
 		},
 		CSSKeywordValue: {
 			link: '#keywordvalue-objects',
 			mdnGroup: 'DOM',
-			tests: ['value'],
-			interface: function(style) {
-				return style.sheet.cssRules[0].styleMap.get('display');
-			},
+			members: ['value'],
 		},
 		CSSNumericValue: {
 			link: '#numeric-value',
 			mdnGroup: 'DOM',
-			tests: [
+			methods: [
 				'add',
 				'sub',
 				'mul',
@@ -96,185 +83,92 @@ export default {
 				'toSum',
 				'type',
 			],
-			interface: function(style) {
-				return style.sheet.cssRules[0].styleMap.get('opacity');
-			},
 		},
 		CSSUnitValue: {
 			link: '#simple-numeric',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'value',
 				'unit',
-				'add',
-				'sub',
-				'mul',
-				'div',
-				'min',
-				'max',
-				'equals',
-				'to',
-				'toSum',
-				'type',
 			],
-			interface: function(style) {
-				return style.sheet.cssRules[0].styleMap.get('margin-top');
-			},
+			extends: 'CSSNumericValue',
 		},
 		CSSMathValue: {
 			link: '#complex-numeric',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'operator',
-				'add',
-				'sub',
-				'mul',
-				'div',
-				'min',
-				'max',
-				'equals',
-				'to',
-				'toSum',
-				'type',
 			],
+			extends: 'CSSNumericValue',
 		},
 		CSSMathSum: {
 			link: '#cssmathsum',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'values',
-				'operator',
-				'add',
-				'sub',
-				'mul',
-				'div',
-				'min',
-				'max',
-				'equals',
-				'to',
-				'toSum',
-				'type',
 			],
+			extends: 'CSSMathValue',
 		},
 		CSSMathProduct: {
 			link: '#cssmathproduct',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'values',
-				'operator',
-				'add',
-				'sub',
-				'mul',
-				'div',
-				'min',
-				'max',
-				'equals',
-				'to',
-				'toSum',
-				'type',
 			],
+			extends: 'CSSMathValue',
 		},
 		CSSMathNegate: {
 			link: '#cssmathnegate',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'value',
-				'operator',
-				'add',
-				'sub',
-				'mul',
-				'div',
-				'min',
-				'max',
-				'equals',
-				'to',
-				'toSum',
-				'type',
 			],
+			extends: 'CSSMathValue',
 		},
 		CSSMathInvert: {
 			link: '#cssmathinvert',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'value',
-				'operator',
-				'add',
-				'sub',
-				'mul',
-				'div',
-				'min',
-				'max',
-				'equals',
-				'to',
-				'toSum',
-				'type',
 			],
+			extends: 'CSSMathValue',
 		},
 		CSSMathMin: {
 			link: '#cssmathmin',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'values',
-				'operator',
-				'add',
-				'sub',
-				'mul',
-				'div',
-				'min',
-				'max',
-				'equals',
-				'to',
-				'toSum',
-				'type',
 			],
+			extends: 'CSSMathValue',
 		},
 		CSSMathMax: {
 			link: '#cssmathmax',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'values',
-				'operator',
-				'add',
-				'sub',
-				'mul',
-				'div',
-				'min',
-				'max',
-				'equals',
-				'to',
-				'toSum',
-				'type',
 			],
+			extends: 'CSSMathValue',
 		},
 		CSSMathClamp: {
 			link: '#cssmathclamp',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'lower',
 				'value',
 				'upper',
-				'operator',
-				'add',
-				'sub',
-				'mul',
-				'div',
-				'min',
-				'max',
-				'equals',
-				'to',
-				'toSum',
-				'type',
 			],
+			extends: 'CSSMathValue',
 		},
 		CSSNumericArray: {
 			link: '#cssnumericarray',
 			mdnGroup: 'DOM',
-			tests: ['length'],
+			iterable: true,
+			members: ['length'],
 		},
 		CSS: {
 			link: '#numeric-factory',
 			mdnGroup: 'DOM',
-			tests: [
+			functions: [
 				'number',
 				'percent',
 				'em',
@@ -334,14 +228,11 @@ export default {
 				'dppx',
 				'fr',
 			],
-			interface: function() {
-				return CSS;
-			},
 		},
 		CSSTransformValue: {
 			link: '#transformvalue-objects',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'length',
 				'is2D',
 				'toMatrix',
@@ -354,76 +245,76 @@ export default {
 		CSSTransformComponent: {
 			link: '#csstransformcomponent',
 			mdnGroup: 'DOM',
-			tests: ['is2D', 'toMatrix'],
+			members: ['is2D', 'toMatrix'],
 		},
 		CSSTranslate: {
 			link: '#csstranslate',
 			mdnGroup: 'DOM',
-			tests: ['x', 'y', 'z'],
+			members: ['x', 'y', 'z'],
 		},
 		CSSRotate: {
 			link: '#cssrotate',
 			mdnGroup: 'DOM',
-			tests: ['x', 'y', 'z', 'angle'],
+			members: ['x', 'y', 'z', 'angle'],
 		},
 		CSSScale: {
 			link: '#cssscale',
 			mdnGroup: 'DOM',
-			tests: ['x', 'y', 'z'],
+			members: ['x', 'y', 'z'],
 		},
 		CSSSkew: {
 			link: '#cssskew',
 			mdnGroup: 'DOM',
-			tests: ['ax', 'ay'],
+			members: ['ax', 'ay'],
 		},
 		CSSSkewX: {
 			link: '#cssskewx',
 			mdnGroup: 'DOM',
-			tests: ['ax'],
+			members: ['ax'],
 		},
 		CSSSkewY: {
 			link: '#cssskewy',
 			mdnGroup: 'DOM',
-			tests: ['ay'],
+			members: ['ay'],
 		},
 		CSSPerspective: {
 			link: '#cssperspective',
 			mdnGroup: 'DOM',
-			tests: ['length'],
+			members: ['length'],
 		},
 		CSSMatrixComponent: {
 			link: '#cssmatrixcomponent',
 			mdnGroup: 'DOM',
-			tests: ['matrix'],
+			members: ['matrix'],
 		},
 		CSSImageValue: {
 			link: '#imagevalue-objects',
 			mdnGroup: 'DOM',
-			tests: ['CSSImageValue'],
+			members: ['CSSImageValue'],
 		},
 		CSSColorValue: {
 			link: '#colorvalue-objects',
 			mdnGroup: 'DOM',
-		 	tests: ['CSSColorValue'],
+		 	members: ['CSSColorValue'],
 		},
 		CSSRGB: {
 			link: '#cssrgb',
 			mdnGroup: 'DOM',
-		 	tests: ['r', 'g', 'b', 'alpha'],
+		 	members: ['r', 'g', 'b', 'alpha'],
 		},
 		CSSHSL: {
 			link: '#csshsl',
 			mdnGroup: 'DOM',
-		 	tests: ['h', 's', 'l', 'alpha'],
+		 	members: ['h', 's', 'l', 'alpha'],
 		},
 		CSSHWB: {
 			link: '#csshwb',
 			mdnGroup: 'DOM',
-		 	tests: ['h', 'w', 'b', 'alpha'],
+		 	members: ['h', 'w', 'b', 'alpha'],
 		},
 		CSSLab: {
 			link: '#csslab',
-		 	tests: ['l', 'a', 'b', 'alpha'],
+		 	members: ['l', 'a', 'b', 'alpha'],
 		},
 		CSSLCH: {
 			link: '#csslch',
@@ -432,17 +323,17 @@ export default {
 		CSSOKLab: {
 			link: '#cssoklab',
 			mdnGroup: 'DOM',
-		 	tests: ['l', 'a', 'b', 'alpha'],
+		 	members: ['l', 'a', 'b', 'alpha'],
 		},
 		CSSOKLCH: {
 			link: '#cssoklch',
 			mdnGroup: 'DOM',
-		 	tests: ['l', 'c', 'h', 'alpha'],
+			members: ['l', 'c', 'h', 'alpha'],
 		},
 		CSSColor: {
 			link: '#csscolor',
 			mdnGroup: 'DOM',
-			tests: ['colorSpace', 'channels', 'alpha'],
+			members: ['colorSpace', 'channels', 'alpha'],
 		},
 	},
 };
