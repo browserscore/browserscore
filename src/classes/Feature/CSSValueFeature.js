@@ -9,22 +9,21 @@ import supportsValue from '../../supports/value.js';
 export class CSSValuePropertyFeature extends Feature {
 	static children = null;
 
-	_createChildren () {
-		// Subset properties to remove unsupported ones before any children are created
-		let ownProperties = this.def.properties;
+	constructor (def, parent) {
+		super(def, parent);
 
-		if (!ownProperties) {
-			return;
-		}
-
-		for (let i = 0; i < ownProperties.length; i++) {
-			let property = ownProperties[i];
-			if (!supportsProperty(property)) {
-				ownProperties.splice(i--, 1);
+		if (def.properties && !def.properties.processed) {
+			// Subset properties to remove unsupported ones before any children are created
+			for (let i = 0; i < def.properties.length; i++) {
+				let property = def.properties[i];
+				if (!supportsProperty(property)) {
+					def.properties.splice(i--, 1);
+				}
 			}
+			def.properties.processed = true;
 		}
 
-		super._createChildren();
+		this.properties = def.properties;
 	}
 
 	leafTest () {

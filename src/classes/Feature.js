@@ -50,10 +50,9 @@ export default class Feature extends AbstractFeature {
 		},
 	}
 
-	constructor (def, parent, group) {
+	constructor (def, parent) {
 		super(def, parent);
-		this.type = def.type ?? group?.type ?? parent?.type;
-		this.group = group;
+		this.type = this.def.type ?? parent?.type;
 
 		if (Array.isArray(def) && typeof def[0] === 'string') {
 			// feature: [test1, test2, ...]
@@ -91,7 +90,6 @@ export default class Feature extends AbstractFeature {
 
 	get forceTotal () {
 		let forceTotal = this.def.forceTotal
-		               ?? this.group?.forceTotal
 		               ?? (this.def.isGroup || this.def.children ? false : undefined)
 		               ?? this.constructor.forceTotal;
 		// false → undefined
@@ -159,7 +157,7 @@ export default class Feature extends AbstractFeature {
 
 			// This is often a nested child property, so we may need to go up to find its value
 			// Just make sure you're not reading the same property on ancestors that got us here
-			multiple = this.closestValue(f => f.def[property] ?? f.group?.[property], {
+			multiple = this.closestValue(f => f.def[property], {
 				maxSteps: !schema.nest || this.def.fromParent === property ? 1 : nestingLevel,
 				stopIf: f => f.constructor.name === 'Spec'
 			});
@@ -328,8 +326,6 @@ export default class Feature extends AbstractFeature {
 
 		this.score.recalc();
 	}
-
-
 }
 
 function getMdnLink (mdn, feature, mdnGroup) {

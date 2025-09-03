@@ -73,8 +73,8 @@ export default class CSSAtruleFeature extends Feature {
 
 	static gatingTest = true;
 
-	constructor (def, parent, group) {
-		super(def, parent, group);
+	constructor (def, parent) {
+		super(def, parent);
 
 		this.preludeRequired = def.preludeRequired;
 

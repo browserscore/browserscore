@@ -9,10 +9,18 @@ export function createFeatures (all, {spec} = {}) {
 	for (let type in all) {
 		let group = all[type];
 		let {properties, ...features} = group;
-		// let groupProps = {...props, type, properties: group.properties};
+		let groupProps = {...props, type, properties: group.properties};
 
 		for (let id in features) {
 			let feature = features[id];
+
+			for (let key in groupProps) {
+				if (feature[key] || !groupProps[key]) {
+					continue;
+				}
+
+				feature[key] = groupProps[key];
+			}
 
 			if (feature.id) {
 				if (feature.title) {
@@ -27,7 +35,7 @@ export function createFeatures (all, {spec} = {}) {
 			}
 
 			let Class = meta[type]?.class ?? Feature;
-			feature = new Class(feature, spec, group);
+			feature = new Class(feature, spec);
 
 			ret.push(feature);
 		}

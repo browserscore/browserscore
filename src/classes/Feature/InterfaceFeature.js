@@ -20,10 +20,10 @@ export default class InterfaceFeature extends Feature {
 	}
 	static gatingTest = true;
 
-	constructor (def, parent, group) {
-		super(def, parent, group);
+	constructor (def, parent) {
+		super(def, parent);
 
-		this.interface = def.interface ?? group?.interface;
+		this.interface = def.interface ?? parent?.interface;
 	}
 
 	get code () {
