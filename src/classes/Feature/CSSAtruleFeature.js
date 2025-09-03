@@ -183,5 +183,3 @@ export default class CSSAtruleFeature extends Feature {
 		return ret;
 	}
 }
-
-

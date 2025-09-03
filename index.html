@@ -106,7 +106,7 @@
 		<fieldset class="filters">
 			<legend>Filter features</legend>
 
-			<bs-filter label="Type" v-model="filter.type" with-empty :values="featureTypes" :get-label="(id, type) => featureTypeTitles[id] || capitalize(id)"></bs-filter>
+			<bs-filter label="Type" v-model="filter.type" with-empty :values="featureTypes" :get-label="(id, meta) => meta.title ?? capitalize(id)"></bs-filter>
 
 			<div class="filter">
 				Show:

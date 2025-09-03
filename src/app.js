@@ -4,9 +4,9 @@ import * as specs from './spec-defs.js';
 import { orgs, groups } from './data/index.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
-import { IS_DEV, passclass, round, percent, capitalize, symmetricDifference } from './util.js';
+import { IS_DEV, passclass, round, percent, capitalize, symmetricDifference, mapObject } from './util.js';
 import URLParams from './util/urlparams.js';
-import { titles as featureTypeTitles } from './features.js';
+import featureTypes from './data/types.js';
 
 // Vue components
 import * as components from './vue/components/index.js';
@@ -81,8 +81,7 @@ let appSpec = {
 		// Add constants that we don't need to be reactive
 		Object.assign(this, {
 			IS_DEV,
-			featureTypes: Spec.featureTypes,
-			featureTypeTitles,
+			featureTypes,
 			currentYear: new Date().getFullYear(),
 			orgs,
 			groups,
@@ -119,7 +118,7 @@ let appSpec = {
 
 		rootGroupBy () {
 			if (this.groupBy.includes('type')) {
-				return {key: 'type', titles: featureTypeTitles, level: this.groupBy.includes('spec') ? 1 : 0}
+				return {key: 'type', titles: mapObject(featureTypes, type => type.title), level: this.groupBy.includes('spec') ? 1 : 0}
 			}
 
 			return null;

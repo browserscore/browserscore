@@ -27,4 +27,3 @@ export default class CSSPropertyFeature extends Feature {
 		return supportsProperty(property);
 	}
 }
-

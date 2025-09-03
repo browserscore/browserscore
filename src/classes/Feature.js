@@ -3,7 +3,7 @@
  * May or may not have children
  */
 
-import {supportsNames} from '../features.js';
+import featureTypes from '../data/types.js';
 import Supports from '../supports.js';
 import AbstractFeature from './AbstractFeature.js';
 import { toArray } from '../supports/util.js';
@@ -263,7 +263,7 @@ export default class Feature extends AbstractFeature {
 	 * @returns {{success: number, note?: string, prefix?: string, name?: string}}
 	 */
 	leafTest () {
-		let supportsName = supportsNames[this.type] ?? this.type;
+		let supportsName = featureTypes[this.type]?.supports ?? this.type;
 		let testCallback = Supports[supportsName];
 
 		if (!testCallback) {

@@ -64,6 +64,21 @@ export function log (...args) {
 	return args[0];
 }
 
+export function mapObject (obj, mapValues, mapKeys) {
+	let ret = {};
+	for (let key in obj) {
+		let newKey = mapKeys ? mapKeys(key) ?? key : key;
+		ret[newKey] = mapValues ? mapValues(obj[key]) : obj[key];
+	}
+	return ret;
+}
+
+/**
+ * Pick a subset of keys from an object
+ * @param {Object} obj - Object to pick from
+ * @param {Iterable<string | Symbol | number>} keys - Keys to pick
+ * @returns {Object}
+ */
 export function pick (obj, keys) {
 	let ret = {};
 	for (let key of keys) {
