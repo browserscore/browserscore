@@ -7,6 +7,8 @@ import { IS_DEV, passclass, round, percent, capitalize, symmetricDifference, map
 import URLParams from './util/urlparams.js';
 import featureTypes from './data/types.js';
 import { groupFeatures } from './classes/feature-utils.js';
+import Feature from './classes/Feature.js';
+import FeatureProxy from './classes/FeatureProxy.js';
 
 // Vue components
 import * as components from './vue/components/index.js';
