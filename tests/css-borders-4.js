@@ -37,7 +37,7 @@ export default {
 	link: 'css-borders-4',
 	status: 'experimental',
 	values: {
-		'properties': ['border-top-color', 'border-block-start-color'],
+		properties: ['border-top-color', 'border-block-start-color'],
 		'stripes()': {
 			link: '#border-color',
 			tests: [
