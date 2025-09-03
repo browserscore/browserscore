@@ -1,10 +1,10 @@
 /**
  * Component to render one AbstractFeature instance (feature, feature group, spec, etc.)
  */
-import { IS_DEV, passclass, groupBy, round, percent, symmetricDifference, pick } from '../../../util.js';
 import Score from '../../../classes/Score.js';
 import Spec from '../../../classes/Spec.js';
 import Feature from '../../../classes/Feature.js';
+import { IS_DEV, passclass, groupBy, round, percent, symmetricDifference, pick, log } from '../../../util.js';
 
 export default {
 	props: {
@@ -186,6 +186,7 @@ export default {
 		passclass,
 		round,
 		percent,
+		log,
 
 		handleToggle (event) {
 			let open = event.target.open;

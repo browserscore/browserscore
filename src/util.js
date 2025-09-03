@@ -59,6 +59,11 @@ export function symmetricDifference (a, b) {
 	];
 }
 
+export function log (...args) {
+	console.log(...args);
+	return args[0];
+}
+
 export function pick (obj, keys) {
 	let ret = {};
 	for (let key of keys) {
