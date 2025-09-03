@@ -1,9 +1,7 @@
 /**
  * Component to render one AbstractFeature instance (feature, feature group, spec, etc.)
  */
-import { IS_DEV, passclass, groupBy, round, percent, symmetricDifference, pick, log } from '../../../util.js';
-import * as data from '../../../data/index.js';
-import FeatureProxy from '../../../classes/FeatureProxy.js';
+import { IS_DEV, passclass, round, percent, log } from '../../../util.js';
 
 export default {
 	props: {
