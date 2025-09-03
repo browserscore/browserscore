@@ -212,10 +212,10 @@ let appSpec = {
 						changed = true;
 						this.urlParams.setAll(param, value);
 					}
-				}
 
-				if (changed) {
-					this.urlParamsObject = this.urlParams.toJSON();
+					if (changed) {
+						this.urlParamsObject = this.urlParams.toJSON();
+					}
 				}
 			},
 		},
