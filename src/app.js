@@ -1,7 +1,7 @@
 import { createApp } from '../node_modules/vue/dist/vue.esm-browser.js';
 import AbstractFeature from './classes/AbstractFeature.js';
-import * as specs from './specs.js';
 import { orgs, groups } from './data.js';
+import * as specs from './spec-defs.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
 import { IS_DEV, passclass, round, percent, capitalize, symmetricDifference } from './util.js';
