@@ -196,8 +196,8 @@ export default class Score {
 		}
 
 		for (let child of this.children) {
-			child.recalcSelf();
 			child.recalcDescendants(limit - 1);
+			child.recalcSelf();
 		}
 	}
 
