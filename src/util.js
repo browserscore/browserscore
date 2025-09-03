@@ -104,13 +104,19 @@ export function isSubsetOf (subset, set) {
 }
 
 export function groupBy (arr, fn) {
-	let grouped = {};
-	let isString = typeof fn === 'string';
+	let grouped = new Map();
+	let isFunction = typeof fn === 'function';
 
 	for (let item of arr) {
-		let key = isString ? item[fn] : fn(item);
-		grouped[key] = grouped[key] || [];
-		grouped[key].push(item);
+		let key = isFunction ? fn(item) : item[fn];
+		let items = grouped.get(key);
+
+		if (!items) {
+			items = [];
+			grouped.set(key, items);
+		}
+
+		items.push(item);
 	}
 
 
