@@ -264,7 +264,7 @@ export default class Feature extends AbstractFeature {
 	 * Default test method for features
 	 * @returns {{success: number, note?: string, prefix?: string, name?: string}}
 	 */
-	leafTest () {
+	testSelf () {
 		let supportsName = featureTypes[this.type]?.supports ?? this.type;
 		let testCallback = Supports[supportsName];
 
@@ -283,10 +283,10 @@ export default class Feature extends AbstractFeature {
 		return this.constructor.gatingTest;
 	}
 
-	_doLeafTest () {
+	_doTestSelf () {
 		let startTime = performance.now();
 
-		this.result = this.leafTest();
+		this.result = this.testSelf();
 
 		this.score.add({
 			passedTests: Number(this.result.success),
@@ -302,7 +302,7 @@ export default class Feature extends AbstractFeature {
 
 		if (this.gatingTest) {
 			// console.log('gating test', this.score.totalTests, this.score.isDone);
-			this._doLeafTest();
+			this._doTestSelf();
 
 			if (!this.result.success && this.children.length > 0) {
 				// No point in testing the children
@@ -322,7 +322,7 @@ export default class Feature extends AbstractFeature {
 			return super.test();
 		}
 
-		this._doLeafTest();
+		this._doTestSelf();
 
 		this.score.recalc();
 	}

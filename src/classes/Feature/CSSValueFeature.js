@@ -26,7 +26,7 @@ export class CSSValuePropertyFeature extends Feature {
 		this.properties = def.properties;
 	}
 
-	leafTest () {
+	testSelf () {
 		let valueFeature = this.closest(f => f.constructor.name === 'CSSValueFeature');
 		let value = valueFeature?.id;
 		let property = this.id;
@@ -47,7 +47,7 @@ export default class CSSValueFeature extends Feature {
 		}
 	}
 
-	leafTest () {
+	testSelf () {
 		let value = this.id;
 		let property = this.closestValue(f => f.property);
 		return supportsValue(property, value);

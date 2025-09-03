@@ -39,7 +39,7 @@ export class CSSAtruleDescriptorFeature extends Feature {
 		return this.parent.value;
 	}
 
-	leafTest () {
+	testSelf () {
 		let descriptor = this.name;
 		let value = this.value;
 		let atrule = this.atrule?.getCode();
@@ -174,7 +174,7 @@ export default class CSSAtruleFeature extends Feature {
 		return null;
 	}
 
-	leafTest () {
+	testSelf () {
 		let parent = this.parentAtRule?.getCode();
 		let contentBefore = this.contentBefore;
 

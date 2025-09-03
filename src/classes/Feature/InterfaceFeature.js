@@ -3,7 +3,7 @@ import supportsInterface from '../../supports/interface.js';
 import supportsAttributeOrMethod from '../../supports/member.js';
 
 export class InterfacePropertyFeature extends Feature {
-	leafTest () {
+	testSelf () {
 		let interfaceObject = this.interface ?? this.parent.interface;
 		let interfaceName = this.parent.id;
 
@@ -34,7 +34,7 @@ export default class InterfaceFeature extends Feature {
 		return this.id;
 	}
 
-	leafTest () {
+	testSelf () {
 		if (this.fromParent === 'extends') {
 			let superClass = window[this.id];
 			let thisClass = window[this.parent.id];
