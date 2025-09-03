@@ -1,26 +1,19 @@
 import { createApp } from '../node_modules/vue/dist/vue.esm-browser.js';
 import AbstractFeature from './classes/AbstractFeature.js';
-import * as specs from './spec-defs.js';
-import { orgs, groups } from './data/index.js';
+import { orgs, groups, specs } from './data/index.js';
 import Spec from './classes/Spec.js';
 import content from './vue/directives/content.js';
 import { IS_DEV, passclass, round, percent, capitalize, symmetricDifference, mapObject } from './util.js';
 import URLParams from './util/urlparams.js';
 import featureTypes from './data/types.js';
+import { specRoot } from './data/specs.js';
 
 // Vue components
 import * as components from './vue/components/index.js';
 
-let specRoot = new AbstractFeature();
 let featureRoot = new AbstractFeature();
 
-for (let key in specs) {
-	let spec = specs[key];
-	spec = new Spec(spec, specRoot);
-	featureRoot.children.push(...spec.children);
-}
 
-specRoot.children = [...Spec.all].sort((a, b) => a.title.localeCompare(b.title));
 
 // Components available in every component
 let globalComponents = {
