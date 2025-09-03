@@ -88,7 +88,7 @@ export default {
 		},
 
 		isFiltered () {
-			return this.filteredChildren.length < this.feature.children.length;
+			return this.filteredChildren?.length < this.feature.children.length;
 		},
 
 		isEmpty () {
