@@ -59,16 +59,10 @@ export default class Feature extends AbstractFeature {
 			def = {tests: def};
 		}
 
-		// Non-enumerable
-		this.defineProperties({
-			titleMd: undefined,
-			titleHtml: undefined,
-		});
-
 		this.def = def;
 
-		if (def.tests) {
-			this.tests = toArray(def.tests);
+		if (this.def.tests) {
+			this.tests = toArray(this.def.tests);
 		}
 
 		this._createChildren();
@@ -76,10 +70,14 @@ export default class Feature extends AbstractFeature {
 		let totalTests = this.children.length > 0 ? this.children.length + (this.gatingTest ? 1 : 0) : 1;
 		this.score.set({totalTests});
 
+		// Inline code
 		if (this.title && this.title.indexOf('`') !== this.title.lastIndexOf('`')) {
-			// Inline code
-			this.titleMd = this.title;
-			this.titleHtml = this.title.replace(/`([^`]+?)`/g, '<code>$1</code>');
+			// Non-enumerable
+			this.defineProperties({
+				titleMd: this.title,
+				titleHtml: this.title.replace(/`([^`]+?)`/g, '<code>$1</code>'),
+			});
+
 			this.title = this.title.replace(/`/g, '');
 		}
 	}

@@ -29,8 +29,10 @@ export default class AbstractFeature {
 		});
 
 		this.spec = this.closest(f => f.constructor.name === 'Spec');
+		if (def.title) {
+			this.title = def.title;
+		}
 
-		this.title = def.title;
 		this.score = new Score(this);
 	}
 
