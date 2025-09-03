@@ -29,7 +29,7 @@
 				feature: species === 'Feature',
 			}" :data-level="level" ref="container">
 			<support-status :score="feature.score" v-if="showScore"></support-status>
-			<wrap-if v-if="feature.title || feature.code || feature.id" :is="level > 2 ? '' : 'h' + level" class="title">
+			<wrap-if v-if="feature.title || feature.code || feature.id" :is="species === 'Feature' ? '' : 'h' + level" class="title">
 				<span class="title" v-if="feature.titleHtml" v-html="feature.titleHtml"></span>
 				<wrap-if :is="feature.title ? 'span' : 'code'" class="title" v-else v-text="feature.title ?? feature.code ?? feature.id"></wrap-if>
 			</wrap-if>

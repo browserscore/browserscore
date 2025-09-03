@@ -50,6 +50,10 @@
 		margin-block: 1em .5em;
 	}
 
+	&:has(> h1) {
+		font-size: var(--font-size-2xl);
+	}
+
 	&:has(> h2) {
 		font-size: var(--font-size-xl);
 	}
