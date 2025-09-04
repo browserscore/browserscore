@@ -10,58 +10,51 @@ export default {
 		},
 	},
 	interfaces: {
-		Window: {
+		window: {
 			link: '#extensions-to-the-window-interface',
 			mdnGroup: 'DOM',
-			tests: [
-				'matchMedia',
+			properties: [
 				'screen',
-				'visualViewport',
-				'moveTo',
-				'moveBy',
-				'resizeTo',
-				'resizeBy',
 				'innerWidth',
 				'innerHeight',
 				'scrollX',
 				'pageXOffset',
 				'scrollY',
 				'pageYOffset',
-				'scroll',
-				'scrollTo',
-				'scrollBy',
 				'screenX',
-				'screenLeft',
 				'screenY',
-				'screenTop',
 				'outerWidth',
 				'outerHeight',
 				'devicePixelRatio',
 			],
-			interface: function() {
-				return window;
-			},
+			functions: [
+				'matchMedia',
+				'moveTo',
+				'moveBy',
+				'resizeTo',
+				'resizeBy',
+				'scroll',
+				'scrollTo',
+				'scrollBy',
+			],
 		},
 		MediaQueryList: {
 			link: '#the-mediaquerylist-interface',
 			mdnGroup: 'DOM',
-			tests: ['media', 'matches', 'addListener', 'removeListener', 'onchange'],
-			interface: function() {
-				return window.matchMedia('');
-			},
+			extends: 'EventTarget',
+			members: ['media', 'matches', 'onchange'],
+			methods: ['addListener', 'removeListener'],
 		},
 		MediaQueryListEvent: {
 			link: '#mediaquerylistevent',
 			mdnGroup: 'DOM',
-			tests: ['matches'],
-			interface: function() {
-				return new MediaQueryListEvent('change', {matches: true});
-			},
+			extends: 'Event',
+			members: ['media', 'matches'],
 		},
 		Screen: {
 			link: '#the-screen-interface',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'availWidth',
 				'availHeight',
 				'width',
@@ -69,22 +62,15 @@ export default {
 				'colorDepth',
 				'pixelDepth',
 			],
-			interface: function() {
-				return window.screen;
-			},
 		},
-		Document: {
+		document: {
 			link: '#extensions-to-the-document-interface',
 			mdnGroup: 'DOM',
-			tests: [
+			members: ['scrollingElement'],
+			methods: [
 				'elementFromPoint',
 				'elementsFromPoint',
 				'caretPositionFromPoint',
-				'scrollingElement',
-				'getBoxQuads',
-				'convertQuadFromNode',
-				'convertRectFromNode',
-				'convertPointFromNode',
 			],
 			interface: function() {
 				return document;
@@ -93,22 +79,13 @@ export default {
 		CaretPosition: {
 			link: '#caretposition',
 			mdnGroup: 'DOM',
-			tests: ['offsetNode', 'offset', 'getClientRect'],
-			interface: function() {
-				return document.caretPositionFromPoint(0, 0);
-			},
+			members: ['offsetNode', 'offset'],
+			methods: ['getClientRect'],
 		},
 		Element: {
 			link: '#extension-to-the-element-interface',
 			mdnGroup: 'DOM',
-			tests: [
-				'getClientRects',
-				'getBoundingClientRect',
-				'checkVisibility',
-				'scrollIntoView',
-				'scroll',
-				'scrollTo',
-				'scrollBy',
+			members: [
 				'scrollTop',
 				'scrollLeft',
 				'scrollWidth',
@@ -117,49 +94,41 @@ export default {
 				'clientLeft',
 				'clientWidth',
 				'clientHeight',
-				'getBoxQuads',
-				'convertQuadFromNode',
-				'convertRectFromNode',
-				'convertPointFromNode',
 			],
-			interface: function() {
-				return document.createElement('div');
-			},
+			methods: [
+				'getClientRects',
+				'getBoundingClientRect',
+				'scrollIntoView',
+				'scroll',
+				'scrollTo',
+				'scrollBy',
+			],
 		},
 		HTMLElement: {
 			link: '#extensions-to-the-htmlelement-interface',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'offsetParent',
 				'offsetTop',
 				'offsetLeft',
 				'offsetWidth',
 				'offsetHeight',
 			],
-			interface: function() {
-				return document.createElement('div');
-			},
 		},
 		HTMLImageElement: {
 			link: '#extensions-to-the-htmlimageelement-interface',
 			mdnGroup: 'DOM',
-			tests: ['x', 'y'],
-			interface: function() {
-				return document.createElement('img');
-			},
+			members: ['x', 'y'],
 		},
 		Range: {
 			link: '#extensions-to-the-range-interface',
 			mdnGroup: 'DOM',
-			tests: ['getClientRects', 'getBoundingClientRect'],
-			interface: function() {
-				return document.createRange();
-			},
+			methods: ['getClientRects', 'getBoundingClientRect'],
 		},
 		MouseEvent: {
 			link: '#extensions-to-the-mouseevent-interface',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'screenX',
 				'screenY',
 				'pageX',
@@ -171,42 +140,34 @@ export default {
 				'offsetX',
 				'offsetY',
 			],
-			interface: function() {
-				return new MouseEvent('click', {screenX: 0, screenY: 0, clientX: 0, clientY: 0});
-			},
 		},
 		Text: {
 			link: '#geometryutils',
 			mdnGroup: 'DOM',
-			tests: [
+			methods: [
 				'getBoxQuads',
 				'convertQuadFromNode',
 				'convertRectFromNode',
 				'convertPointFromNode',
 			],
-			interface: function() {
-				return document.createTextNode('');
-			},
 		},
 		CSSPseudoElement: {
 			link: '#geometryutils',
 			mdnGroup: 'DOM',
-			tests: [
+			methods: [
 				'getBoxQuads',
 				'convertQuadFromNode',
 				'convertRectFromNode',
 				'convertPointFromNode',
 			],
-			interface: function() {
-				return document.createTextNode('');
-			},
 		},
 		VisualViewport: {
 			links: {
 				dev: '#the-visualviewport-interface',
 				mdnGroup: 'DOM',
 			},
-			tests: [
+			extends: 'EventTarget',
+			members: [
 				'offsetLeft',
 				'offsetTop',
 				'pageLeft',
@@ -217,13 +178,7 @@ export default {
 				'onresize',
 				'onscroll',
 				'onscrollend',
-				'addEventListener',
-				'removeEventListener',
-				'dispatchEvent',
 			],
-			interface: function() {
-				return window.visualViewport;
-			},
 		},
 	},
 };
