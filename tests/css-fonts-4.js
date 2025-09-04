@@ -237,12 +237,13 @@ export default {
 		CSSRule: {
 			link: '#om-fontfeaturevalues',
 			mdnGroup: 'DOM',
-			tests: ['FONT_FEATURE_VALUES_RULE'],
+			properties: ['FONT_FEATURE_VALUES_RULE'],
 		},
 		CSSFontFeatureValuesRule: {
 			link: '#om-fontfeaturevalues',
 			mdnGroup: 'DOM',
-			tests: [
+			extends: 'CSSRule',
+			members: [
 				'fontFamily',
 				'annotation',
 				'ornaments',
@@ -250,38 +251,22 @@ export default {
 				'swash',
 				'characterVariant',
 				'styleset',
-				'cssText',
-				'parentRule',
-				'parentStyleSheet',
 			],
 		},
 		CSSFontFeatureValuesMap: {
 			link: '#cssfontfeaturevaluesmap',
 			mdnGroup: 'DOM',
-			tests: [
-				'has',
-				'get',
-				'set',
-				'keys',
-				'values',
-				'entries',
-				'forEach',
-				'clear',
-				'delete',
-				'size',
-			],
+			methods: ['set'],
 		},
 		CSSFontPaletteValuesRule: {
 			link: '#om-fontpalettevalues',
 			mdnGroup: 'DOM',
-			tests: [
+			extends: 'CSSRule',
+			members: [
 				'name',
 				'fontFamily',
 				'basePalette',
 				'overrideColors',
-				'cssText',
-				'parentRule',
-				'parentStyleSheet',
 			],
 		},
 	},
