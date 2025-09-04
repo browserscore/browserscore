@@ -30,134 +30,66 @@ export default {
 	properties: {
 		border: {
 			title: '`border` properties',
+			isGroup: true,
 			children: {
 				border: {
 					link: '#border-shorthand-properties',
-					children: {
-						'border': {
-							tests: borderShorthands,
-						},
-						'border-top': {
-							tests: borderShorthands,
-						},
-						'border-right': {
-							tests: borderShorthands,
-						},
-						'border-bottom': {
-							tests: borderShorthands,
-						},
-						'border-left': {
-							tests: borderShorthands,
-						},
-					},
+					title: '`border` and `border-<side>` shorthands',
+					values: borderShorthands,
+					children: ['border', 'border-top', 'border-right', 'border-bottom', 'border-left'],
 				},
 				'border-color': {
 					link: '#border-color-properties',
-					children: {
-						'border-color': {
-							tests: borderColors_1_4,
-						},
-						'border-top-color': {
-							tests: borderColors,
-						},
-						'border-right-color': {
-							tests: borderColors,
-						},
-						'border-bottom-color': {
-							tests: borderColors,
-						},
-						'border-left-color': {
-							tests: borderColors,
-						},
-					}
+					title: '`border-color` and `border-<side>-color`',
+					isGroup: true,
+					values: borderColors,
+					children: [{id: 'border-color', values: borderColors_1_4}, 'border-top-color', 'border-right-color', 'border-bottom-color', 'border-left-color'],
 				},
 				'border-style': {
 					link: '#border-style-properties',
-					children: {
-						'border-style': {
-							tests: borderStyles_1_4,
-						},
-						'border-top-style': {
-							tests: borderStyles,
-						},
-						'border-right-style': {
-							tests: borderStyles,
-						},
-						'border-bottom-style': {
-							tests: borderStyles,
-						},
-						'border-left-style': {
-							tests: borderStyles,
-						},
-					}
+					title: '`border-style` and `border-<side>-style`',
+					values: borderStyles,
+					children: [{id: 'border-style', values: borderStyles_1_4}, 'border-top-style', 'border-right-style', 'border-bottom-style', 'border-left-style'],
 				},
 				'border-width': {
 					link: '#border-width-properties',
-					children: {
-						'border-width': {
-							tests: borderWidths_1_4,
-						},
-						'border-top-width': {
-							tests: borderWidths,
-						},
-						'border-right-width': {
-							tests: borderWidths,
-						},
-						'border-bottom-width': {
-							tests: borderWidths,
-						},
-						'border-left-width': {
-							tests: borderWidths,
-						},
-					},
+					title: '`border-width` and `border-<side>-width`',
+					values: borderWidths,
+					children: [{id: 'border-width', values: borderWidths_1_4}, 'border-top-width', 'border-right-width', 'border-bottom-width', 'border-left-width'],
 				},
 			},
 		},
 
 		margin: {
+			title: '`margin` and `margin-<side>`',
+			isGroup: true,
+			values: margin,
 			children: {
 				margin: {
 					link: '#propdef-margin',
-					tests: margin_1_4,
+					values: margin_1_4,
 				},
 				'margin-right': {
 					link: '#propdef-margin-right',
-					tests: margin,
 				},
 				'margin-left': {
 					link: '#propdef-margin-left',
-					tests: margin,
 				},
 				'margin-top': {
 					link: '#propdef-margin-top',
-					tests: margin,
 				},
 				'margin-bottom': {
 					link: '#propdef-margin-bottom',
-					tests: margin,
 				},
 			},
 		},
 
 		padding: {
 			link: '#padding-properties',
-			children: {
-				padding: {
-					tests: padding_1_4,
-				},
-				'padding-top': {
-					tests: padding,
-				},
-				'padding-right': {
-					tests: padding,
-				},
-				'padding-bottom': {
-					tests: padding,
-				},
-				'padding-left': {
-					tests: padding,
-				},
-			},
+			title: '`padding` and `padding-<side>`',
+			isGroup: true,
+			values: padding,
+			children: [{id: 'padding', values: padding_1_4}, 'padding-top', 'padding-right', 'padding-bottom', 'padding-left'],
 		}
 	},
 };
