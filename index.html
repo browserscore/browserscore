@@ -28,11 +28,12 @@
 				[passclass(feature.score)]: true,
 				feature: species === 'Feature',
 			}" :data-level="level" ref="container">
-			<support-status :score="feature.score" v-if="showScore"></support-status>
+			<support-status :title="feature.result?.note || null" :score="feature.score" v-if="showScore"></support-status>
 			<wrap-if v-if="feature.title || feature.code || feature.id" :is="species === 'Feature' ? '' : 'h' + level" class="title">
 				<span class="title" v-if="feature.titleHtml" v-html="feature.titleHtml"></span>
 				<wrap-if :is="feature.title ? 'span' : 'code'" class="title" v-else v-text="feature.title ?? feature.code ?? feature.id"></wrap-if>
 			</wrap-if>
+			<span class="prefix" v-if="feature.result?.prefix">{{ feature.result.prefix }}</span>
 
 			<div class="meta" v-if="permalink || feature.link || feature.mdnLink">
 				<a v-if="permalink" :href="permalink" class="icon-before permalink" title="Permalink"></a>
@@ -45,15 +46,13 @@
 				<a v-if="feature.mdnLink" :href="feature.mdnLink" target="_blank" class="badge spec-link mdn-link">MDN</a>
 			</div>
 
-			<span class="count" v-if="showFeatureCount">{{ feature.score.total }}</span>
+			<div class="spacer"></div>
 
-			<span class="prefix" v-if="feature.result?.prefix">{{ feature.result.prefix }}</span>
-			<span class="note" v-if="feature.result?.note">{{ feature.result.note }}</span>
+			<span class="count" v-if="showFeatureCount">{{ feature.score.total }}</span>
 		</component>
 		<div v-if="renderedChildren.length > 0" class="feature-children">
 			<bs-feature v-for="child, index of renderedChildren" :parent="feature" :feature="child" :key="child.uid" :level="level + 1"></bs-feature>
 		</div>
-
 	</wrap-if>
 
 </template>

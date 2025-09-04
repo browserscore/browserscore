@@ -314,7 +314,6 @@ summary {
 	&::after {
 		content:'';
 		display: inline-block;
-		margin-inline-start: auto;
 		vertical-align: -.1em;
 		font-size: max(1em, 1rem);
 		width: 1em;
@@ -326,6 +325,12 @@ summary {
 
 		opacity: 0.6;
 		transition: transform 0.2s;
+	}
+
+	&:not(:has(> .spacer)) {
+		&::after {
+			margin-inline-start: auto;
+		}
 	}
 
 	&:is([open] > *)::after {
@@ -419,4 +424,8 @@ footer {
 	inset-block-start: .4em;
 	inset-inline-end: .5em;
 	z-index: 1;
+}
+
+.spacer {
+	flex: 1;
 }
