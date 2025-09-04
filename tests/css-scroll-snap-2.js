@@ -54,15 +54,13 @@ export default {
 				dev: '#snap-events',
 				mdnGroup: 'DOM',
 			},
-			tests: ['snapTargetBlock', 'snapTargetInline'],
+			extends: 'Event',
+			members: ['snapTargetBlock', 'snapTargetInline'],
 		},
 		Element: {
 			link: '#interface-globaleventhandlers',
 			mdnGroup: 'DOM',
-			tests: ['onsnapchanged', 'onsnapchanging'],
-			interface: function() {
-				return document.body;
-			},
+			members: ['onsnapchanged', 'onsnapchanging'],
 		}
 	},
 };

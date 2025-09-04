@@ -23,11 +23,15 @@ export default {
 		CSSFunctionRule: {
 			link: '#the-function-interface',
 			mdnGroup: 'DOM',
-			tests: ['cssRules', 'insertRule', 'deleteRule'],
+			extends: 'CSSGroupingRule',
+			members: ['name', 'returnType'],
+			methods: ['getParameters'],
 		},
 		CSSFunctionDeclarations: {
 			link: '#the-function-declarations-interface',
 			mdnGroup: 'DOM',
-		}
+			extends: 'CSSRule',
+			members: ['style'],
+		},
 	},
 };

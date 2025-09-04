@@ -88,18 +88,14 @@ export default {
 		Element: {
 			link: '#window-interface',
 			mdnGroup: 'DOM',
-			tests: ['pseudo'],
-			interface: function() {
-				return document.body;
-			},
+			methods: ['pseudo'],
 		},
 		CSSPseudoElement: {
 			link: '#CSSPseudoElement-interface',
 			mdnGroup: 'DOM',
-			tests: ['type', 'element', 'parent', 'pseudo'],
-			interface: function() {
-				return document.body.pseudo('::selection');
-			},
+			extends: 'EventTarget',
+			members: ['type', 'element', 'parent'],
+			methods: ['pseudo'],
 		},
 	},
 };

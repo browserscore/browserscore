@@ -21,6 +21,7 @@ export default {
 		CSSPropertyRule: {
 			link: '#the-css-property-rule-interface',
 			mdnGroup: 'DOM',
+			extends: 'CSSRule',
 			members: ['name', 'syntax', 'inherits', 'initialValue'],
 		},
 	},

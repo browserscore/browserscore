@@ -18,29 +18,21 @@ export default {
 		},
 	},
 	interfaces: {
-		Window: {
+		window: {
 			link: '#high-level-api',
 			mdnGroup: 'DOM',
-			tests: ['navigate'],
-			interface: function() {
-				return window;
-			}
+			functions: ['navigate'],
 		},
 		Element: {
 			link: '#low-level-api',
 			mdnGroup: 'DOM',
-			tests: ['getSpatialNavigationContainer', 'focusableAreas', 'spatialNavigationSearch'],
-			interface: function() {
-				return document.body;
-			}
+			methods: ['getSpatialNavigationContainer', 'focusableAreas', 'spatialNavigationSearch'],
 		},
 		NavigationEvent: {
 			link: '#events-navigationevent',
 			mdnGroup: 'DOM',
-			tests: ['dir', 'relatedTarget'],
-			interface: function() {
-				return new NavigationEvent('navbeforefocus');
-			}
+			extends: 'UIEvent',
+			properties: ['dir', 'relatedTarget'],
 		},
 	},
 };

@@ -7,7 +7,8 @@ export default {
 		Animation: {
 			link: '#the-animation-interface',
 			mdnGroup: 'DOM',
-			tests: [
+			extends: 'EventTarget',
+			members: [
 				'id',
 				'effect',
 				'timeline',
@@ -22,111 +23,51 @@ export default {
 				'onfinish',
 				'oncancel',
 				'onremove',
-				'cancel',
-				'finish',
-				'play',
-				'pause',
-				'updatePlaybackRate',
-				'reverse',
-				'persist',
-				'commitStyles',
-				'addEventListener',
-				'removeEventListener',
-				'dispatchEvent',
 			],
-			interface: function() {
-				var div = document.createElement('div');
-				var keyFrames = new KeyframeEffect(
-					div,
-					[
-						{ transform: 'translateY(0%)' },
-						{ transform: 'translateY(100%)' }
-					],
-					{ duration: 3000, fill: 'forwards' }
-				)
-				return new Animation(keyFrames, document.timeline);
-			}
+			methods: ['cancel', 'finish', 'play', 'pause', 'updatePlaybackRate', 'reverse', 'persist', 'commitStyles'],
 		},
 		AnimationTimeline: {
 			link: '#the-animationtimeline-interface',
 			mdnGroup: 'DOM',
-			tests: ['currentTime'],
-			interface: function() {
-				return document.timeline;
-			}
+			members: ['currentTime'],
 		},
 		AnimationEffect: {
 			link: '#animationeffect',
 			mdnGroup: 'DOM',
-			tests: ['getTiming', 'getComputedTiming', 'updateTiming'],
-			interface: function() {
-				var div = document.createElement('div');
-				return new KeyframeEffect(
-					div,
-					[
-						{ transform: "translateY(0%)" },
-						{ transform: "translateY(100%)" },
-					],
-					{ duration: 3000, fill: "forwards" }
-				);
-			}
+			methods: ['getTiming', 'getComputedTiming', 'updateTiming'],
 		},
 		KeyframeEffect: {
 			link: '#the-keyframeeffect-interface',
 			mdnGroup: 'DOM',
-			tests: [
+			extends: 'AnimationEffect',
+			members: [
 				'target',
 				'pseudoElement',
 				'composite',
-				'getKeyframes',
-				'setKeyframes',
-				'getTiming',
-				'getComputedTiming',
-				'updateTiming',
 			],
-			interface: function() {
-				var div = document.createElement('div');
-				return new KeyframeEffect(
-					div,
-					[
-						{ transform: "translateY(0%)" },
-						{ transform: "translateY(100%)" },
-					],
-					{ duration: 3000, fill: "forwards" }
-				);
-			}
+			methods: ['getKeyframes', 'setKeyframes'],
 		},
 		Element: {
 			link: '#the-animatable-interface-mixin',
 			mdnGroup: 'DOM',
-			tests: ['animate', 'getAnimations'],
-			interface: function() {
-				return document.body;
-			}
+			methods: ['animate', 'getAnimations'],
 		},
-		Document: {
+		document: {
 			link: '#extensions-to-the-documentorshadowroot-interface-mixin',
 			mdnGroup: 'DOM',
-			tests: ['timeline', 'getAnimations'],
-			interface: function() {
-				return document;
-			}
+			properties: ['timeline'],
+			functions: ['getAnimations'],
 		},
 		DocumentTimeline: {
 			link: '#the-documenttimeline-interface',
 			mdnGroup: 'DOM',
-			tests: ['currentTime'],
-			interface: function() {
-				return document.timeline;
-			}
+			extends: 'AnimationTimeline',
 		},
 		AnimationPlaybackEvent: {
 			link: '#the-animationplaybackevent-interface',
 			mdnGroup: 'DOM',
-			tests: ['currentTime', 'timelineTime'],
-			interface: function() {
-				return new AnimationPlaybackEvent('finish');
-			},
+			extends: 'Event',
+			members: ['currentTime', 'timelineTime'],
 		},
 	},
 };

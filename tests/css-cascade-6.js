@@ -16,7 +16,8 @@ export default {
 		CSSScopeRule: {
 			link: '#the-cssscoperule-interface',
 			mdnGroup: 'DOM',
-			tests: ['start', 'end', 'cssRules', 'insertRule', 'deleteRule'],
+			extends: 'CSSGroupingRule',
+			members: ['start', 'end'],
 		}
 	}
 }

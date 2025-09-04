@@ -184,10 +184,7 @@ export default {
 		CSS: {
 			link: '#elementsources',
 			mdnGroup: 'DOM',
-			tests: ['elementSources'],
-			interface: function () {
-				return CSS;
-			},
+			properties: ['elementSources'],
 		},
 	},
 };

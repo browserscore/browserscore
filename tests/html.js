@@ -22,10 +22,8 @@ export default {
 		PageRevealEvent: {
 			link: '#the-pagerevealevent-interface',
 			mdnGroup: 'DOM',
-			tests: ['viewTransition'],
-			interface: function() {
-				return new PageRevealEvent('reveal');
-			},
+			extends: 'Event',
+			members: ['viewTransition'],
 		},
 	}
 };

@@ -116,21 +116,13 @@ export default {
 		CSSViewTransitionRule: {
 			link: '#navgation-behavior-rule-interface',
 			mdnGroup: 'DOM',
-			tests: [
-				'navigation',
-				'types',
-				'cssText',
-				'parentRule',
-				'parentStyleSheet',
-			],
+			extends: 'CSSRule',
+			members: ['navigation', 'types'],
 		},
 		ViewTransition: {
 			link: '#view-transitions-extension-types',
 			mdnGroup: 'DOM',
-			tests: ['types'],
-			interface: function() {
-				return ViewTransition.prototype;
-			},
+			members: ['types'],
 		},
 	},
 };

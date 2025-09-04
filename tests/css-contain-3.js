@@ -94,7 +94,7 @@ export default {
 		CSSContainerRule: {
 			link: '#the-csscontainerrule-interface',
 			mdnGroup: 'DOM',
-			tests: ['containerName', 'containerQuery', 'conditionText'],
+			extends: 'CSSConditionRule',
 		},
 	},
 };

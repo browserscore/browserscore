@@ -21,8 +21,8 @@ export default {
 		},
 		Worklet: {
 			link: '#paint-worklet',
-			tests: ['addModule'],
-			interface: function() {
+			methods: ['addModule'],
+			interface: function () {
 				return CSS.paintWorklet;
 			},
 		},
