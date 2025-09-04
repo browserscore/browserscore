@@ -23,7 +23,7 @@ export default class Feature extends AbstractFeature {
 
 	forceTotal = (
 		this.def.forceTotal
-		?? (this.def.isGroup || this.def.children ? false : undefined)
+		?? (this.def.isGroup !== false && (this.def.isGroup || this.def.children) ? false : undefined)
 		?? this.constructor.forceTotal
 	) || undefined; // false → undefined
 	static forceTotal = 1;
