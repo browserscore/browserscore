@@ -112,22 +112,21 @@ export default class AbstractFeature {
 	 * Same as uid, but uses hyphens instead of dots.
 	 */
 	get htmlId () {
-		return this.getUid('--');
+		return this.uid;
 	}
 
 	/**
 	 * Get a globally unique id for this feature, with a custom separator for different levels
 	 */
-	getUid (separator = '.', pathSuffix = '') {
+	getUid (separator = '.') {
 		let parentUid = this.parent?.getUid(separator) ?? '';
 		if (parentUid) {
 			parentUid += separator;
 		}
 
-		pathSuffix = pathSuffix ? separator + pathSuffix : '';
 		let id = this.id ?? '';
 
-		return parentUid + id + pathSuffix;
+		return parentUid + id;
 	}
 
 	_closest (fn, {maxSteps, stopIf} = {}) {
