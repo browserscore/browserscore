@@ -72,9 +72,6 @@ export default {
 				'elementsFromPoint',
 				'caretPositionFromPoint',
 			],
-			interface: function() {
-				return document;
-			},
 		},
 		CaretPosition: {
 			link: '#caretposition',
