@@ -84,7 +84,7 @@ export default {
 			],
 		}
 	},
-	interfaces: {
+	globals: {
 		Element: {
 			link: '#window-interface',
 			mdnGroup: 'DOM',

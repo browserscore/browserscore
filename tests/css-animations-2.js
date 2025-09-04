@@ -29,7 +29,7 @@ export default {
 			],
 		},
 	},
-	interfaces: {
+	globals: {
 		CSSAnimation: {
 			link: '#the-CSSAnimation-interface',
 			mdnGroup: 'DOM',

@@ -13,7 +13,7 @@ export default {
 			tests: ['visible', 'auto', 'hidden'],
 		},
 	},
-	interfaces: {
+	globals: {
 		ContentVisibilityAutoStateChangeEvent: {
 			link: 'https://drafts.csswg.org/css-contain/#content-visibility-auto-state-change',
 			mdnGroup: 'DOM',

@@ -4,7 +4,7 @@ export default {
 	group: 'houdini',
 	link: 'css-animation-worklet-1',
 	status: 'experimental',
-	interfaces: {
+	globals: {
 		CSS: {
 			link: '#animation-worklet-desc',
 			properties: {

@@ -1,6 +1,6 @@
 import Feature from '../Feature.js';
 import testExtends from '../../supports/extends.js';
-import supportsInterface from '../../supports/interface.js';
+import supportsGlobal from '../../supports/global.js';
 import supportsMember from '../../supports/member.js';
 
 export class MemberFeature extends Feature {
@@ -12,7 +12,7 @@ export class MemberFeature extends Feature {
 	static gatingTest = true;
 
 	get base () {
-		return this.closest(f => f instanceof InterfaceFeature)?.base;
+		return this.closest(f => f instanceof GlobalFeature)?.base;
 	}
 
 	get memberType () {
@@ -48,16 +48,16 @@ export class MemberFeature extends Feature {
 	}
 }
 
-export default class InterfaceFeature extends Feature {
+export default class GlobalFeature extends Feature {
 	static children = {
 		/** @deprecated Alias of members */
 		tests: { type: MemberFeature },
 
 		/** The object needs to be an instance of this class */
-		instanceof: { type: InterfaceFeature },
+		instanceof: { type: GlobalFeature },
 
 		/** The object should be a subclass of this class */
-		extends: { type: InterfaceFeature },
+		extends: { type: GlobalFeature },
 
 		/** Properties that should exist on this object */
 		properties: { type: MemberFeature },
@@ -93,7 +93,7 @@ export default class InterfaceFeature extends Feature {
 	}
 
 	/**
-	 * Get the InterfaceFeature that contains the actual interface these are testing stuff in
+	 * Get the GlobalFeature that contains the actual interface these are testing stuff in
 	 */
 	get base () {
 		if (this.def.fromParent === 'extends') {
@@ -115,9 +115,9 @@ export default class InterfaceFeature extends Feature {
 			let Class = this.id;
 			let name = this.parent.id;
 
-			return supportsInterface(name, {instanceof: Class});
+			return supportsGlobal(name, {instanceof: Class});
 		}
 
-		return supportsInterface(this.id);
+		return supportsGlobal(this.id);
 	}
 }

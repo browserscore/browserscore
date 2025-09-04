@@ -3,7 +3,7 @@ export default {
 	title: 'Web Animations',
 	link: 'web-animations-1',
 	status: 'experimental',
-	interfaces: {
+	globals: {
 		Animation: {
 			link: '#the-animation-interface',
 			mdnGroup: 'DOM',

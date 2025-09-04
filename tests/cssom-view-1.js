@@ -9,7 +9,7 @@ export default {
 			tests: ['auto', 'smooth '],
 		},
 	},
-	interfaces: {
+	globals: {
 		window: {
 			link: '#extensions-to-the-window-interface',
 			mdnGroup: 'DOM',

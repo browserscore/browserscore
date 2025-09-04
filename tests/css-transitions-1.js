@@ -37,7 +37,7 @@ export default {
 			tests: '1s 2s width linear',
 		},
 	},
-	interfaces: {
+	globals: {
 		TransitionEvent: {
 			link: '#interface-transitionevent',
 			mdnGroup: 'DOM',

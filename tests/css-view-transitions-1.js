@@ -31,7 +31,7 @@ export default {
 			tests: ['::view-transition-old(*)', '::view-transition-old(--foo)'],
 		},
 	},
-	interfaces: {
+	globals: {
 		document: {
 			link: '#additions-to-document-api',
 			mdnGroup: 'DOM',

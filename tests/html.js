@@ -18,7 +18,7 @@ export default {
 			tests: ':state(checked)',
 		},
 	},
-	interfaces: {
+	globals: {
 		PageRevealEvent: {
 			link: '#the-pagerevealevent-interface',
 			mdnGroup: 'DOM',

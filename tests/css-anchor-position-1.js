@@ -405,7 +405,7 @@ export default {
 			descriptors: ['top', 'left', 'bottom', 'right', 'position-area', 'margin'],
 		},
 	},
-	interfaces: {
+	globals: {
 		CSSPositionTryRule: {
 			links: {
 				dev: '#om-position-try',

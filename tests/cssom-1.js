@@ -3,7 +3,7 @@ export default {
 	title: 'CSS Object Model (CSSOM)',
 	link: 'cssom-1',
 	status: 'experimental',
-	interfaces: {
+	globals: {
 		CSS: {
 			link: '#namespacedef-css',
 			mdnGroup: 'DOM',

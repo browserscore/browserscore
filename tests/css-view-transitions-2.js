@@ -112,7 +112,7 @@ export default {
 			],
 		},
 	},
-	interfaces: {
+	globals: {
 		CSSViewTransitionRule: {
 			link: '#navgation-behavior-rule-interface',
 			mdnGroup: 'DOM',

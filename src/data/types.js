@@ -1,4 +1,4 @@
-import { CSSPropertyFeature, CSSValueFeature, CSSAtruleFeature, InterfaceFeature } from '../classes/Feature/index.js';
+import { CSSPropertyFeature, CSSValueFeature, CSSAtruleFeature, GlobalFeature } from '../classes/Feature/index.js';
 
 const meta = {
 	properties: {
@@ -17,9 +17,9 @@ const meta = {
 		class: CSSAtruleFeature,
 		title: '@Rules & Descriptors',
 	},
-	interfaces: {
-		class: InterfaceFeature,
-		title: 'Interfaces',
+	globals: {
+		class: GlobalFeature,
+		title: 'Globals',
 	},
 	mediaqueries: {
 		supports: 'mq',

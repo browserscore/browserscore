@@ -1,6 +1,6 @@
 import { domPrefixes as prefixes, prefixCamelCase as prefixName } from './shared.js';
 
-import supportsInterface from './interface.js';
+import supportsGlobal from './global.js';
 
 /**
  * Check for the presence of a member or static property
@@ -29,7 +29,7 @@ export default function member (name, options) {
 	let object = contextObject ?? callback?.() ?? globalThis[contextName];
 
 	if (!object) {
-		let contextSupported = supportsInterface(contextName);
+		let contextSupported = supportsGlobal(contextName);
 
 		if (!contextSupported.success) {
 			return {success: false};

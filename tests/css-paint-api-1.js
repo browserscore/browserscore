@@ -14,7 +14,7 @@ export default {
 			],
 		},
 	},
-	interfaces: {
+	globals: {
 		CSS: {
 			link: '#paint-worklet',
 			properties: {

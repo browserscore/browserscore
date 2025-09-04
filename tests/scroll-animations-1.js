@@ -166,7 +166,7 @@ export default {
 			tests: ['none', '--timeline-scope', '--some-timeline-scope, --other-timeline-scope'],
 		},
 	},
-	interfaces: {
+	globals: {
 		ScrollTimeline: {
 			link: '#scrolltimeline-interface',
 			mdnGroup: 'DOM',

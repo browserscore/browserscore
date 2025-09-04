@@ -3,7 +3,7 @@ export default {
 	title: 'CSS Font Loading Module Level 3',
 	link: 'css-font-loading-3',
 	status: 'stable',
-	interfaces: {
+	globals: {
 		FontFace: {
 			link: '#fontface-interface',
 			mdnGroup: 'DOM',

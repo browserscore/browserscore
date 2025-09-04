@@ -12,7 +12,7 @@ export default {
 			contents: 'syntax: "*"; inherits: true;'
 		},
 	},
-	interfaces: {
+	globals: {
 		CSS: {
 			link: '#registering-custom-properties',
 			mdnGroup: 'DOM',

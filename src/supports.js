@@ -13,7 +13,7 @@ import selector from './supports/selector.js';
 import atrule from './supports/atrule.js';
 import mq from './supports/mq.js';
 import variable from './supports/variable.js';
-import Interface from './supports/interface.js';
+import Global from './supports/global.js';
 import member from './supports/member.js';
 import testExtends from './supports/extends.js';
 
@@ -28,7 +28,7 @@ const Supports = {
 	atrule,
 	mq,
 	variable,
-	interface: Interface,
+	global: Global,
 	member,
 	extends: testExtends,
 };
@@ -38,5 +38,5 @@ if (IS_DEV) {
 }
 
 export default Supports;
-export { property, value, descriptor, descriptorvalue, selector, atrule, mq, variable, Interface, member, testExtends };
+export { property, value, descriptor, descriptorvalue, selector, atrule, mq, variable, Global, member, testExtends };
 

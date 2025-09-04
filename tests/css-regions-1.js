@@ -17,7 +17,7 @@ export default {
 			tests: ['auto', 'break'],
 		},
 	},
-	interfaces: {
+	globals: {
 		document: {
 			link: '#the-namedflow-interface',
 			mdnGroup: 'DOM',

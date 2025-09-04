@@ -8,7 +8,7 @@ export default {
 			link: '#nest-selector',
 		}
 	},
-	interfaces: {
+	globals: {
 		CSSStyleRule: {
 			link: '#cssom-style',
 			mdnGroup: 'DOM',
