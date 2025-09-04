@@ -17,13 +17,10 @@ export default {
 	interfaces: {
 		CSS: {
 			link: '#paint-worklet',
-			properties: ['paintWorklet'],
-		},
-		Worklet: {
-			link: '#paint-worklet',
-			methods: ['addModule'],
-			interface: function () {
-				return CSS.paintWorklet;
+			properties: {
+				paintWorklet: {
+					instanceof: 'Worklet',
+				}
 			},
 		},
 	}

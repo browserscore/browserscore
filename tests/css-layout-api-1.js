@@ -13,13 +13,10 @@ export default {
 	interfaces: {
 		CSS: {
 			link: '#layout-worklet',
-			properties: ['layoutWorklet'],
-		},
-		Worklet: {
-			link: '#layout-worklet',
-			methods: ['addModule'],
-			interface: function () {
-				return CSS.layoutWorklet;
+			properties: {
+				layoutWorklet: {
+					instanceof: 'Worklet',
+				}
 			},
 		},
 	},
