@@ -93,7 +93,7 @@ export default class Feature extends AbstractFeature {
 			// Non-enumerable
 			this.defineProperties({
 				titleMd: this.title,
-				titleHtml: this.title.replace(/`([^`]+?)`/g, '<code>$1</code>'),
+				titleHtml: this.title.replace(/</g, '&lt;').replace(/`([^`]+?)`/g, '<code>$1</code>'),
 			});
 
 			this.title = this.title.replace(/`/g, '');
@@ -129,11 +129,17 @@ export default class Feature extends AbstractFeature {
 					childDef.code = child.code ?? code;
 				}
 
+				// Properties we don't want to inherit
+				delete childDef.isGroup;
+
 				Object.assign(childDef, child);
 				childDef.fromParent = 'children';
 				let subFeature = new this.constructor(childDef, this);
 				this.children.push(subFeature);
 			}
+
+			// Do not make other children
+			return;
 		}
 
 		let treeSchema = this.constructor.children;
