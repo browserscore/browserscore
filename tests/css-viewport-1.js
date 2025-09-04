@@ -18,10 +18,7 @@ export default {
 				dev: '#the-viewport-interface',
 				mdnGroup: 'DOM',
 			},
-			tests: ['segments'],
-			interface: function() {
-				return window.viewport;
-			},
+			members: ['segments'],
 		},
 	},
 };
