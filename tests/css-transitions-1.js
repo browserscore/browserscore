@@ -41,18 +41,13 @@ export default {
 		TransitionEvent: {
 			link: '#interface-transitionevent',
 			mdnGroup: 'DOM',
-			tests: ['propertyName', 'elapsedTime', 'pseudoElement'],
-			interface: function() {
-				return new TransitionEvent('transitionend');
-			},
+			extends: 'Event',
+			members: ['propertyName', 'elapsedTime', 'pseudoElement'],
 		},
-		Element: {
+		HTMLElement: {
 			link: '#interface-dom',
 			mdnGroup: 'DOM',
-			tests: ['ontransitionstart', 'ontransitionrun', 'ontransitionend', 'ontransitioncancel'],
-			interface: function() {
-				return document.body;
-			},
+			members: ['ontransitionstart', 'ontransitionrun', 'ontransitionend', 'ontransitioncancel'],
 		},
 	},
 };
