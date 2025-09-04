@@ -49,110 +49,43 @@ export default {
 		},
 	},
 	properties: {
-		'border-top-radius': {
+		'border-<side>-radius': {
 			link: '#corner-sizing-side-shorthands',
-			tests: border_radius_tests,
-		},
-		'border-right-radius': {
-			link: '#corner-sizing-side-shorthands',
-			tests: border_radius_tests,
-		},
-		'border-bottom-radius': {
-			link: '#corner-sizing-side-shorthands',
-			tests: border_radius_tests,
-		},
-		'border-left-radius': {
-			link: '#corner-sizing-side-shorthands',
-			tests: border_radius_tests,
-		},
-		'border-block-start-radius': {
-			link: '#corner-sizing-side-shorthands',
-			tests: border_radius_tests,
-		},
-		'border-block-end-radius': {
-			link: '#corner-sizing-side-shorthands',
-			tests: border_radius_tests,
-		},
-		'border-inline-start-radius': {
-			link: '#corner-sizing-side-shorthands',
-			tests: border_radius_tests,
-		},
-		'border-inline-end-radius': {
-			link: '#corner-sizing-side-shorthands',
-			tests: border_radius_tests,
-		},
-		'corner-shape': {
-			link: '#corner-shaping',
-			tests: [
-				...corner_shape_tests,
-				'round scoop',
-				'round scoop bevel',
-				'round scoop bevel notch',
+			values: border_radius_tests,
+			children: [
+				'border-top-radius', 'border-right-radius', 'border-bottom-radius', 'border-left-radius',
+				'border-block-start-radius', 'border-block-end-radius', 'border-inline-start-radius', 'border-inline-end-radius',
 			],
 		},
-		'corner-top-left-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-top-right-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-bottom-right-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-bottom-left-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-start-start-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-start-end-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-end-end-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-end-start-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-top-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-bottom-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-left-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-right-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-block-start-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-block-end-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-inline-start-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
-		},
-		'corner-inline-end-shape': {
-			link: '#corner-shape-shorthands',
-			tests: corner_shape_tests,
+		'corner-shape': {
+			isGroup: true,
+			link: '#corner-shaping',
+			values: corner_shape_tests,
+			children: {
+				'corner-shape': {
+					values: [
+						...corner_shape_tests,
+						'round scoop',
+						'round scoop bevel',
+						'round scoop bevel notch',
+					]
+				},
+				'corner-<side>-shape': {
+					link: '#corner-shape-shorthands',
+					values: corner_shape_tests,
+					children: [
+						'corner-top-shape', 'corner-right-shape', 'corner-bottom-shape', 'corner-left-shape',
+						'corner-block-start-shape', 'corner-block-end-shape', 'corner-inline-start-shape', 'corner-inline-end-shape',
+					],
+				},
+				'corner-<corner>-shape': {
+					values: corner_shape_tests,
+					children: [
+						'corner-top-left-shape', 'corner-top-right-shape', 'corner-bottom-right-shape', 'corner-bottom-left-shape',
+						'corner-start-start-shape', 'corner-start-end-shape', 'corner-end-end-shape', 'corner-end-start-shape',
+					],
+				},
+			},
 		},
 		'border-limit': {
 			link: '#border-limit',
@@ -176,87 +109,45 @@ export default {
 		},
 		'border-clip': {
 			link: '#border-clip',
-			tests: border_clip_tests,
-		},
-		'border-clip-top': {
-			link: '#border-clip',
-			tests: border_clip_tests,
-		},
-		'border-clip-right': {
-			link: '#border-clip',
-			tests: border_clip_tests,
-		},
-		'border-clip-bottom': {
-			link: '#border-clip',
-			tests: border_clip_tests,
-		},
-		'border-clip-left': {
-			link: '#border-clip',
-			tests: border_clip_tests,
-		},
-		'box-shadow-color': {
-			link: '#box-shadow-color',
-			tests: [
-				'green',
-				'green, blue'
+			values: border_clip_tests,
+			children: [
+				'border-clip',
+				'border-clip-top', 'border-clip-right', 'border-clip-bottom', 'border-clip-left',
+				'border-clip-block-start', 'border-clip-block-end', 'border-clip-inline-start', 'border-clip-inline-end',
 			],
 		},
-		'box-shadow-offset': {
-			link: '#box-shadow-offset',
-			tests: [
-				'none',
-				'0 0',
-				'10px 1em',
-				'-10px -1em',
-				'none, 0 0, 10px 1em',
-			],
+		'`box-shadow` longhands': {
+			isGroup: true,
+			children: {
+				'box-shadow-color': {
+					link: '#box-shadow-color',
+				},
+				'box-shadow-offset': {
+					link: '#box-shadow-offset',
+				},
+				'box-shadow-blur': {
+					link: '#box-shadow-blur',
+				},
+				'box-shadow-spread': {
+					link: '#box-shadow-spread',
+				},
+				'box-shadow-position': {
+					link: '#box-shadow-position',
+				},
+			},
 		},
-		'box-shadow-blur': {
-			link: '#box-shadow-blur',
-			tests: [
-				'0',
-				'10px',
-				'1em',
-				'10px, 1em',
-			],
-		},
-		'box-shadow-spread': {
-			link: '#box-shadow-spread',
-			tests: [
-				'0',
-				'10px',
-				'1em',
-				'10px, 1em',
-			],
-		},
-		'box-shadow-position': {
-			link: '#box-shadow-position',
-			tests: [
-				'outset',
-				'inset',
-				'outset, inset',
-			],
-		},
+
 		'border-shape': {
 			link: '#border-shape',
-			tests: [
+			values: [
 				'none',
 				'inset(10% round 10% 40% 10% 40%)',
 				'ellipse(at top 50% left 20%)',
 				'circle(at top left)',
 				'polygon(100% 0, 100% 100%, 0 100%)',
-				"path('M 20 20 H 80 V 30')",
+				"path('M 0 0')",
 				'rect(10% 20px 30% 40px)',
 				'xywh(10% 40% 100px 200px round 10% 40% 10% 40%)',
-				'inset(10% round 10% 40% 10% 40%) margin-box',
-				'ellipse(at top 50% left 20%) margin-box',
-				'circle(at top left) margin-box',
-				'polygon(100% 0, 100% 100%, 0 100%) margin-box',
-				"path('M 20 20 H 80 V 30') margin-box",
-				'rect(10% 20px 30% 40px) margin-box',
-				'xywh(10% 40% 100px 200px round 10% 40% 10% 40%) margin-box',
-				'shape(from 30% 60px, curve to 180px 180px via 90px 190px, close)',
-				'attr(src url)',
 				'url(image.png)',
 				'margin-box',
 				'border-box',
@@ -265,6 +156,19 @@ export default {
 				'fill-box',
 				'stroke-box',
 				'view-box',
+				{
+					id: '<shape> margin-box',
+					isGroup: false,
+					children: [
+						'inset(10% round 10% 40% 10% 40%) margin-box',
+						'ellipse(at top 50% left 20%) margin-box',
+						'circle(at top left) margin-box',
+						'polygon(100% 0, 100% 100%, 0 100%) margin-box',
+						"path('M 0 0') margin-box",
+						'rect(10% 20px 30% 40px) margin-box',
+						'xywh(10% 40% 100px 200px round 10% 40% 10% 40%) margin-box',
+					]
+				},
 			],
 		},
 	},
