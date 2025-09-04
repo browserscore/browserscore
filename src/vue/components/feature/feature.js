@@ -81,7 +81,21 @@ export default {
 
 		showFeatureCount () {
 			return this.feature.score.total > 1 && (!this.parent || this.parent.score.total !== this.feature.score.total);
-		}
+		},
+
+		permalink () {
+			if (this.species === 'Spec') {
+				let urlParams = new URLSearchParams(location.search);
+				urlParams.set('spec', this.feature.id);
+				return '?' + urlParams.toString();
+			}
+
+			if (this.species === 'Feature') {
+				return '#' + this.feature.htmlId;
+			}
+
+			return '';
+		},
 	},
 
 	methods: {

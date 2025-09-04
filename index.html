@@ -34,7 +34,8 @@
 				<wrap-if :is="feature.title ? 'span' : 'code'" class="title" v-else v-text="feature.title ?? feature.code ?? feature.id"></wrap-if>
 			</wrap-if>
 
-			<div class="meta" v-if="feature.link || feature.mdnLink">
+			<div class="meta" v-if="permalink || feature.link || feature.mdnLink">
+				<a v-if="permalink" :href="permalink" class="icon-before permalink" title="Permalink"></a>
 				<a v-if="feature.link && feature.spec" :href="feature.link" target="_blank" class="badge primary spec-link" :class="`${feature.spec.org.id}-link`">
 					{{ feature.spec.org.title }}
 					<span v-if="feature.link === feature.draftLink">Proposal</span>

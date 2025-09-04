@@ -98,4 +98,7 @@
 
 	--shadow-l: 0 .4em .7em -.3em var(--color-shade);
 	--shadow-l-90deg: -.4em 0 .7em -.3em var(--color-shade);
+
+	--radius-s: .2rem;
+	--radius-m: .3rem;
 }

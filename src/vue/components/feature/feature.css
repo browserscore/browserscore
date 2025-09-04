@@ -27,6 +27,11 @@
 		display: flex;
 		gap: .2em;
 		align-items: center;
+
+		:where(&) > a {
+			/* Default icon */
+			--icon: var(--icon-link);
+		}
 	}
 }
 
@@ -84,12 +89,17 @@
 	position: relative;
 	--progress-color: oklch(from var(--color) calc(l + 0.4) 0 0);
 
-	.badge {
-		transition: opacity 100ms 100ms;
+	.badge, .permalink {
+		transition: opacity 300ms 100ms, pointer-events 0ms 500ms;
+		transition-behavior: allow-discrete;
 	}
 
-	&:not(:hover, :focus-within, :target) .badge {
-		opacity: 0;
+	&:not(:hover, :focus-within, :target) {
+		.badge, .permalink {
+			pointer-events: none;
+			transition-duration: 100ms;
+			opacity: 0;
+		}
 	}
 
 	.progress {

@@ -102,16 +102,34 @@ h2 {
 	mask: var(--icon) no-repeat center / contain;
 }
 
-.icon-before::before,
-.spec-link::before {
-	margin-inline-end: .2em;
+.icon-before,
+.spec-link {
+	&:not(:empty)::before {
+		margin-inline-end: .2em;
+	}
 }
 
-.spec-links {
-	display: flex;
-	align-items: center;
-	gap: calc(0.15rem + 0.15em);
+a.icon-before,
+button.icon-before {
+	display: inline-flex;
+	cursor: pointer;
+	padding: .3rem .4rem;
+	border-radius: var(--radius-s);
+	line-height: 1;
+
+	&:hover {
+		background-color: oklab(from currentColor l a b / 20%)
+	}
 }
+
+.permalink {
+	transition: opacity 100ms 100ms;
+
+	&:not(:hover, :focus-within) {
+		opacity: .7;
+	}
+}
+
 
 .badge {
 	--icon-color: light-dark(var(--accent-color), color-mix(in oklab, var(--accent-color), currentColor 50%));
@@ -129,18 +147,16 @@ h2 {
 			var(--accent-color-l) 0%, var(--badge-foreground-color))));
 
 	display: inline-flex;
+	vertical-align: middle;
 	align-items: center;
 	gap: .1em;
 	padding: .3em .4em;
+	border-radius: var(--radius-s);
+	background-color: var(--tinted-background-color, var(--badge-background-color));
+	color: var(--tinted-foreground-color, var(--badge-foreground-color));
 	font-family: var(--font-sans);
 	font-size: var(--font-size-s);
 	line-height: 1;
-
-	background-color: var(--tinted-background-color, var(--badge-background-color));
-	color: var(--tinted-foreground-color, var(--badge-foreground-color));
-
-	border-radius: .25em;
-	vertical-align: middle;
 
 	@container not style(--icon) {
 		&::before {
