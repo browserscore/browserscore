@@ -116,8 +116,9 @@ export default {
 				'border-clip-block-start', 'border-clip-block-end', 'border-clip-inline-start', 'border-clip-inline-end',
 			],
 		},
-		'`box-shadow` longhands': {
+		'box-shadow-*': {
 			isGroup: true,
+			title: '`box-shadow` longhands',
 			children: {
 				'box-shadow-color': {
 					link: '#box-shadow-color',
