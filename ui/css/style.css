@@ -298,6 +298,7 @@ summary {
 	&::after {
 		content:'';
 		display: inline-block;
+		margin-inline-start: auto;
 		vertical-align: -.1em;
 		font-size: max(1em, 1rem);
 		width: 1em;
