@@ -6,6 +6,8 @@ import { createFeatures } from './feature-utils.js';
 const removedOther = / *(?:\([^)]*\)|:.*)( *)/g;
 
 export default class Spec extends AbstractFeature {
+	species = 'Spec';
+
 	/** All specs as array
 	 * @type {Spec[]}
 	 */
@@ -99,10 +101,6 @@ export default class Spec extends AbstractFeature {
 		}
 
 		this.children = createFeatures(this.def, {spec: this});
-	}
-
-	get species () {
-		return 'Spec';
 	}
 
 	get spec () {

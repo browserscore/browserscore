@@ -19,6 +19,8 @@ import Score from './Score.js';
  */
 
 export default class Feature extends AbstractFeature {
+	species = 'Feature';
+
 	forceTotal = (
 		this.def.forceTotal
 		?? (this.def.isGroup || this.def.children ? false : undefined)
@@ -96,10 +98,6 @@ export default class Feature extends AbstractFeature {
 
 			this.title = this.title.replace(/`/g, '');
 		}
-	}
-
-	get species () {
-		return 'Feature';
 	}
 
 	/**
