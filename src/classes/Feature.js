@@ -219,31 +219,47 @@ export default class Feature extends AbstractFeature {
 	}
 
 	get draftLink () {
+		let link = this.def.links?.dev ?? this.def.link;
+
+		if (!link) {
+			return '';
+		}
+
+		let isAbsolute = link?.startsWith('https://');
+
+		if (isAbsolute) {
+			return link;
+		}
+
 		let specLink = this.spec?.draftLink;
 
 		if (!specLink) {
 			return '';
 		}
 
-		let link = this.def.links?.dev ?? this.def.link;
-
-		return link ? specLink + link : '';
+		return new URL(link, specLink).href;
 	}
 
 	get specLink () {
+		let link = this.def.links?.tr ?? this.def.link;
+
+		if (!link) {
+			return '';
+		}
+
+		let isAbsolute = link?.startsWith('https://');
+
+		if (isAbsolute) {
+			return link;
+		}
+
 		let specLink = this.spec?.specLink;
 
 		if (!specLink) {
 			return '';
 		}
 
-		let link = this.def.links?.tr ?? this.def.link;
-
-		if (link) {
-			return specLink + link;
-		}
-
-		return link;
+		return new URL(link, specLink).href;
 	}
 
 	get mdnLink () {
