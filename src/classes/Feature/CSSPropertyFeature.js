@@ -15,9 +15,15 @@ export class CSSPropertyValueFeature extends Feature {
 
 export default class CSSPropertyFeature extends Feature {
 	static children = {
+		/** @deprecated */
 		tests: {
 			type: CSSPropertyValueFeature,
-		}
+		},
+
+		values: {
+			type: CSSPropertyValueFeature,
+			single: 'value',
+		},
 	}
 	static gatingTest = true;
 
