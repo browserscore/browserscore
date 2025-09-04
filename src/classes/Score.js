@@ -1,4 +1,4 @@
-import { pick } from '../util.js';
+import { IS_DEV, pick } from '../util.js';
 
 const stats = ['passedTests', 'failedTests', 'totalTests', 'skipped', 'total', 'passed', 'testTime'];
 const statsSet = new Set(stats);
@@ -37,7 +37,17 @@ export default class Score {
 	}
 
 	get children () {
-		return this.node?.children?.map(child => child.score) ?? [];
+		let ret = [];
+
+		if (this.node?.ownScore) {
+			ret.push(this.node.ownScore);
+		}
+
+		if (this.node?.children?.length) {
+			ret.push(...this.node.children.map(child => child.score));
+		}
+
+		return ret;
 	}
 
 	/**
@@ -133,10 +143,11 @@ export default class Score {
 	 * @returns
 	 */
 	recalc ({ancestors = true, descendants = 0, self = true} = {}) {
-		if (!this.children?.length) {
-			// Nothing to do here
-			return;
+		if (IS_DEV && this.node) {
+			this.node.recalcs ??= 0;
+			this.node.recalcs++;
 		}
+
 
 		if (descendants) {
 			this.recalcDescendants(descendants === true ? Infinity : descendants);
@@ -152,8 +163,11 @@ export default class Score {
 	}
 
 	recalcSelf () {
-		this.node.recalcs ??= 0;
-		this.node.recalcs++;
+		if (!this.node) debugger;
+		if (!this.children?.length) {
+			// Nothing to do here
+			return;
+		}
 
 		for (let stat of stats) {
 			this[stat] = 0;
@@ -191,7 +205,7 @@ export default class Score {
 	}
 
 	recalcDescendants (limit = Infinity) {
-		if (!this.children || limit <= 0) {
+		if (!this.children?.length || limit <= 0) {
 			return;
 		}
 

@@ -8,6 +8,7 @@ import Supports from '../supports.js';
 import AbstractFeature from './AbstractFeature.js';
 import { toArray, mapObject } from '../util.js';
 import Spec from './Spec.js';
+import Score from './Score.js';
 
 /**
  * @typedef {Object} ChildSchema
@@ -18,6 +19,11 @@ import Spec from './Spec.js';
  */
 
 export default class Feature extends AbstractFeature {
+	forceTotal = (
+		this.def.forceTotal
+		?? (this.def.isGroup || this.def.children ? false : undefined)
+		?? this.constructor.forceTotal
+	) || undefined; // false → undefined
 	static forceTotal = 1;
 
 	/**
@@ -69,8 +75,16 @@ export default class Feature extends AbstractFeature {
 
 		this._createChildren();
 
-		let totalTests = this.children.length > 0 ? this.children.flatMap(c => c.score.totalTests || 0).reduce((a, b) => a + b, 0) + (this.gatingTest ? 1 : 0) : 1;
+		let childTests = this.children.length > 0 ? this.children.flatMap(c => c.score.totalTests || 0).reduce((a, b) => a + b, 0) : 0;
+		let ownTests = this.gatingTest || !childTests ? 1 : 0;
+		let totalTests = childTests + ownTests;
 		this.score.set({totalTests});
+
+		if (this.gatingTest && this.children.length > 0) {
+			this.ownScore = new Score(this);
+			Object.defineProperty(this.ownScore, 'children', { value: [] });
+			this.ownScore.totalTests = 1;
+		}
 
 		// Inline code
 		if (this.title && this.title.indexOf('`') !== this.title.lastIndexOf('`')) {
@@ -86,14 +100,6 @@ export default class Feature extends AbstractFeature {
 
 	get species () {
 		return 'Feature';
-	}
-
-	get forceTotal () {
-		let forceTotal = this.def.forceTotal
-		               ?? (this.def.isGroup || this.def.children ? false : undefined)
-		               ?? this.constructor.forceTotal;
-		// false → undefined
-		return forceTotal || undefined;
 	}
 
 	/**
@@ -304,7 +310,8 @@ export default class Feature extends AbstractFeature {
 
 		this.result = this.testSelf();
 
-		this.score.add({
+		let score = this.ownScore ?? this.score;
+		score.add({
 			passedTests: Number(this.result.success),
 			failedTests: 1 - this.result.success,
 			testTime: performance.now() - startTime,
