@@ -306,7 +306,7 @@ export default class Feature extends AbstractFeature {
 	get gatingTest () {
 		// Can be overridden in child classes for when it depends on test meta
 		// E.g. see CSSAtruleFeature for an example
-		return this.constructor.gatingTest;
+		return this.constructor.gatingTest && !this.def.children;
 	}
 
 	_doTestSelf () {
