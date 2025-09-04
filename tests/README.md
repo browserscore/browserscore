@@ -161,7 +161,6 @@ globals: {
   'InterfaceName': {
     links: { /* documentation links */ },
     tests: ['method1', 'method2', 'property1'],
-    interface: function() { /* returns interface object */ },
   }
 }
 ```
@@ -254,9 +253,6 @@ export default {
         mdnGroup: 'DOM'
       },
       tests: ['parse', 'parseAll'],
-      interface: function() {
-        return CSSStyleValue
-      }
     }
   }
 }

@@ -5,11 +5,8 @@ import supportsGlobal from './global.js';
 /**
  * Check for the presence of a member or static property
  * @param {*} name
- * @param {*} options
- * @param {string} options.context - The context to check in
- * @param {string} [options.context.name] - The name of the context object
- * @param {Object} [options.context.object] - The instance to check
- * @param {Function} [options.context.callback] - A callback to get an object to check
+ * @param {object | string} options
+ * @param {string | Object} options.context - The context to check in
  * @returns
  */
 export default function member (name, options) {
@@ -18,15 +15,18 @@ export default function member (name, options) {
 	}
 
 	if (typeof options === 'string') {
-		options = {context: {name: options}};
-	}
-	else if (!options.context) {
 		options = {context: options};
 	}
 
-	let {name: contextName, object: contextObject, callback} = options.context;
+	let contextName, object;
 
-	let object = contextObject ?? callback?.() ?? globalThis[contextName];
+	if (typeof options.context === 'string') {
+		contextName = options.context;
+		object = globalThis[contextName];
+	}
+	else {
+		object = options.context;
+	}
 
 	if (!object) {
 		let contextSupported = supportsGlobal(contextName);
@@ -39,12 +39,16 @@ export default function member (name, options) {
 		object = globalThis[contextName];
 	}
 
-	if (options.path) {
-		object = object[options.path];
-	}
-
 	if (!object) {
 		return {success: false, note: 'No base object'};
+	}
+
+	if (options.path) {
+		object = object[options.path];
+
+		if (!object) {
+			return {success: false, note: 'Empty ${options.path}'};
+		}
 	}
 
 	let prefix = prefixes.find(prefix => prefixName(prefix, name) in object);

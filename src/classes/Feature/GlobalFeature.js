@@ -42,7 +42,7 @@ export class MemberFeature extends Feature {
 		options.instanceof = isInstanceOf ? this.id : '';
 		let member = isInstanceOf ? this.parent.id : this.id;
 		let base = this.base;
-		options.context = {name: base.id, callback: base.interface};
+		options.context = base.id;
 
 		return supportsMember(member, options);
 	}
@@ -73,12 +73,6 @@ export default class GlobalFeature extends Feature {
 	}
 
 	static gatingTest = true;
-
-	constructor (def, parent) {
-		super(def, parent);
-
-		this.interface = def.interface ?? parent?.interface;
-	}
 
 	get code () {
 		if (this.def.fromParent === 'extends') {
