@@ -30,17 +30,20 @@ export default {
 		CSSConditionRule: {
 			link: '#the-cssconditionrule-interface',
 			mdnGroup: 'DOM',
-			members: ['conditionText', 'cssRules', 'insertRule', 'deleteRule'],
+			extends: 'CSSGroupingRule',
+			members: ['conditionText'],
 		},
 		CSSMediaRule: {
 			link: '#the-cssmediarule-interface',
 			mdnGroup: 'DOM',
-			members: ['media', 'matches', 'conditionText'],
+			extends: 'CSSConditionRule',
+			members: ['media', 'matches'],
 		},
 		CSSSupportsRule: {
 			link: '#the-csssupportsrule-interface',
 			mdnGroup: 'DOM',
-			members: ['matches', 'conditionText'],
+			extends: 'CSSConditionRule',
+			members: ['matches'],
 		},
 		CSS: {
 			link: '#the-css-namespace',

@@ -7,7 +7,7 @@ export default {
 		FontFace: {
 			link: '#fontface-interface',
 			mdnGroup: 'DOM',
-			tests: [
+			members: [
 				'family',
 				'style',
 				'weight',
@@ -17,28 +17,21 @@ export default {
 				'featureSettings',
 				'variationSettings',
 				'display',
-				'ascenderOverride',
-				'descenderOverride',
+				'ascentOverride',
+				'descentOverride',
 				'lineGapOverride',
 				'status',
-				'load',
 				'loaded',
 				'features',
 				'variations',
 				'palettes',
 			],
-			interface: function() {
-				return new FontFace('test', 'url("test.woff")');
-			},
+			methods: ['load'],
 		},
 		FontFaceFeatures: {
 			links: {
 				dev: '#fontfacefeatures',
 				mdnGroup: 'DOM',
-			},
-			tests: ['FontFaceFeatures'],
-			interface: function() {
-				return new FontFace('test', 'url("test.woff")').features;
 			},
 		},
 		FontFaceVariationAxis: {
@@ -46,64 +39,39 @@ export default {
 				dev: '#fontfacevariationaxis',
 				mdnGroup: 'DOM',
 			},
-			tests: ['name', 'axisTag', 'minimumValue', 'maximumValue', 'defaultValue'],
-			interface: function() {
-				return new FontFace('test', 'url("test.woff")').variations;
-			},
+			members: ['name', 'axisTag', 'minimumValue', 'maximumValue', 'defaultValue'],
 		},
 		FontFacePalettes: {
 			links: {
 				dev: '#fontfacepalettes',
 				mdnGroup: 'DOM',
 			},
-			tests: ['length'],
-			interface: function() {
-				return new FontFace('test', 'url("test.woff")').palettes;
-			},
+			members: ['length'],
 		},
 		FontFacePalette: {
 			links: {
 				dev: '#fontfacepalette',
 				mdnGroup: 'DOM',
 			},
-			tests: ['FontFacePalette'],
+			members: ['length', 'usableWithLightBackground', 'usableWithDarkBackground'],
 		},
 		FontFaceSet: {
 			link: '#FontFaceSet-interface',
 			mdnGroup: 'DOM',
-			tests: [
-				'add',
-				'delete',
-				'clear',
-				'onloading',
-				'onloadingdone',
-				'onloadingerror',
-				'load',
-				'check',
-				'ready',
-				'status',
-			],
-			interface: function() {
-				return document.fonts;
-			}
+			members: ['onloading', 'onloadingdone', 'onloadingerror', 'ready', 'status'],
+			methods: ['add', 'delete', 'clear', 'load', 'check'],
 		},
 		FontFaceSetLoadEvent: {
 			links: {
 				dev: '#fontfacesetloadevent',
 				mdnGroup: 'DOM',
 			},
-			tests: ['fontfaces'],
-			interface: function() {
-				return new FontFaceSetLoadEvent('loadingdone');
-			},
+			members: ['fontfaces'],
 		},
-		Document: {
+		document: {
 			link: '#font-face-source',
 			mdnGroup: 'DOM',
-			tests: ['fonts'],
-			interface: function() {
-				return document;
-			},
-		}
+			properties: ['fonts'],
+		},
 	},
 };

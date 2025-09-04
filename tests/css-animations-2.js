@@ -33,7 +33,7 @@ export default {
 		CSSAnimation: {
 			link: '#the-CSSAnimation-interface',
 			mdnGroup: 'DOM',
-			tests: ['animationName'],
+			members: ['animationName'],
 		},
 	},
 };

@@ -12,10 +12,13 @@ export default {
 		CSSStyleRule: {
 			link: '#cssom-style',
 			mdnGroup: 'DOM',
-			tests: ['cssRules', 'insertRule', 'deleteRule'],
+			members: ['cssRules'],
+			methods: ['insertRule', 'deleteRule'],
 		},
 		CSSNestedDeclarations: {
-			link: '#the-cssnestrule',
-		}
+			link: '#cssnesteddeclarations',
+			extends: 'CSSRule',
+			members: ['style'],
+		},
 	},
 };

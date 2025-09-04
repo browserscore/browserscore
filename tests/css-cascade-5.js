@@ -31,21 +31,21 @@ export default {
 		CSSImportRule: {
 			link: '#extensions-to-cssimportrule-interface',
 			mdnGroup: 'DOM',
-			tests: ['layerName'],
+			members: ['layerName'],
 		},
 
 		CSSLayerBlockRule: {
 			link: '#the-csslayerblockrule-interface',
 			mdnGroup: 'DOM',
 			extends: 'CSSGroupingRule',
-			tests: ['name'],
+			members: ['name'],
 		},
 
 		CSSLayerStatementRule: {
 			link: '#the-csslayerstatementrule-interface',
 			mdnGroup: 'DOM',
 			extends: 'CSSRule',
-			tests: ['nameList'],
+			members: ['nameList'],
 		},
 	},
 };

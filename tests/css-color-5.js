@@ -67,7 +67,8 @@ export default {
 		CSSColorProfileRule: {
 			link: '#the-csscolorprofilerule-interface',
 			mdnGroup: 'DOM',
-			tests: ['name', 'src', 'renderingIntent', 'components', 'cssText', 'parentRule', 'parentStyleSheet'],
+			extends: 'CSSRule',
+			members: ['name', 'src', 'renderingIntent', 'components'],
 		},
 	}
 };

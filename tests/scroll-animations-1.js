@@ -3,7 +3,7 @@ export default {
 	title: 'Scroll-driven Animations',
 	link: 'scroll-animations-1',
 	status: 'experimental',
-	'values': {
+	values: {
 		properties: ['animation-timeline'],
 		'scroll()': {
 			link: '#scroll-notation',
@@ -118,13 +118,7 @@ export default {
 		},
 		'scroll-timeline-axis': {
 			link: '#scroll-timeline-axis',
-			tests: [
-				'block',
-				'inline',
-				'x',
-				'y',
-				'block, inline',
-			],
+			tests: ['block', 'inline', 'x', 'y', 'block, inline'],
 		},
 		'scroll-timeline-name': {
 			link: '#scroll-timeline-name',
@@ -152,24 +146,11 @@ export default {
 		},
 		'view-timeline-axis': {
 			link: '#view-timeline-axis',
-			tests: [
-				'block',
-				'inline',
-				'x',
-				'y',
-				'block, inline',
-			],
+			tests: ['block', 'inline', 'x', 'y', 'block, inline'],
 		},
 		'view-timeline-inset': {
 			link: '#view-timeline-inset',
-			tests: [
-				'auto',
-				'100px',
-				'5%',
-				'100px 200px',
-				'5% 10%',
-				'auto, 100px',
-			],
+			tests: ['auto', '100px', '5%', '100px 200px', '5% 10%', 'auto, 100px'],
 		},
 		'view-timeline-name': {
 			link: '#view-timeline-name',
@@ -182,33 +163,21 @@ export default {
 		},
 		'timeline-scope': {
 			link: '#timeline-scope',
-			tests: [
-				'none',
-				'--timeline-scope',
-				'--some-timeline-scope, --other-timeline-scope',
-			],
-		}
+			tests: ['none', '--timeline-scope', '--some-timeline-scope, --other-timeline-scope'],
+		},
 	},
 	interfaces: {
 		ScrollTimeline: {
 			link: '#scrolltimeline-interface',
 			mdnGroup: 'DOM',
-			tests: ['source', 'axis', 'currentTime'],
-			interface: function() {
-				return new ScrollTimeline({
-					source: document.scrollingElement,
-				});
-			}
+			extends: 'AnimationTimeline',
+			members: ['source', 'axis'],
 		},
 		ViewTimeline: {
 			link: '#viewtimeline-interface',
 			mdnGroup: 'DOM',
-			tests: ['subject', 'startOffset', 'endOffset', 'currentTime'],
-			interface: function() {
-				return new ViewTimeline({
-					source: document.scrollingElement,
-				});
-			}
+			extends: 'ScrollTimeline',
+			members: ['subject', 'startOffset', 'endOffset'],
 		},
 	},
 };

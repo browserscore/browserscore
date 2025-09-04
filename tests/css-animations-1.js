@@ -64,6 +64,7 @@ export default {
 		AnimationEvent: {
 			link: '#interface-animationevent',
 			mdnGroup: 'DOM',
+			extends: 'Event',
 			members: ['animationName', 'elapsedTime', 'pseudoElement'],
 		},
 		CSSRule: {
@@ -84,7 +85,8 @@ export default {
 		CSSKeyframeRule: {
 			link: '#interface-csskeyframerule',
 			mdnGroup: 'DOM',
-			tests: ['keyText', 'style'],
+			extends: 'CSSRule',
+			members: ['keyText', 'style'],
 		},
 		HTMLElement: {
 			link: '#interface-globaleventhandlers',

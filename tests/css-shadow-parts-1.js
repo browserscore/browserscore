@@ -70,10 +70,7 @@ export default {
 		Element: {
 			link: '#idl',
 			mdnGroup: 'DOM',
-			tests: ['part'],
-			interface: function() {
-				return document.body;
-			},
+			members: ['part'],
 		},
 	},
 };

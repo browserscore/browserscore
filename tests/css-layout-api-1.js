@@ -17,8 +17,8 @@ export default {
 		},
 		Worklet: {
 			link: '#layout-worklet',
-			tests: ['addModule'],
-			interface: function() {
+			methods: ['addModule'],
+			interface: function () {
 				return CSS.layoutWorklet;
 			},
 		},
