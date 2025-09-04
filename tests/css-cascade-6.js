@@ -12,7 +12,7 @@ export default {
 			],
 		},
 	},
-	interfaces: {
+	globals: {
 		CSSScopeRule: {
 			link: '#the-cssscoperule-interface',
 			mdnGroup: 'DOM',

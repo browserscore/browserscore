@@ -3,7 +3,7 @@ export default {
 	title: 'Resize Observer',
 	link: 'resize-observer-1',
 	status: 'experimental',
-	interfaces: {
+	globals: {
 		ResizeObserver: {
 			link: '#api',
 			mdnGroup: 'DOM',

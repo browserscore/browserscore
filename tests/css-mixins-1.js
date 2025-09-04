@@ -19,7 +19,7 @@ export default {
 			// TODO declarations and rules inside @function
 		},
 	},
-	interfaces: {
+	globals: {
 		CSSFunctionRule: {
 			link: '#the-function-interface',
 			mdnGroup: 'DOM',

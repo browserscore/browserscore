@@ -48,7 +48,7 @@ export default {
 			tests: ':snapped-block',
 		},
 	},
-	interfaces: {
+	globals: {
 		SnapEvent: {
 			links: {
 				dev: '#snap-events',

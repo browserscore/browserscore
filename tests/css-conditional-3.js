@@ -21,7 +21,7 @@ export default {
 			],
 		},
 	},
-	interfaces: {
+	globals: {
 		CSSRule: {
 			link: '#extensions-to-cssrule-interface',
 			mdnGroup: 'DOM',

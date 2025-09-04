@@ -90,7 +90,7 @@ export default {
 			],
 		},
 	},
-	interfaces: {
+	globals: {
 		CSSContainerRule: {
 			link: '#the-csscontainerrule-interface',
 			mdnGroup: 'DOM',

@@ -4,7 +4,7 @@ export default {
 	link: 'css-typed-om-1',
 	group: 'houdini',
 	status: 'experimental',
-	interfaces: {
+	globals: {
 		Element: {
 			link: '#computed-stylepropertymapreadonly-objects',
 			mdnGroup: 'DOM',

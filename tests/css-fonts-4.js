@@ -233,7 +233,7 @@ export default {
 			descriptors: ['font-family', 'base-palette', 'override-colors', 'font-display'],
 		},
 	},
-	interfaces: {
+	globals: {
 		CSSRule: {
 			link: '#om-fontfeaturevalues',
 			mdnGroup: 'DOM',

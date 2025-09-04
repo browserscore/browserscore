@@ -9,7 +9,7 @@ export default {
 			tests: ['::highlight(example-highlight)'],
 		},
 	},
-	interfaces: {
+	globals: {
 		CSS: {
 			link: '#registration',
 			mdnGroup: 'DOM',

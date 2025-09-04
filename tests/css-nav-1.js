@@ -17,7 +17,7 @@ export default {
 			tests: ['normal', 'grid'],
 		},
 	},
-	interfaces: {
+	globals: {
 		window: {
 			link: '#high-level-api',
 			mdnGroup: 'DOM',

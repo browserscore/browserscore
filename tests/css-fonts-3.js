@@ -200,7 +200,7 @@ export default {
 			}
 		},
 	},
-	interfaces: {
+	globals: {
 		CSSFontFaceRule: {
 			link: '#om-fontface',
 			mdnGroup: 'DOM',

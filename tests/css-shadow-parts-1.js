@@ -66,7 +66,7 @@ export default {
 			],
 		},
 	},
-	interfaces: {
+	globals: {
 		Element: {
 			link: '#idl',
 			mdnGroup: 'DOM',

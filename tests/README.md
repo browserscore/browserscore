@@ -1,6 +1,6 @@
 # CSS Test Data Schema
 
-This document describes the data schema used in the CSS test files located in the `tests/` directory. Each test file exports a JavaScript object that defines tests for various CSS features, properties, values, and interfaces.
+This document describes the data schema used in the CSS test files located in the `tests/` directory. Each test file exports a JavaScript object that defines tests for various CSS features, properties, values, and globals.
 
 ## Schema Summary
 
@@ -56,8 +56,8 @@ This document describes the data schema used in the CSS test files located in th
     }
   },
 
-  // Tests for JavaScript/DOM interfaces
-  interfaces?: {
+  // Tests for JavaScript/DOM globals
+  globals?: {
     "InterfaceName": {
       links: { /* documentation links */ },
       tests: string[],
@@ -152,12 +152,12 @@ atrules: {
 
 <a name="at-rules-tests"></a>
 
-### 5. [Interfaces Tests](#interfaces-tests)
+### 5. [Globals Tests](#globals-tests)
 
-Tests for JavaScript/DOM interfaces related to CSS.
+Tests for JavaScript/DOM globals related to CSS.
 
 ```javascript
-interfaces: {
+globals: {
   'InterfaceName': {
     links: { /* documentation links */ },
     tests: ['method1', 'method2', 'property1'],
@@ -166,7 +166,7 @@ interfaces: {
 }
 ```
 
-<a name="interfaces-tests"></a>
+<a name="globals-tests"></a>
 
 ## Test Value Types
 
@@ -238,7 +238,7 @@ export default {
 }
 ```
 
-### Interface Test
+### Global Test
 ```javascript
 export default {
   title: 'CSS Typed OM Level 1',
@@ -247,7 +247,7 @@ export default {
     dev: 'css-typed-om-1',
     devtype: 'houdini'
   },
-  interfaces: {
+  globals: {
     CSSStyleValue: {
       links: {
         dev: '#stylevalue-objects',

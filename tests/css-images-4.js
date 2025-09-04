@@ -180,7 +180,7 @@ export default {
 			],
 		},
 	},
-	interfaces: {
+	globals: {
 		CSS: {
 			link: '#elementsources',
 			mdnGroup: 'DOM',

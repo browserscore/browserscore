@@ -16,7 +16,7 @@ export default {
 			tests: ['normal', 'allow-discrete'],
 		},
 	},
-	interfaces: {
+	globals: {
 		CSSStartingStyleRule: {
 			link: '#the-cssstartingstylerule-interface',
 			mdnGroup: 'DOM',

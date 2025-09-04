@@ -60,7 +60,7 @@ export default {
 			// TODO from, to, <percentage>
 		},
 	},
-	interfaces: {
+	globals: {
 		AnimationEvent: {
 			link: '#interface-animationevent',
 			mdnGroup: 'DOM',

@@ -3,7 +3,7 @@ export default {
 	title: 'Web Animations Level 2',
 	link: 'web-animations-2',
 	status: 'experimental',
-	interfaces: {
+	globals: {
 		AnimationTimeline: {
 			link: '#the-animationtimeline-interface',
 			mdnGroup: 'DOM',

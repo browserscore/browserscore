@@ -10,7 +10,7 @@ export default {
 			tests: 'layout(foo)',
 		},
 	},
-	interfaces: {
+	globals: {
 		CSS: {
 			link: '#layout-worklet',
 			properties: {

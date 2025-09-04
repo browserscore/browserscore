@@ -12,7 +12,7 @@ export default {
 			tests: ['0', '1', '1.5', '110%'],
 		},
 	},
-	interfaces: {
+	globals: {
 		Viewport: {
 			links: {
 				dev: '#the-viewport-interface',
