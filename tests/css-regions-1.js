@@ -18,52 +18,31 @@ export default {
 		},
 	},
 	interfaces: {
-		Document: {
+		document: {
 			link: '#the-namedflow-interface',
 			mdnGroup: 'DOM',
-			tests: ['namedFlows'],
-			interface: function() {
-				return document;
-			}
+			properties: ['namedFlows'],
 		},
 		Element: {
 			link: '#the-region-interface',
 			mdnGroup: 'DOM',
-			tests: ['regionOverset', 'getRegionFlowRanges'],
-			interface: function() {
-				return document.body;
-			}
+			members: ['regionOverset'],
+			methods: ['getRegionFlowRanges'],
 		},
 		NamedFlowMap: {
 			link: '#namedflowmap',
 			mdnGroup: 'DOM',
-			tests: [
-				'has',
-				'get',
-				'set',
-				'keys',
-				'values',
-				'entries',
-				'forEach',
-			],
-			interface: function() {
-				return document.namedFlows;
-			}
 		},
 		NamedFlow: {
 			link: '#namedflow',
 			mdnGroup: 'DOM',
-			tests: [
+			extends: 'EventTarget',
+			members: [
 				'name',
 				'overset',
-				'getRegions',
 				'firstEmptyRegionIndex',
-				'getContent',
-				'getRegionsByContent',
 			],
-			interface: function() {
-				return document.namedFlows.get('--named-flow');
-			}
+			methods: ['getRegions', 'getContent', 'getRegionsByContent'],
 		},
 	},
 };
