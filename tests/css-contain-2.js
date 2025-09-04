@@ -15,14 +15,10 @@ export default {
 	},
 	interfaces: {
 		ContentVisibilityAutoStateChangeEvent: {
-			links: {
-				dev: '#content-visibility-auto-state-change',
-				mdnGroup: 'DOM',
-			},
-			tests: ['skipped'],
-			interface: function() {
-				return new ContentVisibilityAutoStateChangeEvent('contentvisibilityautostatechange');
-			}
+			link: 'https://drafts.csswg.org/css-contain/#content-visibility-auto-state-change',
+			mdnGroup: 'DOM',
+			extends: 'Event',
+			members: ['skipped'],
 		},
 	}
 };
