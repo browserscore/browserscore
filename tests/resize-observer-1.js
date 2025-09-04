@@ -7,20 +7,17 @@ export default {
 		ResizeObserver: {
 			link: '#api',
 			mdnGroup: 'DOM',
-			tests: ['observe', 'unobserve', 'disconnect'],
-			interface: function() {
-				return new ResizeObserver(function() {});
-			}
+			methods: ['observe', 'unobserve', 'disconnect'],
 		},
 		ResizeObserverEntry: {
 			link: '#resize-observer-entry-interface',
 			mdnGroup: 'DOM',
-			tests: ['ResizeObserverEntry'],
+			members: ['target', 'contentRect', 'borderBoxSize', 'contentBoxSize', 'devicePixelContentBoxSize'],
 		},
 		ResizeObserverSize: {
 			link: '#resizeobserversize',
 			mdnGroup: 'DOM',
-			tests: ['ResizeObserverEntry'],
+			members: ['inlineSize', 'blockSize'],
 		},
 	},
 };
