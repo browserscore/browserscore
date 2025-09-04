@@ -107,12 +107,13 @@ export default {
 		CSSRule: {
 			link: '#extensions-to-cssrule-interface',
 			mdnGroup: 'DOM',
-			tests: ['COUNTER_STYLE_RULE'],
+			properties: ['COUNTER_STYLE_RULE'],
 		},
 		CSSCounterStyleRule: {
 			link: '#the-csscounterstylerule-interface',
 			mdnGroup: 'DOM',
-			tests: [
+			extends: 'CSSRule',
+			members: [
 				'name',
 				'system',
 				'symbols',
@@ -124,9 +125,6 @@ export default {
 				'pad',
 				'speakAs',
 				'fallback',
-				'cssText',
-				'parentRule',
-				'parentStyleSheet',
 			],
 		},
 	},
