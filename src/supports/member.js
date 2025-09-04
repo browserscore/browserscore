@@ -55,7 +55,16 @@ export default function member (name, options) {
 	}
 
 	let resolvedName = prefixName(prefix, name);
-	let memberValue = object[resolvedName];
+	let memberValue;
+
+	if (options.typeof || options.instanceof) {
+		try {
+			memberValue = object[resolvedName];
+		}
+		catch (error) {
+			return {success: undefined, object, note: `Failed to get member value ${resolvedName}: ${error.message}`};
+		}
+	}
 
 	if (options.typeof === "function") {
 		let actualType = typeof object[resolvedName];
