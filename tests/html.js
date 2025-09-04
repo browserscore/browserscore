@@ -25,5 +25,9 @@ export default {
 			extends: 'Event',
 			members: ['viewTransition'],
 		},
+		Worklet: {
+			link: 'https://html.spec.whatwg.org/multipage/worklets.html#worklets-worklet',
+			methods: ['addModule'],
+		}
 	}
 };

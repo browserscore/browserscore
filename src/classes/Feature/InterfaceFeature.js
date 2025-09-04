@@ -4,43 +4,74 @@ import supportsInterface from '../../supports/interface.js';
 import supportsMember from '../../supports/member.js';
 
 export class MemberFeature extends Feature {
-	constructor (def, parent) {
-		super(def, parent);
+	static children = {
+		/** The member needs to be an instance of this class */
+		instanceof: { type: MemberFeature },
+	}
 
-		let fromParent = this.def.fromParent;
-		this.memberType = fromParent === 'properties' || fromParent === 'functions' ? 'static' : 'instance';
-		this.memberKind = fromParent === 'methods' || fromParent === 'functions' ? 'method' : 'property';
-		this.base = this.parent.base;
+	static gatingTest = true;
+
+	get base () {
+		return this.closest(f => f instanceof InterfaceFeature)?.base;
+	}
+
+	get memberType () {
+		return this.def.fromParent === 'instanceof' ? this.parent.def.fromParent : this.def.fromParent;
 	}
 
 	get code () {
-		if (this.memberKind === 'method') {
+		if (this.def.fromParent === 'functions' || this.def.fromParent === 'methods') {
 			return this.id + '()';
+		}
+
+		if (this.def.fromParent === 'instanceof') {
+			return 'instanceof ' + this.id;
 		}
 
 		return this.id;
 	}
 
 	testSelf () {
-		let {memberType: type, memberKind: kind, base} = this;
+		let options = {};
 
-		let interfaceName = base.id;
-		let interfaceCallback = this.interface ?? base.interface;
-		let context = {name: interfaceName, callback: interfaceCallback};
+		let isInstanceOf = this.def.fromParent === 'instanceof';
+		let memberType = this.memberType;
 
-		return supportsMember(this.id, {type, kind, context});
+		options.path = memberType === 'properties' || memberType === 'functions' ? '' : 'prototype';
+		options.typeof = memberType === 'methods' || memberType === 'functions' ? 'function' : '';
+		options.instanceof = isInstanceOf ? this.id : '';
+		let member = isInstanceOf ? this.parent.id : this.id;
+		let base = this.base;
+		options.context = {name: base.id, callback: base.interface};
+
+		return supportsMember(member, options);
 	}
 }
 
 export default class InterfaceFeature extends Feature {
 	static children = {
+		/** @deprecated Alias of members */
 		tests: { type: MemberFeature },
+
+		/** The object needs to be an instance of this class */
+		instanceof: { type: InterfaceFeature },
+
+		/** The object should be a subclass of this class */
 		extends: { type: InterfaceFeature },
-		members: { type: MemberFeature },
-		methods: { type: MemberFeature },
+
+		/** Properties that should exist on this object */
 		properties: { type: MemberFeature },
+
+		/** Properties that should exist on this object and should be functions */
 		functions: { type: MemberFeature },
+
+		/** Properties that should exist on this object's prototype */
+		members: { type: MemberFeature },
+
+		/** Properties that should exist on this object's prototype and should be functions */
+		methods: { type: MemberFeature },
 	}
+
 	static gatingTest = true;
 
 	constructor (def, parent) {
@@ -52,6 +83,10 @@ export default class InterfaceFeature extends Feature {
 	get code () {
 		if (this.def.fromParent === 'extends') {
 			return 'extends ' + this.id;
+		}
+
+		if (this.def.fromParent === 'instanceof') {
+			return 'instanceof ' + this.id;
 		}
 
 		return this.id;
@@ -74,6 +109,13 @@ export default class InterfaceFeature extends Feature {
 			let Class = this.parent.id;
 
 			return testExtends(Class, SuperClass);
+		}
+
+		if (this.def.fromParent === 'instanceof') {
+			let Class = this.id;
+			let name = this.parent.id;
+
+			return supportsInterface(name, {instanceof: Class});
 		}
 
 		return supportsInterface(this.id);

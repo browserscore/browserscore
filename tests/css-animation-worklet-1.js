@@ -7,14 +7,11 @@ export default {
 	interfaces: {
 		CSS: {
 			link: '#animation-worklet-desc',
-			properties: ['animationWorklet'],
-		},
-		Worklet: {
-			link: '#animation-worklet-desc',
-			interface: function() {
-				return CSS.animationWorklet;
+			properties: {
+				animationWorklet: {
+					instanceof: 'Worklet',
+				}
 			},
-			methods: ['addModule'],
 		},
 		WorkletAnimation: {
 			link: '#worklet-animation-interface',

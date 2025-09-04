@@ -18,7 +18,7 @@ export default function member (name, options) {
 	}
 
 	if (typeof options === 'string') {
-		options = {context: options};
+		options = {context: {name: options}};
 	}
 	else if (!options.context) {
 		options = {context: options};
@@ -39,9 +39,8 @@ export default function member (name, options) {
 		object = globalThis[contextName];
 	}
 
-	if (options.type !== 'static' && !(contextObject || callback)) {
-		// Non-static member, and the object was not provided
-		object = object.prototype;
+	if (options.path) {
+		object = object[options.path];
 	}
 
 	if (!object) {
@@ -51,16 +50,30 @@ export default function member (name, options) {
 	let prefix = prefixes.find(prefix => prefixName(prefix, name) in object);
 
 	if (prefix === undefined) {
-		return {success: false};
+		// Not supported
+		return {success: false, object};
 	}
 
 	let resolvedName = prefixName(prefix, name);
+	let memberValue = object[resolvedName];
 
-	if (options.type === "function") {
+	if (options.typeof === "function") {
 		let actualType = typeof object[resolvedName];
 
 		if (actualType !== "function") {
-			return {success: false, type: actualType};
+			return {success: false, type: actualType, object, memberValue};
+		}
+	}
+
+	if (options.instanceof) {
+		let Class = typeof options.instanceof === 'string' ? globalThis[options.instanceof] : options.instanceof;
+
+		if (!Class) {
+			return {success: false, object, note: `Class "${options.instanceof}" not found`};
+		}
+
+		if (!(memberValue instanceof Class)) {
+			return {success: false, object, note: `Object is not an instance of ${Class.name}`};
 		}
 	}
 
@@ -68,5 +81,7 @@ export default function member (name, options) {
 		success: true,
 		prefix,
 		resolved: resolvedName,
+		object,
+		memberValue,
 	};
 }
