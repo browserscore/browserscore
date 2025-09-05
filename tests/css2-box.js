@@ -1,4 +1,4 @@
-import { repeat, combine } from '../src/combine.js';
+import { repeat, combine } from '../util.js';
 
 const length = '1px';
 const percentage = '1%';
