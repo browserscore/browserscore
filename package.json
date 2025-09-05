@@ -18,5 +18,10 @@
   "dependencies": {
     "ua-parser-js": "^2.0.4",
     "vue": "^3.5.19"
+  },
+  "devDependencies": {
+    "prettier-plugin-brace-style": "latest",
+    "prettier-plugin-merge": "latest",
+    "prettier-plugin-space-before-function-paren": "latest"
   }
 }
