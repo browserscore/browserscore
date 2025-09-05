@@ -376,7 +376,7 @@ aside {
 	}
 
 	ul {
-		max-height: calc(100vh - 18em);
+		max-height: calc(100vh - 52em);
 		overflow: auto;
 		margin: .5em 0;
 		padding: 0;
