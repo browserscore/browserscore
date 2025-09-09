@@ -1,10 +1,8 @@
 export default {
 	id: 'css2-visufx',
 	title: 'CSS 2 Visual Effects',
-	links: {
-		tr: 'CSS22/visufx.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/visufx.html',
 	status: 'stable',
 	version: 2.2,
 	properties: {
@@ -13,10 +11,8 @@ export default {
 			tests: ['auto', 'rect(1px, 10em, 3ex, 0.2mm)'],
 		},
 		overflow: {
-			links: {
-				tr: '#overflow',
-				dev: '#overflow①',
-			},
+			link: '#overflow①',
+			specLink: '#overflow',
 			tests: ['auto', 'visible', 'hidden', 'scroll'],
 		},
 		visibility: {
