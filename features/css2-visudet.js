@@ -8,26 +8,32 @@ export default {
 	properties: {
 		height: {
 			link: '#the-height-property',
+			dataTypes: ['length', 'percentage', 'length-percentage'],
 			tests: ['auto', '100px', '10%'],
 		},
 		'line-height': {
 			link: '#propdef-line-height',
+			dataTypes: ['number', 'length', 'percentage'],
 			tests: ['normal', '2', '2em', '150%'],
 		},
 		'max-height': {
 			link: '#min-max-heights',
+			dataTypes: ['length', 'percentage', 'length-percentage'],
 			tests: ['none', '100px', '80%'],
 		},
 		'max-width': {
 			link: '#min-max-widths',
+			dataTypes: ['length', 'percentage', 'length-percentage'],
 			tests: ['none', '100px', '80%'],
 		},
 		'min-height': {
 			link: '#min-max-heights',
+			dataTypes: ['length', 'percentage', 'length-percentage'],
 			tests: ['100px', '10%'],
 		},
 		'min-width': {
 			link: '#min-max-widths',
+			dataTypes: ['length', 'percentage', 'length-percentage'],
 			tests: ['100px', '10%'],
 		},
 		'vertical-align': {
@@ -36,6 +42,7 @@ export default {
 		},
 		width: {
 			link: '#the-width-property',
+			dataTypes: ['length', 'percentage', 'length-percentage'],
 			tests: ['auto', '100px', '10%'],
 		},
 	},
