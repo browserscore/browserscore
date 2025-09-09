@@ -1,9 +1,7 @@
 export default {
 	id: 'css-transitions-2',
 	title: 'CSS Transitions 2',
-	links: {
-		dev: 'css-transitions-2',
-	},
+	link: 'css-transitions-2',
 	status: 'experimental',
 	atrules: {
 		'@starting-style': {
