@@ -60,17 +60,20 @@ export default {
 				time: {
 					args: ['1s - 1ms'],
 				},
+				angle: {
+					args: ['1deg + 2deg'],
+				},
 			},
-		},
-		'calc() in other functions': {
-			link: '#calc-notation',
-			properties: ['transform'],
-			tests: ['translateX(calc(1px + 2px))'],
-		}
-	},
-	properties: {
-		transform: {
-			tests: ['rotate(calc(15deg + 30deg))'],
+			values: {
+				'translateX()': {
+					property: 'transform',
+					arg: 'calc(1px + 2px)',
+				},
+				'hsl()': {
+					property: 'color',
+					arg: 'calc(1 + 2), calc(1% + 2%), calc(1% + 2%)',
+				},
+			}
 		},
 	},
 };
