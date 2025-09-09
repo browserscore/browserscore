@@ -38,7 +38,7 @@ export default {
 			extends: 'StyleSheet',
 			children: {
 				CSSStyleSheet: {
-					title: 'Deprecated `CSSStyleSheet` members',
+					titleMd: 'Deprecated `CSSStyleSheet` members',
 					// FIXME this inherits the extends from above, but it shouldn't
 					members: ['rules'],
 					methods: ['addRule', 'removeRule'],
@@ -58,7 +58,7 @@ export default {
 		},
 		HTMLLinkElement: {
 			link: '#the-linkstyle-interface',
-			title: 'The `LinkStyle` interface',
+			titleMd: 'The `LinkStyle` interface',
 			mdnGroup: 'DOM',
 			members: ['sheet', 'style'],
 		},
@@ -86,7 +86,7 @@ export default {
 				'cssText',
 				'parentRule',
 				'parentStyleSheet',
-				{id: 'type', title: 'Deprecated `type` attribute'},
+				{id: 'type', titleMd: 'Deprecated `type` attribute'},
 			],
 			properties: [
 				'STYLE_RULE',

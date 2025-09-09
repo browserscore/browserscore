@@ -27,31 +27,31 @@ export default {
 	version: 2.2,
 	properties: {
 		border: {
-			title: '`border` properties',
+			titleMd: '`border` properties',
 			isGroup: true,
 			children: {
 				border: {
 					link: '#border-shorthand-properties',
-					title: '`border` and `border-<side>` shorthands',
+					titleMd: '`border` and `border-<side>` shorthands',
 					values: borderShorthands,
 					children: ['border', 'border-top', 'border-right', 'border-bottom', 'border-left'],
 				},
 				'border-color': {
 					link: '#border-color-properties',
-					title: '`border-color` and `border-<side>-color`',
+					titleMd: '`border-color` and `border-<side>-color`',
 					isGroup: true,
 					values: borderColors,
 					children: [{id: 'border-color', values: borderColors_1_4}, 'border-top-color', 'border-right-color', 'border-bottom-color', 'border-left-color'],
 				},
 				'border-style': {
 					link: '#border-style-properties',
-					title: '`border-style` and `border-<side>-style`',
+					titleMd: '`border-style` and `border-<side>-style`',
 					values: borderStyles,
 					children: [{id: 'border-style', values: borderStyles_1_4}, 'border-top-style', 'border-right-style', 'border-bottom-style', 'border-left-style'],
 				},
 				'border-width': {
 					link: '#border-width-properties',
-					title: '`border-width` and `border-<side>-width`',
+					titleMd: '`border-width` and `border-<side>-width`',
 					values: borderWidths,
 					children: [{id: 'border-width', values: borderWidths_1_4}, 'border-top-width', 'border-right-width', 'border-bottom-width', 'border-left-width'],
 				},
@@ -59,7 +59,7 @@ export default {
 		},
 
 		margin: {
-			title: '`margin` and `margin-<side>`',
+			titleMd: '`margin` and `margin-<side>`',
 			isGroup: true,
 			values: margin,
 			children: {
@@ -84,7 +84,7 @@ export default {
 
 		padding: {
 			link: '#padding-properties',
-			title: '`padding` and `padding-<side>`',
+			titleMd: '`padding` and `padding-<side>`',
 			isGroup: true,
 			values: padding,
 			children: [{id: 'padding', values: padding_1_4}, 'padding-top', 'padding-right', 'padding-bottom', 'padding-left'],

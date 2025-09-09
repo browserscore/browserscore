@@ -23,13 +23,13 @@ export default {
 				'foo (inline-size > 0px) and style(--responsive = true)',
 			],
 		},
-		'`@container style()`': {
-			id: '@container',
+		'@container style()': {
 			link: '#container-rule',
-			preludeRequired: true,
-			preludes: [
-				'style(--foo: bar)',
-				'style(background-color: red)',
+			args: [
+				'--foo',
+				'--foo: bar',
+				'background-color',
+				'background-color: red',
 			],
 		},
 	},

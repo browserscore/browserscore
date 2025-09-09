@@ -22,8 +22,8 @@ export default {
 		},
 	},
 	atrules: {
-		'`@font-face` descriptors': {
-			id: '@font-face',
+		'@font-face': {
+			titleMd: '`@font-face` descriptors',
 			link: '#at-font-face-rule',
 			isGroup: true,
 			descriptors: {

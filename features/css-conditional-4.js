@@ -4,12 +4,11 @@ export default {
 	link: 'css-conditional-4',
 	status: 'experimental',
 	atrules: {
-		'@supports': {
-			title: '`@supports selector()`',
+		'@supports selector()': {
 			link: '#at-supports-ext',
-			preludes: [
-				'selector(.foo)',
-				'selector(::-webkit-unknown-pseudo)',
+			args: [
+				'.foo',
+				'::unknown-pseudo',
 			],
 		},
 	},

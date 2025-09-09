@@ -4,20 +4,13 @@ export default {
 	link: 'css-conditional-5',
 	status: 'experimental',
 	atrules: {
-		'@supports': {
+		'@supports font-tech()': {
 			link: '#at-supports-ext',
-			preludeRequired: true,
-			children: [
-				{
-					title: '`@supports font-tech()`',
-					prelude: 'font-tech(features-opentype)',
-
-				},
-				{
-					title: '`@supports font-format()`',
-					prelude: 'font-format(woff2)',
-				},
-			],
+			arg: 'features-opentype',
+		},
+		'@supports font-format()': {
+			link: '#at-supports-ext',
+			arg: 'woff2',
 		},
 		'@when': {
 			link: '#when-rule',

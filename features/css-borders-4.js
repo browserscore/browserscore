@@ -118,7 +118,7 @@ export default {
 		},
 		'box-shadow-*': {
 			isGroup: true,
-			title: '`box-shadow` longhands',
+			titleMd: '`box-shadow` longhands',
 			children: {
 				'box-shadow-color': {
 					link: '#box-shadow-color',
