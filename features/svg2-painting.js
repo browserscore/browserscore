@@ -1,10 +1,8 @@
 export default {
 	id: 'svg2-painting',
 	title: 'SVG 2 Painting: Filling, Stroking and Marker Symbols',
-	links: {
-		tr: 'svg2/painting.html',
-		dev: 'svg2-draft/painting.html',
-	},
+	link: 'svg2-draft/painting.html',
+	specLink: 'svg2/painting.html',
 	group: 'svgwg',
 	status: 'experimental',
 	properties: {
@@ -14,9 +12,7 @@ export default {
 			tests: ['auto', 'sRGB', 'linearRGB'],
 		},
 		'color-rendering': {
-			links: {
-				tr: '#ColorRendering',
-			},
+			link: '#ColorRendering',
 			tests: ['auto', 'optimizeSpeed', 'optimizeQuality'],
 		},
 		marker: {
