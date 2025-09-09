@@ -1,32 +1,20 @@
 export default {
 	id: 'motion-1',
 	title: 'Motion Path Module Level 1',
-	links: {
-		dev: 'motion-1',
-		tr: 'motion-1',
-	},
+	link: 'motion-1',
 	group: 'fxtf',
 	status: 'experimental',
 	properties: {
 		'offset-anchor': {
-			links: {
-				dev: '#offset-anchor-property',
-				tr: '#offset-anchor-property',
-			},
+			link: '#offset-anchor-property',
 			tests: ['auto', 'center', 'top left', '10px 20px', '30% 40%'],
 		},
 		'offset-distance': {
-			links: {
-				dev: '#offset-distance-property',
-				tr: '#offset-distance-property',
-			},
+			link: '#offset-distance-property',
 			tests: ['20px', '30%'],
 		},
 		'offset-path': {
-			links: {
-				dev: '#offset-path-property',
-				tr: '#offset-path-property',
-			},
+			link: '#offset-path-property',
 			tests: [
 				'none',
 				'ray(45deg closest-side)',
@@ -52,24 +40,15 @@ export default {
 			],
 		},
 		'offset-position': {
-			links: {
-				dev: '#offset-position-property',
-				tr: '#offset-position-property',
-			},
+			link: '#offset-position-property',
 			tests: ['auto', 'center', 'top left', '10px 20px', '30% 40%'],
 		},
 		'offset-rotate': {
-			links: {
-				dev: '#offset-rotate-property',
-				tr: '#offset-rotate-property',
-			},
+			link: '#offset-rotate-property',
 			tests: ['auto', 'reverse', '90deg', 'auto 90deg', 'reverse 90deg'],
 		},
 		offset: {
-			links: {
-				dev: '#offset-shorthand',
-				tr: '#offset-shorthand',
-			},
+			link: '#offset-shorthand',
 			tests: [
 				'none',
 				'ray(45deg closest-side)',
