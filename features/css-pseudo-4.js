@@ -17,9 +17,7 @@ export default {
 			tests: ['::selection'],
 		},
 		'::search-text': {
-			links: {
-				dev: '#selectordef-search-text',
-			},
+			link: '#selectordef-search-text',
 			tests: [
 				'::search-text',
 				'::search-text:current',
@@ -56,9 +54,7 @@ export default {
 			tests: ['::file-selector-button'],
 		},
 		'::details-content': {
-			links: {
-				dev: '#details-content-pseudo',
-			},
+			link: '#details-content-pseudo',
 			tests: [
 				'::details-content',
 				'::details-content::first-letter',

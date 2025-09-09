@@ -1,15 +1,11 @@
 export default {
 	id: 'css-images-5',
 	title: 'CSS Images Module Level 5',
-	links: {
-		dev: 'css-images-5',
-	},
+	link: 'css-images-5',
 	status: 'experimental',
 	properties: {
 		'object-view-box': {
-			links: {
-				dev: '#the-object-view-box',
-			},
+			link: '#the-object-view-box',
 			tests: [
 				'none',
 				'inset(10% round 10% 40% 10% 40%)',

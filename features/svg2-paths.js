@@ -1,10 +1,8 @@
 export default {
 	id: 'svg2-paths',
 	title: 'SVG 2 Paths',
-	links: {
-		tr: 'svg2/paths.html',
-		dev: 'svg2-draft/paths.html',
-	},
+	link: 'svg2-draft/paths.html',
+	specLink: 'svg2/paths.html',
 	group: 'svgwg',
 	status: 'experimental',
 	properties: {

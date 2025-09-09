@@ -221,31 +221,23 @@ export default {
 			tests: ['navy blue'],
 		},
 		'border-start-start-radius': {
-			links: {
-				tr: '#border-radius-shorthands',
-				dev: '#border-radius-properties',
-			},
+			link: '#border-radius-properties',
+			specLink: '#border-radius-shorthands',
 			tests: ['0', '50%', '250px 100px'],
 		},
 		'border-start-end-radius': {
-			links: {
-				tr: '#border-radius-shorthands',
-				dev: '#border-radius-properties',
-			},
+			link: '#border-radius-properties',
+			specLink: '#border-radius-shorthands',
 			tests: ['0', '50%', '250px 100px'],
 		},
 		'border-end-start-radius': {
-			links: {
-				tr: '#border-radius-shorthands',
-				dev: '#border-radius-properties',
-			},
+			link: '#border-radius-properties',
+			specLink: '#border-radius-shorthands',
 			tests: ['0', '50%', '250px 100px'],
 		},
 		'border-end-end-radius': {
-			links: {
-				tr: '#border-radius-shorthands',
-				dev: '#border-radius-properties',
-			},
+			link: '#border-radius-properties',
+			specLink: '#border-radius-shorthands',
 			tests: ['0', '50%', '250px 100px'],
 		},
 		margin: {

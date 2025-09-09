@@ -1,15 +1,11 @@
 export default {
 	id: 'css-scroll-snap-2',
 	title: 'CSS Scroll Snap Module Level 2',
-	links: {
-		dev: 'css-scroll-snap-2',
-	},
+	link: 'css-scroll-snap-2',
 	status: 'experimental',
 	properties: {
 		'scroll-start-target': {
-			links: {
-				dev: '#scroll-start-target',
-			},
+			link: '#scroll-start-target',
 			tests: [
 				'none',
 				'auto',
@@ -18,42 +14,30 @@ export default {
 	},
 	selectors: {
 		':snapped': {
-			links: {
-				dev: '#snapped',
-			},
+			link: '#snapped',
 			tests: ':snapped',
 		},
 		':snapped-x': {
-			links: {
-				dev: '#selectordef-snapped-x',
-			},
+			link: '#selectordef-snapped-x',
 			tests: ':snapped-x',
 		},
 		':snapped-y': {
-			links: {
-				dev: '#selectordef-snapped-y',
-			},
+			link: '#selectordef-snapped-y',
 			tests: ':snapped-y',
 		},
 		':snapped-inline': {
-			links: {
-				dev: '#selectordef-snapped-inline',
-			},
+			link: '#selectordef-snapped-inline',
 			tests: ':snapped-inline',
 		},
 		':snapped-block': {
-			links: {
-				dev: '#selectordef-snapped-block',
-			},
+			link: '#selectordef-snapped-block',
 			tests: ':snapped-block',
 		},
 	},
 	globals: {
 		SnapEvent: {
-			links: {
-				dev: '#snap-events',
-				mdnGroup: 'DOM',
-			},
+			link: '#snap-events',
+			mdnGroup: 'DOM',
 			extends: 'Event',
 			members: ['snapTargetBlock', 'snapTargetInline'],
 		},

@@ -1,15 +1,11 @@
 export default {
 	id: 'css-link-params-1',
 	title: 'CSS Linked Parameters',
-	links: {
-		dev: 'css-link-params-1',
-	},
+	link: 'css-link-params-1',
 	status: 'experimental',
 	properties: {
 		'link-parameters': {
-			links: {
-				dev: '#link-param-prop',
-			},
+			link: '#link-param-prop',
 			tests: [
 				'none',
 				'param(--foo)',
@@ -22,10 +18,7 @@ export default {
 	values: {
 		properties: ['background-image'],
 		'url() with param()': {
-			links: {
-				tr: '#setting-url',
-				dev: '#setting-url'
-			},
+			link: '#setting-url',
 			tests: 'url("http://example.com/image.svg" param(--bg-color white))',
 		}
 	}

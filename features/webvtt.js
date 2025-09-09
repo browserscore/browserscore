@@ -1,10 +1,7 @@
 export default {
 	id: 'webvtt',
 	title: 'WebVTT: The Web Video Text Tracks Format',
-	links: {
-		tr: 'webvtt1',
-		dev: 'webvtt',
-	},
+	link: 'webvtt',
 	group: 'github',
 	status: 'experimental',
 	selectors: {

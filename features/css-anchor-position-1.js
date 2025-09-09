@@ -50,9 +50,7 @@ export default {
 			],
 		},
 		'anchor-center': {
-			links: {
-				dev: '#anchor-center',
-			},
+			link: '#anchor-center',
 			properties: [
 				'justify-self',
 				'align-self',
@@ -140,9 +138,7 @@ export default {
 			],
 		},
 		'position-area': {
-			links: {
-				dev: '#position-area',
-			},
+			link: '#position-area',
 			tests: [
 				'left',
 				'center',
@@ -407,10 +403,8 @@ export default {
 	},
 	globals: {
 		CSSPositionTryRule: {
-			links: {
-				dev: '#om-position-try',
-				mdnGroup: 'DOM',
-			},
+			link: '#om-position-try',
+			mdnGroup: 'DOM',
 		},
 	},
 };

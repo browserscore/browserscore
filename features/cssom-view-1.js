@@ -159,10 +159,8 @@ export default {
 			],
 		},
 		VisualViewport: {
-			links: {
-				dev: '#the-visualviewport-interface',
-				mdnGroup: 'DOM',
-			},
+			link: '#the-visualviewport-interface',
+			mdnGroup: 'DOM',
 			extends: 'EventTarget',
 			members: [
 				'offsetLeft',

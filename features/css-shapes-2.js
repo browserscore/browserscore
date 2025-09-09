@@ -1,15 +1,11 @@
 export default {
 	id: 'css-shapes-2',
 	title: 'CSS Shapes Module Level 2',
-	links: {
-		dev: 'css-shapes-2',
-	},
+	link: 'css-shapes-2',
 	status: 'experimental',
 	properties: {
 		'shape-inside': {
-			links: {
-				dev: '#shape-inside-property',
-			},
+			link: '#shape-inside-property',
 			tests: [
 				'auto',
 				'outside-shape',
@@ -24,9 +20,7 @@ export default {
 			],
 		},
 		'shape-padding': {
-			links: {
-				dev: '#shape-padding-property',
-			},
+			link: '#shape-padding-property',
 			tests: ['0', '10px', '50%'],
 		},
 	},

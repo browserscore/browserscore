@@ -30,10 +30,8 @@ export default {
 			tests: '1px',
 		},
 		'column-rule': {
-			links: {
-				tr: '#column-rule',
-				dev: '#cr',
-			},
+			link: '#cr',
+			specLink: '#column-rule',
 			tests: ['transparent', '1px solid black'],
 		},
 		'column-span': {

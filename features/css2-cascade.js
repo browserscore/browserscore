@@ -1,10 +1,8 @@
 export default {
 	id: 'css2-cascade',
 	title: 'CSS 2 Assigning property values, Cascading, and Inheritance',
-	links: {
-		tr: 'CSS22/cascade.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/cascade.html',
 	status: 'stable',
 	version: 2.2,
 	values: {

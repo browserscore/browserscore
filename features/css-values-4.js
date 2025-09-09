@@ -26,18 +26,7 @@ export default {
 			tests: '5rcap',
 		},
 		rch: {
-			links: {
-				tr: '#rch',
-				dev: '#rcap',
-				},
-			mdn: 'length',
-			tests: '5rch',
-		},
-		rch: {
-			links: {
-				tr: '#rch',
-				dev: '#rcap',
-				},
+			link: '#rch',
 			mdn: 'length',
 			tests: '5rch',
 		},
@@ -142,24 +131,15 @@ export default {
 			tests: '5svi',
 		},
 		'min()': {
-			links: {
-				tr: '#calc-notation',
-				dev: '#comp-func',
-			},
+			link: '#comp-func',
 			tests: ['min(10 * (1vw + 1vh) / 2, 12px)'],
 		},
 		'max()': {
-			links: {
-				tr: '#calc-notation',
-				dev: '#comp-func',
-			},
+			link: '#comp-func',
 			tests: ['max(10 * (1vw + 1vh) / 2, 12px)'],
 		},
 		'clamp()': {
-			links: {
-				tr: '#calc-notation',
-				dev: '#comp-func',
-			},
+			link: '#comp-func',
 			tests: ['clamp(12px, 10 * (1vw + 1vh) / 2, 100px)'],
 		},
 		'calc()': {
@@ -253,24 +233,15 @@ export default {
 			tests: ['calc(1px * calc(pi))'],
 		},
 		infinity: {
-			links: {
-				tr: '#calc-error-constants',
-				dev: '#ccalc-error-constants',
-			},
+			link: '#calc-error-constants',
 			tests: ['calc(1px * sin(tan(atan(infinity))))'],
 		},
 		'-infinity': {
-			links: {
-				tr: '#calc-error-constants',
-				dev: '#ccalc-error-constants',
-			},
+			link: '#calc-error-constants',
 			tests: ['calc(1px * sin(tan(atan(-infinity))))'],
 		},
 		NaN: {
-			links: {
-				tr: '#calc-error-constants',
-				dev: '#ccalc-error-constants',
-			},
+			link: '#calc-error-constants',
 			tests: ['calc(1px * sin(tan(atan(NaN))))'],
 		},
 	},

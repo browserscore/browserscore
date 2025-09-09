@@ -1,10 +1,8 @@
 export default {
 	id: 'css2-ui',
 	title: 'CSS 2 User Interface',
-	links: {
-		tr: 'CSS22/ui.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/ui.html',
 	status: 'stable',
 	version: 2.2,
 	properties: {

@@ -1,10 +1,8 @@
 export default {
 	id: 'svg2-coords',
 	title: 'SVG 2 Coordinate Systems, Transformations and Units',
-	links: {
-		tr: 'svg2/coords.html',
-		dev: 'svg2-draft/coords.html',
-	},
+	link: 'svg2-draft/coords.html',
+	specLink: 'svg2/coords.html',
 	group: 'svgwg',
 	status: 'experimental',
 	properties: {

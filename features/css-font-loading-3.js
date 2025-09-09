@@ -29,30 +29,22 @@ export default {
 			methods: ['load'],
 		},
 		FontFaceFeatures: {
-			links: {
-				dev: '#fontfacefeatures',
-				mdnGroup: 'DOM',
-			},
+			link: '#fontfacefeatures',
+			mdnGroup: 'DOM',
 		},
 		FontFaceVariationAxis: {
-			links: {
-				dev: '#fontfacevariationaxis',
-				mdnGroup: 'DOM',
-			},
+			link: '#fontfacevariationaxis',
+			mdnGroup: 'DOM',
 			members: ['name', 'axisTag', 'minimumValue', 'maximumValue', 'defaultValue'],
 		},
 		FontFacePalettes: {
-			links: {
-				dev: '#fontfacepalettes',
-				mdnGroup: 'DOM',
-			},
+			link: '#fontfacepalettes',
+			mdnGroup: 'DOM',
 			members: ['length'],
 		},
 		FontFacePalette: {
-			links: {
-				dev: '#fontfacepalette',
-				mdnGroup: 'DOM',
-			},
+			link: '#fontfacepalette',
+			mdnGroup: 'DOM',
 			members: ['length', 'usableWithLightBackground', 'usableWithDarkBackground'],
 		},
 		FontFaceSet: {
@@ -62,10 +54,8 @@ export default {
 			methods: ['add', 'delete', 'clear', 'load', 'check'],
 		},
 		FontFaceSetLoadEvent: {
-			links: {
-				dev: '#fontfacesetloadevent',
-				mdnGroup: 'DOM',
-			},
+			link: '#fontfacesetloadevent',
+			mdnGroup: 'DOM',
 			members: ['fontfaces'],
 		},
 		document: {

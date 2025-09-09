@@ -1,16 +1,12 @@
 export default {
 	id: 'css-env-1',
 	title: 'Environment Variables Level 1',
-	links: {
-		dev: 'css-env-1',
-	},
+	link: 'css-env-1',
 	status: 'experimental',
 	values: {
 		properties: ['width', 'padding'],
 		'env()': {
-			links: {
-				dev: '#env-function',
-			},
+			link: '#env-function',
 			tests: [
 				'env(safe-area-inset-top)',
 				'env(safe-area-inset-top, 12px)',

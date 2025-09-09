@@ -1,17 +1,11 @@
 export default {
 	id: 'css-inline-3',
 	title: 'CSS Inline Layout Module Level 3',
-	links: {
-		dev: 'css-inline-3',
-		tr: 'css-inline-3',
-	},
+	link: 'css-inline-3',
 	status: 'experimental',
 	properties: {
 		'alignment-baseline': {
-			links: {
-				dev: '#alignment-baseline-property',
-				tr: '#alignment-baseline-property',
-			},
+			link: '#alignment-baseline-property',
 			tests: [
 				'baseline',
 				'text-bottom',
@@ -24,10 +18,7 @@ export default {
 			],
 		},
 		'baseline-shift': {
-			links: {
-				dev: '#baseline-shift-property',
-				tr: '#baseline-shift-property',
-			},
+			link: '#baseline-shift-property',
 			tests: [
 				'5px',
 				'10%',
@@ -39,10 +30,7 @@ export default {
 			],
 		},
 		'baseline-source': {
-			links: {
-				dev: '#baseline-source',
-				tr: '#baseline-source',
-			},
+			link: '#baseline-source',
 			tests: [
 				'auto',
 				'first',
@@ -50,10 +38,7 @@ export default {
 			],
 		},
 		'dominant-baseline': {
-			links: {
-				dev: '#dominant-baseline-property',
-				tr: '#dominant-baseline-property',
-			},
+			link: '#dominant-baseline-property',
 			tests: [
 				'auto',
 				'text-bottom',
@@ -67,10 +52,7 @@ export default {
 			],
 		},
 		'initial-letter': {
-			links: {
-				dev: '#sizing-drop-initials',
-				tr: '#sizing-drop-initials',
-			},
+			link: '#sizing-drop-initials',
 			tests: [
 				'normal',
 				'1.4 3',
@@ -80,10 +62,7 @@ export default {
 			],
 		},
 		'initial-letter-align': {
-			links: {
-				dev: '#aligning-initial-letter',
-				tr: '#aligning-initial-letter',
-			},
+			link: '#aligning-initial-letter',
 			tests: [
 				'border-box',
 				'alphabetic',
@@ -94,10 +73,7 @@ export default {
 			],
 		},
 		'initial-letter-wrap': {
-			links: {
-				dev: '#initial-letter-wrapping',
-				tr: '#initial-letter-wrapping',
-			},
+			link: '#initial-letter-wrapping',
 			tests: [
 				'none',
 				'first',
@@ -108,20 +84,14 @@ export default {
 			],
 		},
 		'inline-sizing': {
-			links: {
-				dev: '#line-fill',
-				tr: '#line-fill',
-			},
+			link: '#line-fill',
 			tests: [
 				'normal',
 				'stretch',
 			],
 		},
 		'line-fit-edge': {
-			links: {
-				dev: '#text-edges',
-				tr: '#text-edges',
-			},
+			link: '#text-edges',
 			tests: [
 				'leading',
 				'text',
@@ -136,10 +106,7 @@ export default {
 			],
 		},
 		'text-box': {
-			links: {
-				dev: '#text-box-shorthand',
-				tr: '#text-box-shorthand',
-			},
+			link: '#text-box-shorthand',
 			tests: [
 				'normal',
 				'none',
@@ -162,10 +129,7 @@ export default {
 			],
 		},
 		'text-box-edge': {
-			links: {
-				dev: '#text-box-edge',
-				tr: '#text-box-edge',
-			},
+			link: '#text-box-edge',
 			tests: [
 				'auto',
 				'text',
@@ -180,17 +144,11 @@ export default {
 			],
 		},
 		'text-box-trim': {
-			links: {
-				dev: '#text-box-trim',
-				tr: '#text-box-trim',
-			},
+			link: '#text-box-trim',
 			tests: ['none', 'trim-start', 'trim-end', 'trim-both'],
 		},
 		'vertical-align': {
-			links: {
-				dev: '#transverse-alignment',
-				tr: '#transverse-alignment',
-			},
+			link: '#transverse-alignment',
 			tests: [
 				'first',
 				'last',

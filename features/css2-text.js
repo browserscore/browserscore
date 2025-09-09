@@ -1,10 +1,8 @@
 export default {
 	id: 'css2-text',
 	title: 'CSS 2 Text',
-	links: {
-		tr: 'CSS22/text.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/text.html',
 	status: 'stable',
 	version: 2.2,
 	properties: {

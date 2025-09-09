@@ -1,15 +1,11 @@
 export default {
 	id: 'css-backgrounds-4',
 	title: 'CSS Backgrounds Module Level 4',
-	links: {
-		dev: 'css-backgrounds-4',
-	},
+	link: 'css-backgrounds-4',
 	status: 'experimental',
 	properties: {
 		'background-position-x': {
-			links: {
-				dev: '#background-position-longhands',
-			},
+			link: '#background-position-longhands',
 			tests: [
 				'right',
 				'center',
@@ -38,9 +34,7 @@ export default {
 			],
 		},
 		'background-position-y': {
-			links: {
-				dev: '#background-position-longhands',
-			},
+			link: '#background-position-longhands',
 			tests: [
 				'bottom',
 				'center',
@@ -70,9 +64,7 @@ export default {
 			],
 		},
 		'background-position-block': {
-			links: {
-				dev: '#background-position-longhands',
-			},
+			link: '#background-position-longhands',
 			tests: [
 				'center',
 				'start',
@@ -103,9 +95,7 @@ export default {
 			],
 		},
 		'background-position-inline': {
-			links: {
-				dev: '#background-position-longhands',
-			},
+			link: '#background-position-longhands',
 			tests: [
 				'center',
 				'start',
@@ -136,10 +126,8 @@ export default {
 			],
 		},
 		'background-clip': {
-			links: {
-				tr: '#the-background-clip',
-				dev: '#background-clip',
-			},
+			link: '#background-clip',
+			specLink: '#the-background-clip',
 			tests: ['text', 'border-area'],
 		},
 	},

@@ -1,10 +1,8 @@
 export default {
 	id: 'svg2-text',
 	title: 'SVG 2 Text',
-	links: {
-		tr: 'svg2/text.html',
-		dev: 'svg2-draft/text.html',
-	},
+	link: 'svg2-draft/text.html',
+	specLink: 'svg2/text.html',
 	group: 'svgwg',
 	status: 'experimental',
 	properties: {
@@ -27,9 +25,7 @@ export default {
 			tests: ['start', 'middle', 'end'],
 		},
 		'text-decoration-fill': {
-			links: {
-				tr: '#TextDecorationFillStroke',
-			},
+			link: '#TextDecorationFillStroke',
 			tests: [
 				'none',
 				'green',
@@ -41,9 +37,7 @@ export default {
 			],
 		},
 		'text-decoration-stroke': {
-			links: {
-				tr: '#TextDecorationFillStroke',
-			},
+			link: '#TextDecorationFillStroke',
 			tests: [
 				'none',
 				'green',

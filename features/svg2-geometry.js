@@ -1,10 +1,8 @@
 export default {
 	id: 'svg2-geometry',
 	title: 'SVG 2 Geometry Properties',
-	links: {
-		tr: 'svg2/geometry.html',
-		dev: 'svg2-draft/geometry.html',
-	},
+	link: 'svg2-draft/geometry.html',
+	specLink: 'svg2/geometry.html',
 	group: 'svgwg',
 	status: 'experimental',
 	properties: {

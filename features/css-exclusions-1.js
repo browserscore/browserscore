@@ -1,10 +1,8 @@
 export default {
 	id: 'css-exclusions-1',
 	title: 'CSS Exclusions Module Level 1',
-	links: {
-		tr: 'css3-exclusions',
-		dev: 'css-exclusions-1',
-	},
+	link: 'css-exclusions-1',
+	specLink: 'css3-exclusions',
 	status: 'experimental',
 	properties: {
 		'wrap-flow': {

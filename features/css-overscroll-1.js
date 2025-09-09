@@ -5,9 +5,7 @@ export default {
 	status: 'experimental',
 	properties: {
 		'overscroll-behavior': {
-			links: {
-				dev: '#overscroll-behavior-properties',
-			},
+			link: '#overscroll-behavior-properties',
 			tests: [
 				'contain',
 				'none',
@@ -24,27 +22,19 @@ export default {
 			],
 		},
 		'overscroll-behavior-x': {
-			links: {
-				dev: '#overscroll-behavior-longhands-physical',
-			},
+			link: '#overscroll-behavior-longhands-physical',
 			tests: ['contain', 'none', 'auto'],
 		},
 		'overscroll-behavior-y': {
-			links: {
-				dev: '#overscroll-behavior-longhands-physical',
-			},
+			link: '#overscroll-behavior-longhands-physical',
 			tests: ['contain', 'none', 'auto'],
 		},
 		'overscroll-behavior-inline': {
-			links: {
-				dev: '#overscroll-behavior-longhands-logical',
-			},
+			link: '#overscroll-behavior-longhands-logical',
 			tests: ['contain', 'none', 'auto'],
 		},
 		'overscroll-behavior-block': {
-			links: {
-				dev: '#overscroll-behavior-longhands-logical',
-			},
+			link: '#overscroll-behavior-longhands-logical',
 			tests: ['contain', 'none', 'auto'],
 		},
 	},

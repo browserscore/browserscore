@@ -1,10 +1,8 @@
 export default {
 	id: 'svg2-interact',
 	title: 'SVG 2 Scripting and Interactivity',
-	links: {
-		tr: 'svg2/interact.html',
-		dev: 'svg2-draft/interact.html',
-	},
+	link: 'svg2-draft/interact.html',
+	specLink: 'svg2/interact.html',
 	group: 'svgwg',
 	status: 'experimental',
 	properties: {

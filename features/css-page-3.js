@@ -5,10 +5,7 @@ export default {
 	status: 'experimental',
 	properties: {
 		page: {
-			links: {
-				tr: '#using-named-pages',
-				dev: '#using-named-pagest',
-			},
+			link: '#using-named-pages',
 			tests: ['auto', 'customName'],
 		},
 	},

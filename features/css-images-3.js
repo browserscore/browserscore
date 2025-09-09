@@ -1,10 +1,8 @@
 export default {
 	id: 'css-images-3',
 	title: 'CSS Images Module Level 3',
-	links: {
-		tr: 'css3-images',
-		dev: 'css-images-3',
-	},
+	link: 'css-images-3',
+	specLink: 'css3-images',
 	status: 'stable',
 	firstSnapshot: 2015,
 	values: {
@@ -64,24 +62,15 @@ export default {
 	},
 	properties: {
 		'object-fit': {
-			links: {
-				tr: '#object-fit',
-				dev: '#the-object-fit',
-			},
+			link: '#the-object-fit',
 			tests: ['fill', 'contain', 'cover', 'none', 'scale-down'],
 		},
 		'object-position': {
-			links: {
-				tr: '#object-position',
-				dev: '#the-object-position',
-			},
+			link: '#the-object-position',
 			tests: ['50% 50%', 'center', 'top right', 'bottom 10px right 20px'],
 		},
 		'image-orientation': {
-			links: {
-				tr: '#image-orientation',
-				dev: '#the-image-orientation',
-			},
+			link: '#the-image-orientation',
 			tests: ['from-image', '0deg', '90deg', '45deg', '45deg flip', '1turn', '100grad', '2rad'],
 		},
 		'image-rendering': {

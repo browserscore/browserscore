@@ -1,17 +1,11 @@
 export default {
 	id: 'css-gaps-1',
 	title: 'CSS Gap Decorations Module Level 1',
-	links: {
-		dev: 'css-gaps-1',
-		tr: 'css-gaps-1',
-	},
+	link: 'css-gaps-1',
 	status: 'experimental',
 	properties: {
 		'column-rule-break': {
-			links: {
-				dev: '#propdef-column-rule-break',
-				tr: '#propdef-column-rule-break',
-			},
+			link: '#propdef-column-rule-break',
 			tests: [
 				'intersection',
 				'spanning-item',
@@ -19,10 +13,7 @@ export default {
 			],
 		},
 		'row-rule-break': {
-			links: {
-				dev: '#propdef-row-rule-break',
-				tr: '#propdef-row-rule-break',
-			},
+			link: '#propdef-row-rule-break',
 			tests: [
 				'intersection',
 				'spanning-item',
@@ -30,10 +21,7 @@ export default {
 			],
 		},
 		'rule-break': {
-			links: {
-				dev: '#propdef-rule-break',
-				tr: '#propdef-rule-break',
-			},
+			link: '#propdef-rule-break',
 			tests: [
 				'intersection',
 				'spanning-item',
@@ -41,50 +29,35 @@ export default {
 			],
 		},
 		'column-rule-outset': {
-			links: {
-				dev: '#propdef-column-rule-outset',
-				tr: '#propdef-column-rule-outset',
-			},
+			link: '#propdef-column-rule-outset',
 			tests: [
 				'10px',
 				'5%',
 			],
 		},
 		'row-rule-outset': {
-			links: {
-				dev: '#propdef-row-rule-outset',
-				tr: '#propdef-row-rule-outset',
-			},
+			link: '#propdef-row-rule-outset',
 			tests: [
 				'10px',
 				'5%',
 			],
 		},
 		'rule-outset': {
-			links: {
-				dev: '#propdef-rule-outset',
-				tr: '#propdef-rule-outset',
-			},
+			link: '#propdef-rule-outset',
 			tests: [
 				'10px',
 				'5%',
 			],
 		},
 		'rule-paint-order': {
-			links: {
-				dev: '#propdef-rule-paint-order',
-				tr: '#propdef-rule-paint-order',
-			},
+			link: '#propdef-rule-paint-order',
 			tests: [
 				'row-over-column',
 				'column-over-row',
 			],
 		},
 		'column-rule-color': {
-			links: {
-				dev: '#propdef-column-rule-color',
-				tr: '#propdef-column-rule-color',
-			},
+			link: '#propdef-column-rule-color',
 			tests: [
 				'red',
 				'rgb(0 0 0 / 0.5)',
@@ -101,10 +74,7 @@ export default {
 			],
 		},
 		'row-rule-color': {
-			links: {
-				dev: '#propdef-row-rule-color',
-				tr: '#propdef-row-rule-color',
-			},
+			link: '#propdef-row-rule-color',
 			tests: [
 				'red',
 				'rgb(0 0 0 / 0.5)',
@@ -121,10 +91,7 @@ export default {
 			],
 		},
 		'rule-color': {
-			links: {
-				dev: '#propdef-rule-color',
-				tr: '#propdef-rule-color',
-			},
+			link: '#propdef-rule-color',
 			tests: [
 				'red',
 				'rgb(0 0 0 / 0.5)',
@@ -141,10 +108,7 @@ export default {
 			],
 		},
 		'column-rule-style': {
-			links: {
-				dev: '#propdef-column-rule-style',
-				tr: '#propdef-column-rule-style',
-			},
+			link: '#propdef-column-rule-style',
 			tests: [
 				'solid',
 				'dotted',
@@ -162,10 +126,7 @@ export default {
 			],
 		},
 		'row-rule-style': {
-			links: {
-				dev: '#propdef-row-rule-style',
-				tr: '#propdef-row-rule-style',
-			},
+			link: '#propdef-row-rule-style',
 			tests: [
 				'solid',
 				'dotted',
@@ -183,10 +144,7 @@ export default {
 			],
 		},
 		'rule-style': {
-			links: {
-				dev: '#propdef-rule-style',
-				tr: '#propdef-rule-style',
-			},
+			link: '#propdef-rule-style',
 			tests: [
 				'solid',
 				'dotted',
@@ -204,10 +162,7 @@ export default {
 			],
 		},
 		'column-rule-width': {
-			links: {
-				dev: '#propdef-column-rule-width',
-				tr: '#propdef-column-rule-width',
-			},
+			link: '#propdef-column-rule-width',
 			tests: [
 				'10px',
 				'5%',
@@ -227,10 +182,7 @@ export default {
 			],
 		},
 		'row-rule-width': {
-			links: {
-				dev: '#propdef-row-rule-width',
-				tr: '#propdef-row-rule-width',
-			},
+			link: '#propdef-row-rule-width',
 			tests: [
 				'10px',
 				'5%',
@@ -250,10 +202,7 @@ export default {
 			],
 		},
 		'rule-width': {
-			links: {
-				dev: '#propdef-rule-width',
-				tr: '#propdef-rule-width',
-			},
+			link: '#propdef-rule-width',
 			tests: [
 				'10px',
 				'5%',
@@ -273,10 +222,7 @@ export default {
 			],
 		},
 		'column-rule': {
-			links: {
-				dev: '#propdef-column-rule',
-				tr: '#propdef-column-rule',
-			},
+			link: '#propdef-column-rule',
 			tests: [
 				'10px solid red',
 				'5% dotted rgb(0 0 0 / 0.5)',
@@ -293,10 +239,7 @@ export default {
 			],
 		},
 		'row-rule': {
-			links: {
-				dev: '#propdef-row-rule',
-				tr: '#propdef-row-rule',
-			},
+			link: '#propdef-row-rule',
 			tests: [
 				'10px solid red',
 				'5% dotted rgb(0 0 0 / 0.5)',
@@ -313,10 +256,7 @@ export default {
 			],
 		},
 		'rule': {
-			links: {
-				dev: '#propdef-rule',
-				tr: '#propdef-rule',
-			},
+			link: '#propdef-rule',
 			tests: [
 				'10px solid red',
 				'5% dotted rgb(0 0 0 / 0.5)',
