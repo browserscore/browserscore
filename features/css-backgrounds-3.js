@@ -119,6 +119,7 @@ export default {
 				tr: '#the-border-image-source',
 				dev: '#border-image-source',
 			},
+			dataTypes: ['image'],
 			tests: ['none', 'url(foo.png)'],
 		},
 		'border-image-slice': {
@@ -235,6 +236,7 @@ export default {
 				tr: '#the-border-image',
 				dev: '#border-image',
 			},
+			dataTypes: ['image'],
 			tests: [
 				'url(foo.png) 10',
 				'url(foo.png) 10%',

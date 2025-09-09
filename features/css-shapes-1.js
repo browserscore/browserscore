@@ -6,6 +6,7 @@ export default {
 	properties: {
 		'shape-outside': {
 			link: '#shape-outside-property',
+			dataTypes: ['image', 'shape'],
 			tests: [
 				'none',
 				'inset(10% round 10% 40% 10% 40%)',

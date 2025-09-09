@@ -29,6 +29,7 @@ export default {
 		},
 		'fill-image': {
 			link: '#fill-image',
+			dataTypes: ['image'],
 			tests: [
 				'url(foo.png)',
 				"image('sprites.png#xywh=10,30,60,20')",
@@ -159,6 +160,7 @@ export default {
 		},
 		'stroke-image': {
 			link: '#stroke-image',
+			dataTypes: ['image'],
 			tests: [
 				'url(foo.png)',
 				"image('sprites.png#xywh=10,30,60,20')",

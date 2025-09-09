@@ -8,10 +8,10 @@ export default {
 	status: 'stable',
 	firstSnapshot: 2015,
 	values: {
-		properties: ['background-image', 'list-style-image', 'border-image-source', 'mask-image', 'mask-border-source', 'shape-outside', 'content'],
 		'linear-gradient()': {
 			link: '#linear-gradients',
 			mdn : 'linear-gradient',
+			dataType: 'image',
 			args: [
 				'white, black',
 				'to right, white, black',
@@ -29,6 +29,7 @@ export default {
 		'radial-gradient()': {
 			link: '#radial-gradients',
 			mdn: 'radial-gradient',
+			dataType: 'image',
 			args: [
 				'white, black',
 				'circle, white, black',
@@ -46,6 +47,7 @@ export default {
 		},
 		'repeating-linear-gradient()': {
 			link: '#repeating-gradients',
+			dataType: 'image',
 			args: [
 				'white, black',
 				'red',
@@ -53,6 +55,7 @@ export default {
 		},
 		'repeating-radial-gradient()': {
 			link: '#repeating-gradients',
+			dataType: 'image',
 			args: [
 				'white, black',
 				'red',

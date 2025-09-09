@@ -4,14 +4,9 @@ export default {
 	link: 'css-images-4',
 	status: 'experimental',
 	values: {
-		properties: ['background-image', 'list-style-image', 'border-image-source', 'mask-image', 'mask-border-source', 'shape-outside', 'content'],
-		'linear-gradient()': {
-			link: '#linear-gradients',
-			mdn : 'linear-gradient',
-			tests: ['linear-gradient(45deg, #f06 25%, yellow 25% 50%, #f06 50% 75%, yellow 75%)'],
-		},
 		'linear-gradient() color interpolation': {
 			link: '#color-interpolation',
+			dataType: 'image',
 			tests: [
 				'linear-gradient(to right in lch, #A37, #595)',
 				'linear-gradient(in lch to right, #A37, #595)',
@@ -41,10 +36,12 @@ export default {
 		},
 		'radial-gradient()': {
 			link: '#radial-gradients',
+			dataType: 'image',
 			tests: ['radial-gradient(center, red 0% 25%, blue 25% 75%, red 75% 100%)'],
 		},
 		'radial-gradient() color interpolation': {
 			link: '#radial-color-interpolation',
+			dataType: 'image',
 			links: {
 				mdn: 'radial-gradient'
 			},
@@ -64,6 +61,7 @@ export default {
 		},
 		'conic-gradient()': {
 			link: '#conic-gradients',
+			dataType: 'image',
 			tests: [
 				'conic-gradient(white, black)',
 				'conic-gradient(from 0, white, black)',
@@ -86,6 +84,7 @@ export default {
 		},
 		'conic-gradient() color interpolation': {
 			link: '#conic-gradients',
+			dataType: 'image',
 			links: {
 				mdn: 'conic-gradient'
 			},
@@ -109,6 +108,7 @@ export default {
 		},
 		'repeating-conic-gradient()': {
 			link: '#repeating-gradients',
+			dataType: 'image',
 			tests: [
 				'repeating-conic-gradient(white, black)',
 				'repeating-conic-gradient(hsla(0, 0%, 100%, .2) 0deg 15deg, hsla(0, 0%, 100%, 0) 0deg 30deg)',
@@ -116,6 +116,7 @@ export default {
 		},
 		'image()': {
 			link: '#image-notation',
+			dataType: 'image',
 			tests: [
 				"image('sprites.png#xywh=10,30,60,20')",
 				"image('wavy.svg', 'wavy.png' , 'wavy.gif')",
@@ -125,6 +126,7 @@ export default {
 		},
 		'image-set()': {
 			link: '#image-set-notation',
+			dataType: 'image',
 			tests: [
 				"image-set('foo.png' 1x, 'foo-2x.png' 2x, 'foo-print.png' 600dpi)",
 				'image-set(linear-gradient(green, green) 1x, url(foobar.png) 2x)',
@@ -145,10 +147,12 @@ export default {
 		},
 		'element()': {
 			link: '#element-notation',
+			dataType: 'image',
 			tests: 'element(#foo)',
 		},
 		'cross-fade()': {
 			link: '#cross-fade-function',
+			dataType: 'image',
 			tests: [
 				'cross-fade(url(a.png), url(b.png))',
 				'cross-fade(url(a.png) 50%, url(b.png))',

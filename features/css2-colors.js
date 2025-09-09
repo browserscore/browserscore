@@ -18,7 +18,8 @@ export default {
 		},
 		'background-image': {
 			link: '#propdef-background-image',
-			tests: ['none', "url('image.png')", 'url(image.png)'],
+			dataTypes: ['image'],
+			tests: ['none', "url('image.png')"],
 		},
 		'background-position': {
 			link: '#propdef-background-position',

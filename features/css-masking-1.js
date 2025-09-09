@@ -31,6 +31,7 @@ export default {
 		},
 		'mask-image': {
 			link: '#the-mask-image',
+			dataTypes: ['image'],
 			tests: [
 				'none',
 				'linear-gradient(black 0%, transparent 100%)',

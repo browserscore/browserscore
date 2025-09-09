@@ -13,6 +13,7 @@ export default {
 				tr: '#content',
 				dev: '#content①',
 			},
+			dataTypes: ['image', 'string'],
 			tests: [
 				'normal',
 				'none',
@@ -38,6 +39,7 @@ export default {
 		},
 		'list-style-image': {
 			link: '#propdef-list-style-image',
+			dataTypes: ['image'],
 			tests: ['none', 'url(image.png)'],
 		},
 		'list-style-position': {
