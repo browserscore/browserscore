@@ -1,16 +1,12 @@
 export default {
 	id: 'css-color-5',
 	title: 'CSS Color Module Level 5',
-	links: {
-		dev: 'css-color-5',
-	},
+	link: 'css-color-5',
 	status: 'experimental',
 	values: {
 		properties: ['color', 'background-color', 'border-color', 'text-decoration-color', 'column-rule-color'],
 		'color-mix()': {
-			links: {
-				dev: '#color-mix',
-				},
+			link: '#color-mix',
 			mdn: 'color_value/color-mix',
 			tests: [
 				'color-mix(in srgb, teal 65%, olive)',
@@ -25,17 +21,13 @@ export default {
 			],
 		},
 		'color-adjust()': {
-			links: {
-				dev: '#coloradjust',
-				},
+			link: '#coloradjust',
 			mdn: 'color_value',
 			tests: ['color-adjust(peru lightness -20%)'],
 		},
 
 		'relative color': {
-			links: {
-				dev: '#relative-colors',
-				},
+			link: '#relative-colors',
 			mdn: 'color_value',
 			tests: [
 				'rgb(from indianred 255 g b)',
@@ -50,9 +42,7 @@ export default {
 		},
 
 		'light-dark()': {
-			links: {
-				dev: '#light-dark',
-				},
+			link: '#light-dark',
 			mdn: 'light-dark',
 			tests: ['light-dark(green, red)'],
 		},
