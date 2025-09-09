@@ -1,10 +1,8 @@
 export default {
 	id: 'css2-selectors',
 	title: 'CSS 2 Selectors',
-	links: {
-		tr: 'CSS22/selector.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/selector.html',
 	status: 'stable',
 	version: 2.2,
 	selectors: {
