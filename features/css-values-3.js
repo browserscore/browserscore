@@ -42,18 +42,25 @@ export default {
 		},
 	},
 	values: {
-		properties: ['width', 'padding'],
 		'calc()': {
 			link: '#calc-notation',
-			tests: [
-				'calc(1px + 2px)',
-				'calc(5px*2)',
-				'calc(5px/2)',
-				'calc(100%/3 - 2*1em - 2*1px)',
-				'calc(5px - 10px)',
-				'calc(1vw - 1px)',
-				'calc(calc(100%))',
-			],
+			dataTypes: {
+				length: {
+					args: ['1em - 1px', '2 * 1px', '1px + calc(1px)'],
+				},
+				'length-percentage': {
+					args: ['1em - 1%', '100%/3'],
+				},
+				percentage: {
+					args: ['2% - 1%', '2 * 1%'],
+				},
+				number: {
+					args: ['1.5 - 1', '3 / 2'],
+				},
+				time: {
+					args: ['1s - 1ms'],
+				},
+			},
 		},
 		'calc() in other functions': {
 			link: '#calc-notation',
