@@ -1,15 +1,11 @@
 export default {
 	id: 'css-grid-3',
 	title: 'CSS Grid Layout Module Level 3',
-	links: {
-		dev: 'css-grid-3',
-	},
+	link: 'css-grid-3',
 	status: 'experimental',
 	properties: {
 		grid: {
-			links: {
-				dev: '#masonry-layout',
-			},
+			link: '#masonry-layout',
 			tests: [
 				'masonry / masonry',
 				'masonry / repeat(4, 2ch)',
@@ -19,21 +15,15 @@ export default {
 			],
 		},
 		'grid-template-columns': {
-			links: {
-				dev: '#masonry-layout',
-			},
+			link: '#masonry-layout',
 			tests: ['masonry', 'repeat(auto-fit, minmax(25ch, 1fr))'],
 		},
 		'grid-template-rows': {
-			links: {
-				dev: '#masonry-layout',
-			},
+			link: '#masonry-layout',
 			tests: ['masonry ', 'repeat(auto-fit, minmax(25ch, 1fr))'],
 		},
 		'masonry-auto-flow': {
-			links: {
-				dev: '#masonry-auto-flow',
-			},
+			link: '#masonry-auto-flow',
 			tests: [
 				'pack',
 				'next',
