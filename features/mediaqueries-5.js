@@ -86,10 +86,7 @@ export default {
 			tests: ['(nav-controls)', '(nav-controls: none)', '(nav-controls: back)'],
 		},
 		'video-color-gamut': {
-			links: {
-				dev: '#video-color-gamut',
-				tr: '#video-color-gamut',
-			},
+			link: '#video-color-gamut',
 			tests: [
 				'(video-color-gamut)',
 				'(video-color-gamut: srgb)',
@@ -98,10 +95,7 @@ export default {
 			],
 		},
 		'video-dynamic-range': {
-			links: {
-				dev: '#video-dynamic-range',
-				tr: '#video-dynamic-range',
-			},
+			link: '#video-dynamic-range',
 			tests: ['(video-dynamic-range)', '(video-dynamic-range: standard)', '(video-dynamic-range: high)'],
 		},
 	},
