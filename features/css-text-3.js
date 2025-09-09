@@ -5,10 +5,7 @@ export default {
 	status: 'stable',
 	properties: {
 		'text-transform': {
-			links: {
-				tr: '#text-transform',
-				dev: '#text-transform-property',
-			},
+			link: '#text-transform-property',
 			tests: ['full-width', 'full-size-kana', 'capitalize full-width', 'capitalize full-width full-size-kana'],
 		},
 		'tab-size': {
