@@ -28,7 +28,7 @@ export default {
 		},
 		'radial-gradient()': {
 			link: '#radial-gradients',
-			mdn: 'gradient/radial-gradient',
+			mdn: 'radial-gradient',
 			args: [
 				'white, black',
 				'circle, white, black',
