@@ -1,18 +1,14 @@
 export default {
 	id: 'css2-generate',
 	title: 'CSS 2 Generated Content, Automatic Numbering, and Lists',
-	links: {
-		tr: 'CSS22/generate.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/generate.html',
 	status: 'stable',
 	version: 2.2,
 	properties: {
 		content: {
-			links: {
-				tr: '#content',
-				dev: '#content①',
-			},
+			link: '#content①',
+			specLink: '#content',
 			dataTypes: ['image', 'string'],
 			tests: [
 				'normal',
