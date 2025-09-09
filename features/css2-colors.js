@@ -1,10 +1,8 @@
 export default {
 	id: 'css2-colors',
 	title: 'CSS 2 Colors and Backgrounds',
-	links: {
-		tr: 'CSS22/colors.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/colors.html',
 	status: 'stable',
 	version: 2.2,
 	properties: {
