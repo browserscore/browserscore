@@ -5,9 +5,7 @@ export default {
 	status: 'experimental',
 	properties: {
 		'overflow-anchor': {
-			links: {
-				dev: '#exclusion-api',
-			},
+			link: '#exclusion-api',
 			tests: ['none', 'auto'],
 		},
 	},
