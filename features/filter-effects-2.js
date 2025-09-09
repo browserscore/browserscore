@@ -1,16 +1,12 @@
 export default {
 	id: 'filter-effects-2',
 	title: 'Filter Effects Module Level 2',
-	links: {
-		dev: 'filter-effects-2',
-	},
+	link: 'filter-effects-2',
 	group: 'fxtf',
 	status: 'experimental',
 	properties: {
 		'backdrop-filter': {
-			links: {
-				dev: '#BackdropFilterProperty',
-			},
+			link: '#BackdropFilterProperty',
 			tests: [
 				'none',
 				'url(#id)',
