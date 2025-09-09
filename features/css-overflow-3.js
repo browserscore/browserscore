@@ -49,10 +49,7 @@ export default {
 			tests: ['auto', 'discard'],
 		},
 		'scrollbar-gutter': {
-			links: {
-				tr: 'scrollbar-gutter-property',
-				dev: '#scrollbar-gutter-property',
-			},
+			link: '#scrollbar-gutter-property',
 			tests: ['auto', 'stable', 'both-edges stable', 'stable both-edges'],
 		},
 	},
