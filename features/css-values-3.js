@@ -4,43 +4,45 @@ export default {
 	link: 'css-values-3',
 	status: 'stable',
 	firstSnapshot: 2015,
-	values: {
-		properties: ['width', 'padding'],
+	units: {
 		rem: {
 			link: '#rem',
 			mdn: 'length',
-			tests: '5rem',
+			dataType: 'length',
 		},
 		ch: {
 			link: '#ch',
 			mdn: 'length',
-			tests: '5ch',
+			dataType: 'length',
 		},
 		vw: {
 			link: '#vw',
 			mdn: 'length',
-			tests: '5vw',
+			dataType: 'length',
 		},
 		vh: {
 			link: '#vh',
 			mdn: 'length',
-			tests: '5vh',
+			dataType: 'length',
 		},
 		vmin: {
 			link: '#vmin',
 			mdn: 'length',
-			tests: '5vmin',
+			dataType: 'length',
 		},
 		vmax: {
 			link: '#vmax',
 			mdn: 'length',
-			tests: '5vmax',
+			dataType: 'length',
 		},
 		Q: {
 			link: '#Q',
 			mdn: 'length',
-			tests: '5Q',
+			dataType: 'length',
 		},
+	},
+	values: {
+		properties: ['width', 'padding'],
 		'calc()': {
 			link: '#calc-notation',
 			tests: [
