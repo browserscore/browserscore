@@ -21,10 +21,8 @@ const borderShorthands = combine([borderWidths[0], borderStyles[0], borderColors
 export default {
 	id: 'css2-box',
 	title: 'CSS 2 Box Model',
-	links: {
-		tr: 'CSS22/box.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/box.html',
 	status: 'stable',
 	version: 2.2,
 	properties: {
