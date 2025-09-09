@@ -3,161 +3,203 @@ export default {
 	title: 'CSS Values and Units Module Level 4',
 	link: 'css-values-4',
 	status: 'experimental',
-	values: {
-		properties: ['width', 'padding'],
+	units: {
 		ex: {
 			link: '#ex',
 			mdn: 'length',
-			tests: '5ex',
+			dataType: 'length',
 		},
 		rex: {
 			link: '#rex',
 			mdn: 'length',
-			tests: '5rex',
+			dataType: 'length',
 		},
 		cap: {
 			link: '#cap',
 			mdn: 'length',
-			tests: '5cap',
+			dataType: 'length',
 		},
 		rcap: {
 			link: '#rcap',
 			mdn: 'length',
-			tests: '5rcap',
+			dataType: 'length',
 		},
 		rch: {
 			link: '#rch',
 			mdn: 'length',
-			tests: '5rch',
+			dataType: 'length',
 		},
 		ic: {
 			link: '#ic',
 			mdn: 'length',
-			tests: '5ic',
+			dataType: 'length',
 		},
 		ric: {
 			link: '#ric',
 			mdn: 'length',
-			tests: '5ric',
+			dataType: 'length',
 		},
 		lh: {
 			link: '#lh',
 			mdn: 'length',
-			tests: '5lh',
+			dataType: 'length',
 		},
 		rlh: {
 			link: '#rlh',
 			mdn: 'length',
-			tests: '5rlh',
+			dataType: 'length',
 		},
-		svh: {
+		vw: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
-			tests: '5svh',
-		},
-		lvh: {
-			link: '#viewport-relative-lengths',
-			mdn: 'length',
-			tests: '5lvh',
-		},
-		dvh: {
-			link: '#viewport-relative-lengths',
-			mdn: 'length',
-			tests: '5dvh',
+			dataType: 'length',
 		},
 		svw: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
-			tests: '5svw',
+			dataType: 'length',
 		},
 		lvw: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
-			tests: '5lvw',
+			dataType: 'length',
 		},
 		dvw: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
-			tests: '5dvw',
+			dataType: 'length',
 		},
-		dvmin: {
+		vh: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
-			tests: '5dvmin',
+			dataType: 'length',
 		},
-		dvmax: {
+		svh: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
-			tests: '5dvmax',
+			dataType: 'length',
 		},
-		vb: {
+		lvh: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
-			tests: '5vb',
+			dataType: 'length',
+		},
+		dvh: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
 		},
 		vi: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
-			tests: '5vi',
-		},
-		svb: {
-			link: '#viewport-relative-lengths',
-			mdn: 'length',
-			tests: '5dvb',
-		},
-		dvi: {
-			link: '#viewport-relative-lengths',
-			mdn: 'length',
-			tests: '5dvi',
-		},
-		lvd: {
-			link: '#viewport-relative-lengths',
-			mdn: 'length',
-			tests: '5lvb',
-		},
-		lvi: {
-			link: '#viewport-relative-lengths',
-			mdn: 'length',
-			tests: '5lvi',
-		},
-		svb: {
-			link: '#viewport-relative-lengths',
-			mdn: 'length',
-			tests: '5svb',
+			dataType: 'length',
 		},
 		svi: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
-			tests: '5svi',
+			dataType: 'length',
 		},
+		lvi: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		dvi: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		vb: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		svb: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		lvb: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		dvb: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		vmin: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		svmin: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		lvmin: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		dvmin: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		vmax: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		svmax: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		lvmax: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		dvmax: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+	},
+	values: {
+		properties: ['width', 'padding'],
 		'min()': {
 			link: '#comp-func',
-			tests: ['min(10 * (1vw + 1vh) / 2, 12px)'],
+			args: ['10 * (1vw + 1vh) / 2, 12px'],
 		},
 		'max()': {
 			link: '#comp-func',
-			tests: ['max(10 * (1vw + 1vh) / 2, 12px)'],
+			args: ['10 * (1vw + 1vh) / 2, 12px'],
 		},
 		'clamp()': {
 			link: '#comp-func',
-			tests: ['clamp(12px, 10 * (1vw + 1vh) / 2, 100px)'],
+			args: ['12px, 10 * (1vw + 1vh) / 2, 100px'],
 		},
 		'calc()': {
 			link: '#calc-func',
-			tests: [
-				'calc(1rem * pow(1.5, -1))',
-				'calc(1rem * (pow(e, pi) - pi))',
-				'calc(-18px - sign(5px)*round(down, -18px*sign(5px), 5px))',
-				'calc(-18px - round(to-zero, -18px, 5px))',
+			args: [
+				'1rem * pow(1.5, -1)',
+				'1rem * (pow(e, pi) - pi)',
+				'-18px - sign(5px)*round(down, -18px*sign(5px), 5px)',
+				'-18px - round(to-zero, -18px, 5px)',
 			],
 		},
 		'round()': {
 			link: '#round-func',
-			tests: [
-				'round(down, 5.5px, 5px)',
-				'round(up, 5.5px, 5px)',
-				'round(nearest, 5.5px, 5px)',
-				'round(to-zero, 5.5px, 5px)',
+			args: [
+				'down, 5.5px, 5px',
+				'up, 5.5px, 5px',
+				'nearest, 5.5px, 5px',
+				'to-zero, 5.5px, 5px',
 			],
 		},
 		'mod()': {
