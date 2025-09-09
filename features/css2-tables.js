@@ -1,10 +1,8 @@
 export default {
 	id: 'css2-tables',
 	title: 'CSS 2 Tables',
-	links: {
-		tr: 'CSS22/tables.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/tables.html',
 	status: 'stable',
 	version: 2.2,
 	properties: {
