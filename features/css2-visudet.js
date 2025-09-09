@@ -1,10 +1,8 @@
 export default {
 	id: 'css2-visudet',
 	title: 'CSS 2 Visual Formatting Model Details',
-	links: {
-		tr: 'CSS22/visudet.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/visudet.html',
 	status: 'stable',
 	version: 2.2,
 	properties: {
