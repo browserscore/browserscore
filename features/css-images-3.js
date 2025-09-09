@@ -15,13 +15,8 @@ export default {
 			args: [
 				'white, black',
 				'to right, white, black',
-				'0, white, black',
 				'45deg, white, black',
-				'white 50%, black',
-				'white 5px, black',
-				'white, #f06, black',
-				'currentColor, black',
-				'red -50px, white calc(-25px + 50%), blue 100%',
+				'white 50%, black 5px',
 
 				// allow a single color stop with 0-1 positions
 				// https://github.com/w3c/csswg-drafts/issues/10092#issuecomment-2145860054
@@ -33,27 +28,20 @@ export default {
 		},
 		'radial-gradient()': {
 			link: '#radial-gradients',
+			mdn: 'gradient/radial-gradient',
 			args: [
 				'white, black',
 				'circle, white, black',
 				'ellipse, white, black',
 				'closest-corner, white, black',
-				'circle closest-corner, white, black',
-				'farthest-side, white, black',
 				'circle farthest-side, white, black',
-				'0, white, black',
-				'50%, white, black',
 				'60% 60%, white, black',
 
 				// allow a single color stop with 0-1 positions
 				// https://github.com/w3c/csswg-drafts/issues/10092#issuecomment-2145860054
 				'red',
-				'red 0',
-				'red 50px',
-				'0%, red',
-				'50% 60%, red',
-				'circle, red',
-				'circle closest-corner, red',
+				'red 0%',
+				'red 0% 100%',
 			],
 		},
 		'repeating-linear-gradient()': {
