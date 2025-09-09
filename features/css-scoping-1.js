@@ -19,15 +19,11 @@ export default {
 			tests: [':host-context(*)', ':host-context(.foo)'],
 		},
 		'::slotted()': {
-			links: {
-				dev: '#slotted-pseudo',
-			},
+			link: '#slotted-pseudo',
 			tests: ['::slotted(*)', '::slotted(.foo)'],
 		},
 		':has-slotted': {
-			links: {
-				dev: '#the-has-slotted-pseudo',
-			},
+			link: '#the-has-slotted-pseudo',
 			tests: ':has-slotted',
 		},
 	},
