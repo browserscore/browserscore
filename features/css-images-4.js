@@ -7,13 +7,11 @@ export default {
 		properties: ['background-image', 'list-style-image', 'border-image-source', 'mask-image', 'mask-border-source', 'shape-outside', 'content'],
 		'linear-gradient()': {
 			link: '#linear-gradients',
+			mdn : 'linear-gradient',
 			tests: ['linear-gradient(45deg, #f06 25%, yellow 25% 50%, #f06 50% 75%, yellow 75%)'],
 		},
 		'linear-gradient() color interpolation': {
 			link: '#color-interpolation',
-			links: {
-				mdn : 'linear-gradient'
-			},
 			tests: [
 				'linear-gradient(to right in lch, #A37, #595)',
 				'linear-gradient(in lch to right, #A37, #595)',

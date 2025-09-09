@@ -11,6 +11,7 @@ export default {
 		properties: ['background-image', 'list-style-image', 'border-image-source', 'mask-image', 'mask-border-source', 'shape-outside', 'content'],
 		'linear-gradient()': {
 			link: '#linear-gradients',
+			mdn : 'linear-gradient',
 			tests: [
 				'linear-gradient(white, black)',
 				'linear-gradient(to right, white, black)',
