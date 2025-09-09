@@ -49,17 +49,7 @@ export default {
 			mdn: 'length',
 			dataType: 'length',
 		},
-		svh: {
-			link: '#viewport-relative-lengths',
-			mdn: 'length',
-			dataType: 'length',
-		},
-		lvh: {
-			link: '#viewport-relative-lengths',
-			mdn: 'length',
-			dataType: 'length',
-		},
-		dvh: {
+		vw: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
 			dataType: 'length',
@@ -79,17 +69,22 @@ export default {
 			mdn: 'length',
 			dataType: 'length',
 		},
-		dvmin: {
+		vh: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
 			dataType: 'length',
 		},
-		dvmax: {
+		svh: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
 			dataType: 'length',
 		},
-		vb: {
+		lvh: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		dvh: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
 			dataType: 'length',
@@ -99,17 +94,7 @@ export default {
 			mdn: 'length',
 			dataType: 'length',
 		},
-		svb: {
-			link: '#viewport-relative-lengths',
-			mdn: 'length',
-			dataType: 'length',
-		},
-		dvi: {
-			link: '#viewport-relative-lengths',
-			mdn: 'length',
-			dataType: 'length',
-		},
-		lvd: {
+		svi: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
 			dataType: 'length',
@@ -119,12 +104,67 @@ export default {
 			mdn: 'length',
 			dataType: 'length',
 		},
+		dvi: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		vb: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
 		svb: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
 			dataType: 'length',
 		},
-		svi: {
+		lvb: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		dvb: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		vmin: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		svmin: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		lvmin: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		dvmin: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		vmax: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		svmax: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		lvmax: {
+			link: '#viewport-relative-lengths',
+			mdn: 'length',
+			dataType: 'length',
+		},
+		dvmax: {
 			link: '#viewport-relative-lengths',
 			mdn: 'length',
 			dataType: 'length',
