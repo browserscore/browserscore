@@ -6,10 +6,7 @@ export default {
 	firstSnapshot: 2015,
 	properties: {
 		'background-repeat': {
-			links: {
-				tr: '#the-background-repeat',
-				dev: '#background-repeat',
-			},
+			link: '#background-repeat',
 			tests: [
 				'space',
 				'round',
@@ -32,45 +29,27 @@ export default {
 			],
 		},
 		'background-attachment': {
-			links: {
-				tr: '#the-background-attachment',
-				dev: '#background-attachment',
-			},
+			link: '#background-attachment',
 			tests: 'local',
 		},
 		'background-position': {
-			links: {
-				tr: '#the-background-position',
-				dev: '#background-position',
-			},
+			link: '#background-position',
 			tests: ['bottom 10px right 20px', 'bottom 10px right', 'top right 10px'],
 		},
 		'background-clip': {
-			links: {
-				tr: '#the-background-clip',
-				dev: '#background-clip',
-			},
+			link: '#background-clip',
 			tests: ['border-box', 'padding-box', 'content-box'],
 		},
 		'background-origin': {
-			links: {
-				tr: '#the-background-origin',
-				dev: '#background-origin',
-			},
+			link: '#background-origin',
 			tests: ['border-box', 'padding-box', 'content-box'],
 		},
 		'background-size': {
-			links: {
-				tr: '#the-background-size',
-				dev: '#background-size',
-			},
+			link: '#background-size',
 			tests: ['auto', 'cover', 'contain', '10px', '50%', '10px auto', 'auto 10%', '50em 50%'],
 		},
 		background: {
-			links: {
-				tr: '#the-background',
-				dev: '#background',
-			},
+			link: '#background',
 			tests: [
 				'url(foo.png), url(bar.svg)',
 				'top left / 50% 60%',
@@ -80,53 +59,32 @@ export default {
 			],
 		},
 		'border-top-left-radius': {
-			links: {
-				tr: '#the-border-radius',
-				dev: '#border-radius',
-			},
+			link: '#border-radius',
 			tests: ['0', '50%', '250px 100px'],
 		},
 		'border-top-right-radius': {
-			links: {
-				tr: '#the-border-radius',
-				dev: '#border-radius',
-			},
+			link: '#border-radius',
 			tests: ['0', '50%', '250px 100px'],
 		},
 		'border-bottom-right-radius': {
-			links: {
-				tr: '#the-border-radius',
-				dev: '#border-radius',
-			},
+			link: '#border-radius',
 			tests: ['0', '50%', '250px 100px'],
 		},
 		'border-bottom-left-radius': {
-			links: {
-				tr: '#the-border-radius',
-				dev: '#border-radius',
-			},
+			link: '#border-radius',
 			tests: ['0', '50%', '250px 100px'],
 		},
 		'border-radius': {
-			links: {
-				tr: '#the-border-radius',
-				dev: '#border-radius',
-			},
+			link: '#border-radius',
 			tests: ['10px', '50%', '10px / 20px', '2px 4px 8px 16px', '2px 4px 8px 16px / 2px 4px 8px 16px'],
 		},
 		'border-image-source': {
-			links: {
-				tr: '#the-border-image-source',
-				dev: '#border-image-source',
-			},
+			link: '#border-image-source',
 			dataTypes: ['image'],
 			tests: ['none', 'url(foo.png)'],
 		},
 		'border-image-slice': {
-			links: {
-				tr: '#the-border-image-slice',
-				dev: '#border-image-slice',
-			},
+			link: '#border-image-slice',
 			tests: [
 				'10',
 				'30%',
@@ -167,10 +125,7 @@ export default {
 			],
 		},
 		'border-image-width': {
-			links: {
-				tr: '#the-border-image-width',
-				dev: '#border-image-width',
-			},
+			link: '#border-image-width',
 			tests: [
 				'10px',
 				'5%',
@@ -197,17 +152,11 @@ export default {
 			],
 		},
 		'border-image-outset': {
-			links: {
-				tr: '#the-border-image-outset',
-				dev: '#border-image-outset',
-			},
+			link: '#border-image-outset',
 			tests: ['10px', '20', '10px 20', '10px 20px', '20 30', '2px 3px 4', '1 2px 3px 4'],
 		},
 		'border-image-repeat': {
-			links: {
-				tr: '#the-border-image-repeat',
-				dev: '#border-image-repeat',
-			},
+			link: '#border-image-repeat',
 			tests: [
 				'stretch',
 				'repeat',
@@ -232,10 +181,7 @@ export default {
 			],
 		},
 		'border-image': {
-			links: {
-				tr: '#the-border-image',
-				dev: '#border-image',
-			},
+			link: '#border-image',
 			dataTypes: ['image'],
 			tests: [
 				'url(foo.png) 10',
@@ -250,10 +196,7 @@ export default {
 			],
 		},
 		'box-shadow': {
-			links: {
-				tr: '#the-box-shadow',
-				dev: '#box-shadow',
-			},
+			link: '#box-shadow',
 			tests: [
 				'1px 1px',
 				'0 0 black',
