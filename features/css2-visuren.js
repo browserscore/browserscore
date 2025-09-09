@@ -1,10 +1,8 @@
 export default {
 	id: 'css2-visuren',
 	title: 'CSS 2 Visual Formatting Model',
-	links: {
-		tr: 'CSS22/visuren.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/visuren.html',
 	status: 'stable',
 	version: 2.2,
 	properties: {
