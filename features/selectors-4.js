@@ -174,10 +174,7 @@ export default {
 			],
 		},
 		':defined': {
-			links: {
-				tr: '#the-defined-pseudo',
-				dev: 'the-defined-pseudo',
-			},
+			link: '#the-defined-pseudo',
 			tests: [':defined'],
 		},
 		':nth-child()': {
