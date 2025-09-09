@@ -1,10 +1,7 @@
 export default {
 	id: 'css-viewport-1',
 	title: 'CSS Viewport Module Level 1',
-	links: {
-		tr: 'css-viewport-1',
-		dev: 'css-viewport',
-	},
+	link: 'css-viewport-1',
 	status: 'experimental',
 	properties: {
 		'zoom': {
@@ -14,10 +11,8 @@ export default {
 	},
 	globals: {
 		Viewport: {
-			links: {
-				dev: '#the-viewport-interface',
-				mdnGroup: 'DOM',
-			},
+			link: '#the-viewport-interface',
+			mdnGroup: 'DOM',
 			members: ['segments'],
 		},
 	},
