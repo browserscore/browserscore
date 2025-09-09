@@ -42,9 +42,7 @@ export default {
 		'radial-gradient() color interpolation': {
 			link: '#radial-color-interpolation',
 			dataType: 'image',
-			links: {
-				mdn: 'radial-gradient'
-			},
+			mdn: 'radial-gradient',
 			tests: [
 				'radial-gradient(farthest-side at left bottom in lab, color(display-p3 0.918 0.2 0.161), #081)',
 				'radial-gradient(in lab farthest-side at left bottom, color(display-p3 0.918 0.2 0.161), #081)',
@@ -85,9 +83,7 @@ export default {
 		'conic-gradient() color interpolation': {
 			link: '#conic-gradients',
 			dataType: 'image',
-			links: {
-				mdn: 'conic-gradient'
-			},
+			mdn: 'conic-gradient',
 			tests: [
 				'conic-gradient(in lab, #f06, gold)',
 				'conic-gradient(in lab, #f06 0deg, gold 1turn)',
