@@ -1,10 +1,7 @@
 export default {
 	id: 'mediaqueries-3',
 	title: 'Media Queries Level 3',
-	links: {
-		tr: 'css3-mediaqueries',
-		dev: 'mediaqueries-3',
-	},
+	link: 'mediaqueries-3',
 	status: 'stable',
 	firstSnapshot: 2010,
 	mediaqueries: {
