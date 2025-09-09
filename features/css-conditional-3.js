@@ -1,10 +1,8 @@
 export default {
 	id: 'css-conditional-3',
 	title: 'CSS Conditional Rules Module Level 3',
-	links: {
-		tr: 'css3-conditional',
-		dev: 'css-conditional-3',
-	},
+	link: 'css-conditional-3',
+	specLink: 'css3-conditional',
 	status: 'stable',
 	firstSnapshot: 2015,
 	atrules: {
