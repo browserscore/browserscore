@@ -244,7 +244,6 @@ export default {
   status: 'experimental',
   links: {
     dev: 'css-typed-om-1',
-    devtype: 'houdini'
   },
   globals: {
     CSSStyleValue: {
