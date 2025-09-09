@@ -1,10 +1,8 @@
 export default {
 	id: 'css2-page',
 	title: 'CSS 2 Paged Media',
-	links: {
-		tr: 'CSS22/page.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/page.html',
 	status: 'stable',
 	version: 2.2,
 	atrules: {
