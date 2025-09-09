@@ -1,10 +1,8 @@
 export default {
 	id: 'css2-fonts',
 	title: 'CSS 2 Fonts',
-	links: {
-		tr: 'CSS22/fonts.html',
-		dev: 'css2/',
-	},
+	link: 'css2/',
+	specLink: 'CSS22/fonts.html',
 	status: 'stable',
 	version: 2.2,
 	properties: {
