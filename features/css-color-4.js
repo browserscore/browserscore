@@ -33,10 +33,19 @@ export default {
 				'hsl(0 0% 0% / .5)',
 			],
 		},
-		'Hex with alpha': {
-			link: '#hex-notation',
-			mdn: 'color_value',
-			tests: ['#000F', '#000000FF'],
+		Hex: {
+			children: {
+				'#RGBA': {
+					link: '#hex-notation',
+					dataType: 'color',
+					value: '#0008',
+				},
+				'#RRGGBBAA': {
+					link: '#hex-notation',
+					dataType: 'color',
+					value: '#00000088',
+				},
+			},
 		},
 		rebeccapurple: {
 			link: '#named-colors',
