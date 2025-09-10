@@ -40,11 +40,11 @@ export default {
 		'stripes()': {
 			link: '#border-color',
 			property: 'border-color',
-			tests: [
-				'stripes(red, yellow, green, blue)',
-				'stripes(red 1px, yellow 2px)',
-				'stripes(red 10%, yellow 20%)',
-				'stripes(red 1fr, yellow 2fr)',
+			args: [
+				'red, yellow, green, blue',
+				'red 1px, yellow 2px',
+				'red 10%, yellow 20%',
+				'red 1fr, yellow 2fr',
 			],
 		},
 	},
