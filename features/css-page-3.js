@@ -13,7 +13,18 @@ export default {
 		'@page': {
 			link: '#at-page-rule',
 			isGroup: true,
-			preludes: [':blank'],
+			preludes: {
+				':blank': {},
+				'custom': {
+					isGroup: false,
+					children: [
+						'custom, custom2',
+						'custom:left',
+						'custom:right',
+						'custom:first',
+					]
+				}
+			},
 			descriptors: {
 				size: {
 					link: '#page-size-prop',
@@ -53,15 +64,5 @@ export default {
 				},
 			},
 		},
-		'@page custom': {
-			id: '@page',
-			link: '#at-page-rule',
-			preludes: [
-				'custom, custom2',
-				'custom:left',
-				'custom:right',
-				'custom:first',
-			],
-		}
 	},
 };
