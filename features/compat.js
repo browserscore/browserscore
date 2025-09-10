@@ -7,7 +7,12 @@ export default {
 	properties: {
 		'touch-action': {
 			link: '#touch-action',
-			tests: ['pinch-zoom', 'pan-x pinch-zoom', 'pan-y pinch-zoom', 'pan-x pan-y pinch-zoom'],
+			values: [
+				'pinch-zoom',
+				'pan-x pinch-zoom',
+				'pan-y pinch-zoom',
+				'pan-x pan-y pinch-zoom',
+			],
 		},
 	},
 };
