@@ -63,31 +63,37 @@ export default {
 		'hwb()': {
 			link: '#the-hwb-notation',
 			mdn: 'color_value/hwb',
+			dataType: 'color',
 			args: ['0 0% 0%', '0 0% 0% / .5'],
 		},
 		'lab()': {
 			link: '#specifying-lab-lch',
 			mdn: 'color_value/lab',
+			dataType: 'color',
 			args: ['0% 0 0', '0% 0 0 / .5'],
 		},
 		'oklab()': {
 			link: '#specifying-oklab-lch',
 			mdn: 'color_value/oklab',
+			dataType: 'color',
 			args: ['0% 0 0', '40.101% 0.1147 0.0453 / .5'],
 		},
 		'lch()': {
 			link: '#specifying-lch-lch',
 			mdn: 'color_value/lch',
+			dataType: 'color',
 			args: ['0% 0 0', 'none 0% none', '0% 0 0 / .5'],
 		},
 		'oklch()': {
 			link: '#specifying-oklch-lch',
 			mdn: 'color_value/oklch',
+			dataType: 'color',
 			args: ['0% 0 0', '40.101% 0.12332 21.555 / .5'],
 		},
 		'color()': {
 			link: '#color-function',
 			mdn: 'color_value/color',
+			dataType: 'color',
 			args: [
 				'display-p3 1 0.5 0',
 				'display-p3 .2 .4 .6  / .5',
@@ -125,10 +131,12 @@ export default {
 				'xyz-d65 none none none / none',
 			],
 		},
-		'percentages in opacity': {
-			link: '#transparency',
-			properties: ['opacity'],
-			tests: ['45%'],
-		},
 	},
+	properties: {
+		opacity: {
+			link: '#transparency',
+			titleMd: 'Percentages in `opacity`',
+			value: '50%',
+		}
+	}
 };
