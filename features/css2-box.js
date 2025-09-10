@@ -40,6 +40,7 @@ export default {
 					link: '#border-color-properties',
 					titleMd: '`border-color` and `border-<side>-color`',
 					isGroup: true,
+					dataType: 'color',
 					values: borderColors,
 					children: [{id: 'border-color', values: borderColors_1_4}, 'border-top-color', 'border-right-color', 'border-bottom-color', 'border-left-color'],
 				},

@@ -12,11 +12,12 @@ export default {
 		},
 		'background-color': {
 			link: '#propdef-background-color',
+			dataType: 'color',
 			tests: ['black', '#00f', '#000000', 'rgb(255, 255, 255)', 'rgb(100%, 50%, 50%)', 'transparent'],
 		},
 		'background-image': {
 			link: '#propdef-background-image',
-			dataTypes: ['image'],
+			dataType: 'image',
 			tests: ['none', "url('image.png')"],
 		},
 		'background-position': {

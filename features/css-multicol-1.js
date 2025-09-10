@@ -19,6 +19,7 @@ export default {
 		},
 		'column-rule-color': {
 			link: '#crc',
+			dataType: 'color',
 			tests: 'red',
 		},
 		'column-rule-style': {

@@ -58,6 +58,7 @@ export default {
 		},
 		'column-rule-color': {
 			link: '#propdef-column-rule-color',
+			dataType: 'color',
 			tests: [
 				'red',
 				'rgb(0 0 0 / 0.5)',

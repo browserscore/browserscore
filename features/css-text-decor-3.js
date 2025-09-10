@@ -14,7 +14,8 @@ export default {
 		},
 		'text-decoration-color': {
 			link: '#text-decoration-color-property',
-			tests: 'white',
+			dataType: 'color',
+			tests: 'red',
 		},
 		'text-decoration-style': {
 			link: '#text-decoration-style-property',
