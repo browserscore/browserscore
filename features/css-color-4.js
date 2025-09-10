@@ -25,28 +25,25 @@ export default {
 		'rgb_hsl_extensions': {
 			titleMd: 'Extensions to `rgb()`, `rgba()`, `hsl()`, `hsla()`',
 			descriptionMd: 'Comma-less syntax, optional alpha, mixing types, `none`, `<angle>` for hue, `<number>` for any component',
+			mdnGroup: 'CSS/color_value',
 			children: {
 				'rgb()': {
 					link: '#funcdef-rgb',
-					mdn: 'color_value/rgb()',
 					dataType: 'color',
 					args: get_color_args(),
 				},
 				'rgba()': {
 					link: '#funcdef-rgba',
-					mdn: 'color_value/rgba()',
 					dataType: 'color',
 					args: get_color_args(),
 				},
 				'hsl()': {
 					link: '#funcdef-hsl',
-					mdn: 'color_value/hsl()',
 					dataType: 'color',
 					args: get_color_args({hueIndex: 0}),
 				},
 				'hsla()': {
 					link: '#funcdef-hsla',
-					mdn: 'color_value/hsla()',
 					dataType: 'color',
 					args: get_color_args({hueIndex: 0}),
 				},
