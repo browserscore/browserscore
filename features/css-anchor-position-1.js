@@ -5,7 +5,6 @@ export default {
 	status: 'experimental',
 	values: {
 		'anchor()': {
-			titleMd: 'anchor()',
 			link: '#anchor-pos',
 			properties: [
 				'top',
@@ -65,7 +64,6 @@ export default {
 			],
 		},
 		'anchor-size()': {
-			titleMd: 'anchor-size()',
 			link: '#anchor-size-fn',
 			properties: [
 				'width',
