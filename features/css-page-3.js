@@ -54,13 +54,14 @@ export default {
 			},
 		},
 		'@page custom': {
+			id: '@page',
 			link: '#at-page-rule',
-			suffixes: [
-				', foo',
-				':left',
-				':right',
-				':first',
-			]
+			preludes: [
+				'custom, custom2',
+				'custom:left',
+				'custom:right',
+				'custom:first',
+			],
 		}
 	},
 };
