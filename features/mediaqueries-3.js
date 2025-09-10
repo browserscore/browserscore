@@ -20,12 +20,12 @@ export default {
 		width: {
 			link: '#width',
 			mdn: 'Media_Queries/Using_media_queries',
-			tests: ['(width)', '(width:1280px)', '(min-width:1px)', '(max-width:1000000px)'],
+			tests: ['(width)', '(width:1280px)', '(min-width:1px)', '(max-width: 1px)'],
 		},
 		height: {
 			link: '#height',
 			mdn: 'Media_Queries/Using_media_queries',
-			tests: ['(height)', '(height:720px)', '(min-height:1px)', '(max-height:1000000px)'],
+			tests: ['(height)', '(height:720px)', '(min-height:1px)', '(max-height: 1px)'],
 		},
 		'device-width': {
 			link: '#device-width',
