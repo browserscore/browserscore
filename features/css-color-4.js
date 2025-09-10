@@ -1,3 +1,20 @@
+function get_color_args ({prefix = '', hueIndex} = {}) {
+	let a = hueIndex === 0 ? 'deg' : '%';
+	let b = hueIndex === 1 ? 'deg' : '%';
+	let c = hueIndex === 2 ? 'deg' : '%';
+
+	return [
+		'0 0 0',
+		'0 0 0 / .5',
+		'0 0 0 / 50%',
+		`0${a} 0 0`,
+		`0 0${b} 0`,
+		`0 0 0${c}`,
+		'none none none',
+		'0 0 0 / none',
+	].map(arg => `${prefix}${arg}`);
+}
+
 export default {
 	id: 'css-color-4',
 	title: 'CSS Color Module Level 4',
@@ -5,44 +22,45 @@ export default {
 	status: 'stable',
 	firstSnapshot: 2022,
 	values: {
-		properties: ['color', 'background-color', 'border-color', 'text-decoration-color', 'column-rule-color'],
-		'comma-less colors': {
-			link: '#funcdef-rgb',
-			mdn: 'color_value',
-			tests: ['rgb(0% 20% 70%)', 'rgb(0 64 185)', 'hsl(0 0% 0%)'],
+		'rgb_hsl_extensions': {
+			titleMd: 'Extensions to `rgb()`, `rgba()`, `hsl()`, `hsla()`',
+			descriptionMd: 'Comma-less syntax, optional alpha, mixing types, `none`, `<angle>` for hue, `<number>` for any component',
+			children: {
+				'rgb()': {
+					link: '#funcdef-rgb',
+					mdn: 'color_value/rgb()',
+					dataType: 'color',
+					args: get_color_args(),
+				},
+				'rgba()': {
+					link: '#funcdef-rgba',
+					mdn: 'color_value/rgba()',
+					dataType: 'color',
+					args: get_color_args(),
+				},
+				'hsl()': {
+					link: '#funcdef-hsl',
+					mdn: 'color_value/hsl()',
+					dataType: 'color',
+					args: get_color_args({hueIndex: 0}),
+				},
+				'hsla()': {
+					link: '#funcdef-hsla',
+					mdn: 'color_value/hsla()',
+					dataType: 'color',
+					args: get_color_args({hueIndex: 0}),
+				},
+			}
 		},
-		'/ alpha': {
-			link: '#funcdef-rgb',
-			mdn: 'color_value',
-			tests: [
-				'rgba(0% 20% 70% / 50%)',
-				'rgba(0% 20% 70% / .5)',
-				'rgba(0 64 185 / 50%)',
-				'rgba(0 64 185 / .5)',
-				'hsla(0 0% 0% /.5)',
-			],
-		},
-		'optional alpha': {
-			link: '#funcdef-rgb',
-			mdn: 'color_value',
-			tests: [
-				'rgb(0% 20% 70% / 50%)',
-				'rgb(0% 20% 70% / .5)',
-				'rgb(0 64 185 / 50%)',
-				'rgb(0 64 185 / .5)',
-				'hsl(0 0% 0% / .5)',
-			],
-		},
+
 		Hex: {
+			link: '#hex-notation',
+			dataType: 'color',
 			children: {
 				'#RGBA': {
-					link: '#hex-notation',
-					dataType: 'color',
 					value: '#0008',
 				},
 				'#RRGGBBAA': {
-					link: '#hex-notation',
-					dataType: 'color',
 					value: '#00000088',
 				},
 			},
@@ -50,12 +68,13 @@ export default {
 		rebeccapurple: {
 			link: '#named-colors',
 			mdn: 'color_value',
-			tests: 'rebeccapurple',
+			dataType: 'color',
 		},
 		'system colors': {
 			link: '#css-system-colors',
 			mdn: 'color_value',
-			tests: [
+			dataType: 'color',
+			children: [
 				'Canvas',
 				'CanvasText',
 				'LinkText',
@@ -73,72 +92,68 @@ export default {
 			link: '#the-hwb-notation',
 			mdn: 'color_value/hwb',
 			dataType: 'color',
-			args: ['0 0% 0%', '0 0% 0% / .5'],
+			args: get_color_args({hueIndex: 0}),
 		},
 		'lab()': {
 			link: '#specifying-lab-lch',
 			mdn: 'color_value/lab',
 			dataType: 'color',
-			args: ['0% 0 0', '0% 0 0 / .5'],
+			args: get_color_args(),
 		},
 		'oklab()': {
 			link: '#specifying-oklab-lch',
 			mdn: 'color_value/oklab',
 			dataType: 'color',
-			args: ['0% 0 0', '40.101% 0.1147 0.0453 / .5'],
+			args: get_color_args(),
 		},
 		'lch()': {
 			link: '#specifying-lch-lch',
 			mdn: 'color_value/lch',
 			dataType: 'color',
-			args: ['0% 0 0', 'none 0% none', '0% 0 0 / .5'],
+			args: get_color_args({hueIndex: 2}),
 		},
 		'oklch()': {
 			link: '#specifying-oklch-lch',
 			mdn: 'color_value/oklch',
 			dataType: 'color',
-			args: ['0% 0 0', '40.101% 0.12332 21.555 / .5'],
+			args: get_color_args({hueIndex: 2}),
 		},
 		'color()': {
 			link: '#color-function',
 			mdn: 'color_value/color',
 			dataType: 'color',
-			args: [
-				'display-p3 1 0.5 0',
-				'display-p3 .2 .4 .6  / .5',
-				'display-p3 20% 40% 60%',
-				'srgb 1 0.5 0',
-				'srgb .2 .4 .6  / .5',
-				'srgb 20% 40% 60%',
-				'srgb-linear 1 0.5 0',
-				'srgb-linear .2 .4 .6  / .5',
-				'srgb-linear 20% 40% 60%',
-				'a98-rgb 1 0.5 0',
-				'a98-rgb .2 .4 .6  / .5',
-				'a98-rgb 20% 40% 60%',
-				'prophoto-rgb 1 0.5 0',
-				'prophoto-rgb .2 .4 .6  / .5',
-				'prophoto-rgb 20% 40% 60%',
-				'rec2020 1 0.5 0',
-				'rec2020 .2 .4 .6  / .5',
-				'rec2020 20% 40% 60%',
-				'xyz 1 0.5 0',
-				'xyz .2 .4 .6  / .5',
-				'xyz 20% 40% 60%',
-				'xyz-d50 1 0.5 0',
-				'xyz-d50 .2 .4 .6  / .5',
-				'xyz-d50 20% 40% 60%',
-				'xyz-d65 1 0.5 0',
-				'xyz-d65 .2 .4 .6  / .5',
-				'xyz-d65 20% 40% 60%',
-				'xyz-d65 .2 .4 .6 / none',
-				'xyz-d65 .2 .4 none / .5',
-				'xyz-d65 .2 none .4 / .5',
-				'xyz-d65 none .2 .4 / .5',
-				'xyz-d65 none none .4 / .5',
-				'xyz-d65 none none none',
-				'xyz-d65 none none none / none',
-			],
+			children: {
+				'srgb': {
+					args: get_color_args({prefix: 'srgb '}),
+				},
+				'srgb-linear': {
+					args: get_color_args({prefix: 'srgb-linear '}),
+				},
+				'display-p3': {
+					args: get_color_args({prefix: 'display-p3 '}),
+				},
+				'display-p3-linear': {
+					args: get_color_args({prefix: 'display-p3-linear '}),
+				},
+				'a98-rgb': {
+					args: get_color_args({prefix: 'a98-rgb '}),
+				},
+				'prophoto-rgb': {
+					args: get_color_args({prefix: 'prophoto-rgb '}),
+				},
+				'rec2020': {
+					args: get_color_args({prefix: 'rec2020 '}),
+				},
+				'xyz': {
+					args: get_color_args({prefix: 'xyz '}),
+				},
+				'xyz-d50': {
+					args: get_color_args({prefix: 'xyz-d50 '}),
+				},
+				'xyz-d65': {
+					args: get_color_args({prefix: 'xyz-d65 '}),
+				}
+			},
 		},
 	},
 	properties: {
